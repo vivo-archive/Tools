@@ -12,27 +12,27 @@ runMode - List of modes (actions) to perform during execute()
 Form:	runMode: fetch;all, translate;all
 Handling:
   * Only the last item with the same name (fetch;all, fetch;pubmed) will be followed
-    (fetch;pubmed in this case)� this needs to be fixed eventually
-  * mode1name,mode2name;mode2param results in �parameters are corrupted at �mode1name��
+    (fetch;pubmed in this case) this needs to be fixed eventually
+  * mode1name,mode2name;mode2param results in parameters are corrupted at mode1name
     IllegalArgumentException at Controller initialization
   * unnamed params (;param1) are ignored by the system
   * Whitespace does not matter, nor do blank params (name1; , ; ,name2;param2)
 -----------------------------------------------------------------------------------------
-toolEmail � the email address to relate this ingest with (used to prevent abuse)
+toolEmail  the email address to relate this ingest with (used to prevent abuse)
 Form:	toolEmail: yourEmail@yourDomain.tld
 Handling:
-  * Directly parsed and passed along� should eventually be validated as an email address
+  * Directly parsed and passed along should eventually be validated as an email address
 -----------------------------------------------------------------------------------------
-toolLocation � the location to relate this ingest with (used to prevent abuse)
+toolLocation  the location to relate this ingest with (used to prevent abuse)
 Form:	toolLocation: Name of Your Institution
 Handling:
   * Directly parsed and passed along
 -----------------------------------------------------------------------------------------
-debugLevel � the level of debug messages to be logged
+debugLevel  the level of debug messages to be logged
 Form:	debugLevel: <integer 0,1,2,3>
 Handling:
   * Currently only used by Fetch() where the contents are cast to an int via
-    Integer.parseInt(valueAfterColon)� should eventually be used by all parts of the
+    Integer.parseInt(valueAfterColon) should eventually be used by all parts of the
 	ingest
 -----------------------------------------------------------------------------------------
 fetchOutput - List of outputs for the fetch process
