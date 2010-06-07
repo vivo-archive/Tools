@@ -261,7 +261,7 @@ public class Controller {
 	private void Fetch() throws NumberFormatException, IOException {
 		// FIXME chaines: hard coding to use only first output, but this needs to fixed to write to the the PIS-POS system
 		PubmedSOAPFetch f = new PubmedSOAPFetch(this.config.get("toolEmail"), this.config.get("toolLocation"), this.fetchOutputs.get(0));
-		int numToFetch = f.getHighestRecordNumber();
+		int numToFetch = f.getHighestRecordNumber(); //TODO Make this handle the 100,000 record limit correctly
 		int numPerBatch = 500;
 		String[] env = f.ESearchEnv(f.fetchAll(), numToFetch);
 		String webEnv = env[0];
