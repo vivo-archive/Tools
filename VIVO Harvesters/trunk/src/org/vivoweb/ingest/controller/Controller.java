@@ -267,8 +267,8 @@ public class Controller {
 		//FIXME numPerBatch needs to be in config
 		int numPerBatch = 20;
 		//FIXME querystring needs to be in config
-		//String[] env = f.ESearchEnv(f.fetchAll(), numToFetch);
-		String[] env = f.ESearchEnv(f.queryByAffiliation("ufl.edu"), numToFetch);
+		String[] env = f.ESearchEnv(f.fetchAll(), numToFetch);
+		//String[] env = f.ESearchEnv(f.queryByAffiliation("ufl.edu"), numToFetch);
 		String webEnv = env[0];
 		String queryKey = env[1];
 		String idListLength = env[2];
