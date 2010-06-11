@@ -150,7 +150,7 @@ public class Score {
 	                    //TODO refactor this to a recursive method
 	                    while (paperStmts.hasNext()) {
 	                    	stmt = paperStmts.nextStatement();
-	                    	System.out.println("Paper Statement " + stmt.toString());
+	                    	log.trace("Paper Statement " + stmt.toString());
 
 	                    	//write to vivo, minus scoring info
 	                    	if (!stmt.getPredicate().toString().contains("/score")) {
@@ -161,7 +161,7 @@ public class Score {
 		                    		
 		                    		while(objectIterator.hasNext()){
 		                    			stmt = objectIterator.nextStatement();
-		                    			System.out.println("Object Statement " + stmt.toString());
+		                    			log.trace("Object Statement " + stmt.toString());
 		               
 		                    			if(!stmt.getPredicate().toString().contains("/score")) {
 		                    				vivo.add(stmt);
@@ -182,10 +182,15 @@ public class Score {
 	                    //System.out.println(authorship.getNameSpace());
 	                    
 	                    vivo.add(authorship,linkedAuthorOf,authorNode);
+	                    log.trace("Link Statement [" + authorship.toString() + ", " + linkedAuthorOf.toString() + ", " + authorNode.toString() + "]");
 	                    vivo.add((Resource)authorNode,linkedAuthorOf,authorship);
+	                    log.trace("Link Statement [" + authorNode.toString() + ", " + linkedAuthorOf.toString() + ", " + authorship.toString() + "]");
 	                    vivo.add(authorship,paperOf,paperNode);
+	                    log.trace("Link Statement [" + authorship.toString() + ", " + paperOf.toString() + ", " + paperNode.toString() + "]");
 	                    vivo.add(authorship,rdfType,flag1);
+	                    log.trace("Link Statement [" + authorship.toString() + ", " + rdfType.toString() + ", " + flag1.toString() + "]");
 	                    vivo.add(authorship,rdfLabel,"Authorship for Paper");
+	                    log.trace("Link Statement [" + authorship.toString() + ", " + rdfLabel.toString() + ", " + "Authorship for Paper]");
 
 		    			//take results and store in VIVO
 		    			vivo.commit();
