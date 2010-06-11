@@ -263,11 +263,12 @@ public class Controller {
 		PubmedSOAPFetch f = new PubmedSOAPFetch(this.config.get("toolEmail"), this.config.get("toolLocation"), this.fetchOutputs.get(0));
 		//int numToFetch = f.getHighestRecordNumber(); //TODO Make this handle the 100,000 record limit correctly
 		//FIXME As example we are only grabbing 1000 pubmed records -- numToFetch to be in config
-		int numToFetch = 1000;
+		int numToFetch = 20;
 		//FIXME numPerBatch needs to be in config
-		int numPerBatch = 500;
+		int numPerBatch = 20;
 		//FIXME querystring needs to be in config
-		String[] env = f.ESearchEnv(f.fetchAll(), numToFetch);
+		//String[] env = f.ESearchEnv(f.fetchAll(), numToFetch);
+		String[] env = f.ESearchEnv(f.queryByAffiliation("ufl.edu"), numToFetch);
 		String webEnv = env[0];
 		String queryKey = env[1];
 		String idListLength = env[2];

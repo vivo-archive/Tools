@@ -97,7 +97,12 @@ public class Score {
 				Resource authorship;
 				Resource paperResource;
                 Property linkedAuthorOf = ResourceFactory.createProperty("http://vivoweb.org/ontology/core#linkedAuthor");
+                Property authorshipForPerson = ResourceFactory.createProperty("http://vivoweb.org/ontology/core#authorInAuthorship");
+                
+                Property authorshipForPaper = ResourceFactory.createProperty("http://vivoweb.org/ontology/core#informationResourceInAuthorship");
                 Property paperOf = ResourceFactory.createProperty("http://vivoweb.org/ontology/core#linkedInformationResource");
+                
+                
                 Resource flag1 = vivo.getResource("http://vitro.mannlib.cornell.edu/ns/vitro/0.7#Flag1Value1Thing");
                 Property rdfType = ResourceFactory.createProperty("http://www.w3.org/1999/02/22-rdf-syntax-ns#type");
                 Property rdfLabel = ResourceFactory.createProperty("http://www.w3.org/2000/01/rdf-schema#label");
@@ -183,10 +188,12 @@ public class Score {
 	                    
 	                    vivo.add(authorship,linkedAuthorOf,authorNode);
 	                    log.trace("Link Statement [" + authorship.toString() + ", " + linkedAuthorOf.toString() + ", " + authorNode.toString() + "]");
-	                    vivo.add((Resource)authorNode,linkedAuthorOf,authorship);
-	                    log.trace("Link Statement [" + authorNode.toString() + ", " + linkedAuthorOf.toString() + ", " + authorship.toString() + "]");
+	                    vivo.add((Resource)authorNode,authorshipForPerson,authorship);
+	                    log.trace("Link Statement [" + authorNode.toString() + ", " + authorshipForPerson.toString() + ", " + authorship.toString() + "]");
 	                    vivo.add(authorship,paperOf,paperNode);
 	                    log.trace("Link Statement [" + authorship.toString() + ", " + paperOf.toString() + ", " + paperNode.toString() + "]");
+	                    vivo.add((Resource)paperNode,authorshipForPaper,authorship);
+	                    log.trace("Link Statement [" + paperNode.toString() + ", " + authorshipForPaper.toString() + ", " + authorship.toString() + "]");
 	                    vivo.add(authorship,rdfType,flag1);
 	                    log.trace("Link Statement [" + authorship.toString() + ", " + rdfType.toString() + ", " + flag1.toString() + "]");
 	                    vivo.add(authorship,rdfLabel,"Authorship for Paper");
