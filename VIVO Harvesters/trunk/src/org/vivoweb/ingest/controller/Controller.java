@@ -261,8 +261,12 @@ public class Controller {
 	private void Fetch() throws NumberFormatException, IOException {
 		// FIXME chaines: hard coding to use only first output, but this needs to fixed to write to the the PIS-POS system
 		PubmedSOAPFetch f = new PubmedSOAPFetch(this.config.get("toolEmail"), this.config.get("toolLocation"), this.fetchOutputs.get(0));
-		int numToFetch = f.getHighestRecordNumber(); //TODO Make this handle the 100,000 record limit correctly
+		//int numToFetch = f.getHighestRecordNumber(); //TODO Make this handle the 100,000 record limit correctly
+		//FIXME As example we are only grabbing 1000 pubmed records -- numToFetch to be in config
+		int numToFetch = 1000;
+		//FIXME numPerBatch needs to be in config
 		int numPerBatch = 500;
+		//FIXME querystring needs to be in config
 		String[] env = f.ESearchEnv(f.fetchAll(), numToFetch);
 		String webEnv = env[0];
 		String queryKey = env[1];
@@ -272,8 +276,13 @@ public class Controller {
 		log.info("Fetching "+idListLength+" records.");
 		f.beginXML();
 		for(int idLow = 1; idLow <= Integer.parseInt(idListLength); idLow+=numPerBatch) {
-			log.info("Fetching Records "+idLow+" to "+(idLow+numPerBatch-1)+".");
-			f.fetchPubMedEnv(webEnv, queryKey, ""+idLow, ""+numPerBatch);
+			if (idLow+numPerBatch > Integer.parseInt(idListLength)) {
+				log.info("Fetching Records "+idLow+" to "+Integer.parseInt(idListLength)+".");
+				f.fetchPubMedEnv(webEnv, queryKey, ""+idLow, ""+Integer.parseInt(idListLength));
+			} else {
+				log.info("Fetching Records "+idLow+" to "+(idLow+numPerBatch-1)+".");
+				f.fetchPubMedEnv(webEnv, queryKey, ""+idLow, ""+numPerBatch);
+			}
 		}
 		f.endXML();
 	}
