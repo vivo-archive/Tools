@@ -8,7 +8,7 @@
  * Contributors:
  *     Christopher Haines, Dale Scheppler, Nicholas Skaggs, Stephen V. Williams - initial API and implementation
  ******************************************************************************/
-package org.vivoweb.ingest.io;
+package org.vivoweb.ingest.util;
 
 import java.io.FileNotFoundException;
 import java.io.InputStream;
@@ -24,12 +24,12 @@ import com.hp.hpl.jena.rdf.model.ModelMaker;
 import com.hp.hpl.jena.rdf.model.RDFWriter;
 import com.hp.hpl.jena.util.ModelLoader;
 
-public class JenaIO {
+public class JenaConnect {
 	
-	private static Log log = LogFactory.getLog(JenaIO.class);
+	private static Log log = LogFactory.getLog(JenaConnect.class);
 	private Model jenaModel;
 	
-	public JenaIO(String dbUrl, String dbUser, String dbPass, String dbType, String dbClass) {
+	public JenaConnect(String dbUrl, String dbUser, String dbPass, String dbType, String dbClass) {
 		try {
 			this.setJenaModel(this.createModel(dbUrl, dbUser, dbPass, dbType, dbClass));
 		} catch(InstantiationException e) {
@@ -47,7 +47,7 @@ public class JenaIO {
 		}
 	}
 	
-	public JenaIO(String dbUrl, String dbUser, String dbPass, String modelName, String dbType, String dbClass) {
+	public JenaConnect(String dbUrl, String dbUser, String dbPass, String modelName, String dbType, String dbClass) {
 		try {
 			this.setJenaModel(this.loadModel(dbUrl, dbUser, dbPass, modelName, dbType, dbClass));
 		} catch(InstantiationException e) {
@@ -65,12 +65,12 @@ public class JenaIO {
 		}
 	}
 	
-	public JenaIO(InputStream in) {
+	public JenaConnect(InputStream in) {
 		this.setJenaModel(ModelFactory.createDefaultModel());
 		this.loadRDF(in);
 	}
 	
-	public JenaIO(String inFilePath) throws FileNotFoundException {
+	public JenaConnect(String inFilePath) throws FileNotFoundException {
 		this(new FileInputStream(inFilePath));
 	}
 	

@@ -34,7 +34,7 @@ import org.apache.commons.logging.LogFactory;
  * @author Dale R. Scheppler dscheppler@ichp.ufl.edu
  * @author Christopher Haines cah@ichp.ufl.edu
  */
-public class PubmedHTTPGetFetch implements Harvestor
+public class PubmedHTTPGetFetch
 {
 	private static Log log = LogFactory.getLog(PubmedHTTPGetFetch.class);
 	private String strEmailAddress;
