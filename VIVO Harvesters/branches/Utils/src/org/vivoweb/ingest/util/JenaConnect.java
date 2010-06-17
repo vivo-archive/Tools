@@ -24,11 +24,22 @@ import com.hp.hpl.jena.rdf.model.ModelMaker;
 import com.hp.hpl.jena.rdf.model.RDFWriter;
 import com.hp.hpl.jena.util.ModelLoader;
 
+/**
+ * @author Christopher Haines (hainesc@ctrip.ufl.edu)
+ *
+ */
 public class JenaConnect {
 	
 	private static Log log = LogFactory.getLog(JenaConnect.class);
 	private Model jenaModel;
 	
+	/**
+	 * @param dbUrl
+	 * @param dbUser
+	 * @param dbPass
+	 * @param dbType
+	 * @param dbClass
+	 */
 	public JenaConnect(String dbUrl, String dbUser, String dbPass, String dbType, String dbClass) {
 		try {
 			this.setJenaModel(this.createModel(dbUrl, dbUser, dbPass, dbType, dbClass));
@@ -47,6 +58,14 @@ public class JenaConnect {
 		}
 	}
 	
+	/**
+	 * @param dbUrl
+	 * @param dbUser
+	 * @param dbPass
+	 * @param modelName
+	 * @param dbType
+	 * @param dbClass
+	 */
 	public JenaConnect(String dbUrl, String dbUser, String dbPass, String modelName, String dbType, String dbClass) {
 		try {
 			this.setJenaModel(this.loadModel(dbUrl, dbUser, dbPass, modelName, dbType, dbClass));
@@ -65,15 +84,25 @@ public class JenaConnect {
 		}
 	}
 	
+	/**
+	 * @param in
+	 */
 	public JenaConnect(InputStream in) {
 		this.setJenaModel(ModelFactory.createDefaultModel());
 		this.loadRDF(in);
 	}
 	
+	/**
+	 * @param inFilePath
+	 * @throws FileNotFoundException
+	 */
 	public JenaConnect(String inFilePath) throws FileNotFoundException {
 		this(new FileInputStream(inFilePath));
 	}
 	
+	/**
+	 * @return
+	 */
 	public Model getJenaModel() {
 		return this.jenaModel;
 	}
