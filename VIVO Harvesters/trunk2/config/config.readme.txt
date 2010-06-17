@@ -1,0 +1,80 @@
+#-------------------------------------------------------------------------------
+# Copyright (c) 2010 Christopher Haines, Dale Scheppler, Nicholas Skaggs, Stephen V. Williams.
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the new BSD license
+# which accompanies this distribution, and is available at
+# http://www.opensource.org/licenses/bsd-license.html
+# 
+# Contributors:
+#     Christopher Haines, Dale Scheppler, Nicholas Skaggs, Stephen V. Williams - initial API and implementation
+#-------------------------------------------------------------------------------
+runMode - List of modes (actions) to perform during execute()
+Form:	runMode: fetch;all, translate;all
+Handling:
+  * Only the last item with the same name (fetch;all, fetch;pubmed) will be followed
+    (fetch;pubmed in this case) this needs to be fixed eventually
+  * mode1name,mode2name;mode2param results in parameters are corrupted at mode1name
+    IllegalArgumentException at Controller initialization
+  * unnamed params (;param1) are ignored by the system
+  * Whitespace does not matter, nor do blank params (name1; , ; ,name2;param2)
+-----------------------------------------------------------------------------------------
+toolEmail  the email address to relate this ingest with (used to prevent abuse)
+Form:	toolEmail: yourEmail@yourDomain.tld
+Handling:
+  * Directly parsed and passed along should eventually be validated as an email address
+-----------------------------------------------------------------------------------------
+toolLocation  the location to relate this ingest with (used to prevent abuse)
+Form:	toolLocation: Name of Your Institution
+Handling:
+  * Directly parsed and passed along
+-----------------------------------------------------------------------------------------
+debugLevel  the level of debug messages to be logged
+Form:	debugLevel: <integer 0,1,2,3>
+Handling:
+  * Currently only used by Fetch() where the contents are cast to an int via
+    Integer.parseInt(valueAfterColon) should eventually be used by all parts of the
+	ingest
+-----------------------------------------------------------------------------------------
+fetchOutput - List of outputs for the fetch process
+Form:	fetchOutput: file;<pathToFile>, in;process(trans,score,etc)
+Handling:
+  * <pathToFile> needs to be a valid path (relative or absolute)
+  * Currently only 'file' type works and only the first in the list... to be fixed
+-----------------------------------------------------------------------------------------
+transInput - The input for the translation process
+Form:	transInput: file;<pathToFile>
+   or	transInput: out;process(fetch,trans,etc)
+Handling:
+  * <pathToFile> must be a valid path (relative or absolute) and file
+  * Currently only 'file' type works... to be fixed
+-----------------------------------------------------------------------------------------
+transOutput - List of outputs for the translate process
+Form:	transOutput: file;<pathToFile>, in;process(trans,score,etc)
+Handling:
+  * <pathToFile> needs to be a valid path (relative or absolute)
+  * Currently only 'file' type works and only the first in the list... to be fixed
+-----------------------------------------------------------------------------------------
+scoreInput - The input for the scoring process
+Form:	scoreInput: file;<pathToFile>
+   or	scoreInput: out;process(fetch,trans,etc)
+Handling:
+  * <pathToFile> must be a valid path (relative or absolute) and file
+  * Currently only 'file' type works... to be fixed
+-----------------------------------------------------------------------------------------
+scoreStore - The connection information for the scoring repository
+Form:	scoreStore: connPath;jdbc:mysql://localhost:3306/score_output,    (cont'd below)
+		userName;jenaUser, passWord;v!tr0, dbType;MySQL, dbClass;com.mysql.jdbc.Driver
+Handling:
+  * connPath must be a valid jdbc connection string
+  * userName and passWord are used to attempt connection
+  * dbType only works as MySQL for the moment... will adapt as others arise?
+  * dbClass is the full jdbc driver classname
+-----------------------------------------------------------------------------------------
+vivoStore - The connection information for the vivo repository
+Form:	vivoStore: connPath;jdbc:mysql://localhost:3306/score_output,    (cont'd below)
+		userName;jenaUser, passWord;v!tr0, dbType;MySQL, dbClass;com.mysql.jdbc.Driver
+Handling:
+  * connPath must be a valid jdbc connection string
+  * userName and passWord are used to attempt connection
+  * dbType only works as MySQL for the moment... will adapt as others arise?
+  * dbClass is the full jdbc driver classname
