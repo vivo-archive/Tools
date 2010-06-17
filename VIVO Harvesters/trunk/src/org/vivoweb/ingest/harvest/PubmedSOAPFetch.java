@@ -42,7 +42,7 @@ public class PubmedSOAPFetch
 	private static Log log = LogFactory.getLog(PubmedSOAPFetch.class);
 	private String strEmailAddress;
 	private String strToolLocation;
-	private OutputStreamWriter xmlWriter;
+	private OutputStreamWriter oswXMLWriter;
 	
 	/***
 	 * Constructor
@@ -62,7 +62,7 @@ public class PubmedSOAPFetch
 		this.strToolLocation = strToolLoc; // This provides further information to NIH
 		try {
 			// Writer to the stream we're getting from the controller.
-			this.xmlWriter = new OutputStreamWriter(osOutStream, "UTF-8");
+			this.oswXMLWriter = new OutputStreamWriter(osOutStream, "UTF-8");
 		} catch(UnsupportedEncodingException e) {
 			log.error("",e);
 		}
@@ -128,6 +128,7 @@ public class PubmedSOAPFetch
 				// just in case there is a non-number in the ID list (should not happen)
 				catch (NumberFormatException e)
 				{
+					log.error("Number Format Exception in method ESearch in PubmedSOAPFetch.java.");
 					e.printStackTrace();
 				}
 			}
@@ -385,10 +386,10 @@ public class PubmedSOAPFetch
 		log.trace("XML File Length - Pre Sanitize: " + s.length());
 		log.trace("XML File Length - Post Sanitze: " + newS.length());
 		try {
-			this.xmlWriter.write(newS);
+			this.oswXMLWriter.write(newS);
 			//file close statements.  Warning, not closing the file will leave incomplete xml files and break the translate method
-			this.xmlWriter.write("\n");
-			this.xmlWriter.flush();
+			this.oswXMLWriter.write("\n");
+			this.oswXMLWriter.flush();
 		} catch(IOException e) {
 			log.error("Unable to write XML to file.",e);
 		}
@@ -401,20 +402,20 @@ public class PubmedSOAPFetch
 	 * @throws IOException
 	 */
 	public void beginXML() throws IOException {
-		this.xmlWriter.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
-		this.xmlWriter.write("<!DOCTYPE PubmedArticleSet PUBLIC \"-//NLM//DTD PubMedArticle, 1st January 2010//EN\" \"http://www.ncbi.nlm.nih.gov/corehtml/query/DTD/pubmed_100101.dtd\">\n");
-		this.xmlWriter.write("<PubmedArticleSet>\n");
-		this.xmlWriter.flush();
+		this.oswXMLWriter.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
+		this.oswXMLWriter.write("<!DOCTYPE PubmedArticleSet PUBLIC \"-//NLM//DTD PubMedArticle, 1st January 2010//EN\" \"http://www.ncbi.nlm.nih.gov/corehtml/query/DTD/pubmed_100101.dtd\">\n");
+		this.oswXMLWriter.write("<PubmedArticleSet>\n");
+		this.oswXMLWriter.flush();
 	}
 	
 	/**
 	 * @throws IOException
 	 */
 	public void endXML() throws IOException {
-		this.xmlWriter.flush();
-		this.xmlWriter.write("</PubmedArticleSet>");
-		this.xmlWriter.flush();
-		this.xmlWriter.close();
+		this.oswXMLWriter.flush();
+		this.oswXMLWriter.write("</PubmedArticleSet>");
+		this.oswXMLWriter.flush();
+		this.oswXMLWriter.close();
 	}
 	
 	/**
