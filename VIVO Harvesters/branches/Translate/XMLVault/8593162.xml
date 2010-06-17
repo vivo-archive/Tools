@@ -1,0 +1,190 @@
+<PubmedArticleSet>
+    <PubmedArticle>
+        <MedlineCitation xmlns="http://www.ncbi.nlm.nih.gov/soap/eutils/efetch_pubmed" Owner="NLM"
+            Status="MEDLINE">
+            <PMID>8593162</PMID>
+            <DateCreated>
+                <Year>1996</Year>
+                <Month>04</Month>
+                <Day>01</Day>
+            </DateCreated>
+            <DateCompleted>
+                <Year>1996</Year>
+                <Month>04</Month>
+                <Day>01</Day>
+            </DateCompleted>
+            <DateRevised>
+                <Year>2007</Year>
+                <Month>11</Month>
+                <Day>14</Day>
+            </DateRevised>
+            <Article xmlns="" PubModel="Print">
+                <Journal xmlns="http://www.ncbi.nlm.nih.gov/soap/eutils/efetch_pubmed">
+                    <ISSN xmlns="" IssnType="Print">0265-9247</ISSN>
+                    <JournalIssue xmlns="" CitedMedium="Print">
+                        <Volume xmlns="http://www.ncbi.nlm.nih.gov/soap/eutils/efetch_pubmed"
+                            >18</Volume>
+                        <Issue xmlns="http://www.ncbi.nlm.nih.gov/soap/eutils/efetch_pubmed"
+                            >1</Issue>
+                        <PubDate xmlns="http://www.ncbi.nlm.nih.gov/soap/eutils/efetch_pubmed">
+                            <PubDateTypeSequence_type1>
+                                <Year>1996</Year>
+                                <PubDateTypeChoice_type0>
+                                    <PubDateTypeSequence_type0>
+                                        <Month>Jan</Month>
+                                    </PubDateTypeSequence_type0>
+                                </PubDateTypeChoice_type0>
+                            </PubDateTypeSequence_type1>
+                        </PubDate>
+                    </JournalIssue>
+                    <Title>BioEssays : news and reviews in molecular, cellular and developmental
+                        biology</Title>
+                    <ISOAbbreviation>Bioessays</ISOAbbreviation>
+                </Journal>
+                <ArticleTitle xmlns="http://www.ncbi.nlm.nih.gov/soap/eutils/efetch_pubmed">The
+                    pleckstrin homology domain: an intriguing multifunctional protein
+                    module.</ArticleTitle>
+                <ArticleTypeChoice_type0
+                    xmlns="http://www.ncbi.nlm.nih.gov/soap/eutils/efetch_pubmed">
+                    <ArticleTypeSequence_type0>
+                        <Pagination>
+                            <MedlinePgn>35-46</MedlinePgn>
+                        </Pagination>
+                    </ArticleTypeSequence_type0>
+                </ArticleTypeChoice_type0>
+                <Abstract xmlns="http://www.ncbi.nlm.nih.gov/soap/eutils/efetch_pubmed">
+                    <AbstractText>Pleckstrin homology (PH) domains are a family of compact protein
+                        modules defined by sequences of roughly 100 amino acids. These domains are
+                        common in vertebrate, Drosophila, C. elegans and yeast proteins, suggesting
+                        an early origin and fundamental importance to eukaryotic biology. Many
+                        enzymes which have important regulatory functions contain PH domains, and
+                        mutant forms of several such proteins are implicated in oncogenesis and
+                        developmental disorders. Numerous recent studies show that PH domains bind
+                        various proteins and inositolphosphates. Here I discuss PH domains in detail
+                        and conclude that they form a versatile family of membrane binding and
+                        protein localization modules.</AbstractText>
+                </Abstract>
+                <Affiliation xmlns="http://www.ncbi.nlm.nih.gov/soap/eutils/efetch_pubmed"
+                    >University of Florida College of Medicine, Department of Neuroscience,
+                    Gainesville 32610, USA. SHAW@NEOCORTEX.HEALTH.UFL.EDU</Affiliation>
+                <AuthorList xmlns="http://www.ncbi.nlm.nih.gov/soap/eutils/efetch_pubmed"
+                    CompleteYN="Y">
+                    <Author xmlns="" ValidYN="Y">
+                        <AuthorTypeSequence_type0
+                            xmlns="http://www.ncbi.nlm.nih.gov/soap/eutils/efetch_pubmed">
+                            <LastName>Shaw</LastName>
+                            <ForeName>G</ForeName>
+                            <Initials>G</Initials>
+                        </AuthorTypeSequence_type0>
+                    </Author>
+                </AuthorList>
+                <Language xmlns="http://www.ncbi.nlm.nih.gov/soap/eutils/efetch_pubmed"
+                    >eng</Language>
+                <GrantList xmlns="http://www.ncbi.nlm.nih.gov/soap/eutils/efetch_pubmed"
+                    CompleteYN="Y">
+                    <Grant>
+                        <GrantID>NS22695</GrantID>
+                        <Acronym>NS</Acronym>
+                        <Agency>NINDS NIH HHS</Agency>
+                        <Country>United States</Country>
+                    </Grant>
+                </GrantList>
+                <PublicationTypeList xmlns="http://www.ncbi.nlm.nih.gov/soap/eutils/efetch_pubmed">
+                    <PublicationType>Journal Article</PublicationType>
+                    <PublicationType>Research Support, Non-U.S. Gov't</PublicationType>
+                    <PublicationType>Research Support, U.S. Gov't, P.H.S.</PublicationType>
+                    <PublicationType>Review</PublicationType>
+                </PublicationTypeList>
+            </Article>
+            <MedlineJournalInfo>
+                <Country>ENGLAND</Country>
+                <MedlineTA>Bioessays</MedlineTA>
+                <NlmUniqueID>8510851</NlmUniqueID>
+                <ISSNLinking>0265-9247</ISSNLinking>
+            </MedlineJournalInfo>
+            <ChemicalList>
+                <Chemical>
+                    <RegistryNumber>0</RegistryNumber>
+                    <NameOfSubstance>Blood Proteins</NameOfSubstance>
+                </Chemical>
+                <Chemical>
+                    <RegistryNumber>0</RegistryNumber>
+                    <NameOfSubstance>Phosphoproteins</NameOfSubstance>
+                </Chemical>
+                <Chemical>
+                    <RegistryNumber>0</RegistryNumber>
+                    <NameOfSubstance>platelet protein P47</NameOfSubstance>
+                </Chemical>
+                <Chemical>
+                    <RegistryNumber>12634-43-4</RegistryNumber>
+                    <NameOfSubstance>Spectrin</NameOfSubstance>
+                </Chemical>
+                <Chemical>
+                    <RegistryNumber>EC 3.6.1.-</RegistryNumber>
+                    <NameOfSubstance>GTP Phosphohydrolases</NameOfSubstance>
+                </Chemical>
+                <Chemical>
+                    <RegistryNumber>EC 3.6.5.5</RegistryNumber>
+                    <NameOfSubstance>Dynamins</NameOfSubstance>
+                </Chemical>
+            </ChemicalList>
+            <CitationSubset>IM</CitationSubset>
+            <MeshHeadingList>
+                <MeshHeading>
+                    <DescriptorName xmlns="" MajorTopicYN="N">Agammaglobulinemia</DescriptorName>
+                    <QualifierName xmlns="" MajorTopicYN="N">genetics</QualifierName>
+                </MeshHeading>
+                <MeshHeading>
+                    <DescriptorName xmlns="" MajorTopicYN="N">Animals</DescriptorName>
+                </MeshHeading>
+                <MeshHeading>
+                    <DescriptorName xmlns="" MajorTopicYN="N">Blood Proteins</DescriptorName>
+                    <QualifierName xmlns="" MajorTopicYN="Y">chemistry</QualifierName>
+                </MeshHeading>
+                <MeshHeading>
+                    <DescriptorName xmlns="" MajorTopicYN="N">Dynamins</DescriptorName>
+                </MeshHeading>
+                <MeshHeading>
+                    <DescriptorName xmlns="" MajorTopicYN="N">Evolution, Molecular</DescriptorName>
+                </MeshHeading>
+                <MeshHeading>
+                    <DescriptorName xmlns="" MajorTopicYN="N">GTP Phosphohydrolases</DescriptorName>
+                    <QualifierName xmlns="" MajorTopicYN="N">chemistry</QualifierName>
+                </MeshHeading>
+                <MeshHeading>
+                    <DescriptorName xmlns="" MajorTopicYN="N">Humans</DescriptorName>
+                </MeshHeading>
+                <MeshHeading>
+                    <DescriptorName xmlns="" MajorTopicYN="N">Models, Molecular</DescriptorName>
+                </MeshHeading>
+                <MeshHeading>
+                    <DescriptorName xmlns="" MajorTopicYN="Y">Multigene Family</DescriptorName>
+                </MeshHeading>
+                <MeshHeading>
+                    <DescriptorName xmlns="" MajorTopicYN="Y">Phosphoproteins</DescriptorName>
+                </MeshHeading>
+                <MeshHeading>
+                    <DescriptorName xmlns="" MajorTopicYN="N">Protein Binding</DescriptorName>
+                </MeshHeading>
+                <MeshHeading>
+                    <DescriptorName xmlns="" MajorTopicYN="N">Protein Conformation</DescriptorName>
+                </MeshHeading>
+                <MeshHeading>
+                    <DescriptorName xmlns="" MajorTopicYN="N">Sequence Homology, Amino
+                        Acid</DescriptorName>
+                </MeshHeading>
+                <MeshHeading>
+                    <DescriptorName xmlns="" MajorTopicYN="N">Signal Transduction</DescriptorName>
+                </MeshHeading>
+                <MeshHeading>
+                    <DescriptorName xmlns="" MajorTopicYN="N">Spectrin</DescriptorName>
+                    <QualifierName xmlns="" MajorTopicYN="N">chemistry</QualifierName>
+                </MeshHeading>
+                <MeshHeading>
+                    <DescriptorName xmlns="" MajorTopicYN="N">src Homology Domains</DescriptorName>
+                </MeshHeading>
+            </MeshHeadingList>
+            <NumberOfReferences>69</NumberOfReferences>
+        </MedlineCitation>
+   </PubmedArticle>
+</PubmedArticleSet>
