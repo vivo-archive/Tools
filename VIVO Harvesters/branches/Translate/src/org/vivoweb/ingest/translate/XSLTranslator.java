@@ -11,6 +11,8 @@
 package org.vivoweb.ingest.translate;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.text.SimpleDateFormat;
@@ -149,5 +151,33 @@ public class XSLTranslator extends Translator{
 //			return outputWriter;
 //		}
 
+	  /**
+	   *  TODO convert over to files
+	   */
+	  public static void main(String[] args){
+		 
+		  if (args.length != 2) {
+			  log.error("Invalid Arguments: XSLTranslate requires 2");
+			  throw new IllegalArgumentException();
+		  }
+		  else {
+			  
+				try {
+					XSLTranslator  xslTrans = new XSLTranslator();
+					  xslTrans.setInStream(new FileInputStream(new File(args[1])));
+					  xslTrans.setTranslationFile(new File(args[2]));
+					  xslTrans.setOutStream(System.out);
+				} catch (FileNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			  		  
+		  }
+			  		  
+		  
+		  
+		  
+		  
+	  }
 
 }
