@@ -31,12 +31,13 @@ public class TextFileRecordHandler extends RecordHandler {
 	private String directory;
 	
 	/**
+	 * Constructor
 	 * @param fileDir 
 	 * @throws IOException 
 	 * 
 	 */
 	public TextFileRecordHandler(String fileDir) throws IOException {
-		setDirectory(fileDir);
+		this.directory = fileDir;
 		File dir = new File(getDirectory());
 		if(!dir.exists()) {
 			log.info("Directory '"+fileDir+"' Does Not Exist, attempting to create");
@@ -114,6 +115,7 @@ public class TextFileRecordHandler extends RecordHandler {
 	}
 	
 	private class TextFileRecordIterator implements Iterator<Record> {
+		@SuppressWarnings("synthetic-access")
 		File[] files = new File(getDirectory()).listFiles();
 		int numLeft = 0;
 		
@@ -136,28 +138,13 @@ public class TextFileRecordHandler extends RecordHandler {
 			throw new UnsupportedOperationException();
 		}
 	}
-
-	/**
-	 * @param directory the directory to set
-	 */
-	public void setDirectory(String directory) {
-		this.directory = directory;
-	}
-
-	/**
-	 * @return the directory
-	 */
-	public String getDirectory() {
+	
+	private String getDirectory() {
 		return this.directory;
 	}
 	
-	/**
-	 * @param recID
-	 * @return
-	 */
 	private String getPath(String recID) {
 		return getDirectory()+"/"+recID;
 	}
-
 	
 }
