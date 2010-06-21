@@ -15,13 +15,7 @@ package org.vivoweb.ingest.util;
  *
  */
 public class Record {
-	/**
-	 * 
-	 */
 	private String id;
-	/**
-	 * 
-	 */
 	private String data;
 	
 	/**
@@ -34,31 +28,31 @@ public class Record {
 	}
 	
 	/**
-	 * @param id
+	 * @param newID
 	 */
-	public void setID(String id) {
-		this.id = id;
+	public void setID(String newID) {
+		this.id = newID;
 	}
 	
 	/**
 	 * @return
 	 */
 	public String getID() {
-		return id;
+		return this.id;
 	}
 	
 	/**
-	 * @param data
+	 * @param newData
 	 */
-	public void setData(String data) {
-		this.data = data;
+	public void setData(String newData) {
+		this.data = newData;
 	}
 	
 	/**
 	 * @return
 	 */
 	public String getData() {
-		return data;
+		return this.data;
 	}
 	
 }
