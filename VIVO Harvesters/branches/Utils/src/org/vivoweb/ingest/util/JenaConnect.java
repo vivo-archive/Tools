@@ -44,17 +44,11 @@ public class JenaConnect {
 		try {
 			this.setJenaModel(this.createModel(dbUrl, dbUser, dbPass, dbType, dbClass));
 		} catch(InstantiationException e) {
-			// TODO Auto-generated catch block
-			log.error(e, e);
-//			e.printStackTrace();
+			log.error(e.getMessage(), e);
 		} catch(IllegalAccessException e) {
-			// TODO Auto-generated catch block
-			log.error(e, e);
-//			e.printStackTrace();
+			log.error(e.getMessage(), e);
 		} catch(ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			log.error(e, e);
-//			e.printStackTrace();
+			log.error(e.getMessage(), e);
 		}
 	}
 	
@@ -70,17 +64,11 @@ public class JenaConnect {
 		try {
 			this.setJenaModel(this.loadModel(dbUrl, dbUser, dbPass, modelName, dbType, dbClass));
 		} catch(InstantiationException e) {
-			// TODO Auto-generated catch block
-			log.error(e, e);
-//			e.printStackTrace();
+			log.error(e.getMessage(), e);
 		} catch(IllegalAccessException e) {
-			// TODO Auto-generated catch block
-			log.error(e, e);
-//			e.printStackTrace();
+			log.error(e.getMessage(), e);
 		} catch(ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			log.error(e, e);
-//			e.printStackTrace();
+			log.error(e.getMessage(), e);
 		}
 	}
 	

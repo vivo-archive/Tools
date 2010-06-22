@@ -17,7 +17,9 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.NoSuchElementException;
+import java.util.Vector;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -115,19 +117,26 @@ public class TextFileRecordHandler extends RecordHandler {
 	}
 	
 	private class TextFileRecordIterator implements Iterator<Record> {
-		@SuppressWarnings("synthetic-access")
-		File[] files = new File(getDirectory()).listFiles();
-		int numLeft = 0;
+		Iterator<File> fileIter;
+		
+		private TextFileRecordIterator() {
+			LinkedList<File> fileListing = new LinkedList<File>();
+			for(File filename : new File(getDirectory()).listFiles()) {
+				if(!filename.isHidden()) {
+					fileListing.add(filename);
+					System.out.println("file: "+filename+"\n");
+				}
+			}
+			this.fileIter = fileListing.iterator();
+		}
 		
 		public boolean hasNext() {
-			return (this.numLeft>0);
+			return this.fileIter.hasNext();
 		}
 		
 		public Record next() {
 			try {
-				int index = this.files.length - this.numLeft;
-				Record result = getRecord(this.files[index].getName());
-				this.numLeft--;
+				Record result = getRecord(this.fileIter.next().getName());
 				return result;
 			} catch(IOException e) {
 				throw new NoSuchElementException(e.getMessage());
@@ -139,7 +148,10 @@ public class TextFileRecordHandler extends RecordHandler {
 		}
 	}
 	
-	private String getDirectory() {
+	/**
+	 * @return
+	 */
+	protected String getDirectory() {
 		return this.directory;
 	}
 	

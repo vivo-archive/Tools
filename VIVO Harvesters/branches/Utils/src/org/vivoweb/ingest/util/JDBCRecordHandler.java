@@ -30,10 +30,10 @@ public class JDBCRecordHandler extends RecordHandler {
 	
 	private static Log log = LogFactory.getLog(JDBCRecordHandler.class);
 	private Connection db;
-	private Statement cursor;
-	private String table;
-	private String idField;
-	private String dataField;
+	protected Statement cursor;
+	protected String table;
+	protected String idField;
+	protected String dataField;
 	
 	/**
 	 * Constructor
@@ -171,7 +171,6 @@ public class JDBCRecordHandler extends RecordHandler {
 	 * @see java.lang.Iterable#iterator()
 	 */
 	@Override
-	@SuppressWarnings("synthetic-access")
 	public Iterator<Record> iterator() {
 		JDBCRecordIterator ri = null;
 		try {
@@ -185,8 +184,7 @@ public class JDBCRecordHandler extends RecordHandler {
 	private class JDBCRecordIterator implements Iterator<Record> {
 		ResultSet rs;
 		
-		@SuppressWarnings("synthetic-access")
-		private JDBCRecordIterator() throws SQLException {
+		protected JDBCRecordIterator() throws SQLException {
 			this.rs = JDBCRecordHandler.this.cursor.executeQuery("select "+JDBCRecordHandler.this.idField+", "+JDBCRecordHandler.this.dataField+" from "+JDBCRecordHandler.this.table);
 		}
 		
