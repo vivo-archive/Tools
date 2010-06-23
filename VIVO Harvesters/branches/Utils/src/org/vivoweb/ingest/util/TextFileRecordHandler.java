@@ -33,9 +33,9 @@ import org.apache.commons.vfs.VFS;
  * @author Christopher Haines (hainesc@ctrip.ufl.edu)
  *
  */
-public class GenTextFileRecordHandler extends RecordHandler {
+public class TextFileRecordHandler extends RecordHandler {
 
-	protected static Log log = LogFactory.getLog(GenTextFileRecordHandler.class);
+	protected static Log log = LogFactory.getLog(TextFileRecordHandler.class);
 //	private String directory;
 	protected FileObject fileDirObj;
 	
@@ -45,7 +45,7 @@ public class GenTextFileRecordHandler extends RecordHandler {
 	 * @throws IOException 
 	 * 
 	 */
-	public GenTextFileRecordHandler(String fileDir) throws IOException {
+	public TextFileRecordHandler(String fileDir) throws IOException {
 		FileSystemManager fsMan = VFS.getManager();
 //		this.directory = fileDir;
 		this.fileDirObj = fsMan.resolveFile(new File("."),fileDir);
@@ -127,7 +127,7 @@ public class GenTextFileRecordHandler extends RecordHandler {
 		private TextFileRecordIterator() {
 			LinkedList<FileObject> fileListing = new LinkedList<FileObject>();
 			try {
-				for(FileObject file : GenTextFileRecordHandler.this.fileDirObj.getChildren()) {
+				for(FileObject file : TextFileRecordHandler.this.fileDirObj.getChildren()) {
 					if(!file.isHidden()) {
 						fileListing.add(file);
 //						System.out.println(file.getName().getBaseName());
