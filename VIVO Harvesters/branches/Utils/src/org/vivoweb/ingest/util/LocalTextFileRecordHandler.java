@@ -19,7 +19,6 @@ import java.io.IOException;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.NoSuchElementException;
-import java.util.Vector;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -27,9 +26,9 @@ import org.apache.commons.logging.LogFactory;
  * @author Christopher Haines (hainesc@ctrip.ufl.edu)
  *
  */
-public class TextFileRecordHandler extends RecordHandler {
+public class LocalTextFileRecordHandler extends RecordHandler {
 
-	private static Log log = LogFactory.getLog(TextFileRecordHandler.class);
+	private static Log log = LogFactory.getLog(LocalTextFileRecordHandler.class);
 	private String directory;
 	
 	/**
@@ -38,7 +37,7 @@ public class TextFileRecordHandler extends RecordHandler {
 	 * @throws IOException 
 	 * 
 	 */
-	public TextFileRecordHandler(String fileDir) throws IOException {
+	public LocalTextFileRecordHandler(String fileDir) throws IOException {
 		this.directory = fileDir;
 		File dir = new File(getDirectory());
 		if(!dir.exists()) {
@@ -124,7 +123,7 @@ public class TextFileRecordHandler extends RecordHandler {
 			for(File filename : new File(getDirectory()).listFiles()) {
 				if(!filename.isHidden()) {
 					fileListing.add(filename);
-					System.out.println("file: "+filename+"\n");
+//					System.out.println("file: "+filename+"\n");
 				}
 			}
 			this.fileIter = fileListing.iterator();
