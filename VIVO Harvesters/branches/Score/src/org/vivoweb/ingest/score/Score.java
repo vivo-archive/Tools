@@ -14,10 +14,6 @@ package org.vivoweb.ingest.score;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
-import src.org.vivoweb.ingest.score.Property;
-import src.org.vivoweb.ingest.score.Resource;
-
 import com.hp.hpl.jena.query.Query;
 import com.hp.hpl.jena.query.QueryExecution;
 import com.hp.hpl.jena.query.QueryExecutionFactory;
@@ -42,12 +38,20 @@ public class Score {
 			//pass models from command line
 			//TODO proper args handler
 			
-			args[0];
-			args[1];
+			//args[0];
+			//args[1];
 			//debug
 			//Hardcode parms for now
 			
 			//debug
+			
+			//load up models
+			
+			JenaIO vivo = new JenaIO();
+			JenaIO scoreInput = new JenaIO();
+			JenaIO scoreOutput = new JenaIO();
+			
+			new Score(vivo.getJenaModel(),scoreInput.getJenaModel(), scoreOutput.getJenaModel()).execute();
 	    }
 		
 		public Score (Model vivo, Model scoreInput, Model scoreOutput) {
@@ -120,20 +124,18 @@ public class Score {
 			}
 		 
 		 
-		 private static Model () {
-			 
-			 
-		 }
-		 
 		/**
 		 * commitResultSet
 		 * Commits resultset to a vivo model and a score model
 		 * 
-		 * @param  Movel vivo a model containing vivo statements
+		 * @param  Model vivo a model containing vivo statements
 		 * @param  Model score a model containing vivo + scoring statements
 		 * @param  ResultSet storeResult the result to be stored
+		 * @param  Resource paperResource
+		 * @param  RDFNode matchNode
+		 * @param  RDFNode paperNode
 		 */
-		 private static void commitResultSet(Model vivo, Model score, ResultSet storeResult) {
+		 private static void commitResultSet(Model vivo, Model score, ResultSet storeResult, Resource paperResource, RDFNode matchNode, RDFNode paperNode) {
 				RDFNode authorNode;
 				QuerySolution vivoSolution;
 				StmtIterator paperStmts;
@@ -158,7 +160,7 @@ public class Score {
 	 	    		
 	 	    		//Grab person URI
 	                 authorNode = vivoSolution.get("x");
-	                 log.info("Found " + scoreMatch + " for person " + authorNode.toString() + " in VIVO");
+	                 log.info("Found " + matchNode.toString() + " for person " + authorNode.toString() + " in VIVO");
 	                 log.info("Adding paper " + paperNode.toString() + " to VIVO");
 	
 	                 
@@ -288,7 +290,7 @@ public class Score {
 	    			
 	    			//TODO how to combine result sets? not possible in JENA
 	    			vivoResult = executeQuery(vivo, queryString);
-	    			commitResultSet(vivo,scoreInput,vivoResult);
+	    			commitResultSet(vivo,scoreInput,vivoResult,paperResource,paperNode,matchNode);
 	            }	    			 
 		    	
 		    	//TODO return scoreInput minus the scored statements
