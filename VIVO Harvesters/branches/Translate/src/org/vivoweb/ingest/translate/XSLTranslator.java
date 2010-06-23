@@ -78,8 +78,7 @@ public class XSLTranslator extends Translator{
 	public void execute() throws IllegalArgumentException {
 		
 		//checking for valid input parameters
-		if ((this.sourceType != null && !this.sourceType.equals("")) && 
-				(this.translationFile !=null && this.translationFile.isFile()) && this.inStream != null && this.outStream != null) {
+		if ((this.translationFile !=null && this.translationFile.isFile()) && this.inStream != null && this.outStream != null) {
 		
 			log.info("Translation: Start");
 			
@@ -89,6 +88,9 @@ public class XSLTranslator extends Translator{
 		}
 		else {
 			log.error("Translation unable to start: Not all Parameters Set" );
+			log.error("Translation File: " + this.translationFile.toString());
+			log.error("Translation File truth: " + this.translationFile.isFile());
+			log.error("Translation Stream: " + this.inStream.toString());
 			throw new IllegalArgumentException("Unable to translate, system not configured");
 		}		
 	}
@@ -157,16 +159,18 @@ public class XSLTranslator extends Translator{
 	  public static void main(String[] args){
 		 
 		  if (args.length != 2) {
-			  log.error("Invalid Arguments: XSLTranslate requires 2");
+			  log.error("Invalid Arguments: XSLTranslate requires 2. They system was supplied " + args.length);
 			  throw new IllegalArgumentException();
 		  }
 		  else {
 			  
 				try {
+													
 					XSLTranslator  xslTrans = new XSLTranslator();
-					  xslTrans.setInStream(new FileInputStream(new File(args[1])));
-					  xslTrans.setTranslationFile(new File(args[2]));
-					  xslTrans.setOutStream(System.out);
+					xslTrans.setInStream(new FileInputStream(new File(args[0])));
+					xslTrans.setTranslationFile(new File(args[1]));
+					xslTrans.setOutStream(System.out);
+					xslTrans.execute();
 				} catch (FileNotFoundException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
