@@ -157,24 +157,42 @@ public class XSLTranslator extends Translator{
 	   *  TODO convert over to files
 	   */
 	  public static void main(String[] args){
-		 
+		 if (args.length != 3) {
+			  log.error("Invalid Arguments: XSLTranslate requires 3. They system was supplied " + args.length);
+			  throw new IllegalArgumentException();
+		 }
+		 else {
+			if (args[0].equals("-f")) {
+				try {													
+					XSLTranslator xslTrans = new XSLTranslator();
+					xslTrans.setInStream(new FileInputStream(new File(args[1])));
+					xslTrans.setTranslationFile(new File(args[2]));
+					xslTrans.setOutStream(System.out);
+					xslTrans.execute();
+				} catch (FileNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}				
+			}
+			else if (args[0].equals("-rh")) {
+				//TODO add pulling in the config portions
+				//TODO add creating the record handlers
+				//TODO get from the in record and translate
+				//TODO send output to out handler
+			}
+			else {
+				log.error("Invalid Arguments: Translate option " + args[0] + " not handled.");
+				throw new IllegalArgumentException();
+			}
+		 }
+		  
 		  if (args.length != 2) {
 			  log.error("Invalid Arguments: XSLTranslate requires 2. They system was supplied " + args.length);
 			  throw new IllegalArgumentException();
 		  }
 		  else {
 			  
-				try {
-													
-					XSLTranslator  xslTrans = new XSLTranslator();
-					xslTrans.setInStream(new FileInputStream(new File(args[0])));
-					xslTrans.setTranslationFile(new File(args[1]));
-					xslTrans.setOutStream(System.out);
-					xslTrans.execute();
-				} catch (FileNotFoundException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+				
 			  		  
 		  }
 			  		  

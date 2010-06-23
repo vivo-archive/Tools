@@ -94,11 +94,11 @@ public class GlozeTranslator extends Translator{
 	 */
 	public static void main(String[] args) {
 		
-		/*if (args.length >= 1) {
+		if (args.length <= 1 || args.length >= 4) {
 			  log.error("Invalid Arguments: GlozeTranslate requires 1");
 			  throw new IllegalArgumentException();
 		}
-		else {*/
+		else {
 			GlozeTranslator glTrans = new GlozeTranslator();
 			
 			//process arguments takes 1 string or 1-2 files
@@ -106,9 +106,9 @@ public class GlozeTranslator extends Translator{
 				glTrans.setIncomingXMLStr(args[1]);
 			}
 			else {*/
-				glTrans.setIncomingXMLFile(new File(args[1]));
+				glTrans.setIncomingXMLFile(new File(args[0]));
 				if (args.length >= 2) {					
-					glTrans.setIncomingSchema(new File(args[2]));
+					glTrans.setIncomingSchema(new File(args[1]));
 				}
 			//}
 			try {
@@ -119,6 +119,6 @@ public class GlozeTranslator extends Translator{
 			}
 									
 			glTrans.execute();
-		//}
+		}
 	}
 }
