@@ -1,0 +1,641 @@
+@prefix daml:   <http://www.daml.org/2001/03/daml+oil#> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix log:    <http://www.w3.org/2000/10/swap/log#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix eShop:  <http://www.wiwiss.fu-berlin.de/suhl/bizer/eShop/eShop#> .
+@prefix :       <#> .
+
+eShop:CdNo9
+      eShop:track
+            eShop:track9-1 , eShop:track9-2 , eShop:track9-3 , eShop:track9-4 , eShop:track9-5 , eShop:track9-6 ;
+      eShop:album
+            "Halfway between" ;
+      eShop:interpret
+            "Fatboy Slim" ;
+      a     eShop:cd ;
+      eShop:category
+            _:b1 ;
+      eShop:price
+            "$9.99" ;
+      eShop:cover
+            <http://www.wiwiss.fu-berlin.de/suhl/bizer/eShop/images/Cov_2.jpg> .
+
+eShop:CdNo8
+      eShop:track
+            eShop:track8-1 , eShop:track8-2 , eShop:track8-3 , eShop:track8-4 ;
+      eShop:album
+            "Reveal" ;
+      eShop:interpret
+            "R.E.M." ;
+      a     eShop:cd ;
+      eShop:category
+            _:b2 ;
+      eShop:price
+            "$9.99" ;
+      eShop:cover
+            <http://www.wiwiss.fu-berlin.de/suhl/bizer/eShop/images/Cov_1.jpg> .
+
+eShop:CdNo7
+      eShop:track
+            eShop:track7-1 , eShop:track7-2 , eShop:track7-3 , eShop:track7-4 , eShop:track7-5 , eShop:track7-6 ;
+      eShop:album
+            "Shangri-La Dee Da" ;
+      eShop:interpret
+            "Stone Temple Pilots" ;
+      a     eShop:cd ;
+      eShop:category
+            _:b3 ;
+      eShop:price
+            "$12.99" ;
+      eShop:cover
+            <http://www.wiwiss.fu-berlin.de/suhl/bizer/eShop/images/7k.jpg> .
+
+eShop:CdNo6
+      eShop:track
+            eShop:track6-1 , eShop:track6-2 , eShop:track6-3 , eShop:track6-4 , eShop:track6-5 ;
+      eShop:album
+            "Das Jahrtausendfest" ;
+      eShop:interpret
+            "Andre Rieu" ;
+      a     eShop:cd ;
+      eShop:category
+            [ eShop:name
+                    "Clasical" ;
+              a     eShop:category ;
+              eShop:description
+                    "Description of Category 'Clasical':Clasical music." ] ;
+      eShop:price
+            "$12.99" ;
+      eShop:cover
+            <http://www.wiwiss.fu-berlin.de/suhl/bizer/eShop/images/6k.jpg> .
+
+eShop:CdNo5
+      eShop:track
+            eShop:track5-1 , eShop:track5-2 , eShop:track5-3 , eShop:track5-4 , eShop:track5-5 , eShop:track5-6 , eShop:track5-7 ;
+      eShop:album
+            "Selmasongs - Music from Dancer in the Dark" ;
+      eShop:interpret
+            "Bjoerk" ;
+      a     eShop:cd ;
+      eShop:category
+            _:b4 ;
+      eShop:price
+            "$14.99" ;
+      eShop:cover
+            <http://www.wiwiss.fu-berlin.de/suhl/bizer/eShop/images/5k.gif> .
+
+eShop:CdNo4
+      eShop:track
+            eShop:track4-1 , eShop:track4-2 , eShop:track4-3 , eShop:track4-4 , eShop:track4-5 , eShop:track4-6 ;
+      eShop:album
+            "Lara Croft: Tomb Raider" ;
+      eShop:interpret
+            "Various" ;
+      a     eShop:cd ;
+      eShop:category
+            _:b4 ;
+      eShop:price
+            "$9.99" ;
+      eShop:cover
+            <http://www.wiwiss.fu-berlin.de/suhl/bizer/eShop/images/4k.jpg> .
+
+eShop:CdNo3
+      eShop:track
+            eShop:track3-1 , eShop:track3-2 , eShop:track3-3 , eShop:track3-4 , eShop:track3-5 , eShop:track3-6 , eShop:track3-7 , eShop:track3-8 ;
+      eShop:album
+            "Portishead" ;
+      eShop:interpret
+            "Portishead" ;
+      a     eShop:cd ;
+      eShop:category
+            _:b5 ;
+      eShop:price
+            "$12.99" ;
+      eShop:cover
+            <http://www.wiwiss.fu-berlin.de/suhl/bizer/eShop/images/portishead_portishead.gif> .
+
+eShop:CdNo2
+      eShop:track
+            eShop:track2-1 , eShop:track2-2 , eShop:track2-3 , eShop:track2-4 , eShop:track2-5 , eShop:track2-6 , eShop:track2-7 , eShop:track2-8 ;
+      eShop:album
+            "Play" ;
+      eShop:interpret
+            "Moby" ;
+      a     eShop:cd ;
+      eShop:category
+            _:b5 ;
+      eShop:price
+            "$12.99" ;
+      eShop:cover
+            <http://www.wiwiss.fu-berlin.de/suhl/bizer/eShop/images/moby_play.gif> .
+
+eShop:track9-6
+      eShop:name
+            "Mad flava" ;
+      a     eShop:track .
+
+eShop:track9-5
+      eShop:name
+            "Ya mama" ;
+      a     eShop:track .
+
+eShop:track9-4
+      eShop:name
+            "Love life" ;
+      a     eShop:track .
+
+eShop:CdNo15
+      eShop:track
+            eShop:track15-1 , eShop:track15-2 , eShop:track15-3 ;
+      eShop:album
+            "10000 Hz Legend" ;
+      eShop:interpret
+            "Air" ;
+      a     eShop:cd ;
+      eShop:category
+            _:b3 ;
+      eShop:price
+            "$10.99" ;
+      eShop:cover
+            <http://www.wiwiss.fu-berlin.de/suhl/bizer/eShop/images/Cov_6.jpg> .
+
+eShop:track9-3
+      eShop:name
+            "Sunset (Bird of prey)" ;
+      a     eShop:track .
+
+eShop:CdNo14
+      eShop:track
+            eShop:track14-1 , eShop:track14-2 , eShop:track14-3 , eShop:track14-4 , eShop:track14-5 , eShop:track14-6 ;
+      eShop:album
+            "Deep Down & Dirty" ;
+      eShop:interpret
+            "Stereo MC's" ;
+      a     eShop:cd ;
+      eShop:category
+            _:b1 ;
+      eShop:price
+            "$9.99" ;
+      eShop:cover
+            <http://www.wiwiss.fu-berlin.de/suhl/bizer/eShop/images/Cov_7.jpg> .
+
+eShop:track9-2
+      eShop:name
+            "Star 69" ;
+      a     eShop:track .
+
+eShop:CdNo13
+      eShop:track
+            eShop:track13-1 , eShop:track13-2 , eShop:track13-3 ;
+      eShop:album
+            "Gorillaz" ;
+      eShop:interpret
+            "Gorillaz" ;
+      a     eShop:cd ;
+      eShop:category
+            _:b5 ;
+      eShop:price
+            "$9.99" ;
+      eShop:cover
+            <http://www.wiwiss.fu-berlin.de/suhl/bizer/eShop/images/Cov_8.jpg> .
+
+eShop:track9-1
+      eShop:name
+            "Talking bout my baby" ;
+      a     eShop:track .
+
+eShop:CdNo12
+      eShop:track
+            eShop:track12-1 , eShop:track12-2 , eShop:track12-3 , eShop:track12-4 , eShop:track12-5 ;
+      eShop:album
+            "Exciter" ;
+      eShop:interpret
+            "Depeche Mode" ;
+      a     eShop:cd ;
+      eShop:category
+            _:b3 ;
+      eShop:price
+            "$14.99" ;
+      eShop:cover
+            <http://www.wiwiss.fu-berlin.de/suhl/bizer/eShop/images/Cov_5.jpg> .
+
+eShop:CdNo11
+      eShop:track
+            eShop:track11-1 , eShop:track11-2 , eShop:track11-3 , eShop:track11-4 , eShop:track11-5 , eShop:track11-6 ;
+      eShop:album
+            "Bravo Hits 33" ;
+      eShop:interpret
+            "Various" ;
+      a     eShop:cd ;
+      eShop:category
+            _:b2 ;
+      eShop:price
+            "$14.99" ;
+      eShop:cover
+            <http://www.wiwiss.fu-berlin.de/suhl/bizer/eShop/images/Cov_4.jpg> .
+
+eShop:CdNo10
+      eShop:track
+            eShop:track10-1 , eShop:track10-2 , eShop:track10-3 ;
+      eShop:album
+            "Kid A" ;
+      eShop:interpret
+            "Radiohead" ;
+      a     eShop:cd ;
+      eShop:category
+            _:b3 ;
+      eShop:price
+            "$14.99" ;
+      eShop:cover
+            <http://www.wiwiss.fu-berlin.de/suhl/bizer/eShop/images/Cov_3.jpg> .
+
+eShop:track8-4
+      eShop:name
+            "She Just Wants To Be" ;
+      a     eShop:track .
+
+eShop:track8-3
+      eShop:name
+            "All The Way To Reno (You`re Gonna Be A Star)" ;
+      a     eShop:track .
+
+eShop:track8-2
+      eShop:name
+            "I`ve Been High" ;
+      a     eShop:track .
+
+eShop:track8-1
+      eShop:name
+            "The Lifting" ;
+      a     eShop:track .
+
+eShop:track7-6
+      eShop:name
+            "Black Again" ;
+      a     eShop:track .
+
+eShop:track7-5
+      eShop:name
+            "Wonderful" ;
+      a     eShop:track .
+
+eShop:track7-4
+      eShop:name
+            "Hollywood Bitch" ;
+      a     eShop:track .
+
+eShop:track7-3
+      eShop:name
+            "Coma" ;
+      a     eShop:track .
+
+eShop:track7-2
+      eShop:name
+            "Days of the Week" ;
+      a     eShop:track .
+
+eShop:track7-1
+      eShop:name
+            "Dumb Love" ;
+      a     eShop:track .
+
+eShop:track6-5
+      eShop:name
+            "Hava Nagila" ;
+      a     eShop:track .
+
+eShop:track6-4
+      eShop:name
+            "Ouvertuere" ;
+      a     eShop:track .
+
+eShop:track6-3
+      eShop:name
+            "Ich tanze mit Dir in den Himmel hinein" ;
+      a     eShop:track .
+
+eShop:track6-2
+      eShop:name
+            "Cielito lindo" ;
+      a     eShop:track .
+
+eShop:track5-7
+      eShop:name
+            "New World" ;
+      a     eShop:track .
+
+eShop:track6-1
+      eShop:name
+            "Espana Cani" ;
+      a     eShop:track .
+
+eShop:track5-6
+      eShop:name
+            "141 Steps" ;
+      a     eShop:track .
+
+eShop:track5-5
+      eShop:name
+            " In The Musicals" ;
+      a     eShop:track .
+
+eShop:track5-4
+      eShop:name
+            "Smith & Wesson (Scatter Heart)" ;
+      a     eShop:track .
+
+eShop:track5-3
+      eShop:name
+            "I've Seen It All" ;
+      a     eShop:track .
+
+eShop:track5-2
+      eShop:name
+            "Cvalda" ;
+      a     eShop:track .
+
+eShop:track5-1
+      eShop:name
+            "Overture" ;
+      a     eShop:track .
+
+eShop:track4-6
+      eShop:name
+            "Fluke - Absurd" ;
+      a     eShop:track .
+
+eShop:track4-5
+      eShop:name
+            "Outkast - Speed Ballin'" ;
+      a     eShop:track .
+
+eShop:track4-4
+      eShop:name
+            "Missy Elliot feat. Nelly Furtado - Get Ur Freak On" ;
+      a     eShop:track .
+
+eShop:track4-3
+      eShop:name
+            "Moby - Ain't Never Learned" ;
+      a     eShop:track .
+
+eShop:track4-2
+      eShop:name
+            "Nine Inch Nails - Deep" ;
+      a     eShop:track .
+
+eShop:track3-8
+      eShop:name
+            "Seven Months" ;
+      a     eShop:track .
+
+eShop:track4-1
+      eShop:name
+            "U2 - Elevation (Tomb Raider Remix)" ;
+      a     eShop:track .
+
+eShop:track3-7
+      eShop:name
+            "Mourning Air" ;
+      a     eShop:track .
+
+eShop:track3-6
+      eShop:name
+            "Humming" ;
+      a     eShop:track .
+
+eShop:track16-2
+      eShop:name
+            " Wade In The Water" ;
+      a     eShop:track .
+
+eShop:track3-5
+      eShop:name
+            "Over" ;
+      a     eShop:track .
+
+eShop:track16-1
+      eShop:name
+            "Fields Of Gold" ;
+      a     eShop:track .
+
+eShop:track3-4
+      eShop:name
+            "Half Day Closing" ;
+      a     eShop:track .
+
+eShop:track3-3
+      eShop:name
+            "Undenied" ;
+      a     eShop:track .
+
+eShop:track2-8
+      eShop:name
+            "Natural Blues" ;
+      a     eShop:track .
+
+eShop:track3-2
+      eShop:name
+            "All Mine" ;
+      a     eShop:track .
+
+eShop:track2-7
+      eShop:name
+            "Bodyrock" ;
+      a     eShop:track .
+
+eShop:track3-1
+      eShop:name
+            "Cowboy" ;
+      a     eShop:track .
+
+eShop:track15-3
+      eShop:name
+            "Radio #1" ;
+      a     eShop:track .
+
+eShop:track2-6
+      eShop:name
+            "Rushing" ;
+      a     eShop:track .
+
+eShop:track15-2
+      eShop:name
+            "How Does It Make You Feel" ;
+      a     eShop:track .
+
+eShop:track2-5
+      eShop:name
+            "South Side" ;
+      a     eShop:track .
+
+eShop:track2-4
+      eShop:name
+            "Why Does My Heart Feel So Bad?" ;
+      a     eShop:track .
+
+eShop:track15-1
+      eShop:name
+            "Electronic Performers" ;
+      a     eShop:track .
+
+eShop:track2-3
+      eShop:name
+            "Porcelain" ;
+      a     eShop:track .
+
+eShop:track14-6
+      eShop:name
+            "Graffiti Part 2" ;
+      a     eShop:track .
+
+eShop:track2-2
+      eShop:name
+            "Find My Baby" ;
+      a     eShop:track .
+
+eShop:track14-5
+      eShop:name
+            "Graffiti Part 1" ;
+      a     eShop:track .
+
+eShop:track2-1
+      eShop:name
+            "Honey" ;
+      a     eShop:track .
+
+eShop:track14-4
+      eShop:name
+            "Running" ;
+      a     eShop:track .
+
+eShop:track14-3
+      eShop:name
+            "Breeze" ;
+      a     eShop:track .
+
+eShop:track14-2
+      eShop:name
+            "We Belong In This World Together" ;
+      a     eShop:track .
+
+eShop:track14-1
+      eShop:name
+            "Deep Down & Dirty" ;
+      a     eShop:track .
+
+eShop:track13-3
+      eShop:name
+            "Tomorrow Comes Today" ;
+      a     eShop:track .
+
+_:b3  eShop:name
+            "Alternativ" ;
+      a     eShop:category ;
+      eShop:description
+            "Description of Category 'Alternativ':Alternative music." .
+
+eShop:track13-2
+      eShop:name
+            "5/4" ;
+      a     eShop:track .
+
+eShop:track13-1
+      eShop:name
+            "Re-Hash" ;
+      a     eShop:track .
+
+eShop:track12-5
+      eShop:name
+            "Dead of night" ;
+      a     eShop:track .
+
+eShop:track12-4
+      eShop:name
+            "When the body speaks" ;
+      a     eShop:track .
+
+eShop:track12-3
+      eShop:name
+            "The Sweetest Condition" ;
+      a     eShop:track .
+
+eShop:track12-2
+      eShop:name
+            "Shine" ;
+      a     eShop:track .
+
+eShop:track12-1
+      eShop:name
+            "Dream on" ;
+      a     eShop:track .
+
+eShop:track11-6
+      eShop:name
+            "GLASHAUS - Wenn das Liebe ist" ;
+      a     eShop:track .
+
+eShop:track11-5
+      eShop:name
+            "RAMMSTEIN - Sonne" ;
+      a     eShop:track .
+
+eShop:track11-4
+      eShop:name
+            "SOFAPLANET - Liebficken" ;
+      a     eShop:track .
+
+eShop:track11-3
+      eShop:name
+            "RONAN KEATING - Lovin' Each Day" ;
+      a     eShop:track .
+
+eShop:track11-2
+      eShop:name
+            "DESTINY'S CHILD - Survivor" ;
+      a     eShop:track .
+
+eShop:track11-1
+      eShop:name
+            "SHAGGY Feat. RIK ROK - It Wasn't Me" ;
+      a     eShop:track .
+
+eShop:track10-3
+      eShop:name
+            "The National Anthem" ;
+      a     eShop:track .
+
+eShop:track10-2
+      eShop:name
+            "Kid A" ;
+      a     eShop:track .
+
+eShop:track10-1
+      eShop:name
+            "Everything In Its Right Place" ;
+      a     eShop:track .
+
+_:b5  eShop:name
+            "Electronic" ;
+      a     eShop:category ;
+      eShop:description
+            "Description of Category 'Electronic':Electronic music." .
+
+_:b1  eShop:name
+            "Hip Hop" ;
+      a     eShop:category ;
+      eShop:description
+            "Description of Category 'Hip Hop':Hip Hop music." .
+
+_:b2  eShop:name
+            "Pop Rock" ;
+      a     eShop:category ;
+      eShop:description
+            "Description of Category 'Pop Rock':Chart Music." .
+
+_:b4  eShop:name
+            "SoundTracks" ;
+      a     eShop:category ;
+      eShop:description
+            "Description of Category 'SoundTracks':Music from movies or TV." .
+

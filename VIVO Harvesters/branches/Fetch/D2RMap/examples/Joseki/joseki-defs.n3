@@ -1,0 +1,191 @@
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix module: <http://joseki.org/2003/06/module#> .
+@prefix joseki: <http://joseki.org/2003/07/configuration#> .
+@prefix ql:     <http://jena.hpl.hp.com/2003/07/query/> .
+@prefix d2r:  	<http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RMap/0.1#> .
+
+<> rdfs:comment "Definitions for a Joseki server".
+
+## ------------------------------------------
+## Modules for query language processors
+
+joseki:BindingRDQL
+    a   joseki:QueryLanguageBinding ;
+    joseki:queryOperationName "RDQL" ; 
+    joseki:queryOperationName "rdql" ;
+    joseki:queryOperationName ql:RDQL ;
+    module:interface      joseki:QueryOperationRDQL ;
+    module:implementation joseki:ImplQueryOperationRDQL .
+
+joseki:BindingGET
+    a   joseki:QueryLanguageBinding ;
+    joseki:queryOperationName "GET" ; 
+    module:interface      joseki:QueryOperationGET ;
+    module:implementation joseki:ImplQueryOperationGET .
+
+# Fetch with no fetch handlers.  
+## joseki:BindingFetch
+##     a   joseki:QueryLanguageBinding ;
+##     joseki:queryOperationName "fetch" ; 
+##     module:interface      joseki:QueryOperationFetch ;
+##     module:implementation joseki:ImplQueryOperationFetch .
+
+joseki:BindingFetchClosure
+    a       module:ModuleBinding ;
+    joseki:queryOperationName   "fetch" ;
+    joseki:queryOperationName   ql:fetch ;
+    module:implementation       joseki:ImplQueryOperationFetch ;
+    module:interface            joseki:QueryOperationFetch ;
+    module:module               joseki:FetchModuleClosure ;
+    .
+
+joseki:BindingSPO
+    a   joseki:QueryLanguageBinding ;
+    joseki:queryOperationName "Triples" ; 
+    joseki:queryOperationName "SPO" ; 
+    joseki:queryOperationName "spo" ;
+    joseki:queryOperationName ql:SPO ;
+    module:interface      joseki:QueryOperationSPO ;
+    module:implementation joseki:ImplQueryOperationSPO .
+
+## ------------------------------------------
+## Fetch modules
+
+joseki:FetchModuleClosure
+    a   module:ModuleBinding ;
+    module:interface joseki:FetchClosure ;
+    module:implementation
+        [ module:className
+          "org.joseki.server.processors.fetch.FetchClosure" ] ;
+    .
+
+## ------------------------------------------
+## Joseki implementations of the query processors.
+
+joseki:ImplQueryOperationRDQL
+    a   joseki:QueryOperation ;
+    module:className
+        "org.joseki.server.processors.QueryProcessorRDQL" ;
+    .
+
+joseki:ImplQueryOperationGET
+    a   joseki:QueryOperation ;
+    module:className
+        "org.joseki.server.processors.QueryProcessorGET" ;
+    .
+
+joseki:ImplQueryOperationFetch
+    a   joseki:QueryOperation ;
+    module:className
+        "org.joseki.server.processors.QueryProcessorFetch" ;
+    .
+
+joseki:ImplQueryOperationSPO
+    a   joseki:QueryOperation ;
+    module:className
+        "org.joseki.server.processors.QueryProcessorSPO" ;
+    .
+
+
+## ------------------------------------------
+## Modules for operation processors
+
+## This is the operation that takes queries which are models and
+## indirects them to the specific query processor based on language.
+## It is not itself a query processor.
+
+joseki:BindingQueryModel
+    a   joseki:OperationBinding ;
+    joseki:operationName  "query" ; 
+    module:interface      joseki:OpQueryModel ;
+    module:implementation joseki:ImplOpQueryModel .
+
+joseki:BindingAdd
+    a   joseki:OperationBinding ;
+    joseki:operationName "add" ; 
+    module:interface      joseki:OpAdd ;
+    module:implementation joseki:ImplOpAdd .
+
+joseki:BindingRemove
+    a   joseki:OperationBinding ;
+    joseki:operationName "remove" ; 
+    module:interface      joseki:OpRemove ;
+    module:implementation joseki:ImplOpRemove .
+
+joseki:BindingPing
+    a   joseki:OperationBinding ;
+    joseki:operationName "ping" ; 
+    module:interface      joseki:OpPing ;
+    module:implementation joseki:ImplOpPing .
+
+joseki:BindingOptions
+    a   joseki:OperationBinding ;
+    joseki:operationName "options" ; 
+    module:interface      joseki:OpOptions ;
+    module:implementation joseki:ImplOpOptions .
+
+## ------------------------------------------
+## Joseki implementations of operations
+
+joseki:ImplOpQueryModel
+    a   joseki:Operation ;
+    module:className
+        "org.joseki.server.processors.QueryModelProcessor" .
+
+joseki:ImplOpAdd
+    a   joseki:Operation ;
+    module:className
+        "org.joseki.server.processors.AddProcessor" .
+
+joseki:ImplOpRemove
+    a   joseki:Operation ;
+    module:className
+        "org.joseki.server.processors.RemoveProcessor" .
+
+joseki:ImplOpPing
+    a   joseki:Operation ;
+    module:className
+        "org.joseki.server.processors.PingProcessor" .
+    
+
+joseki:ImplOpOptions
+    a   joseki:Operation ;
+    module:className
+        "org.joseki.server.processors.OptionsProcessor" . 
+
+## ------------------------------------------
+## Joseki source controllers
+
+joseki:SourceControllerFile
+    a joseki:SourceController ;
+    # This could have been explicitly the class of the object
+    # Must agree with the constant in the implementation 
+    module:interface      joseki:SourceController ;
+    module:implementation
+        [ module:className
+              "org.joseki.server.source.SourceControllerFile" ] ;
+    rdfs:comment "The standard SourceController for file-backed models" .
+
+
+joseki:SourceControllerRDB
+    a joseki:SourceController ;
+    module:interface      joseki:SourceController ;
+    module:implementation
+        [ module:className
+              "org.joseki.server.source.SourceControllerRDB" ] ;
+    rdfs:comment "The standard SourceController for database-backed models" .
+
+d2r:SourceControllerD2R
+    a joseki:SourceController ;
+    module:interface      joseki:SourceController ;
+    module:implementation
+        [ module:className
+              "de.fuberlin.wiwiss.d2r.SourceControllerD2R" ] ;
+    rdfs:comment "The standard SourceController for database-backed models" .
+
+
+# Local Variables:
+# tab-width: 4
+# indent-tabs-mode: nil
+# End:

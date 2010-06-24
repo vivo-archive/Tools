@@ -1,0 +1,158 @@
+
+# --------------------------------------------------------
+# MySQL database dump: eshopDB
+# --------------------------------------------------------
+
+#
+# `article`
+#
+
+CREATE TABLE article (
+  articleno int(11) default NULL,
+  interpret text,
+  album text,
+  category text,
+  date datetime default NULL,
+  label text,
+  coverlink text,
+  price decimal(18,2) default NULL,
+  offer tinyint(1) default NULL
+) TYPE=MyISAM;
+
+#
+# `article`
+#
+
+INSERT INTO article VALUES (2, 'Moby', 'Play', 'EL', '2000-06-03 00:00:00', 'Mute (EDEL)', 'moby_play.gif', '12.99', 1);
+INSERT INTO article VALUES (3, 'Portishead', 'Portishead', 'EL', '1997-09-29 00:00:00', 'Go Records (Universal Vertrieb)', 'portishead_portishead.gif', '12.99', 1);
+INSERT INTO article VALUES (4, 'Various', 'Lara Croft: Tomb Raider', 'ST', '2001-06-05 00:00:00', 'Elektra (Warner Vertrieb)', '4k.jpg', '9.99', 1);
+INSERT INTO article VALUES (5, 'Bjoerk', 'Selmasongs - Music from Dancer in the Dark', 'ST', '2000-09-18 00:00:00', 'Polydor (Universal Vertrieb)', '5k.gif', '14.99', 1);
+INSERT INTO article VALUES (6, 'Andre Rieu', 'Das Jahrtausendfest', 'KL', '1999-10-25 00:00:00', 'Polydor (Universal Vertrieb)', '6k.jpg', '12.99', 1);
+INSERT INTO article VALUES (7, 'Stone Temple Pilots', 'Shangri-La Dee Da', 'AL', '2001-06-25 00:00:00', 'Atlantic (Warner Vertrieb)', '7k.jpg', '12.99', 1);
+INSERT INTO article VALUES (8, 'R.E.M.', 'Reveal', 'PR', '2001-05-14 00:00:00', 'Warner (Warner Vertrieb)', 'Cov_1.jpg', '9.99', 1);
+INSERT INTO article VALUES (9, 'Fatboy Slim', 'Halfway between', 'HH', '2000-11-06 00:00:00', 'Ski (SONY Vertrieb)', 'Cov_2.jpg', '9.99', 1);
+INSERT INTO article VALUES (10, 'Radiohead', 'Kid A', 'AL', '2001-06-05 00:00:00', 'Parlophone (EMI Vertrieb)', 'Cov_3.jpg', '14.99', 1);
+INSERT INTO article VALUES (11, 'Various', 'Bravo Hits 33', 'PR', '2001-05-14 00:00:00', 'Polystar (Polystar/Universal Vertrieb)', 'Cov_4.jpg', '14.99', 1);
+INSERT INTO article VALUES (12, 'Depeche Mode', 'Exciter', 'AL', '2001-05-14 00:00:00', 'Mute (Virgin/EMI Vertrieb)', 'Cov_5.jpg', '14.99', 1);
+INSERT INTO article VALUES (13, 'Gorillaz', 'Gorillaz', 'EL', '2001-05-14 00:00:00', 'Parlophone (EMI Vertrieb)', 'Cov_8.jpg', '9.99', 1);
+INSERT INTO article VALUES (14, 'Stereo MC\'s', 'Deep Down & Dirty', 'HH', '2001-03-28 00:00:00', 'Island (Universal Vertrieb)', 'Cov_7.jpg', '9.99', 1);
+INSERT INTO article VALUES (15, 'Air', '10000 Hz Legend', 'AL', '2001-05-28 00:00:00', '6 Virgin F (Virgin/EMI Vertrieb)', 'Cov_6.jpg', '10.99', 1);
+INSERT INTO article VALUES (16, 'Eva Cassidy', 'Songbird', 'PR', '1998-05-13 00:00:00', 'Hot Record (ZOMBA)', 'Cov_9.jpg', '4.99', 0);
+INSERT INTO article VALUES (17, 'Bob Dylan', 'The Ultimate Collection', 'PR', '2001-05-21 00:00:00', 'Col (SONY Vertrieb)', 'Cov_10.jpg', '20.99', 1);
+# --------------------------------------------------------
+
+#
+# `categories`
+#
+
+CREATE TABLE categories (
+  catid text,
+  catname text,
+  description text
+) TYPE=MyISAM;
+
+#
+#  `categories`
+#
+
+INSERT INTO categories VALUES ('AL', 'Alternativ', 'Alternative music');
+INSERT INTO categories VALUES ('EL', 'Electronic', 'Electronic music');
+INSERT INTO categories VALUES ('HH', 'Hip Hop', 'Hip Hop music');
+INSERT INTO categories VALUES ('KL', 'Clasical', 'Clasical music');
+INSERT INTO categories VALUES ('PR', 'Pop Rock', 'Chart Music');
+INSERT INTO categories VALUES ('ST', 'SoundTracks', 'Music from movies or TV');
+# --------------------------------------------------------
+
+#
+#  `tracks`
+#
+
+CREATE TABLE tracks (
+  articleno int(11) default NULL,
+  trackno int(11) default NULL,
+  name text
+) TYPE=MyISAM;
+
+#
+#  `tracks`
+#
+
+INSERT INTO tracks VALUES (2, 1, 'Honey');
+INSERT INTO tracks VALUES (2, 2, 'Find My Baby');
+INSERT INTO tracks VALUES (2, 3, 'Porcelain');
+INSERT INTO tracks VALUES (2, 4, 'Why Does My Heart Feel So Bad?');
+INSERT INTO tracks VALUES (2, 5, 'South Side');
+INSERT INTO tracks VALUES (2, 6, 'Rushing');
+INSERT INTO tracks VALUES (2, 7, 'Bodyrock');
+INSERT INTO tracks VALUES (2, 8, 'Natural Blues');
+INSERT INTO tracks VALUES (3, 1, 'Cowboy');
+INSERT INTO tracks VALUES (3, 2, 'All Mine');
+INSERT INTO tracks VALUES (3, 3, 'Undenied');
+INSERT INTO tracks VALUES (3, 4, 'Half Day Closing');
+INSERT INTO tracks VALUES (3, 5, 'Over');
+INSERT INTO tracks VALUES (3, 6, 'Humming');
+INSERT INTO tracks VALUES (3, 7, 'Mourning Air');
+INSERT INTO tracks VALUES (3, 8, 'Seven Months');
+INSERT INTO tracks VALUES (4, 1, 'U2 - Elevation (Tomb Raider Remix)');
+INSERT INTO tracks VALUES (4, 2, 'Nine Inch Nails - Deep');
+INSERT INTO tracks VALUES (4, 3, 'Moby - Ain\'t Never Learned');
+INSERT INTO tracks VALUES (4, 4, 'Missy Elliot feat. Nelly Furtado - Get Ur Freak On');
+INSERT INTO tracks VALUES (4, 5, 'Outkast - Speed Ballin\'');
+INSERT INTO tracks VALUES (4, 6, 'Fluke - Absurd');
+INSERT INTO tracks VALUES (5, 1, 'Overture');
+INSERT INTO tracks VALUES (5, 2, 'Cvalda');
+INSERT INTO tracks VALUES (5, 3, 'I\'ve Seen It All');
+INSERT INTO tracks VALUES (5, 4, 'Smith & Wesson (Scatter Heart)');
+INSERT INTO tracks VALUES (5, 5, ' In The Musicals');
+INSERT INTO tracks VALUES (5, 6, '141 Steps');
+INSERT INTO tracks VALUES (5, 7, 'New World');
+INSERT INTO tracks VALUES (6, 1, 'Espana Cani');
+INSERT INTO tracks VALUES (6, 2, 'Cielito lindo');
+INSERT INTO tracks VALUES (6, 3, 'Ich tanze mit Dir in den Himmel hinein');
+INSERT INTO tracks VALUES (6, 4, 'Ouvertuere');
+INSERT INTO tracks VALUES (6, 5, 'Hava Nagila');
+INSERT INTO tracks VALUES (7, 1, 'Dumb Love');
+INSERT INTO tracks VALUES (7, 2, 'Days of the Week');
+INSERT INTO tracks VALUES (7, 3, 'Coma');
+INSERT INTO tracks VALUES (7, 4, 'Hollywood Bitch');
+INSERT INTO tracks VALUES (7, 5, 'Wonderful');
+INSERT INTO tracks VALUES (7, 6, 'Black Again');
+INSERT INTO tracks VALUES (8, 1, 'The Lifting');
+INSERT INTO tracks VALUES (8, 2, 'I`ve Been High');
+INSERT INTO tracks VALUES (8, 3, 'All The Way To Reno (You`re Gonna Be A Star)');
+INSERT INTO tracks VALUES (8, 4, 'She Just Wants To Be');
+INSERT INTO tracks VALUES (9, 1, 'Talking bout my baby');
+INSERT INTO tracks VALUES (9, 2, 'Star 69');
+INSERT INTO tracks VALUES (9, 3, 'Sunset (Bird of prey)');
+INSERT INTO tracks VALUES (9, 4, 'Love life');
+INSERT INTO tracks VALUES (9, 5, 'Ya mama');
+INSERT INTO tracks VALUES (9, 6, 'Mad flava');
+INSERT INTO tracks VALUES (10, 1, 'Everything In Its Right Place');
+INSERT INTO tracks VALUES (10, 2, 'Kid A');
+INSERT INTO tracks VALUES (10, 3, 'The National Anthem');
+INSERT INTO tracks VALUES (11, 1, 'SHAGGY Feat. RIK ROK - It Wasn\'t Me');
+INSERT INTO tracks VALUES (11, 2, 'DESTINY\'S CHILD - Survivor');
+INSERT INTO tracks VALUES (11, 3, 'RONAN KEATING - Lovin\' Each Day');
+INSERT INTO tracks VALUES (11, 4, 'SOFAPLANET - Liebficken');
+INSERT INTO tracks VALUES (11, 5, 'RAMMSTEIN - Sonne');
+INSERT INTO tracks VALUES (11, 6, 'GLASHAUS - Wenn das Liebe ist');
+INSERT INTO tracks VALUES (12, 1, 'Dream on');
+INSERT INTO tracks VALUES (12, 2, 'Shine');
+INSERT INTO tracks VALUES (12, 3, 'The Sweetest Condition');
+INSERT INTO tracks VALUES (12, 4, 'When the body speaks');
+INSERT INTO tracks VALUES (12, 5, 'Dead of night');
+INSERT INTO tracks VALUES (13, 1, 'Re-Hash');
+INSERT INTO tracks VALUES (13, 2, '5/4');
+INSERT INTO tracks VALUES (13, 3, 'Tomorrow Comes Today');
+INSERT INTO tracks VALUES (14, 1, 'Deep Down & Dirty');
+INSERT INTO tracks VALUES (14, 2, 'We Belong In This World Together');
+INSERT INTO tracks VALUES (14, 3, 'Breeze');
+INSERT INTO tracks VALUES (14, 4, 'Running');
+INSERT INTO tracks VALUES (14, 5, 'Graffiti Part 1');
+INSERT INTO tracks VALUES (14, 6, 'Graffiti Part 2');
+INSERT INTO tracks VALUES (15, 1, 'Electronic Performers');
+INSERT INTO tracks VALUES (15, 2, 'How Does It Make You Feel');
+INSERT INTO tracks VALUES (15, 3, 'Radio #1');
+INSERT INTO tracks VALUES (16, 1, 'Fields Of Gold');
+INSERT INTO tracks VALUES (16, 2, ' Wade In The Water');
+

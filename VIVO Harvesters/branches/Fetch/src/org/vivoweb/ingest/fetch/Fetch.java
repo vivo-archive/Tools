@@ -37,6 +37,7 @@ public class Fetch
 			{
 				try
 				{
+				System.out.println("Trying to read file.");
 				OAIFetch(readConfig("config/OAIHarvestConfig.txt"));
 				}
 				catch(IllegalArgumentException e)

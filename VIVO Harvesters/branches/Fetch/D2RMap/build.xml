@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE project>
+
+  <!-- =================================================================== -->
+  <!-- Project name                                                        -->
+  <!-- =================================================================== -->
+  <project name="D2R" default="dist" basedir=".">
+
+
+  <!-- =================================================================== -->
+  <!-- Global properties                                                   -->
+  <!-- =================================================================== -->
+  <property file="build.properties"/>
+
+
+  <!-- =================================================================== -->
+  <!-- Project JAR files in the lib directory                              -->
+  <!-- =================================================================== -->
+  <path id="project.classpath">
+    <pathelement path="${java.class.path}"/>
+    <fileset dir="${lib.dir}" includes="**/*.jar" excludes="${d2r.jar}"/>
+  </path>
+
+
+  <!-- targets -->
+
+  <!-- =================================================================== -->
+  <!-- Delete all intermediate and end product files, leaving only files   -->
+  <!-- from CVS.                                                           -->
+  <!-- =================================================================== -->
+  <target name="clean"
+      description="Deletes all intermediate and product files, leaving only sources">
+    <tstamp/>
+    <delete dir="${obj.dir}"/>
+    <delete dir="${bin.dir}"/>
+    <delete dir="${dist.dir}"/>
+    <delete>
+      <fileset dir="${basedir}" includes="*.log"/>
+    </delete>
+
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- Prepares required Files/Directories                                 -->
+  <!-- =================================================================== -->
+  <target name="prepare-build"
+    description="Creates directories and copies files">
+
+    <!-- create required directories -->
+    <mkdir dir="${obj.dir}"/>
+    <mkdir dir="${bin.dir}"/>
+    <mkdir dir="${dist.dir}"/>
+
+    <!-- copy required files/resources -->
+    <copy file="${conf.dir}/abstractFactory.properties"
+          tofile="${obj.dir}/conf/abstractFactory.properties"/>
+
+    <copy file="${conf.dir}/modelFactory.properties"
+          tofile="${obj.dir}/conf/modelFactory.properties"/>
+
+    <copy file="${conf.dir}/driverFactory.properties"
+          tofile="${obj.dir}/conf/driverFactory.properties"/>
+
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- Creates the distribution files                                      -->
+  <!-- =================================================================== -->
+  <target name="dist" depends="dist-d2r"
+    description="Creates the distribution files">
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- Creates the distribution files (includes library files)             -->
+  <!-- =================================================================== -->
+  <target name="dist-full" depends="dist-d2r-full"
+    description="Creates the distribution files">
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- Creates the distribution file for D2R                               -->
+  <!-- =================================================================== -->
+  <target name="dist-d2r" depends="d2r-create-manifest, d2r-compile"
+    description="Creates the executable JAR for D2R">
+
+    <!-- build the executable jar file -->
+    <jar jarfile="${dist.dir}/${d2r.jar}"
+        manifest="${obj.dir}/META-INF/MANIFEST_D2R_BASE.MF">
+
+      <!-- add files to the jar -->
+      <fileset dir="${obj.dir}/conf" includes="*.properties"/>
+      <fileset dir="${conf.dir}" includes="log4j-d2r.xml"/>
+      <fileset dir="${basedir}" includes="LEGAL.txt"/>
+      <fileset dir="${basedir}" includes="license.txt"/>
+      <fileset dir="${basedir}" includes="installation.txt"/>
+      <fileset dir="${obj.dir}/classes"/>
+
+    </jar>
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- Creates the distribution file for the D2R (executable jar)          -->
+  <!-- =================================================================== -->
+  <target name="dist-d2r-full" depends="d2r-create-manifest, d2r-compile"
+    description="Creates the executable JAR for D2R">
+
+    <!-- unpack jars to obj directory -->
+    <unjar src="${lib.dir}/log4j-1.2.8.jar" dest="${obj.dir}/tmp/"/>
+    <unjar src="${lib.dir}/commons-logging-1.0.2.jar" dest="${obj.dir}/tmp/"/>
+    <unjar src="${lib.dir}/jakarta-oro-2.0.8.jar" dest="${obj.dir}/tmp/"/>
+    <unjar src="${lib.dir}/xercesImpl.jar" dest="${obj.dir}/tmp/"/>
+    <unjar src="${lib.dir}/xmlParserAPIs.jar" dest="${obj.dir}/tmp/"/>
+    <unjar src="${lib.dir}/joseki.jar" dest="${obj.dir}/tmp/"/>
+    <unjar src="${lib.dir}/jena-2.1.jar" dest="${obj.dir}/tmp/"/>
+
+    <!-- build the executable jar file -->
+    <jar jarfile="${dist.dir}/${d2r.full.jar}"
+        manifest="${obj.dir}/META-INF/MANIFEST_D2R_BASE.MF">
+
+      <!-- add files to the jar -->
+      <fileset dir="${obj.dir}/conf" includes="*.properties"/>
+      <fileset dir="${conf.dir}" includes="log4j-d2r.xml"/>
+      <fileset dir="${obj.dir}/classes"/>
+      <fileset dir="${basedir}" includes="LEGAL.txt"/>
+      <fileset dir="${basedir}" includes="license.txt"/>
+      <fileset dir="${basedir}" includes="installation.txt"/>
+      <fileset dir="${obj.dir}/tmp" excludes="META-INF/**"/>
+
+    </jar>
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- Generates a manifest file for the D2R executable project JAR        -->
+  <!-- =================================================================== -->
+  <target name="d2r-create-manifest">
+
+    <mkdir dir="${obj.dir}/META-INF"/>
+
+    <!-- generate the core manifest -->
+    <manifest file="${obj.dir}/META-INF/MANIFEST_D2R_BASE.MF">
+      <attribute name="Main-Class"
+        value="de.fuberlin.wiwiss.d2r.D2rProcessor"/>
+    </manifest>
+
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- Compiles the D2R source                                             -->
+  <!-- =================================================================== -->
+  <target name="d2r-compile" depends="prepare-build"
+   description="Compiles the D2R source">
+
+    <mkdir dir="${obj.dir}/classes"/>
+    <javac destdir="${obj.dir}/classes"
+      debug="on" deprecation="on" source="1.4">
+      <classpath refid="project.classpath"/>
+      <src path="${src.dir}"/>
+    </javac>
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- Deploys D2R                                                         -->
+  <!-- =================================================================== -->
+  <target name="deploy"
+      depends="dist-full" description="Executes D2R">
+
+    <java fork="true" jar="${dist.dir}/${d2r.full.jar}">
+      <jvmarg value="-Dlog4j.configuration=${conf.dir}/log4j-d2r.xml"/>
+      <classpath>
+        <path refid="project.classpath"/>
+        <fileset dir="${dist.dir}" includes="${d2r.full.jar}"/>
+      </classpath>
+    </java>
+  </target>
+
+</project>
+

@@ -1,0 +1,77 @@
+
+<!-- D2R Map Document Type Definition -->
+<!-- Version 0.1 / 2.12.2002 / Chris Bizer --> 
+
+<!ELEMENT d2r:Map (d2r:ProcessorMessage | d2r:DBConnection | d2r:Namespace | d2r:ClassMap | d2r:TranslationTable)+>
+<!ATTLIST d2r:Map
+	xmlns:d2r CDATA #REQUIRED
+	d2r:versionInfo CDATA #REQUIRED
+>
+
+<!ELEMENT d2r:DBConnection EMPTY>
+<!ATTLIST d2r:DBConnection
+	d2r:odbcDSN CDATA #IMPLIED
+	d2r:jdbcDriver CDATA #IMPLIED
+	d2r:jdbcDSN CDATA #IMPLIED
+	d2r:username CDATA #IMPLIED
+	d2r:password CDATA #IMPLIED
+>
+
+<!ELEMENT d2r:Namespace EMPTY>
+<!ATTLIST d2r:Namespace
+	d2r:prefix CDATA #REQUIRED
+	d2r:namespace CDATA #REQUIRED
+>
+
+<!ELEMENT d2r:ProcessorMessage EMPTY>
+<!ATTLIST d2r:ProcessorMessage
+	d2r:saveAs CDATA #IMPLIED
+	d2r:outputFormat CDATA #IMPLIED
+>
+
+<!ELEMENT d2r:ClassMap (d2r:DatatypePropertyBridge | d2r:ObjectPropertyBridge)+>
+<!ATTLIST d2r:ClassMap
+	d2r:id CDATA #IMPLIED
+	d2r:type CDATA #IMPLIED
+	d2r:sql CDATA #REQUIRED
+	d2r:groupBy CDATA #REQUIRED
+	d2r:uriPattern CDATA #IMPLIED
+	d2r:uriColumn CDATA #IMPLIED
+>
+
+<!ELEMENT d2r:DatatypePropertyBridge EMPTY>
+<!ATTLIST d2r:DatatypePropertyBridge
+	d2r:property CDATA #REQUIRED
+	d2r:column CDATA #IMPLIED
+	d2r:pattern CDATA #IMPLIED
+	d2r:value CDATA #IMPLIED
+	d2r:translate CDATA #IMPLIED
+	d2r:datatype CDATA #IMPLIED
+	d2r:useCollection CDATA #IMPLIED
+	xml:lang CDATA #IMPLIED
+>
+
+<!ELEMENT d2r:ObjectPropertyBridge EMPTY>
+<!ATTLIST d2r:ObjectPropertyBridge
+	d2r:property CDATA #REQUIRED
+	d2r:column CDATA #IMPLIED
+	d2r:pattern CDATA #IMPLIED
+	d2r:value CDATA #IMPLIED
+	d2r:translate CDATA #IMPLIED
+	d2r:referredClass CDATA #IMPLIED
+	d2r:referredGroupBy CDATA #IMPLIED
+	d2r:useCollection CDATA #IMPLIED
+>
+
+<!ELEMENT d2r:TranslationTable (d2r:Translation+)>
+<!ATTLIST d2r:TranslationTable
+	d2r:id CDATA #REQUIRED
+>
+
+<!ELEMENT d2r:Translation EMPTY>
+<!ATTLIST d2r:Translation
+	d2r:key CDATA #REQUIRED
+	d2r:value CDATA  #REQUIRED
+>
+
+

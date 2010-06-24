@@ -1,0 +1,72 @@
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix module: <http://joseki.org/2003/06/module#> .
+@prefix joseki: <http://joseki.org/2003/07/configuration#> .
+@prefix d2r:  	<http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RMap/0.1#> .
+
+<> rdfs:comment "Server configuration and data source mapping".
+
+## Server configuration
+
+<>  a   joseki:JosekiServer ;
+    joseki:josekiSchema      joseki: ;
+    joseki:alsoInclude       <file:etc/joseki-defs.n3> ;
+    joseki:useContentType    "application/rdf+xml" ;
+    ## Server debug:
+    # 1 - Must ask for exact MIME type else get application/n3
+    #     (i.e. from a web browser)
+    # 2 - HTTP GET repsonses are set no cache.
+
+    joseki:serverDebug       "true" ;
+    .
+
+# In the servlet interface HttpServletRequest.getURI() returns
+# a string WITHOUT the host name (its a relative URI).
+# so "http://server/" is replaced by "/" 
+# This configuration system does not allow different
+# URIs to be support on different virtual servers (yet).
+
+<http://server/testdata>
+    a   joseki:AttachedModel ;
+    joseki:attachedModel        <file:Data/test_data.n3> ;
+    joseki:hasQueryOperation    joseki:BindingGET ;
+    joseki:hasQueryOperation    joseki:BindingFetchClosure ;
+    joseki:hasQueryOperation    joseki:BindingRDQL ;
+    joseki:hasQueryOperation    joseki:BindingSPO ;
+    # Allow query over POST
+    joseki:hasOperation         joseki:BindingQueryModel ;
+    joseki:hasOperation         joseki:BindingOptions ;
+    joseki:isImmutable			"true" ;
+    # Not pingable
+    joseki:namespacePrefix
+        [ joseki:prefix "jd" ; joseki:nsURI <http://jena/> ] ;
+    rdfs:comment "Test data" ;
+    .
+
+
+<http://server/books>
+    a   joseki:AttachedModel ;
+    joseki:attachedModel        <file:Data/books.n3> ;
+    joseki:hasQueryOperation    joseki:BindingFetchClosure ;
+    joseki:hasQueryOperation    joseki:BindingRDQL ;
+    joseki:hasQueryOperation    joseki:BindingSPO ;
+    joseki:hasQueryOperation    joseki:BindingGET ;
+    rdfs:comment "A collection of book details" ;
+    .
+
+<http://server/conference>
+    a   joseki:AttachedModel ;
+    joseki:attachedModel        <d2r:conference> ;
+    joseki:sourceController     d2r:SourceControllerD2R ;
+    d2r:map                    "C:/D2RMAP/maps/iswcMap.d2r.xml" ;
+    joseki:hasQueryOperation    joseki:BindingFetchClosure ;
+    joseki:hasQueryOperation    joseki:BindingRDQL ;
+    joseki:hasQueryOperation    joseki:BindingSPO ;
+    joseki:hasQueryOperation    joseki:BindingGET ;
+    rdfs:comment "A collection of papers and autors details" ;
+    .	
+	
+# Local Variables:
+# tab-width: 4
+# indent-tabs-mode: nil
+# End:
