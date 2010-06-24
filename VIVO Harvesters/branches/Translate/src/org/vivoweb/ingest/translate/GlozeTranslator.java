@@ -27,7 +27,6 @@ import com.hp.hpl.jena.rdf.model.*;
  * TODO:  Identify methods to invoke in the gloze library
  * 
  * @author Stephen V. Williams swilliams@ctrip.ufl.edu
- *
  */
 public class GlozeTranslator extends Translator{
 
@@ -39,9 +38,6 @@ public class GlozeTranslator extends Translator{
 	protected File incomingSchema;
 	protected URI uriBase;
 
-	/*public void setIncomingXMLStr(String xmlStr){
-		this.incomingXMLStr = xmlStr;
-	}*/
 	
 	public void setIncomingXMLFile(File xmlFile){
 		this.incomingXMLFile = xmlFile;
@@ -67,8 +63,6 @@ public class GlozeTranslator extends Translator{
 	public GlozeTranslator() {
 	}
 	
-	/*public void translateString(){
-	}*/
 	
 	public void translateFile(){
 		Gloze gl = new Gloze();
@@ -89,13 +83,13 @@ public class GlozeTranslator extends Translator{
 	 * 
 	 */
 	public void execute() {
-		/*if(incomingXMLStr != null){
-			translateString();
-		}
-		
-		else if(incomingXMLFile != null) {*/
+		if (this.uriBase != null && this.incomingXMLFile != null ){		
 			translateFile();
-		//}
+		}
+		else {
+			log.error("Invalid Arguments: Gloze Translation requires a URIBase and XMLFile");
+			throw new IllegalArgumentException();
+		}
 	}
 	
 	/**
@@ -104,7 +98,7 @@ public class GlozeTranslator extends Translator{
 	 */
 	public static void main(String[] args) {
 		
-		if (args.length <= 1 || args.length >= 4) {
+		if (args.length < 2 || args.length > 4) {
 			  log.error("Invalid Arguments: GlozeTranslate requires at least 2 arguments.  The system was supplied with " + args.length);
 			  throw new IllegalArgumentException();
 		}

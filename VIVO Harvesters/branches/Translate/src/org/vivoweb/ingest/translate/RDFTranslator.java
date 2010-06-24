@@ -24,5 +24,24 @@ package org.vivoweb.ingest.translate;
  *
  */
 public class RDFTranslator extends Translator{
+	
+	public void execute(){
+		
+	}
+	
+	/**
+	 * The main method is for execution through the command line.  
+	 * 
+	 * @param args
+	 */
+	public static void main(String[] args){
+		if (args.length < 1){
+			log.error("Invalid Arguments: RDFTranslate requires at least 1 arguments.  The system was supplied with " + args.length);
+			throw new IllegalArgumentException();
+		}
+		else {
+			
+		}
+	}
 
 }
