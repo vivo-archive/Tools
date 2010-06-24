@@ -1,0 +1,73 @@
+D2R Map Legal Statements
+
+This project includes source code and/or binary distributions from other
+projects and companies. It is our intent to list each of them here. If
+we forgot to give credit where credit is due, please send electronic
+mail to chris@bizer.de.
+
+This file lists code requirements of this project (in no particular
+order), and provides their licenses and other information to fulfill
+legal requirements. We have attempted to err on the side of providing
+more information than is required by any particular license.
+
+
+I.  Open Source Components
+
+    Source code for Open Source components may be obtained from
+    the URL provided for each project.
+
+    Ant
+    JARs:     ant-1.5.1.jar
+              ant-optional-1.5.1.jar
+    URL:      http://jakarta.apache.org/ant
+    License:  Apache Software License, v1.1
+              http://tks.pisoftware.com/licenses/Apache.txt
+
+    Commons Logging
+    JARs:     commons-logging-1.0.3.jar
+    URL:      http://jakarta.apache.org/commons/logging/
+    LICENSE:  Apache Software License, v1.1
+              http://www.opensource.org/licenses/apachepl.php
+
+    Jakarta ORO
+    JARs:     jakarta-oro-2.0.8.jar
+    URL:      http://jakarta.apache.org/oro
+    LICENSE:  Apache License, v2.0
+              http://www.opensource.org/licenses/apache2.0.php
+
+    Jena Semantic web toolkit
+    JARs:     jena-2.1.jar
+    URL:      http://jena.sourceforge.net/l
+    LICENSE:  BSD License
+              http://www.opensource.org/licenses/bsd-license.php
+
+    Joseki Jena RDF Server
+    JARs:     joseki.jar
+    URL:      http://joseki.sourceforge.net/index.html
+    LICENSE:  BSD License
+              http://www.opensource.org/licenses/bsd-license.php
+
+    Log4J
+    JARs:     log4j-1.2.8.jar
+    URL:      http://jakarta.apache.org
+    LICENSE:  Apache Software License, v1.1
+              http://www.opensource.org/licenses/apachepl.php
+
+    Xerces
+    JARs:     xerces-1.4.3.jar
+    URL:      http://xml.apache.org/xerces-j/index.html
+    LICENSE:  Apache Software License, v1.1
+              http://www.opensource.org/licenses/apachepl.php
+
+Please note:
+
+  Sun, Sun Microsystems, Solaris, Java, JavaServer Web Development
+  Kit, EJB, JDBC, JNDI, JTA, and JavaServer Pages are trademarks or
+  registered trademarks of Sun Microsystems, Inc. XML, XML Schema, XSLT
+  and related standards are trademarks or registered trademarks of MIT,
+  INRIA, Keio or others, and a product of the World Wide Web Consortium.
+  UNIX is a registered trademark in the United States and other countries,
+  exclusively licensed through X/Open Company, Ltd. Windows, WindowsNT,
+  and Win32 are registered trademarks of Microsoft Corp. All other product
+  names mentioned herein and throughout the entire web site are trademarks
+  of their respective owners.

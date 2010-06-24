@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<d2r:Map xmlns:d2r="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RMap/0.1#" d2r:versionInfo="$Id: eShopDB.Map.d2r, v 1.0 2003/01/20 19:44:09 Chris Exp $">
+	<!-- <d2r:ProcessorMessage d2r:outputFormat="N3"/> -->
+	<!-- <d2r:ProcessorMessage d2r:outputFormat="RDF/XML-ABBREV"/> -->
+	<d2r:DBConnection d2r:odbcDSN="eShopDB" />
+	<d2r:Namespace d2r:prefix="eShop" d2r:namespace="http://www.wiwiss.fu-berlin.de/suhl/bizer/eShop/eShop#"/>
+	<d2r:Namespace d2r:prefix="rdf" d2r:namespace="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+	<!-- Categories -->
+	<d2r:ClassMap d2r:type="eShop:category" d2r:sql="SELECT catid, catname, description  FROM categories" d2r:groupBy="catid">
+		<d2r:DatatypePropertyBridge d2r:property="eShop:name" d2r:column="catname" />
+		<d2r:DatatypePropertyBridge d2r:property="eShop:description" d2r:pattern="Description of Category '@@catname@@': @@description@@." />		
+	</d2r:ClassMap>
+	<!-- CDs -->
+	<d2r:ClassMap d2r:type="eShop:cd" d2r:sql="SELECT article.articleno, interpret, album, coverlink, category, trackno, price FROM article, tracks where article.articleno = tracks.articleno and offer=True" d2r:groupBy="article.articleno" d2r:uriPattern="eShop:CdNo@@article.articleno@@">
+		<d2r:DatatypePropertyBridge d2r:property="eShop:interpret" d2r:column="article.interpret" />
+		<d2r:DatatypePropertyBridge d2r:property="eShop:album" d2r:column="article.album" />
+		<d2r:DatatypePropertyBridge d2r:property="eShop:price" d2r:pattern="$ @@price@@" />
+		<d2r:ObjectPropertyBridge d2r:property="eShop:cover" d2r:pattern="http://www.wiwiss.fu-berlin.de/suhl/bizer/eShop/images/@@article.coverlink@@"/>
+		<d2r:ObjectPropertyBridge d2r:property="eShop:category" d2r:referredClass="eShop:category" d2r:referredGroupBy="category"/>
+		<d2r:ObjectPropertyBridge d2r:property="eShop:track" d2r:referredClass="eShop:track" d2r:referredGroupBy="articleno,trackno"/>
+	</d2r:ClassMap>
+	<!-- Tracks -->
+	<d2r:ClassMap d2r:type="eShop:track" d2r:sql="SELECT  articleno, trackno, name  FROM tracks" d2r:groupBy="articleno, trackno" d2r:uriPattern="eShop:track@@articleno@@-@@trackno@@">
+		<d2r:DatatypePropertyBridge d2r:property="eShop:name" d2r:column="name" />	
+	</d2r:ClassMap>
+</d2r:Map>
