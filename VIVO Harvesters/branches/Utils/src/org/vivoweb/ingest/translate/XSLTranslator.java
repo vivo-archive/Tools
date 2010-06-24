@@ -11,6 +11,8 @@
 package org.vivoweb.ingest.translate;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.text.SimpleDateFormat;
@@ -76,8 +78,7 @@ public class XSLTranslator extends Translator{
 	public void execute() throws IllegalArgumentException {
 		
 		//checking for valid input parameters
-		if ((this.sourceType != null && !this.sourceType.equals("")) && 
-				(this.translationFile !=null && this.translationFile.isFile()) && this.inStream != null && this.outStream != null) {
+		if ((this.translationFile !=null && this.translationFile.isFile()) && this.inStream != null && this.outStream != null) {
 		
 			log.info("Translation: Start");
 			
@@ -87,6 +88,9 @@ public class XSLTranslator extends Translator{
 		}
 		else {
 			log.error("Translation unable to start: Not all Parameters Set" );
+			log.error("Translation File: " + this.translationFile.toString());
+			log.error("Translation File truth: " + this.translationFile.isFile());
+			log.error("Translation Stream: " + this.inStream.toString());
 			throw new IllegalArgumentException("Unable to translate, system not configured");
 		}		
 	}
@@ -149,5 +153,48 @@ public class XSLTranslator extends Translator{
 //			return outputWriter;
 //		}
 
+	  /**
+	   * Currently the main method accepts two methods of execution, file translation and record handler translation
+	   * 
+	   * @param functionSwitch possible entries include -f for file and -rh for record handler
+	   * @param translationFile
+	   * @param fileToTranslate  
+	   * @param inRecordHandler
+	   * @param outRecordHandler
+	   */
+	  public static void main(String[] args) {
+		 if (args.length != 3) {
+			  log.error("Invalid Arguments: XSLTranslate requires 3. They system was supplied " + args.length);
+			  throw new IllegalArgumentException();
+		 }
+		 else {
+			if (args[0].equals("-f")) {
+				try {
+					//set the in/out and translation var
+					XSLTranslator xslTrans = new XSLTranslator();
+					xslTrans.setInStream(new FileInputStream(new File(args[1])));
+					xslTrans.setTranslationFile(new File(args[2]));
+					xslTrans.setOutStream(System.out);
+					
+					//execute the program
+					xslTrans.execute();
+				} catch (FileNotFoundException e) {
+					// TODO Auto-generated catch block
+					log.error(e.getStackTrace().toString());
+				}				
+			}
+			else if (args[0].equals("-rh")) {
+				//TODO add pulling in the config portions
+				//TODO add creating the record handlers
+				//TODO get from the in record and translate
+				//TODO send output to out handler
+			}
+			else {
+				log.error("Invalid Arguments: Translate option " + args[0] + " not handled.");
+				throw new IllegalArgumentException();
+			}
+		 }	
+		  
+	  }
 
 }
