@@ -51,6 +51,16 @@ public class GlozeTranslator extends Translator{
 		this.incomingSchema = schema;
 	}
 	
+	public void setURIBase(String base){
+		try {
+			this.uriBase = new URI(base);
+		} catch (URISyntaxException e) {
+			// TODO Auto-generated catch block
+			log.error(e.getMessage());
+			log.error(e.getStackTrace().toString());
+		}
+	}
+	
 	/**
 	 * 
 	 */
@@ -95,30 +105,31 @@ public class GlozeTranslator extends Translator{
 	public static void main(String[] args) {
 		
 		if (args.length <= 1 || args.length >= 4) {
-			  log.error("Invalid Arguments: GlozeTranslate requires 1");
+			  log.error("Invalid Arguments: GlozeTranslate requires at least 2 arguments.  The system was supplied with " + args.length);
 			  throw new IllegalArgumentException();
 		}
 		else {
 			GlozeTranslator glTrans = new GlozeTranslator();
 			
-			//process arguments takes 1 string or 1-2 files
-			/*if (args[1].endsWith("</xml>")) {
-				glTrans.setIncomingXMLStr(args[1]);
-			}
-			else {*/
-				glTrans.setIncomingXMLFile(new File(args[0]));
-				if (args.length >= 2) {					
-					glTrans.setIncomingSchema(new File(args[1]));
+			if (args[0].equals("-f")) {			
+				glTrans.setURIBase(args[1]);
+				glTrans.setIncomingXMLFile(new File(args[2]));
+				if (args.length == 4) {					
+					glTrans.setIncomingSchema(new File(args[3]));
 				}
-			//}
-			try {
-				glTrans.uriBase = new URI("http://www.ncbi.nlm.nih.gov/soap/eutils/efetch_pubmed");
-			} catch (URISyntaxException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				
+				glTrans.execute();
 			}
-									
-			glTrans.execute();
+			else if (args[0].equals("-rh")) {
+				//TODO create a record handler from the third argument
+				//TODO talk to chris about the parameters needed for Gloze to use record handler
+				//TODO create a record handler from the fourth argument
+				glTrans.execute();
+			}
+			else {
+				log.error("Invalid Arguments: Translate option " + args[0] + " not handled.");
+				throw new IllegalArgumentException();
+			}		
 		}
 	}
 }

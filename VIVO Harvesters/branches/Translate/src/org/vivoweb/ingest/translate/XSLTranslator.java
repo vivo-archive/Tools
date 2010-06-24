@@ -154,24 +154,33 @@ public class XSLTranslator extends Translator{
 //		}
 
 	  /**
-	   *  TODO convert over to files
+	   * Currently the main method accepts two methods of execution, file translation and record handler translation
+	   * 
+	   * @param functionSwitch possible entries include -f for file and -rh for record handler
+	   * @param translationFile
+	   * @param fileToTranslate  
+	   * @param inRecordHandler
+	   * @param outRecordHandler
 	   */
-	  public static void main(String[] args){
+	  public static void main(String[] args) {
 		 if (args.length != 3) {
 			  log.error("Invalid Arguments: XSLTranslate requires 3. They system was supplied " + args.length);
 			  throw new IllegalArgumentException();
 		 }
 		 else {
 			if (args[0].equals("-f")) {
-				try {													
+				try {
+					//set the in/out and translation var
 					XSLTranslator xslTrans = new XSLTranslator();
 					xslTrans.setInStream(new FileInputStream(new File(args[1])));
 					xslTrans.setTranslationFile(new File(args[2]));
 					xslTrans.setOutStream(System.out);
+					
+					//execute the program
 					xslTrans.execute();
 				} catch (FileNotFoundException e) {
 					// TODO Auto-generated catch block
-					e.printStackTrace();
+					log.error(e.getStackTrace().toString());
 				}				
 			}
 			else if (args[0].equals("-rh")) {
@@ -184,21 +193,7 @@ public class XSLTranslator extends Translator{
 				log.error("Invalid Arguments: Translate option " + args[0] + " not handled.");
 				throw new IllegalArgumentException();
 			}
-		 }
-		  
-		  if (args.length != 2) {
-			  log.error("Invalid Arguments: XSLTranslate requires 2. They system was supplied " + args.length);
-			  throw new IllegalArgumentException();
-		  }
-		  else {
-			  
-				
-			  		  
-		  }
-			  		  
-		  
-		  
-		  
+		 }	
 		  
 	  }
 
