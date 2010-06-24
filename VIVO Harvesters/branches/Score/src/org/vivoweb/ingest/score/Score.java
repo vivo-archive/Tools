@@ -235,12 +235,43 @@ public class Score {
 		*/
 		
 		private static Model pairwiseScore(Model matched, Model scoreInput, String matchAttribute, String coreAttribute, ResultSet matchResult) {			
-		 	//create pairs of *attribute* from matched
-			//create pairs of *attribute* from scoringInput
 		 	//iterate thru scoringInput pairs against matched pairs
 		 	//TODO support partial scoring, multiples matches against several pairs
 		 	//if pairs match, store publication to matched author in Model
 			//TODO return scoreInput minus the scored statements
+			
+			String scoreMatch;
+			String queryString;
+			Resource paperResource;
+			RDFNode matchNode;
+			RDFNode paperNode;
+			ResultSet vivoResult;
+			QuerySolution scoreSolution;
+
+		 	//create pairs of *attribute* from matched
+	    	log.trace("Creating pairs of " + matchAttribute + " from input");
+	    	
+	    	//look for exact match in vivo
+	    	while (matchResult.hasNext()) {
+	    		scoreSolution = matchResult.nextSolution();
+                matchNode = scoreSolution.get(matchAttribute);
+                
+                scoreMatch = matchNode.toString();
+                
+                log.trace("\nChecking for " + scoreMatch + " in VIVO");
+    			
+                //Select all matching attributes from vivo store
+    			queryString =
+					"PREFIX core: <http://vivoweb.org/ontology/core#> " +
+					"SELECT ?x " +
+					"WHERE { ?x " + coreAttribute + "\"" +  scoreMatch + "\"}";
+    			
+    			//TODO how to combine result sets? not possible in JENA
+    			vivoResult = executeQuery(vivo, queryString);
+    			commitResultSet(vivo,scoreInput,vivoResult,paperResource,paperNode,matchNode);
+            }	    			 
+	    	
+	    	//TODO return scoreInput minus the scored statements			
 			return scoreInput;
 		 }
 		 
