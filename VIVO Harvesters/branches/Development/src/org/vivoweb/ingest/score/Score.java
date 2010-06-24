@@ -14,6 +14,7 @@ package org.vivoweb.ingest.score;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.vivoweb.ingest.util.JenaConnect;
 import com.hp.hpl.jena.query.Query;
 import com.hp.hpl.jena.query.QueryExecution;
 import com.hp.hpl.jena.query.QueryExecutionFactory;
@@ -47,9 +48,9 @@ public class Score {
 			
 			//load up models
 			
-			JenaIO vivo = new JenaIO();
-			JenaIO scoreInput = new JenaIO();
-			JenaIO scoreOutput = new JenaIO();
+			JenaConnect vivo = new JenaConnect();
+			JenaConnect scoreInput = new JenaConnect();
+			JenaConnect scoreOutput = new JenaConnect();
 			
 			new Score(vivo.getJenaModel(),scoreInput.getJenaModel(), scoreOutput.getJenaModel()).execute();
 	    }

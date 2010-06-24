@@ -13,11 +13,10 @@ package org.vivoweb.ingest.util;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.vivoweb.ingest.harvest.PubmedSOAPFetch;
+import org.vivoweb.ingest.fetch.PubmedSOAPFetch;
 
 /**
  * @author Christopher Haines (hainesc@ctrip.ufl.edu)
