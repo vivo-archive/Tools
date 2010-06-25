@@ -10,11 +10,15 @@
  ******************************************************************************/
 package org.vivoweb.ingest.translate;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.io.StringBufferInputStream;
+import java.io.StringReader;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
@@ -25,6 +29,9 @@ import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
 
 import org.vivoweb.ingest.translate.Translator;
+import org.vivoweb.ingest.util.Record;
+import org.vivoweb.ingest.util.RecordHandler;
+import org.vivoweb.ingest.util.XMLRecordOutputStream;
 
 public class XSLTranslator extends Translator{
 		
@@ -184,10 +191,32 @@ public class XSLTranslator extends Translator{
 				}				
 			}
 			else if (args[0].equals("-rh")) {
-				//TODO add pulling in the config portions
-				//TODO add creating the record handlers
-				//TODO get from the in record and translate
-				//TODO send output to out handler
+				try{
+					//TODO add pulling in the config portions
+					XSLTranslator xslTrans = new XSLTranslator();
+					xslTrans.setTranslationFile(new File(args[1]));
+					
+					//TODO add creating the record handlers
+					RecordHandler inStore = RecordHandler.parseConfig(args[2]);
+					RecordHandler outStore = RecordHandler.parseConfig(args[3]);
+					
+					ByteArrayOutputStream buff = new ByteArrayOutputStream();
+					
+					// get from the in record and translate
+					for(Record r : inStore){
+						xslTrans.setInStream(new ByteArrayInputStream(r.getData().getBytes()));
+						xslTrans.setOutStream(buff);
+						xslTrans.execute();
+						buff.flush();
+						outStore.addRecord(r.getID(),buff.toString());
+						buff.reset();
+					}
+					
+					buff.close();
+				}
+				catch(Exception e){
+					//TODO fix me
+				}
 			}
 			else {
 				log.error("Invalid Arguments: Translate option " + args[0] + " not handled.");
