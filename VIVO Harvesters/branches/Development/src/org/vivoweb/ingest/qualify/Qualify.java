@@ -10,8 +10,6 @@
  ******************************************************************************/
 package org.vivoweb.ingest.qualify;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import com.hp.hpl.jena.rdf.model.Model;
 
 /**
@@ -19,7 +17,6 @@ import com.hp.hpl.jena.rdf.model.Model;
  *
  */
 public abstract class Qualify {
-	private static Log log = LogFactory.getLog(Qualify.class);
 	
 	private Model model;
 	
@@ -45,10 +42,10 @@ public abstract class Qualify {
 	}
 	
 	/**
-	 * @param dataType
-	 * @param oldValue
-	 * @param newValue
-	 * @param regex 
+	 * @param dataType field to search
+	 * @param matchValue match this value
+	 * @param newValue replace matches with this value
+	 * @param regex treat matchValue as a regular expression?
 	 */
 	public abstract void replace(String dataType, String matchValue, String newValue, boolean regex);
 	

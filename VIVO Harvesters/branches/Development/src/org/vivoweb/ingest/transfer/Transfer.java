@@ -13,6 +13,10 @@ public class Transfer {
 	
 	private static Log log = LogFactory.getLog(Transfer.class);
 	
+	/**
+	 * @param in Model to read from
+	 * @param out Model to write to
+	 */
 	public static void transfer(Model in, Model out) {
 		out.add(in);
 	}

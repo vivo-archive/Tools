@@ -10,8 +10,6 @@
  ******************************************************************************/
 package org.vivoweb.ingest.qualify;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import com.hp.hpl.jena.query.Query;
 import com.hp.hpl.jena.query.QueryExecution;
 import com.hp.hpl.jena.query.QueryExecutionFactory;
@@ -28,7 +26,6 @@ import com.hp.hpl.jena.update.UpdateRequest;
  *
  */
 public class SPARQLQualify extends Qualify {
-	private static Log log = LogFactory.getLog(SPARQLQualify.class);
 	
 	/**
 	 * Constructor

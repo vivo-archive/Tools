@@ -19,8 +19,9 @@ public class Record {
 	private String data;
 	
 	/**
-	 * @param recID
-	 * @param recData
+	 * Constructor
+	 * @param recID records id
+	 * @param recData records data
 	 */
 	public Record(String recID, String recData) {
 		setID(recID);
@@ -28,28 +29,28 @@ public class Record {
 	}
 	
 	/**
-	 * @param newID
+	 * @param newID id to be used
 	 */
 	public void setID(String newID) {
 		this.id = newID;
 	}
 	
 	/**
-	 * @return
+	 * @return the records id
 	 */
 	public String getID() {
 		return this.id;
 	}
 	
 	/**
-	 * @param newData
+	 * @param newData data to be used
 	 */
 	public void setData(String newData) {
 		this.data = newData;
 	}
 	
 	/**
-	 * @return
+	 * @return the records data
 	 */
 	public String getData() {
 		return this.data;

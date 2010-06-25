@@ -34,11 +34,11 @@ public class XMLRecordOutputStream extends OutputStream {
 	
 	/**
 	 * Constructor
-	 * @param tagToSplitOn 
-	 * @param headerInfo 
-	 * @param footerInfo 
-	 * @param idLocationRegex 
-	 * @param recordHandler 
+	 * @param tagToSplitOn defines the record tag type
+	 * @param headerInfo prepended to each record
+	 * @param footerInfo appended to each record
+	 * @param idLocationRegex regex to find the data to be used as ID
+	 * @param recordHandler RecordHandler to write records to
 	 */
 	public XMLRecordOutputStream(String tagToSplitOn, String headerInfo, String footerInfo, String idLocationRegex, RecordHandler recordHandler) {
 		this.buf = new ByteArrayOutputStream();
@@ -77,16 +77,17 @@ public class XMLRecordOutputStream extends OutputStream {
 	}
 	
 	/**
-	 * @param args
-	 * @throws ParserConfigurationException 
-	 * @throws SAXException 
-	 * @throws IOException 
+	 * @param args commandline arguments
+	 * @throws ParserConfigurationException xml parse error 
+	 * @throws SAXException xml parse error
+	 * @throws IOException error connecting
 	 */
 	public static void main(String... args) throws ParserConfigurationException, SAXException, IOException {
-		RecordHandler dataStore = RecordHandler.parseConfig("config/PubmedRDFRecordHandler.xml");
+		RecordHandler dataStore = RecordHandler.parseConfig("config/PubmedJenaRecordHandler.xml");
 //		dataStore = new MapRecordHandler();
-//		dataStore = new JDBCRecordHandler("com.mysql.jdbc.Driver", "mysql", "127.0.0.1", "3306", "jdbcrecordstore", "jdbcRecordStore", "5j63ucbNdZ5MCRda", "recordTable", "idField", "dataField");
-//		dataStore = new JenaRecordHandler("com.mysql.jdbc.Driver", "mysql", "127.0.0.1", "3306", "jenarecordstore", "jenaRecordStore", "j6QvzjGG5muJmYN4", "MySQL", "jenaRecord", "idType", "dataType");
+//		dataStore = new JDBCRecordHandler("com.mysql.jdbc.Driver", "mysql", "127.0.0.1", "3306", "jdbcrecordstore", "jdbcRecordStore", "5j63ucbNdZ5MCRda", "recordTable");
+//		dataStore = new JenaRecordHandler("com.mysql.jdbc.Driver", "mysql", "127.0.0.1", "3306", "jenarecordstore", "jenaRecordStore", "j6QvzjGG5muJmYN4", "MySQL");
+//		dataStore = new JenaRecordHandler("config/JenaModel.xml");
 //		dataStore = new TextFileRecordHandler("XMLVault");
 //		dataStore = new TextFileRecordHandler("ftp://yourMom:y0urM0m123@127.0.0.1:21/path/to/dir");
 		XMLRecordOutputStream os = new XMLRecordOutputStream("PubmedArticle", "<?xml version=\"1.0\"?>\n<!DOCTYPE PubmedArticleSet PUBLIC \"-//NLM//DTD PubMedArticle, 1st January 2010//EN\" \"http://www.ncbi.nlm.nih.gov/corehtml/query/DTD/pubmed_100101.dtd\">\n<PubmedArticleSet>\n", "\n</PubmedArticleSet>", ".*?<PMID>(.*?)</PMID>.*?", dataStore);

@@ -14,6 +14,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.NoSuchElementException;
+import javax.xml.parsers.ParserConfigurationException;
+import org.xml.sax.SAXException;
 import com.hp.hpl.jena.query.Query;
 import com.hp.hpl.jena.query.QueryExecution;
 import com.hp.hpl.jena.query.QueryExecutionFactory;
@@ -41,52 +43,66 @@ public class JenaRecordHandler extends RecordHandler {
 	protected Property isA;
 	
 	/**
-	 * @param jdbcDriverClass
-	 * @param connType
-	 * @param host
-	 * @param port
-	 * @param modelName
-	 * @param username
-	 * @param password
-	 * @param dbType
-	 * @param recordType
-	 * @param idFieldType
-	 * @param dataFieldType
+	 * Default Constructor
 	 */
-	public JenaRecordHandler(String jdbcDriverClass, String connType, String host, String port, String dbName,
-			String username, String password, String dbType, String modelName, String recordType, String idFieldType,
-			String dataFieldType) {
-		this.model = new JenaConnect("jdbc:" + connType + "://" + host + ":" + port + "/" + dbName, username, password,
-				modelName, dbType, jdbcDriverClass).getJenaModel();
-		this.nameSpace = "http://"+host+"/"+dbType+"/"+dbName+"/"+modelName+"#";
-		initVars(recordType, idFieldType, dataFieldType);
+	public JenaRecordHandler() {
+		
 	}
 	
 	/**
-	 * @param jdbcDriverClass
-	 * @param connType
-	 * @param host
-	 * @param port
-	 * @param dbName
-	 * @param username
-	 * @param password
-	 * @param dbType
-	 * @param recordType
-	 * @param idFieldType
-	 * @param dataFieldType
+	 * Constructor (w/ Named Model)
+	 * @param jdbcDriverClass jdbc driver class
+	 * @param connType type of jdbc connection
+	 * @param host host to conenct to
+	 * @param port port to connect on
+	 * @param dbName name of the database
+	 * @param modelName name of the model
+	 * @param username username to use
+	 * @param password password to use
+	 * @param dbType ex:"MySQL"
 	 */
 	public JenaRecordHandler(String jdbcDriverClass, String connType, String host, String port, String dbName,
-			String username, String password, String dbType, String recordType, String idFieldType, String dataFieldType) {
+			String username, String password, String dbType, String modelName) {
 		this.model = new JenaConnect("jdbc:" + connType + "://" + host + ":" + port + "/" + dbName, username, password,
-				dbType, jdbcDriverClass).getJenaModel();
-		this.nameSpace = "http://"+host+"/"+dbType+"/"+dbName+"/defaultModel"+"#";
-		initVars(recordType, idFieldType, dataFieldType);
+				modelName, dbType, jdbcDriverClass).getJenaModel();
+		initVars();
 	}
 	
-	private void initVars(String recordType, String idFieldType, String dataFieldType) {
-		this.recType = this.model.createProperty(this.nameSpace, recordType);
-		this.idType = this.model.createProperty(this.nameSpace, idFieldType);
-		this.dataType = this.model.createProperty(this.nameSpace, dataFieldType);
+	/**
+	 * Constructor (w/o Named Model)
+	 * @param jdbcDriverClass jdbc driver class
+	 * @param connType type of jdbc connection
+	 * @param host host to conenct to
+	 * @param port port to connect on
+	 * @param dbName name of the database
+	 * @param username username to use
+	 * @param password password to use
+	 * @param dbType ex:"MySQL"
+	 */
+	public JenaRecordHandler(String jdbcDriverClass, String connType, String host, String port, String dbName,
+			String username, String password, String dbType) {
+		this.model = new JenaConnect("jdbc:" + connType + "://" + host + ":" + port + "/" + dbName, username, password,
+				dbType, jdbcDriverClass).getJenaModel();
+		initVars();
+	}
+	
+	/**
+	 * Constructor (w/ Model Config File)
+	 * @param configFile the model config file
+	 * @throws IOException error connecting
+	 * @throws SAXException xml parse error
+	 * @throws ParserConfigurationException xml parse error
+	 */
+	public JenaRecordHandler(String configFile) throws ParserConfigurationException, SAXException, IOException {
+		this.model = JenaConnect.parseConfig(configFile).getJenaModel();
+		initVars();
+	}
+	
+	private void initVars() {
+		this.nameSpace = "http://ingest.vivoweb.org/util/jenarecordhandler#";
+		this.recType = this.model.createProperty(this.nameSpace, "record");
+		this.idType = this.model.createProperty(this.nameSpace, "idField");
+		this.dataType = this.model.createProperty(this.nameSpace, "dataField");
 		this.isA = this.model.createProperty("http://www.w3.org/1999/02/22-rdf-syntax-ns#","type");
 	}
 	
@@ -125,7 +141,6 @@ public class JenaRecordHandler extends RecordHandler {
 				+ "Select ?dataField "
 				+ "WHERE { "
 				+ "  ?record rdf:type ns:"+this.recType.getLocalName()+" . "
-//				+ "  ?record ns:"+this.idType.getLocalName()+" ?idField . "
 				+ "  ?record ns:"+this.idType.getLocalName()+" \""+recID+"\" . "
 				+ "  ?record ns:"+this.dataType.getLocalName()+" ?dataField . "
 				+ "}";
@@ -198,31 +213,36 @@ public class JenaRecordHandler extends RecordHandler {
 		}
 	}
 	
-
 	@Override
 	public void setParams(Map<String, String> params) throws IllegalArgumentException, IOException {
-		String jdbcDriverClass = getParam(params,"jdbcDriverClass",true);
-		String connType = getParam(params,"connType",true);
-		String host = getParam(params,"host",true);
-		String port = getParam(params,"port",true);
-		String dbName = getParam(params,"dbName",true);
-		String username = getParam(params,"username",true);
-		String password = getParam(params,"password",true);
-		String dbType = getParam(params,"dbType",true);
-		String recordType = getParam(params,"recordType",true);
-		String idFieldType = getParam(params,"idFieldType",true);
-		String dataFieldType = getParam(params,"dataFieldType",true);
-		String modelName = getParam(params,"modelName",false);
-		if(modelName != null) {
-			this.model = new JenaConnect("jdbc:" + connType + "://" + host + ":" + port + "/" + dbName, username, password,
-					modelName, dbType, jdbcDriverClass).getJenaModel();
-			this.nameSpace = "http://"+host+"/"+dbType+"/"+dbName+"/"+modelName+"#";
+		String jenaConfig = getParam(params,"jenaConfig",false);
+		if(jenaConfig != null) {
+			try {
+				this.model = JenaConnect.parseConfig(jenaConfig).getJenaModel();
+			} catch(ParserConfigurationException e) {
+				throw new IllegalArgumentException(e);
+			} catch(SAXException e) {
+				throw new IllegalArgumentException(e);
+			}
 		} else {
-			this.model = new JenaConnect("jdbc:" + connType + "://" + host + ":" + port + "/" + dbName, username, password,
-					dbType, jdbcDriverClass).getJenaModel();
-			this.nameSpace = "http://"+host+"/"+dbType+"/"+dbName+"/defaultModel"+"#";
+			String jdbcDriverClass = getParam(params,"jdbcDriverClass",true);
+			String connType = getParam(params,"connType",true);
+			String host = getParam(params,"host",true);
+			String port = getParam(params,"port",true);
+			String dbName = getParam(params,"dbName",true);
+			String username = getParam(params,"username",true);
+			String password = getParam(params,"password",true);
+			String dbType = getParam(params,"dbType",true);
+			String modelName = getParam(params,"modelName",false);
+			if(modelName != null) {
+				this.model = new JenaConnect("jdbc:" + connType + "://" + host + ":" + port + "/" + dbName, username, password,
+						modelName, dbType, jdbcDriverClass).getJenaModel();
+			} else {
+				this.model = new JenaConnect("jdbc:" + connType + "://" + host + ":" + port + "/" + dbName, username, password,
+						dbType, jdbcDriverClass).getJenaModel();
+			}
 		}
-		initVars(recordType, idFieldType, dataFieldType);
+		initVars();
 	}
 	
 }

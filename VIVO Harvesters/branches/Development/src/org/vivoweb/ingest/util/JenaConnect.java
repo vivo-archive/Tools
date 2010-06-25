@@ -11,10 +11,8 @@
 package org.vivoweb.ingest.util;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.FileInputStream;
 import java.io.OutputStream;
 import java.util.HashMap;
 import java.util.Map;
@@ -24,6 +22,7 @@ import javax.xml.parsers.SAXParserFactory;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.commons.vfs.FileObject;
+import org.apache.commons.vfs.FileSystemException;
 import org.apache.commons.vfs.VFS;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
@@ -47,11 +46,11 @@ public class JenaConnect {
 	
 	/**
 	 * Config File Based Factory
-	 * @param configFile
+	 * @param configFile the vfs config file descriptor
 	 * @return JenaConnect instance
-	 * @throws IOException 
-	 * @throws SAXException 
-	 * @throws ParserConfigurationException 
+	 * @throws IOException error connecting
+	 * @throws SAXException xml parse error
+	 * @throws ParserConfigurationException xml parse error
 	 */
 	public static JenaConnect parseConfig(FileObject configFile) throws ParserConfigurationException, SAXException, IOException {
 		return new JenaConnectConfigParser().parseConfig(configFile.getContent().getInputStream());
@@ -59,33 +58,35 @@ public class JenaConnect {
 	
 	/**
 	 * Config File Based Factory
-	 * @param configFile
-	 * @return 
-	 * @throws IOException 
-	 * @throws SAXException 
-	 * @throws ParserConfigurationException 
+	 * @param configFile the config file descriptor
+	 * @return JenaConnect instance
+	 * @throws IOException error connecting
+	 * @throws SAXException xml parse error
+	 * @throws ParserConfigurationException xml parse error
 	 */
 	public static JenaConnect parseConfig(File configFile) throws ParserConfigurationException, SAXException, IOException {
 		return parseConfig(VFS.getManager().resolveFile(new File("."), configFile.getAbsolutePath()));
 	}
 	
 	/**
-	 * @param configFileName
-	 * @return
-	 * @throws ParserConfigurationException
-	 * @throws SAXException
-	 * @throws IOException
+	 * Config File Based Factory
+	 * @param configFileName the config file path
+	 * @return JenaConnect instance
+	 * @throws ParserConfigurationException error connecting
+	 * @throws SAXException xml parse error
+	 * @throws IOException xml parse error
 	 */
 	public static JenaConnect parseConfig(String configFileName) throws ParserConfigurationException, SAXException, IOException {
 		return parseConfig(VFS.getManager().resolveFile(new File("."), configFileName));
 	}
 	
 	/**
-	 * @param dbUrl
-	 * @param dbUser
-	 * @param dbPass
-	 * @param dbType
-	 * @param dbClass
+	 * Constructor (w/o Named Model)
+	 * @param dbUrl jdbc connection url
+	 * @param dbUser username to use
+	 * @param dbPass password to use
+	 * @param dbType database type ex:"MySQL"
+	 * @param dbClass jdbc driver class
 	 */
 	public JenaConnect(String dbUrl, String dbUser, String dbPass, String dbType, String dbClass) {
 		try {
@@ -100,27 +101,21 @@ public class JenaConnect {
 	}
 	
 	/**
-	 * @param dbUrl
-	 * @param dbUser
-	 * @param dbPass
-	 * @param modelName
-	 * @param dbType
-	 * @param dbClass
+	 * Constructor (w/ Named Model)
+	 * @param dbUrl jdbc connection url
+	 * @param dbUser username to use
+	 * @param dbPass password to use
+	 * @param modelName the model to connect to
+	 * @param dbType database type ex:"MySQL"
+	 * @param dbClass jdbc driver class
 	 */
 	public JenaConnect(String dbUrl, String dbUser, String dbPass, String modelName, String dbType, String dbClass) {
-		try {
-			this.setJenaModel(this.loadModel(dbUrl, dbUser, dbPass, modelName, dbType, dbClass));
-		} catch(InstantiationException e) {
-			log.error(e.getMessage(), e);
-		} catch(IllegalAccessException e) {
-			log.error(e.getMessage(), e);
-		} catch(ClassNotFoundException e) {
-			log.error(e.getMessage(), e);
-		}
+		this.setJenaModel(this.loadModel(dbUrl, dbUser, dbPass, modelName, dbType, dbClass));
 	}
 	
 	/**
-	 * @param in
+	 * Constructor (Load rdf from input stream)
+	 * @param in input stream to load rdf from
 	 */
 	public JenaConnect(InputStream in) {
 		this.setJenaModel(ModelFactory.createDefaultModel());
@@ -128,84 +123,50 @@ public class JenaConnect {
 	}
 	
 	/**
-	 * @param inFilePath
-	 * @throws FileNotFoundException
+	 * Constructor (Load rdf from File)
+	 * @param inFilePath location of file to read rdf from
+	 * @throws FileSystemException error getting file contents
 	 */
-	public JenaConnect(String inFilePath) throws FileNotFoundException {
-		this(new FileInputStream(inFilePath));
+	public JenaConnect(String inFilePath) throws FileSystemException {
+		this(VFS.getManager().resolveFile(new File("."), inFilePath).getContent().getInputStream());
 	}
 	
 	/**
-	 * @return
+	 * Accessor for Jena Model
+	 * @return the Jena Model
 	 */
 	public Model getJenaModel() {
 		return this.jenaModel;
 	}
+	
 
 	private void setJenaModel(Model jena) {
 		this.jenaModel = jena;
 	}
+	
 
-	/**
-	 * @param dbUrl
-	 * @param dbUser
-	 * @param dbPass
-	 * @param dbType
-	 * @param dbClass
-	 * @return Model
-	 * @throws InstantiationException
-	 * @throws IllegalAccessException
-	 * @throws ClassNotFoundException
-	 */
 	private Model createModel(String dbUrl, String dbUser, String dbPass, String dbType, String dbClass)
 			throws InstantiationException, IllegalAccessException, ClassNotFoundException {
 		return initModel(initDB(dbUrl, dbUser, dbPass, dbType, dbClass)).createDefaultModel();
 	}
 	
-	/**
-	 * @param dbUrl
-	 * @param dbUser
-	 * @param dbPass
-	 * @param modelName
-	 * @param dbType
-	 * @param dbClass
-	 * @return Model
-	 * @throws InstantiationException
-	 * @throws IllegalAccessException
-	 * @throws ClassNotFoundException
-	 */
-	private Model loadModel(String dbUrl, String dbUser, String dbPass, String modelName, String dbType, String dbClass)
-			throws InstantiationException, IllegalAccessException, ClassNotFoundException {
+	private Model loadModel(String dbUrl, String dbUser, String dbPass, String modelName, String dbType, String dbClass) {
 		return ModelLoader.connectToDB(dbUrl, dbUser, dbPass, modelName, dbType, dbClass);
 	}
 	
-	/**
-	 * @param dbUrl
-	 * @param dbUser
-	 * @param dbPass
-	 * @param dbType
-	 * @param dbClass
-	 * @return IDBConnection
-	 * @throws InstantiationException
-	 * @throws IllegalAccessException
-	 * @throws ClassNotFoundException
-	 */
 	private IDBConnection initDB(String dbUrl, String dbUser, String dbPass, String dbType, String dbClass)
 			throws InstantiationException, IllegalAccessException, ClassNotFoundException {
 		Class.forName(dbClass).newInstance();
 		return new DBConnection(dbUrl, dbUser, dbPass, dbType);
 	}
 	
-	/**
-	 * @param dbcon
-	 * @return ModelMaker
-	 */
 	private ModelMaker initModel(IDBConnection dbcon) {
 		return ModelFactory.createModelRDBMaker(dbcon);
 	}
 	
 	/**
-	 * @param in
+	 * Load in RDF
+	 * @param in input stream to read rdf from
 	 */
 	public void loadRDF(InputStream in) {
 		this.getJenaModel().read(in, null);
@@ -213,7 +174,8 @@ public class JenaConnect {
 	}
 	
 	/**
-	 * @param out
+	 * Export all RDF
+	 * @param out output stream to write rdf to
 	 */
 	public void exportRDF(OutputStream out) {
 		RDFWriter fasterWriter = this.jenaModel.getWriter("RDF/XML");

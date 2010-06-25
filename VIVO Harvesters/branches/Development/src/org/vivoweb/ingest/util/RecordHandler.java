@@ -10,12 +10,14 @@
  ******************************************************************************/
 package org.vivoweb.ingest.util;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
+import org.apache.commons.vfs.VFS;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
@@ -27,48 +29,48 @@ import org.xml.sax.helpers.DefaultHandler;
 public abstract class RecordHandler implements Iterable<Record> {
 	
 	/**
-	 * @param params
-	 * @throws IllegalArgumentException
-	 * @throws IOException 
+	 * @param params map of parameters
+	 * @throws IllegalArgumentException invalid parameters
+	 * @throws IOException error 
 	 */
 	public abstract void setParams(Map<String,String> params) throws IllegalArgumentException, IOException;
 	
 	/**
-	 * @param rec
-	 * @throws IOException 
+	 * @param rec record to add
+	 * @throws IOException error adding
 	 */
 	public abstract void addRecord(Record rec) throws IOException;
 	
 	/**
-	 * @param recID
-	 * @param recData
-	 * @throws IOException 
+	 * @param recID record id to add
+	 * @param recData record data to add
+	 * @throws IOException error adding
 	 */
 	public void addRecord(String recID, String recData) throws IOException {
 		addRecord(new Record(recID, recData));
 	}
 	
 	/**
-	 * @param recID
-	 * @return
-	 * @throws IllegalArgumentException 
-	 * @throws IOException 
+	 * @param recID record id to get
+	 * @return record
+	 * @throws IllegalArgumentException record not found 
+	 * @throws IOException error reading
 	 */
 	public Record getRecord(String recID) throws IllegalArgumentException, IOException {
 		return new Record(recID, getRecordData(recID));
 	}
 	
 	/**
-	 * @param recID
-	 * @return
-	 * @throws IllegalArgumentException
-	 * @throws IOException
+	 * @param recID id of record to retrieve
+	 * @return data from record
+	 * @throws IllegalArgumentException id not found
+	 * @throws IOException error reading
 	 */
 	public abstract String getRecordData(String recID) throws IllegalArgumentException, IOException;
 	
 	/**
-	 * @param recID
-	 * @throws IOException 
+	 * @param recID id of record to delete
+	 * @throws IOException i/o error
 	 */
 	public abstract void delRecord(String recID) throws IOException;
 	
@@ -83,11 +85,11 @@ public abstract class RecordHandler implements Iterable<Record> {
 	}
 	
 	/**
-	 * @param filename
-	 * @return
-	 * @throws IOException 
-	 * @throws SAXException 
-	 * @throws ParserConfigurationException 
+	 * @param filename filename of config file
+	 * @return RecordHandler described by config file
+	 * @throws IOException xml config parse error
+	 * @throws SAXException xml config parse error
+	 * @throws ParserConfigurationException xml config parse error
 	 */
 	public static RecordHandler parseConfig(String filename) throws ParserConfigurationException, SAXException, IOException {
 		return new RecordHandlerParser().parseRecordHandlerConfig(filename);
@@ -111,9 +113,9 @@ public abstract class RecordHandler implements Iterable<Record> {
 		 * Parses a configuration file describing a RecordHandler
 		 * @param filename the name of the file to parse
 		 * @return the RecordHandler described by the config file
-		 * @throws IOException 
-		 * @throws SAXException 
-		 * @throws ParserConfigurationException 
+		 * @throws IOException xml parsing error
+		 * @throws SAXException xml parsing error
+		 * @throws ParserConfigurationException xml parsing error
 		 */
 		public RecordHandler parseRecordHandlerConfig(String filename) throws ParserConfigurationException, SAXException, IOException {
 			return new RecordHandlerParser().parseConfig(filename);
@@ -122,7 +124,7 @@ public abstract class RecordHandler implements Iterable<Record> {
 		private RecordHandler parseConfig(String filename) throws ParserConfigurationException, SAXException, IOException {
 			SAXParserFactory spf = SAXParserFactory.newInstance(); // get a factory
 			SAXParser sp = spf.newSAXParser(); // get a new instance of parser
-			sp.parse(filename, this); // parse the file and also register this class for call backs
+			sp.parse(VFS.getManager().resolveFile(new File("."), filename).getContent().getInputStream(), this); // parse the file and also register this class for call backs
 			return this.rh;
 		}
 		
