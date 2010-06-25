@@ -14,6 +14,7 @@ package org.vivoweb.ingest.score;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.vivoweb.ingest.io.JenaIO;
 import org.vivoweb.ingest.util.JenaConnect;
 import com.hp.hpl.jena.query.Query;
 import com.hp.hpl.jena.query.QueryExecution;
@@ -36,14 +37,30 @@ public class Score {
 		private Model tempModel;
 		
 		final static public void main(String[] args) {
+			
+			if (args.length != 5) {
+				System.out.println("Usage: score connectionPath username password dbType dbClass vivoModelName scoreModelName");
+				return;
+			}
+			
 			//pass models from command line
 			//TODO proper args handler
+			String connPath = args[0];
+			String username = args[1];
+			String password = args[2];
+			String modelName = args[3];
+			String dbType = args[4];
+			String dbClass = args[5];
 			
-			//args[0];
-			//args[1];
-			//debug
-			//Hardcode parms for now
+			//load up models		
+			JenaConnect vivo = new JenaConnect(connPath,username,password,modelName,dbType,dbClass);
+			//JenaConnect scoreInput = new JenaConnect(connPath,username,password,modelName,dbType,dbClass);
+			//JenaConnect scoreOutput = new JenaConnect(connPath,username,password,modelName,dbType,dbClass);
 			
+<<<<<<< .mine
+			//new Score(vivo.getJenaModel(),scoreInput.getJenaModel(), scoreOutput.getJenaModel()).execute();			
+			new Score(vivo.getJenaModel(),scoreInput.getJenaModel()).execute();
+=======
 			//debug
 			
 			//load up models
@@ -53,12 +70,14 @@ public class Score {
 //			JenaConnect scoreOutput = new JenaConnect();
 			
 //			new Score(vivo.getJenaModel(),scoreInput.getJenaModel(), scoreOutput.getJenaModel()).execute();
+>>>>>>> .r64
 	    }
 		
-		public Score (Model vivo, Model scoreInput, Model scoreOutput) {
+		//public Score (Model vivo, Model scoreInput, Model scoreOutput) {
+		public Score (Model vivo) {
 			this.vivo = vivo;
-			this.scoreInput = scoreInput;
-			this.scoreOutput = scoreOutput;
+			//this.scoreInput = scoreInput;
+			//this.scoreOutput = scoreOutput;
 		}
 		
 		public void execute() {		
@@ -268,8 +287,13 @@ public class Score {
 					"WHERE { ?x " + coreAttribute + "\"" +  scoreMatch + "\"}";
     			
     			//TODO how to combine result sets? not possible in JENA
+<<<<<<< .mine
+    			vivoResult = executeQuery(matched, queryString);
+    			commitResultSet(matched,scoreInput,vivoResult,paperResource,paperNode,matchNode);
+=======
 //    			vivoResult = executeQuery(vivo, queryString);
 //    			commitResultSet(vivo,scoreInput,vivoResult,paperResource,paperNode,matchNode);
+>>>>>>> .r64
             }	    			 
 	    	
 	    	//TODO return scoreInput minus the scored statements			
