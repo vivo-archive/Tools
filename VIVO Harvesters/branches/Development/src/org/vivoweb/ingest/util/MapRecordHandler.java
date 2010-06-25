@@ -13,6 +13,7 @@ package org.vivoweb.ingest.util;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 
 /**
  * @author Christopher Haines (hainesc@ctrip.ufl.edu)
@@ -20,10 +21,10 @@ import java.util.Iterator;
  */
 public class MapRecordHandler extends RecordHandler {
 	
-	HashMap<String,String> map;
+	Map<String,String> map;
 	
 	/**
-	 * Constructor
+	 * Default Constructor
 	 */
 	public MapRecordHandler() {
 		this.map = new HashMap<String,String>();
@@ -69,6 +70,12 @@ public class MapRecordHandler extends RecordHandler {
 		public void remove() {
 			throw new UnsupportedOperationException();
 		}
+	}
+
+	
+	@Override
+	public void setParams(Map<String, String> params) throws IllegalArgumentException, IOException {
+		
 	}
 	
 }

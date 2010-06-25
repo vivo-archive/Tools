@@ -18,6 +18,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Iterator;
+import java.util.Map;
 import java.util.NoSuchElementException;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -36,6 +37,13 @@ public class JDBCRecordHandler extends RecordHandler {
 	protected String dataField;
 	
 	/**
+	 * Default Constructor
+	 */
+	public JDBCRecordHandler() {
+		
+	}
+	
+	/**
 	 * Constructor
 	 * @param jdbcDriverClass 
 	 * @param connLine 
@@ -48,6 +56,41 @@ public class JDBCRecordHandler extends RecordHandler {
 	 * 
 	 */
 	public JDBCRecordHandler(String jdbcDriverClass, String connLine, String username, String password, String tableName, String idFieldName, String dataFieldName) throws IOException {
+		initAll(jdbcDriverClass, connLine, username, password, tableName, idFieldName, dataFieldName);
+	}
+	
+	/**
+	 * Constructor
+	 * @param jdbcDriverClass 
+	 * @param connType 
+	 * @param host 
+	 * @param port 
+	 * @param dbName 
+	 * @param username 
+	 * @param password 
+	 * @param tableName 
+	 * @param idFieldName 
+	 * @param dataFieldName
+	 * @throws IOException 
+	 * 
+	 */
+	public JDBCRecordHandler(String jdbcDriverClass, String connType, String host, String port, String dbName, String username, String password, String tableName, String idFieldName, String dataFieldName) throws IOException {
+		this(jdbcDriverClass, buildConnLine(connType, host, port, dbName), username, password, tableName, idFieldName, dataFieldName);
+	}
+	
+	/**
+	 * Destructor
+	 */
+	protected void finalize() throws Throwable {
+		this.cursor.close();
+		this.db.close();
+	}
+	
+	private static String buildConnLine(String connType, String host, String port, String dbName) {
+		return "jdbc:"+connType+"://"+host+":"+port+"/"+dbName;
+	}
+	
+	private void initAll(String jdbcDriverClass, String connLine, String username, String password, String tableName, String idFieldName, String dataFieldName) throws IOException {
 		this.table = tableName;
 		this.idField = idFieldName;
 		this.dataField = dataFieldName;
@@ -68,33 +111,6 @@ public class JDBCRecordHandler extends RecordHandler {
 			log.error("Unable to connect to DB",e);
 			throw new IOException("Unable to connect to DB: "+e.getMessage());
 		}
-	}
-	
-	/**
-	 * Constructor
-	 * @param jdbcDriverClass 
-	 * @param connType 
-	 * @param host 
-	 * @param port 
-	 * @param dbName 
-	 * @param username 
-	 * @param password 
-	 * @param tableName 
-	 * @param idFieldName 
-	 * @param dataFieldName
-	 * @throws IOException 
-	 * 
-	 */
-	public JDBCRecordHandler(String jdbcDriverClass, String connType, String host, String port, String dbName, String username, String password, String tableName, String idFieldName, String dataFieldName) throws IOException {
-		this(jdbcDriverClass, "jdbc:"+connType+"://"+host+":"+port+"/"+dbName, username, password, tableName, idFieldName, dataFieldName);
-	}
-	
-	/**
-	 * Destructor
-	 */
-	protected void finalize() throws Throwable {
-		this.cursor.close();
-		this.db.close();
 	}
 	
 	private boolean checkTableConfigured() {
@@ -125,9 +141,6 @@ public class JDBCRecordHandler extends RecordHandler {
 		return a;
 	}
 	
-	/* (non-Javadoc)
-	 * @see org.vivoweb.ingest.util.RecordHandler#addRecord(org.vivoweb.ingest.util.Record)
-	 */
 	@Override
 	public void addRecord(Record rec) throws IOException {
 		try {
@@ -141,9 +154,6 @@ public class JDBCRecordHandler extends RecordHandler {
 		}
 	}
 	
-	/* (non-Javadoc)
-	 * @see org.vivoweb.ingest.util.RecordHandler#delRecord(java.lang.String)
-	 */
 	@Override
 	public void delRecord(String recID) throws IOException {
 		try {
@@ -154,9 +164,6 @@ public class JDBCRecordHandler extends RecordHandler {
 		}
 	}
 	
-	/* (non-Javadoc)
-	 * @see org.vivoweb.ingest.util.RecordHandler#getRecordData(java.lang.String)
-	 */
 	@Override
 	public String getRecordData(String recID) throws IllegalArgumentException, IOException {
 		try {
@@ -167,9 +174,6 @@ public class JDBCRecordHandler extends RecordHandler {
 		}
 	}
 	
-	/* (non-Javadoc)
-	 * @see java.lang.Iterable#iterator()
-	 */
 	@Override
 	public Iterator<Record> iterator() {
 		JDBCRecordIterator ri = null;
@@ -208,6 +212,33 @@ public class JDBCRecordHandler extends RecordHandler {
 		
 		public void remove() {
 			throw new UnsupportedOperationException();
+		}
+	}
+	
+	@Override
+	public void setParams(Map<String, String> params) throws IllegalArgumentException, IOException {
+		String jdbcDriverClass = getParam(params,"jdbcDriverClass",true);
+		String connLine = getParam(params,"connLine",false);
+		String connType = getParam(params,"connType",false);
+		String host = getParam(params,"host",false);
+		String port = getParam(params,"port",false);
+		String dbName = getParam(params,"dbName",false);
+		String username = getParam(params,"username",true);
+		String password = getParam(params,"password",true);
+		String tableName = getParam(params,"tableName",true);
+		String idFieldName = getParam(params,"idFieldName",true);
+		String dataFieldName = getParam(params,"dataFieldName",true);
+		boolean has4part = !(connType == null || host == null || port == null || dbName == null);
+		if(connLine == null) {
+			if(!has4part) {
+				throw new IllegalArgumentException("Must have either connLine OR connType, host, port, and dbName");
+			}
+			initAll(jdbcDriverClass, buildConnLine(connType, host, port, dbName), username, password, tableName, idFieldName, dataFieldName);
+		} else {
+			if(has4part) {
+				throw new IllegalArgumentException("Must have either connLine OR connType, host, port, and dbName, not both");
+			}
+			initAll(jdbcDriverClass, connLine, username, password, tableName, idFieldName, dataFieldName);
 		}
 	}
 	

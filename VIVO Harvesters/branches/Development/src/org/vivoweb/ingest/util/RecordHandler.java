@@ -11,12 +11,22 @@
 package org.vivoweb.ingest.util;
 
 import java.io.IOException;
+import java.util.Map;
+import javax.xml.parsers.ParserConfigurationException;
+import org.xml.sax.SAXException;
 
 /**
  * @author Christopher Haines (hainesc@ctrip.ufl.edu)
  *
  */
 public abstract class RecordHandler implements Iterable<Record> {
+	
+	/**
+	 * @param params
+	 * @throws IllegalArgumentException
+	 * @throws IOException 
+	 */
+	public abstract void setParams(Map<String,String> params) throws IllegalArgumentException, IOException;
 	
 	/**
 	 * @param rec
@@ -53,7 +63,29 @@ public abstract class RecordHandler implements Iterable<Record> {
 	
 	/**
 	 * @param recID
+	 * @throws IOException 
 	 */
 	public abstract void delRecord(String recID) throws IOException;
-
+	
+	protected String getParam(Map<String,String> params, String paramName, boolean required) {
+		if(!params.containsKey(paramName)) {
+			if(required) {
+				throw new IllegalArgumentException("param missing: "+paramName);
+			}
+			return null;
+		}
+		return params.remove(paramName);
+	}
+	
+	/**
+	 * @param filename
+	 * @return
+	 * @throws IOException 
+	 * @throws SAXException 
+	 * @throws ParserConfigurationException 
+	 */
+	public static RecordHandler parseConfig(String filename) throws ParserConfigurationException, SAXException, IOException {
+		return RecordHandlerParser.parseRecordHandlerConfig(filename);
+	}
+	
 }

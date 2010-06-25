@@ -16,7 +16,9 @@ import java.io.OutputStream;
 import java.util.LinkedList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import javax.xml.parsers.ParserConfigurationException;
 import org.vivoweb.ingest.fetch.PubmedSOAPFetch;
+import org.xml.sax.SAXException;
 
 /**
  * @author Christopher Haines (hainesc@ctrip.ufl.edu)
@@ -76,15 +78,17 @@ public class XMLRecordOutputStream extends OutputStream {
 	
 	/**
 	 * @param args
+	 * @throws ParserConfigurationException 
+	 * @throws SAXException 
 	 * @throws IOException 
 	 */
-	public static void main(String... args) throws IOException {
-		RecordHandler dataStore;
+	public static void main(String... args) throws ParserConfigurationException, SAXException, IOException {
+		RecordHandler dataStore = RecordHandler.parseConfig("config/PubmedRDFRecordHandler.xml");
 //		dataStore = new MapRecordHandler();
 //		dataStore = new JDBCRecordHandler("com.mysql.jdbc.Driver", "mysql", "127.0.0.1", "3306", "jdbcrecordstore", "jdbcRecordStore", "5j63ucbNdZ5MCRda", "recordTable", "idField", "dataField");
 //		dataStore = new JenaRecordHandler("com.mysql.jdbc.Driver", "mysql", "127.0.0.1", "3306", "jenarecordstore", "jenaRecordStore", "j6QvzjGG5muJmYN4", "MySQL", "jenaRecord", "idType", "dataType");
 //		dataStore = new TextFileRecordHandler("XMLVault");
-		dataStore = new TextFileRecordHandler("ftp://yourMom:y0urM0m123@127.0.0.1:21/path/to/dir");
+//		dataStore = new TextFileRecordHandler("ftp://yourMom:y0urM0m123@127.0.0.1:21/path/to/dir");
 		XMLRecordOutputStream os = new XMLRecordOutputStream("PubmedArticle", "<?xml version=\"1.0\"?>\n<!DOCTYPE PubmedArticleSet PUBLIC \"-//NLM//DTD PubMedArticle, 1st January 2010//EN\" \"http://www.ncbi.nlm.nih.gov/corehtml/query/DTD/pubmed_100101.dtd\">\n<PubmedArticleSet>\n", "\n</PubmedArticleSet>", ".*?<PMID>(.*?)</PMID>.*?", dataStore);
 		PubmedSOAPFetch f = new PubmedSOAPFetch("hainesc@ctrip.ufl.edu", "University of Florid", os);
 		f.fetchPubMedEnv(f.ESearchEnv(f.queryByAffiliation("ufl.edu"), new Integer(5)));

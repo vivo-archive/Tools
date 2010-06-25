@@ -21,6 +21,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.Map;
 import java.util.NoSuchElementException;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -40,14 +41,24 @@ public class TextFileRecordHandler extends RecordHandler {
 	protected FileObject fileDirObj;
 	
 	/**
+	 * Default Constructor
+	 */
+	public TextFileRecordHandler() {
+		
+	}
+	
+	/**
 	 * Constructor
 	 * @param fileDir 
 	 * @throws IOException 
 	 * 
 	 */
 	public TextFileRecordHandler(String fileDir) throws IOException {
+		setFileDirObj(fileDir);
+	}
+	
+	private void setFileDirObj(String fileDir) throws IOException {
 		FileSystemManager fsMan = VFS.getManager();
-//		this.directory = fileDir;
 		this.fileDirObj = fsMan.resolveFile(new File("."),fileDir);
 		if(!this.fileDirObj.exists()) {
 			log.info("Directory '"+fileDir+"' Does Not Exist, attempting to create");
@@ -55,9 +66,11 @@ public class TextFileRecordHandler extends RecordHandler {
 		}
 	}
 	
-	/* (non-Javadoc)
-	 * @see org.vivoweb.ingest.util.RecordHandler#addRecord(org.vivoweb.ingest.util.Record)
-	 */
+	@Override
+	public void setParams(Map<String,String> params) throws IllegalArgumentException, IOException {
+		setFileDirObj(getParam(params,"fileDir",true));
+	}
+	
 	@Override
 	public void addRecord(Record rec) throws IOException {
 		FileObject fo = this.fileDirObj.resolveFile(rec.getID());
@@ -73,10 +86,6 @@ public class TextFileRecordHandler extends RecordHandler {
 		bw.close();
 	}
 	
-	/* (non-Javadoc)
-	 * @see org.vivoweb.ingest.util.RecordHandler#delRecord(java.lang.String)
-	 */
-	@Override
 	public void delRecord(String recID) throws IOException {
 		FileObject fo = this.fileDirObj.resolveFile(recID);
 		if(!fo.exists()) {
@@ -88,10 +97,6 @@ public class TextFileRecordHandler extends RecordHandler {
 		}
 	}
 	
-	/* (non-Javadoc)
-	 * @see org.vivoweb.ingest.util.RecordHandler#getRecordData(java.lang.String)
-	 */
-	@Override
 	public String getRecordData(String recID) throws IllegalArgumentException, IOException {
 		StringBuilder sb = new StringBuilder();
 		FileObject fo = this.fileDirObj.resolveFile(recID);
@@ -102,21 +107,9 @@ public class TextFileRecordHandler extends RecordHandler {
 			sb.append("\n");
 		}
 		br.close();
-//		} catch(FileNotFoundException e) {
-//			log.error("Record File Not Found For "+recID);
-//			throw new IllegalArgumentException("Record File Not Found For "+recID);
-//		} catch(IOException e) {
-//			log.error("Error Reading Contents of file '"+fo.getName().getFriendlyURI()+"'");
-//			throw e;
-//		}
 		return sb.toString();
 	}
 	
-	/* (non-Javadoc)
-	 * @see java.lang.Iterable#iterator()
-	 */
-	@Override
-	@SuppressWarnings("synthetic-access")
 	public Iterator<Record> iterator() {
 		return new TextFileRecordIterator();
 	}
@@ -124,7 +117,7 @@ public class TextFileRecordHandler extends RecordHandler {
 	private class TextFileRecordIterator implements Iterator<Record> {
 		Iterator<FileObject> fileIter;
 		
-		private TextFileRecordIterator() {
+		protected TextFileRecordIterator() {
 			LinkedList<FileObject> fileListing = new LinkedList<FileObject>();
 			try {
 				for(FileObject file : TextFileRecordHandler.this.fileDirObj.getChildren()) {
@@ -156,9 +149,5 @@ public class TextFileRecordHandler extends RecordHandler {
 			throw new UnsupportedOperationException();
 		}
 	}
-	
-//	private String getPath(String recID) {
-//		return getDirectory()+"/"+recID;
-//	}
 	
 }

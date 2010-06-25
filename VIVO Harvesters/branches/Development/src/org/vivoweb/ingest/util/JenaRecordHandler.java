@@ -12,6 +12,7 @@ package org.vivoweb.ingest.util;
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.NoSuchElementException;
 import com.hp.hpl.jena.query.Query;
 import com.hp.hpl.jena.query.QueryExecution;
@@ -58,10 +59,7 @@ public class JenaRecordHandler extends RecordHandler {
 		this.model = new JenaConnect("jdbc:" + connType + "://" + host + ":" + port + "/" + dbName, username, password,
 				modelName, dbType, jdbcDriverClass).getJenaModel();
 		this.nameSpace = "http://"+host+"/"+dbType+"/"+dbName+"/"+modelName+"#";
-		this.recType = this.model.createProperty(this.nameSpace, recordType);
-		this.idType = this.model.createProperty(this.nameSpace, idFieldType);
-		this.dataType = this.model.createProperty(this.nameSpace, dataFieldType);
-		this.isA = this.model.createProperty("http://www.w3.org/1999/02/22-rdf-syntax-ns#","type");
+		initVars(recordType, idFieldType, dataFieldType);
 	}
 	
 	/**
@@ -82,16 +80,16 @@ public class JenaRecordHandler extends RecordHandler {
 		this.model = new JenaConnect("jdbc:" + connType + "://" + host + ":" + port + "/" + dbName, username, password,
 				dbType, jdbcDriverClass).getJenaModel();
 		this.nameSpace = "http://"+host+"/"+dbType+"/"+dbName+"/defaultModel"+"#";
+		initVars(recordType, idFieldType, dataFieldType);
+	}
+	
+	private void initVars(String recordType, String idFieldType, String dataFieldType) {
 		this.recType = this.model.createProperty(this.nameSpace, recordType);
 		this.idType = this.model.createProperty(this.nameSpace, idFieldType);
 		this.dataType = this.model.createProperty(this.nameSpace, dataFieldType);
 		this.isA = this.model.createProperty("http://www.w3.org/1999/02/22-rdf-syntax-ns#","type");
 	}
 	
-	/*
-	 * (non-Javadoc)
-	 * @see org.vivoweb.ingest.util.RecordHandler#addRecord(org.vivoweb.ingest.util.Record)
-	 */
 	@Override
 	public void addRecord(Record rec) throws IOException {
 		Resource record = this.model.createResource();
@@ -100,10 +98,6 @@ public class JenaRecordHandler extends RecordHandler {
 		this.model.add(this.model.createStatement(record, this.dataType, rec.getData()));
 	}
 	
-	/*
-	 * (non-Javadoc)
-	 * @see org.vivoweb.ingest.util.RecordHandler#delRecord(java.lang.String)
-	 */
 	@Override
 	public void delRecord(String recID) throws IOException {
 		// create query string
@@ -122,10 +116,6 @@ public class JenaRecordHandler extends RecordHandler {
 		UpdateAction.execute(ur, this.model);
 	}
 	
-	/*
-	 * (non-Javadoc)
-	 * @see org.vivoweb.ingest.util.RecordHandler#getRecordData(java.lang.String)
-	 */
 	@Override
 	public String getRecordData(String recID) throws IllegalArgumentException, IOException {
 		// create query string
@@ -156,10 +146,6 @@ public class JenaRecordHandler extends RecordHandler {
 		return data;
 	}
 	
-	/*
-	 * (non-Javadoc)
-	 * @see java.lang.Iterable#iterator()
-	 */
 	@Override
 	public Iterator<Record> iterator() {
 		return new JenaRecordIterator();
@@ -210,6 +196,33 @@ public class JenaRecordHandler extends RecordHandler {
 		public void remove() {
 			throw new UnsupportedOperationException();
 		}
+	}
+	
+
+	@Override
+	public void setParams(Map<String, String> params) throws IllegalArgumentException, IOException {
+		String jdbcDriverClass = getParam(params,"jdbcDriverClass",true);
+		String connType = getParam(params,"connType",true);
+		String host = getParam(params,"host",true);
+		String port = getParam(params,"port",true);
+		String dbName = getParam(params,"dbName",true);
+		String username = getParam(params,"username",true);
+		String password = getParam(params,"password",true);
+		String dbType = getParam(params,"dbType",true);
+		String recordType = getParam(params,"recordType",true);
+		String idFieldType = getParam(params,"idFieldType",true);
+		String dataFieldType = getParam(params,"dataFieldType",true);
+		String modelName = getParam(params,"modelName",false);
+		if(modelName != null) {
+			this.model = new JenaConnect("jdbc:" + connType + "://" + host + ":" + port + "/" + dbName, username, password,
+					modelName, dbType, jdbcDriverClass).getJenaModel();
+			this.nameSpace = "http://"+host+"/"+dbType+"/"+dbName+"/"+modelName+"#";
+		} else {
+			this.model = new JenaConnect("jdbc:" + connType + "://" + host + ":" + port + "/" + dbName, username, password,
+					dbType, jdbcDriverClass).getJenaModel();
+			this.nameSpace = "http://"+host+"/"+dbType+"/"+dbName+"/defaultModel"+"#";
+		}
+		initVars(recordType, idFieldType, dataFieldType);
 	}
 	
 }

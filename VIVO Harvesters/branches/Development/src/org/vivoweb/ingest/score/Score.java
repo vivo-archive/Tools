@@ -48,11 +48,11 @@ public class Score {
 			
 			//load up models
 			
-			JenaConnect vivo = new JenaConnect();
-			JenaConnect scoreInput = new JenaConnect();
-			JenaConnect scoreOutput = new JenaConnect();
+//			JenaConnect vivo = new JenaConnect();
+//			JenaConnect scoreInput = new JenaConnect();
+//			JenaConnect scoreOutput = new JenaConnect();
 			
-			new Score(vivo.getJenaModel(),scoreInput.getJenaModel(), scoreOutput.getJenaModel()).execute();
+//			new Score(vivo.getJenaModel(),scoreInput.getJenaModel(), scoreOutput.getJenaModel()).execute();
 	    }
 		
 		public Score (Model vivo, Model scoreInput, Model scoreOutput) {
@@ -268,8 +268,8 @@ public class Score {
 					"WHERE { ?x " + coreAttribute + "\"" +  scoreMatch + "\"}";
     			
     			//TODO how to combine result sets? not possible in JENA
-    			vivoResult = executeQuery(vivo, queryString);
-    			commitResultSet(vivo,scoreInput,vivoResult,paperResource,paperNode,matchNode);
+//    			vivoResult = executeQuery(vivo, queryString);
+//    			commitResultSet(vivo,scoreInput,vivoResult,paperResource,paperNode,matchNode);
             }	    			 
 	    	
 	    	//TODO return scoreInput minus the scored statements			
