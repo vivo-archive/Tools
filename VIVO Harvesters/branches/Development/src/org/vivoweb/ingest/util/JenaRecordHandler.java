@@ -36,7 +36,7 @@ import com.hp.hpl.jena.update.UpdateRequest;
 public class JenaRecordHandler extends RecordHandler {
 	
 	protected Model model;
-	protected String nameSpace;
+	protected static final String rhNameSpace = "http://ingest.vivoweb.org/util/jenarecordhandler#";
 	protected Property recType;
 	protected Property idType;
 	protected Property dataType;
@@ -60,12 +60,13 @@ public class JenaRecordHandler extends RecordHandler {
 	 * @param username username to use
 	 * @param password password to use
 	 * @param dbType ex:"MySQL"
+	 * @param dataFieldType rdf Predicate (including namespace) that describes data type
 	 */
 	public JenaRecordHandler(String jdbcDriverClass, String connType, String host, String port, String dbName,
-			String username, String password, String dbType, String modelName) {
+			String username, String password, String dbType, String modelName, String dataFieldType) {
 		this.model = new JenaConnect("jdbc:" + connType + "://" + host + ":" + port + "/" + dbName, username, password,
 				modelName, dbType, jdbcDriverClass).getJenaModel();
-		initVars();
+		initVars(dataFieldType);
 	}
 	
 	/**
@@ -78,31 +79,32 @@ public class JenaRecordHandler extends RecordHandler {
 	 * @param username username to use
 	 * @param password password to use
 	 * @param dbType ex:"MySQL"
+	 * @param dataFieldType rdf Predicate (including namespace) that describes data type
 	 */
 	public JenaRecordHandler(String jdbcDriverClass, String connType, String host, String port, String dbName,
-			String username, String password, String dbType) {
+			String username, String password, String dbType, String dataFieldType) {
 		this.model = new JenaConnect("jdbc:" + connType + "://" + host + ":" + port + "/" + dbName, username, password,
 				dbType, jdbcDriverClass).getJenaModel();
-		initVars();
+		initVars(dataFieldType);
 	}
 	
 	/**
 	 * Constructor (w/ Model Config File)
 	 * @param configFile the model config file
+	 * @param dataFieldType rdf Predicate (including namespace) that describes data type
 	 * @throws IOException error connecting
 	 * @throws SAXException xml parse error
 	 * @throws ParserConfigurationException xml parse error
 	 */
-	public JenaRecordHandler(String configFile) throws ParserConfigurationException, SAXException, IOException {
+	public JenaRecordHandler(String configFile, String dataFieldType) throws ParserConfigurationException, SAXException, IOException {
 		this.model = JenaConnect.parseConfig(configFile).getJenaModel();
-		initVars();
+		initVars(dataFieldType);
 	}
 	
-	private void initVars() {
-		this.nameSpace = "http://ingest.vivoweb.org/util/jenarecordhandler#";
-		this.recType = this.model.createProperty(this.nameSpace, "record");
-		this.idType = this.model.createProperty(this.nameSpace, "idField");
-		this.dataType = this.model.createProperty(this.nameSpace, "dataField");
+	private void initVars(String dataFieldType) {
+		this.recType = this.model.createProperty(rhNameSpace, "record");
+		this.idType = this.model.createProperty(rhNameSpace, "idField");
+		this.dataType = this.model.createProperty(dataFieldType);
 		this.isA = this.model.createProperty("http://www.w3.org/1999/02/22-rdf-syntax-ns#","type");
 	}
 	
@@ -118,14 +120,14 @@ public class JenaRecordHandler extends RecordHandler {
 	public void delRecord(String recID) throws IOException {
 		// create query string
 		String sQuery = ""
-				+ "PREFIX ns: <"+this.nameSpace+"> "
+				+ "PREFIX rhns: <"+rhNameSpace+"> \n"
 				+ "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> "
 				+ "DELETE { "
 				+ "  ?record ?p ?v "
 				+ "} "
 				+ "WHERE { "
-				+ "  ?record rdf:type ns:"+this.recType.getLocalName()+" . "
-				+ "  ?record ns:"+this.idType.getLocalName()+" \""+recID+"\" . "
+				+ "  ?record rdf:type rhns:"+this.recType.getLocalName()+" . "
+				+ "  ?record rhns:"+this.idType.getLocalName()+" \""+recID+"\" . "
 				+ "  ?record ?p ?v . "
 				+ "}";
 		UpdateRequest ur = UpdateFactory.create(sQuery);
@@ -136,13 +138,14 @@ public class JenaRecordHandler extends RecordHandler {
 	public String getRecordData(String recID) throws IllegalArgumentException, IOException {
 		// create query string
 		String sQuery = ""
-				+ "PREFIX ns: <"+this.nameSpace+"> "
+				+ "PREFIX rhns: <"+rhNameSpace+"> \n"
+				+ "PREFIX lns: <"+this.dataType.getNameSpace()+"> \n"
 				+ "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> "
 				+ "Select ?dataField "
 				+ "WHERE { "
-				+ "  ?record rdf:type ns:"+this.recType.getLocalName()+" . "
-				+ "  ?record ns:"+this.idType.getLocalName()+" \""+recID+"\" . "
-				+ "  ?record ns:"+this.dataType.getLocalName()+" ?dataField . "
+				+ "  ?record rdf:type rhns:"+this.recType.getLocalName()+" . "
+				+ "  ?record rhns:"+this.idType.getLocalName()+" \""+recID+"\" . "
+				+ "  ?record lns:"+this.dataType.getLocalName()+" ?dataField . "
 				+ "}";
 		
 		// create query
@@ -173,13 +176,14 @@ public class JenaRecordHandler extends RecordHandler {
 		protected JenaRecordIterator() {
 		// create query string
 			String sQuery = ""
-					+ "PREFIX ns: <"+JenaRecordHandler.this.nameSpace+"> "
-					+ "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> "
-					+ "Select ?idField "
-					+ "WHERE { "
-					+ "  ?record rdf:type ns:"+JenaRecordHandler.this.recType.getLocalName()+" . "
-					+ "  ?record ns:"+JenaRecordHandler.this.idType.getLocalName()+" ?idField . "
-					+ "  ?record ns:"+JenaRecordHandler.this.dataType.getLocalName()+" ?dataField . "
+					+ "PREFIX rhns: <"+JenaRecordHandler.rhNameSpace+"> \n"
+					+ "PREFIX lns: <"+JenaRecordHandler.this.dataType.getNameSpace()+"> \n"
+					+ "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> \n"
+					+ "Select ?idField \n"
+					+ "WHERE { \n"
+					+ "  ?record rdf:type rhns:"+JenaRecordHandler.this.recType.getLocalName()+" . \n"
+					+ "  ?record rhns:"+JenaRecordHandler.this.idType.getLocalName()+" ?idField . \n"
+					+ "  ?record lns:"+JenaRecordHandler.this.dataType.getLocalName()+" ?dataField . \n"
 					+ "}";
 			
 			// create query
@@ -216,6 +220,7 @@ public class JenaRecordHandler extends RecordHandler {
 	@Override
 	public void setParams(Map<String, String> params) throws IllegalArgumentException, IOException {
 		String jenaConfig = getParam(params,"jenaConfig",false);
+		String dataFieldType = getParam(params,"dataFieldType",true);
 		if(jenaConfig != null) {
 			try {
 				this.model = JenaConnect.parseConfig(jenaConfig).getJenaModel();
@@ -242,7 +247,7 @@ public class JenaRecordHandler extends RecordHandler {
 						dbType, jdbcDriverClass).getJenaModel();
 			}
 		}
-		initVars();
+		initVars(dataFieldType);
 	}
 	
 }

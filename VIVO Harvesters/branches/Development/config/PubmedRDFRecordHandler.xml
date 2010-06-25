@@ -8,6 +8,5 @@
 	<Param name="username">jdbcRecordStore</Param>
 	<Param name="password">5j63ucbNdZ5MCRda</Param>
 	<Param name="tableName">recordTable</Param>
-	<Param name="idFieldName">idField</Param>
 	<Param name="dataFieldName">dataField</Param>
 </RecordHandler>

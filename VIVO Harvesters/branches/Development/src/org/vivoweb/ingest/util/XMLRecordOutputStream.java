@@ -86,8 +86,8 @@ public class XMLRecordOutputStream extends OutputStream {
 		RecordHandler dataStore = RecordHandler.parseConfig("config/PubmedJenaRecordHandler.xml");
 //		dataStore = new MapRecordHandler();
 //		dataStore = new JDBCRecordHandler("com.mysql.jdbc.Driver", "mysql", "127.0.0.1", "3306", "jdbcrecordstore", "jdbcRecordStore", "5j63ucbNdZ5MCRda", "recordTable");
-//		dataStore = new JenaRecordHandler("com.mysql.jdbc.Driver", "mysql", "127.0.0.1", "3306", "jenarecordstore", "jenaRecordStore", "j6QvzjGG5muJmYN4", "MySQL");
-//		dataStore = new JenaRecordHandler("config/JenaModel.xml");
+//		dataStore = new JenaRecordHandler("com.mysql.jdbc.Driver", "mysql", "127.0.0.1", "3306", "jenarecordstore", "jenaRecordStore", "j6QvzjGG5muJmYN4", "MySQL", "http://localhost/jenarecordhandlerdemo#data");
+//		dataStore = new JenaRecordHandler("config/JenaModel.xml", "http://localhost/jenarecordhandlerdemo#data");
 //		dataStore = new TextFileRecordHandler("XMLVault");
 //		dataStore = new TextFileRecordHandler("ftp://yourMom:y0urM0m123@127.0.0.1:21/path/to/dir");
 		XMLRecordOutputStream os = new XMLRecordOutputStream("PubmedArticle", "<?xml version=\"1.0\"?>\n<!DOCTYPE PubmedArticleSet PUBLIC \"-//NLM//DTD PubMedArticle, 1st January 2010//EN\" \"http://www.ncbi.nlm.nih.gov/corehtml/query/DTD/pubmed_100101.dtd\">\n<PubmedArticleSet>\n", "\n</PubmedArticleSet>", ".*?<PMID>(.*?)</PMID>.*?", dataStore);
