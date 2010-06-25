@@ -3,6 +3,7 @@ package org.vivoweb.ingest.transfer;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.vivoweb.ingest.util.JenaConnect;
+import com.hp.hpl.jena.rdf.model.Model;
 
 /**
  * @author Christopher Haines (hainesc@ctrip.ufl.edu)
@@ -11,6 +12,10 @@ import org.vivoweb.ingest.util.JenaConnect;
 public class Transfer {
 	
 	private static Log log = LogFactory.getLog(Transfer.class);
+	
+	public static void transfer(Model in, Model out) {
+		out.add(in);
+	}
 	
 	/**
 	 * @param args command line arguments
@@ -24,7 +29,7 @@ public class Transfer {
 		try {
 			JenaConnect in = JenaConnect.parseConfig(args[0]);
 			JenaConnect out = JenaConnect.parseConfig(args[0]);
-			out.getJenaModel().add(in.getJenaModel());
+			transfer(in.getJenaModel(),out.getJenaModel());
 		} catch(Exception e) {
 			// TODO Real Error Handling?
 			log.error(e.getMessage(),e);
