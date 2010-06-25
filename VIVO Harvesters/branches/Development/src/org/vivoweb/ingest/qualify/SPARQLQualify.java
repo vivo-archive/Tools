@@ -90,5 +90,12 @@ public class SPARQLQualify extends Qualify {
 			}
 		}
 	}
+	
+	/**
+	 * @param args commandline arguments
+	 */
+	public static void main(String... args) {
+		
+	}
 
 }

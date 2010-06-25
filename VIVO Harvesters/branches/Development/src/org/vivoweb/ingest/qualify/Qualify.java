@@ -31,6 +31,13 @@ public abstract class Qualify {
 	}
 	
 	/**
+	 * @param configFileName the config file that describes the model to set
+	 */
+	protected void setModel(String configFileName) {
+		
+	}
+	
+	/**
 	 * @return the model
 	 */
 	protected Model getModel() {
@@ -44,12 +51,5 @@ public abstract class Qualify {
 	 * @param regex 
 	 */
 	public abstract void replace(String dataType, String matchValue, String newValue, boolean regex);
-	
-	/**
-	 * @param args commandline arguments
-	 */
-	public static void main(String[] args) {
-		
-	}
 	
 }
