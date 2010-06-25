@@ -83,8 +83,12 @@ public class GlozeTranslator extends Translator{
 	 * 
 	 */
 	public void execute() {
-		if (this.uriBase != null && this.incomingXMLFile != null ){		
+		if (this.uriBase != null && this.incomingXMLFile != null ){	
+			log.info("Translation: Start");
+			
 			translateFile();
+			
+			log.info("Translation: End");
 		}
 		else {
 			log.error("Invalid Arguments: Gloze Translation requires a URIBase and XMLFile");
@@ -100,7 +104,7 @@ public class GlozeTranslator extends Translator{
 		
 		if (args.length < 2 || args.length > 4) {
 			  log.error("Invalid Arguments: GlozeTranslate requires at least 2 arguments.  The system was supplied with " + args.length);
-			  throw new IllegalArgumentException();
+			  //throw new IllegalArgumentException();
 		}
 		else {
 			GlozeTranslator glTrans = new GlozeTranslator();
@@ -122,7 +126,7 @@ public class GlozeTranslator extends Translator{
 			}
 			else {
 				log.error("Invalid Arguments: Translate option " + args[0] + " not handled.");
-				throw new IllegalArgumentException();
+				//throw new IllegalArgumentException();
 			}		
 		}
 	}
