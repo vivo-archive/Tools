@@ -244,9 +244,10 @@ public class Score {
                  Resource removeAuthor = toReplace.getResource(killList.next().toString());
             	 
 	             //return a statment iterator with all the statements for the Author that matches, then remove those statements
-	             StmtIterator deleteStmts = toReplace.listStatements(removeAuthor, null, null);
+	             
+	             StmtIterator deleteStmts = toReplace.listStatements(null, null, removeAuthor);
 	             toReplace.remove(deleteStmts);
-	             deleteStmts = toReplace.listStatements(null, null, removeAuthor);
+	             deleteStmts = toReplace.listStatements(removeAuthor, null, (RDFNode)null);
 	             toReplace.remove(deleteStmts);
              }
                          
