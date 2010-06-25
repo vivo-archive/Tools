@@ -17,10 +17,6 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.io.StringBufferInputStream;
-import java.io.StringReader;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 
 import javax.xml.transform.Source;
 import javax.xml.transform.Transformer;
@@ -28,10 +24,9 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
 
-import org.vivoweb.ingest.translate.Translator;
 import org.vivoweb.ingest.util.Record;
 import org.vivoweb.ingest.util.RecordHandler;
-import org.vivoweb.ingest.util.XMLRecordOutputStream;
+import org.vivoweb.ingest.translate.Translator;
 
 public class XSLTranslator extends Translator{
 		
