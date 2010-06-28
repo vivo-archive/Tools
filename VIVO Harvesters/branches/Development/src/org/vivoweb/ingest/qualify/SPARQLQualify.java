@@ -10,6 +10,12 @@
  ******************************************************************************/
 package org.vivoweb.ingest.qualify;
 
+import java.io.IOException;
+import javax.xml.parsers.ParserConfigurationException;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.vivoweb.ingest.util.JenaConnect;
+import org.xml.sax.SAXException;
 import com.hp.hpl.jena.query.Query;
 import com.hp.hpl.jena.query.QueryExecution;
 import com.hp.hpl.jena.query.QueryExecutionFactory;
@@ -26,6 +32,7 @@ import com.hp.hpl.jena.update.UpdateRequest;
  *
  */
 public class SPARQLQualify extends Qualify {
+	private static Log log = LogFactory.getLog(SPARQLQualify.class);
 	
 	/**
 	 * Constructor
@@ -92,7 +99,21 @@ public class SPARQLQualify extends Qualify {
 	 * @param args commandline arguments
 	 */
 	public static void main(String... args) {
-		
+		JenaConnect jc;
+		try {
+			if(args.length != 6|| (jc = JenaConnect.parseConfig(args[1])) == null || !(args[5].equalsIgnoreCase("true") || args[5].equalsIgnoreCase("false"))) {
+				IllegalArgumentException e = new IllegalArgumentException("Usage: SPARQLQualify [modelConfigFilePath] [dataType] [matchValue] [newValue] [true|false]");
+				log.error(e.getMessage(),e);
+				throw e;
+			}
+			new SPARQLQualify(jc.getJenaModel()).replace(args[2], args[3], args[4], Boolean.parseBoolean(args[5]));
+		} catch(ParserConfigurationException e) {
+			log.error("",e);
+		} catch(SAXException e) {
+			log.error("",e);
+		} catch(IOException e) {
+			log.error("",e);
+		}
 	}
 
 }

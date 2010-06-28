@@ -25,14 +25,14 @@ public class Transfer {
 	 * @param args command line arguments
 	 */
 	public static void main(String... args) {
-		if(args.length != 2) {
+		if(args.length != 3) {
 			IllegalArgumentException e = new IllegalArgumentException("Transfer requires 2 arguments, both being Jena Model Configuration Files");
 			log.error(e.getMessage(),e);
 			throw e;
 		}
 		try {
-			JenaConnect in = JenaConnect.parseConfig(args[0]);
-			JenaConnect out = JenaConnect.parseConfig(args[0]);
+			JenaConnect in = JenaConnect.parseConfig(args[1]);
+			JenaConnect out = JenaConnect.parseConfig(args[2]);
 			transfer(in.getJenaModel(),out.getJenaModel());
 		} catch(Exception e) {
 			// TODO Real Error Handling?
