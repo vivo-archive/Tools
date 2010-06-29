@@ -37,14 +37,15 @@ public class XSLTranslator extends Translator{
 	private File translationFile;
 	
 	/***
-	 * Empty constructor
+	 * Constructor
 	 */
 	public XSLTranslator(){
 		
 	}
 		
 	/***
-	 * Initial constructor for the translate method, it is not required to use this constructor
+	 * Constructor
+	 * Initializing constructor for the translate method, it is not required to use this constructor
 	 * but it is suggested, since not passing one of the variables would result in a error being thrown
 	 * 
 	 * @param sType Type of the file to be translated (for this exercise its always XML)
@@ -52,16 +53,14 @@ public class XSLTranslator extends Translator{
 	 * @param iStream the incoming stream that the file is passed into
 	 * @param oStream the outgoing stream that the translation is passed to
 	 */
-	public XSLTranslator(String sType, File transFile, InputStream iStream, OutputStream oStream){
-		this.setSourceType(sType);
+	public XSLTranslator(File transFile, InputStream iStream, OutputStream oStream){
 		this.setTranslationFile(transFile);
 		this.setInStream(iStream);
 		this.setOutStream(oStream);
 	}
 	
 	/***
-	 * Set translation file
-	 * sets the translationFile
+	 * Set translation file from a file
 	 * 
 	 * @param transFile valid type of translation file is xslt
 	 */
@@ -69,12 +68,18 @@ public class XSLTranslator extends Translator{
 		this.translationFile = transFile;
 	}
 	
+	/***
+	 * set translation file from a location 
+	 * 
+	 * @param filename string of the location of the translation file
+	 */
 	public void setTranslationFile(String filename){
 		this.translationFile = new File(filename);
 	}
 		
 	/***
-	 * This function will utilize the translation file to transform the outputstream
+	 * This function checks for the required variables before continueing execution
+	 * 
 	 * @throws IllegalArgumentException when the system is not properly configured
 	 */
 	public void execute() throws IllegalArgumentException {
@@ -99,6 +104,8 @@ public class XSLTranslator extends Translator{
 	
 	
 	/***
+       * using the javax xml transform factory this method uses the xsl file to translate
+       * XML into the desired format designated in the xsl file.
 	   * 
 	   * @param xmlData ObjectInputStream of the xml that is about to be translated
 	   * @param xsltFile File for the definition that should be translated
@@ -126,43 +133,16 @@ public class XSLTranslator extends Translator{
 	    }
 	  }
 	  
-//		/***
-//		 * 
-//		 * @param xmlData ObjectInputStream of the xml that is about to be translated
-//		 * @param xsltFile File for the definition that should be translated
-//		 * @return StringWriter of the transformation
-//		 */
-//		private StringWriter xmlTranslate(InputStream xmlData, File xsltFile) {
-//			StringWriter outputWriter = new StringWriter();
-//			StreamResult outputResult = new StreamResult(outputWriter);
-//			
-//			try {
-//				// JAXP reads data using the Source interface
-//		        Source xmlSource = new StreamSource(xmlData);
-//		        Source xsltSource = new StreamSource(xsltFile);
-	//	
-//		        // the factory pattern supports different XSLT processors
-//		        TransformerFactory transFact = TransformerFactory.newInstance();
-//		        Transformer trans = transFact.newTransformer(xsltSource);
-	//	
-//		        // this outputs to sysout but further implementations should push to jena then to datastore
-//		        trans.transform(xmlSource, outputResult);
-//			}
-//			catch (Exception e) {
-//				log.error("",e);
-//			}
-//			
-//			return outputWriter;
-//		}
+
 
 	  /**
 	   * Currently the main method accepts two methods of execution, file translation and record handler translation
 	   * 
 	   * @param functionSwitch possible entries include -f for file and -rh for record handler
-	   * @param translationFile
-	   * @param fileToTranslate  
-	   * @param inRecordHandler
-	   * @param outRecordHandler
+	   * @param translationFile the file that details the translation from the original xml to the target format
+	   * @param fileToTranslate the file that requires translation 
+	   * @param inRecordHandler the files/records that require translation
+	   * @param outRecordHandler the output record for the translated files
 	   */
 	  public static void main(String[] args) {
 		 if (args.length != 3) {
@@ -181,20 +161,20 @@ public class XSLTranslator extends Translator{
 					//execute the program
 					xslTrans.execute();
 				} catch (FileNotFoundException e) {
-					// TODO Auto-generated catch block
-					log.error(e.getStackTrace().toString());
+					log.error("", e);
 				}				
 			}
 			else if (args[0].equals("-rh")) {
 				try{
-					//TODO add pulling in the config portions
+					//pull in the translation xsl
 					XSLTranslator xslTrans = new XSLTranslator();
 					xslTrans.setTranslationFile(new File(args[2]));
 					
-					//TODO add creating the record handlers
+					//create record handlers
 					RecordHandler inStore = RecordHandler.parseConfig(args[1]);
 					RecordHandler outStore = RecordHandler.parseConfig(args[3]);
 					
+					//create a output stream for writing to the out store
 					ByteArrayOutputStream buff = new ByteArrayOutputStream();
 					
 					// get from the in record and translate
@@ -210,7 +190,7 @@ public class XSLTranslator extends Translator{
 					buff.close();
 				}
 				catch(Exception e){
-					//TODO fix me
+					log.error("", e);
 				}
 			}
 			else {
