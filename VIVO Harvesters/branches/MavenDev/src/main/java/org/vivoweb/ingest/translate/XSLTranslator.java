@@ -174,8 +174,8 @@ public class XSLTranslator extends Translator{
 				try {
 					//set the in/out and translation var
 					XSLTranslator xslTrans = new XSLTranslator();
-					xslTrans.setTranslationFile(new File(args[1]));
-					xslTrans.setInStream(new FileInputStream(new File(args[2])));
+					xslTrans.setTranslationFile(new File(args[2]));
+					xslTrans.setInStream(new FileInputStream(new File(args[1])));
 					xslTrans.setOutStream(System.out);
 					
 					//execute the program
@@ -189,10 +189,10 @@ public class XSLTranslator extends Translator{
 				try{
 					//TODO add pulling in the config portions
 					XSLTranslator xslTrans = new XSLTranslator();
-					xslTrans.setTranslationFile(new File(args[1]));
+					xslTrans.setTranslationFile(new File(args[2]));
 					
 					//TODO add creating the record handlers
-					RecordHandler inStore = RecordHandler.parseConfig(args[2]);
+					RecordHandler inStore = RecordHandler.parseConfig(args[1]);
 					RecordHandler outStore = RecordHandler.parseConfig(args[3]);
 					
 					ByteArrayOutputStream buff = new ByteArrayOutputStream();
