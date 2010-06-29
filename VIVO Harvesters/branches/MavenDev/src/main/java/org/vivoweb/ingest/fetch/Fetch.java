@@ -22,68 +22,85 @@ import java.io.InputStreamReader;
 import java.util.HashMap;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+/**
+ * @author Dale Scheppler
+ * 
+ * Wrapper for Fetch sub-functions and commandline parser.
+ */
 public class Fetch 
-{
-	private static Log log = LogFactory.getLog(Fetch.class);
 
+{
+
+	private static Log log = LogFactory.getLog(Fetch.class);								//Initialize the Log4J log Factory.
+	/**
+	 * @author Dale Scheppler
+	 * @param args - The command line parameters input by the user at runtime.
+	 */
 	public static void main(String[] args)
 	{
-		log.debug("Initializing Fetch.");
-		if(args.length == 1)
+		log.debug("Initializing Fetch.");													//Log that we're starting a fetch.
+		if(args.length == 1)																//We only take one argument.
 		{
-		for(String s: args)
+		for(String strArguments: args)
 			{
-			if(s.equals("OAI"))
+			if(strArguments.equals("OAI"))													//If they typed "OAI"
 			{
 				try
 				{
-				System.out.println("Trying to read file.");
-				OAIFetch(readConfig("config/OAIHarvestConfig.txt"));
+				System.out.println("Trying to read OAI Configuration file.");				//Log that we're checking for a config file for OAI
+				OAIFetch(readConfig("config/OAIHarvestConfig.txt"));						//Run OAI Fetch using the existing configuration file.
 				}
 				catch(IllegalArgumentException e)
 				{
-					log.fatal("", e);
+					log.fatal("", e);														//If there is a problem, throw the exception to the logger
 				}
 			}
-			else if(s.equals("NIH"))
+			else if(strArguments.equals("NIH"))												//If they typed "NIH"
 			{
-				NIHFetch();
+				//@TODO Finish the OAI fetch and add configuration options here.
+				NIHFetch();																	//Run the OAI Fetch
 			}
-			else if(s.equals("PubMed"))
+			else if(strArguments.equals("PubMed"))											//If they typed "PubMed"
 			{
-				PubMedFetch();
+				//@TODO Finish putting in the stuff for reading the configuration file here.
+				PubMedFetch();																//Run the PubMed Fetch
 			}
-			else if(s.equals("RDB"))
+			else if(strArguments.equals("RDB"))												//If they typed RDB
 			{
-				RDBFetch();
+				//@TODO Finish the RDB Fetch and add configuration options here.
+				RDBFetch();																	//Run the RDB (Relational Database) Fetch
 			}
-			else
+			else																			//Otherwise
 			{
-				log.fatal("Fetch initialized with inappropriate argument.");
+				log.fatal("Fetch initialized with inappropriate argument.");				//Log that they input an improper commandline argument.				
 				System.out.println("Invalid Argument. Valid arguments are NIH, OAI, PubMed, or RDB.");
 			}
 			}
 		}
-		else
+		else																				//Otherwise
 		{
-			log.fatal("Fetch attempted to run with incorrect number of arguments.");
+			log.fatal("Fetch attempted to run with incorrect number of arguments.");		//Log that they tried to put in too many or too few arguments.
 			System.out.println("Incorrect Number of Arguments, valid arguments are OAI, NIH, PubMed, or RDB.");
 		}
-		log.debug("Fetch Complete.");
+		log.debug("Fetch Complete.");														//Log that fetch is shutting down.
 
 	}
+	/**
+	 * @author Dale Scheppler
+	 * @param hmConfigMap - A hashmap of the configuration data from the configuration file.<br>
+	 * The configuration file can be read and a hashmap returned using Fetch.readconfig
+	 */
 	public static void OAIFetch(HashMap<String, String> hmConfigMap )
 	{
-		log.debug("Initializing OAI Fetch.");
-		checkConfig(hmConfigMap, OAIHarvest.arrRequiredParamaters);		
-		
+		log.debug("Initializing OAI Fetch.");												//Log that we're running an OAI Fetch
+		checkConfig(hmConfigMap, OAIHarvest.arrRequiredParamaters);							//Check that the configuration paramaters are correct as defined in the OAIHarvest class.
 		try {
-			OAIHarvest.execute(hmConfigMap.get("address"), hmConfigMap.get("startDate"), hmConfigMap.get("endDate"), new FileOutputStream(hmConfigMap.get("filename")));
+			OAIHarvest.execute(hmConfigMap.get("address"), hmConfigMap.get("startDate"), hmConfigMap.get("endDate"), new FileOutputStream(hmConfigMap.get("filename")));		//Attempt to run the OAI Harvest.
 		} catch (Exception e) {
 			e.printStackTrace();
-			log.error("Error during OAI Fetch: ", e);
+			log.error("Error during OAI Fetch: ", e);										//Catch and log any errors.
 		}
-		log.debug("OAI Fetch Complete.");
+		log.debug("OAI Fetch Complete.");													//Log when complete.
 	}
 	public static void PubMedFetch()
 	{
@@ -99,29 +116,40 @@ public class Fetch
 		
 		
 	}
+	/**
+	 * Look ma, I'm a stub!
+	 */
 	public static void NIHFetch()
 	{
 		System.out.println("We would be running NIH Fetch here");
 	}
+	/**
+	 * Look ma, I'm a stub!
+	 */
 	public static void RDBFetch()
 	{
 		System.out.println("We would be running RDB Fetch here");
 	}
-
+/**
+ * Reads a configuration file in key:value format and returns a hashmap of the results.
+ * @author Dale Scheppler and Chris Haines
+ * @param strFilename - The file name and path of the configuration file
+ * @return hashMap[String, String] - A hashMap the data in the configuration file.
+ * @throws IllegalArgumentException If configuration file is not in correct format
+ */
 	public static HashMap<String, String> readConfig(String strFilename) throws IllegalArgumentException {
-		HashMap<String, String> hmConfigMap = new HashMap<String, String>();
+		HashMap<String, String> hmConfigMap = new HashMap<String, String>();											//Create the hashmap
 		try {
-			FileInputStream fisConfigFile = new FileInputStream(strFilename);
-			BufferedReader brConfigFile = new BufferedReader(
+			FileInputStream fisConfigFile = new FileInputStream(strFilename);											//Create the File Input Stream
+			BufferedReader brConfigFile = new BufferedReader(															//Create a buffered reader
 					new InputStreamReader(fisConfigFile));
-			String strLine;
-			while ((strLine = brConfigFile.readLine()) != null) {
-				String[] strParams = strLine.split(":",2);
-				if(strParams.length != 2){
-					throw new IllegalArgumentException("Invalid configuration file format. Entries must be key:value.");
+			String strLine;																								//Initialize a string variable
+			while ((strLine = brConfigFile.readLine()) != null) {														//Until we hit the end of the file
+				String[] strParams = strLine.split(":",2);																//Grab the line and split it on the colon
+				if(strParams.length != 2){																				//If we end up with more or less than two pieces
+					throw new IllegalArgumentException("Invalid configuration file format. Entries must be key:value.");//Throw an error
 				}
-//				System.out.println(strLine.split(":")[1]);
-				hmConfigMap.put(strParams[0], strParams[1]);
+				hmConfigMap.put(strParams[0], strParams[1]);															//Add the key:value pair to the hashmap.
 				
 			}
 		} catch (FileNotFoundException e1) {
@@ -138,10 +166,18 @@ public class Fetch
 		return hmConfigMap;
 
 	}
+	/**
+	 * Insert twilight zone theme song here.
+	 */
 	private Fetch()
 	{
 		System.out.println("This space intentionally left blank.");
 	}
+	/**
+	 * Checks the configuration file hashmap against the list of required paramaters in the various fetch subclasses.
+	 * @param hmConfigMap - The hashMap to be checked.
+	 * @param arrParameters - The parameters that are required by the subclass.
+	 */
 	private static void checkConfig(HashMap<String, String> hmConfigMap, String[] arrParameters)
 	{
 		for(String Param:arrParameters)
