@@ -49,7 +49,8 @@ package org.vivoweb.ingest.translate;
  *
  */
 public class VCardTranslator extends Translator{
-
+	//This code was marked as never used by UCDetector.
+	//FIXME Determine if this code is necessary.
 	//Global Variables
 	
 	

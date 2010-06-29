@@ -26,6 +26,9 @@ import org.apache.commons.logging.LogFactory;
  * TODO MILESTONE1: test for error handling, failing completely and gently
  * ***************************************************************************************/
 public class Translator {
+	//This code was marked as may cause compile errors by UCDetector.
+	//Change visibility of class to Default
+	//FIXME This code was marked as may cause compile errors by UCDetector.
 	
 	protected static Log log = LogFactory.getLog(Translator.class);
 	
@@ -33,6 +36,9 @@ public class Translator {
 	 * Source type may become depreciated depending on construction of additional translators
 	 */
 	protected String sourceType;
+	//This code was marked as may cause compile errors by UCDetector.
+	//Change visibility of Field Translator.sourceType to Private
+	//FIXME This code was marked as may cause compile errors by UCDetector.
 	
 	/**
 	 * in stream is the stream containing the file (xml) that we are going to translate
@@ -62,6 +68,8 @@ public class Translator {
 	 * @param oStream the outgoing stream that the translation is passed to
 	 */
 	public Translator(String sType, InputStream iStream, OutputStream oStream){
+		//This code was marked as never used by UCDetector.
+		//FIXME Determine if this code is necessary.
 		this.setSourceType(sType);
 		this.setInStream(iStream);
 		this.setOutStream(oStream);

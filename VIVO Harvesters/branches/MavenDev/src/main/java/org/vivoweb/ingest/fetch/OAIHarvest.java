@@ -10,8 +10,14 @@ import ORG.oclc.oai.harvester2.app.RawWrite;
 
 
 public class OAIHarvest {
+	//This code was marked as may cause compile errors by UCDetector.
+	//Change visibility of class to Default
+	//FIXME This code was marked as may cause compile errors by UCDetector.
 
 	public static final String[] arrRequiredParamaters = {"address", "startDate", "endDate", "filename"};
+	//This code was marked as may cause compile errors by UCDetector.
+	//Change visibility of constant "arrRequiredParameters" to Protected.
+	//FIXME This code was marked as may cause compile errors by UCDetector.
 	
 	/**
 	 * @param args
@@ -26,6 +32,9 @@ public class OAIHarvest {
 	}
 	public static void execute(String strAddress, String strStartDate, String strEndDate, FileOutputStream fosOutStream) throws Exception, Exception, SAXException, TransformerException, NoSuchFieldException
 	{
+		//This code was marked as may cause compile errors by UCDetector.
+		//Change visibility of method "OAIHarvest.execute" to Protected.
+		//FIXME This code was marked as may cause compile errors by UCDetector.
 		RawWrite.run("http://" + strAddress, strStartDate, strEndDate, "oai_dc", "", fosOutStream);
 	}
 

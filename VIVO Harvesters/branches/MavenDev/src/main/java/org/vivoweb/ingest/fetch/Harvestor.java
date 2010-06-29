@@ -15,6 +15,9 @@ package org.vivoweb.ingest.fetch;
  *  @author Dale R. Scheppler dscheppler@ichp.ufl.edu
  */
 public interface Harvestor {
+	//This code was marked as may cause compile errors by UCDetector.
+	//Change visibility of class to Default
+	//FIXME This code was marked as may cause compile errors by UCDetector.
 	
 	//TODO dscheppler - Define Interface for all Harvestors to implement
 	

@@ -57,6 +57,9 @@ public abstract class RecordHandler implements Iterable<Record> {
 	 * @throws IOException error reading
 	 */
 	public Record getRecord(String recID) throws IllegalArgumentException, IOException {
+		//This code was marked as may cause compile errors by UCDetector.
+		//Change visibility of method "RecordHandler.getRecord" to Protected.
+		//FIXME This code was marked as may cause compile errors by UCDetector.
 		return new Record(recID, getRecordData(recID));
 	}
 	

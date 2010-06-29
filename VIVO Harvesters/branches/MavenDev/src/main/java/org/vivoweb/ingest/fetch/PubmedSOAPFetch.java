@@ -74,6 +74,9 @@ public class PubmedSOAPFetch implements Harvestor
 	 */
 	public String fetchAll()
 	{
+		//This code was marked as may cause compile errors by UCDetector.
+		//Change visibility of method "PubmedSOAPFetch.fetchAll" to Private
+		//FIXME This code was marked as may cause compile errors by UCDetector.
 		return "1:8000[dp]";
 	}
 	
@@ -100,6 +103,9 @@ public class PubmedSOAPFetch implements Harvestor
 	 */
 	public List<Integer> ESearch(String term, Integer maxNumRecords)
 	{
+		//This code was marked as may cause compile errors by UCDetector.
+		//Change visibility of method "PubmedSOAPFetch.ESearch" to Private
+		//FIXME This code was marked as may cause compile errors by UCDetector.
 		// define the list to hold our ids
 		ArrayList<Integer> idList = new ArrayList<Integer>();
 		try
@@ -171,6 +177,9 @@ public class PubmedSOAPFetch implements Harvestor
 	 */
 	public String[] ESearchEnv(String term, Integer maxNumRecords, Integer retStart)
 	{
+		//This code was marked as may cause compile errors by UCDetector.
+		//Change visibility of method "PubmedSOAPFetch.ESearchEnv" to Private
+		//FIXME This code was marked as may cause compile errors by UCDetector.
 		// define the array to hold our Environment data
 		String[] env = new String[3];
 		try
@@ -224,6 +233,8 @@ public class PubmedSOAPFetch implements Harvestor
 	 * @throws IllegalArgumentException 
 	 */
 	public void fetchPubMedEnv(String[] env, String start, String numRecords) throws IllegalArgumentException {
+		//This code was marked as never used by UCDetector.
+		//FIXME Determine if this code is necessary.
 		if(!(env.length == 2 || env.length == 3)) {
 			throw new IllegalArgumentException("Invalid WebEnv and QueryKey");
 		}
@@ -238,6 +249,9 @@ public class PubmedSOAPFetch implements Harvestor
 	 * @param maxRecords 
 	 */
 	public void fetchPubMedEnv(String WebEnv, String QueryKey, String intStart, String maxRecords) {
+		//This code was marked as may cause compile errors by UCDetector.
+		//Change visibility of method "PubmedSOAPFetch.fetchPubMedEnv" to Private
+		//FIXME This code was marked as may cause compile errors by UCDetector.
 		EFetchPubmedServiceStub.EFetchRequest req = new EFetchPubmedServiceStub.EFetchRequest();
 		req.setQuery_key(QueryKey);
 		req.setWebEnv(WebEnv);
@@ -261,6 +275,8 @@ public class PubmedSOAPFetch implements Harvestor
 	 * @return 
 	 */
 	public String queryPubMedIDs(List<Integer> ids) {
+		//This code was marked as never used by UCDetector.
+		//FIXME Determine if this code is necessary.
 		StringBuilder strPMID = new StringBuilder();
 		for(int id = 0; id < ids.size(); id++ ) {
 			if(id != 0) {
@@ -303,6 +319,8 @@ public class PubmedSOAPFetch implements Harvestor
 	 * @return 
 	 */
 	public String queryPubMedID(int id) {
+		//This code was marked as never used by UCDetector.
+		//FIXME Determine if this code is necessary.
 		return id+"[uid]";
 	}
 	
@@ -314,6 +332,8 @@ public class PubmedSOAPFetch implements Harvestor
 	 */
 	public String queryByRange(int intStartRecord, int intStopRecord)
 	{
+		//This code was marked as never used by UCDetector.
+		//FIXME Determine if this code is necessary.
 		return intStartRecord+":"+intStopRecord+"[uid]";
 	}
 	
@@ -329,6 +349,8 @@ public class PubmedSOAPFetch implements Harvestor
 	 */
 	public String queryAllByDateRange(int intStartMonth, int intStartDay, int intStartYear, int intStopMonth, int intStopDay, int intStopYear)
 	{
+		//This code was marked as never used by UCDetector.
+		//FIXME Determine if this code is necessary.
 		return intStartYear+"/"+intStartMonth+"/"+intStartDay+"[PDAT]:"+intStopYear+"/"+intStopMonth+"/"+intStopDay+"[PDAT]";		
 	}
 	
@@ -341,6 +363,8 @@ public class PubmedSOAPFetch implements Harvestor
 	 */
 	public String queryAllFromLastFetch(int intLastRunMonth, int intLastRunDay, int intLastRunYear)
 	{
+		//This code was marked as never used by UCDetector.
+		//FIXME Determine if this code is necessary.
 		return intLastRunYear+"/"+intLastRunMonth+"/"+intLastRunDay+"[PDAT]:8000[PDAT]";
 	}
 	
@@ -401,6 +425,9 @@ public class PubmedSOAPFetch implements Harvestor
 	 * @throws IOException
 	 */
 	public void beginXML() throws IOException {
+		//This code was marked as may cause compile errors by UCDetector.
+		//Change visibility of method "PubmedSOAPFetch.BeginXML" to Private
+		//FIXME This code was marked as may cause compile errors by UCDetector.
 		this.xmlWriter.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
 		this.xmlWriter.write("<!DOCTYPE PubmedArticleSet PUBLIC \"-//NLM//DTD PubMedArticle, 1st January 2010//EN\" \"http://www.ncbi.nlm.nih.gov/corehtml/query/DTD/pubmed_100101.dtd\">\n");
 		this.xmlWriter.write("<PubmedArticleSet>\n");
@@ -411,6 +438,9 @@ public class PubmedSOAPFetch implements Harvestor
 	 * @throws IOException
 	 */
 	public void endXML() throws IOException {
+		//This code was marked as may cause compile errors by UCDetector.
+		//Change visibility of method "PubmedSOAPFetch.endXML" to Private
+		//FIXME This code was marked as may cause compile errors by UCDetector.
 		this.xmlWriter.flush();
 		this.xmlWriter.write("</PubmedArticleSet>");
 		this.xmlWriter.flush();
@@ -425,6 +455,8 @@ public class PubmedSOAPFetch implements Harvestor
 	 */
 	public void execute()
 	{
+		//This code was marked as never used by UCDetector.
+		//FIXME Determine if this code is necessary.
 		log.info("Fetch Begin");
 		//xml write functions, take in a stream pass it to a writer
 		//Header lines for XML files from pubmed

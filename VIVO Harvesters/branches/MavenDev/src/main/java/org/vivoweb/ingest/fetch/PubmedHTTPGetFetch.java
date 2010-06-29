@@ -35,6 +35,8 @@ import org.apache.commons.logging.LogFactory;
  * @author Christopher Haines cah@ichp.ufl.edu
  */
 public class PubmedHTTPGetFetch implements Harvestor
+//This code was marked as never used by UCDetector.
+//FIXME Determine if this code is necessary.
 {
 	private static Log log = LogFactory.getLog(PubmedHTTPGetFetch.class);
 	private String strEmailAddress;

@@ -17,6 +17,9 @@ import com.hp.hpl.jena.rdf.model.Model;
  *
  */
 public abstract class Qualify {
+	//This code was marked as may cause compile errors by UCDetector.
+	//Change visibility of class to Default
+	//FIXME This code was marked as may cause compile errors by UCDetector.
 	
 	private Model model;
 	
@@ -31,6 +34,8 @@ public abstract class Qualify {
 	 * @param configFileName the config file that describes the model to set
 	 */
 	protected void setModel(String configFileName) {
+		//This code was marked as never used by UCDetector.
+		//FIXME Determine if this code is necessary.
 		
 	}
 	

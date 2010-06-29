@@ -24,6 +24,9 @@ public class Record {
 	 * @param recData records data
 	 */
 	public Record(String recID, String recData) {
+		//This code was marked as may cause compile errors by UCDetector.
+		//Change visibility of constructor "Record.Record" to Protected.
+		//FIXME This code was marked as may cause compile errors by UCDetector.
 		setID(recID);
 		setData(recData);
 	}

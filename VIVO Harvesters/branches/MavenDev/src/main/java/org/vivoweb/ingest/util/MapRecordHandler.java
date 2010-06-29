@@ -20,8 +20,14 @@ import java.util.Map;
  *
  */
 public class MapRecordHandler extends RecordHandler {
+	//This code was marked as may cause compile errors by UCDetector.
+	//Change visibility of class to Private
+	//FIXME This code was marked as may cause compile errors by UCDetector.
 	
 	Map<String,String> map;
+	//This code was marked as may cause compile errors by UCDetector.
+	//Change visibility of Field "MapRecordHandler.map" to Private
+	//FIXME This code was marked as may cause compile errors by UCDetector.
 	
 	/**
 	 * Default Constructor
