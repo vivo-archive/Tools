@@ -335,7 +335,8 @@ public class Controller {
 		JenaIO scoreInput = new JenaIO(this.scoreInput);
 		JenaIO scoreOutput = new JenaIO(this.scoreStore.get("connPath"), this.scoreStore.get("userName"), this.scoreStore
 				.get("passWord"), this.scoreStore.get("dbType"), this.scoreStore.get("dbClass"));
-		new Score(vivo.getJenaModel(), scoreInput.getJenaModel(), scoreOutput.getJenaModel()).execute();
+		new Score(vivo.getJenaModel()).execute();
+		//, scoreInput.getJenaModel(), scoreOutput.getJenaModel()  pulled out of above call
 	}
 	
 	/**
