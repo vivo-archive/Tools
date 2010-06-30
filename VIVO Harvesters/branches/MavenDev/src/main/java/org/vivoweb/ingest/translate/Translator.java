@@ -10,6 +10,11 @@
  ******************************************************************************/
 package org.vivoweb.ingest.translate;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Calendar;
@@ -17,6 +22,8 @@ import java.text.SimpleDateFormat;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.vivoweb.ingest.util.Record;
+import org.vivoweb.ingest.util.RecordHandler;
 
 /*****************************************************************************************
  * VIVO Data Translator
@@ -103,6 +110,39 @@ public class Translator {
 			log.error((new SimpleDateFormat("yyyy-MM-dd HH:mm:ss")).format(Calendar.getInstance()) + " - Translation unable to start: Not all Parameters Set" );
 			throw new IllegalArgumentException("Unable to translate, system not configured");
 		}		
+	}
+	
+	
+	public static void main(String[] args){
+		
+		//you need more than one argument to run any of the translate functions
+		if (args.length <= 1){
+			log.error("Invalid Arguments");
+		}
+		else{
+			//XSL Translation (same switches and code as the main method for xsltranslate
+			//TODO can we just call the main method for xsl translate?
+			if (args[0].startsWith("-xsl")){
+				args[0] = args[0].replace("xsl", "");
+				XSLTranslator xslTrans = new XSLTranslator();
+				xslTrans.parseArgsExecute(args);	
+			}
+			else if (args[0].startsWith("-gloze")){
+				
+			}
+			else if (args[0].startsWith("-rdf")){
+				
+			}
+			else{
+				log.error("The switch " + args[0].toString() + "is not handled by Translator");
+			}
+			
+			
+			
+		}
+		
+		
+		
 	}
 	
 }

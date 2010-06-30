@@ -133,19 +133,20 @@ public class XSLTranslator extends Translator{
 	    }
 	  }
 	  
-
-
+	  
 	  /**
 	   * Currently the main method accepts two methods of execution, file translation and record handler translation
+	   * This is the method that executes those functions.  It was put in place so that translator's main method
+	   * can also call this method and pass its argument array
 	   * 
 	   * @param functionSwitch possible entries include -f for file and -rh for record handler
 	   * @param translationFile the file that details the translation from the original xml to the target format
 	   * @param fileToTranslate the file that requires translation 
 	   * @param inRecordHandler the files/records that require translation
 	   * @param outRecordHandler the output record for the translated files
-	   */
-	  public static void main(String[] args) {
-		 if (args.length != 3) {
+	   */	  
+	  public void parseArgsExecute(String[] args){
+		  if (args.length != 3) {
 			  log.error("Invalid Arguments: XSLTranslate requires 3. They system was supplied " + args.length);
 			  throw new IllegalArgumentException();
 		 }
@@ -153,13 +154,12 @@ public class XSLTranslator extends Translator{
 			if (args[0].equals("-f")) {
 				try {
 					//set the in/out and translation var
-					XSLTranslator xslTrans = new XSLTranslator();
-					xslTrans.setTranslationFile(new File(args[2]));
-					xslTrans.setInStream(new FileInputStream(new File(args[1])));
-					xslTrans.setOutStream(System.out);
+					this.setTranslationFile(new File(args[2]));
+					this.setInStream(new FileInputStream(new File(args[1])));
+					this.setOutStream(System.out);
 					
 					//execute the program
-					xslTrans.execute();
+					this.execute();
 				} catch (FileNotFoundException e) {
 					log.error("", e);
 				}				
@@ -167,8 +167,8 @@ public class XSLTranslator extends Translator{
 			else if (args[0].equals("-rh")) {
 				try{
 					//pull in the translation xsl
-					XSLTranslator xslTrans = new XSLTranslator();
-					xslTrans.setTranslationFile(new File(args[2]));
+					
+					this.setTranslationFile(new File(args[2]));
 					
 					//create record handlers
 					RecordHandler inStore = RecordHandler.parseConfig(args[1]);
@@ -179,9 +179,9 @@ public class XSLTranslator extends Translator{
 					
 					// get from the in record and translate
 					for(Record r : inStore){
-						xslTrans.setInStream(new ByteArrayInputStream(r.getData().getBytes()));
-						xslTrans.setOutStream(buff);
-						xslTrans.execute();
+						this.setInStream(new ByteArrayInputStream(r.getData().getBytes()));
+						this.setOutStream(buff);
+						this.execute();
 						buff.flush();
 						outStore.addRecord(r.getID(),buff.toString());
 						buff.reset();
@@ -198,7 +198,23 @@ public class XSLTranslator extends Translator{
 				throw new IllegalArgumentException();
 			}
 		 }	
-		  
+	  }
+
+	  
+	  /**
+	   * Currently the main method accepts two methods of execution, file translation and record handler translation
+	   * The main method actually passes its arg string to another method so that Translator can 
+	   * use this same method of execution
+	   * 
+	   * @param functionSwitch possible entries include -f for file and -rh for record handler
+	   * @param translationFile the file that details the translation from the original xml to the target format
+	   * @param fileToTranslate the file that requires translation 
+	   * @param inRecordHandler the files/records that require translation
+	   * @param outRecordHandler the output record for the translated files
+	   */
+	  public static void main(String[] args) {
+		  XSLTranslator xslTrans = new XSLTranslator();
+		  xslTrans.parseArgsExecute(args);		  
 	  }
 
 }
