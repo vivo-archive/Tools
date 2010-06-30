@@ -23,7 +23,6 @@ public class Pubmed extends Task {
 	private OutputStream os;
 	private Integer intBatchSize;
 	
-
 	@Override
 	protected void acceptParams(Map<String, String> params) throws ParserConfigurationException, SAXException, IOException {
 		this.emailAddress = getParam(params, "emailAddress", true);
@@ -37,7 +36,6 @@ public class Pubmed extends Task {
 		this.intBatchSize = 1000;
 	}
 	
-
 	@Override
 	protected void runTask() throws NumberFormatException {
 		PubmedSOAPFetch f = new PubmedSOAPFetch(this.emailAddress, this.location, this.os);
