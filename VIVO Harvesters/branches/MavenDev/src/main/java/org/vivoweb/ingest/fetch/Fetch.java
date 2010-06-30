@@ -175,6 +175,7 @@ public class Fetch
 	}
 	/**
 	 * Checks the configuration file hashmap against the list of required paramaters in the various fetch subclasses.
+	 * @author Dale Scheppler and Chris Haines
 	 * @param hmConfigMap - The hashMap to be checked.
 	 * @param arrParameters - The parameters that are required by the subclass.
 	 */
