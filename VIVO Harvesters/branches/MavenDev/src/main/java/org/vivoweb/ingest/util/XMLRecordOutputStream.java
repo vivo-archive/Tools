@@ -17,6 +17,8 @@ import java.util.LinkedList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.xml.parsers.ParserConfigurationException;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.vivoweb.ingest.fetch.PubmedSOAPFetch;
 import org.xml.sax.SAXException;
 
@@ -25,6 +27,7 @@ import org.xml.sax.SAXException;
  *
  */
 public class XMLRecordOutputStream extends OutputStream {
+	private static Log log = LogFactory.getLog(XMLRecordOutputStream.class);
 	private ByteArrayOutputStream buf;
 	private RecordHandler rh;
 	private byte[] closeTag;
@@ -54,10 +57,12 @@ public class XMLRecordOutputStream extends OutputStream {
 		this.buf.write(arg0);
 		byte[] a = this.buf.toByteArray();
 		if(compareByteArrays(a, this.closeTag)) {
+//			log.debug("Complete Record Written to buffer");
 			String record = new String(a);
 			Matcher m = this.idRegex.matcher(record);
 			m.find();
 			String id = m.group(1);
+//			log.debug("Adding record id: "+id);
 			this.rh.addRecord(id.trim(), this.header+record.trim()+this.footer);
 			this.buf.reset();
 		}
@@ -83,7 +88,10 @@ public class XMLRecordOutputStream extends OutputStream {
 	 * @throws IOException error connecting
 	 */
 	public static void main(String... args) throws ParserConfigurationException, SAXException, IOException {
-		RecordHandler dataStore = RecordHandler.parseConfig("config/PubmedJenaRecordHandler.xml");
+		RecordHandler dataStore;
+//		dataStore = RecordHandler.parseConfig("config/PubmedJenaRecordHandler.xml");
+//		dataStore = RecordHandler.parseConfig("config/PubmedRDFRecordHandler.xml");
+		dataStore = RecordHandler.parseConfig("config/PubmedXMLRecordHandler.xml");
 //		dataStore = new MapRecordHandler();
 //		dataStore = new JDBCRecordHandler("com.mysql.jdbc.Driver", "mysql", "127.0.0.1", "3306", "jdbcrecordstore", "jdbcRecordStore", "5j63ucbNdZ5MCRda", "recordTable");
 //		dataStore = new JenaRecordHandler("com.mysql.jdbc.Driver", "mysql", "127.0.0.1", "3306", "jenarecordstore", "jenaRecordStore", "j6QvzjGG5muJmYN4", "MySQL", "http://localhost/jenarecordhandlerdemo#data");
@@ -92,19 +100,18 @@ public class XMLRecordOutputStream extends OutputStream {
 //		dataStore = new TextFileRecordHandler("ftp://yourMom:y0urM0m123@127.0.0.1:21/path/to/dir");
 		XMLRecordOutputStream os = new XMLRecordOutputStream("PubmedArticle", "<?xml version=\"1.0\"?>\n<!DOCTYPE PubmedArticleSet PUBLIC \"-//NLM//DTD PubMedArticle, 1st January 2010//EN\" \"http://www.ncbi.nlm.nih.gov/corehtml/query/DTD/pubmed_100101.dtd\">\n<PubmedArticleSet>\n", "\n</PubmedArticleSet>", ".*?<PMID>(.*?)</PMID>.*?", dataStore);
 		PubmedSOAPFetch f = new PubmedSOAPFetch("hainesc@ctrip.ufl.edu", "University of Florid", os);
-		f.fetchPubMedEnv(f.ESearchEnv(f.queryByAffiliation("ufl.edu"), new Integer(5)));
-		LinkedList<String> ids = new LinkedList<String>();
-		for(Record r : dataStore) {
-			System.out.println("========================================================");
-			System.out.println(r.getID());
-			System.out.println("--------------------------------------------------------");
-			System.out.println(r.getData());
-			System.out.println("========================================================\n");
-			ids.add(r.getID());
-		}
-		for(String id : ids) {
-			dataStore.delRecord(id);
-		}
+		f.fetchPubMedEnv(f.ESearchEnv(f.fetchAll(), new Integer(5)));
+//		LinkedList<String> ids = new LinkedList<String>();
+//		for(Record r : dataStore) {
+//			System.out.println("========================================================");
+//			System.out.println(r.getID());
+//			System.out.println("--------------------------------------------------------");
+//			System.out.println(r.getData());
+//			System.out.println("========================================================\n");
+//			ids.add(r.getID());
+//		}
+//		for(String id : ids) {
+//			dataStore.delRecord(id);
+//		}
 	}
-	
 }

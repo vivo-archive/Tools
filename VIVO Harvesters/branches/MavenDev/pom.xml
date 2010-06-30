@@ -75,5 +75,54 @@
     	<type>jar</type>
     	<scope>compile</scope>
     </dependency>
+    <dependency>
+    	<groupId>mysql</groupId>
+    	<artifactId>mysql-connector-java</artifactId>
+    	<version>5.1.13</version>
+    </dependency>
+    <dependency>
+    	<groupId>org.apache.axis2</groupId>
+    	<artifactId>addressing</artifactId>
+    	<version>1.5.1</version>
+    	<type>mar</type>
+    </dependency>
+    <dependency>
+    	<groupId>org.apache.axis2</groupId>
+    	<artifactId>axis2-adb-codegen</artifactId>
+    	<version>1.5.1</version>
+    </dependency>
+    <dependency>
+    	<groupId>org.apache.axis2</groupId>
+    	<artifactId>axis2-clustering</artifactId>
+    	<version>1.5.1</version>
+    </dependency>
+    <dependency>
+    	<groupId>org.apache.axis2</groupId>
+    	<artifactId>axis2-codegen</artifactId>
+    	<version>1.5.1</version>
+    	<type>jar</type>
+    	<scope>compile</scope>
+    </dependency>
+    <dependency>
+    	<groupId>org.apache.axis2</groupId>
+    	<artifactId>axis2-corba</artifactId>
+    	<version>1.5.1</version>
+    	<type>jar</type>
+    	<scope>compile</scope>
+    </dependency>
+    <dependency>
+    	<groupId>org.apache.axis2</groupId>
+    	<artifactId>axis2-fastinfoset</artifactId>
+    	<version>1.5.1</version>
+    	<type>jar</type>
+    	<scope>compile</scope>
+    </dependency>
+    <dependency>
+    	<groupId>org.apache.axis2</groupId>
+    	<artifactId>axis2-integration</artifactId>
+    	<version>1.5.1</version>
+    	<type>jar</type>
+    	<scope>compile</scope>
+    </dependency>
   </dependencies>
 </project>

@@ -139,15 +139,28 @@ public class JDBCRecordHandler extends RecordHandler {
 	}
 	
 	@Override
-	public void addRecord(Record rec) throws IOException {
+	public void addRecord(Record rec, boolean overwrite) throws IOException {
 		try {
 			PreparedStatement ps = this.db.prepareStatement("insert into "+this.table+"("+idField+", "+this.dataField+") values (?, ?)");
 			ps.setString(1, rec.getID());
 			ps.setBytes(2, rec.getData().getBytes());
 			ps.executeUpdate();
 		} catch(SQLException e) {
-			log.error("Unable to add record: "+rec.getID(),e);
-			throw new IOException("Unable to add record: "+rec.getID()+" - "+e.getMessage());
+			if(overwrite) {
+				log.trace("Unable to add record: atempting to update existing record");
+				try {
+					PreparedStatement ps = this.db.prepareStatement("insert into "+this.table+"("+idField+", "+this.dataField+") values (?, ?)");
+					ps.setString(1, rec.getID());
+					ps.setBytes(2, rec.getData().getBytes());
+					ps.executeUpdate();
+				} catch(SQLException e2) {
+					log.error("Unable to update record: "+rec.getID(),e2);
+					throw new IOException("Unable to update record: "+rec.getID()+" - "+e2.getMessage());
+				}
+			} else {
+				log.error("Unable to add record: "+rec.getID(),e);
+				throw new IOException("Unable to add record: "+rec.getID()+" - "+e.getMessage());
+			}
 		}
 	}
 	

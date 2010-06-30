@@ -69,16 +69,18 @@ public class TextFileRecordHandler extends RecordHandler {
 	}
 	
 	@Override
-	public void addRecord(Record rec) throws IOException {
+	public void addRecord(Record rec, boolean overwrite) throws IOException {
+//		log.debug("Resolving file for record: " + rec.getID());
 		FileObject fo = this.fileDirObj.resolveFile(rec.getID());
-		if(fo.exists()) {
+		if(!overwrite && fo.exists()) {
 			throw new IOException("Failed to add record "+rec.getID()+" because file "+fo.getName().getFriendlyURI()+" already exists.");
 		}
 		fo.createFile();
 		if(!fo.isWriteable()) {
 			throw new IOException("Insufficient file system privileges to add record "+rec.getID()+" to file "+fo.getName().getFriendlyURI());
 		}
-		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fo.getContent().getOutputStream()));
+//		log.debug("Writting data for record: "+rec.getID());
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fo.getContent().getOutputStream(false)));
 		bw.append(rec.getData());
 		bw.close();
 	}

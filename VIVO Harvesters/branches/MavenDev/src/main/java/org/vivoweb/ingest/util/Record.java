@@ -34,7 +34,7 @@ public class Record {
 	/**
 	 * @param newID id to be used
 	 */
-	public void setID(String newID) {
+	private void setID(String newID) {
 		this.id = newID;
 	}
 	
@@ -48,7 +48,7 @@ public class Record {
 	/**
 	 * @param newData data to be used
 	 */
-	public void setData(String newData) {
+	private void setData(String newData) {
 		this.data = newData;
 	}
 	

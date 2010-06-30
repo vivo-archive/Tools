@@ -15,6 +15,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.NoSuchElementException;
 import javax.xml.parsers.ParserConfigurationException;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.xml.sax.SAXException;
 import com.hp.hpl.jena.query.Query;
 import com.hp.hpl.jena.query.QueryExecution;
@@ -35,6 +37,7 @@ import com.hp.hpl.jena.update.UpdateRequest;
  */
 public class JenaRecordHandler extends RecordHandler {
 	
+	private static Log log = LogFactory.getLog(JenaRecordHandler.class);
 	protected Model model;
 	protected static final String rhNameSpace = "http://ingest.vivoweb.org/util/jenarecordhandler#";
 	protected Property recType;
@@ -109,8 +112,13 @@ public class JenaRecordHandler extends RecordHandler {
 	}
 	
 	@Override
-	public void addRecord(Record rec) throws IOException {
-		Resource record = this.model.createResource();
+	public void addRecord(Record rec, boolean overwrite) throws IOException {
+		Resource record = getRecordResource(rec.getID());
+		if(!overwrite && record != null) {
+			throw new IOException("Record already exists!");
+		} else if(record == null) {
+			record = this.model.createResource();
+		}
 		this.model.add(this.model.createStatement(record, this.isA, this.recType));
 		this.model.add(this.model.createStatement(record, this.idType, rec.getID()));
 		this.model.add(this.model.createStatement(record, this.dataType, rec.getData()));
@@ -162,6 +170,17 @@ public class JenaRecordHandler extends RecordHandler {
 			data = result.getLiteral(resultSet.getResultVars().get(0)).getString();
 		}
 		return data;
+	}
+	
+	private Resource getRecordResource(String recID) {
+		try {
+			return this.model.listStatements(null, this.idType, recID).nextStatement().getSubject();
+		} catch(NullPointerException e) {
+			log.debug("Record not found",e);
+		} catch(NoSuchElementException e) {
+			log.debug("Record not found",e);
+		}
+		return null;
 	}
 	
 	@Override

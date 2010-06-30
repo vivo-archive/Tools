@@ -37,7 +37,10 @@ public class MapRecordHandler extends RecordHandler {
 	}
 	
 	@Override
-	public void addRecord(Record rec) throws IOException {
+	public void addRecord(Record rec, boolean overwrite) throws IOException {
+		if(!overwrite && this.map.containsKey(rec.getID())) {
+			throw new IOException("Record already exists!");
+		}
 		this.map.put(rec.getID(), rec.getData());
 	}
 	
@@ -77,7 +80,6 @@ public class MapRecordHandler extends RecordHandler {
 			throw new UnsupportedOperationException();
 		}
 	}
-
 	
 	@Override
 	public void setParams(Map<String, String> params) throws IllegalArgumentException, IOException {

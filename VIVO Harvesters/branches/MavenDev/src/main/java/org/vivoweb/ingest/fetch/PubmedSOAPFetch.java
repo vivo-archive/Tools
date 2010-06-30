@@ -13,6 +13,7 @@ package org.vivoweb.ingest.fetch;
 import gov.nih.nlm.ncbi.www.soap.eutils.*;
 import gov.nih.nlm.ncbi.www.soap.eutils.EFetchPubmedServiceStub.EFetchResult;
 import gov.nih.nlm.ncbi.www.soap.eutils.EFetchPubmedServiceStub.PubmedArticleSet_type0;
+import gov.nih.nlm.ncbi.www.soap.eutils.EUtilsServiceStub.IdListType;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -38,7 +39,7 @@ import org.apache.commons.logging.LogFactory;
  * @author Dale R. Scheppler dscheppler@ctrip.ufl.edu
  * @author Christopher Haines cah@ctrip.ufl.edu
  */
-public class PubmedSOAPFetch implements Harvestor
+public class PubmedSOAPFetch
 {
 	private static Log log = LogFactory.getLog(PubmedSOAPFetch.class);							//Initialize the logger
 	private String strEmailAddress;
@@ -195,7 +196,10 @@ public class PubmedSOAPFetch implements Harvestor
 			req.setUsehistory("y");
 			// run the search and get result set
 			EUtilsServiceStub.ESearchResult res = service.run_eSearch(req);
-			log.trace("Query resulted in a total of " + res.getIdList().getId().length + " records.");
+			IdListType a = res.getIdList();
+			String[] b = a.getId();
+			int numRec = b.length;
+			log.trace("Query resulted in a total of " + numRec + " records.");
 			// save the environment data
 			env[0] = res.getWebEnv();
 			env[1] = res.getQueryKey();

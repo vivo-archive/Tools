@@ -28,6 +28,8 @@ import org.xml.sax.helpers.DefaultHandler;
  */
 public abstract class RecordHandler implements Iterable<Record> {
 	
+	private boolean overwriteDefault = false;
+	
 	/**
 	 * @param params map of parameters
 	 * @throws IllegalArgumentException invalid parameters
@@ -36,12 +38,37 @@ public abstract class RecordHandler implements Iterable<Record> {
 	public abstract void setParams(Map<String,String> params) throws IllegalArgumentException, IOException;
 	
 	/**
+	 * Adds a record to the RecordHandler
+	 * @param rec record to add
+	 * @param overwrite when set to true, will automatically overwrite existing records
+	 * @throws IOException error adding
+	 */
+	public abstract void addRecord(Record rec, boolean overwrite) throws IOException;
+	
+	/**
+	 * Adds a record to the RecordHandler
+	 * @param recID record id to add
+	 * @param recData record data to add
+	 * @param overwrite when set to true, will automatically overwrite existing records
+	 * @throws IOException error adding
+	 */
+	public void addRecord(String recID, String recData, boolean overwrite) throws IOException {
+		addRecord(new Record(recID, recData), overwrite);
+	}
+	
+	/**
+	 * Adds a record to the RecordHandler
+	 * If overwriteDefault is set to true, will automatically overwrite existing records
 	 * @param rec record to add
 	 * @throws IOException error adding
 	 */
-	public abstract void addRecord(Record rec) throws IOException;
+	public void addRecord(Record rec) throws IOException {
+		addRecord(rec, isOverwriteDefault());
+	}
 	
 	/**
+	 * Adds a record to the RecordHandler
+	 * If overwriteDefault is set to true, will automatically overwrite existing records
 	 * @param recID record id to add
 	 * @param recData record data to add
 	 * @throws IOException error adding
@@ -98,6 +125,20 @@ public abstract class RecordHandler implements Iterable<Record> {
 		return new RecordHandlerParser().parseRecordHandlerConfig(filename);
 	}
 	
+	/**
+	 * @param overwriteDefault the overwriteDefault to set
+	 */
+	public void setOverwriteDefault(boolean overwriteDefault) {
+		this.overwriteDefault = overwriteDefault;
+	}
+
+	/**
+	 * @return the overwriteDefault
+	 */
+	public boolean isOverwriteDefault() {
+		return this.overwriteDefault;
+	}
+
 	private static class RecordHandlerParser extends DefaultHandler {
 		
 		private RecordHandler rh;
