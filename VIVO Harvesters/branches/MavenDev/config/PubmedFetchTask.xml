@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Task type="org.vivoweb.ingest.fetch.Pubmed">
+<Task type="org.vivoweb.ingest.fetch.PubmedSOAPFetch">
 	<Param name="emailAddress">hainesc@ctrip.ufl.edu</Param>
 	<Param name="location">University of Florida</Param>
 	<Param name="repositoryConfig">config/PubmedXMLRecordHandler.xml</Param>
 	<Param name="searchTerm">1:8000[dp]</Param>
 	<Param name="maxRecords">All</Param>
+	<Param name="batchSize">1000</Param>
 </Task>

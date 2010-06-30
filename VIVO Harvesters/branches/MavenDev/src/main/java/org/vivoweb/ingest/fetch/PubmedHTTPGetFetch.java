@@ -555,6 +555,7 @@ public class PubmedHTTPGetFetch
 	 * Executes the fetch
 	 * 
 	 * FIXME eventually Fetch should be initialized with parameters such that it know which of the fetches to run and all
+	 * FIXME CAH You put this comment here, either clarify, do it, or remove :)
 	 * -- that needs to be called is execute()
 	 */
 	public void execute()

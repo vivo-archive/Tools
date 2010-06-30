@@ -20,8 +20,13 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.HashMap;
+
+import javax.xml.parsers.ParserConfigurationException;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.vivoweb.ingest.util.Task;
+import org.xml.sax.SAXException;
 /**
  * @author Dale Scheppler
  * 
@@ -104,15 +109,28 @@ public class Fetch
 	}
 	public static void PubMedFetch()
 	{
-		FileOutputStream fos;
+//		FileOutputStream fos;
+//		try {
+//			fos = new FileOutputStream("temp.txt");
+//			PubmedSOAPFetch bob = new PubmedSOAPFetch("dscheppler@ichp.ufl.edu", "somewhere", fos);
+//			bob.fetchPubMedEnv(bob.ESearchEnv(bob.queryByAffiliation("ufl.edu"), 1000));
+//		} catch (FileNotFoundException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 		try {
-			fos = new FileOutputStream("temp.txt");
-			PubmedSOAPFetch bob = new PubmedSOAPFetch("dscheppler@ichp.ufl.edu", "somewhere", fos);
-			bob.fetchPubMedEnv(bob.ESearchEnv(bob.queryByAffiliation("ufl.edu"), 1000));
-		} catch (FileNotFoundException e) {
+			Task.main("config/PubmedFetchTask.xml");
+		} catch (ParserConfigurationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SAXException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 		
 		
 	}

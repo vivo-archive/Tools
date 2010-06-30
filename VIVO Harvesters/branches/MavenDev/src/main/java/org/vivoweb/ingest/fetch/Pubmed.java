@@ -21,6 +21,7 @@ public class Pubmed extends Task {
 	private String searchTerm;
 	private String maxRecords;
 	private OutputStream os;
+	private Integer intBatchSize;
 	
 
 	@Override
@@ -33,6 +34,7 @@ public class Pubmed extends Task {
 		this.rh = RecordHandler.parseConfig(repositoryConfig);
 		this.rh.setOverwriteDefault(true);
 		this.os = new XMLRecordOutputStream("PubmedArticle", "<?xml version=\"1.0\"?>\n<!DOCTYPE PubmedArticleSet PUBLIC \"-//NLM//DTD PubMedArticle, 1st January 2010//EN\" \"http://www.ncbi.nlm.nih.gov/corehtml/query/DTD/pubmed_100101.dtd\">\n<PubmedArticleSet>\n", "\n</PubmedArticleSet>", ".*?<PMID>(.*?)</PMID>.*?", this.rh);
+		this.intBatchSize = 1000;
 	}
 	
 
@@ -45,7 +47,7 @@ public class Pubmed extends Task {
 		} else {
 			recToFetch = Integer.valueOf(this.maxRecords);
 		}
-		if(recToFetch.intValue() <= 10000) {
+		if(recToFetch.intValue() <= intBatchSize) {
 			f.fetchPubMedEnv(f.ESearchEnv(this.searchTerm, recToFetch));
 		} else {
 			String[] envInfo = f.ESearchEnv(this.searchTerm, recToFetch);
@@ -53,8 +55,8 @@ public class Pubmed extends Task {
 			String QueryKey = envInfo[1];
 			String idListLength = envInfo[2];
 			Integer.parseInt(idListLength);
-			for(int x = recToFetch.intValue(); x > 0; x-=10000) {
-				int maxRec = (x<=10000) ? x : 10000;
+			for(int x = recToFetch.intValue(); x > 0; x-=intBatchSize) {
+				int maxRec = (x<=intBatchSize) ? x : intBatchSize;
 				int startRec = recToFetch.intValue() - x;
 				System.out.println("maxRec: "+maxRec);
 				System.out.println("startRec: "+startRec);
