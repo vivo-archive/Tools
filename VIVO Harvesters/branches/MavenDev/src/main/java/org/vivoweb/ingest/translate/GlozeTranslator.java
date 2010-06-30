@@ -109,15 +109,10 @@ public class GlozeTranslator extends Translator{
 		}
 	}
 	
-	/**
-	 * 
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		
+	
+	public void parseArgsExecute(String[] args){
 		if (args.length < 2 || args.length > 4) {
 			  log.error("Invalid Arguments: GlozeTranslate requires at least 2 arguments.  The system was supplied with " + args.length);
-			  //throw new IllegalArgumentException();
 		}
 		else {
 			GlozeTranslator glTrans = new GlozeTranslator();
@@ -168,5 +163,15 @@ public class GlozeTranslator extends Translator{
 				//throw new IllegalArgumentException();
 			}		
 		}
+	}
+	
+	
+	/**
+	 * 
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		GlozeTranslator glTrans = new GlozeTranslator();
+		glTrans.parseArgsExecute(args);		
 	}
 }
