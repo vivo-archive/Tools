@@ -89,6 +89,7 @@ public class XSLTranslator extends Translator{
 		
 			log.info("Translation: Start");
 			
+			//TODO no reason to pass the variables to the method, have them use the designated streams on thier own
 			xmlTranslate(this.inStream, this.translationFile, this.outStream);
 			
 			log.info("Translation: End");
@@ -154,6 +155,7 @@ public class XSLTranslator extends Translator{
 			if (args[0].equals("-f")) {
 				try {
 					//set the in/out and translation var
+					//TODO change setOutStream to allow for a file to be specified
 					this.setTranslationFile(new File(args[2]));
 					this.setInStream(new FileInputStream(new File(args[1])));
 					this.setOutStream(System.out);

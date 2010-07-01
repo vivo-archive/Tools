@@ -21,6 +21,7 @@ import org.vivoweb.ingest.util.RecordHandler;
 
 import com.hp.gloze.Gloze;
 import com.hp.hpl.jena.rdf.model.*;
+import org.vivoweb.ingest.translate.Translator;
 
 /**
  * Gloze Tranlator
@@ -74,6 +75,7 @@ public class GlozeTranslator extends Translator{
 	 * 
 	 */
 	public GlozeTranslator() {
+		this.setURIBase("http://vivoweb.org/glozeTranslation/noURI/");
 	}
 	
 	
@@ -83,7 +85,13 @@ public class GlozeTranslator extends Translator{
 		Model outputModel = ModelFactory.createDefaultModel();
 		
 		try {
-			//TODO move this to use the instream instead of this incomingXML File
+			//Create a temporary file to use for translation
+			File tempFile = new File("temp");
+			//FileOuputStream tempWrite = new FileOutputStream(tempFile);
+			
+			
+			
+			
 			gl.xml_to_rdf(incomingXMLFile, new File("test"), this.uriBase , outputModel);
 		} catch (Exception e) {
 			log.error("",e);
@@ -96,7 +104,7 @@ public class GlozeTranslator extends Translator{
 	 * 
 	 */
 	public void execute() {
-		if (this.uriBase != null && this.incomingXMLFile != null ){	
+		if (this.uriBase != null && this.inStream != null ){	
 			log.info("Translation: Start");
 			
 			translateFile();
@@ -109,50 +117,77 @@ public class GlozeTranslator extends Translator{
 		}
 	}
 	
-	
+	/***
+	 * 
+	 * @param switch states if you are using the file methods or the record handler
+	 * @param inFile the xml file to translate
+	 * @param inRecordHandler
+	 * @param schema
+	 * @param outFile
+	 * @param outRecordHandler
+	 * @param uriBase - required for gloze translation the unset URIBASE used is http://vivoweb.org/glozeTranslation/noURI/
+	 */
 	public void parseArgsExecute(String[] args){
-		if (args.length < 2 || args.length > 4) {
-			  log.error("Invalid Arguments: GlozeTranslate requires at least 2 arguments.  The system was supplied with " + args.length);
+		if (args.length != 5) {
+			  log.error("Invalid Arguments: GlozeTranslate requires 5 arguments.  The system was supplied with " + args.length);
 		}
 		else {
-			GlozeTranslator glTrans = new GlozeTranslator();
 			
-			if (args[0].equals("-f")) {			
-				glTrans.setURIBase(args[1]);
-				glTrans.setIncomingXMLFile(new File(args[2]));
-				if (args.length == 4) {					
-					glTrans.setIncomingSchema(new File(args[3]));
+			//File Translation
+			if (args[0].equals("-f")) {
+				this.setInStream(new FileInputStream(new File(args[1])));
+				if (!args[3].equals("") && args[3] != null){
+					this.setOutStream(new FileOutputStream(new File(args[3])));
+				} else {
+					this.setOutStream(System.out);
 				}
 				
-				glTrans.execute();
+				//the schema is not required but aids in xml translation
+				if (!args[2].equals("") && args[2] != null){
+					this.setIncomingXMLFile(new File(args[2]));
+				}
+				
+				//the uri base if not set is http://vivoweb.org/glozeTranslation/noURI/"
+				if (args[4].equals("") && args[4] != null) {					
+					this.setURIBase(args[4]);
+				} 
+				
+				this.execute();
 			}
 			else if (args[0].equals("-rh")) {
 				try {
-				glTrans.setURIBase(args[1]);
+					//the uri base if not set is http://vivoweb.org/glozeTranslation/noURI/"
+					if (args[4].equals("") && args[4] != null) {					
+						this.setURIBase(args[4]);
+					} 
 				
-				//pull in the translation xsl
-				if (!args[2].equals("") && args[2] != null){
-					glTrans.setIncomingSchema(new File(args[2]));
-				}
+					//pull in the translation xsl
+					if (!args[2].equals("") && args[2] != null){
+						glTrans.setIncomingSchema(new File(args[2]));
+					}	
+					
+					//create record handlers
+					RecordHandler inStore = RecordHandler.parseConfig(args[1]);
+					if (!args[3].equals("") && args[3] != null){
+						RecordHandler outStore = RecordHandler.parseConfig(args[3]);
+					} else {
+						throw new IllegalArgumentException("Record Handler Execution requires and out bound record handler");
+					}
+					
+					//create a output stream for writing to the out store
+					ByteArrayOutputStream buff = new ByteArrayOutputStream();
+					
+					// get from the in record and translate
+					for(Record r : inStore){
+						this.setInStream(new ByteArrayInputStream(r.getData().getBytes()));
+						this.setOutStream(buff);
+						this.execute();
+						buff.flush();
+						outStore.addRecord(r.getID(),buff.toString());
+						buff.reset();
+					}
 				
-				//create record handlers
-				RecordHandler inStore = RecordHandler.parseConfig(args[1]);
-				RecordHandler outStore = RecordHandler.parseConfig(args[3]);
-				
-				//create a output stream for writing to the out store
-				ByteArrayOutputStream buff = new ByteArrayOutputStream();
-				
-				// get from the in record and translate
-				for(Record r : inStore){
-					glTrans.setInStream(new ByteArrayInputStream(r.getData().getBytes()));
-					glTrans.setOutStream(buff);
-					glTrans.execute();
-					buff.flush();
-					outStore.addRecord(r.getID(),buff.toString());
-					buff.reset();
-				}
-				
-				buff.close();
+					buff.close();
 				}
 				catch (Exception e) {
 					log.error("",e);
@@ -160,7 +195,6 @@ public class GlozeTranslator extends Translator{
 			}
 			else {
 				log.error("Invalid Arguments: Translate option " + args[0] + " not handled.");
-				//throw new IllegalArgumentException();
 			}		
 		}
 	}
