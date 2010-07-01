@@ -13,6 +13,8 @@ package org.vivoweb.ingest.translate;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.net.URI;
 import java.net.URISyntaxException;
 
@@ -87,12 +89,19 @@ public class GlozeTranslator extends Translator{
 		try {
 			//Create a temporary file to use for translation
 			File tempFile = new File("temp");
-			//FileOuputStream tempWrite = new FileOutputStream(tempFile);
-			
-			
-			
-			
-			gl.xml_to_rdf(incomingXMLFile, new File("test"), this.uriBase , outputModel);
+			FileOutputStream tempWrite = new FileOutputStream(tempFile);
+			while(true){
+				int bytedata = this.inStream.read();
+				if(bytedata == -1){
+					break;
+				}
+				tempWrite.write(bytedata);
+			}
+			this.inStream.close();
+			tempWrite.close();
+									
+			gl.xml_to_rdf(tempFile, new File("test"), this.uriBase , outputModel);
+			tempFile.delete();
 		} catch (Exception e) {
 			log.error("",e);
 		}
@@ -135,24 +144,29 @@ public class GlozeTranslator extends Translator{
 			
 			//File Translation
 			if (args[0].equals("-f")) {
-				this.setInStream(new FileInputStream(new File(args[1])));
-				if (!args[3].equals("") && args[3] != null){
-					this.setOutStream(new FileOutputStream(new File(args[3])));
-				} else {
-					this.setOutStream(System.out);
+				try {
+					this.setInStream(new FileInputStream(new File(args[1])));
+					if (!args[3].equals("") && args[3] != null){
+						this.setOutStream(new FileOutputStream(new File(args[3])));
+					} else {
+						this.setOutStream(System.out);
+					}
+					
+					//the schema is not required but aids in xml translation
+					if (!args[2].equals("") && args[2] != null){
+						this.setIncomingXMLFile(new File(args[2]));
+					}
+					
+					//the uri base if not set is http://vivoweb.org/glozeTranslation/noURI/"
+					if (args[4].equals("") && args[4] != null) {					
+						this.setURIBase(args[4]);
+					} 
+					
+					this.execute();
 				}
-				
-				//the schema is not required but aids in xml translation
-				if (!args[2].equals("") && args[2] != null){
-					this.setIncomingXMLFile(new File(args[2]));
+				catch(Exception e){
+					log.error("", e);
 				}
-				
-				//the uri base if not set is http://vivoweb.org/glozeTranslation/noURI/"
-				if (args[4].equals("") && args[4] != null) {					
-					this.setURIBase(args[4]);
-				} 
-				
-				this.execute();
 			}
 			else if (args[0].equals("-rh")) {
 				try {
@@ -163,13 +177,14 @@ public class GlozeTranslator extends Translator{
 				
 					//pull in the translation xsl
 					if (!args[2].equals("") && args[2] != null){
-						glTrans.setIncomingSchema(new File(args[2]));
+						this.setIncomingSchema(new File(args[2]));
 					}	
 					
 					//create record handlers
 					RecordHandler inStore = RecordHandler.parseConfig(args[1]);
+					RecordHandler outStore;
 					if (!args[3].equals("") && args[3] != null){
-						RecordHandler outStore = RecordHandler.parseConfig(args[3]);
+						outStore = RecordHandler.parseConfig(args[3]);
 					} else {
 						throw new IllegalArgumentException("Record Handler Execution requires and out bound record handler");
 					}

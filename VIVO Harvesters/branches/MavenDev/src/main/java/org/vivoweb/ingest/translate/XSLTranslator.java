@@ -15,6 +15,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 
@@ -147,8 +148,8 @@ public class XSLTranslator extends Translator{
 	   * @param outRecordHandler the output record for the translated files
 	   */	  
 	  public void parseArgsExecute(String[] args){
-		  if (args.length != 3) {
-			  log.error("Invalid Arguments: XSLTranslate requires 3. They system was supplied " + args.length);
+		  if (args.length != 4) {
+			  log.error("Invalid Arguments: XSLTranslate requires 4. They system was supplied " + args.length);
 			  throw new IllegalArgumentException();
 		 }
 		 else {
@@ -158,7 +159,12 @@ public class XSLTranslator extends Translator{
 					//TODO change setOutStream to allow for a file to be specified
 					this.setTranslationFile(new File(args[2]));
 					this.setInStream(new FileInputStream(new File(args[1])));
-					this.setOutStream(System.out);
+					
+					if (!args[3].equals("") && args[3] != null) {
+						this.setOutStream(new FileOutputStream(new File(args[3])));
+					} else {
+						this.setOutStream(System.out);
+					}
 					
 					//execute the program
 					this.execute();
