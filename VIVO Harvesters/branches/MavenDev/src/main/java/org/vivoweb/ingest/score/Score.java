@@ -12,10 +12,18 @@
  ******************************************************************************/
 package org.vivoweb.ingest.score;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.HashMap;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.vivoweb.ingest.fetch.OAIHarvest;
 import org.vivoweb.ingest.util.JenaConnect;
-import com.hp.hpl.jena.graph.Node;
 import com.hp.hpl.jena.query.Query;
 import com.hp.hpl.jena.query.QueryExecution;
 import com.hp.hpl.jena.query.QueryExecutionFactory;
@@ -29,41 +37,107 @@ import com.hp.hpl.jena.rdf.model.*;
  *  @author Nicholas Skaggs nskaggs@ichp.ufl.edu
  */
 public class Score {
+	public static final String[] arrRequiredParamaters = {"connectionPath", "username", "password", "dbType", "dbClass", "vivoModelName", "scoreModelName"};
 	private static Log log = LogFactory.getLog(Score.class);
 	
-		private Model vivo;
+		private static Model vivo;
 		private Model scoreInput;
-		private Model scoreOutput;
-		private Model tempModel;
+		//private Model scoreOutput;
 		
 		final static public void main(String[] args) {
 			
-			if (args.length != 5) {
-				System.out.println("Usage: score connectionPath username password dbType dbClass vivoModelName scoreModelName");
+			JenaConnect jena = null;
+			//pass models from command line
+			//TODO proper args handler
+			
+			if (args.length != 1 && args.length != 5) {
+				//System.out.println("Usage: score connectionPath username password dbType dbClass vivoModelName scoreModelName\nscore configfile");
+				System.out.println("Usage: score rdfRecordHandler VivoJenaConfig OutputJenaConfig");
 				return;
 			}
 			
-			//pass models from command line
-			//TODO proper args handler
-			String connPath = args[0];
-			String username = args[1];
-			String password = args[2];
-			String modelName = args[3];
-			String dbType = args[4];
-			String dbClass = args[5];
+			if (args.length == 1) {
+					try {
+						log.info("Reading in config file");
+						jena = runScore(readConfig(args[0]));
+					} catch(IllegalArgumentException e) {
+						log.fatal("", e);
+					}
+			} else {
+				try {
+					log.info("Reading in argument list");
+					
+					//load up model
+					jena = new JenaConnect(args[0],args[1],args[2],args[3],args[4],args[5]);
+				} catch(IllegalArgumentException e) {
+					log.fatal("", e);
+				}
+			}
 			
-			//load up models		
-			JenaConnect vivo = new JenaConnect(connPath,username,password,modelName,dbType,dbClass);
 			//JenaConnect scoreInput = new JenaConnect(connPath,username,password,modelName,dbType,dbClass);
 			//JenaConnect scoreOutput = new JenaConnect(connPath,username,password,modelName,dbType,dbClass);
 			//new Score(vivo.getJenaModel(),scoreInput.getJenaModel(), scoreOutput.getJenaModel()).execute();			
-			new Score(vivo.getJenaModel()).execute();
+			new Score(jena.getJenaModel()).execute();
 	    }
+		
+		//TODO question on java try catch blocks forcing inelegant inits and return statements
+		public static JenaConnect runScore(HashMap<String, String> hmConfigMap )
+		{
+			checkConfig(hmConfigMap, OAIHarvest.arrRequiredParamaters);		
+			JenaConnect jenaDB = null;
+			try {
+				jenaDB = new JenaConnect(hmConfigMap.get("connPath"),hmConfigMap.get("username"),hmConfigMap.get("password"),hmConfigMap.get("modelName"),hmConfigMap.get("dbType"),hmConfigMap.get("dbClass"));
+			} catch (Exception e) {
+				e.printStackTrace();
+				log.error("Error reading Score config: ", e);
+			}
+			return jenaDB;
+		}
+
+		//TODO readconfig function should be moved to a common include
+		private static HashMap<String, String> readConfig(String strFilename) throws IllegalArgumentException {
+			HashMap<String, String> hmConfigMap = new HashMap<String, String>();
+			try {
+				FileInputStream fisConfigFile = new FileInputStream(strFilename);
+				BufferedReader brConfigFile = new BufferedReader(
+						new InputStreamReader(fisConfigFile));
+				String strLine;
+				while ((strLine = brConfigFile.readLine()) != null) {
+					String[] strParams = strLine.split(":",2);
+					if(strParams.length != 2){
+						throw new IllegalArgumentException("Invalid configuration file format. Entries must be key:value.");
+					}
+					hmConfigMap.put(strParams[0], strParams[1]);
+				}
+			} catch (FileNotFoundException e1) {
+				e1.printStackTrace();
+				log.fatal("File Not Found: " + strFilename, e1);
+			} catch (IOException e) {
+				e.printStackTrace();
+				log.fatal("IO Exception reading configuration file: "+strFilename, e);
+			}
+			if(hmConfigMap.isEmpty())
+			{
+				throw new IllegalArgumentException("Failed to read configuration file. File does not exist or is blank.");
+			}
+			return hmConfigMap;
+		}
+		
+		private static void checkConfig(HashMap<String, String> hmConfigMap, String[] arrParameters)
+		{
+			for(String Param:arrParameters)
+			{
+				if(!hmConfigMap.containsKey(Param))
+				{
+					throw new IllegalArgumentException ("Missing parameter \"" + Param + "\" in configuration file");
+				}
+			}
+		}
 		
 		//public Score (Model vivo, Model scoreInput, Model scoreOutput) {
 		public Score (Model vivo) {
 			this.vivo = vivo;
-			//this.scoreInput = scoreInput;
+			this.scoreInput = scoreInput;
 			//this.scoreOutput = scoreOutput;
 		}
 		
@@ -109,8 +183,8 @@ public class Score {
 			 	//end for
 			 		
 				//Close and done
-				scoreInput.close();
-		    	scoreOutput.close();
+				//scoreInput.close();
+		    	//scoreOutput.close();
 		    	vivo.close();
 		    	log.info("Scoring: End");
 		}
@@ -133,7 +207,7 @@ public class Score {
 		 
 		/**
 		 * commitResultSet
-		 * Commits resultset to a vivo model and a score model
+		 * Commits resultset to a matched model
 		 * 
 		 * @param  Model vivo a model containing vivo statements
 		 * @param  Model score a model containing vivo + scoring statements
@@ -145,68 +219,35 @@ public class Score {
 		 private static void commitResultSet(Model matched, ResultSet storeResult, Resource paperResource, RDFNode matchNode, RDFNode paperNode) {
 				RDFNode authorNode;
 				QuerySolution vivoSolution;
-				StmtIterator paperStmts;
-
-               
-                Statement stmt;
-			 
+				
 				//loop thru vivo matches
 	 	    	while (storeResult.hasNext()) {
 	 	    		vivoSolution = storeResult.nextSolution();
 	 	    		
 	 	    		//Grab person URI
 	                authorNode = vivoSolution.get("x");
-	                log.info("Found " + matchNode.toString() + " for person " + authorNode.toString() + " in VIVO");
-	                log.info("Adding paper " + paperNode.toString() + " to VIVO");
+	                log.info("Found " + matchNode.toString() + " for person " + authorNode.toString());
+	                log.info("Adding paper " + paperNode.toString());
 	
 	                matched.add(recursiveSanitizeBuild(paperResource,null));
 	                
 	                matched = replaceResource(authorNode, paperNode, matched);
 	                
-	                
-	                //Depreciated to use recursive build
-//	                //loop through and add statements
-//	                paperStmts = paperResource.listProperties();
-//	                 
-//	                //insert paper statements into vivo
-//	                //TODO refactor this to a recursive method
-//	                while (paperStmts.hasNext()) {
-//	                	stmt = paperStmts.nextStatement();
-//	                 	log.trace("Paper Statement " + stmt.toString());
-//	
-//	                 	//write to vivo, minus scoring info
-//	                 	if (!stmt.getPredicate().toString().contains("/score")) {
-//	                 		vivo.add(stmt);
-//	                 		                    	
-//		                    	if (stmt.getObject().isResource()) {
-//		                    		StmtIterator objectIterator = ((Resource)stmt.getObject()).listProperties();
-//		                    		
-//		                    		while(objectIterator.hasNext()){
-//		                    			stmt = objectIterator.nextStatement();
-//		                    			log.trace("Object Statement " + stmt.toString());
-//		               
-//		                    			if(!stmt.getPredicate().toString().contains("/score")) {
-//		                    				vivo.add(stmt);
-//		                    			}
-//		                    		}
-//		                    	}
-//	                 	}
-//	                 	
-//	 	    			//write out to score output
-//	                 	//TODO add score of 100
-//	                 	score.add(stmt);
-//	                }
-	            
-	                 
-	                //link author to paper
-
-	
-					 //take results and store in VIVO
-	                 matched.commit();
-	             }	 
+					//take results and store in matched model
+	                matched.commit();
+	 	    	} 
 		 }
 		 
-		 public static Model replaceResource(RDFNode mainNode, RDFNode paperNode, Model toReplace){
+		/**
+		 * replaceResource
+		 * Traverses paperNode and adds to toReplace model 
+		 * 
+		 * @param  RDFNode mainNode
+		 * @param  RDFNode paperNode
+		 * @param  Model toReplace
+		 */
+		 
+		 private static Model replaceResource(RDFNode mainNode, RDFNode paperNode, Model toReplace){
 			 Resource authorship;
 			 Property linkedAuthorOf = ResourceFactory.createProperty("http://vivoweb.org/ontology/core#linkedAuthor");
              Property authorshipForPerson = ResourceFactory.createProperty("http://vivoweb.org/ontology/core#authorInAuthorship");
@@ -223,35 +264,29 @@ public class Score {
              log.trace("Link paper " + paperNode.toString() + " to person " + mainNode.toString() + " in VIVO");
              authorship = ResourceFactory.createResource(paperNode.toString() + "/vivoAuthorship/1");
              
-             
-             
-         
-             
              //string that finds the last name of the person in VIVO
              Statement authorLName = ((Resource)mainNode).getProperty(ResourceFactory.createProperty("http://xmlns.com/foaf/0.1/lastname"));
              
              String authorQuery = "PREFIX core: <http://vivoweb.org/ontology/core#> " +
-             							"PREFIX foaf: <http://xmlns.com/foaf/0.1/> " +
-										"SELECT ?x " +
-										"WHERE {?badNode foaf:lastName " + authorLName.getObject().toString() + " ." +
-												"?badNode http://vivoweb.org/ontology/core#authorInAuthorship ?authorship}" +
-												"?authorship http://vivoweb.org/ontology/core#linkedInformationResource " + paperNode.toString() ;
+         							"PREFIX foaf: <http://xmlns.com/foaf/0.1/> " +
+									"SELECT ?x " +
+									"WHERE {?badNode foaf:lastName " + authorLName.getObject().toString() + " ." +
+											"?badNode http://vivoweb.org/ontology/core#authorInAuthorship ?authorship}" +
+											"?authorship http://vivoweb.org/ontology/core#linkedInformationResource " + paperNode.toString() ;
              
              ResultSet killList = executeQuery(toReplace,authorQuery);
              
              while(killList.hasNext()){
-            	 //query the paper for the first author node (assumption that affiliation matches first author
+            	 //query the paper for the first author node (assumption that affiliation matches first author)
                  Resource removeAuthor = toReplace.getResource(killList.next().toString());
             	 
 	             //return a statment iterator with all the statements for the Author that matches, then remove those statements
-	             
 	             StmtIterator deleteStmts = toReplace.listStatements(null, null, removeAuthor);
 	             toReplace.remove(deleteStmts);
 	             deleteStmts = toReplace.listStatements(removeAuthor, null, (RDFNode)null);
 	             toReplace.remove(deleteStmts);
              }
                          
-             
              
              toReplace.add(authorship,linkedAuthorOf,mainNode);
              log.trace("Link Statement [" + authorship.toString() + ", " + linkedAuthorOf.toString() + ", " + mainNode.toString() + "]");
@@ -269,7 +304,15 @@ public class Score {
              return toReplace;
 		 }
 		 
-		 public static Model recursiveSanitizeBuild(Resource mainRes, Resource linkRes){
+		/**
+		 * recursiveSanitizeBuild
+		 * Traverses paperNode and adds to toReplace model 
+		 * 
+		 * @param Resource mainRes
+		 * @param Resource linkRes
+		 */
+		 
+		 private static Model recursiveSanitizeBuild(Resource mainRes, Resource linkRes){
 			 Model returnModel = ModelFactory.createDefaultModel();
 			 Statement stmt;
 			 
@@ -279,6 +322,7 @@ public class Score {
              	stmt = mainStmts.nextStatement();
               	log.trace("Statement " + stmt.toString());
 			 
+              	//Don't add any scoring statements
 				 if (!stmt.getPredicate().toString().contains("/score")) {
 	          		returnModel.add(stmt);
 	          		                    	
@@ -314,11 +358,7 @@ public class Score {
 			//TODO return scoreInput minus the scored statements
 			
 			String scoreMatch;
-			String queryString;
-			Resource paperResource;
 			RDFNode matchNode;
-			RDFNode paperNode;
-			ResultSet vivoResult;
 			QuerySolution scoreSolution;
 
 		 	//create pairs of *attribute* from matched
@@ -332,16 +372,6 @@ public class Score {
                 scoreMatch = matchNode.toString();
                 
                 log.trace("\nChecking for " + scoreMatch + " in VIVO");
-    			
-                //Select all matching attributes from vivo store
-    			queryString =
-					"PREFIX core: <http://vivoweb.org/ontology/core#> " +
-					"SELECT ?x " +
-					"WHERE { ?x " + coreAttribute + "\"" +  scoreMatch + "\"}";
-    			
-    			//TODO how to combine result sets? not possible in JENA
-    			vivoResult = executeQuery(matched, queryString);
-    			//commitResultSet(matched,vivoResult,paperResource,paperNode,matchNode);
             }	    			 
 	    	
 	    	//TODO return scoreInput minus the scored statements			
