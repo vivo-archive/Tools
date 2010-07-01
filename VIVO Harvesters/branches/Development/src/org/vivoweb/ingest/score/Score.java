@@ -15,7 +15,6 @@ package org.vivoweb.ingest.score;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.vivoweb.ingest.util.JenaConnect;
-import com.hp.hpl.jena.graph.Node;
 import com.hp.hpl.jena.query.Query;
 import com.hp.hpl.jena.query.QueryExecution;
 import com.hp.hpl.jena.query.QueryExecutionFactory;
@@ -34,7 +33,6 @@ public class Score {
 		private Model vivo;
 		private Model scoreInput;
 		private Model scoreOutput;
-		private Model tempModel;
 		
 		final static public void main(String[] args) {
 			
@@ -133,7 +131,7 @@ public class Score {
 		 
 		/**
 		 * commitResultSet
-		 * Commits resultset to a vivo model and a score model
+		 * Commits resultset to a matched model
 		 * 
 		 * @param  Model vivo a model containing vivo statements
 		 * @param  Model score a model containing vivo + scoring statements
@@ -145,68 +143,35 @@ public class Score {
 		 private static void commitResultSet(Model matched, ResultSet storeResult, Resource paperResource, RDFNode matchNode, RDFNode paperNode) {
 				RDFNode authorNode;
 				QuerySolution vivoSolution;
-				StmtIterator paperStmts;
-
-               
-                Statement stmt;
-			 
+				
 				//loop thru vivo matches
 	 	    	while (storeResult.hasNext()) {
 	 	    		vivoSolution = storeResult.nextSolution();
 	 	    		
 	 	    		//Grab person URI
 	                authorNode = vivoSolution.get("x");
-	                log.info("Found " + matchNode.toString() + " for person " + authorNode.toString() + " in VIVO");
-	                log.info("Adding paper " + paperNode.toString() + " to VIVO");
+	                log.info("Found " + matchNode.toString() + " for person " + authorNode.toString());
+	                log.info("Adding paper " + paperNode.toString());
 	
 	                matched.add(recursiveSanitizeBuild(paperResource,null));
 	                
 	                matched = replaceResource(authorNode, paperNode, matched);
 	                
-	                
-	                //Depreciated to use recursive build
-//	                //loop through and add statements
-//	                paperStmts = paperResource.listProperties();
-//	                 
-//	                //insert paper statements into vivo
-//	                //TODO refactor this to a recursive method
-//	                while (paperStmts.hasNext()) {
-//	                	stmt = paperStmts.nextStatement();
-//	                 	log.trace("Paper Statement " + stmt.toString());
-//	
-//	                 	//write to vivo, minus scoring info
-//	                 	if (!stmt.getPredicate().toString().contains("/score")) {
-//	                 		vivo.add(stmt);
-//	                 		                    	
-//		                    	if (stmt.getObject().isResource()) {
-//		                    		StmtIterator objectIterator = ((Resource)stmt.getObject()).listProperties();
-//		                    		
-//		                    		while(objectIterator.hasNext()){
-//		                    			stmt = objectIterator.nextStatement();
-//		                    			log.trace("Object Statement " + stmt.toString());
-//		               
-//		                    			if(!stmt.getPredicate().toString().contains("/score")) {
-//		                    				vivo.add(stmt);
-//		                    			}
-//		                    		}
-//		                    	}
-//	                 	}
-//	                 	
-//	 	    			//write out to score output
-//	                 	//TODO add score of 100
-//	                 	score.add(stmt);
-//	                }
-	            
-	                 
-	                //link author to paper
-
-	
-					 //take results and store in VIVO
-	                 matched.commit();
-	             }	 
+					//take results and store in matched model
+	                matched.commit();
+	 	    	} 
 		 }
 		 
-		 public static Model replaceResource(RDFNode mainNode, RDFNode paperNode, Model toReplace){
+		/**
+		 * replaceResource
+		 * Traverses paperNode and adds to toReplace model 
+		 * 
+		 * @param  RDFNode mainNode
+		 * @param  RDFNode paperNode
+		 * @param  Model toReplace
+		 */
+		 
+		 private static Model replaceResource(RDFNode mainNode, RDFNode paperNode, Model toReplace){
 			 Resource authorship;
 			 Property linkedAuthorOf = ResourceFactory.createProperty("http://vivoweb.org/ontology/core#linkedAuthor");
              Property authorshipForPerson = ResourceFactory.createProperty("http://vivoweb.org/ontology/core#authorInAuthorship");
@@ -223,28 +188,23 @@ public class Score {
              log.trace("Link paper " + paperNode.toString() + " to person " + mainNode.toString() + " in VIVO");
              authorship = ResourceFactory.createResource(paperNode.toString() + "/vivoAuthorship/1");
              
-             
-             
-         
-             
              //string that finds the last name of the person in VIVO
              Statement authorLName = ((Resource)mainNode).getProperty(ResourceFactory.createProperty("http://xmlns.com/foaf/0.1/lastname"));
              
              String authorQuery = "PREFIX core: <http://vivoweb.org/ontology/core#> " +
-             							"PREFIX foaf: <http://xmlns.com/foaf/0.1/> " +
-										"SELECT ?x " +
-										"WHERE {?badNode foaf:lastName " + authorLName.getObject().toString() + " ." +
-												"?badNode http://vivoweb.org/ontology/core#authorInAuthorship ?authorship}" +
-												"?authorship http://vivoweb.org/ontology/core#linkedInformationResource " + paperNode.toString() ;
+         							"PREFIX foaf: <http://xmlns.com/foaf/0.1/> " +
+									"SELECT ?x " +
+									"WHERE {?badNode foaf:lastName " + authorLName.getObject().toString() + " ." +
+											"?badNode http://vivoweb.org/ontology/core#authorInAuthorship ?authorship}" +
+											"?authorship http://vivoweb.org/ontology/core#linkedInformationResource " + paperNode.toString() ;
              
              ResultSet killList = executeQuery(toReplace,authorQuery);
              
              while(killList.hasNext()){
-            	 //query the paper for the first author node (assumption that affiliation matches first author
+            	 //query the paper for the first author node (assumption that affiliation matches first author)
                  Resource removeAuthor = toReplace.getResource(killList.next().toString());
             	 
 	             //return a statment iterator with all the statements for the Author that matches, then remove those statements
-	             
 	             StmtIterator deleteStmts = toReplace.listStatements(null, null, removeAuthor);
 	             toReplace.remove(deleteStmts);
 	             deleteStmts = toReplace.listStatements(removeAuthor, null, (RDFNode)null);
@@ -269,7 +229,15 @@ public class Score {
              return toReplace;
 		 }
 		 
-		 public static Model recursiveSanitizeBuild(Resource mainRes, Resource linkRes){
+		/**
+		 * recursiveSanitizeBuild
+		 * Traverses paperNode and adds to toReplace model 
+		 * 
+		 * @param Resource mainRes
+		 * @param Resource linkRes
+		 */
+		 
+		 private static Model recursiveSanitizeBuild(Resource mainRes, Resource linkRes){
 			 Model returnModel = ModelFactory.createDefaultModel();
 			 Statement stmt;
 			 
@@ -279,6 +247,7 @@ public class Score {
              	stmt = mainStmts.nextStatement();
               	log.trace("Statement " + stmt.toString());
 			 
+              	//Don't add any scoring statements
 				 if (!stmt.getPredicate().toString().contains("/score")) {
 	          		returnModel.add(stmt);
 	          		                    	
@@ -314,11 +283,7 @@ public class Score {
 			//TODO return scoreInput minus the scored statements
 			
 			String scoreMatch;
-			String queryString;
-			Resource paperResource;
 			RDFNode matchNode;
-			RDFNode paperNode;
-			ResultSet vivoResult;
 			QuerySolution scoreSolution;
 
 		 	//create pairs of *attribute* from matched
@@ -332,16 +297,6 @@ public class Score {
                 scoreMatch = matchNode.toString();
                 
                 log.trace("\nChecking for " + scoreMatch + " in VIVO");
-    			
-                //Select all matching attributes from vivo store
-    			queryString =
-					"PREFIX core: <http://vivoweb.org/ontology/core#> " +
-					"SELECT ?x " +
-					"WHERE { ?x " + coreAttribute + "\"" +  scoreMatch + "\"}";
-    			
-    			//TODO how to combine result sets? not possible in JENA
-    			vivoResult = executeQuery(matched, queryString);
-    			//commitResultSet(matched,vivoResult,paperResource,paperNode,matchNode);
             }	    			 
 	    	
 	    	//TODO return scoreInput minus the scored statements			
