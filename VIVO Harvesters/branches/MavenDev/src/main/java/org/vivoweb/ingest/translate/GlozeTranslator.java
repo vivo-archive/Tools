@@ -128,6 +128,7 @@ public class GlozeTranslator extends Translator{
 	
 	/***
 	 * 
+	 * @param args 
 	 * @param switch states if you are using the file methods or the record handler
 	 * @param inFile the xml file to translate
 	 * @param inRecordHandler

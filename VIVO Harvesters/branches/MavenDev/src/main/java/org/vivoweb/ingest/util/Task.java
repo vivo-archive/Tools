@@ -111,6 +111,10 @@ public abstract class Task {
 			if(qName.equalsIgnoreCase("Task")) {
 				this.type = attributes.getValue("type");
 			} else if(qName.equalsIgnoreCase("Param")) {
+				String type;
+				if((type = attributes.getValue("type"))!=null) {
+					
+				}
 				this.tempParamName = attributes.getValue("name");
 			} else {
 				throw new SAXException("Unknown Tag: "+qName);

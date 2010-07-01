@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <RecordHandler type="org.vivoweb.ingest.util.TextFileRecordHandler">
-	<Param name="fileDir">smb://rdcc-fs1.ehpr.ufl.edu/group/software.engineering/Projects_Public/VIVO%20Grant/Interface%20-%20Harvester%20-%20PubMed/PubmedXML</Param>
+	<Param name="fileDir">file:///P:/software.engineering/Projects_Public/VIVO Grant/Interface - Harvester - PubMed/PubmedXML</Param>
 </RecordHandler>
