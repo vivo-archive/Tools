@@ -156,7 +156,7 @@ public class JDBCFetch extends Task {
 			try {
 				//For each Record
 				for(ResultSet rs = this.cursor.executeQuery(buildSelect(tableName)); rs.next(); ) {
-					String recID = rs.getString(getIDField(tableName)).trim();
+					String recID = "id-"+rs.getString(getIDField(tableName)).trim();
 					//Build RDF BEGIN
 					//Header info
 					String tableNS = "db-"+tableName;
@@ -202,7 +202,7 @@ public class JDBCFetch extends Task {
 						sb.append(this.buildTableNS(relations.get(relationField)));
 						
 						//insert field value
-						sb.append(rs.getString(relationField).trim());
+						sb.append("id-"+rs.getString(relationField).trim());
 						
 						//Field END
 						sb.append("\"/>\n");
@@ -216,7 +216,7 @@ public class JDBCFetch extends Task {
 					
 					//Write RDF to RecordHandler
 //					System.out.println(sb.toString());
-					this.rh.addRecord(tableName+"-"+recID,sb.toString());
+					this.rh.addRecord(tableName+"_"+recID,sb.toString());
 				}
 			} catch(SQLException e) {
 				log.error(e.getMessage(),e);
