@@ -77,7 +77,7 @@ public abstract class Task {
 		private Map<String,String> params;
 		private String type;
 		private String tempVal;
-		private String tempParamName;
+		private String tempParamID;
 		
 		protected TaskConfigParser() {
 			this.params = new HashMap<String,String>();
@@ -107,15 +107,11 @@ public abstract class Task {
 		@Override
 		public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
 			this.tempVal = "";
-			this.tempParamName = "";
+			this.tempParamID = "";
 			if(qName.equalsIgnoreCase("Task")) {
 				this.type = attributes.getValue("type");
 			} else if(qName.equalsIgnoreCase("Param")) {
-				String type;
-				if((type = attributes.getValue("type"))!=null) {
-					
-				}
-				this.tempParamName = attributes.getValue("name");
+				this.tempParamID = attributes.getValue("id");
 			} else {
 				throw new SAXException("Unknown Tag: "+qName);
 			}
@@ -153,7 +149,7 @@ public abstract class Task {
 					throw new SAXException(e.getMessage(),e);
 				}
 			} else if(qName.equalsIgnoreCase("Param")) {
-				this.params.put(this.tempParamName, this.tempVal);
+				this.params.put(this.tempParamID, this.tempVal);
 			} else {
 				throw new SAXException("Unknown Tag: "+qName);
 			}

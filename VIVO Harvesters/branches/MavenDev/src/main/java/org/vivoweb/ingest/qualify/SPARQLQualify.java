@@ -11,6 +11,8 @@
 package org.vivoweb.ingest.qualify;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 import javax.xml.parsers.ParserConfigurationException;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -33,6 +35,14 @@ import com.hp.hpl.jena.update.UpdateRequest;
  */
 public class SPARQLQualify extends Qualify {
 	private static Log log = LogFactory.getLog(SPARQLQualify.class);
+	private HashMap<String, Map<String, String>> qualifyParams;
+	
+	/**
+	 * Default Constructor
+	 */
+	public SPARQLQualify() {
+		
+	}
 	
 	/**
 	 * Constructor
@@ -55,9 +65,9 @@ public class SPARQLQualify extends Qualify {
 		// create query string
 		String sQuery = ""
 				+ "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> "
-				+ "DELETE { "+uri+" "+dataType+" ?value } "
-				+ "INSERT { "+uri+" "+dataType+" \""+newValue+"\" } "
-				+ "WHERE { "+uri+" "+dataType+" \""+oldValue+"\" }";
+				+ "DELETE { "+uri+" <"+dataType+"> ?value } "
+				+ "INSERT { "+uri+" <"+dataType+"> \""+newValue+"\" } "
+				+ "WHERE { "+uri+" <"+dataType+"> \""+oldValue+"\" }";
 		
 		// run update
 		UpdateRequest ur = UpdateFactory.create(sQuery);
@@ -70,7 +80,7 @@ public class SPARQLQualify extends Qualify {
 				+ "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> "
 				+ "Select ?record ?dataField "
 				+ "WHERE { "
-				+ "  ?record "+dataType+" ?dataField . "
+				+ "  ?record <"+dataType+"> ?dataField . "
 				+ "}";
 		
 		// create query
@@ -95,24 +105,39 @@ public class SPARQLQualify extends Qualify {
 		}
 	}
 	
-	/**
-	 * @param args commandline arguments
-	 */
-	public static void main(String... args) {
-		JenaConnect jc;
+
+	@Override
+	protected void acceptParams(Map<String, String> params) throws ParserConfigurationException, SAXException, IOException {
 		try {
-			if(args.length != 6|| (jc = JenaConnect.parseConfig(args[1])) == null || !(args[5].equalsIgnoreCase("true") || args[5].equalsIgnoreCase("false"))) {
-				IllegalArgumentException e = new IllegalArgumentException("Usage: SPARQLQualify [modelConfigFilePath] [dataType] [matchValue] [newValue] [true|false]");
-				log.error(e.getMessage(),e);
-				throw e;
+			setModel(JenaConnect.parseConfig(getParam(params, "modelConfig", true)).getJenaModel());
+		} catch(NullPointerException e) {
+			throw new IOException("Jena Model Configuration Invalid",e);
+		}
+		this.qualifyParams = new HashMap<String,Map<String,String>>();
+		for(String paramID : params.keySet()) {
+			String[] temp = paramID.trim().split("\\.", 2);
+			if(temp.length != 2) {
+				throw new SAXException("Parameter improperly configured: "+paramID+" -> "+params.get(paramID));
 			}
-			new SPARQLQualify(jc.getJenaModel()).replace(args[2], args[3], args[4], Boolean.parseBoolean(args[5]));
-		} catch(ParserConfigurationException e) {
-			log.error("",e);
-		} catch(SAXException e) {
-			log.error("",e);
-		} catch(IOException e) {
-			log.error("",e);
+			temp[0] = temp[0].trim();
+			temp[1] = temp[1].trim();
+			if(!this.qualifyParams.containsKey(temp[0])) {
+				this.qualifyParams.put(temp[0], new HashMap<String,String>());
+			}
+			this.qualifyParams.get(temp[0]).put(temp[1], params.get(paramID).trim());
+		}
+	}	
+
+	@Override
+	protected void runTask() throws NumberFormatException {
+		for(Map<String, String> qualifyRun : this.qualifyParams.values()) {
+			String dataType = getParam(qualifyRun, "dataType", true);
+			String matchValue = getParam(qualifyRun, "matchValue", true);
+			String newValue = getParam(qualifyRun, "newValue", true);
+			String isRegex = getParam(qualifyRun, "isRegex", true);
+			boolean regex = Boolean.parseBoolean(isRegex);
+			log.trace("Running: replace(\""+dataType+"\", \""+matchValue+"\", \""+newValue+"\", "+regex+");");
+			replace(dataType, matchValue, newValue, regex);
 		}
 	}
 

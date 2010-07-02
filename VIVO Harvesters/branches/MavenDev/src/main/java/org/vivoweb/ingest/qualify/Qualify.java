@@ -10,13 +10,14 @@
  ******************************************************************************/
 package org.vivoweb.ingest.qualify;
 
+import org.vivoweb.ingest.util.Task;
 import com.hp.hpl.jena.rdf.model.Model;
 
 /**
  * @author Christopher Haines (hainesc@ctrip.ufl.edu)
  *
  */
-public abstract class Qualify {
+public abstract class Qualify extends Task {
 	//This code was marked as may cause compile errors by UCDetector.
 	//Change visibility of class to Default
 	//FIXME This code was marked as may cause compile errors by UCDetector.
