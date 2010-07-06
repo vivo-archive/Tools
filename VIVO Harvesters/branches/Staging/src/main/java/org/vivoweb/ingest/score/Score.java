@@ -13,6 +13,7 @@
 package org.vivoweb.ingest.score;
 
 import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -20,10 +21,15 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.HashMap;
 
+import javax.xml.parsers.ParserConfigurationException;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.vivoweb.ingest.fetch.OAIHarvest;
 import org.vivoweb.ingest.util.JenaConnect;
+import org.vivoweb.ingest.util.Record;
+import org.vivoweb.ingest.util.RecordHandler;
+import org.xml.sax.SAXException;
+
 import com.hp.hpl.jena.query.Query;
 import com.hp.hpl.jena.query.QueryExecution;
 import com.hp.hpl.jena.query.QueryExecutionFactory;
@@ -42,103 +48,39 @@ public class Score {
 	
 		private static Model vivo;
 		private Model scoreInput;
-		//private Model scoreOutput;
+		private Model scoreOutput;
 		
 		final static public void main(String[] args) {
 			
-			JenaConnect jena = null;
 			//pass models from command line
 			//TODO proper args handler
 			
-			if (args.length != 1 && args.length != 5) {
-				//System.out.println("Usage: score connectionPath username password dbType dbClass vivoModelName scoreModelName\nscore configfile");
+			if (args.length != 3) {
 				System.out.println("Usage: score rdfRecordHandler VivoJenaConfig OutputJenaConfig");
 				return;
 			}
 			
-			if (args.length == 1) {
-					try {
-						log.info("Reading in config file");
-						jena = runScore(readConfig(args[0]));
-					} catch(IllegalArgumentException e) {
-						log.fatal("", e);
-					}
-			} else {
-				try {
-					log.info("Reading in argument list");
-					
-					//load up model
-					jena = new JenaConnect(args[0],args[1],args[2],args[3],args[4],args[5]);
-				} catch(IllegalArgumentException e) {
-					log.fatal("", e);
+			try {
+				RecordHandler rh = RecordHandler.parseConfig(args[0]);
+				JenaConnect jenaVivoDB = JenaConnect.parseConfig(args[1]);
+				JenaConnect jenaOutputDB = JenaConnect.parseConfig(args[2]);;
+				
+				Model jenaInputDB = ModelFactory.createDefaultModel();
+				for (Record r: rh) {
+					jenaInputDB.read(new ByteArrayInputStream(r.getData().getBytes()), null);
 				}
+				
+				new Score(jenaVivoDB.getJenaModel(), jenaInputDB, jenaOutputDB.getJenaModel()).execute();
+			} catch (Exception e) {
+				log.fatal(e.getMessage(),e);
 			}
-			
-			//JenaConnect scoreInput = new JenaConnect(connPath,username,password,modelName,dbType,dbClass);
-			//JenaConnect scoreOutput = new JenaConnect(connPath,username,password,modelName,dbType,dbClass);
-			//new Score(vivo.getJenaModel(),scoreInput.getJenaModel(), scoreOutput.getJenaModel()).execute();			
-			new Score(jena.getJenaModel()).execute();
 	    }
 		
-		//TODO question on java try catch blocks forcing inelegant inits and return statements
-		public static JenaConnect runScore(HashMap<String, String> hmConfigMap )
-		{
-			checkConfig(hmConfigMap, OAIHarvest.arrRequiredParamaters);		
-			JenaConnect jenaDB = null;
-			try {
-				jenaDB = new JenaConnect(hmConfigMap.get("connPath"),hmConfigMap.get("username"),hmConfigMap.get("password"),hmConfigMap.get("modelName"),hmConfigMap.get("dbType"),hmConfigMap.get("dbClass"));
-			} catch (Exception e) {
-				e.printStackTrace();
-				log.error("Error reading Score config: ", e);
-			}
-			return jenaDB;
-		}
-
-		//TODO readconfig function should be moved to a common include
-		private static HashMap<String, String> readConfig(String strFilename) throws IllegalArgumentException {
-			HashMap<String, String> hmConfigMap = new HashMap<String, String>();
-			try {
-				FileInputStream fisConfigFile = new FileInputStream(strFilename);
-				BufferedReader brConfigFile = new BufferedReader(
-						new InputStreamReader(fisConfigFile));
-				String strLine;
-				while ((strLine = brConfigFile.readLine()) != null) {
-					String[] strParams = strLine.split(":",2);
-					if(strParams.length != 2){
-						throw new IllegalArgumentException("Invalid configuration file format. Entries must be key:value.");
-					}
-					hmConfigMap.put(strParams[0], strParams[1]);
-				}
-			} catch (FileNotFoundException e1) {
-				e1.printStackTrace();
-				log.fatal("File Not Found: " + strFilename, e1);
-			} catch (IOException e) {
-				e.printStackTrace();
-				log.fatal("IO Exception reading configuration file: "+strFilename, e);
-			}
-			if(hmConfigMap.isEmpty())
-			{
-				throw new IllegalArgumentException("Failed to read configuration file. File does not exist or is blank.");
-			}
-			return hmConfigMap;
-		}
 		
-		private static void checkConfig(HashMap<String, String> hmConfigMap, String[] arrParameters)
-		{
-			for(String Param:arrParameters)
-			{
-				if(!hmConfigMap.containsKey(Param))
-				{
-					throw new IllegalArgumentException ("Missing parameter \"" + Param + "\" in configuration file");
-				}
-			}
-		}
-		
-		//public Score (Model vivo, Model scoreInput, Model scoreOutput) {
-		public Score (Model vivo) {
+		public Score (Model vivo, Model scoreInput, Model scoreOutput) {
 			this.vivo = vivo;
 			this.scoreInput = scoreInput;
-			//this.scoreOutput = scoreOutput;
+			this.scoreOutput = scoreOutput;
 		}
 		
 		public void execute() {		
