@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Execute Fetch
+
+
+# Execute Translate
+java org.vivoweb.ingest.translate.xsltranslate -rh "\config\recordHandlers\TranslateInPubmedXMLRecordHandler.xml" "\DataMaps\PubMedToXML.xsl" "\config\recordHandlers\TranslateOutPubmedRecordHandler.xml"
+
+# Execute Score
+
+
+# Execute Qualify
+
+
+# Execute Transfer
