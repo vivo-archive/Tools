@@ -12,24 +12,12 @@
  ******************************************************************************/
 package org.vivoweb.ingest.score;
 
-import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.HashMap;
-
-import javax.xml.parsers.ParserConfigurationException;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.vivoweb.ingest.util.JenaConnect;
 import org.vivoweb.ingest.util.Record;
 import org.vivoweb.ingest.util.RecordHandler;
-import org.xml.sax.SAXException;
-
 import com.hp.hpl.jena.query.Query;
 import com.hp.hpl.jena.query.QueryExecution;
 import com.hp.hpl.jena.query.QueryExecutionFactory;
@@ -110,18 +98,18 @@ public class Score {
 			 		
 		 		//DEBUG
 				 	//TODO howto pass this in via config
-				 	matchAttribute = "author";
-				 	matchQuery = "PREFIX score: <http://vivoweb.org/ontology/score#> " +
-			    	       		 "SELECT ?x ?author " +
-			    				 "WHERE { ?x score:author ?author}";
-				 	coreAttribute = "core:author";
+				 	//matchAttribute = "author";
+				 	//matchQuery = "PREFIX score: <http://vivoweb.org/ontology/score#> " +
+			    	//       		 "SELECT ?x ?author " +
+			    	//			 "WHERE { ?x score:author ?author}";
+				 	//coreAttribute = "core:author";
 			 	//DEBUG
 				
 				//Pairwise Matches
 				//TODO finish implementation of pairwise matching loop
 			 	//for each matchAttribute
-			 		scoreInputResult = executeQuery(scoreInput, matchQuery);
-			 		pairwiseScore(vivo,scoreInput,matchAttribute,coreAttribute,scoreInputResult);	
+			 		//scoreInputResult = executeQuery(scoreInput, matchQuery);
+			 		//pairwiseScore(vivo,scoreInput,matchAttribute,coreAttribute,scoreInputResult);	
 			 	//end for
 			 		
 				//Close and done
