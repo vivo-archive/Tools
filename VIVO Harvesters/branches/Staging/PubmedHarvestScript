@@ -7,7 +7,7 @@
 java org.vivoweb.ingest.translate.xsltranslate -rh "\config\recordHandlers\TranslateInPubmedXMLRecordHandler.xml" "\DataMaps\PubMedToXML.xsl" "\config\recordHandlers\TranslateOutPubmedRecordHandler.xml"
 
 # Execute Score
-java -jar harvester.jar score "\config\ScoringInXMLRecordHandler.xml" "ScpringVIVOInput.xml" "ScoringJenaInput.xml"
+java -jar harvester.jar score "\config\ScoringInXMLRecordHandler.xml" "\config\ScpringVIVOInput.xml" "\config\SoringJenaInput.xml"
 
 # Execute Qualify
 
