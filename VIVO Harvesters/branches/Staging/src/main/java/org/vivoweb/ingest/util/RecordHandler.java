@@ -28,7 +28,7 @@ import org.xml.sax.helpers.DefaultHandler;
  */
 public abstract class RecordHandler implements Iterable<Record> {
 	
-	private boolean overwriteDefault = false;
+	private boolean overwriteDefault = true;
 	
 	/**
 	 * @param params map of parameters
