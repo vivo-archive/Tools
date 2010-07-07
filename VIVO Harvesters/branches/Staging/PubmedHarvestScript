@@ -7,7 +7,7 @@ java -cp target/ingest-0.3.jar:target/dependency/* org.vivoweb.ingest.fetch.Fetc
 java -cp target/ingest-0.3.jar:target/dependency/* org.vivoweb.ingest.translate.XSLTranslator -rh config/recordHandlers/TranslateInPubmedXMLRecordHandler.xml DataMaps/PubMedToXML.xsl config/recordHandlers/TranslateOutPubmedXMLRecordHandler.xml  
 
 # Execute Score
-java -cp target/ingest-0.3.jar:target/dependency/* org.vivoweb.ingest.score.Score config/ScoringInXMLRecordHandler.xml config/ScoringVIVOInput.xml config/ScoringJenaInput.xml
+java -cp target/ingest-0.3.jar:target/dependency/* org.vivoweb.ingest.score.Score config/recordHandlers/ScoringInXMLRecordHandler.xml config/jenaModels/ScoringVIVOInput.xml config/jenaModels/ScoringJenaInput.xml
 
 # Execute Qualify
 
