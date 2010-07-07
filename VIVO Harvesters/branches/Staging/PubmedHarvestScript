@@ -1,7 +1,13 @@
 #!/bin/bash
 
-# Execute Fetch
-
+# Execute Fetch for OAI
+java org.vivoweb.ingest.fetch.fetch OAI
+# Execute Fetch for PubMed
+java org.vivoweb.ingest.fetch.fetch PubMed
+# Execute Fetch for RDB
+java org.vivoweb.ingest.fetch.fetch RDB
+# Execute Fetch for NIH
+java org.vivoweb.ingest.fetch.fetch NIH 
 
 # Execute Translate
 java org.vivoweb.ingest.translate.xsltranslate -rh "\config\recordHandlers\TranslateInPubmedXMLRecordHandler.xml" "\DataMaps\PubMedToXML.xsl" "\config\recordHandlers\TranslateOutPubmedRecordHandler.xml"
