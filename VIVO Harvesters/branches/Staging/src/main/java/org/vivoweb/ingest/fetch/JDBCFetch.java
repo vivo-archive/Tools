@@ -26,7 +26,7 @@ import org.vivoweb.ingest.util.Task;
 import org.xml.sax.SAXException;
 
 /**
- * Fetch from JDBC into RDF
+ * Fetch from JDBC into RDF/XML
  * @author Christopher Haines (hainesc@ctrip.ufl.edu)
  */
 public class JDBCFetch extends Task {
