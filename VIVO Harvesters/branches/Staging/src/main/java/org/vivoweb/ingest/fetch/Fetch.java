@@ -119,7 +119,7 @@ public class Fetch
 //			e.printStackTrace();
 //		}
 		try {
-			Task.main("config/PubmedFetchTask.xml");
+			Task.main("config/tasks/PubmedFetchTask.xml");
 		} catch (ParserConfigurationException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -146,7 +146,18 @@ public class Fetch
 	 */
 	public static void RDBFetch()
 	{
-		System.out.println("We would be running RDB Fetch here");
+		try {
+			JDBCFetch.main("config/tasks/JDBCFetchTask.xml");
+		} catch (ParserConfigurationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SAXException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 /**
  * Reads a configuration file in key:value format and returns a hashmap of the results.
