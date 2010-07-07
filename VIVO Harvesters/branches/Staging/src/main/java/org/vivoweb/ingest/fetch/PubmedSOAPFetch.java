@@ -24,7 +24,6 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Map;
-
 import javax.xml.namespace.QName;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.stream.XMLOutputFactory;
@@ -44,7 +43,7 @@ import org.xml.sax.SAXException;
  * Based on the example code available at the PubMed Website.
  * @author Stephen V. Williams swilliams@ctrip.ufl.edu
  * @author Dale R. Scheppler dscheppler@ctrip.ufl.edu
- * @author Christopher Haines cah@ctrip.ufl.edu
+ * @author Christopher Haines hainesc@ctrip.ufl.edu
  */
 public class PubmedSOAPFetch extends Task
 {
@@ -269,9 +268,6 @@ public class PubmedSOAPFetch extends Task
 	 * @param maxRecords 
 	 */
 	public void fetchPubMedEnv(String WebEnv, String QueryKey, String intStart, String maxRecords) {
-		//This code was marked as may cause compile errors by UCDetector.
-		//Change visibility of method "PubmedSOAPFetch.fetchPubMedEnv" to Private
-		//FIXME This code was marked as may cause compile errors by UCDetector.
 		EFetchPubmedServiceStub.EFetchRequest req = new EFetchPubmedServiceStub.EFetchRequest();
 		req.setQuery_key(QueryKey);
 		req.setWebEnv(WebEnv);
@@ -288,29 +284,11 @@ public class PubmedSOAPFetch extends Task
 	}
 	
 	/**
-	 * This method takes in a range of PMIDs and returns Query string to get all the ids
-	 * 
-	 * @param ids
-	 *            Range of PMID you want to pull, in list form
-	 * @return 
-	 */
-	public String queryPubMedIDs(List<Integer> ids) {
-		//This code was marked as never used by UCDetector.
-		//FIXME Determine if this code is necessary.
-		StringBuilder strPMID = new StringBuilder();
-		for(int id = 0; id < ids.size(); id++ ) {
-			if(id != 0) {
-				strPMID.append(",");
-			}
-			strPMID.append(ids.get(id));
-		}
-		return strPMID.toString()+"[uid]";
-	}
-	/**
 	 * FIXME What in the world is this doing? There are no comments.
 	 * @param req
 	 * @throws RemoteException
 	 */
+	@SuppressWarnings("restriction")
 	private void serializeFetchRequest(EFetchPubmedServiceStub.EFetchRequest req) throws RemoteException {
 		ByteArrayOutputStream buffer=new ByteArrayOutputStream();
 		EFetchPubmedServiceStub service = new EFetchPubmedServiceStub();

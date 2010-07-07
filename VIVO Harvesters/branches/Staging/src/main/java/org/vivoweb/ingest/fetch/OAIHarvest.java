@@ -9,6 +9,7 @@
  *     Christopher Haines, Dale Scheppler, Nicholas Skaggs, Stephen V. Williams - initial API and implementation
  ******************************************************************************/
 package org.vivoweb.ingest.fetch;
+
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.Map;
@@ -26,20 +27,16 @@ import ORG.oclc.oai.harvester2.app.RawWrite;
  * Class for harvesting from OAI Data Sources
  * @author Dale Scheppler
  * @author Chris Haines
- *
  */
 public class OAIHarvest extends Task {
 	private static Log log = LogFactory.getLog(OAIHarvest.class);
 	/**
 	 * A listing of the paramaters that need to be in the configuration file for
 	 * the OAI harvest to function properly.
-	 * @author Dale Scheppler
-	 * @author Chris Haines
 	 */
 	protected static final String[] arrRequiredParamaters = {"address", "startDate", "endDate", "filename"};
 	/**
 	 * The website address of the OAI Repository without the protocol prefix (No http://)
-	 * @author Dale Scheppler
 	 */
 	private String strAddress;
 	/**
@@ -47,7 +44,6 @@ public class OAIHarvest extends Task {
 	 * If time is required, format is YYYY-MM-DDTHH:MM:SS:MSZ<br>
 	 * Some repositories do not support millisend resolution.<br>
 	 * Example 2010-01-15T13:45:12:50Z<br>
-	 * @author Dale Scheppler
 	 */
 	private String strStartDate;
 	/**
@@ -55,7 +51,6 @@ public class OAIHarvest extends Task {
 	 * If time is required, format is YYYY-MM-DDTHH:MM:SS:MSZ<br>
 	 * Some repositories do not support millisend resolution.<br>
 	 * Example 2010-01-15T13:45:12:50Z<br>
-	 * @author Dale Scheppler
 	 */
 	private String strEndDate;
 	/**
@@ -69,10 +64,10 @@ public class OAIHarvest extends Task {
 	 * Some repositories are configured incorrectly and this process will not work. For those a custom<br>
 	 * method will need to be written.
 	 * @author Dale Scheppler
-	 * @param strAddress - The website address of the repository, without http://
-	 * @param strStartDate - The date at which to begin fetching records, format and time resolution depends on repository.
-	 * @param strEndDate - The date at which to stop fetching records, format and time resolution depends on repository.
-	 * @param fosOutStream - The file output stream to write to.
+	 * @param strAddress The website address of the repository, without http://
+	 * @param strStartDate The date at which to begin fetching records, format and time resolution depends on repository.
+	 * @param strEndDate The date at which to stop fetching records, format and time resolution depends on repository.
+	 * @param osOutStream The output stream to write to.
 	 * @throws Exception General exception catch if no other exceptions caught.
 	 * @throws SAXException Thrown if there is an error in SAX.
 	 * @throws TransformerException Thrown if there is an error during XML transform.
@@ -84,7 +79,6 @@ public class OAIHarvest extends Task {
 	}
 	
 	@Override
-	//FIXME CAH this needs documentation
 	protected void acceptParams(Map<String, String> params) throws ParserConfigurationException, SAXException, IOException {
 		this.strAddress = getParam(params, "address", true);
 		this.strStartDate = getParam(params, "startDate", true);
@@ -100,13 +94,12 @@ public class OAIHarvest extends Task {
 	}
 	
 	@Override
-	//FIXME CAH this needs documentation
 	protected void runTask() throws NumberFormatException {
 		try {
 			System.out.println("http://" + this.strAddress);
 			System.out.println(this.strStartDate);
 			System.out.println(this.strEndDate);
-			RawWrite.run("http://" + this.strAddress, this.strStartDate, this.strEndDate, "oai_dc", "", osOutStream);
+			RawWrite.run("http://" + this.strAddress, this.strStartDate, this.strEndDate, "oai_dc", "", this.osOutStream);
 		} catch(IOException e) {
 			log.error(e.getMessage(),e);
 		} catch(ParserConfigurationException e) {

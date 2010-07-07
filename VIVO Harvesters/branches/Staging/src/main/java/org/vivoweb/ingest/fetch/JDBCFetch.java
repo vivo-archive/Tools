@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2010 Christopher Haines, Dale Scheppler, Nicholas Skaggs, Stephen V. Williams.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the new BSD license
+ * which accompanies this distribution, and is available at
+ * http://www.opensource.org/licenses/bsd-license.html
+ * 
+ * Contributors:
+ *     Christopher Haines, Dale Scheppler, Nicholas Skaggs, Stephen V. Williams - initial API and implementation
+ ******************************************************************************/
 package org.vivoweb.ingest.fetch;
 
 import java.io.IOException;
@@ -11,14 +21,13 @@ import java.util.Map;
 import javax.xml.parsers.ParserConfigurationException;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.vivoweb.ingest.util.JDBCRecordHandler;
 import org.vivoweb.ingest.util.RecordHandler;
 import org.vivoweb.ingest.util.Task;
 import org.xml.sax.SAXException;
 
 /**
+ * Fetch from JDBC into RDF
  * @author Christopher Haines (hainesc@ctrip.ufl.edu)
- *
  */
 public class JDBCFetch extends Task {
 	
@@ -33,6 +42,7 @@ public class JDBCFetch extends Task {
 	protected void acceptParams(Map<String, String> params) throws ParserConfigurationException, SAXException, IOException {
 		String repositoryConfig = getParam(params, "repositoryConfig", true);
 		this.rh = RecordHandler.parseConfig(repositoryConfig);
+		this.rh.setOverwriteDefault(true);
 		String jdbcDriverClass = getParam(params, "jdbcDriverClass", true);
 		try {
 			Class.forName(jdbcDriverClass);
@@ -157,6 +167,7 @@ public class JDBCFetch extends Task {
 				//For each Record
 				for(ResultSet rs = this.cursor.executeQuery(buildSelect(tableName)); rs.next(); ) {
 					String recID = "id-"+rs.getString(getIDField(tableName)).trim();
+					log.trace("Creating RDF for "+tableName+": "+recID);
 					//Build RDF BEGIN
 					//Header info
 					String tableNS = "db-"+tableName;
@@ -216,6 +227,7 @@ public class JDBCFetch extends Task {
 					
 					//Write RDF to RecordHandler
 //					System.out.println(sb.toString());
+					log.trace("Adding record for "+tableName+": "+recID);
 					this.rh.addRecord(tableName+"_"+recID,sb.toString());
 				}
 			} catch(SQLException e) {
