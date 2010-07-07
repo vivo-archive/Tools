@@ -1,19 +1,17 @@
 #!/bin/bash
 
-# Execute Fetch for OAI
-java org.vivoweb.ingest.fetch.fetch OAI
 # Execute Fetch for PubMed
-java org.vivoweb.ingest.fetch.fetch PubMed
-# Execute Fetch for RDB
-java org.vivoweb.ingest.fetch.fetch RDB
-# Execute Fetch for NIH
-java org.vivoweb.ingest.fetch.fetch NIH 
+java -cp /ingest-0.3.jar;/dependency/* org.vivoweb.ingest.fetch.fetch PubMed    #Windows
+#java -cp /ingest-0.3.jar:/dependency/* org.vivoweb.ingest.fetch.fetch PubMed    #Linux
+
 
 # Execute Translate
-java org.vivoweb.ingest.translate.xsltranslate -rh "\config\recordHandlers\TranslateInPubmedXMLRecordHandler.xml" "\DataMaps\PubMedToXML.xsl" "\config\recordHandlers\TranslateOutPubmedRecordHandler.xml"
+java -cp /ingest-0.3.jar;/dependency/* org.vivoweb.ingest.translate.xsltranslate -rh "\config\recordHandlers\TranslateInPubmedXMLRecordHandler.xml" "\DataMaps\PubMedToXML.xsl" "\config\recordHandlers\TranslateOutPubmedRecordHandler.xml"  #windows
+#java -cp /ingest-0.3.jar:/dependency/* org.vivoweb.ingest.translate.xsltranslate -rh "\config\recordHandlers\TranslateInPubmedXMLRecordHandler.xml" "\DataMaps\PubMedToXML.xsl" "\config\recordHandlers\TranslateOutPubmedRecordHandler.xml"  #linux
 
 # Execute Score
-java -jar harvester.jar score "\config\ScoringInXMLRecordHandler.xml" "\config\ScoringVIVOInput.xml" "\config\ScoringJenaInput.xml"
+java -cp /ingest-0.3.jar;/dependency/* org.vivoweb.ingest.score "\config\ScoringInXMLRecordHandler.xml" "\config\ScoringVIVOInput.xml" "\config\ScoringJenaInput.xml"  #windows
+#java -cp /ingest-0.3.jar:/dependency/* org.vivoweb.ingest.score "\config\ScoringInXMLRecordHandler.xml" "\config\ScoringVIVOInput.xml" "\config\ScoringJenaInput.xml"  #linux
 
 # Execute Qualify
 
