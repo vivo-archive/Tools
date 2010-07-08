@@ -87,13 +87,10 @@ public class XSLTranslator extends Translator{
 		
 		//checking for valid input parameters
 		if ((this.translationFile !=null && this.translationFile.isFile()) && this.inStream != null && this.outStream != null) {
-		
-			log.info("Translation: Start");
 			
 			//TODO no reason to pass the variables to the method, have them use the designated streams on thier own
 			xmlTranslate(this.inStream, this.translationFile, this.outStream);
 			
-			log.info("Translation: End");
 		}
 		else {
 			log.error("Translation unable to start: Not all Parameters Set" );
@@ -153,12 +150,16 @@ public class XSLTranslator extends Translator{
 			  throw new IllegalArgumentException();
 		 }
 		 else {
+			log.info("Translation: Start");
+			 
 			if (args[0].equals("-f")) {
 				try {
 					//set the in/out and translation var
 					//TODO change setOutStream to allow for a file to be specified
 					this.setTranslationFile(new File(args[2]));
 					this.setInStream(new FileInputStream(new File(args[1])));
+					
+					log.info("Translating Record " + args[1].toString());
 					
 					if (!args[3].equals("") && args[3] != null) {
 						this.setOutStream(new FileOutputStream(new File(args[3])));
@@ -184,9 +185,11 @@ public class XSLTranslator extends Translator{
 					
 					//create a output stream for writing to the out store
 					ByteArrayOutputStream buff = new ByteArrayOutputStream();
-					
+
 					// get from the in record and translate
 					for(Record r : inStore){
+						log.info("Translating Record " + r.getID());
+						
 						this.setInStream(new ByteArrayInputStream(r.getData().getBytes()));
 						this.setOutStream(buff);
 						this.execute();
@@ -205,6 +208,8 @@ public class XSLTranslator extends Translator{
 				log.error("Invalid Arguments: Translate option " + args[0] + " not handled.");
 				throw new IllegalArgumentException();
 			}
+			
+			log.info("Translation: End");
 		 }	
 	  }
 
