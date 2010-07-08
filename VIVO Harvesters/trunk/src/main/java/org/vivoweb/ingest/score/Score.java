@@ -44,16 +44,17 @@ public class Score {
 			//TODO proper args handler
 			
 			if (args.length != 3) {
-				System.out.println("Usage: score rdfRecordHandler VivoJenaConfig OutputJenaConfig");
+				System.out.println("Usage: score rdfRecordHandler tempJenaConfig vivoJenaConfig outputJenaConfig");
 				return;
 			}
 			
 			try {
 				RecordHandler rh = RecordHandler.parseConfig(args[0]);
-				JenaConnect jenaVivoDB = JenaConnect.parseConfig(args[1]);
-				JenaConnect jenaOutputDB = JenaConnect.parseConfig(args[2]);;
+				JenaConnect jenaTempDB = JenaConnect.parseConfig(args[1]);
+				JenaConnect jenaVivoDB = JenaConnect.parseConfig(args[2]);
+				JenaConnect jenaOutputDB = JenaConnect.parseConfig(args[3]);;
 				
-				Model jenaInputDB = ModelFactory.createDefaultModel();
+				Model jenaInputDB = jenaTempDB.getJenaModel();
 				for (Record r: rh) {
 					jenaInputDB.read(new ByteArrayInputStream(r.getData().getBytes()), null);
 				}
