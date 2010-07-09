@@ -30,9 +30,13 @@ import org.xml.sax.SAXException;
 public class Fetch 
 {
 
+	/**
+	 * Log4J Logger
+	 */
 	private static Log log = LogFactory.getLog(Fetch.class);								//Initialize the Log4J log Factory.
 	
 	/**
+	 * Main Method
 	 * @author Dale Scheppler
 	 * @param args The command line parameters input by the user at runtime.
 	 */
@@ -48,7 +52,7 @@ public class Fetch
 				try
 				{
 				System.out.println("Trying to read OAI Configuration file.");				//Log that we're checking for a config file for OAI
-				OAIFetch(readConfig("config/OAIHarvestConfig.txt"));						//Run OAI Fetch using the existing configuration file.
+				fetchOAI(readConfig("config/OAIHarvestConfig.txt"));						//Run OAI Fetch using the existing configuration file.
 				}
 				catch(IllegalArgumentException e)
 				{
@@ -58,17 +62,17 @@ public class Fetch
 			else if(strArguments.equals("NIH"))												//If they typed "NIH"
 			{
 				//TODO Finish the OAI fetch and add configuration options here.
-				NIHFetch();																	//Run the OAI Fetch
+				fetchNIH();																	//Run the OAI Fetch
 			}
 			else if(strArguments.equals("PubMed"))											//If they typed "PubMed"
 			{
 				//TODO Finish putting in the stuff for reading the configuration file here.
-				PubMedFetch();																//Run the PubMed Fetch
+				fetchPubmed();																//Run the PubMed Fetch
 			}
 			else if(strArguments.equals("RDB"))												//If they typed RDB
 			{
 				//TODO Finish the RDB Fetch and add configuration options here.
-				RDBFetch();																	//Run the RDB (Relational Database) Fetch
+				fetchJDBC();																	//Run the RDB (Relational Database) Fetch
 			}
 			else																			//Otherwise
 			{
@@ -91,7 +95,7 @@ public class Fetch
 	 * @author Dale Scheppler
 	 * @param hmConfigMap A hashmap of the configuration data from the configuration file.
 	 */
-	public static void OAIFetch(HashMap<String, String> hmConfigMap )
+	public static void fetchOAI(HashMap<String, String> hmConfigMap )
 	{
 		log.debug("Initializing OAI Fetch.");												//Log that we're running an OAI Fetch
 		checkConfig(hmConfigMap, OAIHarvest.arrRequiredParamaters);							//Check that the configuration paramaters are correct as defined in the OAIHarvest class.
@@ -104,7 +108,10 @@ public class Fetch
 		log.debug("OAI Fetch Complete.");													//Log when complete.
 	}
 	
-	private static void PubMedFetch()
+	/**
+	 * Executes a fetch from Pubmed
+	 */
+	private static void fetchPubmed()
 	{
 		try {
 			Task.main("config/tasks/PubmedFetchTask.xml");
@@ -115,17 +122,22 @@ public class Fetch
 		} catch (IOException e) {
 			log.error(e.getMessage(),e);
 		}
-		
-		
-		
 	}
 	
-	private static void NIHFetch()
+	/**
+	 * Executes a fetch from NIH Grant Repository
+	 * @deprecated not used atm
+	 */
+	@Deprecated
+	private static void fetchNIH()
 	{
 		System.out.println("We would be running NIH Fetch here");
 	}
 	
-	private static void RDBFetch()
+	/**
+	 * Executed a fetch from a JDBC database
+	 */
+	private static void fetchJDBC()
 	{
 		try {
 			Task.main("config/tasks/JDBCFetchTask.xml");
@@ -175,6 +187,9 @@ public class Fetch
 
 	}
 	
+	/**
+	 * Default Constructor
+	 */
 	private Fetch(){
 		//No Initiallization
 	}
