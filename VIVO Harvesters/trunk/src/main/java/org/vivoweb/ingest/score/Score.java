@@ -47,8 +47,8 @@ public class Score {
 			//pass models from command line
 			//TODO proper args handler
 			
-			if (args.length != 3) {
-				log.info("Usage requires 3 arguments rdfRecordHandler tempJenaConfig vivoJenaConfig outputJenaConfig");
+			if (args.length != 4) {
+				log.info("Usage requires 4 arguments rdfRecordHandler tempJenaConfig vivoJenaConfig outputJenaConfig");
 				return;
 			}
 			
