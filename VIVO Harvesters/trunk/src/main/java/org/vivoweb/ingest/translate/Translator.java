@@ -10,11 +10,7 @@
  ******************************************************************************/
 package org.vivoweb.ingest.translate;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Calendar;
@@ -22,8 +18,6 @@ import java.text.SimpleDateFormat;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.vivoweb.ingest.util.Record;
-import org.vivoweb.ingest.util.RecordHandler;
 
 /*****************************************************************************************
  * VIVO Data Translator
@@ -34,6 +28,9 @@ import org.vivoweb.ingest.util.RecordHandler;
  * ***************************************************************************************/
 public class Translator {
 	
+	/**
+	 * the log property for logging errors, information, debugging
+	 */
 	protected static Log log = LogFactory.getLog(Translator.class);
 	
 	
@@ -52,19 +49,17 @@ public class Translator {
 	 * Empty constructor
 	 */
 	public Translator(){
-		
+		//empty constructor
 	}
 		
 	/***
 	 * Initial constructor for the translate method, it is not required to use this constructor
 	 * but it is suggested, since not passing one of the variables would result in a error being thrown
 	 * 
-	 * @param sType Type of the file to be translated (for this exercise its always XML)
-	 * @param transFile The file that contains the mapping for translation
 	 * @param iStream the incoming stream that the file is passed into
 	 * @param oStream the outgoing stream that the translation is passed to
 	 */
-	public Translator(String sType, InputStream iStream, OutputStream oStream){
+	public Translator(InputStream iStream, OutputStream oStream){
 		this.setInStream(iStream);
 		this.setOutStream(oStream);
 	}
@@ -112,7 +107,10 @@ public class Translator {
 		}		
 	}
 	
-	
+	/**
+	 * 
+	 * @param args the argument streams necessary for translating 
+	 */
 	public static void main(String[] args){
 		
 		//you need more than one argument to run any of the translate functions
@@ -128,10 +126,10 @@ public class Translator {
 				xslTrans.parseArgsExecute(args);	
 			}
 			else if (args[0].startsWith("-gloze")){
-				
+				//eventually the gloze method will execute from here
 			}
 			else if (args[0].startsWith("-rdf")){
-				
+				//eventually the rdf method will execute from here
 			}
 			else{
 				log.error("The switch " + args[0].toString() + "is not handled by Translator");

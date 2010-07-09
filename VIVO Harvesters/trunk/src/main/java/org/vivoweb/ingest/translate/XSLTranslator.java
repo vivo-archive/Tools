@@ -145,72 +145,71 @@ public class XSLTranslator extends Translator{
 	   * @param outRecordHandler the output record for the translated files
 	   */	  
 	  public void parseArgsExecute(String[] args){
-		  if (args.length != 4) {
-			  log.error("Invalid Arguments: XSLTranslate requires 4. They system was supplied " + args.length);
-			  throw new IllegalArgumentException();
-		 }
-		 else {
-			log.info("Translation: Start");
+		if (args.length != 4) {
+			log.error("Invalid Arguments: XSLTranslate requires 4. They system was supplied " + args.length);
+			throw new IllegalArgumentException();
+		}
+		log.info("Translation: Start");
 			 
-			if (args[0].equals("-f")) {
-				try {
-					//set the in/out and translation var
-					//TODO change setOutStream to allow for a file to be specified
-					this.setTranslationFile(new File(args[2]));
-					this.setInStream(new FileInputStream(new File(args[1])));
-					
-					log.info("Translating Record " + args[1].toString());
-					
-					if (!args[3].equals("") && args[3] != null) {
-						this.setOutStream(new FileOutputStream(new File(args[3])));
-					} else {
-						this.setOutStream(System.out);
-					}
-					
-					//execute the program
-					this.execute();
-				} catch (FileNotFoundException e) {
-					log.error("", e);
-				}				
-			}
-			else if (args[0].equals("-rh")) {
-				try{
-					//pull in the translation xsl
-					
-					this.setTranslationFile(new File(args[2]));
-					
-					//create record handlers
-					RecordHandler inStore = RecordHandler.parseConfig(args[1]);
-					RecordHandler outStore = RecordHandler.parseConfig(args[3]);
-					
-					//create a output stream for writing to the out store
-					ByteArrayOutputStream buff = new ByteArrayOutputStream();
+		if (args[0].equals("-f")) {
+			try {
+				//set the in/out and translation var
+				//TODO change setOutStream to allow for a file to be specified
+				this.setTranslationFile(new File(args[2]));
+				this.setInStream(new FileInputStream(new File(args[1])));
+				
+				log.info("Translating Record " + args[1].toString());
+				
+				if (!args[3].equals("") && args[3] != null) {
+					this.setOutStream(new FileOutputStream(new File(args[3])));
+				} else {
+					this.setOutStream(System.out);
+				}
+				
+				//execute the program
+				this.execute();
+			} catch (FileNotFoundException e) {
+				log.error("", e);
+			}				
+		}
+		else if (args[0].equals("-rh")) {
+			try{
+				//pull in the translation xsl
+				
+				this.setTranslationFile(new File(args[2]));
+				
+				//create record handlers
+				RecordHandler inStore = RecordHandler.parseConfig(args[1]);
+				RecordHandler outStore = RecordHandler.parseConfig(args[3]);
+				
+				//create a output stream for writing to the out store
+				ByteArrayOutputStream buff = new ByteArrayOutputStream();
 
-					// get from the in record and translate
-					for(Record r : inStore){
-						log.info("Translating Record " + r.getID());
-						
-						this.setInStream(new ByteArrayInputStream(r.getData().getBytes()));
-						this.setOutStream(buff);
-						this.execute();
-						buff.flush();
-						outStore.addRecord(r.getID(),buff.toString());
-						buff.reset();
-					}
+				// get from the in record and translate
+				for(Record r : inStore){
+					log.info("Translating Record " + r.getID());
 					
-					buff.close();
+					this.setInStream(new ByteArrayInputStream(r.getData().getBytes()));
+					this.setOutStream(buff);
+					this.execute();
+					buff.flush();
+					outStore.addRecord(r.getID(),buff.toString());
+					buff.reset();
 				}
-				catch(Exception e){
-					log.error("", e);
-				}
+				
+				buff.close();
 			}
-			else {
-				log.error("Invalid Arguments: Translate option " + args[0] + " not handled.");
-				throw new IllegalArgumentException();
+			catch(Exception e){
+				log.error("", e);
 			}
-			
-			log.info("Translation: End");
-		 }	
+		}
+		else {
+			log.error("Invalid Arguments: Translate option " + args[0] + " not handled.");
+			throw new IllegalArgumentException();
+		}
+		
+		log.info("Translation: End");
+		 
 	  }
 
 	  
