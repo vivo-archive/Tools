@@ -54,7 +54,7 @@ public class PubmedSOAPFetch extends Task
 	private String strSearchTerm;
 	private String strMaxRecords;
 	private RecordHandler rhRecordHandler;
-	private XMLRecordOutputStream osOutStream;
+//	private XMLRecordOutputStream osOutStream;
 	private String strBatchSize;
 	
 	/**
@@ -73,15 +73,19 @@ public class PubmedSOAPFetch extends Task
 	 * @author Chris Haines
 	 * @param strEmail - Contact email address of the person responsible for this install of the PubMed Harvester
 	 * @param strToolLoc - Location of the current tool installation (Eg: UF or Cornell or Pensyltucky U.
-	 * @param osOutStream - The output stream for the method.
+	 * @param outStream - The output stream for the method.
 	 */
-	public PubmedSOAPFetch(String strEmail, String strToolLoc, OutputStream osOutStream)
+	public PubmedSOAPFetch(String strEmail, String strToolLoc, OutputStream outStream)
 	{
 		this.strEmailAddress = strEmail; // NIH Will email this person if there is a problem
 		this.strToolLocation = strToolLoc; // This provides further information to NIH
+		setXMLWriter(outStream);
+	}
+	
+	private void setXMLWriter(OutputStream os) {
 		try {
 			// Writer to the stream we're getting from the controller.
-			this.xmlWriter = new OutputStreamWriter(osOutStream, "UTF-8");
+			this.xmlWriter = new OutputStreamWriter(os, "UTF-8");
 		} catch(UnsupportedEncodingException e) {
 			log.error("",e);
 		}
@@ -487,18 +491,12 @@ public class PubmedSOAPFetch extends Task
 		this.strBatchSize  = getParam(params, "batchSize", true);
 		this.rhRecordHandler = RecordHandler.parseConfig(repositoryConfig);
 		this.rhRecordHandler.setOverwriteDefault(true);
-		this.osOutStream = new XMLRecordOutputStream("PubmedArticle", "<?xml version=\"1.0\"?>\n<!DOCTYPE PubmedArticleSet PUBLIC \"-//NLM//DTD PubMedArticle, 1st January 2010//EN\" \"http://www.ncbi.nlm.nih.gov/corehtml/query/DTD/pubmed_100101.dtd\">\n<PubmedArticleSet>\n", "\n</PubmedArticleSet>", ".*?<PMID>(.*?)</PMID>.*?", this.rhRecordHandler);
+		setXMLWriter(new XMLRecordOutputStream("PubmedArticle", "<?xml version=\"1.0\"?>\n<!DOCTYPE PubmedArticleSet PUBLIC \"-//NLM//DTD PubMedArticle, 1st January 2010//EN\" \"http://www.ncbi.nlm.nih.gov/corehtml/query/DTD/pubmed_100101.dtd\">\n<PubmedArticleSet>\n", "\n</PubmedArticleSet>", ".*?<PMID>(.*?)</PMID>.*?", this.rhRecordHandler));
 	}
 	
 
 	@Override
 	protected void runTask() throws NumberFormatException {
-		try {
-			// Writer to the stream we're getting from the controller.
-			this.xmlWriter = new OutputStreamWriter(this.osOutStream, "UTF-8");
-		} catch(UnsupportedEncodingException e) {
-			log.error("",e);
-		}
 		Integer recToFetch;
 		if(this.strMaxRecords.equalsIgnoreCase("all")) {
 			recToFetch = Integer.valueOf(getHighestRecordNumber());
