@@ -11,22 +11,27 @@ import org.xml.sax.SAXException;
 import com.hp.hpl.jena.rdf.model.Model;
 
 /**
+ * Transfer data from one Jena model to another
  * @author Christopher Haines (hainesc@ctrip.ufl.edu)
- *
  */
 public class Transfer extends Task {
 	
+	/**
+	 * Log4J Logger
+	 */
 	private static Log log = LogFactory.getLog(Transfer.class);
 	
 	/**
-	 * @param in Model to read from
-	 * @param out Model to write to
+	 * Copy data from inModel to outModel
+	 * @param inModel Model to read from
+	 * @param outModel Model to write to
 	 */
-	public static void transfer(Model in, Model out) {
-		out.add(in);
+	public static void transfer(Model inModel, Model outModel) {
+		outModel.add(inModel);
 	}
 	
 	/**
+	 * Main Method
 	 * @param args command line arguments
 	 */
 	public static void main(String... args) {
@@ -40,18 +45,15 @@ public class Transfer extends Task {
 			JenaConnect out = JenaConnect.parseConfig(args[2]);
 			transfer(in.getJenaModel(),out.getJenaModel());
 		} catch(Exception e) {
-			// TODO Real Error Handling?
 			log.error(e.getMessage(),e);
 		}
 	}
 	
-
 	@Override
 	protected void acceptParams(Map<String, String> params) throws ParserConfigurationException, SAXException, IOException {
 		// TODO Auto-generated method stub
 	}
 	
-
 	@Override
 	protected void runTask() throws NumberFormatException {
 		// TODO Auto-generated method stub

@@ -10,13 +10,7 @@
  ******************************************************************************/
 package org.vivoweb.ingest.fetch;
 
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.HashMap;
 import javax.xml.parsers.ParserConfigurationException;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -42,149 +36,49 @@ public class Fetch
 	 */
 	public static void main(String[] args)
 	{
-		log.debug("Initializing Fetch.");													//Log that we're starting a fetch.
+		log.info("Initializing Fetch.");													//Log that we're starting a fetch.
 		if(args.length == 1)																//We only take one argument.
 		{
-		for(String strArguments: args)
-			{
-			if(strArguments.equals("OAI"))													//If they typed "OAI"
+			for(String strArguments: args)
 			{
 				try
 				{
-				System.out.println("Trying to read OAI Configuration file.");				//Log that we're checking for a config file for OAI
-				fetchOAI(readConfig("config/OAIHarvestConfig.txt"));						//Run OAI Fetch using the existing configuration file.
+					if(strArguments.equalsIgnoreCase("OAI"))													//If they typed "OAI"
+					{
+						Task.main("config/tasks/OAIFetchTask.xml");						//Run the OAI Fetch
+					}
+					else if(strArguments.equalsIgnoreCase("NIH"))												//If they typed "NIH"
+					{
+						//TODO Finish the NIH fetch
+						//Nothing Yet																	//Run the NIH Fetch
+					}
+					else if(strArguments.equalsIgnoreCase("PubMed"))											//If they typed "PubMed"
+					{
+						Task.main("config/tasks/PubmedFetchTask.xml");							//Run the PubMed Fetch
+					}
+					else if(strArguments.equalsIgnoreCase("JDBC"))												//If they typed RDB
+					{
+						Task.main("config/tasks/JDBCFetchTask.xml");								//Run the JDBC Fetch
+					}
+					else																			//Otherwise
+					{
+						log.fatal("Fetch initialized with inappropriate argument.");				//Log that they input an improper commandline argument.				
+						System.out.println("Invalid Argument. Valid arguments are NIH, OAI, PubMed, or RDB.");
+					}
+				} catch(ParserConfigurationException e) {
+					log.error(e.getMessage(),e);
+				} catch(SAXException e) {
+					log.error(e.getMessage(),e);
+				} catch(IOException e) {
+					log.error(e.getMessage(),e);
 				}
-				catch(IllegalArgumentException e)
-				{
-					log.fatal("", e);														//If there is a problem, throw the exception to the logger
-				}
-			}
-			else if(strArguments.equals("NIH"))												//If they typed "NIH"
-			{
-				//TODO Finish the OAI fetch and add configuration options here.
-				fetchNIH();																	//Run the OAI Fetch
-			}
-			else if(strArguments.equals("PubMed"))											//If they typed "PubMed"
-			{
-				//TODO Finish putting in the stuff for reading the configuration file here.
-				fetchPubmed();																//Run the PubMed Fetch
-			}
-			else if(strArguments.equals("RDB"))												//If they typed RDB
-			{
-				//TODO Finish the RDB Fetch and add configuration options here.
-				fetchJDBC();																	//Run the RDB (Relational Database) Fetch
-			}
-			else																			//Otherwise
-			{
-				log.fatal("Fetch initialized with inappropriate argument.");				//Log that they input an improper commandline argument.				
-				System.out.println("Invalid Argument. Valid arguments are NIH, OAI, PubMed, or RDB.");
-			}
 			}
 		}
 		else																				//Otherwise
 		{
-			log.fatal("Fetch attempted to run with incorrect number of arguments.");		//Log that they tried to put in too many or too few arguments.
-			System.out.println("Incorrect Number of Arguments, valid arguments are OAI, NIH, PubMed, or RDB.");
+			log.fatal("Fetch attempted to run with incorrect number of arguments. Usage: Fetch [OAI|NIH|PubMed|JDBC]");		//Log that they tried to put in too many or too few arguments.
 		}
-		log.debug("Fetch Complete.");														//Log that fetch is shutting down.
-
-	}
-	
-	/**
-	 * The configuration file can be read and a hashmap returned using Fetch.readconfig
-	 * @author Dale Scheppler
-	 * @param hmConfigMap A hashmap of the configuration data from the configuration file.
-	 */
-	public static void fetchOAI(HashMap<String, String> hmConfigMap )
-	{
-		log.debug("Initializing OAI Fetch.");												//Log that we're running an OAI Fetch
-		checkConfig(hmConfigMap, OAIHarvest.arrRequiredParamaters);							//Check that the configuration paramaters are correct as defined in the OAIHarvest class.
-		try {
-			OAIHarvest.execute(hmConfigMap.get("address"), hmConfigMap.get("startDate"), hmConfigMap.get("endDate"), new FileOutputStream(hmConfigMap.get("filename")));		//Attempt to run the OAI Harvest.
-		} catch (Exception e) {
-			e.printStackTrace();
-			log.error("Error during OAI Fetch: ", e);										//Catch and log any errors.
-		}
-		log.debug("OAI Fetch Complete.");													//Log when complete.
-	}
-	
-	/**
-	 * Executes a fetch from Pubmed
-	 */
-	private static void fetchPubmed()
-	{
-		try {
-			Task.main("config/tasks/PubmedFetchTask.xml");
-		} catch (ParserConfigurationException e) {
-			log.error(e.getMessage(),e);
-		} catch (SAXException e) {
-			log.error(e.getMessage(),e);
-		} catch (IOException e) {
-			log.error(e.getMessage(),e);
-		}
-	}
-	
-	/**
-	 * Executes a fetch from NIH Grant Repository
-	 * @deprecated not used atm
-	 */
-	@Deprecated
-	private static void fetchNIH()
-	{
-		System.out.println("We would be running NIH Fetch here");
-	}
-	
-	/**
-	 * Executed a fetch from a JDBC database
-	 */
-	private static void fetchJDBC()
-	{
-		try {
-			Task.main("config/tasks/JDBCFetchTask.xml");
-		} catch (ParserConfigurationException e) {
-			log.error(e.getMessage(),e);
-		} catch (SAXException e) {
-			log.error(e.getMessage(),e);
-		} catch (IOException e) {
-			log.error(e.getMessage(),e);
-		}
-	}
-
-	/**
-	 * Reads a configuration file in key:value format and returns a hashmap of the results.
-	 * @author Dale Scheppler and Chris Haines
-	 * @param strFilename - The file name and path of the configuration file
-	 * @return hashMap[String, String] - A hashMap the data in the configuration file.
-	 * @throws IllegalArgumentException If configuration file is not in correct format
-	 */
-	public static HashMap<String, String> readConfig(String strFilename) throws IllegalArgumentException {
-		HashMap<String, String> hmConfigMap = new HashMap<String, String>();											//Create the hashmap
-		try {
-			FileInputStream fisConfigFile = new FileInputStream(strFilename);											//Create the File Input Stream
-			BufferedReader brConfigFile = new BufferedReader(															//Create a buffered reader
-					new InputStreamReader(fisConfigFile));
-			String strLine;																								//Initialize a string variable
-			while ((strLine = brConfigFile.readLine()) != null) {														//Until we hit the end of the file
-				String[] strParams = strLine.split(":",2);																//Grab the line and split it on the colon
-				if(strParams.length != 2){																				//If we end up with more or less than two pieces
-					throw new IllegalArgumentException("Invalid configuration file format. Entries must be key:value.");//Throw an error
-				}
-				hmConfigMap.put(strParams[0], strParams[1]);															//Add the key:value pair to the hashmap.
-				
-			}
-		} catch (FileNotFoundException e1) {
-			e1.printStackTrace();
-			log.fatal("File Not Found: " + strFilename, e1);
-		} catch (IOException e) {
-			e.printStackTrace();
-			log.fatal("IO Exception reading configuration file: "+strFilename, e);
-		}
-		if(hmConfigMap.isEmpty())
-		{
-			throw new IllegalArgumentException("Failed to read configuration file. File does not exist or is blank.");
-		}
-		return hmConfigMap;
-
+		log.info("Fetch Complete.");														//Log that fetch is shutting down.
 	}
 	
 	/**
@@ -192,23 +86,5 @@ public class Fetch
 	 */
 	private Fetch(){
 		//No Initiallization
-	}
-	
-	/**
-	 * Checks the configuration file hashmap against the list of required paramaters in the various fetch subclasses.
-	 * @param hmConfigMap - The hashMap to be checked.
-	 * @param arrParameters - The parameters that are required by the subclass.
-	 * @author Dale Scheppler
-	 * @author Chris Haines
-	 */
-	private static void checkConfig(HashMap<String, String> hmConfigMap, String[] arrParameters)
-	{
-		for(String Param:arrParameters)
-		{
-			if(!hmConfigMap.containsKey(Param))
-			{
-				throw new IllegalArgumentException ("Missing parameter \"" + Param + "\" in configuration file");
-			}
-		}
 	}
 }

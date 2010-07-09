@@ -26,15 +26,13 @@ import ORG.oclc.oai.harvester2.app.RawWrite;
 /**
  * Class for harvesting from OAI Data Sources
  * @author Dale Scheppler
- * @author Chris Haines
+ * @author Christopher Haines (hainesc@ctrip.ufl.edu)
  */
 public class OAIHarvest extends Task {
-	private static Log log = LogFactory.getLog(OAIHarvest.class);
 	/**
-	 * A listing of the paramaters that need to be in the configuration file for
-	 * the OAI harvest to function properly.
+	 * Log4J Logger
 	 */
-	protected static final String[] arrRequiredParamaters = {"address", "startDate", "endDate", "filename"};
+	private static Log log = LogFactory.getLog(OAIHarvest.class);
 	/**
 	 * The website address of the OAI Repository without the protocol prefix (No http://)
 	 */
@@ -42,25 +40,24 @@ public class OAIHarvest extends Task {
 	/**
 	 * The start date for the range of records to pull, format is YYYY-MM-DD<br>
 	 * If time is required, format is YYYY-MM-DDTHH:MM:SS:MSZ<br>
-	 * Some repositories do not support millisend resolution.<br>
+	 * Some repositories do not support millisecond resolution.<br>
 	 * Example 2010-01-15T13:45:12:50Z<br>
 	 */
 	private String strStartDate;
 	/**
 	 * The end date for the range of records to pull, format is YYYY-MM-DD<br>
 	 * If time is required, format is YYYY-MM-DDTHH:MM:SS:MSZ<br>
-	 * Some repositories do not support millisend resolution.<br>
+	 * Some repositories do not support millisecond resolution.<br>
 	 * Example 2010-01-15T13:45:12:50Z<br>
 	 */
 	private String strEndDate;
 	/**
-	 * The output stream to send the harvested XML to. Can be any type of output stream. Currently using a fileoutputstream.
-	 * @author Dale Scheppler
+	 * The output stream to send the harvested XML to
 	 */
 	private OutputStream osOutStream;
 
 	/**
-	 * Calls the RawWrite function of the OAI Harvester example code. Writes to a file output stream.<br>
+	 * Calls the RawWrite function of the OAI Harvester example code. Writes to an output stream.<br>
 	 * Some repositories are configured incorrectly and this process will not work. For those a custom<br>
 	 * method will need to be written.
 	 * @author Dale Scheppler
@@ -68,12 +65,13 @@ public class OAIHarvest extends Task {
 	 * @param strStartDate The date at which to begin fetching records, format and time resolution depends on repository.
 	 * @param strEndDate The date at which to stop fetching records, format and time resolution depends on repository.
 	 * @param osOutStream The output stream to write to.
-	 * @throws Exception General exception catch if no other exceptions caught.
 	 * @throws SAXException Thrown if there is an error in SAX.
 	 * @throws TransformerException Thrown if there is an error during XML transform.
 	 * @throws NoSuchFieldException Thrown if one of the fields queried does not exist.
+	 * @throws ParserConfigurationException parser is configured wrong
+	 * @throws IOException error connecting to OAI repository
 	 */
-	public static void execute(String strAddress, String strStartDate, String strEndDate, OutputStream osOutStream) throws Exception, SAXException, TransformerException, NoSuchFieldException
+	public static void execute(String strAddress, String strStartDate, String strEndDate, OutputStream osOutStream) throws SAXException, TransformerException, NoSuchFieldException, IOException, ParserConfigurationException
 	{
 		RawWrite.run("http://" + strAddress, strStartDate, strEndDate, "oai_dc", "", osOutStream);
 	}

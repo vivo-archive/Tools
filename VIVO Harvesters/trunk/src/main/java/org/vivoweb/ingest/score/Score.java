@@ -13,11 +13,14 @@
 package org.vivoweb.ingest.score;
 
 import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import javax.xml.parsers.ParserConfigurationException;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.vivoweb.ingest.util.JenaConnect;
 import org.vivoweb.ingest.util.Record;
 import org.vivoweb.ingest.util.RecordHandler;
+import org.xml.sax.SAXException;
 import com.hp.hpl.jena.query.Query;
 import com.hp.hpl.jena.query.QueryExecution;
 import com.hp.hpl.jena.query.QueryExecutionFactory;
@@ -31,13 +34,25 @@ import com.hp.hpl.jena.rdf.model.*;
  *  @author Nicholas Skaggs nskaggs@ichp.ufl.edu
  */
 public class Score {
-	private static Log log = LogFactory.getLog(Score.class);
-	
+		/**
+		 * Log4J Logger
+		 */
+		private static Log log = LogFactory.getLog(Score.class);
+		/**
+		 * Model for VIVO instance
+		 */
 		private Model vivo;
+		/**
+		 * Model where input is stored
+		 */
 		private Model scoreInput;
+		/**
+		 * Model where output is stored
+		 */
 		private Model scoreOutput;
 		
 		/**
+		 * Main Method
 		 * @param args command line arguments rdfRecordHandler tempJenaConfig vivoJenaConfig outputJenaConfig
 		 */
 		final static public void main(String[] args) {
@@ -48,7 +63,7 @@ public class Score {
 			//TODO proper args handler
 			
 			if (args.length != 4) {
-				log.info("Usage requires 4 arguments rdfRecordHandler tempJenaConfig vivoJenaConfig outputJenaConfig");
+				log.error("Usage requires 4 arguments rdfRecordHandler tempJenaConfig vivoJenaConfig outputJenaConfig");
 				return;
 			}
 			
@@ -65,7 +80,11 @@ public class Score {
 				}
 				
 				new Score(jenaVivoDB.getJenaModel(), jenaInputDB, jenaOutputDB.getJenaModel()).execute();
-			} catch (Exception e) {
+			} catch(ParserConfigurationException e) {
+				log.fatal(e.getMessage(),e);
+			} catch(SAXException e) {
+				log.fatal(e.getMessage(),e);
+			} catch(IOException e) {
 				log.fatal(e.getMessage(),e);
 			}
 			
@@ -74,18 +93,18 @@ public class Score {
 		
 		
 		/**
+		 * Constructor
 		 * @param jenaVivo model containing vivo statements
 		 * @param jenaScoreInput model containing statements to be scored
 		 * @param jenaScoreOutput output model
 		 */
-		public Score (Model jenaVivo, Model jenaScoreInput, Model jenaScoreOutput) {
+		public Score(Model jenaVivo, Model jenaScoreInput, Model jenaScoreOutput) {
 			this.vivo = jenaVivo;
 			this.scoreInput = jenaScoreInput;
 			this.scoreOutput = jenaScoreOutput;
 		}
 		
 		/**
-		 * execute
 		 * Executes scoring algorithms
 		 */
 		public void execute() {		
@@ -134,9 +153,7 @@ public class Score {
 		}
 		
 		/**
-		 * executeQuery
 		 * Executes a sparql query against a JENA model and returns a result set
-		 * 
 		 * @param  model a model containing statements
 		 * @param  queryString the query to execute against the model
 		 * @return queryExec the executed query result set
@@ -150,9 +167,7 @@ public class Score {
 		 
 		 
 		/**
-		 * commitResultSet
 		 * Commits resultset to a matched model
-		 * 
 		 * @param  result a model containing vivo statements
 		 * @param  storeResult the result to be stored
 		 * @param  paperResource the paper of the resource
@@ -182,14 +197,12 @@ public class Score {
 		 }
 		 
 		/**
-		 * replaceResource
 		 * Traverses paperNode and adds to toReplace model 
-		 * 
 		 * @param  mainNode primary node
 		 * @param  paperNode node of paper
 		 * @param  toReplace model to replace
+		 * @return a model (toReplace to be exact) //TODO Nick: you know that this is unnecessary as Java passes Objects by reference? You can just be void -CAH
 		 */
-		 
 		 private static Model replaceResource(RDFNode mainNode, RDFNode paperNode, Model toReplace){
 			 Resource authorship;
 			 Property linkedAuthorOf = ResourceFactory.createProperty("http://vivoweb.org/ontology/core#linkedAuthor");
@@ -248,13 +261,11 @@ public class Score {
 		 }
 		 
 		/**
-		 * recursiveSanitizeBuild
 		 * Traverses paperNode and adds to toReplace model 
-		 * 
 		 * @param mainRes the main resource
 		 * @param linkRes the resource to link it to
+		 * @return the model containing the sanitized info so far 
 		 */
-		 
 		 private static Model recursiveSanitizeBuild(Resource mainRes, Resource linkRes){
 			 Model returnModel = ModelFactory.createDefaultModel();
 			 Statement stmt;
@@ -280,20 +291,16 @@ public class Score {
 		 
 		 
 		/**
-		* pairwiseScore
 		* Executes a pair scoring method, utilizing the matchAttribute. This attribute is expected to 
 		* return 2 to n results from the given query. This "pair" will then be utilized as a matching scheme 
 		* to construct a sub dataset. This dataset can be scored and stored as a match 
-		* 
-		* 
 		* @param  matched a model containing statements describing known authors
 		* @param  score a model containing statements to be disambiguated
 		* @param  matchAttribute an attribute to perform the exact match
-	    * @param  coreAttribute an attribute to perform the exact match against from core ontology
+		* @param  coreAttribute an attribute to perform the exact match against from core ontology
 		* @param  matchResult contains a resultset of the matchAttribute
 		* @return score model
 		*/
-		
 		@SuppressWarnings("unused")
 		private static Model pairwiseScore(Model matched, Model score, String matchAttribute, String coreAttribute, ResultSet matchResult) {			
 		 	//iterate thru scoringInput pairs against matched pairs
@@ -324,10 +331,7 @@ public class Score {
 		 
 		 
 		 /**
-		 * exactMatch
 		 * Executes an exact matching algorithm for author disambiguation
-		 * 
-		 * 
 		 * @param  matched a model containing statements describing authors
 		 * @param  output a model containing statements to be disambiguated
 		 * @param  matchAttribute an attribute to perform the exact match

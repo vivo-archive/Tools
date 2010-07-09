@@ -36,12 +36,18 @@ import com.hp.hpl.jena.rdf.model.RDFWriter;
 import com.hp.hpl.jena.util.ModelLoader;
 
 /**
+ * Connection Helper for Jena Models
  * @author Christopher Haines (hainesc@ctrip.ufl.edu)
- *
  */
 public class JenaConnect {
 	
+	/**
+	 * Log4J Logger
+	 */
 	private static Log log = LogFactory.getLog(JenaConnect.class);
+	/**
+	 * Model we are connecting to
+	 */
 	private Model jenaModel;
 	
 	/**
@@ -152,27 +158,68 @@ public class JenaConnect {
 		return this.jenaModel;
 	}
 	
-
+	/**
+	 * Setter
+	 * @param jena the new model
+	 */
 	private void setJenaModel(Model jena) {
 		this.jenaModel = jena;
 	}
 	
-
+	/**
+	 * Connect and create default model
+	 * @param dbUrl url of server
+	 * @param dbUser username to connect with
+	 * @param dbPass password to connect with
+	 * @param dbType database type
+	 * @param dbClass jdbc connection class
+	 * @return the model
+	 * @throws InstantiationException could not instantiate
+	 * @throws IllegalAccessException not authorized
+	 * @throws ClassNotFoundException no such class
+	 */
 	private Model createModel(String dbUrl, String dbUser, String dbPass, String dbType, String dbClass)
 			throws InstantiationException, IllegalAccessException, ClassNotFoundException {
 		return initModel(initDB(dbUrl, dbUser, dbPass, dbType, dbClass)).createDefaultModel();
 	}
 	
+	/**
+	 * Connect and load model
+	 * @param dbUrl url of server
+	 * @param dbUser username to connect with
+	 * @param dbPass password to connect with
+	 * @param modelName named model to connect to
+	 * @param dbType database type
+	 * @param dbClass jdbc connection class
+	 * @return the model
+	 */
 	private Model loadModel(String dbUrl, String dbUser, String dbPass, String modelName, String dbType, String dbClass) {
 		return ModelLoader.connectToDB(dbUrl, dbUser, dbPass, modelName, dbType, dbClass);
 	}
 	
+	/**
+	 * Connect to jena server
+	 * @param dbUrl url of server
+	 * @param dbUser username to connect with
+	 * @param dbPass password to connect with
+	 * @param dbType database type
+	 * @param dbClass jdbc connection class
+	 * @return the database connection
+	 * @throws InstantiationException could not instantiate
+	 * @throws IllegalAccessException not authorized
+	 * @throws ClassNotFoundException no such class
+	 */
 	private IDBConnection initDB(String dbUrl, String dbUser, String dbPass, String dbType, String dbClass)
 			throws InstantiationException, IllegalAccessException, ClassNotFoundException {
 		Class.forName(dbClass).newInstance();
 		return new DBConnection(dbUrl, dbUser, dbPass, dbType);
 	}
 	
+	/**
+	 * Get ModelMaker for a database connection
+	 * @param dbcon the database connection
+	 * @return the ModelMaker
+	 */
 	private ModelMaker initModel(IDBConnection dbcon) {
 		return ModelFactory.createModelRDBMaker(dbcon);
 	}
@@ -215,18 +262,45 @@ public class JenaConnect {
 		}
 	}
 	
+	/**
+	 * Config parser for Jena Models
+	 * @author Christopher Haines (hainesc@ctrip.ufl.edu)
+	 */
 	private static class JenaConnectConfigParser extends DefaultHandler {
+		/**
+		 * JenaConnect we are parsing data for
+		 */
 		private JenaConnect jc;
+		/**
+		 * Param list from the config file
+		 */
 		private Map<String,String> params;
+		/**
+		 * temporary storage for cdata
+		 */
 		private String tempVal;
+		/**
+		 * temporary storage for param name
+		 */
 		private String tempParamName;
 		
+		/**
+		 * Default Constructor
+		 */
 		protected JenaConnectConfigParser() {
 			this.params = new HashMap<String,String>();
 			this.tempVal = "";
 			this.tempParamName = "";
 		}
 		
+		/**
+		 * Build a JenaConnect using the input stream data
+		 * @param inputStream stream to read config from
+		 * @return the JenaConnect described by the stream
+		 * @throws ParserConfigurationException parser incorrectly configured
+		 * @throws SAXException xml error
+		 * @throws IOException error reading stream
+		 */
 		protected JenaConnect parseConfig(InputStream inputStream) throws ParserConfigurationException, SAXException, IOException {
 			SAXParserFactory spf = SAXParserFactory.newInstance(); // get a factory
 			SAXParser sp = spf.newSAXParser(); // get a new instance of parser
