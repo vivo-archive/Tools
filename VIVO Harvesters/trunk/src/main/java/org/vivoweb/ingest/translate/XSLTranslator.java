@@ -29,6 +29,12 @@ import org.vivoweb.ingest.util.Record;
 import org.vivoweb.ingest.util.RecordHandler;
 import org.vivoweb.ingest.translate.Translator;
 
+/**
+ * Takes XML Files and uses an XSL file to translate the data into the desired ontology
+ * 
+ * @author Stephen V. Williams swilliams@ctrip.ufl.edu
+ *
+ */
 public class XSLTranslator extends Translator{
 		
 	/**
@@ -41,7 +47,7 @@ public class XSLTranslator extends Translator{
 	 * Constructor
 	 */
 	public XSLTranslator(){
-		
+		//empty XSLTranslator
 	}
 		
 	/***
@@ -49,7 +55,6 @@ public class XSLTranslator extends Translator{
 	 * Initializing constructor for the translate method, it is not required to use this constructor
 	 * but it is suggested, since not passing one of the variables would result in a error being thrown
 	 * 
-	 * @param sType Type of the file to be translated (for this exercise its always XML)
 	 * @param transFile The file that contains the mapping for translation
 	 * @param iStream the incoming stream that the file is passed into
 	 * @param oStream the outgoing stream that the translation is passed to
@@ -78,11 +83,9 @@ public class XSLTranslator extends Translator{
 		this.translationFile = new File(filename);
 	}
 		
-	/***
-	 * This function checks for the required variables before continueing execution
-	 * 
-	 * @throws IllegalArgumentException when the system is not properly configured
-	 */
+	
+	
+	@Override
 	public void execute() throws IllegalArgumentException {
 		
 		//checking for valid input parameters
@@ -137,12 +140,15 @@ public class XSLTranslator extends Translator{
 	   * Currently the main method accepts two methods of execution, file translation and record handler translation
 	   * This is the method that executes those functions.  It was put in place so that translator's main method
 	   * can also call this method and pass its argument array
-	   * 
-	   * @param functionSwitch possible entries include -f for file and -rh for record handler
-	   * @param translationFile the file that details the translation from the original xml to the target format
-	   * @param fileToTranslate the file that requires translation 
-	   * @param inRecordHandler the files/records that require translation
-	   * @param outRecordHandler the output record for the translated files
+	   *
+	   * @param args the file to translate and xsl
+	   * <ul>
+	   * <li> functionSwitch possible entries include -f for file and -rh for record handler </li>
+	   * <li> translationFile the file that details the translation from the original xml to the target format </li>
+	   * <li> fileToTranslate the file that requires translation </li>
+	   * <li> inRecordHandler the files/records that require translation </li>
+	   * <li> outRecordHandler the output record for the translated files </li>
+	   * </ul>
 	   */	  
 	  public void parseArgsExecute(String[] args){
 		if (args.length != 4) {
@@ -218,11 +224,7 @@ public class XSLTranslator extends Translator{
 	   * The main method actually passes its arg string to another method so that Translator can 
 	   * use this same method of execution
 	   * 
-	   * @param functionSwitch possible entries include -f for file and -rh for record handler
-	   * @param translationFile the file that details the translation from the original xml to the target format
-	   * @param fileToTranslate the file that requires translation 
-	   * @param inRecordHandler the files/records that require translation
-	   * @param outRecordHandler the output record for the translated files
+	   * @param args (passed directly to parseArgs
 	   */
 	  public static void main(String[] args) {
 		  XSLTranslator xslTrans = new XSLTranslator();
