@@ -1,11 +1,11 @@
-VIVO Harvester Version .3 Pre-Release Canidate
+VIVO Harvester Version .3 Pre-Release Candidate
 VIVO: Enabling National Networking of Scientists
 
 New to this Release
 * OAI Fetch Class
 * Relational Database Fetch Class 
 * Gloze Translation Class
-* Eleminiation of Controller Framework
+* Elimination of Controller Framework
 * Task Framework
 * Qualify Class
 

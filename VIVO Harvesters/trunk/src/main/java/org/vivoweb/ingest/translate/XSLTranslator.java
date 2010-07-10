@@ -91,7 +91,7 @@ public class XSLTranslator extends Translator{
 		//checking for valid input parameters
 		if ((this.translationFile !=null && this.translationFile.isFile()) && this.inStream != null && this.outStream != null) {
 			
-			//TODO no reason to pass the variables to the method, have them use the designated streams on thier own
+			//TODO Stephen: no reason to pass the variables to the method, have them use the designated streams on thier own
 			xmlTranslate(this.inStream, this.translationFile, this.outStream);
 			
 		}
@@ -160,7 +160,7 @@ public class XSLTranslator extends Translator{
 		if (args[0].equals("-f")) {
 			try {
 				//set the in/out and translation var
-				//TODO change setOutStream to allow for a file to be specified
+				//TODO Stephen: change setOutStream to allow for a file to be specified
 				this.setTranslationFile(new File(args[2]));
 				this.setInStream(new FileInputStream(new File(args[1])));
 				

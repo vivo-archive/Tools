@@ -27,12 +27,12 @@ import org.vivoweb.ingest.translate.Translator;
 
 /**
  * Gloze Tranlator
- * This class translates XML into its own natrual RDF ontology
+ * This class translates XML into its own natural RDF ontology
  * using the gloze library.  Translation into the VIVO ontology
  * is completed using the RDF Translator.
  * 
- * TODO:  Identify additional parameters required for translation
- * TODO:  Identify methods to invoke in the gloze library
+ * TODO Stephen: Identify additional parameters required for translation
+ * TODO Stephen: Identify methods to invoke in the gloze library
  * 
  * @author Stephen V. Williams swilliams@ctrip.ufl.edu
  */
@@ -41,7 +41,7 @@ public class GlozeTranslator extends Translator{
 	/**
 	 * the file to be translated
 	 * 
-	 * FIXME remove this and use the incoming stream
+	 * FIXME Stephen: remove this and use the incoming stream
 	 */
 	protected File incomingXMLFile;
 	

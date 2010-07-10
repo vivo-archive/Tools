@@ -59,8 +59,6 @@ public class JenaConnect {
 	 * @throws ParserConfigurationException xml parse error
 	 */
 	public static JenaConnect parseConfig(FileObject configFile) throws ParserConfigurationException, SAXException, IOException {
-		//This code was marked as never used by UCDetector.
-		//FIXME Determine if this code is necessary.
 		return new JenaConnectConfigParser().parseConfig(configFile.getContent().getInputStream());
 	}
 	
@@ -73,9 +71,6 @@ public class JenaConnect {
 	 * @throws ParserConfigurationException xml parse error
 	 */
 	public static JenaConnect parseConfig(File configFile) throws ParserConfigurationException, SAXException, IOException {
-		//This code was marked as never used by UCDetector.
-		//FIXME Determine if this code is necessary.
-		
 		return parseConfig(VFS.getManager().resolveFile(new File("."), configFile.getAbsolutePath()));
 	}
 	
@@ -100,9 +95,6 @@ public class JenaConnect {
 	 * @param dbClass jdbc driver class
 	 */
 	public JenaConnect(String dbUrl, String dbUser, String dbPass, String dbType, String dbClass) {
-		//This code was marked as may cause compile errors by UCDetector.
-		//Change visibility of constructor "JenaConnect.JenaConnect" to Protected.
-		//FIXME This code was marked as may cause compile errors by UCDetector.
 		try {
 			this.setJenaModel(this.createModel(dbUrl, dbUser, dbPass, dbType, dbClass));
 		} catch(InstantiationException e) {
@@ -132,9 +124,6 @@ public class JenaConnect {
 	 * @param in input stream to load rdf from
 	 */
 	public JenaConnect(InputStream in) {
-		//This code was marked as may cause compile errors by UCDetector.
-		//Change visibility of Constructor to Private
-		//FIXME This code was marked as may cause compile errors by UCDetector.
 		this.setJenaModel(ModelFactory.createDefaultModel());
 		this.loadRDF(in);
 	}
@@ -145,8 +134,6 @@ public class JenaConnect {
 	 * @throws FileSystemException error getting file contents
 	 */
 	public JenaConnect(String inFilePath) throws FileSystemException {
-		//This code was marked as never used by UCDetector.
-		//FIXME Determine if this code is necessary.
 		this(VFS.getManager().resolveFile(new File("."), inFilePath).getContent().getInputStream());
 	}
 	
@@ -229,9 +216,6 @@ public class JenaConnect {
 	 * @param in input stream to read rdf from
 	 */
 	public void loadRDF(InputStream in) {
-		//This code was marked as may cause compile errors by UCDetector.
-		//Change visibility of method "JenaConnect.loadRDF" to Private
-		//FIXME This code was marked as may cause compile errors by UCDetector.
 		this.getJenaModel().read(in, null);
 		log.info("RDF Data was loaded");
 	}
@@ -241,8 +225,6 @@ public class JenaConnect {
 	 * @param out output stream to write rdf to
 	 */
 	public void exportRDF(OutputStream out) {
-		//This code was marked as never used by UCDetector.
-		//FIXME Determine if this code is necessary.
 		RDFWriter fasterWriter = this.jenaModel.getWriter("RDF/XML");
 		fasterWriter.setProperty("allowBadURIs", "true");
 		fasterWriter.setProperty("relativeURIs", "");
@@ -255,8 +237,6 @@ public class JenaConnect {
 	 * @param rh the RecordHandler to pull records from
 	 */
 	public void importRDF(RecordHandler rh) {
-		//This code was marked as never used by UCDetector.
-		//FIXME Determine if this code is necessary.
 		for(Record r : rh) {
 			this.getJenaModel().read(r.getData());
 		}

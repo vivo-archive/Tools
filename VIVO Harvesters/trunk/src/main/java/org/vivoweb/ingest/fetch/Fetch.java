@@ -49,7 +49,7 @@ public class Fetch
 					}
 					else if(strArguments.equalsIgnoreCase("NIH"))												//If they typed "NIH"
 					{
-						//TODO Finish the NIH fetch
+						//TODO Dale: Finish the NIH fetch
 						//Nothing Yet																	//Run the NIH Fetch
 					}
 					else if(strArguments.equalsIgnoreCase("PubMed"))											//If they typed "PubMed"

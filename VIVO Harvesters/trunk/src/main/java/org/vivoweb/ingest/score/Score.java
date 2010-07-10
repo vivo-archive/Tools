@@ -60,7 +60,7 @@ public class Score {
 			log.info("Scoring: Start");
 			
 			//pass models from command line
-			//TODO proper args handler
+			//TODO Nicholas: proper args handler
 			
 			if (args.length != 4) {
 				log.error("Usage requires 4 arguments rdfRecordHandler tempJenaConfig vivoJenaConfig outputJenaConfig");
@@ -111,7 +111,7 @@ public class Score {
 			 	ResultSet scoreInputResult;
 			 	
 			 	//DEBUG
-				 	//TODO howto pass this in via config
+				 	//TODO Nicholas: howto pass this in via config
 			 		log.info("Executing matchResult");
 				 	String matchAttribute = "email";
 				 	String matchQuery = "PREFIX score: <http://vivoweb.org/ontology/score#> " +
@@ -124,14 +124,14 @@ public class Score {
 				//Attempt Matching
 
 			 	//Exact Matches
-			 	//TODO finish implementation of exact matching loop
+			 	//TODO Nicholas: finish implementation of exact matching loop
 			 	//for each matchAttribute
 			 		scoreInputResult = executeQuery(this.scoreInput, matchQuery);
 			 		exactMatch(this.vivo,this.scoreInput,matchAttribute,coreAttribute,scoreInputResult);
 			    //end for
 			 		
 		 		//DEBUG
-				 	//TODO howto pass this in via config
+				 	//TODO Nicholas: howto pass this in via config
 				 	//matchAttribute = "author";
 				 	//matchQuery = "PREFIX score: <http://vivoweb.org/ontology/score#> " +
 			    	//       		 "SELECT ?x ?author " +
@@ -140,7 +140,7 @@ public class Score {
 			 	//DEBUG
 				
 				//Pairwise Matches
-				//TODO finish implementation of pairwise matching loop
+				//TODO Nicholas: finish implementation of pairwise matching loop
 			 	//for each matchAttribute
 			 		//scoreInputResult = executeQuery(scoreInput, matchQuery);
 			 		//pairwiseScore(vivo,scoreInput,matchAttribute,coreAttribute,scoreInputResult);	
@@ -201,7 +201,7 @@ public class Score {
 		 * @param  mainNode primary node
 		 * @param  paperNode node of paper
 		 * @param  toReplace model to replace
-		 * @return a model (toReplace to be exact) //TODO Nick: you know that this is unnecessary as Java passes Objects by reference? You can just be void -CAH
+		 * @return a model (toReplace to be exact) //TODO Nicholas: you know that this is unnecessary as Java passes Objects by reference? You can just be void -CAH
 		 */
 		 private static Model replaceResource(RDFNode mainNode, RDFNode paperNode, Model toReplace){
 			 Resource authorship;
@@ -304,9 +304,9 @@ public class Score {
 		@SuppressWarnings("unused")
 		private static Model pairwiseScore(Model matched, Model score, String matchAttribute, String coreAttribute, ResultSet matchResult) {			
 		 	//iterate thru scoringInput pairs against matched pairs
-		 	//TODO support partial scoring, multiples matches against several pairs
+		 	//TODO Nicholas: support partial scoring, multiples matches against several pairs
 		 	//if pairs match, store publication to matched author in Model
-			//TODO return scoreInput minus the scored statements
+			//TODO Nicholas: return scoreInput minus the scored statements
 			
 			String scoreMatch;
 			RDFNode matchNode;
@@ -325,7 +325,7 @@ public class Score {
                 log.trace("\nChecking for " + scoreMatch + " in VIVO");
             }	    			 
 	    	
-	    	//TODO return scoreInput minus the scored statements			
+	    	//TODO Nicholas: return scoreInput minus the scored statements			
 			return score;
 		 }
 		 
@@ -355,9 +355,9 @@ public class Score {
 		    	while (matchResult.hasNext()) {
 		    		scoreSolution = matchResult.nextSolution();
 	                matchNode = scoreSolution.get(matchAttribute);
-	                //TODO paperNode must currently be 'x'; howto abstract?
+	                //TODO Nicholas: paperNode must currently be 'x'; howto abstract?
 	                paperNode = scoreSolution.get("x");
-	                //TODO paperResource must currently be 'x'; howto abstract?
+	                //TODO Nicholas: paperResource must currently be 'x'; howto abstract?
 	                paperResource = scoreSolution.getResource("x");
 	                
 	                scoreMatch = matchNode.toString();
@@ -370,12 +370,12 @@ public class Score {
 						"SELECT ?x " +
 						"WHERE { ?x " + coreAttribute + "\"" +  scoreMatch + "\"}";
 	    			
-	    			//TODO how to combine result sets? not possible in JENA
+	    			//TODO Nicholas: how to combine result sets? not possible in JENA
 	    			vivoResult = executeQuery(matched, queryString);
 	    			commitResultSet(output,vivoResult,paperResource,paperNode,matchNode);
 	            }	    			 
 		    	
-		    	//TODO return scoreInput minus the scored statements
+		    	//TODO Nicholas: return scoreInput minus the scored statements
 		    	return output;
 		 }
 	}

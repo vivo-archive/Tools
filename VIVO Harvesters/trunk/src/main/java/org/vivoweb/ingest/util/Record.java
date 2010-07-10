@@ -46,7 +46,7 @@ public class Record {
 	 * Setter for Data
 	 * @param newData data to be used
 	 */
-	@SuppressWarnings("unused") //TODO eventually make this public and automatically update the data in the original record handler
+	@SuppressWarnings("unused") //TODO Chris: eventually make this public and automatically update the data in the original record handler
 	private void setData(String newData) {
 		this.data = newData;
 	}

@@ -44,7 +44,8 @@ import org.xml.sax.SAXException;
  * @author Dale R. Scheppler (dscheppler@ctrip.ufl.edu)
  * @author Christopher Haines (hainesc@ctrip.ufl.edu)
  */
-@SuppressWarnings("restriction") //TODO investigate the warnings we get when this is not here... never seen that before
+//@SuppressWarnings("restriction") //TODO Chris: investigate the warnings we get when this is not here... never seen that before
+//Seems to only be on my desktop that I need this SuppressWarnings("restriction")... definitely should look into this
 public class PubmedSOAPFetch extends Task
 {
 	/**
@@ -338,11 +339,11 @@ public class PubmedSOAPFetch extends Task
 	
 	/**
 	 * Runs, sanitizes, and outputs the results of a EFetch request to the xmlWriter
-	 * @param req the request to run and outpur results
+	 * @param req the request to run and output results
 	 * @throws RemoteException error running EFetch
 	 */
 	private void serializeFetchRequest(EFetchPubmedServiceStub.EFetchRequest req) throws RemoteException {
-		//Create buffer for raw, pre-sanitizated output
+		//Create buffer for raw, pre-sanitized output
 		ByteArrayOutputStream buffer=new ByteArrayOutputStream();
 		//Connect to pubmed
 		EFetchPubmedServiceStub service = new EFetchPubmedServiceStub();

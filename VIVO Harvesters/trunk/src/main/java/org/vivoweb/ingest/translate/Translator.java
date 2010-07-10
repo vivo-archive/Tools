@@ -22,9 +22,9 @@ import org.apache.commons.logging.LogFactory;
 /*****************************************************************************************
  * VIVO Data Translator
  * @author Stephen V. Williams swilliams@ichp.ufl.edu
- * TODO MILESTONE2: create constructor for accepting a parameter list
- * TODO MILESTONE2: create constructor for accepting a parameter array
- * TODO MILESTONE1: test for error handling, failing completely and gently
+ * TODO Stephen: MILESTONE2: create constructor for accepting a parameter list
+ * TODO Stephen: MILESTONE2: create constructor for accepting a parameter array
+ * TODO Stephen: MILESTONE1: test for error handling, failing completely and gently
  * ***************************************************************************************/
 public class Translator {
 	
@@ -119,11 +119,12 @@ public class Translator {
 		}
 		else{
 			//XSL Translation (same switches and code as the main method for xsltranslate
-			//TODO can we just call the main method for xsl translate?
+			//TODO Stephen: can we just call the main method for xsl translate?
+		  //Yes... Try 'XSLTranslate.main(args);'
 			if (args[0].startsWith("-xsl")){
 				args[0] = args[0].replace("xsl", "");
 				XSLTranslator xslTrans = new XSLTranslator();
-				xslTrans.parseArgsExecute(args);	
+				xslTrans.parseArgsExecute(args);
 			}
 			else if (args[0].startsWith("-gloze")){
 				//eventually the gloze method will execute from here
