@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" 
+	xmlns="http://java.sun.com/xml/ns/j2ee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
+	http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+  <context-param>
+    <param-name>db</param-name>
+	<param-value>WEB-INF/db</param-value>
+  </context-param>
+  <servlet>
+    <servlet-name>GetProperty</servlet-name>
+    <servlet-class>edu.indiana.slis.swl.servlet.GetProperty</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>GetClazz</servlet-name>
+    <servlet-class>edu.indiana.slis.swl.servlet.GetClazz</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>GetObject</servlet-name>
+    <servlet-class>edu.indiana.slis.swl.servlet.GetObject</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>GetResult</servlet-name>
+    <servlet-class>edu.indiana.slis.swl.servlet.GetResult</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>GetProperty</servlet-name>
+    <url-pattern>/GetProperty.swl</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetClazz</servlet-name>
+    <url-pattern>/GetClazz.swl</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetObject</servlet-name>
+    <url-pattern>/GetObject.swl</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetResult</servlet-name>
+    <url-pattern>/GetResult.swl</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
