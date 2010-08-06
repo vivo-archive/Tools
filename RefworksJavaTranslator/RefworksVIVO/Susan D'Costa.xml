@@ -1,0 +1,373 @@
+
+<?xml version="1.0" encoding="utf-8"?>
+<refworks xmlns:refworks="www.refworks.com/xml/">
+
+
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>2884</id>
+<a1>Chitnis,N. S.</a1>
+<a1>D&#39;Costa,S. M.</a1>
+<a1>Paul,E. R.</a1>
+<a1>Bilimoria,S. L.</a1>
+<t1>Modulation of iridovirus-induced apoptosis by endocytosis, early expression, JNK, and apical caspase</t1>
+<jf>Virology</jf>
+<jo>Virology</jo>
+<yr>2008</yr>
+<fd>Jan 20</fd>
+<vo>370</vo>
+<is>2</is>
+<sp>333</sp>
+<op>342</op>
+<k1>Animals</k1>
+<k1>Apoptosis/drug effects/physiology</k1>
+<k1>Caspases/metabolism</k1>
+<k1>Cell Line</k1>
+<k1>Cycloheximide/pharmacology</k1>
+<k1>Endocytosis</k1>
+<k1>Gene Expression</k1>
+<k1>Genes, Viral</k1>
+<k1>Hydrogen-Ion Concentration</k1>
+<k1>Iridovirus/genetics/pathogenicity/physiology</k1>
+<k1>JNK Mitogen-Activated Protein Kinases/metabolism</k1>
+<k1>MAP Kinase Signaling System</k1>
+<k1>Models, Biological</k1>
+<k1>Moths/virology</k1>
+<k1>Protein Synthesis Inhibitors/pharmacology</k1>
+<k1>Weevils/virology</k1>
+<ab>Chilo iridescent virus (CIV) is the type species for the family Iridoviridae, which are large, isometric, cytoplasmic dsDNA viruses. We examined the mechanism of apoptosis induction by CIV. High CIV doses (CIV(XS); 400 microg/ml), UV-irradiated virus (CIV(UV); 10 microg/ml) and CVPE (CIV protein extract; 10 microg/ml) induced apoptosis in 60% of treated Choristoneura fumiferana (IPRI-CF-124T) cells. Normal doses of infectious CIV (10 microg/ml) induced apoptosis in only 10% of C. fumiferana (CF) cells. Apoptosis was inhibited by Z-IETD-FMK, an apical caspase inhibitor, indicating that CIV-induced apoptosis requires caspase activity. The putative caspase in CF cells was designated Cf-caspase-i. CIV(UV) or CVPE enhanced Cf-caspase-i activity by 80% at 24 h relative to mock-treated cells. Since the MAP kinase pathway induces or inhibits apoptosis depending on the context, we used JNK inhibitor SP600125 and demonstrated drastic suppression of CVPE-induced apoptosis. Thus, the JNK signaling pathway is significant for apoptosis in this system. Virus interaction with the cell surface was not sufficient for apoptosis since CIV(UV) particles bound to polysterene beads failed to induce apoptosis. Endocytosis inhibitors (bafilomycin or ammonium chloride) negated apoptosis induction by CIV(UV), CIV(XS) or CVPE indicating that entry through this mode is required. Given the weak apoptotic response to infectious CIV, we postulated that viral gene expression inhibited apoptosis. CIV infection of cells pretreated with cycloheximide induced apoptosis in 69% of the cells compared to 10% in normal infections. Furthermore, blocking viral DNA replication with aphidicolin or phosphonoacetic acid suppressed apoptosis and Cf-caspase-i activity, indicating that early viral expression is necessary for inhibition of apoptosis, and de novo synthesis of viral proteins is not required for induction. We show for the first time that, in a member of the family Iridoviridae, apoptosis: (i) requires entry and endocytosis of virions or virion proteins, (ii) is inhibited under conditions permitting early viral expression, and (iii) requires the JNK signaling pathway. This is the first report of JNK signal requirement during apoptosis induction by an insect virus.</ab>
+<no>LR: 20091119; JID: 0110674; 0 (Protein Synthesis Inhibitors); 66-81-9 (Cycloheximide); EC 2.7.11.24 (JNK Mitogen-Activated Protein Kinases); EC 3.4.22.- (Caspases); 2007/06/20 [received]; 2007/09/04 [revised]; 2007/09/10 [accepted]; 2007/10/17 [aheadofprint]; ppublish</no>
+<pp>United States</pp>
+<sn>0042-6822; 0042-6822</sn>
+<ad>Department of Biological Sciences, Texas Tech University, Lubbock, TX 79409-3131, USA.</ad>
+<an>PMID: 17942133; S0042-6822(07)00602-2 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<do>10.1016/j.virol.2007.09.010</do>
+<wp>20071017</wp>
+<ol>Unknown(0)</ol>
+<pmid>17942133</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>2886</id>
+<a1>D&#39;Costa,S. M.</a1>
+<a1>Antczak,J. B.</a1>
+<a1>Pickup,D. J.</a1>
+<a1>Condit,R. C.</a1>
+<t1>Post-transcription cleavage generates the 3&amp;#39; end of F17R transcripts in vaccinia virus</t1>
+<jf>Virology</jf>
+<jo>Virology</jo>
+<yr>2004</yr>
+<fd>Feb 5</fd>
+<vo>319</vo>
+<is>1</is>
+<sp>1</sp>
+<op>11</op>
+<k1>Animals</k1>
+<k1>Base Sequence</k1>
+<k1>Cell Line</k1>
+<k1>Gene Expression Regulation, Viral</k1>
+<k1>RNA Processing, Post-Transcriptional</k1>
+<k1>RNA Splice Sites</k1>
+<k1>RNA, Messenger/chemistry/metabolism</k1>
+<k1>RNA, Viral/chemistry/metabolism</k1>
+<k1>Single-Strand Specific DNA and RNA Endonucleases/metabolism</k1>
+<k1>Vaccinia virus/genetics/metabolism</k1>
+<k1>Viral Proteins/genetics/metabolism</k1>
+<ab>Most vaccinia virus intermediate and late mRNAs possess 3&amp;#39; ends that are extremely heterogeneous in sequence. However, late mRNAs encoding the cowpox A-type inclusion protein (ATI), the second largest subunit of the RNA polymerase, and the late telomeric transcripts possess homogeneous 3&amp;#39; ends. In the case of the ATI mRNA, it has been shown that the homogeneous 3&amp;#39; end is generated by a post-transcriptional endoribonucleolytic cleavage event. We have determined that the F17R gene also produces homogeneous transcripts generated by a post-transcriptional cleavage event. Mapping of in vivo mRNA shows that the major 3&amp;#39; end of the F17R transcript maps 1262 nt downstream of the F17R translational start site. In vitro transcripts spanning the in vivo 3&amp;#39; end are cleaved in an in vitro reaction using extracts from virus infected cells, and the site of cleavage is the same both in vivo and in vitro. Cleavage is not observed using extract from cells infected in the presence of hydroxyurea; therefore, the cleavage factor is either virus-coded or virus-induced during the post-replicative phase of virus replication. The cis-acting sequence responsible for cleavage is orientation specific and the factor responsible for cleavage activity has biochemical properties similar to the factor required for cleavage of ATI transcripts. Partially purified cleavage factor generates cleavage products of expected size when either the ATI or F17R substrates are used in vitro, strongly suggesting that cleavage of both transcripts is mediated by the same factor.</ab>
+<no>LR: 20081121; GR: R01 AI18094/AI/NIAID NIH HHS/United States; JID: 0110674; 0 (ATI protein, Vaccinia virus); 0 (RNA Splice Sites); 0 (RNA, Messenger); 0 (RNA, Viral); 0 (Viral Proteins); EC 3.1.30.1 (Single-Strand Specific DNA and RNA Endonucleases); 2003/07/28 [received]; 2003/09/16 [revised]; 2003/09/25 [accepted]; ppublish</no>
+<pp>United States</pp>
+<sn>0042-6822; 0042-6822</sn>
+<ad>Department of Molecular Genetics and Microbiology, University of Florida, Gainesville, FL 32610-0266, USA. condit@mgm.ufl.edu</ad>
+<an>PMID: 14967483; S0042682203007451 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<do>10.1016/j.virol.2003.09.041</do>
+<ol>Unknown(0)</ol>
+<pmid>14967483</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>2882</id>
+<a1>D&#39;Costa,S. M.</a1>
+<a1>Bainbridge,T. W.</a1>
+<a1>Condit,R. C.</a1>
+<t1>Purification and properties of the vaccinia virus mRNA processing factor</t1>
+<jf>The Journal of biological chemistry</jf>
+<jo>J.Biol.Chem.</jo>
+<yr>2008</yr>
+<fd>Feb 29</fd>
+<vo>283</vo>
+<is>9</is>
+<sp>5267</sp>
+<op>5275</op>
+<k1>Hela Cells</k1>
+<k1>Humans</k1>
+<k1>Inclusion Bodies, Viral/genetics/metabolism</k1>
+<k1>Phosphorylation</k1>
+<k1>Protein Processing, Post-Translational/physiology</k1>
+<k1>RNA Processing, Post-Transcriptional/physiology</k1>
+<k1>RNA, Messenger/genetics/metabolism</k1>
+<k1>RNA, Viral/genetics/metabolism</k1>
+<k1>RNA-Binding Proteins/genetics/isolation &amp; purification/metabolism</k1>
+<k1>Transcription, Genetic/physiology</k1>
+<k1>Vaccinia virus/genetics/metabolism</k1>
+<k1>Viral Proteins/genetics/isolation &amp; purification/metabolism</k1>
+<k1>Virus Replication/physiology</k1>
+<ab>The mRNAs encoding the vaccinia virus F17 protein and the cowpox A-type inclusion protein are known to possess sequence-homogeneous 3&amp;#39; ends, generated by a post-transcriptional cleavage event. By using partially purified extracts, we have previously shown that the same factor probably cleaves both the F17 and A-type inclusion protein transcripts and that the cleavage factor is either virus-coded or virus-induced during the post-replicative phase of virus replication. In this study, we have purified the cleavage factor from vaccinia-infected HeLa cells using column chromatography and gel filtration. The factor eluted from the gel filtration column with an apparent molecular mass of approximately 440 kDa. Mass spectrometric analyses of the proteins present in the peak active fractions revealed the presence of at least one vaccinia protein with a high degree of certainty, the H5R gene product. To extend this finding, extracts were prepared from HeLa cells infected with vaccinia virus overexpressing His-tagged H5, chromatographed on a nickel affinity column, and eluted using an imidazole gradient. Cleavage activity eluted with the peak of His-tagged H5. Gel filtration of the affinity-purified material further demonstrated that cleavage activity and His-tagged H5 co-chromatographed with an apparent molecular mass of 463 kDa. We therefore conclude that H5 is specifically associated with post-transcriptional cleavage of F17R transcripts. In addition, we show that dephosphorylation of a cleavage competent extract with a nonspecific phosphatase abolishes cleavage activity implying a role for phosphorylation in cleavage activity.</ab>
+<no>GR: R01 AI18094/AI/NIAID NIH HHS/United States; JID: 2985121R; 0 (RNA, Messenger); 0 (RNA, Viral); 0 (RNA-Binding Proteins); 0 (Viral Proteins); 2007/12/18 [aheadofprint]; ppublish</no>
+<pp>United States</pp>
+<sn>0021-9258; 0021-9258</sn>
+<ad>Department of Molecular Genetics and Microbiology, University of Florida, Gainesville, Florida 32610-0266, USA. ihssd@ufl.edu</ad>
+<an>PMID: 18089571; M709258200 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, N.I.H., Extramural; IM</sf>
+<do>10.1074/jbc.M709258200</do>
+<wp>20071218</wp>
+<ol>Unknown(0)</ol>
+<pmid>18089571</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>2880</id>
+<a1>D&#39;Costa,S. M.</a1>
+<a1>Bainbridge,T. W.</a1>
+<a1>Kato,S. E.</a1>
+<a1>Prins,C.</a1>
+<a1>Kelley,K.</a1>
+<a1>Condit,R. C.</a1>
+<t1>Vaccinia H5 is a multifunctional protein involved in viral DNA replication, postreplicative gene transcription, and virion morphogenesis</t1>
+<jf>Virology</jf>
+<jo>Virology</jo>
+<yr>2010</yr>
+<fd>May 25</fd>
+<vo>401</vo>
+<is>1</is>
+<sp>49</sp>
+<op>60</op>
+<k1>DNA Replication</k1>
+<k1>DNA, Viral/biosynthesis</k1>
+<k1>DNA-Binding Proteins/physiology</k1>
+<k1>Humans</k1>
+<k1>Transcription, Genetic</k1>
+<k1>Vaccinia virus/physiology</k1>
+<k1>Viral Proteins/physiology</k1>
+<k1>Virion/physiology</k1>
+<k1>Virus Replication</k1>
+<ab>The vaccinia H5 protein has been implicated in several steps of virus replication including DNA synthesis, postreplicative gene transcription, and virion morphogenesis. Our recent mapping of mutants in the consolidated Condit-Dales collection identified a temperature-sensitive vaccinia mutant in the H5R gene (Dts57). We demonstrate here that Dts57 has a DNA negative phenotype, strongly suggesting a direct role for H5 in DNA replication. We used a temperature shift protocol to determine the impact of H5 temperature sensitivity on postreplicative gene expression and observed changes in the pattern of postreplicative viral mRNA metabolism consistent with a role of H5 in postreplicative transcription. Finally, using a rifampicin release temperature shift protocol, we show that H5 is involved in multiple steps of virion morphogenesis. These data demonstrate directly that H5 plays roles in DNA replication, transcription and morphogenesis in vivo.</ab>
+<no>GR: R01 18094/PHS HHS/United States; JID: 0110674; 0 (DNA, Viral); 0 (DNA-Binding Proteins); 0 (H5R protein, Vaccinia virus); 0 (Viral Proteins); NIHMS178688; OID: NLM: NIHMS178688 [Available on 05/25/11]; OID: NLM: PMC2849846 [Available on 05/25/11]; 2009/11/09 [received]; 2009/12/20 [revised]; 2010/01/15 [accepted]; 2010/03/05 [aheadofprint]; ppublish</no>
+<pp>United States</pp>
+<sn>1096-0341; 0042-6822</sn>
+<ad>Department of Molecular Genetics and Microbiology, University of Florida, Gainesville, FL, 32610-0266, USA.</ad>
+<an>PMID: 20206959; S0042-6822(10)00037-1 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, N.I.H., Extramural; IM</sf>
+<do>10.1016/j.virol.2010.01.020</do>
+<wp>20100305</wp>
+<ol>Unknown(0)</ol>
+<pmid>20206959</pmid>
+<pmcid>PMC2849846</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>2887</id>
+<a1>D&#39;Costa,S. M.</a1>
+<a1>Yao,H.</a1>
+<a1>Bilimoria,S. L.</a1>
+<t1>Transcription and temporal cascade in Chilo iridescent virus infected cells</t1>
+<jf>Archives of Virology</jf>
+<jo>Arch.Virol.</jo>
+<yr>2001</yr>
+<vo>146</vo>
+<is>11</is>
+<sp>2165</sp>
+<op>2178</op>
+<k1>Aphidicolin/pharmacology</k1>
+<k1>Capsid/genetics</k1>
+<k1>DNA Helicases/genetics</k1>
+<k1>DNA Replication/drug effects</k1>
+<k1>DNA-Directed RNA Polymerases/genetics</k1>
+<k1>Genes, Immediate-Early</k1>
+<k1>Iridovirus/genetics</k1>
+<k1>Transcription, Genetic</k1>
+<k1>Virus Replication/drug effects</k1>
+<ab>Chilo iridescent virus (CIV) is the type species for genus Iridovirus, and belongs to the family Iridoviridae. Members of this family are large, isometric, cytoplasmic DNA viruses. Our laboratory has established that CIV replicates productively in the cotton boll weevil, Anthonomus grandis. Given the economic importance of this host and the dearth of knowledge on this virus, we have initiated host-virus interaction and molecular studies on CIV. This report focuses on regulation of transcription in CIV infections. We carried out northern analyses on total cellular RNA from infections of IPRI-CF-124T cells, using a complete genomic library of CIV and several putative gene-specific probes. Our data show a temporal cascade based on analysis of 137 detectable transcripts comprising 38 immediate-early (IE), 34 delayed-early (DE), and 65 late (L) transcripts. Analysis with gene-specific probes supported the cascade pattern. Both helicase and RNA polymerase were immediate-early; major capsid protein was late. The CIV gene expression cascade appears to operate primarily at the transcriptional level. Temporal classes observed are consistent with earlier studies at the polypeptide level and with transcriptional patterns in frog virus 3, genus Ranavirus in the Iridoviridae. Our results provide an important basis for understanding mechanisms driving the CIV temporal cascade.</ab>
+<no>LR: 20061115; JID: 7506870; 38966-21-1 (Aphidicolin); EC 2.7.7.6 (DNA-Directed RNA Polymerases); EC 3.6.1.- (DNA Helicases); ppublish</no>
+<pp>Austria</pp>
+<sn>0304-8608; 0304-8608</sn>
+<ad>Department of Biological Sciences, Texas Tech University, Lubbock, Texas 79409-3131, USA.</ad>
+<an>PMID: 11765918</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>11765918</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>2885</id>
+<a1>D&#39;Costa,S. M.</a1>
+<a1>Yao,H. J.</a1>
+<a1>Bilimoria,S. L.</a1>
+<t1>Transcriptional mapping in Chilo iridescent virus infections</t1>
+<jf>Archives of Virology</jf>
+<jo>Arch.Virol.</jo>
+<yr>2004</yr>
+<fd>Apr</fd>
+<vo>149</vo>
+<is>4</is>
+<sp>723</sp>
+<op>742</op>
+<k1>Animals</k1>
+<k1>Cell Line</k1>
+<k1>Deoxyribonuclease EcoRI</k1>
+<k1>Genome, Viral</k1>
+<k1>Iridoviridae/genetics/metabolism</k1>
+<k1>Moths</k1>
+<k1>RNA, Messenger/biosynthesis</k1>
+<k1>RNA, Viral/biosynthesis/chemistry/genetics</k1>
+<k1>Restriction Mapping</k1>
+<ab>Chilo iridescent virus (CIV) belongs to the family Iridoviridae, which are icosahedral cytoplasmic DNA viruses with large, linear, and circularly permuted genomes. Previous studies on infected-cell-specific polypeptides suggested temporal regulation of CIV gene expression. Recently, we demonstrated three temporal classes at the transcriptional level, in CIV infections of a spruce budworm cell line. We also demonstrated a transcriptional cascade with positive and negative control. In this paper, we assign all detectable viral transcripts into respective temporal classes and map them using restriction fragments from a genomic library. More than 90 percent of the genome is transcriptionally active with at least four major clusters of immediate-early transcription and at least three delayed-early clusters. Late transcripts were observed throughout the genome. There was at least one exclusive region in the genome for each of the three temporal classes. We correlated transcribed regions with ORFs on the CIV genome and showed that known ORFs in the exclusive regions are generally consistent with phase-specific requirements of large DNA viruses. Our data also suggest the presence of 5&amp;#39; or 3&amp;#39; coterminal transcripts. This is the first complete transcription map for a member of the genus Iridovirus.</ab>
+<no>LR: 20061115; JID: 7506870; 0 (RNA, Messenger); 0 (RNA, Viral); EC 3.1.21.- (Deoxyribonuclease EcoRI); 2003/06/11 [received]; 2003/09/18 [accepted]; 2003/11/26 [aheadofprint]; ppublish</no>
+<pp>Austria</pp>
+<sn>0304-8608; 0304-8608</sn>
+<ad>Department of Biological Sciences, Texas Tech University, Lubbock 79409-3131, USA.</ad>
+<an>PMID: 15045560</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<do>10.1007/s00705-003-0232-4</do>
+<wp>20031126</wp>
+<ol>Unknown(0)</ol>
+<pmid>15045560</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>2881</id>
+<a1>Kato,S. E.</a1>
+<a1>Moussatche,N.</a1>
+<a1>D&#39;Costa,S. M.</a1>
+<a1>Bainbridge,T. W.</a1>
+<a1>Prins,C.</a1>
+<a1>Strahl,A. L.</a1>
+<a1>Shatzer,A. N.</a1>
+<a1>Brinker,A. J.</a1>
+<a1>Kay,N. E.</a1>
+<a1>Condit,R. C.</a1>
+<t1>Marker rescue mapping of the combined Condit/Dales collection of temperature-sensitive vaccinia virus mutants</t1>
+<jf>Virology</jf>
+<jo>Virology</jo>
+<yr>2008</yr>
+<fd>May 25</fd>
+<vo>375</vo>
+<is>1</is>
+<sp>213</sp>
+<op>222</op>
+<k1>Animals</k1>
+<k1>Cell Line</k1>
+<k1>Cercopithecus aethiops</k1>
+<k1>Chromosome Mapping</k1>
+<k1>Genes, Viral</k1>
+<k1>Genetic Complementation Test</k1>
+<k1>Hot Temperature</k1>
+<k1>Mutation</k1>
+<k1>Plaque Assay</k1>
+<k1>Sequence Analysis, DNA</k1>
+<k1>Vaccinia virus/genetics</k1>
+<ab>Complementation analysis of the combined Condit/Dales collection of vaccinia virus temperature-sensitive mutants has been reported (Lackner, C.A., D&amp;#39;Costa, S.M., Buck, C., Condit, R.C., 2003. Complementation analysis of the Dales collection of vaccinia virus temperature-sensitive mutants. Virology 305, 240-259), however not all complementation groups have previously been assigned to single genes on the viral genome. We have used marker rescue to map at least one representative of each complementation group to a unique viral gene. The final combined collection contains 124 temperature-sensitive mutants affecting 38 viral genes, plus five double mutants.</ab>
+<no>LR: 20091118; GR: R01 AI055560/AI/NIAID NIH HHS/United States; GR: R01 AI055560-01A1/AI/NIAID NIH HHS/United States; GR: R01 AI055560-02/AI/NIAID NIH HHS/United States; GR: R01 AI055560-03/AI/NIAID NIH HHS/United States; GR: R01 AI055560-04/AI/NIAID NIH HHS/United States; GR: R01 AI055560-05/AI/NIAID NIH HHS/United States; GR: R21 AI055560-01/AI/NIAID NIH HHS/United States; JID: 0110674; NIHMS50829; OID: NLM: NIHMS50829; OID: NLM: PMC2397545; 2007/12/04 [received]; 2007/12/22 [revised]; 2008/01/15 [accepted]; 2008/03/07 [aheadofprint]; ppublish</no>
+<pp>United States</pp>
+<sn>0042-6822; 0042-6822</sn>
+<ad>Department of Molecular Genetics and Microbiology, University of Florida College of Medicine, Gainesville, FL, USA.</ad>
+<an>PMID: 18314155; S0042-6822(08)00045-7 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, N.I.H., Extramural; IM</sf>
+<do>10.1016/j.virol.2008.01.027</do>
+<wp>20080307</wp>
+<ol>Unknown(0)</ol>
+<pmid>18314155</pmid>
+<pmcid>PMC2397545</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>2888</id>
+<a1>Lackner,C. A.</a1>
+<a1>D&#39;Costa,S. M.</a1>
+<a1>Buck,C.</a1>
+<a1>Condit,R. C.</a1>
+<t1>Complementation analysis of the dales collection of vaccinia virus temperature-sensitive mutants</t1>
+<jf>Virology</jf>
+<jo>Virology</jo>
+<yr>2003</yr>
+<fd>Jan 20</fd>
+<vo>305</vo>
+<is>2</is>
+<sp>240</sp>
+<op>259</op>
+<k1>Animals</k1>
+<k1>Cell Line</k1>
+<k1>Cercopithecus aethiops</k1>
+<k1>DNA Glycosylases</k1>
+<k1>DNA Replication</k1>
+<k1>DNA-Directed RNA Polymerases/genetics</k1>
+<k1>Genetic Complementation Test</k1>
+<k1>Mutation</k1>
+<k1>N-Glycosyl Hydrolases/genetics</k1>
+<k1>Protein Subunits</k1>
+<k1>Protein-Serine-Threonine Kinases/genetics</k1>
+<k1>Temperature</k1>
+<k1>Uracil-DNA Glycosidase</k1>
+<k1>Vaccinia virus/genetics</k1>
+<ab>A collection of randomly generated temperature-sensitive (ts) vaccinia virus (strain IHD-W) mutants were reported by S. Dales et al., (1978, Virology, 84, 403-428) in 1978 and characterized by electron microscopy. We have performed further genetic analysis on the Dales collection of mutants to make the mutants more useful to the scientific community. We obtained the entire Dales collection, 97 mutants, from the American Type Culture Center (ATCC). All 97 mutants were grown and reassessed for temperature sensitivity. Of these, 16 mutants were either very leaky or showed unacceptably high reversion indices even after plaque purification and therefore were not used for further analysis. The remaining 81 ts mutants were used to perform a complete complementation analysis with each other and the existing Condit collection of ts vaccinia virus (strain WR) mutants. Twenty-two of these 81 Dales mutants were dropped during complementation analysis due to erratic or weak behavior in the complementation test. Of the 59 mutants that were fit for further investigation, 30 fall into 13 of Condit&amp;#39;s existing complementation groups, 5 comprise 3 previously identified complementation groups independent of the Condit collection, and 24 comprise 18 new complementation groups. The 59 mutants which were successfully characterized by complementation will be accessioned by and made available to the scientific community through the ATCC.</ab>
+<no>LR: 20071115; GR: N01-RR-4-2137/RR/NCRR NIH HHS/United States; GR: R01-AI18094/AI/NIAID NIH HHS/United States; JID: 0110674; 0 (Protein Subunits); EC 2.7.11.1 (Protein-Serine-Threonine Kinases); EC 2.7.7.6 (DNA-Directed RNA Polymerases); EC 3.2.2.- (DNA Glycosylases); EC 3.2.2.- (N-Glycosyl Hydrolases); EC 3.2.2.- (Uracil-DNA Glycosidase); ppublish</no>
+<pp>United States</pp>
+<sn>0042-6822; 0042-6822</sn>
+<ad>Department of Molecular Genetics and Microbiology, University of Florida, Gainesville 32610, USA.</ad>
+<an>PMID: 12573570; S0042682202917459 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>12573570</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>2883</id>
+<a1>Paul,E. R.</a1>
+<a1>Chitnis,N. S.</a1>
+<a1>Henderson,C. W.</a1>
+<a1>Kaul,R. J.</a1>
+<a1>D&#39;Costa,S. M.</a1>
+<a1>Bilimoria,S. L.</a1>
+<t1>Induction of apoptosis by iridovirus virion protein extract</t1>
+<jf>Archives of Virology</jf>
+<jo>Arch.Virol.</jo>
+<yr>2007</yr>
+<vo>152</vo>
+<is>7</is>
+<sp>1353</sp>
+<op>1364</op>
+<k1>Amino Acid Chloromethyl Ketones/pharmacology</k1>
+<k1>Animals</k1>
+<k1>Aphids/cytology/drug effects/metabolism/virology</k1>
+<k1>Apoptosis/drug effects</k1>
+<k1>Caspases/antagonists &amp; inhibitors</k1>
+<k1>Cell Line</k1>
+<k1>Cysteine Proteinase Inhibitors/pharmacology</k1>
+<k1>DNA Fragmentation/drug effects</k1>
+<k1>Insect Proteins/biosynthesis</k1>
+<k1>Iridovirus/pathogenicity/physiology</k1>
+<k1>Protein Synthesis Inhibitors/isolation &amp; purification/toxicity</k1>
+<k1>Viral Proteins/isolation &amp; purification/toxicity</k1>
+<k1>Weevils/cytology/drug effects/metabolism/virology</k1>
+<ab>Chilo iridescent virus (CIV; IIV-6) is the type member of the genus Iridovirus (family Iridoviridae, large icosahedral cytoplasmic DNA viruses). CIV induces death and deformity in the cotton boll weevil, Anthonomus grandis, replicates productively in larvae of the cotton boll weevil, and significantly reduces laboratory populations of the cotton aphid, Aphis gossypii. CIV virion protein extract (CVPE) shuts down host protein synthesis in several insect cell lines and induces mortality in neonate boll weevil larvae. We report here that CVPE induces apoptosis in spruce budworm and boll weevil cell lines, as detected by blebbing, DNA fragmentation, and TUNEL assay. Tissue culture toxicity dose assays (TCTD(50)) showed that spruce budworm cells were eight times more sensitive to CVPE than boll weevil cells. Pancaspase inhibitor suppressed apoptosis but had marginal effect on inhibition of host protein synthesis. Moreover, the CVPE dose for apoptosis was 1000-fold lower than the dose for shutdown of host synthesis. We also detected protein kinase activity in CVPE. Heating CVPE at 60 degrees C for 30 min destroyed all three activities. Our results suggest that one or more polypeptides in CIV induce apoptosis. This is the first study demonstrating apoptosis induction by a member of the genus Iridovirus and by virion extracts of a member of the family Iridoviridae.</ab>
+<no>JID: 7506870; 0 (Amino Acid Chloromethyl Ketones); 0 (Cysteine Proteinase Inhibitors); 0 (Insect Proteins); 0 (Protein Synthesis Inhibitors); 0 (Viral Proteins); 0 (benzyloxycarbonylvalyl-alanyl-aspartyl fluoromethyl ketone); EC 3.4.22.- (Caspases); 2006/10/30 [received]; 2007/01/22 [accepted]; 2007/03/09 [aheadofprint]; ppublish</no>
+<pp>Austria</pp>
+<sn>0304-8608; 0304-8608</sn>
+<ad>Department of Biological Sciences, Texas Tech University, Lubbock, TX 79409-3131, USA.</ad>
+<an>PMID: 17347770</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<do>10.1007/s00705-007-0945-x</do>
+<wp>20070309</wp>
+<ol>Unknown(0)</ol>
+<pmid>17347770</pmid></reference></refworks>

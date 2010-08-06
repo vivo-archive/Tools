@@ -1,0 +1,374 @@
+
+<?xml version="1.0" encoding="utf-8"?>
+<refworks xmlns:refworks="www.refworks.com/xml/">
+
+
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>1934</id>
+<a1>Bottje,W.</a1>
+<a1>Brand,M. D.</a1>
+<a1>Ojano-Dirain,C.</a1>
+<a1>Lassiter,K.</a1>
+<a1>Toyomizu,M.</a1>
+<a1>Wing,T.</a1>
+<t1>Mitochondrial proton leak kinetics and relationship with feed efficiency within a single genetic line of male broilers</t1>
+<jf>Poultry science</jf>
+<jo>Poult.Sci.</jo>
+<yr>2009</yr>
+<fd>Aug</fd>
+<vo>88</vo>
+<is>8</is>
+<sp>1683</sp>
+<op>1693</op>
+<k1>Animal Nutritional Physiological Phenomena/genetics</k1>
+<k1>Animals</k1>
+<k1>Chickens/genetics/growth &amp; development</k1>
+<k1>Energy Metabolism</k1>
+<k1>Kinetics</k1>
+<k1>Male</k1>
+<k1>Membrane Potential, Mitochondrial/physiology</k1>
+<k1>Muscle, Skeletal/metabolism</k1>
+<k1>Oxygen Consumption/physiology</k1>
+<k1>Protons</k1>
+<ab>Studies were conducted to assess proton leak kinetics (proton conductance) in breast muscle mitochondria isolated from broiler breeder males within a single genetic line exhibiting either high (HFE) or low (LFE) feed efficiency. Proton leak kinetics were determined by simultaneously measuring mitochondrial membrane potential and state 2 (resting) respiration rate in breast muscle mitochondria as succinate oxidation was progressively decreased by malonate. Control proton conductance was similar in HFE and LFE mitochondria and decreased to a similar extent in both groups in response to BSA. Although treatment of mitochondria with Glu or guanosine diphosphate had no effect, retinal increased and carboxyatractylate alone or in combination with Glu decreased proton conductance relative to control proton conductance in both HFE and LFE mitochondria. After treatment with either guanosine diphosphate or carboxyatractylate alone, proton conductance was lower in HFE compared with LFE mitochondria. With the exception of BSA, proton conductance in HFE mitochondria after the various chemical treatments was either less than or equal to, and never greater than, proton conductance in the LFE mitochondria. The results suggest that there are subtle differences in membrane characteristics (e.g., lipids, integral membrane proteins) that affect proton conductance in broiler muscle mitochondria that may in turn play a role in the phenotypic expression of feed efficiency.</ab>
+<no>JID: 0401150; 0 (Protons); ppublish</no>
+<pp>United States</pp>
+<sn>0032-5791; 0032-5791</sn>
+<ad>Department of Poultry Science, University of Arkansas, Fayetteville, AR, USA. wbottje@uark.edu</ad>
+<an>PMID: 19590084; 88/8/1683 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<do>10.3382/ps.2009-00100</do>
+<ol>Unknown(0)</ol>
+<pmid>19590084</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>1938</id>
+<a1>Bottje,W.</a1>
+<a1>Pumford,N. R.</a1>
+<a1>Ojano-Dirain,C.</a1>
+<a1>Iqbal,M.</a1>
+<a1>Lassiter,K.</a1>
+<t1>Feed efficiency and mitochondrial function</t1>
+<jf>Poultry science</jf>
+<jo>Poult.Sci.</jo>
+<yr>2006</yr>
+<fd>Jan</fd>
+<vo>85</vo>
+<is>1</is>
+<sp>8</sp>
+<op>14</op>
+<k1>Animal Feed</k1>
+<k1>Animals</k1>
+<k1>Chickens/metabolism</k1>
+<k1>Mitochondria/metabolism</k1>
+<ab>Studies have been conducted in our laboratory to assess differences in mitochondrial function and biochemistry in male broilers with high and low feed efficiency (FE) from the same genetic line and fed the same diet. Mitochondria obtained from broilers with low FE exhibited greater uncoupling of the electron transport chain (ETC) that was apparently due to site-specific defects in electron transport resulting in higher amounts of reactive oxygen species (ROS) compared with high FE mitochondria. Higher amounts of ROS production in Low FE mitochondria were likely responsible for higher protein carbonyl levels, indicative of higher protein oxidation compared with High FE mitochondria and tissue. In turn, higher protein damage in Low FE mitochondria may have contributed to lower activity of electron transport chain complexes relative to values observed in high FE mitochondria. Low FE mitochondria did not exhibit a compromised ability to carryout oxidative phosphorylation, and although there were differences in expression of certain electron transport chain proteins, there was nothing that would indicate that differences in coupling and respiratory chain activity could be due to a general decrease in protein expression between low and high FE mitochondria. The results of these studies provide insight into understanding cellular mechanisms associated with the phenotypic expression of feed efficiency in broilers.</ab>
+<no>LR: 20061115; JID: 0401150; RF: 55; ppublish</no>
+<pp>United States</pp>
+<sn>0032-5791; 0032-5791</sn>
+<ad>Center of Excellence for Poultry Science, University of Arkansas, Fayetteville 72701, USA. wbottje@uark.edu</ad>
+<an>PMID: 16493939</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, Non-P.H.S.; Review; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>16493939</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>1940</id>
+<a1>Iqbal,M.</a1>
+<a1>Pumford,N. R.</a1>
+<a1>Tang,Z. X.</a1>
+<a1>Lassiter,K.</a1>
+<a1>Ojano-Dirain,C.</a1>
+<a1>Wing,T.</a1>
+<a1>Cooper,M.</a1>
+<a1>Bottje,W.</a1>
+<t1>Compromised liver mitochondrial function and complex activity in low feed efficient broilers are associated with higher oxidative stress and differential protein expression</t1>
+<jf>Poultry science</jf>
+<jo>Poult.Sci.</jo>
+<yr>2005</yr>
+<fd>Jun</fd>
+<vo>84</vo>
+<is>6</is>
+<sp>933</sp>
+<op>941</op>
+<k1>Animal Feed</k1>
+<k1>Animal Nutritional Physiological Phenomena</k1>
+<k1>Animals</k1>
+<k1>Blotting, Western</k1>
+<k1>Breeding</k1>
+<k1>Chickens/physiology</k1>
+<k1>DNA, Mitochondrial/genetics</k1>
+<k1>Electron Transport</k1>
+<k1>Electrophoresis, Polyacrylamide Gel</k1>
+<k1>Gene Expression</k1>
+<k1>Hydrogen Peroxide/metabolism</k1>
+<k1>Male</k1>
+<k1>Mitochondria, Liver/physiology</k1>
+<k1>Mitochondrial Proteins/analysis/chemistry/genetics</k1>
+<k1>Oxidation-Reduction</k1>
+<k1>Oxidative Stress</k1>
+<ab>Variations in broiler growth and efficiency have been explained in part by differences in mitochondrial function and biochemistry in broilers. To further our knowledge in this regard, 2 experiments were carried out to determine the relationships of a) mitochondrial function and activities of various electron transport chain (ETC) complexes; b) production of H2O2, a reactive oxygen species (ROS), and its association with protein oxidation; and c) mitochondrial protein expression in liver of a single line male broilers with low or high feed efficiency (FE, n = 5 to 8 per group). Mitochondrial function and complex activities were measured polarographically and spectrophotometrically, respectively. H2O2 was measured fluorimetrically, whereas oxidized protein (carbonyls) and specific mitochondrial proteins were analyzed using Western blots. Mitochondrial function (ETC coupling) and activities of ETC complexes (I, II, III, and IV) were higher in high FE compared with low FE broilers. H2O2 and protein carbonyls were higher in the livers of low FE broilers than in high FE broilers. Whereas the expression of 4 immunoreactive proteins [NAD3 (complex I), subunit VII (complex III), cytochrome c oxidase subunits (COX) II, and COX IVb (complex IV)] were higher in low FE liver mitochondria and 2 proteins [subunit 70 (complex II) and a-ATP synthase (complex V)] were higher in high FE birds, there were no differences between groups in the expression of 18 other mitochondrial proteins. In conclusion, increases in oxidative stress in low FE broilers were caused by or may contribute to differences in mitochondrial function (ETC coupling and complex activities) or the differential expression of steady-state levels of some mitochondrial proteins in the liver. Understanding the role of oxidative stress in Low FE broilers will provide clues in understanding the cellular basis of feed efficiency.</ab>
+<no>LR: 20081121; JID: 0401150; 0 (DNA, Mitochondrial); 0 (Mitochondrial Proteins); 7722-84-1 (Hydrogen Peroxide); ppublish</no>
+<pp>United States</pp>
+<sn>0032-5791; 0032-5791</sn>
+<ad>Department of Poultry Science, Center of Excellence for Poultry Science, University of Arkansas, Fayetteville, Arkansas 72701, USA.</ad>
+<an>PMID: 15971533</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, Non-P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>15971533</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>1937</id>
+<a1>Lassiter,K.</a1>
+<a1>Ojano-Dirain,C.</a1>
+<a1>Iqbal,M.</a1>
+<a1>Pumford,N. R.</a1>
+<a1>Tinsley,N.</a1>
+<a1>Lay,J.</a1>
+<a1>Liyanage,R.</a1>
+<a1>Wing,T.</a1>
+<a1>Cooper,M.</a1>
+<a1>Bottje,W.</a1>
+<t1>Differential expression of mitochondrial and extramitochondrial proteins in lymphocytes of male broilers with low and high feed efficiency</t1>
+<jf>Poultry science</jf>
+<jo>Poult.Sci.</jo>
+<yr>2006</yr>
+<fd>Dec</fd>
+<vo>85</vo>
+<is>12</is>
+<sp>2251</sp>
+<op>2259</op>
+<k1>Animal Feed</k1>
+<k1>Animals</k1>
+<k1>Chickens/metabolism</k1>
+<k1>Energy Metabolism/physiology</k1>
+<k1>Gene Expression Regulation/physiology</k1>
+<k1>Lymphocytes/metabolism</k1>
+<k1>Male</k1>
+<k1>Mitochondrial Proteins/metabolism</k1>
+<k1>Weight Gain/physiology</k1>
+<ab>Studies were conducted to investigate relationships between mitochondrial and extramitochondrial protein expression, and protein oxidation in lymphocytes obtained from broilers in which individual feed efficiencies were obtained. Lymphocytes were isolated from male broilers from a single line that were shown to exhibit either low (0.48 +/- 0.02, n = 8) or high (0.68 +/- 0.01, n = 7) feed efficiency (FE). Western blot analysis showed that, compared with lymphocytes from high FE broilers, lymphocytes from low FE broilers exhibited a) higher amounts of oxidized proteins (protein carbonyls), b) lower amounts of 3 mitochondrial proteins [core I, cyt c 1 (complex III), and ATP synthase (complex V)], and c) higher amounts of 2 proteins [30 S (complex II) and COX II (complex IV)]. Two-dimensional gel electrophoresis revealed that the intensities of 25 protein spots from pooled samples of lymphocytes from high and low FE broilers differed by 5-fold or more. Three of these protein spots were picked from the gel and subjected to matrix-assisted laser desorption ionization time-of-flight (MALDI-TOF) mass spectrometry analysis. One protein spot of ~33 kDa was tentatively identified by MALDI-TOF as a fragment of collapsin-2, a component of semaphorin 3D. The results of this study provide further evidence of increased oxidation associated with low FE and further evidence of differential protein expression associated with the phenotypic expression of feed efficiency.</ab>
+<no>JID: 0401150; 0 (Mitochondrial Proteins); ppublish</no>
+<pp>United States</pp>
+<sn>0032-5791; 0032-5791</sn>
+<ad>Department of Poultry Science, Center of Excellence for Poultry Science, University of Arkansas, Fayetteville 72701, USA.</ad>
+<an>PMID: 17135683; 85/12/2251 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, Non-P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>17135683</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>1941</id>
+<a1>Ojano-Dirain,C.</a1>
+<a1>Iqbal,M.</a1>
+<a1>Wing,T.</a1>
+<a1>Cooper,M.</a1>
+<a1>Bottje,W.</a1>
+<t1>Glutathione and respiratory chain complex activity in duodenal mitochondria of broilers with low and high feed efficiency</t1>
+<jf>Poultry science</jf>
+<jo>Poult.Sci.</jo>
+<yr>2005</yr>
+<fd>May</fd>
+<vo>84</vo>
+<is>5</is>
+<sp>782</sp>
+<op>788</op>
+<k1>Animals</k1>
+<k1>Body Weight</k1>
+<k1>Chickens/metabolism/physiology</k1>
+<k1>Digestive System Physiological Phenomena</k1>
+<k1>Duodenum/metabolism</k1>
+<k1>Electron Transport Chain Complex Proteins/metabolism</k1>
+<k1>Glutathione/metabolism</k1>
+<k1>Male</k1>
+<k1>Mitochondria/enzymology</k1>
+<k1>Oxidative Stress</k1>
+<k1>Weight Gain</k1>
+<ab>We previously observed increased reactive oxygen species (ROS) production in intestinal mitochondria obtained from broiler breeder males with low feed efficiency (FE, gain-to-feed). Because antioxidants are critical for combating ROS-mediated oxidative stress and preserving mitochondrial function, the objectives of this study were 1) to determine levels of reduced glutathione (GSH), a major antioxidant in mitochondria, 2) to measure activities of GSH recycling enzymes: GSH peroxidase and GSH reductase, and 3) to establish relationships between antioxidants and respiratory chain complex activities (complexes I, II, III, IV, and V) in broiler breeder males with low and high FE. Duodenal mitochondria were isolated from broilers with low (0.62 +/- 0.01, n = 8) and high (0.80 +/- 0.01, n = 8) FE. Activities of respiratory chain complexes, GSH peroxidase, and GSH reductase, and levels of GSH were measured by UV spectrophotometry. There were no differences in GSH peroxidase or reductase activities or in individual complex activities between groups but GSH levels tended to be higher (P = 0.075) and oxidized to reduced glutathione ratio tended to be lower (P = 0.077) in broilers with high FE. Regression analysis revealed significant correlations (P &amp;lt; or = 0.05) between mitochondrial GSH and activities of complexes II, IV, and V with R2 values of 0.35, 0.56, and 0.49, respectively. These data suggest that GSH may be important in maintaining or enhancing the activity of certain respiratory chain complexes and could be involved in the phenotypic expression of feed efficiency in broilers.</ab>
+<no>LR: 20081121; JID: 0401150; 0 (Electron Transport Chain Complex Proteins); 70-18-8 (Glutathione); ppublish</no>
+<pp>United States</pp>
+<sn>0032-5791; 0032-5791</sn>
+<ad>Department of Poultry Science, Center of Excellence for Poultry Science, University of Arkansas, Fayetteville, Arkansas 72701, USA.</ad>
+<an>PMID: 15913191</an>
+<la>eng</la>
+<sf>Comparative Study; Journal Article; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, Non-P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>15913191</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>1939</id>
+<a1>Ojano-Dirain,C.</a1>
+<a1>Pumford,N. R.</a1>
+<a1>Iqbal,M.</a1>
+<a1>Wing,T.</a1>
+<a1>Cooper,M.</a1>
+<a1>Bottje,W. G.</a1>
+<t1>Biochemical evaluation of mitochondrial respiratory chain in duodenum of low and high feed efficient broilers</t1>
+<jf>Poultry science</jf>
+<jo>Poult.Sci.</jo>
+<yr>2005</yr>
+<fd>Dec</fd>
+<vo>84</vo>
+<is>12</is>
+<sp>1926</sp>
+<op>1934</op>
+<k1>Animal Feed</k1>
+<k1>Animals</k1>
+<k1>Chickens/genetics/metabolism</k1>
+<k1>Dietary Proteins/metabolism</k1>
+<k1>Duodenum/cytology/drug effects/metabolism</k1>
+<k1>Electron Transport/drug effects/physiology</k1>
+<k1>Energy Intake/physiology</k1>
+<k1>Gene Expression Regulation</k1>
+<k1>Male</k1>
+<k1>Mitochondria/drug effects/metabolism</k1>
+<k1>Oxidation-Reduction</k1>
+<k1>Weight Gain/drug effects/physiology</k1>
+<ab>Increased H2O2 production, indicating higher oxidative stress, and lower mitochondrial function was previously observed in duodenal mitochondria isolated from broilers with low feed efficiency (FE, gain:feed). Thus, experiments were conducted to 1) evaluate the activity of the respiratory chain complexes (complexes I to V) and 2) assess protein oxidation and mitochondrial protein expression in broilers with low and high FE. Duodenal mitochondria were isolated from broiler breeders with low (0.52 +/- 0.01) and high (0.68 +/- 0.01) FE (n = 8/group). Respiratory chain complex activities were measured spectrophotometrically, whereas mitochondrial protein expression and protein oxidation (carbonyls) were assessed with Western blots. The activities of all complexes, except complex IV, were lower in the low FE compared with high FE mitochondria, whereas protein carbonyl levels were higher in low FE mitochondria. Steady-state levels of 6 out of 7 nuclear-encoded respiratory chain subunits [70S(FP), core I, core II, cytochrome c (cyt c)1, iron-sulfur protein (ISP), and ATPase-alpha] were higher, whereas 3 out of 6 mitochondrial-encoded subunits (ND4, ND6-C, and COX II) were lower in the low FE group, suggesting that sensitivity of mitochondrial proteins to H2O2 or oxidation varies. The general reduction in complex activity and differential protein expression concomitant with higher oxidized proteins in low FE mitochondria suggest that oxidative stress could be contributing to the lower mitochondrial function observed in low FE duodenal mitochondria.</ab>
+<no>LR: 20061115; JID: 0401150; 0 (Dietary Proteins); ppublish</no>
+<pp>United States</pp>
+<sn>0032-5791; 0032-5791</sn>
+<ad>Department of Poultry Science, Center of Excellence for Poultry Science, University of Arkansas, Fayetteville, Arkansas 72701, USA. cojano@uark.edu</ad>
+<an>PMID: 16479952</an>
+<la>eng</la>
+<sf>Clinical Trial; Journal Article; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, Non-P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>16479952</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>1935</id>
+<a1>Ojano-Dirain,C.</a1>
+<a1>Tinsley,N. B.</a1>
+<a1>Wing,T.</a1>
+<a1>Cooper,M.</a1>
+<a1>Bottje,W. G.</a1>
+<t1>Membrane potential and H2O2 production in duodenal mitochondria from broiler chickens (Gallus gallus domesticus) with low and high feed efficiency</t1>
+<jf>Comparative biochemistry and physiology.Part A, Molecular &amp; integrative physiology</jf>
+<jo>Comp.Biochem.Physiol.A.Mol.Integr.Physiol.</jo>
+<yr>2007</yr>
+<fd>Aug</fd>
+<vo>147</vo>
+<is>4</is>
+<sp>934</sp>
+<op>941</op>
+<k1>Animals</k1>
+<k1>Carbonyl Cyanide p-Trifluoromethoxyphenylhydrazone/pharmacology</k1>
+<k1>Cell Respiration/drug effects</k1>
+<k1>Chickens/metabolism</k1>
+<k1>Duodenum/drug effects/metabolism</k1>
+<k1>Electron Transport/drug effects</k1>
+<k1>Feeding Behavior/drug effects</k1>
+<k1>Hydrogen Peroxide/metabolism</k1>
+<k1>Male</k1>
+<k1>Membrane Potential, Mitochondrial/drug effects</k1>
+<k1>Mitochondria/drug effects/metabolism</k1>
+<k1>Superoxide Dismutase/metabolism</k1>
+<ab>Increased hydrogen peroxide (H2O2) production was observed in duodenal mitochondria obtained from broiler chickens with low feed efficiency (FE). As a decrease in mitochondrial membrane potential (Deltapsi(m)) due to mild uncoupling of oxidative phosphorylation reduces reactive oxygen species production, this study was conducted to evaluate the effect of uncoupling on Deltapsi(m) and H2O2 production in duodenal mitochondria isolated from broilers with low (0.48+/-0.02) and high (0.68+/-0.01) FE. Membrane potential and H2O2 production were measured fluorometrically and in the presence of different levels of an uncoupler, carbonylcyanide-p-trifluoromethoxyphenylhydrazone (FCCP). The Deltapsi(m) was higher (P&amp;lt;or=0.05) in high FE mitochondria at 0 to 600 nM FCCP. A decrease in Deltapsi(m) was observed at 600 and 1000 nM FCCP in the low and high FE groups, respectively. H2O2 generation was higher in the low FE mitochondria at all FCCP levels except at 200 nM. Adding 200 to 800 nM FCCP decreased H2O2 production in low but not in high FE mitochondria. These results showed that FCCP-induced uncoupling lowered H2O2 production in low FE but not in high FE duodenal mitochondria and suggest that Deltapsi(m) may influence H2O2 production in low FE mitochondria.</ab>
+<no>JID: 9806096; 370-86-5 (Carbonyl Cyanide p-Trifluoromethoxyphenylhydrazone); 7722-84-1 (Hydrogen Peroxide); EC 1.15.1.1 (Superoxide Dismutase); 2006/06/03 [received]; 2007/02/22 [revised]; 2007/02/23 [accepted]; 2007/03/03 [aheadofprint]; ppublish</no>
+<pp>United States</pp>
+<sn>1095-6433; 1095-6433</sn>
+<ad>Department of Poultry Science, Center of Excellence for Poultry Science, University of Arkansas, Fayetteville, AR 72701, USA. cojano@uark.edu</ad>
+<an>PMID: 17409002; S1095-6433(07)00879-3 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, Non-P.H.S.; IM</sf>
+<do>10.1016/j.cbpa.2007.02.029</do>
+<wp>20070303</wp>
+<ol>Unknown(0)</ol>
+<pmid>17409002</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>1936</id>
+<a1>Ojano-Dirain,C.</a1>
+<a1>Toyomizu,M.</a1>
+<a1>Wing,T.</a1>
+<a1>Cooper,M.</a1>
+<a1>Bottje,W. G.</a1>
+<t1>Gene expression in breast muscle and duodenum from low and high feed efficient broilers</t1>
+<jf>Poultry science</jf>
+<jo>Poult.Sci.</jo>
+<yr>2007</yr>
+<fd>Feb</fd>
+<vo>86</vo>
+<is>2</is>
+<sp>372</sp>
+<op>381</op>
+<k1>Animal Feed</k1>
+<k1>Animals</k1>
+<k1>Chickens/genetics/physiology</k1>
+<k1>Digestion/genetics/physiology</k1>
+<k1>Duodenum/metabolism</k1>
+<k1>Electron Transport Complex IV/genetics</k1>
+<k1>Gene Expression Regulation</k1>
+<k1>Ion Channels/genetics</k1>
+<k1>Male</k1>
+<k1>Mitochondrial ADP, ATP Translocases/genetics</k1>
+<k1>Mitochondrial Proteins/genetics</k1>
+<k1>Muscle, Skeletal/metabolism</k1>
+<k1>PPAR gamma/genetics</k1>
+<k1>RNA, Messenger/metabolism</k1>
+<ab>This study was conducted to evaluate messenger RNA (mRNA) expression of genes that are involved in energy metabolism and mitochondrial biogenesis: avian adenine nucleotide translocator (avANT), cytochrome oxidase III (COX III), inducible nitric oxide synthase (iNOS), peroxisome proliferator-activated receptor-gamma (PPAR-gamma), avian PPAR-gamma coactivator-1alpha (avPGC-1alpha), and avian uncoupling protein in breast muscle and duodenum of broilers with low and high feed efficiency (FE). Total RNA was extracted from snap-frozen tissues from male broilers with low (0.55 +/- 0.01) and high (0.72 +/- 0.01) FE (n = 8 per group). Total RNA was reverse-transcribed using oligo(dT), random primers, or both followed by real-time reverse transcription-PCR. Protein oxidation, measured as protein carbonyls, was also evaluated in duodenal mucosa. Protein carbonyls were higher in low FE mucosa in tissue homogenate and mitochondrial fraction. The mRNA expression of iNOS and PPAR-gamma in the duodenum was lower in the low FE broilers, with no differences in avANT, COX III, and avPGC-1alpha. In contrast, expression of avANT and COX III mRNA in breast muscle was lower in low FE broilers with no differences in iNOS, PPAR-gamma, and avPGC-1alpha. The avian uncoupling protein in breast muscle was higher in low FE birds (P = 0.068). These results indicate that there are differences in the expression of mRNA encoding for mitochondrial transcription factors and proteins in breast muscle and duodenal tissue between low and high FE birds. The differences that were observed may also reflect inherent metabolic and gene regulation differences between tissues.</ab>
+<no>JID: 0401150; 0 (Ion Channels); 0 (Mitochondrial Proteins); 0 (PPAR gamma); 0 (RNA, Messenger); 0 (mitochondrial uncoupling protein); 9068-80-8 (Mitochondrial ADP, ATP Translocases); EC 1.9.3.1 (Electron Transport Complex IV); ppublish</no>
+<pp>United States</pp>
+<sn>0032-5791; 0032-5791</sn>
+<ad>Department of Poultry Science, Center of Excellence for Poultry Science, University of Arkansas, Fayetteville, Arkansas 72701, USA. cojano@uark.edu</ad>
+<an>PMID: 17234853; 86/2/372 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>17234853</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>1942</id>
+<a1>Ojano-Dirain,C. P.</a1>
+<a1>Iqbal,M.</a1>
+<a1>Cawthon,D.</a1>
+<a1>Swonger,S.</a1>
+<a1>Wing,T.</a1>
+<a1>Cooper,M.</a1>
+<a1>Bottje,W.</a1>
+<t1>Determination of mitochondrial function and site-specific defects in electron transport in duodenal mitochondria in broilers with low and high feed efficiency</t1>
+<jf>Poultry science</jf>
+<jo>Poult.Sci.</jo>
+<yr>2004</yr>
+<fd>Aug</fd>
+<vo>83</vo>
+<is>8</is>
+<sp>1394</sp>
+<op>1403</op>
+<k1>Adenosine Diphosphate/administration &amp; dosage/analysis</k1>
+<k1>Animal Nutritional Physiological Phenomena</k1>
+<k1>Animals</k1>
+<k1>Chickens/growth &amp; development</k1>
+<k1>Duodenum/ultrastructure</k1>
+<k1>Electron Transport</k1>
+<k1>Hydrogen Peroxide/metabolism</k1>
+<k1>Malates/metabolism</k1>
+<k1>Male</k1>
+<k1>Mitochondria/physiology</k1>
+<k1>Oxygen/analysis</k1>
+<k1>Oxygen Consumption</k1>
+<k1>Pyruvic Acid/metabolism</k1>
+<k1>Succinic Acid/metabolism</k1>
+<ab>Duodenal mitochondria were isolated from broiler breeder males with high (0.79+/-0.01, n = 9) and low (0.63+/-0.02, n = 9) feed efficiency (FE) to assess relationships of FE with duodenal mitochondrial function and site-specific defects in electron transport. Sequential additions of adenosine diphosphate (ADP) resulted in 1) higher respiratory control ratio (RCR; an index of respiratory chain coupling) in high FE mitochondria provided succinate, and 2) higher ADP to oxygen ratio (ADP:O; an index of oxidative phosphorylation) in low FE mitochondria provided NADH-linked substrates (malate, pyruvate, or both). Basal electron leak, measured as H2O2 production, was greater in low FE mitochondria provided succinate (P = 0.08) or NADH-linked substrates. As H2O2 levels were elevated in low FE compared with high FE mitochondria by complex I (P+/-0.07) and complex II inhibition, the higher basal electron leak in low FE mitochondria was apparently due to site-specific defects in electron transport at complexes I and II. Elevations in H2O2 above basal levels indicated that high FE mitochondria may also exhibit electron transport defects at complexes I and III. Despite an ability to produce adenosine triphosphate (ATP) that was equal or superior to that demonstrated in high FE duodenal mitochondria, low FE mitochondria exhibited a greater inherent degree of electron leak. The results provide insight into the role that duodenal mitochondria play in the phenotypic expression of FE in broilers.</ab>
+<no>LR: 20081121; JID: 0401150; 0 (Malates); 110-15-6 (Succinic Acid); 127-17-3 (Pyruvic Acid); 58-64-0 (Adenosine Diphosphate); 6915-15-7 (malic acid); 7722-84-1 (Hydrogen Peroxide); 7782-44-7 (Oxygen); ppublish</no>
+<pp>United States</pp>
+<sn>0032-5791; 0032-5791</sn>
+<ad>Department of Poultry Science, University of Arkansas, Fayetteville, Arkansas 72701, USA. cojano@uark.edu</ad>
+<an>PMID: 15339016</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, Non-P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>15339016</pmid></reference></refworks>

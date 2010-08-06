@@ -1,0 +1,3111 @@
+
+<?xml version="1.0" encoding="utf-8"?>
+<refworks xmlns:refworks="www.refworks.com/xml/">
+
+
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>658</id>
+<a1>Aittomaki,S.</a1>
+<a1>Yang,J.</a1>
+<a1>Scott,E. W.</a1>
+<a1>Simon,M. C.</a1>
+<a1>Silvennoinen,O.</a1>
+<t1>Molecular basis of Stat1 and PU.1 cooperation in cytokine-induced Fcgamma receptor I promoter activation</t1>
+<jf>International immunology</jf>
+<jo>Int.Immunol.</jo>
+<yr>2004</yr>
+<fd>Feb</fd>
+<vo>16</vo>
+<is>2</is>
+<sp>265</sp>
+<op>274</op>
+<k1>Animals</k1>
+<k1>Cell Line</k1>
+<k1>Cytokines/metabolism</k1>
+<k1>DNA-Binding Proteins/genetics/metabolism</k1>
+<k1>Humans</k1>
+<k1>Luciferases</k1>
+<k1>Mice</k1>
+<k1>Promoter Regions, Genetic/physiology</k1>
+<k1>Protein Binding/genetics/physiology</k1>
+<k1>Protein Structure, Tertiary/genetics/physiology</k1>
+<k1>Proto-Oncogene Proteins/genetics/metabolism</k1>
+<k1>RNA Polymerase II/metabolism</k1>
+<k1>Receptors, IgG/genetics/metabolism</k1>
+<k1>Recombinant Proteins/genetics/metabolism</k1>
+<k1>Regulatory Sequences, Nucleic Acid/genetics/physiology</k1>
+<k1>Response Elements/genetics/physiology</k1>
+<k1>STAT1 Transcription Factor</k1>
+<k1>Signal Transduction/physiology</k1>
+<k1>TATA Box/genetics/physiology</k1>
+<k1>Trans-Activators/genetics/metabolism</k1>
+<k1>Transcription, Genetic/genetics/physiology</k1>
+<k1>Transcriptional Activation/physiology</k1>
+<k1>Transfection</k1>
+<ab>The high-affinity receptor for IgG (FcgammaRI) is a myeloid cell-specific and IFN-gamma-induced gene, and thereby serves as a paradigm for cytokine-induced cell type-specific gene responses. The expression of FcgammaRI is regulated by PU.1 and Stat1 transcription factors. We established an experimental model to analyze the individual functions of Stat1 and PU.1 in cytokine-induced transcription of the natural FcgammaRI promoter in U3A cells lacking both factors. PU.1 was required for both the basal activity and for the IFN-gamma-induced FcgammaRI promoter activation, while Stat1 alone could not initiate transcription. In contrast, in the context of a heterologous promoter, PU.1 inhibited the Stat1-mediated transcription. Systematic analysis of Stat1 and PU.1 mutants and FcgammaRI promoter elements revealed that activation of the promoter required the DNA binding, and the transactivation functions of both Stat1 and PU.1. PU.1 and Stat1 bound the promoter elements independently, and no physical interaction between the proteins was observed. The requirement of PU.1 for FcgammaRI promoter activity was supported by demonstration of in vitro interaction between PU.1 and components of the basal transcription machinery TBP and RNA polymerase II. Deletion of the acidic transactivation domain of PU.1 greatly diminished both the FcgammaRI promoter activity as well as the interaction with RNA polymerase II. In contrast, Stat1 did not interact with TBP or RNA polymerase II. These results define functional cooperativity between PU.1 and Stat1 in FcgammaRI promoter activation where PU.1 serves as an amplifier and bridging factor with the basal transcription machinery.</ab>
+<no>LR: 20081121; JID: 8916182; 0 (Cytokines); 0 (DNA-Binding Proteins); 0 (Fcgr1 protein, mouse); 0 (Proto-Oncogene Proteins); 0 (Receptors, IgG); 0 (Recombinant Proteins); 0 (STAT1 Transcription Factor); 0 (STAT1 protein, human); 0 (Stat1 protein, mouse); 0 (Trans-Activators); 0 (proto-oncogene protein Spi-1); EC 1.13.12.- (Luciferases); EC 2.7.7.- (RNA Polymerase II); ppublish</no>
+<pp>England</pp>
+<sn>0953-8178; 0953-8178</sn>
+<ad>Institute of Medical Technology, University of Tampere, 33014 Tampere, Finland.</ad>
+<an>PMID: 14734612</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>14734612</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>665</id>
+<a1>Aittomaki,S.</a1>
+<a1>Yang,J.</a1>
+<a1>Scott,E. W.</a1>
+<a1>Simon,M. C.</a1>
+<a1>Silvennoinen,O.</a1>
+<t1>Distinct functions for signal transducer and activator of transcription 1 and PU.1 in transcriptional activation of Fc gamma receptor I promoter</t1>
+<jf>Blood</jf>
+<jo>Blood</jo>
+<yr>2002</yr>
+<fd>Aug 1</fd>
+<vo>100</vo>
+<is>3</is>
+<sp>1078</sp>
+<op>1080</op>
+<k1>Animals</k1>
+<k1>Cell Line</k1>
+<k1>DNA-Binding Proteins/physiology</k1>
+<k1>Humans</k1>
+<k1>Interferon-gamma/pharmacology</k1>
+<k1>Mice</k1>
+<k1>Promoter Regions, Genetic/genetics</k1>
+<k1>Proto-Oncogene Proteins/physiology</k1>
+<k1>Receptors, IgG/genetics</k1>
+<k1>STAT1 Transcription Factor</k1>
+<k1>Trans-Activators/physiology</k1>
+<k1>Transfection</k1>
+<ab>The myeloid cell-specific expression and interferon-gamma (IFN-gamma) induction of Fc gamma receptor I (FcgammaRI) requires cooperation between PU.1 and signal transducer and activator of transcription 1 (Stat1) by means of mechanisms that are unknown. We found that PU.1 and Stat1 mediated distinct functions in the activation of FcgammaRI promoter. The basal activity of the natural FcgammaRI promoter was strictly dependent on PU.1, and IFN-gamma induction required both PU.1 and Stat1. Recruitment of TATA-binding protein (TBP) to the FcgammaRI promoter did not replace PU.1 in promoter activation, suggesting that TBP is not sufficient for FcgammaRI activation and that PU.1 mediates additional contacts with basal transcription machinery. In contrast, Stat1 did not interact with basal transcription machinery, but the Stat1-mediated activation of FcgammaRI promoter critically required CREB-binding protein (CBP)/p300. These results define functional cooperativity between PU.1 and Stat1 in FcgammaRI promoter activation, in which PU.1 appears to serve as a bridging factor with the basal transcription machinery and IFN-gamma-mediated induction of transcription occurs through recruitment of CBP/p300 by Stat1.</ab>
+<no>LR: 20081121; JID: 7603509; 0 (DNA-Binding Proteins); 0 (Proto-Oncogene Proteins); 0 (Receptors, IgG); 0 (STAT1 Transcription Factor); 0 (STAT1 protein, human); 0 (Stat1 protein, mouse); 0 (Trans-Activators); 0 (proto-oncogene protein Spi-1); 82115-62-6 (Interferon-gamma); ppublish</no>
+<pp>United States</pp>
+<sn>0006-4971; 0006-4971</sn>
+<ad>Institute of Medical Technology, University of Tampere, Finland.</ad>
+<an>PMID: 12130529</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; AIM; IM</sf>
+<do>10.1182/blood-2001-12-0236</do>
+<ol>Unknown(0)</ol>
+<pmid>12130529</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>677</id>
+<a1>Benchaoui,H. A.</a1>
+<a1>Scott,E. W.</a1>
+<a1>McKellar,Q. A.</a1>
+<t1>Pharmacokinetics of albendazole, albendazole sulfoxide and netobimin in goats</t1>
+<jf>Journal of veterinary pharmacology and therapeutics</jf>
+<jo>J.Vet.Pharmacol.Ther.</jo>
+<yr>1993</yr>
+<fd>Jun</fd>
+<vo>16</vo>
+<is>2</is>
+<sp>237</sp>
+<op>240</op>
+<k1>Absorption</k1>
+<k1>Administration, Oral</k1>
+<k1>Albendazole/analogs &amp; derivatives/pharmacokinetics</k1>
+<k1>Animals</k1>
+<k1>Anthelmintics/pharmacokinetics</k1>
+<k1>Biological Availability</k1>
+<k1>Goats/metabolism</k1>
+<k1>Guanidines/pharmacokinetics</k1>
+<k1>Half-Life</k1>
+<k1>Random Allocation</k1>
+<no>LR: 20061115; JID: 7910920; 0 (Anthelmintics); 0 (Guanidines); 54029-12-8 (albendazole sulfoxide); 54965-21-8 (Albendazole); 88255-01-0 (netobimin); ppublish</no>
+<pp>ENGLAND</pp>
+<sn>0140-7783; 0140-7783</sn>
+<ad>Department of Veterinary Pharmacology, University of Glasgow Veterinary School, Bearsden.</ad>
+<an>PMID: 8345574</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>8345574</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>630</id>
+<a1>Bengtsson,N. E.</a1>
+<a1>Brown,G.</a1>
+<a1>Scott,E. W.</a1>
+<a1>Walter,G. A.</a1>
+<t1>lacZ as a genetic reporter for real-time MRI</t1>
+<jf>Magnetic resonance in medicine : official journal of the Society of Magnetic Resonance in Medicine / Society of Magnetic Resonance in Medicine</jf>
+<jo>Magn.Reson.Med.</jo>
+<yr>2010</yr>
+<fd>Mar</fd>
+<vo>63</vo>
+<is>3</is>
+<sp>745</sp>
+<op>753</op>
+<ab>Molecular imaging based on MRI is currently hampered by the lack of genetic reporters for in vivo imaging. We determined that the commercially available substrate S-Gal can be used to detect genetically engineered beta-galactosidase expressing cells by MRI. The effect and specificity of the reaction between beta-galactosidase and S-Gal on MRI contrast were determined both in vitro and in vivo. beta-galactosidase activity in the presence of S-Gal resulted in enhanced T(2) and T*(2) MR-contrast, which was amplified with increasing magnetic field strengths (4.7-17.6 T) in phantom studies. Using both lacZ(+) transgenic animals and lacZ(+) tissue transplants, we were able to detect labeled cells in live animals in real time. Similar to phantom studies, detection of the labeled cells/tissues in vivo was enhanced at high magnetic fields. These results demonstrate that the genetic reporter, lacZ, can be used as an in vivo marker gene using high-field-strength MRI.</ab>
+<no>CI: (c) 2010; GR: HL78670/HL/NHLBI NIH HHS/United States; GR: R01 HL7528/HL/NHLBI NIH HHS/United States; JID: 8505245; ppublish</no>
+<pb>Wiley-Liss, Inc</pb>
+<pp>United States</pp>
+<sn>1522-2594; 0740-3194</sn>
+<ad>Program in Stem Cell Biology and Regenerative Medicine, University of Florida, Gainesville, Florida 32610, USA.</ad>
+<an>PMID: 20146234</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, N.I.H., Extramural; Research Support, U.S. Gov&#39;t, Non-P.H.S.; IM</sf>
+<do>10.1002/mrm.22235</do>
+<ol>Unknown(0)</ol>
+<pmid>20146234</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>698</id>
+<a1>Bogan,J. A.</a1>
+<a1>McKellar,Q. A.</a1>
+<a1>Mitchell,E. S.</a1>
+<a1>Scott,E. W.</a1>
+<t1>Efficacy of ivermectin against Cooperia curticei infection in sheep</t1>
+<jf>American Journal of Veterinary Research</jf>
+<jo>Am.J.Vet.Res.</jo>
+<yr>1988</yr>
+<fd>Jan</fd>
+<vo>49</vo>
+<is>1</is>
+<sp>99</sp>
+<op>100</op>
+<k1>Animals</k1>
+<k1>Ivermectin/therapeutic use</k1>
+<k1>Nematode Infections/drug therapy/veterinary</k1>
+<k1>Sheep</k1>
+<k1>Sheep Diseases/drug therapy/parasitology</k1>
+<ab>Lambs were inoculated with a single dose of Cooperia curticei. Subcutaneous administration of ivermectin at a dosage of 200 micrograms/kg of body weight resulted in 61.1% and 90.4% anthelmintic efficacy, when measured at 7 and 14 days after treatment, respectively. In the treatment groups, parasites that remained were located more distally in the small intestine than those in the lambs in the control groups.</ab>
+<no>LR: 20031114; JID: 0375011; 70288-86-7 (Ivermectin); ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0002-9645; 0002-9645</sn>
+<ad>Department of Veterinary Pharmacology, University of Glasgow Veterinary School, Scotland.</ad>
+<an>PMID: 3354973</an>
+<la>eng</la>
+<sf>Journal Article; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>3354973</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>650</id>
+<a1>Brooks,H. L.,Jr</a1>
+<a1>Caballero,S.,Jr</a1>
+<a1>Newell,C. K.</a1>
+<a1>Steinmetz,R. L.</a1>
+<a1>Watson,D.</a1>
+<a1>Segal,M. S.</a1>
+<a1>Harrison,J. K.</a1>
+<a1>Scott,E. W.</a1>
+<a1>Grant,M. B.</a1>
+<t1>Vitreous levels of vascular endothelial growth factor and stromal-derived factor 1 in patients with diabetic retinopathy and cystoid macular edema before and after intraocular injection of triamcinolone</t1>
+<jf>Archives of Ophthalmology</jf>
+<jo>Arch.Ophthalmol.</jo>
+<yr>2004</yr>
+<fd>Dec</fd>
+<vo>122</vo>
+<is>12</is>
+<sp>1801</sp>
+<op>1807</op>
+<k1>Aged</k1>
+<k1>Blood-Retinal Barrier</k1>
+<k1>Capillary Permeability</k1>
+<k1>Cells, Cultured</k1>
+<k1>Chemokine CXCL12</k1>
+<k1>Chemokines, CXC/metabolism</k1>
+<k1>Chemotaxis/physiology</k1>
+<k1>Diabetic Retinopathy/drug therapy/metabolism</k1>
+<k1>Endothelium, Vascular/physiology</k1>
+<k1>Enzyme-Linked Immunosorbent Assay</k1>
+<k1>Female</k1>
+<k1>Fluorescein Angiography</k1>
+<k1>Glucocorticoids/administration &amp; dosage</k1>
+<k1>Humans</k1>
+<k1>Injections</k1>
+<k1>Macular Edema/drug therapy/metabolism</k1>
+<k1>Male</k1>
+<k1>Middle Aged</k1>
+<k1>Prospective Studies</k1>
+<k1>Tomography, Optical Coherence</k1>
+<k1>Triamcinolone Acetonide/administration &amp; dosage</k1>
+<k1>Vascular Endothelial Growth Factor A/metabolism</k1>
+<k1>Vitreous Body/metabolism</k1>
+<ab>BACKGROUND: Diffuse macular edema (DME) and/or aberrant neovascularization (NV) can cause vision loss in diabetic retinopathy (DR) and may be modulated by growth factors and chemokines. The chemokine stromal-derived factor 1 (SDF-1) is a potent stimulator of vascular endothelial growth factor (VEGF) expression, the main effector of NV, and the key inducer of vascular permeability associated with DME. Circulating endothelial cell precursors migrating in response to SDF-1 participate in NV. OBJECTIVE: To investigate the relationship between SDF-1 and (VEGF) in vitreous of patients with varying degrees of DR and DME before and after intraocular injection of triamcinolone acetonide, used to treat refractory DME. METHODS: In this prospective study, 36 patients were included and observed for 6 months. Vitreous VEGF and SDF-1 levels were measured by enzyme-linked immunosorbent assay in samples obtained immediately before and 1 month after injection of triamcinolone. RESULTS: Both VEGF and SDF-1 were significantly higher (P&amp;lt;.01) in patients with proliferative DR than in patients with nonproliferative DR. Levels of SDF-1 were markedly increased in patients with DME compared with those without DME. Vascular endothelial growth factor correlated with SDF-1 levels and disease severity (r(2) = 0.88). CONCLUSIONS: Triamcinolone administration resulted in dramatic reductions of VEGF and SDF-1 to nearly undetectable levels, eliminated DME, and caused regression of active NV. Our results support a role for SDF-1 and VEGF in the pathogenesis of the adverse visual consequences of DR and suggest that the elimination of DME with regression and/or initiation of fibrosis of NV after triamcinolone injection may be due to the suppression of VEGF and SDF-1.</ab>
+<no>LR: 20071115; JID: 7706534; 0 (CXCL12 protein, human); 0 (Chemokine CXCL12); 0 (Chemokines, CXC); 0 (Glucocorticoids); 0 (VEGFA protein, human); 0 (Vascular Endothelial Growth Factor A); 76-25-5 (Triamcinolone Acetonide); ppublish</no>
+<pp>United States</pp>
+<sn>0003-9950; 0003-9950</sn>
+<ad>Southern Vitreoretinal Association, Tallahassee, Fla, USA.</ad>
+<an>PMID: 15596583; 122/12/1801 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; AIM; IM</sf>
+<do>10.1001/archopht.122.12.1801</do>
+<ol>Unknown(0)</ol>
+<pmid>15596583</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>649</id>
+<a1>Butler,J. M.</a1>
+<a1>Guthrie,S. M.</a1>
+<a1>Koc,M.</a1>
+<a1>Afzal,A.</a1>
+<a1>Caballero,S.</a1>
+<a1>Brooks,H. L.</a1>
+<a1>Mames,R. N.</a1>
+<a1>Segal,M. S.</a1>
+<a1>Grant,M. B.</a1>
+<a1>Scott,E. W.</a1>
+<t1>SDF-1 is both necessary and sufficient to promote proliferative retinopathy</t1>
+<jf>The Journal of clinical investigation</jf>
+<jo>J.Clin.Invest.</jo>
+<yr>2005</yr>
+<fd>Jan</fd>
+<vo>115</vo>
+<is>1</is>
+<sp>86</sp>
+<op>93</op>
+<k1>Adrenal Cortex Hormones/therapeutic use</k1>
+<k1>Adult</k1>
+<k1>Animals</k1>
+<k1>Antibodies/immunology/pharmacology</k1>
+<k1>Cell Movement</k1>
+<k1>Cell Proliferation</k1>
+<k1>Cells, Cultured</k1>
+<k1>Chemokine CXCL12</k1>
+<k1>Chemokines, CXC/immunology/metabolism/pharmacology</k1>
+<k1>Diabetic Retinopathy/drug therapy/metabolism/pathology</k1>
+<k1>Humans</k1>
+<k1>Ischemia/enzymology/pathology</k1>
+<k1>Mice</k1>
+<k1>Mice, Inbred C57BL</k1>
+<k1>Middle Aged</k1>
+<k1>Retinal Neovascularization/enzymology/immunology/pathology</k1>
+<k1>Titrimetry</k1>
+<k1>Triamcinolone/therapeutic use</k1>
+<ab>Diabetic retinopathy is the leading cause of blindness in working-age adults. It is caused by oxygen starvation in the retina inducing aberrant formation of blood vessels that destroy retinal architecture. In humans, vitreal stromal cell-derived factor-1 (SDF-1) concentration increases as proliferative diabetic retinopathy progresses. Treatment of patients with triamcinolone decreases SDF-1 levels in the vitreous, with marked disease improvement. SDF-1 induces human retinal endothelial cells to increase expression of VCAM-1, a receptor for very late antigen-4 found on many hematopoietic progenitors, and reduce tight cellular junctions by reducing occludin expression. Both changes would serve to recruit hematopoietic and endothelial progenitor cells along an SDF-1 gradient. We have shown, using a murine model of proliferative adult retinopathy, that the majority of new vessels formed in response to oxygen starvation originate from hematopoietic stem cell-derived endothelial progenitor cells. We now show that the levels of SDF-1 found in patients with proliferative retinopathy induce retinopathy in our murine model. Intravitreal injection of blocking antibodies to SDF-1 prevented retinal neovascularization in our murine model, even in the presence of exogenous VEGF. Together, these data demonstrate that SDF-1 plays a major role in proliferative retinopathy and may be an ideal target for the prevention of proliferative retinopathy.</ab>
+<no>LR: 20091118; GR: EY12601/EY/NEI NIH HHS/United States; GR: F31 EY015394-01/EY/NEI NIH HHS/United States; GR: F31 EY015394-02/EY/NEI NIH HHS/United States; GR: HL70738/HL/NHLBI NIH HHS/United States; GR: HL70813/HL/NHLBI NIH HHS/United States; GR: R01 HL070738-01/HL/NHLBI NIH HHS/United States; GR: R01 HL070738-02/HL/NHLBI NIH HHS/United States; GR: R01 HL070738-03/HL/NHLBI NIH HHS/United States; GR: T32AR07603/AR/NIAMS NIH HHS/United States; JID: 7802877; 0 (Adrenal Cortex Hormones); 0 (Antibodies); 0 (CXCL12 protein, human); 0 (Chemokine CXCL12); 0 (Chemokines, CXC); 0 (Cxcl12 protein, mouse); 124-94-7 (Triamcinolone); OID: NLM: PMC539202; 2004/07/29 [received]; 2004/10/20 [accepted]; ppublish</no>
+<pp>United States</pp>
+<sn>0021-9738; 0021-9738</sn>
+<ad>Program in Stem Cell Biology and Regenerative Medicine, University of Florida Shands Cancer Center, Gainesville, Florida, USA.</ad>
+<an>PMID: 15630447</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, P.H.S.; AIM; IM</sf>
+<do>10.1172/JCI22869</do>
+<ol>Unknown(0)</ol>
+<pmid>15630447</pmid>
+<pmcid>PMC539202</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>641</id>
+<a1>Buzzeo,M. P.</a1>
+<a1>Scott,E. W.</a1>
+<a1>Cogle,C. R.</a1>
+<t1>The hunt for cancer-initiating cells: a history stemming from leukemia</t1>
+<jf>Leukemia : official journal of the Leukemia Society of America, Leukemia Research Fund, U.K</jf>
+<jo>Leukemia</jo>
+<yr>2007</yr>
+<fd>Aug</fd>
+<vo>21</vo>
+<is>8</is>
+<sp>1619</sp>
+<op>1627</op>
+<k1>Humans</k1>
+<k1>Leukemia/pathology</k1>
+<k1>Neoplastic Stem Cells</k1>
+<ab>Conventional cancer therapies are plagued by disease relapses due to incomplete eradication of cancer-initiating cells. Evidence for cancer-initiating cells originally arose from studies in hematology and leukemia. Lessons learned from hematopoietic stem cells laid the bedrock for understanding how leukemic cells self-renew and remain in immature states. Decades later, leukemia-initiating cell techniques are now being applied to the field of solid tumors such as brain, breast, bone, colon, pancreas, lung and prostate cancer, with several cancer-initiating cell efforts led by hematologists. Different isolation techniques enriching for primitive cancer-initiating cells have been developed and are described in this review. Although the concept of cancer-initiating cells arose from studies in normal tissue stem cells, differences exist between neoplastic-initiating clones and their normal counterparts. Several efforts have uncovered aberrant molecular pathways and niche interactions unique to cancer-initiating cells. Efforts to exploit these pathways and interactions could ultimately lead to complete eradication of cancers.</ab>
+<no>LR: 20071115; JID: 8704895; RF: 74; 2007/05/31 [aheadofprint]; ppublish</no>
+<pp>England</pp>
+<sn>0887-6924; 0887-6924</sn>
+<ad>Division of Hematology/Oncology, Department of Medicine, University of Florida, Gainesville, FL 32610-0277, USA.</ad>
+<an>PMID: 17541397; 2404768 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Review; IM</sf>
+<do>10.1038/sj.leu.2404768</do>
+<wp>20070531</wp>
+<ol>Unknown(0)</ol>
+<pmid>17541397</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>632</id>
+<a1>Carpentino,J. E.</a1>
+<a1>Hynes,M. J.</a1>
+<a1>Appelman,H. D.</a1>
+<a1>Zheng,T.</a1>
+<a1>Steindler,D. A.</a1>
+<a1>Scott,E. W.</a1>
+<a1>Huang,E. H.</a1>
+<t1>Aldehyde dehydrogenase-expressing colon stem cells contribute to tumorigenesis in the transition from colitis to cancer</t1>
+<jf>Cancer research</jf>
+<jo>Cancer Res.</jo>
+<yr>2009</yr>
+<fd>Oct 15</fd>
+<vo>69</vo>
+<is>20</is>
+<sp>8208</sp>
+<op>8215</op>
+<k1>Adenocarcinoma/enzymology/etiology/pathology</k1>
+<k1>Aldehyde Dehydrogenase/metabolism</k1>
+<k1>Animals</k1>
+<k1>Colitis/enzymology/pathology</k1>
+<k1>Colon/enzymology/pathology</k1>
+<k1>Colonic Neoplasms/enzymology/etiology/pathology</k1>
+<k1>Cytokines/metabolism</k1>
+<k1>Flow Cytometry</k1>
+<k1>Fluorescent Antibody Technique</k1>
+<k1>Humans</k1>
+<k1>Immunoenzyme Techniques</k1>
+<k1>Mice</k1>
+<k1>Mice, Inbred NOD</k1>
+<k1>Mice, SCID</k1>
+<k1>Neoplastic Stem Cells/enzymology/pathology</k1>
+<k1>Precancerous Conditions/enzymology/etiology/pathology</k1>
+<k1>Protein Array Analysis</k1>
+<k1>Spheroids, Cellular/enzymology/pathology</k1>
+<k1>Stromal Cells/enzymology/pathology</k1>
+<k1>Xenograft Model Antitumor Assays</k1>
+<ab>Patients with chronic ulcerative colitis are at increased risk of developing colorectal cancer. Although current hypotheses suggest that sporadic colorectal cancer is due to inability to control cancer stem cells, the cancer stem cell hypothesis has not yet been validated in colitis-associated cancer. Furthermore, the identification of the colitis to cancer transition is challenging. We recently showed that epithelial cells with the increased expression of aldehyde dehydrogenase in sporadic colon cancer correlate closely with tumor-initiating ability. We sought to determine whether ALDH can be used as a marker to isolate tumor-initiating populations from patients with chronic ulcerative colitis. We used fluorescence-activated cell sorting to identify precursor colon cancer stem cells from colitis patients and report both their transition to cancerous stem cells in xenografting studies as well as their ability to generate spheres in vitro. Similar to sporadic colon cancer, these colitis-derived tumors were capable of propagation as sphere cultures. However, unlike the origins of sporadic colon cancer, the primary colitic tissues did not express any histologic evidence of dysplasia. To elucidate a potential mechanism for our findings, we compared the stroma of these different environments and determined that at least one paracrine factor is up-regulated in the inflammatory and malignant stroma compared with resting, normal stroma. These data link colitis and cancer identifying potential tumor-initiating cells from colitic patients, suggesting that sphere and/or xenograft formation will be useful to survey colitic patients at risk of developing cancer.</ab>
+<no>GR: HL 75258/HL/NHLBI NIH HHS/United States; GR: K08 CA91975/CA/NCI NIH HHS/United States; GR: R01S HL 070738/HL/NHLBI NIH HHS/United States; GR: T32 DK 074367/DK/NIDDK NIH HHS/United States; JID: 2984705R; 0 (Cytokines); EC 1.2.1.3 (Aldehyde Dehydrogenase); NIHMS140664; OID: NLM: NIHMS140664 [Available on 10/15/10]; OID: NLM: PMC2776663 [Available on 10/15/10]; 2009/10/06 [aheadofprint]; ppublish</no>
+<pp>United States</pp>
+<sn>1538-7445; 0008-5472</sn>
+<ad>McKnight Brain Institute, University of Florida, Gainesville, Florida 32609, USA.</ad>
+<an>PMID: 19808966; 0008-5472.CAN-09-1132 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, N.I.H., Extramural; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<do>10.1158/0008-5472.CAN-09-1132</do>
+<wp>20091006</wp>
+<ol>Unknown(0)</ol>
+<pmid>19808966</pmid>
+<pmcid>PMC2776663</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>685</id>
+<a1>Carter,R. L.</a1>
+<a1>Ritz,L. A.</a1>
+<a1>Shank,C. P.</a1>
+<a1>Scott,E. W.</a1>
+<a1>Sypert,G. W.</a1>
+<t1>Correlative electrophysiological and behavioral evaluation following L5 lesions in the cat: a model of spasticity</t1>
+<jf>Experimental neurology</jf>
+<jo>Exp.Neurol.</jo>
+<yr>1991</yr>
+<fd>Nov</fd>
+<vo>114</vo>
+<is>2</is>
+<sp>206</sp>
+<op>215</op>
+<k1>Animals</k1>
+<k1>Cats</k1>
+<k1>Denervation</k1>
+<k1>Electrophysiology</k1>
+<k1>Hindlimb/innervation/physiopathology</k1>
+<k1>Muscle Spasticity/physiopathology</k1>
+<k1>Spinal Cord/physiopathology</k1>
+<ab>The present work developed an animal model of hindlimb spasticity by analyzing the electrophysiological and behavioral consequences of L5 spinal cord lesions in cats. In chronically lesioned animals (1 to 6 months), the L7-S1 dorsal roots were stimulated and evoked potentials were recorded from hindlimb flexor and extensor motor nerves. Following lateral hemisection, the monosynaptic responses were 2-5 times larger (for voltage-time integral and for amplitude) on the ipsilateral side than those from the contralateral side or from control animals. Half-widths, rise-times, and latencies of the monosynaptic responses were the same on both sides. Behavioral signs of spasticity, including hypertonia and increased deep tendon reflexes, were displayed from the ipsilateral hindlimb following lateral hemisection. With lateral hemisection or with extensive dorsal quadrant lesions, hopping and proprioceptive placing reflexes were abolished; these behavioral observations impart functional significance to physiological and anatomical studies of a mid-lumbar center considered to be important for movement control. The present model represents the first demonstration of a statistically significant correlation between electrophysiological and behavioral observations of spasticity for animals with a lateral hemisection. These correlations demonstrate the utility of behavioral screening of animals for subsequent neurophysiological analyses. This facilitates the investigation of cellular events underlying spasticity and of strategies for its relief with tissue repair techniques affecting local circuitry involved in spasticity.</ab>
+<no>LR: 20071114; GR: NS23683/NS/NINDS NIH HHS/United States; JID: 0370712; ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0014-4886; 0014-4886</sn>
+<ad>Department of Neurosurgery, University of Florida College of Medicine, Gainesville 32610-0265.</ad>
+<an>PMID: 1748195; 0014-4886(91)90037-D [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, Non-P.H.S.; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>1748195</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>662</id>
+<a1>Cogle,C. R.</a1>
+<a1>Guthrie,S. M.</a1>
+<a1>Sanders,R. C.</a1>
+<a1>Allen,W. L.</a1>
+<a1>Scott,E. W.</a1>
+<a1>Petersen,B. E.</a1>
+<t1>An overview of stem cell research and regulatory issues</t1>
+<jf>Mayo Clinic proceedings.Mayo Clinic</jf>
+<jo>Mayo Clin.Proc.</jo>
+<yr>2003</yr>
+<fd>Aug</fd>
+<vo>78</vo>
+<is>8</is>
+<sp>993</sp>
+<op>1003</op>
+<k1>Animals</k1>
+<k1>Cell Differentiation</k1>
+<k1>Hematopoietic Stem Cell Transplantation</k1>
+<k1>Humans</k1>
+<k1>Research/legislation &amp; jurisprudence/standards/trends</k1>
+<k1>Stem Cells/cytology/physiology</k1>
+<k1>United States</k1>
+<k1>Biomedical and Behavioral Research</k1>
+<k1>Genetics and Reproduction</k1>
+<ab>Stem cells are noted for their ability to self-renew and differentiate into a variety of cell types. Some stem cells, described as totipotent cells, have tremendous capacity to self-renew and differentiate. Embryonic stem cells have pluripotent capacity, able to form tissues of all 3 germ layers but unable to form an entire live being. Research with embryonic stem cells has enabled investigators to make substantial gains in developmental biology, therapeutic tissue engineering, and reproductive cloning. However, with these remarkable opportunities many ethical challenges arise, which are largely based on concerns for safety, efficacy, resource allocation, and methods of harvesting stem cells. Discussing the moral and legal status of the human embryo is critical to the debate on stem cell ethics. Religious perspectives and political events leading to regulation of stem cell research are presented and discussed, with special attention directed toward the use of embryonic stem cells for therapeutic and reproductive cloning. Adult stem cells were previously thought to have a restricted capacity to differentiate; however, several reports have described their plasticity potential. Furthermore, there have been close ties between the behavior of stem cells and cancer cells. True eradication of cancer will require a deeper understanding of stem cell biology. This article was written to inform medical scientists and practicing clinicians across the spectrum of medical education about the research and regulatory issues affecting the future of stem cell therapy.</ab>
+<no>LR: 20071029; JID: 0405543; RF: 122; OID: KIE: 121060; OID: NRCBL: VF 15.1; OTO: KIE; GN: KIE: KIE Bib: embryo and fetal research; ppublish</no>
+<pp>United States</pp>
+<sn>0025-6196; 0025-6196</sn>
+<ad>Program in Stem Cell Biology and Regenerative Medicine, University of Florida Shands Cancer Center, Gainesville 32610, USA.</ad>
+<an>PMID: 12911047</an>
+<la>eng</la>
+<sf>Journal Article; Review; AIM; E; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>12911047</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>652</id>
+<a1>Cogle,C. R.</a1>
+<a1>Scott,E. W.</a1>
+<t1>The hemangioblast: cradle to clinic</t1>
+<jf>Experimental hematology</jf>
+<jo>Exp.Hematol.</jo>
+<yr>2004</yr>
+<fd>Oct</fd>
+<vo>32</vo>
+<is>10</is>
+<sp>885</sp>
+<op>890</op>
+<k1>Animals</k1>
+<k1>Blood Vessels/cytology/embryology/growth &amp; development</k1>
+<k1>Embryo, Mammalian/blood supply/cytology</k1>
+<k1>Endothelium, Vascular/cytology</k1>
+<k1>Hematopoietic Stem Cell Transplantation</k1>
+<k1>Hematopoietic Stem Cells/cytology</k1>
+<k1>Humans</k1>
+<k1>Mesoderm/cytology</k1>
+<k1>Neovascularization, Physiologic</k1>
+<k1>Stem Cells/cytology</k1>
+<ab>In the embryo, the mesodermal precursor cell, the hemangioblast, gives rise to blood and blood vessels. During adult life, the hematopoietic stem cell (HSC) also exhibits this bipotential hemangioblast activity, serving as a rich source for circulating endothelial progenitor cells (EPCs). As a result of this finding, many questions have arisen as to whether the adult HSC is involved in the day-to-day maintenance of tissues, what mechanisms influence this adult hemangioblast activity, and whether blood vessels harbor hematopoietic capability. In answering these questions, the power of adult hemangioblast activity could be harnessed to evaluate and treat diseases such as myocardial infarction, stroke, cancer, and blindness. Enumeration of activated EPCs aims to alert the patient as to the severity of their disease, predict response to therapy, and gauge for relapse potential. Identification of hemangioblast stimulatory or inhibitory cues would allow physicians to regulate neovascularization in their patient, augmenting vessel production in situations of hypo-proliferation such as wound healing and inhibiting vessel production in situations of hyper-proliferation such as cancer. Finally, given that EPCs home to sites of new blood vessel growth, genetic engineering of harvested HSC or EPC offers the potential to deliver vasoregulatory factors directly to sites of neovascularization.</ab>
+<no>LR: 20071115; JID: 0402313; RF: 43; 2004/07/08 [received]; 2004/07/26 [revised]; 2004/07/26 [accepted]; ppublish</no>
+<pp>Netherlands</pp>
+<sn>0301-472X; 0301-472X</sn>
+<ad>Program in Stem Cell Biology and Regenerative Medicine, University of Florida Shands Cancer Center, Gainesville, Fla., USA.</ad>
+<an>PMID: 15504543; S0301-472X(04)00258-9 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Review; IM</sf>
+<do>10.1016/j.exphem.2004.07.014</do>
+<ol>Unknown(0)</ol>
+<pmid>15504543</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>642</id>
+<a1>Cogle,C. R.</a1>
+<a1>Theise,N. D.</a1>
+<a1>Fu,D.</a1>
+<a1>Ucar,D.</a1>
+<a1>Lee,S.</a1>
+<a1>Guthrie,S. M.</a1>
+<a1>Lonergan,J.</a1>
+<a1>Rybka,W.</a1>
+<a1>Krause,D. S.</a1>
+<a1>Scott,E. W.</a1>
+<t1>Bone marrow contributes to epithelial cancers in mice and humans as developmental mimicry</t1>
+<jf>Stem cells (Dayton, Ohio)</jf>
+<jo>Stem Cells</jo>
+<yr>2007</yr>
+<fd>Aug</fd>
+<vo>25</vo>
+<is>8</is>
+<sp>1881</sp>
+<op>1887</op>
+<k1>Adenoma/etiology/pathology</k1>
+<k1>Adult</k1>
+<k1>Animals</k1>
+<k1>Bone Marrow Cells/physiology</k1>
+<k1>Cell Transformation, Neoplastic</k1>
+<k1>Disease Progression</k1>
+<k1>Female</k1>
+<k1>Hematopoietic Stem Cell Transplantation/adverse effects</k1>
+<k1>Humans</k1>
+<k1>Intestinal Neoplasms/etiology/pathology</k1>
+<k1>Lung Neoplasms/etiology/pathology</k1>
+<k1>Male</k1>
+<k1>Mice</k1>
+<k1>Mice, Inbred C57BL</k1>
+<k1>Mice, Transgenic</k1>
+<k1>Middle Aged</k1>
+<k1>Molecular Mimicry</k1>
+<k1>Neoplasms, Glandular and Epithelial/etiology/pathology</k1>
+<ab>Bone marrow cells have the capacity to contribute to distant organs. We show that marrow also contributes to epithelial neoplasias of the small bowel, colon, and lung, but not the skin. In particular, epithelial neoplasias found in patients after hematopoietic cell transplantations demonstrate that human marrow incorporates into neoplasias by adopting the phenotype of the surrounding neoplastic environment. To more rigorously evaluate marrow contribution to epithelial cancer, we employed mouse models of intestinal and lung neoplasias, which revealed specifically that the hematopoietic stem cell and its progeny incorporate within cancer. Furthermore, this marrow involvement in epithelial cancer does not appear to occur by induction of stable fusion. Whereas previous claims have been made that marrow can serve as a direct source of epithelial neoplasia, our results indicate a more cautionary note, that marrow contributes to cancer as a means of developmental mimicry. Disclosure of Potential Conflicts of Interest is found at the end of this article.</ab>
+<no>LR: 20071203; GR: K08 DK067359/DK/NIDDK NIH HHS/United States; JID: 9304532; 2007/05/03 [aheadofprint]; ppublish</no>
+<pp>United States</pp>
+<sn>1066-5099; 1066-5099</sn>
+<ad>Program in Stem Cell Biology and Regenerative Medicine, University of Florida, ARB R4-216B, Gainesville, FL 32610-0277, USA. c@ufl.edu</ad>
+<an>PMID: 17478582; 2007-0163 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, N.I.H., Extramural; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<do>10.1634/stemcells.2007-0163</do>
+<wp>20070503</wp>
+<ol>Unknown(0)</ol>
+<pmid>17478582</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>661</id>
+<a1>Cogle,C. R.</a1>
+<a1>Wainman,D. A.</a1>
+<a1>Jorgensen,M. L.</a1>
+<a1>Guthrie,S. M.</a1>
+<a1>Mames,R. N.</a1>
+<a1>Scott,E. W.</a1>
+<t1>Adult human hematopoietic cells provide functional hemangioblast activity</t1>
+<jf>Blood</jf>
+<jo>Blood</jo>
+<yr>2004</yr>
+<fd>Jan 1</fd>
+<vo>103</vo>
+<is>1</is>
+<sp>133</sp>
+<op>135</op>
+<k1>Adult</k1>
+<k1>Animals</k1>
+<k1>Chimera</k1>
+<k1>Fetal Blood/cytology</k1>
+<k1>Hematopoietic Stem Cell Transplantation</k1>
+<k1>Hematopoietic Stem Cells/cytology</k1>
+<k1>Humans</k1>
+<k1>Mice</k1>
+<k1>Mice, Inbred NOD</k1>
+<k1>Mice, SCID</k1>
+<k1>Models, Biological</k1>
+<k1>Neovascularization, Physiologic</k1>
+<k1>Retinal Vessels/cytology</k1>
+<k1>Transplantation, Heterologous</k1>
+<ab>The murine adult hematopoietic stem cell is able to function as a hemangioblast, contributing both to blood reconstitution and to blood vessel repair in response to ischemic injury. We developed a novel mouse xenotransplantation model of retinal neovascularization to test human hematopoietic cell plasticity. Immunocompromised nonobese diabetic (NOD)/scid mice underwent myeloablative conditioning and transplantation with human CD34+ umbilical cord blood. After multilineage reconstitution was established, retinal ischemia was induced to promote neovascularization. Our results demonstrate human retinal neovascularization, thus revealing the functional hemangioblast activity of human hematopoietic cells.</ab>
+<no>LR: 20071114; GR: CA72769/CA/NCI NIH HHS/United States; GR: HL70738/HL/NHLBI NIH HHS/United States; GR: HL70813/HL/NHLBI NIH HHS/United States; GR: T32CA09126-25/CA/NCI NIH HHS/United States; JID: 7603509; 2003/09/11 [aheadofprint]; ppublish</no>
+<pp>United States</pp>
+<sn>0006-4971; 0006-4971</sn>
+<ad>Program in Stem Cell Biology and Regenerative Medicine, University of Florida Shands Cancer Center, Gainesville, FA 32610-0232, USA.</ad>
+<an>PMID: 12969964; 2003-06-2101 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, P.H.S.; AIM; IM</sf>
+<do>10.1182/blood-2003-06-2101</do>
+<wp>20030911</wp>
+<ol>Unknown(0)</ol>
+<pmid>12969964</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>655</id>
+<a1>Cogle,C. R.</a1>
+<a1>Yachnis,A. T.</a1>
+<a1>Laywell,E. D.</a1>
+<a1>Zander,D. S.</a1>
+<a1>Wingard,J. R.</a1>
+<a1>Steindler,D. A.</a1>
+<a1>Scott,E. W.</a1>
+<t1>Bone marrow transdifferentiation in brain after transplantation: a retrospective study</t1>
+<jf>Lancet</jf>
+<jo>Lancet</jo>
+<yr>2004</yr>
+<fd>May 1</fd>
+<vo>363</vo>
+<is>9419</is>
+<sp>1432</sp>
+<op>1437</op>
+<k1>Adult</k1>
+<k1>Astrocytes/cytology</k1>
+<k1>Bone Marrow Cells/cytology</k1>
+<k1>Bone Marrow Transplantation</k1>
+<k1>Brain/cytology</k1>
+<k1>Cell Differentiation</k1>
+<k1>Chromosomes, Human, X</k1>
+<k1>Chromosomes, Human, Y</k1>
+<k1>Female</k1>
+<k1>Hematopoietic Stem Cell Transplantation</k1>
+<k1>Hematopoietic Stem Cells/cytology</k1>
+<k1>Hippocampus/cytology</k1>
+<k1>Humans</k1>
+<k1>Immunohistochemistry</k1>
+<k1>In Situ Hybridization, Fluorescence</k1>
+<k1>Male</k1>
+<k1>Middle Aged</k1>
+<k1>Neuroglia/cytology</k1>
+<k1>Neurons/cytology</k1>
+<k1>Retrospective Studies</k1>
+<k1>Transplantation Chimera</k1>
+<ab>BACKGROUND: End-organ repair by adult haemopoietic stem cells is under great scrutiny with investigators challenging the notion of these cells&amp;#39; plasticity. Some investigations of animals and short-term human bone marrow transplants suggest that bone marrow can repair brain. We looked for evidence of clinically relevant marrow-derived restorative neurogenesis: long-term, multilineage, neural engraftment that is not the result of cell-fusion events. METHODS: We examined autopsy brain specimens from three sex-mismatched female bone-marrow-transplantation patients, a female control, and a male control. We did immunohistochemistry, fluorescence in-situ hybridisation, and tissue analysis to look for multilineage, donor-derived neurogenesis. FINDINGS: Hippocampal cells containing a Y chromosome were present up to 6 years post-transplant in all three patients. Transgender neurons accounted for 1% of all neurons; there was no evidence of fusion events since only one X chromosome was present. Moreover, transgender astrocytes and microglia made up 1-2% of all glial cells. INTERPRETATION: Postnatal human neuropoiesis happens, and human haemopoietic cells can transdifferentiate into neurons, astrocytes, and microglia in a long-term setting without fusing. Transplantable human haemopoietic cells could serve as a therapeutic source for long-term regenerative neuropoiesis.</ab>
+<no>LR: 20071114; GR: HL70143/HL/NHLBI NIH HHS/United States; GR: HL70738/HL/NHLBI NIH HHS/United States; GR: HL70813/HL/NHLBI NIH HHS/United States; GR: NS37556/NS/NINDS NIH HHS/United States; GR: T32CA09126-25/CA/NCI NIH HHS/United States; JID: 2985213R; ppublish</no>
+<pp>England</pp>
+<sn>1474-547X; 0140-6736</sn>
+<ad>Program in Stem Cell Biology and Regenerative Medicine, University of Florida Shands Cancer Center, Gainesville, FL 32610, USA.</ad>
+<an>PMID: 15121406; S0140-6736(04)16102-3 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, P.H.S.; AIM; IM</sf>
+<do>10.1016/S0140-6736(04)16102-3</do>
+<ol>Unknown(0)</ol>
+<pmid>15121406</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>670</id>
+<a1>Fisher,R. C.</a1>
+<a1>Lovelock,J. D.</a1>
+<a1>Scott,E. W.</a1>
+<t1>A critical role for PU.1 in homing and long-term engraftment by hematopoietic stem cells in the bone marrow</t1>
+<jf>Blood</jf>
+<jo>Blood</jo>
+<yr>1999</yr>
+<fd>Aug 15</fd>
+<vo>94</vo>
+<is>4</is>
+<sp>1283</sp>
+<op>1290</op>
+<k1>Animals</k1>
+<k1>Bone Marrow/pathology/physiology</k1>
+<k1>Cell Differentiation/physiology</k1>
+<k1>Cell Movement/physiology</k1>
+<k1>Hematopoiesis/physiology</k1>
+<k1>Hematopoietic Stem Cell Transplantation</k1>
+<k1>Hematopoietic Stem Cells/pathology/physiology</k1>
+<k1>Mice</k1>
+<k1>Mice, Mutant Strains</k1>
+<k1>Proto-Oncogene Proteins/physiology</k1>
+<k1>Trans-Activators/physiology</k1>
+<ab>We have previously demonstrated that PU.1 is required for the production of lymphoid and myeloid, but not of erythroid progenitors in the fetal liver. In this study, competitive reconstitution assays show that E14.5 PU.1(-/-) hematopoietic progenitors (HPC) fail to sustain definitive/adult erythropoiesis or to contribute to the lymphoid and myeloid lineages. PU.1(-/-) HPC are unable to respond synergistically to erythropoietin plus stem cell factor and have reduced expression of c-kit, which may explain the erythroid defect. Fluorescently labeled, PU.1(-/-), AA4.1(+), fetal liver HPC were transferred into irradiated recipients, where they demonstrated a severely impaired ability to home to and colonize the bone marrow. PU.1(-/-) HPC were found to lack integrins alpha(4) (VLA-4/CD49d), alpha(5) (VLA-5/CD49e), and CD11b (alpha(M)). Collectively, this study has shown that PU.1 plays an important role in controlling migration of hematopoietic progenitors to the bone marrow and the establishment of long-term multilineage hematopoiesis.</ab>
+<no>LR: 20071114; GR: CA72769/CA/NCI NIH HHS/United States; GR: HL58716/HL/NHLBI NIH HHS/United States; JID: 7603509; 0 (Proto-Oncogene Proteins); 0 (Trans-Activators); 0 (proto-oncogene protein Spi-1); ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0006-4971; 0006-4971</sn>
+<ad>Institute for Human Gene Therapy, University of Pennsylvania, Philadelphia, PA, USA.</ad>
+<an>PMID: 10438716</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; AIM; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>10438716</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>671</id>
+<a1>Fisher,R. C.</a1>
+<a1>Olson,M. C.</a1>
+<a1>Pongubala,J. M.</a1>
+<a1>Perkel,J. M.</a1>
+<a1>Atchison,M. L.</a1>
+<a1>Scott,E. W.</a1>
+<a1>Simon,M. C.</a1>
+<t1>Normal myeloid development requires both the glutamine-rich transactivation domain and the PEST region of transcription factor PU.1 but not the potent acidic transactivation domain</t1>
+<jf>Molecular and cellular biology</jf>
+<jo>Mol.Cell.Biol.</jo>
+<yr>1998</yr>
+<fd>Jul</fd>
+<vo>18</vo>
+<is>7</is>
+<sp>4347</sp>
+<op>4357</op>
+<k1>3T3 Cells</k1>
+<k1>Animals</k1>
+<k1>Binding Sites</k1>
+<k1>Cell Differentiation</k1>
+<k1>Glutamine/genetics/physiology</k1>
+<k1>Humans</k1>
+<k1>Macrophages/cytology</k1>
+<k1>Mice</k1>
+<k1>Proto-Oncogene Proteins/genetics/physiology</k1>
+<k1>Trans-Activators/genetics/physiology</k1>
+<k1>Transcriptional Activation</k1>
+<ab>Gene targeting of transcription factor PU.1 results in an early block to fetal hematopoiesis, with no detectable lymphoid or myeloid cells produced in mouse embryos. Furthermore, PU.1(-/-) embryonic stem (ES) cells fail to differentiate into Mac-1(+) and F4/80(+) macrophages in vitro. We have previously shown that a PU.1 transgene under the control of its own promoter restores the ability of PU. 1(-/-) ES cells to differentiate into macrophages. In this study, we take advantage of our PU.1(-/-) ES cell rescue system to genetically test which previously identified PU.1 functional domains are necessary for the development of mature macrophages. PU.1 functional domains include multiple N-terminal acidic and glutamine-rich transactivation domains, a PEST domain, several serine phosphorylation sites, and a C-terminal Ets DNA binding domain, all delineated and characterized by using standard biochemical and transactivational assays. By using the production of mature macrophages as a functional readout in our assay system, we have established that the glutamine-rich transactivation domain, a portion of the PEST domain, and the DNA binding domain are required for myelopoiesis. Deletion of three acidic domains, which exhibit potent transactivation potential in vitro, had no effect on the ability of PU.1 to promote macrophage development. Furthermore, mutagenesis of four independent sites of serine phosphorylation also had no effect on myelopoiesis. Collectively, our results indicate that PU.1 interacts with important regulatory proteins during macrophage development via the glutamine-rich and PEST domains. The PU.1(-/-) ES cell rescue system represents a powerful, in vitro strategy to functionally map domains of PU.1 essential for normal hematopoiesis and the generation of mature macrophages.</ab>
+<no>LR: 20091118; GR: CA72769/CA/NCI NIH HHS/United States; GR: HL52094/HL/NHLBI NIH HHS/United States; GR: KL58716/PHS HHS/United States; GR: etc.; JID: 8109087; 0 (Proto-Oncogene Proteins); 0 (Trans-Activators); 0 (proto-oncogene protein Spi-1); 56-85-9 (Glutamine); OID: NLM: PMC109018; ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0270-7306; 0270-7306</sn>
+<ad>Institute for Human Gene Therapy, University of Pennsylvania, Philadelphia, Pennsylvania 19104, USA.</ad>
+<an>PMID: 9632818</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>9632818</pmid>
+<pmcid>PMC109018</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>672</id>
+<a1>Fisher,R. C.</a1>
+<a1>Scott,E. W.</a1>
+<t1>Role of PU.1 in hematopoiesis</t1>
+<jf>Stem cells (Dayton, Ohio)</jf>
+<jo>Stem Cells</jo>
+<yr>1998</yr>
+<vo>16</vo>
+<is>1</is>
+<sp>25</sp>
+<op>37</op>
+<k1>Animals</k1>
+<k1>Gene Expression</k1>
+<k1>Hematopoiesis/physiology</k1>
+<k1>Proto-Oncogene Proteins/physiology</k1>
+<k1>Trans-Activators/physiology</k1>
+<ab>The ETS-family transcription factor PU.1 is expressed in hematopoietic tissues, with significant levels of expression in the monocytic and B lymphocytic lineages. PU.1 is identical to the Spi-1 proto-oncogene which is associated with the generation of spleen focus-forming virus-induced erythroleukemias. An extensive body of in vitro gene regulatory studies has implicated PU.1 as an important, versatile regulator of B lymphoid- and myeloid-specific genes. The first half of the review is designed to coalesce data generated from studies examining the two PU.1 &amp;quot;knockout&amp;quot; animals, which have prompted a reevaluation of the proposed function of PU.1 during hematopoiesis. During hematopoiesis, PU.1 is required for development along the lymphoid and myeloid lineages but needs to be downregulated during erythropoiesis. These unique functional characteristics of PU.1 will be exemplified by contrasting the function of PU.1 with other transcription factors required during fetal hematopoiesis. The second half of this review will reexamine the functional characteristics of PU.1 deduced from traditional biochemical and transactivation assays in light of recent experiments examining the functional behavior of PU.1 in an embryonic stem cell in vitro differentiation system. Working models of how PU.1 regulates promoter and enhancer regions in the B cell and myeloid lineage will be presented and discussed.</ab>
+<no>LR: 20071114; GR: CA 72769/CA/NCI NIH HHS/United States; JID: 9304532; 0 (Proto-Oncogene Proteins); 0 (Trans-Activators); 0 (proto-oncogene protein Spi-1); RF: 103; ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>1066-5099; 1066-5099</sn>
+<ad>Institute for Human Therapy, University of Pennsylvania, Philadelphia 19104-6100, USA.</ad>
+<an>PMID: 9474745</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; Review; IM</sf>
+<do>10.1002/stem.160025</do>
+<ol>Unknown(0)</ol>
+<pmid>9474745</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>659</id>
+<a1>Fisher,R. C.</a1>
+<a1>Slayton,W. B.</a1>
+<a1>Chien,C.</a1>
+<a1>Guthrie,S. M.</a1>
+<a1>Bray,C.</a1>
+<a1>Scott,E. W.</a1>
+<t1>PU.1 supports proliferation of immature erythroid progenitors</t1>
+<jf>Leukemia research</jf>
+<jo>Leuk.Res.</jo>
+<yr>2004</yr>
+<fd>Jan</fd>
+<vo>28</vo>
+<is>1</is>
+<sp>83</sp>
+<op>89</op>
+<k1>Animals</k1>
+<k1>Biological Markers/analysis</k1>
+<k1>Cell Division</k1>
+<k1>Cells, Cultured</k1>
+<k1>DNA-Binding Proteins/metabolism</k1>
+<k1>Embryo, Mammalian/cytology/immunology/metabolism</k1>
+<k1>Erythroid Precursor Cells/cytology/immunology/metabolism</k1>
+<k1>Erythropoiesis/physiology</k1>
+<k1>Erythropoietin/metabolism</k1>
+<k1>Gene Expression Profiling</k1>
+<k1>Granulocyte-Macrophage Colony-Stimulating Factor/metabolism</k1>
+<k1>Green Fluorescent Proteins</k1>
+<k1>Interleukin-3/metabolism</k1>
+<k1>Intracellular Signaling Peptides and Proteins</k1>
+<k1>Luminescent Proteins/metabolism</k1>
+<k1>Mice</k1>
+<k1>Mice, Knockout</k1>
+<k1>Milk Proteins</k1>
+<k1>Oligonucleotide Array Sequence Analysis</k1>
+<k1>Protein Tyrosine Phosphatase, Non-Receptor Type 6</k1>
+<k1>Protein Tyrosine Phosphatases/metabolism</k1>
+<k1>Proto-Oncogene Proteins/genetics/metabolism</k1>
+<k1>Receptors, Erythropoietin</k1>
+<k1>Recombinant Fusion Proteins/metabolism</k1>
+<k1>STAT5 Transcription Factor</k1>
+<k1>Stem Cell Factor/metabolism</k1>
+<k1>Thrombopoietin/metabolism</k1>
+<k1>Trans-Activators/genetics/metabolism</k1>
+<ab>Despite normal levels of erythropoiesis in PU.1(-/-) embryos, PU.1(-/-) fetal hematopoietic progenitors are unable to establish sustained erythropoiesis in the adult bone marrow. This study demonstrates that PU.1(-/-) fetal erythroid progenitors are synergistically expanded by TPO plus SCF, but not combinations of EPO plus SCF, IL-3 or GM-CSF. The EPO defect is not corrected by a constitutively active variant of EPOR. Microarray analysis identified several candidate PU.1 target genes known to affect cytokine signaling and gene regulation in the erythroid lineage. These data suggest that PU.1 plays an important role in regulating the proliferation of immature erythroid progenitors.</ab>
+<no>LR: 20081121; GR: CA72769/CA/NCI NIH HHS/United States; GR: HL03962/HL/NHLBI NIH HHS/United States; GR: HL58716/HL/NHLBI NIH HHS/United States; GR: T32AR07603/AR/NIAMS NIH HHS/United States; JID: 7706787; 0 (Biological Markers); 0 (DNA-Binding Proteins); 0 (Interleukin-3); 0 (Intracellular Signaling Peptides and Proteins); 0 (Luminescent Proteins); 0 (Milk Proteins); 0 (Proto-Oncogene Proteins); 0 (Receptors, Erythropoietin); 0 (Recombinant Fusion Proteins); 0 (STAT5 Transcription Factor); 0 (Stem Cell Factor); 0 (Trans-Activators); 0 (proto-oncogene protein Spi-1); 11096-26-7 (Erythropoietin); 147336-22-9 (Green Fluorescent Proteins); 83869-56-1 (Granulocyte-Macrophage Colony-Stimulating Factor); 9014-42-0 (Thrombopoietin); EC 3.1.3.48 (Protein Tyrosine Phosphatase, Non-Receptor Type 6); EC 3.1.3.48 (Protein Tyrosine Phosphatases); EC 3.1.3.48 (Ptpn6 protein, mouse); ppublish</no>
+<pp>England</pp>
+<sn>0145-2126; 0145-2126</sn>
+<ad>Program in Stem Cell Biology and Regenerative Medicine, Shands Cancer Center, Department of Molecular Genetics and Microbiology, Box 100232, Room R4-293, University of Florida, Gainesville, FL 32610, USA. rbfisher@ufl.edu</ad>
+<an>PMID: 14630084; S0145212603001784 [pii]</an>
+<la>eng</la>
+<sf>Comparative Study; Journal Article; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>14630084</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>646</id>
+<a1>Gibbs,C. P.</a1>
+<a1>Kukekov,V. G.</a1>
+<a1>Reith,J. D.</a1>
+<a1>Tchigrinova,O.</a1>
+<a1>Suslov,O. N.</a1>
+<a1>Scott,E. W.</a1>
+<a1>Ghivizzani,S. C.</a1>
+<a1>Ignatova,T. N.</a1>
+<a1>Steindler,D. A.</a1>
+<t1>Stem-like cells in bone sarcomas: implications for tumorigenesis</t1>
+<jf>Neoplasia (New York, N.Y.)</jf>
+<jo>Neoplasia</jo>
+<yr>2005</yr>
+<fd>Nov</fd>
+<vo>7</vo>
+<is>11</is>
+<sp>967</sp>
+<op>976</op>
+<k1>Bone Neoplasms/genetics/pathology</k1>
+<k1>Cell Culture Techniques</k1>
+<k1>Cell Differentiation</k1>
+<k1>Cell Division</k1>
+<k1>Culture Media, Serum-Free</k1>
+<k1>DNA Primers</k1>
+<k1>Embryonal Carcinoma Stem Cells</k1>
+<k1>Humans</k1>
+<k1>Immunohistochemistry</k1>
+<k1>Neoplastic Stem Cells/pathology</k1>
+<k1>Osteosarcoma/genetics/pathology</k1>
+<k1>Reverse Transcriptase Polymerase Chain Reaction</k1>
+<ab>Bone sarcomas are a clinically and molecularly heterogeneous group of malignancies characterized by varying degrees of mesenchymal differentiation. Despite advances in medical and surgical management, survival rates for high-grade tumors have remained static at 50% to 70%. Tumor stem cells have been recently implicated in the pathogenesis of other heterogeneous, highly malignant tumors. We demonstrate here the existence of a small subpopulation of self-renewing bone sarcoma cells that are capable of forming suspended spherical, clonal colonies, also called &amp;quot;sarcospheres,&amp;quot; in anchorage-independent, serum-starved conditions. These bone sarcoma cells as well as tissue specimens express activated STAT3 and the marker genes of pluripotent embryonic stem (ES) cells, Oct 3/4 and Nanog. Expression levels of Oct 3/4 and Nanog are greater in sarcospheres than in adherent cultures. A subset of bone sarcoma cells displays several surface markers of mesenchymal stem cells (Stro-1, CD105, and CD44) as well as attributes of mesodermal, ectodermal, and endodermal differentiation. Although previously documented in brain and breast tumors, our results support the extension of the cancer stem cell hypothesis to include tumors of mesenchymal lineage. Furthermore, they suggest the participation of ES cell homeobox proteins in non-germ cell tumorigenesis.</ab>
+<no>LR: 20091118; GR: HL70143/HL/NHLBI NIH HHS/United States; GR: NS37556/NS/NINDS NIH HHS/United States; JID: 100886622; 0 (Culture Media, Serum-Free); 0 (DNA Primers); OID: NLM: PMC1502023; 2005/06/14 [received]; 2005/08/22 [revised]; 2005/08/22 [accepted]; ppublish</no>
+<pp>Canada</pp>
+<sn>1522-8002; 1476-5586</sn>
+<ad>Department of Orthopedics and Rehabilitation, College of Medicine, University of Florida, Gainesville, 32611, USA. gibbscp@ortho.ufl.edu</ad>
+<an>PMID: 16331882</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, N.I.H., Extramural; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>16331882</pmid>
+<pmcid>PMC1502023</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>663</id>
+<a1>Grant,M. B.</a1>
+<a1>Caballero,S.</a1>
+<a1>Brown,G. A.</a1>
+<a1>Guthrie,S. M.</a1>
+<a1>Mames,R. N.</a1>
+<a1>Vaught,T.</a1>
+<a1>Scott,E. W.</a1>
+<t1>The contribution of adult hematopoietic stem cells to retinal neovascularization</t1>
+<jf>Advances in Experimental Medicine and Biology</jf>
+<jo>Adv.Exp.Med.Biol.</jo>
+<yr>2003</yr>
+<vo>522</vo>
+<sp>37</sp>
+<op>45</op>
+<k1>Animals</k1>
+<k1>Cell Lineage/physiology</k1>
+<k1>Chimera/genetics/growth &amp; development/metabolism</k1>
+<k1>Disease Models, Animal</k1>
+<k1>Endothelium, Vascular/growth &amp; development/pathology/physiopathology</k1>
+<k1>Hematopoietic Stem Cells/pathology/physiology</k1>
+<k1>Humans</k1>
+<k1>Retinal Neovascularization/drug therapy/pathology/physiopathology</k1>
+<no>LR: 20071114; GR: CA72769/CA/NCI NIH HHS/United States; GR: DK52558/DK/NIDDK NIH HHS/United States; GR: EY007739/EY/NEI NIH HHS/United States; GR: EY012601/EY/NEI NIH HHS/United States; JID: 0121103; RF: 32; ppublish</no>
+<pp>United States</pp>
+<sn>0065-2598; 0065-2598</sn>
+<ad>University of Florida, Gainesville, FL 32610, USA.</ad>
+<an>PMID: 12674209</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, P.H.S.; Review; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>12674209</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>666</id>
+<a1>Grant,M. B.</a1>
+<a1>May,W. S.</a1>
+<a1>Caballero,S.</a1>
+<a1>Brown,G. A.</a1>
+<a1>Guthrie,S. M.</a1>
+<a1>Mames,R. N.</a1>
+<a1>Byrne,B. J.</a1>
+<a1>Vaught,T.</a1>
+<a1>Spoerri,P. E.</a1>
+<a1>Peck,A. B.</a1>
+<a1>Scott,E. W.</a1>
+<t1>Adult hematopoietic stem cells provide functional hemangioblast activity during retinal neovascularization</t1>
+<jf>Nature medicine</jf>
+<jo>Nat.Med.</jo>
+<yr>2002</yr>
+<fd>Jun</fd>
+<vo>8</vo>
+<is>6</is>
+<sp>607</sp>
+<op>612</op>
+<k1>Animals</k1>
+<k1>Green Fluorescent Proteins</k1>
+<k1>Hematopoietic Stem Cell Transplantation</k1>
+<k1>Hematopoietic Stem Cells/physiology</k1>
+<k1>Ischemia</k1>
+<k1>Luminescent Proteins/analysis/genetics</k1>
+<k1>Mice</k1>
+<k1>Mice, Inbred C57BL</k1>
+<k1>Mice, Transgenic</k1>
+<k1>Microscopy, Confocal</k1>
+<k1>Neovascularization, Physiologic/physiology</k1>
+<k1>Retina/cytology</k1>
+<k1>Retinal Vessels/physiology</k1>
+<ab>Adults maintain a reservoir of hematopoietic stem cells that can enter the circulation to reach organs in need of regeneration. We developed a novel model of retinal neovascularization in adult mice to examine the role of hematopoietic stem cells in revascularizing ischemic retinas. Adult mice were durably engrafted with hematopoietic stem cells isolated from transgenic mice expressing green fluorescent protein. We performed serial long-term transplants, to ensure activity arose from self-renewing stem cells, and single hematopoietic stem-cell transplants to show clonality. After durable hematopoietic engraftment was established, retinal ischemia was induced to promote neovascularization. Our results indicate that self-renewing adult hematopoietic stem cells have functional hemangioblast activity, that is, they can clonally differentiate into all hematopoietic cell lineages as well as endothelial cells that revascularize adult retina. We also show that recruitment of endothelial precursors to sites of ischemic injury has a significant role in neovascularization.</ab>
+<no>LR: 20071114; GR: CA72769/CA/NCI NIH HHS/United States; GR: DK52558/DK/NIDDK NIH HHS/United States; GR: EY007739/EY/NEI NIH HHS/United States; GR: EY012601/EY/NEI NIH HHS/United States; JID: 9502015; 0 (Luminescent Proteins); 147336-22-9 (Green Fluorescent Proteins); ppublish</no>
+<pp>United States</pp>
+<sn>1078-8956; 1078-8956</sn>
+<ad>Program in Stem Cell Biology, University of Florida, Gainesville, Florida, USA. grantma@pharmacology.ufl.edu</ad>
+<an>PMID: 12042812; nm0602-607 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<do>10.1038/nm0602-607</do>
+<ol>Unknown(0)</ol>
+<pmid>12042812</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>668</id>
+<a1>Guerriero,A.</a1>
+<a1>Langmuir,P. B.</a1>
+<a1>Spain,L. M.</a1>
+<a1>Scott,E. W.</a1>
+<t1>PU.1 is required for myeloid-derived but not lymphoid-derived dendritic cells</t1>
+<jf>Blood</jf>
+<jo>Blood</jo>
+<yr>2000</yr>
+<fd>Feb 1</fd>
+<vo>95</vo>
+<is>3</is>
+<sp>879</sp>
+<op>885</op>
+<k1>Animals</k1>
+<k1>Antigen Presentation</k1>
+<k1>Bone Marrow/embryology</k1>
+<k1>Bone Marrow Cells/cytology</k1>
+<k1>Cell Lineage</k1>
+<k1>Clonal Deletion</k1>
+<k1>Dendritic Cells/classification/cytology/metabolism</k1>
+<k1>Granulocyte-Macrophage Colony-Stimulating Factor/pharmacology</k1>
+<k1>Hematopoiesis/drug effects/genetics</k1>
+<k1>Immunophenotyping</k1>
+<k1>Interleukin-4/pharmacology</k1>
+<k1>Lymphoid Tissue/cytology/embryology</k1>
+<k1>Mice</k1>
+<k1>Mice, Knockout</k1>
+<k1>Organ Culture Techniques</k1>
+<k1>Proto-Oncogene Proteins/drug effects/physiology</k1>
+<k1>Thymus Gland/cytology/embryology</k1>
+<k1>Trans-Activators/drug effects/physiology</k1>
+<ab>The ets-family transcription factor PU.1 is required for the proper development of both myeloid and lymphoid progenitors. We used PU. 1-deficient animals to examine the role of PU.1 during dendritic cell development. PU.1(-/-)animals produce lymphoid-derived dendritic cells (DC): low-density class II major histocompatibility complex [MHC-II(+)] CD11c(+) CD8alpha(+) DEC-205(+). But they lack myeloid-derived DC: low-density MHC-II(+) CD11c(+) CD8alpha(-) DEC-205(-). PU.1(-/-) embryos also lack progenitors capable of differentiating into myeloid DC in response to granulocyte-macrophage colony-stimulating factor plus interleukin-4. The appearance of lymphoid DC in developing PU.1(-/-)thymus was initially delayed, but this population recovered to wild type (WT) levels upon organ culture of isolated thymic lobes. PU. 1(-/-)lymphoid DC were functionally equivalent to WT DC for stimulating T-cell proliferation in mixed lymphocyte reactions. These results demonstrate that PU.1 is required for the development of myeloid DC but not lymphoid DC.</ab>
+<no>LR: 20071114; GR: CA72769/CA/NCI NIH HHS/United States; GR: HL58716/HL/NHLBI NIH HHS/United States; GR: P01 DK52558/DK/NIDDK NIH HHS/United States; JID: 7603509; 0 (Proto-Oncogene Proteins); 0 (Trans-Activators); 0 (proto-oncogene protein Spi-1); 207137-56-2 (Interleukin-4); 83869-56-1 (Granulocyte-Macrophage Colony-Stimulating Factor); ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0006-4971; 0006-4971</sn>
+<ad>Institute for Human Gene Therapy, University of Pennsylvania, Philadelphia, PA 19104-6140, USA.</ad>
+<an>PMID: 10648399</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, P.H.S.; AIM; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>10648399</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>653</id>
+<a1>Guthrie,S. M.</a1>
+<a1>Caballero,S.</a1>
+<a1>Mames,R. N.</a1>
+<a1>Grant,M. B.</a1>
+<a1>Scott,E. W.</a1>
+<t1>Analysis of the vascular potential of hematopoietic stem cells</t1>
+<jf>Methods in Molecular Medicine</jf>
+<jo>Methods Mol.Med.</jo>
+<yr>2005</yr>
+<vo>105</vo>
+<sp>369</sp>
+<op>380</op>
+<k1>Animals</k1>
+<k1>Bone Marrow Cells/cytology/physiology</k1>
+<k1>Bone Marrow Transplantation</k1>
+<k1>Cell Differentiation/physiology</k1>
+<k1>Cell Lineage/physiology</k1>
+<k1>Endothelial Cells/physiology</k1>
+<k1>Hematopoietic Stem Cells/physiology</k1>
+<k1>Mice</k1>
+<k1>Neovascularization, Physiologic/physiology</k1>
+<k1>Transplantation Chimera/physiology</k1>
+<ab>The hematopoietic stem cells residing in the bone marrow have tremendous proliferative and self-renewing capacity, and until recently these cells were thought to produce only progeny of the blood lineages. We have recently demonstrated that these cells are capable of producing endothelial cells of blood vessels. This chapter will outline the methodology for producing chimeric mice through labeled bone marrow transplantation and induction of these donor cells in order to track their plasticity, or their ability to produce non-hematopoietic tissues, specifically blood vessels.</ab>
+<no>LR: 20071114; GR: EY 12601/EY/NEI NIH HHS/United States; GR: HL 70738/HL/NHLBI NIH HHS/United States; GR: HL 70813/HL/NHLBI NIH HHS/United States; GR: T32 AR 07603/AR/NIAMS NIH HHS/United States; JID: 101123138; ppublish</no>
+<pp>United States</pp>
+<sn>1543-1894; 1543-1894</sn>
+<ad>Program in Stem Cell Biology, Shands Cancer Center, University of Florida, Gainesville, FL, USA.</ad>
+<an>PMID: 15492408; 1-59259-826-9:369 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>15492408</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>651</id>
+<a1>Guthrie,S. M.</a1>
+<a1>Curtis,L. M.</a1>
+<a1>Mames,R. N.</a1>
+<a1>Simon,G. G.</a1>
+<a1>Grant,M. B.</a1>
+<a1>Scott,E. W.</a1>
+<t1>The nitric oxide pathway modulates hemangioblast activity of adult hematopoietic stem cells</t1>
+<jf>Blood</jf>
+<jo>Blood</jo>
+<yr>2005</yr>
+<fd>Mar 1</fd>
+<vo>105</vo>
+<is>5</is>
+<sp>1916</sp>
+<op>1922</op>
+<k1>Animals</k1>
+<k1>Endothelial Cells/cytology/physiology</k1>
+<k1>Green Fluorescent Proteins/genetics</k1>
+<k1>Hematopoietic Stem Cell Transplantation</k1>
+<k1>Hematopoietic Stem Cells/metabolism/physiology</k1>
+<k1>Ischemia</k1>
+<k1>Mice</k1>
+<k1>Mice, Transgenic</k1>
+<k1>Neovascularization, Pathologic</k1>
+<k1>Nitric Oxide/metabolism</k1>
+<k1>Nitric Oxide Synthase/genetics/physiology</k1>
+<k1>Nitric Oxide Synthase Type II</k1>
+<k1>Nitric Oxide Synthase Type III</k1>
+<k1>Retinal Diseases</k1>
+<k1>Retinal Vessels/growth &amp; development</k1>
+<ab>We have previously established a model inducing hematopoietic stem cell (HSC) production of circulating endothelial progenitor cells (EPCs) to revascularize ischemic injury in adult mouse retina. The unique vascular environment of the retina results in new blood vessel formation primarily from HSC-derived EPCs. Using mice deficient (-/-) in inducible nitric oxide synthase (iNOS) and endothelial nitric oxide synthase (eNOS), we show that vessel phenotype resulting from hemangioblast activity can be altered by modulation of the NO/NOS pathway. iNOS-/- or eNOS-/- animals were engrafted with wild-type (WT) HSCs expressing green fluorescence protein (gfp+) and subjected to our adult retinal ischemia model. WT hemangioblast activity in adult iNOS-/- recipients resulted in the formation of highly branched blood vessels of donor origin, which were readily perfused indicating functionality. In contrast, eNOS-/- recipients produced relatively unbranched blood vessels with significant donor contribution that were difficult to perfuse, indicating poor functionality. Furthermore, eNOS-/- chimeras had extensive gfp+ HSC contribution throughout their vasculature without additional injury. This neovascularization, via EPCs derived from the transplanted HSCs, reveals that the NO pathway can modulate EPC activity and plays a critical role in both blood vessel formation in response to injury and normal endothelial cell maintenance.</ab>
+<no>LR: 20071114; GR: EY12601/EY/NEI NIH HHS/United States; GR: HL70738/HL/NHLBI NIH HHS/United States; GR: HL70813/HL/NHLBI NIH HHS/United States; GR: T32AR07603/AR/NIAMS NIH HHS/United States; JID: 7603509; 10102-43-9 (Nitric Oxide); 147336-22-9 (Green Fluorescent Proteins); EC 1.14.13.39 (Nitric Oxide Synthase); EC 1.14.13.39 (Nitric Oxide Synthase Type II); EC 1.14.13.39 (Nitric Oxide Synthase Type III); EC 1.14.13.39 (Nos2 protein, mouse); EC 1.14.13.39 (Nos3 protein, mouse); CIN: Blood. 2005 Mar 1;105(5):1846-7. PMID: 15747403; 2004/11/16 [aheadofprint]; ppublish</no>
+<pp>United States</pp>
+<sn>0006-4971; 0006-4971</sn>
+<ad>Program in Stem Cell Biology and Regenerative Medicine, University of Florida Shand&#39;s Cancer Center, Academic Research Building R4-254, 1600 SW Archer Rd, Gainesville, FL 32610, USA.</ad>
+<an>PMID: 15546953; 2004-09-3415 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, P.H.S.; AIM; IM</sf>
+<do>10.1182/blood-2004-09-3415</do>
+<wp>20041116</wp>
+<ol>Unknown(0)</ol>
+<pmid>15546953</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>644</id>
+<a1>Harris,J. R.</a1>
+<a1>Brown,G. A.</a1>
+<a1>Jorgensen,M.</a1>
+<a1>Kaushal,S.</a1>
+<a1>Ellis,E. A.</a1>
+<a1>Grant,M. B.</a1>
+<a1>Scott,E. W.</a1>
+<t1>Bone marrow-derived cells home to and regenerate retinal pigment epithelium after injury</t1>
+<jf>Investigative ophthalmology &amp; visual science</jf>
+<jo>Invest.Ophthalmol.Vis.Sci.</jo>
+<yr>2006</yr>
+<fd>May</fd>
+<vo>47</vo>
+<is>5</is>
+<sp>2108</sp>
+<op>2113</op>
+<k1>Adenoviridae/genetics</k1>
+<k1>Animals</k1>
+<k1>Bruch Membrane/drug effects/injuries</k1>
+<k1>Cell Differentiation/physiology</k1>
+<k1>Cell Movement/physiology</k1>
+<k1>Choroidal Neovascularization/metabolism</k1>
+<k1>Female</k1>
+<k1>Fluorescent Antibody Technique, Indirect</k1>
+<k1>Green Fluorescent Proteins/genetics</k1>
+<k1>Hematopoietic Stem Cell Transplantation</k1>
+<k1>Hematopoietic Stem Cells/cytology</k1>
+<k1>In Situ Hybridization, Fluorescence</k1>
+<k1>Iodates/toxicity</k1>
+<k1>Male</k1>
+<k1>Mice</k1>
+<k1>Mice, Inbred C57BL</k1>
+<k1>Mice, Transgenic</k1>
+<k1>Pigment Epithelium of Eye/drug effects/physiology</k1>
+<k1>Vascular Endothelial Growth Factor A/metabolism</k1>
+<k1>Wound Healing/physiology</k1>
+<ab>PURPOSE: To determine whether hematopoietic stem and progenitor cells (HSCs/HPCs) can home to and regenerate the retinal pigment epithelium (RPE) after induced injury. METHODS: Enriched HSCs/HPCs from green fluorescent protein (gfp) transgenic mice were transplanted into irradiated recipient mice to track bone marrow-derived cells. Physical damage was induced by breaching Bruch&amp;#39;s membrane and inducing vascular endothelial growth factor A (VEGFa) expression to promote neovascularization. RPE damage was also induced by sodium iodate injection (40 mg/kg) into wild-type or albino C57Bl/6 mice. Cell morphology, gfp expression, the presence of the Y chromosome, and the presence of melanosomes were used to determine whether the injured RPE was being repaired by the donor bone marrow. RESULTS: Injury to the RPE recruits HSC/HPC-derived cells to incorporate into the RPE layer and differentiate into an RPE phenotype. A portion of the HSCs/HPCs adopt RPE morphology, express melanosomes, and integrate into the RPE without cell fusion. CONCLUSIONS: HSCs/HPCs can migrate to the RPE layer after physical or chemical injury and regenerate a portion of the damaged cell layer.</ab>
+<no>LR: 20090706; GR: CA72769/CA/NCI NIH HHS/United States; GR: HL70738/HL/NHLBI NIH HHS/United States; GR: R01 EY007739-17/EY/NEI NIH HHS/United States; GR: R01 EY007739-18/EY/NEI NIH HHS/United States; GR: R01 EY007739-19/EY/NEI NIH HHS/United States; GR: R01 EY012601-08A1/EY/NEI NIH HHS/United States; GR: R01 EY012601-09/EY/NEI NIH HHS/United States; JID: 7703701; 0 (Iodates); 0 (Vascular Endothelial Growth Factor A); 0 (vascular endothelial growth factor A, mouse); 147336-22-9 (Green Fluorescent Proteins); 7681-55-2 (sodium iodate); ppublish</no>
+<pp>United States</pp>
+<sn>0146-0404; 0146-0404</sn>
+<ad>Program in Stem Cell Biology, University of Florida, Gainesville, Florida 32610, USA.</ad>
+<an>PMID: 16639022; 47/5/2108 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, N.I.H., Extramural; IM</sf>
+<do>10.1167/iovs.05-0928</do>
+<ol>Unknown(0)</ol>
+<pmid>16639022</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>637</id>
+<a1>Harris,J. R.</a1>
+<a1>Fisher,R.</a1>
+<a1>Jorgensen,M.</a1>
+<a1>Kaushal,S.</a1>
+<a1>Scott,E. W.</a1>
+<t1>CD133 progenitor cells from the bone marrow contribute to retinal pigment epithelium repair</t1>
+<jf>Stem cells (Dayton, Ohio)</jf>
+<jo>Stem Cells</jo>
+<yr>2009</yr>
+<fd>Feb</fd>
+<vo>27</vo>
+<is>2</is>
+<sp>457</sp>
+<op>466</op>
+<k1>Animals</k1>
+<k1>Antigens, CD/metabolism</k1>
+<k1>Bone Marrow Cells/cytology</k1>
+<k1>Cells, Cultured</k1>
+<k1>Enzyme-Linked Immunosorbent Assay</k1>
+<k1>Flow Cytometry</k1>
+<k1>Glycoproteins/metabolism</k1>
+<k1>Hematopoietic Stem Cell Transplantation</k1>
+<k1>Humans</k1>
+<k1>Immunohistochemistry</k1>
+<k1>Male</k1>
+<k1>Mice</k1>
+<k1>Mice, Inbred NOD</k1>
+<k1>Mice, SCID</k1>
+<k1>Peptides/metabolism</k1>
+<k1>Pigment Epithelium of Eye/pathology</k1>
+<k1>Retinal Pigment Epithelium/pathology</k1>
+<k1>Stem Cells/cytology/metabolism/physiology</k1>
+<ab>Our goal was to define a clinically significant population of cells by utilizing a single-step selection process to enrich hematopoietic cells capable of regenerating the retinal pigment epithelium (RPE). Utilizing intravitreal injection of bone marrow cells from a mouse with pigment (C57BL6:gfp) into albino recipient mice (C57BL6:Tyr(-)), we show that hematopoietic progenitor cells (HPCs) enriched for CD133 can regenerate RPE cells and improve retinal function. The chemokine CXCL12 (stromal cell-derived factor 1alpha) is essential for migration, incorporation, and RPE regeneration by CD133(+) HPCs. Once incorporated, CD133(+) HPCs become pigmented, adopt an RPE morphology, and express RPE-specific proteins, leading to partial functional recovery by electroretinogram. Human CD133(+) HPCs also incorporate in the retina and assume RPE morphology in nonobese diabetic/severe combined immunodeficient mice xenografts. These data show that a clinically accessible CD133(+) hematopoietic cell can home to an injured RPE layer, differentiate into cells with significant RPE morphology, and provide therapeutic functional recovery of the visual cycle.</ab>
+<no>GR: R01 EY18158/EY/NEI NIH HHS/United States; GR: R01 HL75258/HL/NHLBI NIH HHS/United States; JID: 9304532; 0 (AC133 antigen); 0 (Antigens, CD); 0 (Glycoproteins); 0 (Peptides); ppublish</no>
+<pp>United States</pp>
+<sn>1549-4918; 1066-5099</sn>
+<ad>Program in Stem Cell Biology, McKnight Brain Institute, University of Florida, Gainesville, Florida 32610, USA.</ad>
+<an>PMID: 19038791; stemcells.2008-0836 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, N.I.H., Extramural; IM</sf>
+<do>10.1634/stemcells.2008-0836</do>
+<ol>Unknown(0)</ol>
+<pmid>19038791</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>628</id>
+<a1>Hoh,B. L.</a1>
+<a1>Velat,G. J.</a1>
+<a1>Wilmer,E. N.</a1>
+<a1>Hosaka,K.</a1>
+<a1>Fisher,R. C.</a1>
+<a1>Scott,E. W.</a1>
+<t1>A novel murine elastase saccular aneurysm model for studying bone marrow progenitor-derived cell-mediated processes in aneurysm formation</t1>
+<jf>Neurosurgery</jf>
+<jo>Neurosurgery</jo>
+<yr>2010</yr>
+<fd>Mar</fd>
+<vo>66</vo>
+<is>3</is>
+<sp>544</sp>
+<op>50; discussion 550</op>
+<k1>Aneurysm/etiology/pathology</k1>
+<k1>Animals</k1>
+<k1>Bone Marrow Cells/metabolism/pathology</k1>
+<k1>Carotid Artery, Common/pathology/surgery</k1>
+<k1>Disease Models, Animal</k1>
+<k1>Green Fluorescent Proteins/genetics/metabolism</k1>
+<k1>Luminescent Proteins/genetics/metabolism</k1>
+<k1>Mice</k1>
+<k1>Mice, Inbred C57BL</k1>
+<k1>Mice, Transgenic</k1>
+<k1>Pancreatic Elastase/adverse effects</k1>
+<k1>Stem Cells/metabolism/pathology</k1>
+<k1>Time Factors</k1>
+<ab>BACKGROUND: Although there are several large-species animal models for saccular aneurysms, there is a need for a simple, reproducible saccular aneurysm model in mice. OBJECTIVE: To develop a murine saccular aneurysm model, which replicates key characteristics that occur in the formation of human cerebral aneurysms. METHODS: Elastase is applied extravascularly to the right common carotid artery. We induced saccular aneurysm formation by our method in C57BL/6 mice (n = 30). Aneurysms and control arteries (left common carotid arteries) were harvested at 1 week, 2 weeks, and 3 weeks postinjury (n = 10 for each time point), measured, and stained for elastin content. To demonstrate BMP-derived cell recruitment to the aneurysms, bone marrow from UBC-gfp transgenic mice was transplanted into irradiated C57BL/6 recipients to create C57BL/6.gfp chimeras. Additionally, bone marrow from DsRed transgenic mice was transplanted into irradiated C57BL/6 recipients to create C57BL/6.DsRed chimeras, and bone marrow from B5/EGFP transgenic mice was transplanted into irradiated FVB recipients to create FVB.gfp chimeras. The elastase injury or sham operations were performed in the C57BL/6.gfp, C57BL/6.DsRed, and FVB.gfp chimeras. Aneurysms and sham vessels were harvested at 3 weeks and examined for BMP-derived cell recruitment. Additionally, aneurysms were stained for matrix metalloproteinase-9, which is overexpressed in human cerebral aneurysm tissue. RESULTS: Aneurysms consistently demonstrated significant loss of elastin in the vessel wall and had significantly larger diameters than control vessels (591 +/- 238 microm vs 328 +/- 61 microm; P = .003 for aneurysms 3 weeks postinjury). Aneurysms from C57BL/6.gfp, FVB.gfp, and C57BL/6.DsRed chimeras consistently revealed significant BMP-derived cell recruitment in the aneurysm wall that was not seen in sham-operated vessels nor in control left common carotid arteries. Aneurysms demonstrated overexpression of matrix metalloproteinase-9. CONCLUSION: We describe a novel murine elastase saccular aneurysm model that replicates the histopathology and BMP-derived cell-mediated processes that will be a valuable instrument for studying the cell-mediated processes in cerebral aneurysm formation.</ab>
+<no>JID: 7802914; 0 (Luminescent Proteins); 0 (fluorescent protein 583); 147336-22-9 (Green Fluorescent Proteins); EC 3.4.21.36 (Pancreatic Elastase); ppublish</no>
+<pp>United States</pp>
+<sn>1524-4040; 0148-396X</sn>
+<ad>Department of Neurological Surgery, University of Florida, Gainesville, Florida 32610, USA. brian.hoh@neurosurgery.ufl.edu</ad>
+<an>PMID: 20173550; 00006123-201003000-00016 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<do>10.1227/01.NEU.0000365616.46414.2B</do>
+<ol>Unknown(0)</ol>
+<pmid>20173550</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>681</id>
+<a1>Huie,M. A.</a1>
+<a1>Scott,E. W.</a1>
+<a1>Drazinic,C. M.</a1>
+<a1>Lopez,M. C.</a1>
+<a1>Hornstra,I. K.</a1>
+<a1>Yang,T. P.</a1>
+<a1>Baker,H. V.</a1>
+<t1>Characterization of the DNA-binding activity of GCR1: in vivo evidence for two GCR1-binding sites in the upstream activating sequence of TPI of Saccharomyces cerevisiae</t1>
+<jf>Molecular and cellular biology</jf>
+<jo>Mol.Cell.Biol.</jo>
+<yr>1992</yr>
+<fd>Jun</fd>
+<vo>12</vo>
+<is>6</is>
+<sp>2690</sp>
+<op>2700</op>
+<k1>Base Sequence</k1>
+<k1>Binding Sites</k1>
+<k1>DNA Mutational Analysis</k1>
+<k1>DNA, Fungal/chemistry/genetics</k1>
+<k1>DNA-Binding Proteins/metabolism</k1>
+<k1>Fungal Proteins/metabolism</k1>
+<k1>Gene Expression Regulation, Fungal</k1>
+<k1>Glycolysis</k1>
+<k1>Methylation</k1>
+<k1>Molecular Sequence Data</k1>
+<k1>Oligodeoxyribonucleotides/chemistry</k1>
+<k1>Promoter Regions, Genetic</k1>
+<k1>Recombinant Proteins/metabolism</k1>
+<k1>Regulatory Sequences, Nucleic Acid</k1>
+<k1>Saccharomyces cerevisiae/genetics</k1>
+<k1>Triose-Phosphate Isomerase/genetics</k1>
+<ab>GCR1 gene function is required for high-level glycolytic gene expression in Saccharomyces cerevisiae. Recently, we suggested that the CTTCC sequence motif found in front of many genes encoding glycolytic enzymes lay at the core of the GCR1-binding site. Here we mapped the DNA-binding domain of GCR1 to the carboxy-terminal 154 amino acids of the polypeptide. DNase I protection studies showed that a hybrid MBP-GCR1 fusion protein protected a region of the upstream activating sequence of TPI (UASTPI), which harbored the CTTCC sequence motif, and suggested that the fusion protein might also interact with a region of the UAS that contained the related sequence CATCC. A series of in vivo G methylation protection experiments of the native TPI promoter were carried out with wild-type and gcr1 deletion mutant strains. The G doublets that correspond to the C doublets in each site were protected in the wild-type strain but not in the gcr1 mutant strain. These data demonstrate that the UAS of TPI contains two GCR1-binding sites which are occupied in vivo. Furthermore, adjacent RAP1/GRF1/TUF- and REB1/GRF2/QBP/Y-binding sites in UASTPI were occupied in the backgrounds of both strains. In addition, DNA band-shift assays were used to show that the MBP-GCR1 fusion protein was able to form nucleoprotein complexes with oligonucleotides that contained CTTCC sequence elements found in front of other glycolytic genes, namely, PGK, ENO1, PYK, and ADH1, all of which are dependent on GCR1 gene function for full expression. However, we were unable to detect specific interactions with CTTCC sequence elements found in front of the translational component genes TEF1, TEF2, and CRY1. Taken together, these experiments have allowed us to propose a consensus GCR1-binding site which is 5&amp;#39;-(T/A)N(T/C)N(G/A)NC(T/A)TCC(T/A)N(T/A)(T/A)(T/G)-3&amp;#39;.</ab>
+<no>LR: 20091118; GR: GM-4133/GM/NIGMS NIH HHS/United States; JID: 8109087; 0 (DNA, Fungal); 0 (DNA-Binding Proteins); 0 (Fungal Proteins); 0 (Oligodeoxyribonucleotides); 0 (Recombinant Proteins); EC 5.3.1.1 (Triose-Phosphate Isomerase); OID: NLM: PMC364463; ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0270-7306; 0270-7306</sn>
+<ad>Department of Immunology and Medical Microbiology, University of Florida College of Medicine, Gainesville 32610-0266.</ad>
+<an>PMID: 1588965</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>1588965</pmid>
+<pmcid>PMC364463</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>682</id>
+<a1>Jackson,F.</a1>
+<a1>Coop,R. L.</a1>
+<a1>Jackson,E.</a1>
+<a1>Scott,E. W.</a1>
+<a1>Russel,A. J.</a1>
+<t1>Multiple anthelmintic resistant nematodes in goats</t1>
+<jf>The Veterinary record</jf>
+<jo>Vet.Rec.</jo>
+<yr>1992</yr>
+<fd>Mar 7</fd>
+<vo>130</vo>
+<is>10</is>
+<sp>210</sp>
+<op>211</op>
+<k1>Animals</k1>
+<k1>Antinematodal Agents/pharmacology</k1>
+<k1>Drug Resistance</k1>
+<k1>Female</k1>
+<k1>Fenbendazole/pharmacology</k1>
+<k1>Goats/parasitology</k1>
+<k1>Ivermectin/pharmacology</k1>
+<k1>Levamisole/pharmacology</k1>
+<k1>Nematoda/drug effects</k1>
+<no>LR: 20061115; JID: 0031164; 0 (Antinematodal Agents); 14769-73-4 (Levamisole); 43210-67-9 (Fenbendazole); 70288-86-7 (Ivermectin); ppublish</no>
+<pp>ENGLAND</pp>
+<sn>0042-4900; 0042-4900</sn>
+<an>PMID: 1509653</an>
+<la>eng</la>
+<sf>Comparative Study; Letter; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>1509653</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>654</id>
+<a1>Kim,H. G.</a1>
+<a1>de Guzman,C. G.</a1>
+<a1>Swindle,C. S.</a1>
+<a1>Cotta,C. V.</a1>
+<a1>Gartland,L.</a1>
+<a1>Scott,E. W.</a1>
+<a1>Klug,C. A.</a1>
+<t1>The ETS family transcription factor PU.1 is necessary for the maintenance of fetal liver hematopoietic stem cells</t1>
+<jf>Blood</jf>
+<jo>Blood</jo>
+<yr>2004</yr>
+<fd>Dec 15</fd>
+<vo>104</vo>
+<is>13</is>
+<sp>3894</sp>
+<op>3900</op>
+<k1>Animals</k1>
+<k1>Crosses, Genetic</k1>
+<k1>Fetus</k1>
+<k1>Flow Cytometry</k1>
+<k1>Hematopoietic Stem Cells/physiology</k1>
+<k1>Liver/cytology/embryology/physiology</k1>
+<k1>Mice</k1>
+<k1>Mice, Inbred C57BL</k1>
+<k1>Mice, Knockout</k1>
+<k1>Proto-Oncogene Proteins/deficiency/genetics/physiology</k1>
+<k1>Trans-Activators/deficiency/genetics/physiology</k1>
+<k1>Transcription Factors/deficiency/genetics/physiology</k1>
+<ab>PU.1 is a member of the ETS family of transcription factors and is required for the development of multiple hematopoietic lineages. PU.1(-/-) mice die from hematopoietic failure at about embryonic day 18.5 (e18.5) and show a complete absence of B cells, mature T cells, and macrophages. This phenotype suggests that PU.1 may function at the level of the hematopoietic stem cell (HSC) or a multilineage progenitor. To investigate the role of PU.1 in the regulation of HSCs, PU.1(-/-) embryos were analyzed at various stages of embryonic development. The absolute number and frequency of HSCs were determined by flow cytometric analysis of c-Kit(+)Thy-1.1(lo)Lin(-)Sca-1(+) (KTLS) cells. We found that KTLS cells were absent or severely reduced in PU.1(-/-) fetal liver from e12.5 to e15.5. Progenitor cells with a c-Kit(+)Lin(-)AA4.1(+) and c-Kit(+)Lin(-)CD34(+) phenotype were also severely reduced. In addition, PU.1(-/-) fetal liver at e14.5 lacked common myeloid progenitors (CMPs) and granulocyte-macrophage progenitors (GMPs) but retained megakaryocyteerythroid progenitors (MEPs). Consistent with the loss of HSC activity, a 10-fold reduction in erythroid progenitors (mature erythroid burst-forming units [BFUEs]) was observed between e14.5 and e16.5. These data suggest that PU.1 plays an important role in the maintenance or expansion of HSC number in murine fetal liver.</ab>
+<no>LR: 20071114; GR: 5T32CA09467/CA/NCI NIH HHS/United States; GR: R01DK54766/DK/NIDDK NIH HHS/United States; GR: T32SI07051/PHS HHS/United States; JID: 7603509; 0 (Proto-Oncogene Proteins); 0 (Trans-Activators); 0 (Transcription Factors); 0 (proto-oncogene protein Spi-1); 2004/08/24 [aheadofprint]; ppublish</no>
+<pp>United States</pp>
+<sn>0006-4971; 0006-4971</sn>
+<ad>Department of Microbiology and Division of Developmental and Clinical Immunology, The University of Alabama at Birmingham, WTI Room 387, 1824 Sixth Ave South, Birmingham AL 35294-3300, USA.</ad>
+<an>PMID: 15328162; 2002-08-2425 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, P.H.S.; AIM; IM</sf>
+<do>10.1182/blood-2002-08-2425</do>
+<wp>20040824</wp>
+<ol>Unknown(0)</ol>
+<pmid>15328162</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>639</id>
+<a1>Li,X. M.</a1>
+<a1>Hu,Z.</a1>
+<a1>Sola-Visner,M.</a1>
+<a1>Hensel,S.</a1>
+<a1>Garner,R.</a1>
+<a1>Zafar,A. B.</a1>
+<a1>Wingard,J. R.</a1>
+<a1>Jorgensen,M. L.</a1>
+<a1>Fisher,R. C.</a1>
+<a1>Scott,E. W.</a1>
+<a1>Slayton,W. B.</a1>
+<t1>Sites and kinetics of donor thrombopoiesis following transplantation of whole bone marrow and progenitor subsets</t1>
+<jf>Experimental hematology</jf>
+<jo>Exp.Hematol.</jo>
+<yr>2007</yr>
+<fd>Oct</fd>
+<vo>35</vo>
+<is>10</is>
+<sp>1567</sp>
+<op>1579</op>
+<k1>Animals</k1>
+<k1>Antigens, Ly/biosynthesis/immunology</k1>
+<k1>Bone Marrow Transplantation</k1>
+<k1>Graft Survival/immunology/radiation effects</k1>
+<k1>Hematopoiesis, Extramedullary/immunology/radiation effects</k1>
+<k1>Hypersplenism/immunology/metabolism/pathology</k1>
+<k1>Kinetics</k1>
+<k1>Male</k1>
+<k1>Megakaryocytes/immunology/metabolism/pathology</k1>
+<k1>Membrane Proteins/biosynthesis/immunology</k1>
+<k1>Mice</k1>
+<k1>Mice, Transgenic</k1>
+<k1>Proto-Oncogene Proteins c-kit/biosynthesis/immunology</k1>
+<k1>Spleen/immunology/metabolism/pathology</k1>
+<k1>Thrombopoiesis/immunology/radiation effects</k1>
+<k1>Time Factors</k1>
+<k1>Whole-Body Irradiation</k1>
+<ab>INTRODUCTION: Little is known about the sites and kinetics of thrombopoiesis following bone marrow transplant. The spleen is a site of hematopoiesis in a healthy mouse, and hematopoietic activity increases in response to stress. We hypothesized that the spleen is a major site of early post-transplant thrombopoiesis. METHODS: We transplanted whole bone marrow (WBM) or lineage depleted progenitor subsets fractionated based on expression of c-kit and Sca-1 from transgenic mice expressing green fluorescent protein into lethally irradiated C57BL/6 recipients. We also transplanted whole bone marrow cells into healthy and splenectomized mice. Post-transplant megakaryopoiesis was assessed by measuring circulating platelet number, percent donor-derived platelets, bone marrow cellularity, splenic weight, megakaryocyte size, and megakaryocyte concentration from hour 3 to day 28 post transplant. RESULTS: Following transplant, circulating donor-derived platelets were derived only from c-kit expressing subsets. Donor-derived platelets first appeared on post-transplant day five. Splenectomy reduced the number of these earliest circulating platelets. Splenic megakaryopoiesis increased dramatically from day 7-14 post-transplant. However, splenectomy accelerated platelet engraftment during this time frame. CONCLUSION: Overall, these results demonstrate that the first platelets are produced by c-kit expressing megakaryocyte progenitors in the bone marrow and spleen. After post-transplant day 5, the net effect of the spleen on thrombopoiesis is to slow engraftment due to immune effects or hypersplenism.</ab>
+<no>LR: 20091119; JID: 0402313; 0 (Antigens, Ly); 0 (Ly6a protein, mouse); 0 (Membrane Proteins); EC 2.7.10.1 (Proto-Oncogene Proteins c-kit); 2006/10/10 [received]; 2007/06/12 [revised]; 2007/06/14 [accepted]; 2007/08/13 [aheadofprint]; ppublish</no>
+<pp>Netherlands</pp>
+<sn>0301-472X; 0301-472X</sn>
+<ad>Department of Pediatrics, University of Florida, Gainesville, USA.</ad>
+<an>PMID: 17697746; S0301-472X(07)00382-7 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; IM</sf>
+<do>10.1016/j.exphem.2007.06.011</do>
+<wp>20070813</wp>
+<ol>Unknown(0)</ol>
+<pmid>17697746</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>636</id>
+<a1>Lian,L.</a1>
+<a1>Wang,Y.</a1>
+<a1>Flick,M.</a1>
+<a1>Choi,J.</a1>
+<a1>Scott,E. W.</a1>
+<a1>Degen,J.</a1>
+<a1>Lemmon,M. A.</a1>
+<a1>Abrams,C. S.</a1>
+<t1>Loss of pleckstrin defines a novel pathway for PKC-mediated exocytosis</t1>
+<jf>Blood</jf>
+<jo>Blood</jo>
+<yr>2009</yr>
+<fd>Apr 9</fd>
+<vo>113</vo>
+<is>15</is>
+<sp>3577</sp>
+<op>3584</op>
+<k1>1-Phosphatidylinositol 3-Kinase/metabolism</k1>
+<k1>Actins/metabolism</k1>
+<k1>Animals</k1>
+<k1>Blood Platelets/cytology/metabolism</k1>
+<k1>Blood Proteins/genetics/metabolism</k1>
+<k1>Cytoplasmic Granules/metabolism</k1>
+<k1>Exocytosis/physiology</k1>
+<k1>Membrane Fusion/physiology</k1>
+<k1>Mice</k1>
+<k1>Mice, Inbred C57BL</k1>
+<k1>Mutagenesis</k1>
+<k1>Phosphoproteins/genetics/metabolism</k1>
+<k1>Platelet Activation/physiology</k1>
+<k1>Protein Kinase C/metabolism</k1>
+<k1>Signal Transduction/physiology</k1>
+<ab>Pleckstrin, the platelet and leukocyte C kinase substrate, is a prominent substrate of PKC in platelets, monocytes, macrophages, lymphocytes, and granulocytes. Pleckstrin accounts for 1% of the total protein in these cells, but it is best known for containing the 2 prototypic Pleckstrin homology, or PH, domains. Overexpressed pleckstrin can affect polyphosphoinositide second messenger-based signaling events; however, its true in vivo role has been unknown. Here, we describe mice containing a null mutation within the pleckstrin gene. Platelets lacking pleckstrin exhibit a marked defect in exocytosis of delta and alpha granules, alphaIIbbeta3 activation, actin assembly, and aggregation after exposure to the PKC stimulant, PMA. Pleckstrin-null platelets aggregate normally in response to thrombin, but they fail to aggregate in response to thrombin in the presence of PI3K inhibitors, suggesting that a PI3K-dependent signaling pathway compensates for the loss of pleckstrin. Although pleckstrin-null platelets merged their granules in response to stimulation of PKC, they failed to empty their contents into the open canalicular system. This might be attributable to impaired actin assembly present in cells lacking pleckstrin. These data show that pleckstrin regulates the fusion of granules to the cell membrane and is an essential component of PKC-mediated exocytosis.</ab>
+<no>LR: 20100412; GR: HL073289/HL/NHLBI NIH HHS/United States; GR: HL083392/HL/NHLBI NIH HHS/United States; GR: HL40387/HL/NHLBI NIH HHS/United States; JID: 7603509; 0 (Actins); 0 (Blood Proteins); 0 (Phosphoproteins); 0 (platelet protein P47); EC 2.7.1.137 (1-Phosphatidylinositol 3-Kinase); EC 2.7.11.13 (Protein Kinase C); OID: NLM: PMC2668855; 2009/02/03 [aheadofprint]; ppublish</no>
+<pp>United States</pp>
+<sn>1528-0020; 0006-4971</sn>
+<ad>Department of Medicine, University of Pennsylvania School of Medicine, Philadelphia, PA 19104, USA</ad>
+<an>PMID: 19190246; blood-2008-09-178913 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, N.I.H., Extramural; AIM; IM</sf>
+<do>10.1182/blood-2008-09-178913</do>
+<wp>20090203</wp>
+<ol>Unknown(0)</ol>
+<pmid>19190246</pmid>
+<pmcid>PMC2668855</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>633</id>
+<a1>Madlambayan,G. J.</a1>
+<a1>Butler,J. M.</a1>
+<a1>Hosaka,K.</a1>
+<a1>Jorgensen,M.</a1>
+<a1>Fu,D.</a1>
+<a1>Guthrie,S. M.</a1>
+<a1>Shenoy,A. K.</a1>
+<a1>Brank,A.</a1>
+<a1>Russell,K. J.</a1>
+<a1>Otero,J.</a1>
+<a1>Siemann,D. W.</a1>
+<a1>Scott,E. W.</a1>
+<a1>Cogle,C. R.</a1>
+<t1>Bone marrow stem and progenitor cell contribution to neovasculogenesis is dependent on model system with SDF-1 as a permissive trigger</t1>
+<jf>Blood</jf>
+<jo>Blood</jo>
+<yr>2009</yr>
+<fd>Nov 5</fd>
+<vo>114</vo>
+<is>19</is>
+<sp>4310</sp>
+<op>4319</op>
+<k1>Animals</k1>
+<k1>Bone Marrow Cells/cytology/physiology</k1>
+<k1>Carcinoma, Lewis Lung/blood supply/physiopathology</k1>
+<k1>Chemokine CXCL12/antagonists &amp; inhibitors/physiology</k1>
+<k1>Hematopoietic Stem Cells/cytology/physiology</k1>
+<k1>Ischemia/pathology/physiopathology</k1>
+<k1>Melanoma, Experimental/blood supply/physiopathology</k1>
+<k1>Mice</k1>
+<k1>Mice, Inbred C57BL</k1>
+<k1>Mice, Transgenic</k1>
+<k1>Models, Biological</k1>
+<k1>Neovascularization, Pathologic</k1>
+<k1>Neovascularization, Physiologic</k1>
+<k1>Receptors, CXCR4/antagonists &amp; inhibitors/physiology</k1>
+<k1>Retinal Vessels/pathology</k1>
+<ab>Adult bone marrow (BM) contributes to neovascularization in some but not all settings, and reasons for these discordant results have remained unexplored. We conducted novel comparative studies in which multiple neovascularization models were established in single mice to reduce variations in experimental methodology. In different combinations, BM contribution was detected in ischemic retinas and, to a lesser extent, Lewis lung carcinoma cells, whereas B16 melanomas showed little to no BM contribution. Using this spectrum of BM contribution, we demonstrate the necessity for site-specific expression of stromal-derived factor-1alpha (SDF-1alpha) and its mobilizing effects on BM. Blocking SDF-1alpha activity with neutralizing antibodies abrogated BM-derived neovascularization in lung cancer and retinopathy. Furthermore, secondary transplantation of single hematopoietic stem cells (HSCs) showed that HSCs are a long-term source of neovasculogenesis and that CD133(+)CXCR4(+) myeloid progenitor cells directly participate in new blood vessel formation in response to SDF-1alpha. The varied BM contribution seen in different model systems is suggestive of redundant mechanisms governing postnatal neovasculogenesis and provides an explanation for contradictory results observed in the field.</ab>
+<no>LR: 20100202; GR: CA084408/CA/NCI NIH HHS/United States; GR: CA089655/CA/NCI NIH HHS/United States; GR: K08 DK067359/DK/NIDDK NIH HHS/United States; GR: R01 HL070738/HL/NHLBI NIH HHS/United States; GR: R01 HL075258/HL/NHLBI NIH HHS/United States; JID: 7603509; 0 (CXCR4 protein, mouse); 0 (Chemokine CXCL12); 0 (Cxcl12 protein, mouse); 0 (Receptors, CXCR4); OID: NLM: PMC2774559 [Available on 11/05/10]; 2009/08/28 [aheadofprint]; ppublish</no>
+<pp>United States</pp>
+<sn>1528-0020; 0006-4971</sn>
+<ad>Program in Stem Cell Biology and Regenerative Medicine, University of Florida, Gainesville, Florida, USA.</ad>
+<an>PMID: 19717647; blood-2009-03-211342 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, N.I.H., Extramural; Research Support, Non-U.S. Gov&#39;t; AIM; IM</sf>
+<do>10.1182/blood-2009-03-211342</do>
+<wp>20090828</wp>
+<ol>Unknown(0)</ol>
+<pmid>19717647</pmid>
+<pmcid>PMC2774559</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>625</id>
+<a1>Madlambayan,G. J.</a1>
+<a1>Meacham,A.</a1>
+<a1>Hosaka,K.</a1>
+<a1>Mir,S.</a1>
+<a1>Jorgensen,M.</a1>
+<a1>Scott,E. W.</a1>
+<a1>Siemann,D. W.</a1>
+<a1>Cogle,C. R.</a1>
+<t1>Leukemia regression by vascular disruption and anti-angiogenic therapy</t1>
+<jf>Blood</jf>
+<jo>Blood</jo>
+<yr>2010</yr>
+<fd>May 14</fd>
+<ab>Acute myelogenous leukemias (AML) and endothelial cells depend on each other for survival and proliferation. Monotherapy anti-vascular strategies such as targeting vascular endothelial growth factor (VEGF) has limited efficacy in treating AML. Thus, in search of a multi-target anti-vascular treatment strategy for AML we tested a novel vascular disrupting agent, OXi4503, alone and in combination with the anti-VEGF antibody, bevacizumab. Using xenotransplant animal models, OXi4503 treatment of human AML chloromas led to vascular disruption in leukemia cores that displayed increased leukemia cell apoptosis. However, viable rims of leukemia cells remained and were richly vascular with increased VEGF-A expression. To target this peripheral reactive angiogenesis, bevacizumab was combined with OXi4503 and abrogated viable vascular rims, thereby leading to enhanced leukemia regression. In a systemic model of primary human AML, OXi4503 regressed leukemia engraftment alone and in combination with bevacizumab. Differences in blood vessel density alone could not account for the observed regression, suggesting that OXi4503 also exhibited direct cytotoxic effects on leukemia cells. In vitro analyses confirmed this targeted effect, which was mediated by the production of reactive oxygen species and resulted in apoptosis. Together, these data show that OXi4503 alone is capable of regressing AML by means of a multi-targeted mechanism and that the addition of bevacizumab mitigates reactive angiogenesis.</ab>
+<no>JID: 7603509; aheadofprint</no>
+<sn>1528-0020; 0006-4971</sn>
+<ad>Department of Medicine, Division of Hematology/Oncology, University of Florida, Gainesville, FL, United States;</ad>
+<an>PMID: 20472832; blood-2009-06-230474 [pii]</an>
+<la>ENG</la>
+<sf>JOURNAL ARTICLE</sf>
+<do>10.1182/blood-2009-06-230474</do>
+<wp>20100514</wp>
+<ol>Unknown(0)</ol>
+<pmid>20472832</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>645</id>
+<a1>Marshall,G. P.,2nd</a1>
+<a1>Laywell,E. D.</a1>
+<a1>Zheng,T.</a1>
+<a1>Steindler,D. A.</a1>
+<a1>Scott,E. W.</a1>
+<t1>In vitro-derived &amp;quot;neural stem cells&amp;quot; function as neural progenitors without the capacity for self-renewal</t1>
+<jf>Stem cells (Dayton, Ohio)</jf>
+<jo>Stem Cells</jo>
+<yr>2006</yr>
+<fd>Mar</fd>
+<vo>24</vo>
+<is>3</is>
+<sp>731</sp>
+<op>738</op>
+<k1>Animals</k1>
+<k1>Animals, Newborn</k1>
+<k1>Cell Differentiation/physiology</k1>
+<k1>Cell Proliferation</k1>
+<k1>Cells, Cultured</k1>
+<k1>Graft Survival/physiology</k1>
+<k1>Lateral Ventricles/cytology/physiology</k1>
+<k1>Mice</k1>
+<k1>Stem Cell Transplantation</k1>
+<k1>Stem Cells/cytology/physiology</k1>
+<ab>Hematopoietic stem cells have been defined by their ability to self-renew and successfully reconstitute hematopoiesis throughout the life of a transplant recipient. Neural stem cells (NSCs) are believed to exist in the regenerating regions of the brain in adult mice: the subependymal zone (SEZ) of the lateral ventricles (LVs) and the hippocampal dentate gyrus. Cells from the SEZ can be cultured to generate neurospheres or multipotent astrocytic stem cells (MASCs), both of which demonstrate the stem cell qualities of multipotency and self-renewal in vitro. Whether neurospheres and MASCs possess the true stem cell quality of functional self-renewal in vivo is unknown. The definitive tests for this unique capability are long-term engraftment and serial transplantation. Both neurospheres and MASCs transplanted into the LVs of C57BL/6 mice resulted in short-term engraftment into the recipient brain, with donor-derived migratory neuroblasts visible in the rostral migratory stream and olfactory bulb after transplantation. To test in vivo expansion/self-renewal of the transplanted cells, we attempted to reisolate donor-derived neurospheres and MASCs. Even when rigorous drug selection was used to select for rare events, no donor-derived neurospheres or MASCs could be reisolated. Furthermore, donor-derived migratory neuroblasts were not observed in the rostral migratory stream (RMS) for more than 1 month after transplantation, indicating a transient rather than long-term engraftment. Therefore, in vitro-derived neurospheres and MASCs do not function as NSCs with long-term, self-renewal capabilities in vivo but instead represent short-term neural progenitor cells as defined by an in vivo functional assay.</ab>
+<no>LR: 20071114; GR: CA72769/CA/NCI NIH HHS/United States; GR: HL70143/HL/NHLBI NIH HHS/United States; GR: NS37556/NS/NINDS NIH HHS/United States; JID: 9304532; 2005/12/08 [aheadofprint]; ppublish</no>
+<pp>United States</pp>
+<sn>1066-5099; 1066-5099</sn>
+<ad>Program in Stem Cell Biology and Regenerative Medicine, University of Florida, 1600 SW Archer Road, Gainesville, Florida 32611, USA. gpm2@ufl.edu</ad>
+<an>PMID: 16339644; 2005-0245 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, N.I.H., Extramural; IM</sf>
+<do>10.1634/stemcells.2005-0245</do>
+<wp>20051208</wp>
+<ol>Unknown(0)</ol>
+<pmid>16339644</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>648</id>
+<a1>Marshall,G. P.,2nd</a1>
+<a1>Scott,E. W.</a1>
+<a1>Zheng,T.</a1>
+<a1>Laywell,E. D.</a1>
+<a1>Steindler,D. A.</a1>
+<t1>Ionizing radiation enhances the engraftment of transplanted in vitro-derived multipotent astrocytic stem cells</t1>
+<jf>Stem cells (Dayton, Ohio)</jf>
+<jo>Stem Cells</jo>
+<yr>2005</yr>
+<fd>Oct</fd>
+<vo>23</vo>
+<is>9</is>
+<sp>1276</sp>
+<op>1285</op>
+<k1>Animals</k1>
+<k1>Astrocytes/cytology/metabolism/radiation effects/transplantation</k1>
+<k1>Cell Growth Processes/radiation effects</k1>
+<k1>Cell Movement/physiology/radiation effects</k1>
+<k1>Cells, Cultured</k1>
+<k1>Female</k1>
+<k1>Graft Survival/radiation effects</k1>
+<k1>Lateral Ventricles/cytology</k1>
+<k1>Mice</k1>
+<k1>Mice, Inbred C57BL</k1>
+<k1>Multipotent Stem Cells/cytology/metabolism/radiation effects</k1>
+<k1>Neurons/cytology/metabolism/radiation effects</k1>
+<k1>Prosencephalon/cytology</k1>
+<k1>Stem Cell Transplantation</k1>
+<ab>The subependymal zone (SEZ) is a region of persistent neurogenesis in the adult mammalian brain containing a neural stem cell (NSC) pool that continuously generates migratory neuroblasts that travel in chains through the rostral migratory stream (RMS) to the olfactory bulb (OB), where they differentiate and functionally integrate into existing neural circuitry. NSCs can be isolated from the SEZ and cultured to generate either neurospheres (NSs) or multipotent astrocytic stem cells (MASCs), with both possessing the stem cell characteristics of multipotency and self-renewal. NSs and MASCs home to the SEZ after transplantation into the lateral ventricle (LV) and contribute to neuroblast migration, with minimal engraftment into the OB observed in the adult mouse. Recent studies have compared the relatively uncharacterized NSC with the more established hematopoietic stem cell (HSC) in an effort to determine the level of stemness possessed by the NSC. Depletion of native HSCs in the bone marrow by lethal irradiation (LI) is necessary to maximize functional engraftment of donor HSCs. Our data show that the NSC pool and neuroblasts in the SEZ can be significantly and permanently depleted by exposure to LI. Attenuation of donor-derived migratory neuroblast engraftment into the OB is observed after transplantation of gfp+ MASCs into the LV of LI animals, whereas engraftment is significantly enhanced after transplantation into animals exposed to sublethal levels of ionizing radiation. By increasing receptiveness of the NSC niche through depletion of indigenous cells, the adult SEZ-RMS-OB can be used as a model to further characterize the NSC.</ab>
+<no>LR: 20071114; GR: HL70143/HL/NHLBI NIH HHS/United States; GR: NS37556/NS/NINDS NIH HHS/United States; JID: 9304532; 2005/07/28 [aheadofprint]; ppublish</no>
+<pp>United States</pp>
+<sn>1066-5099; 1066-5099</sn>
+<ad>Program in Stem Cell Biology and Regenerative Medicine, University of Florida, 1600 SW Archer Road, Gainesville, Florida 32611, USA. gpm2@ufl.edu</ad>
+<an>PMID: 16051984; 2005-0073 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, N.I.H., Extramural; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<do>10.1634/stemcells.2005-0073</do>
+<wp>20050728</wp>
+<ol>Unknown(0)</ol>
+<pmid>16051984</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>683</id>
+<a1>McKellar,Q. A.</a1>
+<a1>Midgley,D. M.</a1>
+<a1>Galbraith,E. A.</a1>
+<a1>Scott,E. W.</a1>
+<a1>Bradley,A.</a1>
+<t1>Clinical and pharmacological properties of ivermectin in rabbits and guinea pigs</t1>
+<jf>The Veterinary record</jf>
+<jo>Vet.Rec.</jo>
+<yr>1992</yr>
+<fd>Jan 25</fd>
+<vo>130</vo>
+<is>4</is>
+<sp>71</sp>
+<op>73</op>
+<k1>Animals</k1>
+<k1>Ear, External/parasitology</k1>
+<k1>Guinea Pigs/metabolism</k1>
+<k1>Injections, Subcutaneous/veterinary</k1>
+<k1>Ivermectin/administration &amp; dosage/pharmacokinetics/therapeutic use</k1>
+<k1>Mite Infestations/drug therapy/veterinary</k1>
+<k1>Rabbits/metabolism</k1>
+<k1>Rodent Diseases/drug therapy</k1>
+<k1>Tissue Distribution</k1>
+<ab>When 400 micrograms ivermectin/kg was administered subcutaneously to rabbits infected with the ear mite Psoroptes cuniculi it significantly reduced the clinical score, and when 500 micrograms ivermectin/kg was administered subcutaneously to guinea pigs with mange due to Trixacaurus caviae it resulted in a clinical cure. In rabbits a subcutaneous dose of 400 micrograms/kg produced high and sustained concentrations of ivermectin in the tissues and body fluids for at least 13 days and its rate of depletion from tissues was similar to that observed in sheep and rats. The mean (+/- sem) maximum concentration in plasma was 42.0 +/- 9.7 ng/ml 37.2 +/- 5.0 hours after administration and the area under the concentration-time curve was 3543 +/- 580 ng/ml hours. After the administration of 500 micrograms ivermectin/kg to guinea pigs orally, subcutaneously or topically the drug could be detected in the plasma only after subcutaneous administration. The mean concentration 72 hours after its administration to four guinea pigs was 0.7 +/- 0.3 ng/ml.</ab>
+<no>LR: 20061115; JID: 0031164; 70288-86-7 (Ivermectin); CIN: Vet Rec. 1992 Apr 4;130(14):307. PMID: 1595155; ppublish</no>
+<pp>ENGLAND</pp>
+<sn>0042-4900; 0042-4900</sn>
+<ad>Department of Veterinary Pharmacology, University of Glasgow Veterinary School, Bearsden.</ad>
+<an>PMID: 1553807</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>1553807</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>691</id>
+<a1>McKellar,Q. A.</a1>
+<a1>Scott,E. W.</a1>
+<t1>The benzimidazole anthelmintic agents--a review</t1>
+<jf>Journal of veterinary pharmacology and therapeutics</jf>
+<jo>J.Vet.Pharmacol.Ther.</jo>
+<yr>1990</yr>
+<fd>Sep</fd>
+<vo>13</vo>
+<is>3</is>
+<sp>223</sp>
+<op>247</op>
+<k1>Animals</k1>
+<k1>Benzimidazoles/pharmacokinetics/pharmacology/therapeutic use/toxicity</k1>
+<k1>Drug Resistance</k1>
+<k1>Helminthiasis/drug therapy</k1>
+<k1>Helminthiasis, Animal</k1>
+<k1>Helminths/drug effects</k1>
+<k1>Molecular Structure</k1>
+<no>LR: 20041117; JID: 7910920; 0 (Benzimidazoles); RF: 145; ppublish</no>
+<pp>ENGLAND</pp>
+<sn>0140-7783; 0140-7783</sn>
+<ad>Department of Veterinary Pharmacology, University of Glasgow Veterinary School, Bearsden, UK.</ad>
+<an>PMID: 2231864</an>
+<la>eng</la>
+<sf>Journal Article; Review; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>2231864</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>678</id>
+<a1>McKellar,Q. A.</a1>
+<a1>Scott,E. W.</a1>
+<a1>Baxter,P.</a1>
+<a1>Anderson,L. A.</a1>
+<a1>Bairden,K.</a1>
+<t1>Pharmacodynamics, pharmacokinetics and faecal persistence of morantel in cattle and goats</t1>
+<jf>Journal of veterinary pharmacology and therapeutics</jf>
+<jo>J.Vet.Pharmacol.Ther.</jo>
+<yr>1993</yr>
+<fd>Mar</fd>
+<vo>16</vo>
+<is>1</is>
+<sp>87</sp>
+<op>92</op>
+<k1>Animals</k1>
+<k1>Cattle/metabolism</k1>
+<k1>Cattle Diseases/drug therapy</k1>
+<k1>Feces/chemistry</k1>
+<k1>Goats/metabolism</k1>
+<k1>Milk/metabolism</k1>
+<k1>Morantel/pharmacokinetics/pharmacology</k1>
+<k1>Nematode Infections/drug therapy/veterinary</k1>
+<k1>Ostertagiasis/drug therapy/veterinary</k1>
+<ab>Morantel could not be detected (&amp;lt; 0.05 microgram/ml) in the plasma of cattle or goats following the oral administration of morantel tartrate at a dose rate of 10 mg/kg bodyweight. No morantel was detected in the milk of lactating goats except in one animal where a concentration of 0.092 microgram/ml was detected at 8 h after drug administration. Morantel was highly effective against Cooperia oncophora infections in calves treated 6, 9 or 18 days after infection; however, was highly effective against Ostertagia ostertagi only when treated 18 days after infection. Morantel did not affect the fecundity of adult O. ostertagi surviving treatment 18 days after infection which had similar average numbers of eggs in their uteri (range 13.4 +/- 0.73-16.8 +/- 0.98) as did parasites from control animals (range 12.0 +/- 0.70-13.6 +/- 0.66). Morantel could be detected at a concentration of 96 +/- 4.5 micrograms/g (dry weight) in the faeces of a calf 24 h after treatment with 10 mg/kg bodyweight of morantel tartrate. The concentration of morantel in replicate samples of this faeces exposed to natural atmosphere, but not to soil or soil organisms, declined slowly over the following 322 days. At day 322 after the start of the experiment 8.8 micrograms/g of morantel could be measured in the remaining faecal material. Throughout the faecal degradation study the concentration of morantel in the crusts of the replicate sample pats was lower than the concentration in the core samples.</ab>
+<no>LR: 20061115; JID: 7910920; 20574-50-9 (Morantel); ppublish</no>
+<pp>ENGLAND</pp>
+<sn>0140-7783; 0140-7783</sn>
+<ad>Department of Veterinary Pharmacology, University of Glasgow, Veterinary School, Bearsden, UK.</ad>
+<an>PMID: 8479005</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>8479005</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>676</id>
+<a1>Natarajan,V.</a1>
+<a1>Plishka,R. J.</a1>
+<a1>Scott,E. W.</a1>
+<a1>Lane,H. C.</a1>
+<a1>Salzman,N. P.</a1>
+<t1>An internally controlled virion PCR for the measurement of HIV-1 RNA in plasma</t1>
+<jf>PCR methods and applications</jf>
+<jo>PCR Methods Appl.</jo>
+<yr>1994</yr>
+<fd>Jun</fd>
+<vo>3</vo>
+<is>6</is>
+<sp>346</sp>
+<op>350</op>
+<k1>Base Sequence</k1>
+<k1>HIV-1/genetics</k1>
+<k1>Humans</k1>
+<k1>Molecular Sequence Data</k1>
+<k1>Polymerase Chain Reaction/methods</k1>
+<k1>RNA, Viral/blood/genetics</k1>
+<k1>Virion/genetics</k1>
+<ab>We have developed an assay to measure the HIV-1 RNA in patients&amp;#39; plasma or sera using an infectious mutant virus as an internal control. The mutant virus VX-46 has a 25-bp insert in a conserved region between the primer-binding and major splice donor sites. To utilize this virus as an internal control, different dilutions of this virus were added to aliquots of plasma sample to be measured, RNA was isolated and reverse-transcribed to cDNA. PCR was performed with primers selected to include the sequences on either side of the insert contained in the externally added virus. The DNA product from the control virus is 25 bp longer than that from the virus present in plasma. The amount of viral RNA present in a plasma sample is calculated after the PCR-amplified products are separated by gel electrophoresis. Unlike other quantitative PCR assays, this internally controlled virion PCR (ICVPCR) assay eliminates errors introduced by variable recovery during the RNA purification step, therefore, enhancing the accuracy of the assay.</ab>
+<no>LR: 20071114; GR: NIAID NO1-A1-05058/AI/NIAID NIH HHS/United States; JID: 9201445; 0 (RNA, Viral); ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>1054-9803; 1054-9803</sn>
+<ad>Department of Microbiology, Georgetown University, Washington, D.C. 20007.</ad>
+<an>PMID: 7920239</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM; X</sf>
+<ol>Unknown(0)</ol>
+<pmid>7920239</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>674</id>
+<a1>Olson,M. C.</a1>
+<a1>Scott,E. W.</a1>
+<a1>Hack,A. A.</a1>
+<a1>Su,G. H.</a1>
+<a1>Tenen,D. G.</a1>
+<a1>Singh,H.</a1>
+<a1>Simon,M. C.</a1>
+<t1>PU. 1 is not essential for early myeloid gene expression but is required for terminal myeloid differentiation</t1>
+<jf>Immunity</jf>
+<jo>Immunity</jo>
+<yr>1995</yr>
+<fd>Dec</fd>
+<vo>3</vo>
+<is>6</is>
+<sp>703</sp>
+<op>714</op>
+<k1>Animals</k1>
+<k1>Base Sequence</k1>
+<k1>Cell Differentiation/genetics</k1>
+<k1>Cells, Cultured</k1>
+<k1>Female</k1>
+<k1>Gene Expression Regulation, Developmental</k1>
+<k1>Granulocytes/cytology/metabolism</k1>
+<k1>Hematopoietic Stem Cells/cytology/metabolism</k1>
+<k1>Male</k1>
+<k1>Mice</k1>
+<k1>Mice, Mutant Strains</k1>
+<k1>Molecular Sequence Data</k1>
+<k1>Monocytes/cytology/metabolism</k1>
+<k1>Proto-Oncogene Proteins/genetics/metabolism</k1>
+<k1>Trans-Activators</k1>
+<ab>We have previously shown using gene targeting that PU.1 is essential for the development of lymphoid and myeloid lineages during fetal liver hematopoiesis. We now show that PU.1 is required for the maturation of yolk sac-derived myeloid progenitors and for the differentiation of ES cells into macrophages. The role of PU.1 in regulating target genes, thought to be critical in the development of monocytes and granulocytes, has been analyzed. Early genes such as GM-CSFR, G-CSFR, and myeloperoxidase are expressed in PU.1-/- embryos and differentiated PU.1-/- ES cells. However, the expression of genes associated with terminal myeloid differentiation (CD11b, CD64, and M-CSFR) is eliminated in differentiated PU.1-/- ES cells. Development of macrophages is restored with the introduction of a PU.1 cDNA regulated by its own promoter. The PU.1-/- ES cells represent an important model for analyzing myeloid cell development.</ab>
+<no>LR: 20071114; GR: F32 AI08933/AI/NIAID NIH HHS/United States; GR: HL52094/HL/NHLBI NIH HHS/United States; JID: 9432918; 0 (Proto-Oncogene Proteins); 0 (Trans-Activators); 0 (proto-oncogene protein Spi-1); ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>1074-7613; 1074-7613</sn>
+<ad>Howard Hughes Medical Institute, University of Chicago, Illinois 60637, USA.</ad>
+<an>PMID: 8777716</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>8777716</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>656</id>
+<a1>O&#39;Malley,K.</a1>
+<a1>Scott,E. W.</a1>
+<t1>Stem cell fusion confusion</t1>
+<jf>Experimental hematology</jf>
+<jo>Exp.Hematol.</jo>
+<yr>2004</yr>
+<fd>Feb</fd>
+<vo>32</vo>
+<is>2</is>
+<sp>131</sp>
+<op>134</op>
+<k1>Animals</k1>
+<k1>Cell Fusion</k1>
+<k1>Hematopoietic Stem Cells/cytology</k1>
+<k1>Hepatocytes/cytology</k1>
+<k1>Humans</k1>
+<k1>Myocytes, Cardiac/cytology</k1>
+<k1>Purkinje Cells/cytology</k1>
+<k1>Stem Cells/cytology</k1>
+<no>LR: 20041117; JID: 0402313; ppublish</no>
+<pp>Netherlands</pp>
+<sn>0301-472X; 0301-472X</sn>
+<ad>Program in Stem Cell Biology and Regenerative Medicine, University of Florida, Gainesville, Fla, USA.</ad>
+<an>PMID: 15102472; S0301472X03003965 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; IM</sf>
+<do>10.1016/j.exphem.2003.11.009</do>
+<ol>Unknown(0)</ol>
+<pmid>15102472</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>664</id>
+<a1>Petersen,B. E.</a1>
+<a1>Grossbard,B.</a1>
+<a1>Hatch,H.</a1>
+<a1>Pi,L.</a1>
+<a1>Deng,J.</a1>
+<a1>Scott,E. W.</a1>
+<t1>Mouse A6-positive hepatic oval cells also express several hematopoietic stem cell markers</t1>
+<jf>Hepatology (Baltimore, Md.)</jf>
+<jo>Hepatology</jo>
+<yr>2003</yr>
+<fd>Mar</fd>
+<vo>37</vo>
+<is>3</is>
+<sp>632</sp>
+<op>640</op>
+<k1>Albumins/genetics</k1>
+<k1>Animals</k1>
+<k1>Antigens, CD34/analysis</k1>
+<k1>Antigens, CD45/analysis</k1>
+<k1>Antigens, Ly/analysis</k1>
+<k1>Antigens, Thy-1/analysis</k1>
+<k1>Biological Markers/analysis</k1>
+<k1>Cell Division</k1>
+<k1>Cell Separation</k1>
+<k1>Epitopes/analysis</k1>
+<k1>Flow Cytometry</k1>
+<k1>Hematopoietic Stem Cells/chemistry</k1>
+<k1>Immunohistochemistry</k1>
+<k1>Liver/chemistry/cytology</k1>
+<k1>Membrane Proteins/analysis</k1>
+<k1>Mice</k1>
+<k1>Mice, Inbred C57BL</k1>
+<k1>RNA/analysis</k1>
+<k1>RNA, Messenger/analysis</k1>
+<k1>Reverse Transcriptase Polymerase Chain Reaction</k1>
+<k1>alpha-Fetoproteins/analysis/genetics</k1>
+<ab>Hepatic oval cells (HOC) are thought to be a type of facultative stem cell that arises as a result of certain forms of hepatic injury. A new and more efficient model has been established to activate the oval cell compartment in mice by incorporating 3,5-diethoxycarbonyl-1,4-dihydro-collidine (DDC) in a standard chow at a concentration of 0.1%. At the present time, very few markers exist for the mouse oval cells. One accepted marker is A6, an uncharacterized epitope recognized by mouse hepatic oval cells and it is accepted to be an oval cell marker. Sca-1 is a cell surface marker used to identify hematopoietic stem cells in conjunction with Thy-1+, CD34+, and lineage-specific markers. Both the CD34 and Sca-1 antigens are not normally expressed in adult liver, but are expressed in fetal liver, presumably on the hematopoietic cells. We report herein that mouse oval cells express high levels of Sca-1 and CD34, as well as CD45 surface proteins. Immunohistochemistry revealed that the cells expressing Sca-1/CD34/CD45 were indeed oval cells because they co-expressed the oval cell-specific marker A6 (94.57% +/- 0.033%), as well as alpha-fetoprotein (AFP) (75.92% +/- 0.071%). By using Sca-1 antibody in conjunction with magnetic activated cell sorting (MACS), followed with a flow cytometric cell sorting (FACS) method for CD34 and CD45, we have developed a rapid oval cell isolation protocol with high yields of greater than 90%. In conclusion, we have an efficient murine model for the production and isolation of large numbers of highly purified oval cells. Our system works with most strains of mouse, which will facilitate both in vivo and in vitro studies of mouse hepatic oval cells.</ab>
+<no>LR: 20071115; JID: 8302946; 0 (Albumins); 0 (Antigens, CD34); 0 (Antigens, Ly); 0 (Antigens, Thy-1); 0 (Biological Markers); 0 (Epitopes); 0 (Ly6a protein, mouse); 0 (Membrane Proteins); 0 (RNA, Messenger); 0 (alpha-Fetoproteins); 63231-63-0 (RNA); EC 3.1.3.48 (Antigens, CD45); ppublish</no>
+<pp>United States</pp>
+<sn>0270-9139; 0270-9139</sn>
+<ad>Department of Pathology, Immunology and Laboratory Medicine, College of Medical, University of Florida, Gainesville, FL 32610, USA. Petersen@pathology.ufl.edu</ad>
+<an>PMID: 12601361; S0270913903000296 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; IM</sf>
+<do>10.1053/jhep.2003.50104</do>
+<ol>Unknown(0)</ol>
+<pmid>12601361</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>700</id>
+<a1>Salcman,M.</a1>
+<a1>Rao,K. C.</a1>
+<a1>Scott,E. W.</a1>
+<a1>Bellis,E. H.</a1>
+<a1>Blaumanis,O. R.</a1>
+<t1>CT characteristics of a transplantable canine glioma model: preliminary kinetic analysis</t1>
+<jf>AJNR.American journal of neuroradiology</jf>
+<jo>AJNR Am.J.Neuroradiol.</jo>
+<yr>1983</yr>
+<fd>May-Jun</fd>
+<vo>4</vo>
+<is>3</is>
+<sp>786</sp>
+<op>788</op>
+<k1>Animals</k1>
+<k1>Brain Neoplasms/radiography</k1>
+<k1>Dogs</k1>
+<k1>Glioma/radiography</k1>
+<k1>Mitotic Index</k1>
+<k1>Neoplasm Transplantation</k1>
+<k1>Neoplasms, Experimental/radiography</k1>
+<k1>Tomography, X-Ray Computed</k1>
+<ab>Experimental brain tumors can be produced in dogs through the intracerebral injection of 3 X 10(6) live tumor cells in either neonates or adult animals. Tumors are visible by computed tomography on day 8 postinjection. Most tumors appear as ring lesions with central lucencies and shaggy borders. By postinjection day 12, tumor volumes increase more than 10 times; the cell cycling time is about 1-3 days. The initial doubling time is about 1-2 days and corresponds to the in vitro doubling time of about 24 hr. The use of computed tomography to perform noninvasive kinetic analysis deserves further study. The transplantable canine glioma model would appear to be ideal for this purpose.</ab>
+<no>LR: 20080214; JID: 8003708; ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0195-6108; 0195-6108</sn>
+<an>PMID: 6410857</an>
+<la>eng</la>
+<sf>Journal Article; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>6410857</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>701</id>
+<a1>Salcman,M.</a1>
+<a1>Scott,E. W.</a1>
+<a1>Schepp,R. S.</a1>
+<a1>Knipp,H. C.</a1>
+<a1>Broadwell,R. D.</a1>
+<t1>Transplantable canine glioma model for use in experimental neuro-oncology</t1>
+<jf>Neurosurgery</jf>
+<jo>Neurosurgery</jo>
+<yr>1982</yr>
+<fd>Sep</fd>
+<vo>11</vo>
+<is>3</is>
+<sp>372</sp>
+<op>381</op>
+<k1>Animals</k1>
+<k1>Brain Neoplasms/pathology/radiography</k1>
+<k1>Dogs</k1>
+<k1>Glioblastoma</k1>
+<k1>Glioma/pathology/radiography</k1>
+<k1>Neoplasm Transplantation</k1>
+<k1>Neoplasms, Experimental</k1>
+<k1>Tomography, X-Ray Computed</k1>
+<ab>The need for a large animal tumor model in experimental neuro-oncology led us to re-evaluate and to modify the transplantable canine glioma of Wodinsky and Walker. Successive passages of the original tumor brei were made in purebred beagles, from beagle to mongrel, and between various mongrel strains until an intracerebral injection of 0.1 cc on Days 1 to 3 of life produced a 93% incidence of tumor take in all breeds. The mean survival was 13.5 +/- 1.9 days after injection (range, 10 to 19 days) in 10 litters. The tumor was invariably fatal and possessed many of the histological characteristics of human glioblastoma (i.e., capillary proliferation, pseudopallisading, frequent mitotic figures, and multinucleated giant cells). The animals were large enough to be scanned on the Pfizer 450 scanner, and the tumors were visualized in vivo as typical &amp;quot;ring&amp;quot; lesions after the injection of contrast agent. Intravital staining with Evans blue outlined the areas of contrast enhancement observed in the same tumors by computed tomography. The apparent defect in the blood-brain barrier could be explained in part by the absence of endothelial tight junctions on electron microscopy. Stability in the histology and activity of the tumor could be demonstrated after more than 14 months of storage at -70 degrees C. The transplantable canine glioma model has many advantages including low cost, reproducible morphology, a short survival time, and relative safety for the investigator. The large size of the animal preparation allows the use of complex surgical instrumentation and radiographic study, as well as repeated sampling of cerebrospinal and other fluids.</ab>
+<no>LR: 20061115; JID: 7802914; ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0148-396X; 0148-396X</sn>
+<an>PMID: 6290929</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>6290929</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>643</id>
+<a1>Sanders,R. C.,Jr</a1>
+<a1>Slayton,W. B.</a1>
+<a1>Cogle,C. R.</a1>
+<a1>Fisher,R. C.</a1>
+<a1>Scott,E. W.</a1>
+<t1>Stem cell research</t1>
+<jf>Paediatric respiratory reviews</jf>
+<jo>Paediatr.Respir.Rev.</jo>
+<yr>2006</yr>
+<fd>Jun</fd>
+<vo>7</vo>
+<is>2</is>
+<sp>135</sp>
+<op>140</op>
+<k1>Animals</k1>
+<k1>Bioartificial Organs</k1>
+<k1>Biomedical Research</k1>
+<k1>Drug Delivery Systems</k1>
+<k1>Humans</k1>
+<k1>Lung Diseases/therapy</k1>
+<k1>Stem Cell Transplantation</k1>
+<k1>Stem Cells/physiology</k1>
+<k1>Tissue Engineering</k1>
+<ab>One of the most active areas of research in medicine today is stem cell biology. This review introduces the reader to the field of stem cell biology and its therapeutic potential. More importantly, the potential application of stem cell therapy in acute lung injury will be explored.</ab>
+<no>LR: 20091014; JID: 100898941; RF: 75; 2006/06/02 [aheadofprint]; ppublish</no>
+<pp>England</pp>
+<sn>1526-0542; 1526-0542</sn>
+<ad>Divison of Pediatric Critical Care, Department of Pediatrics, University of Florida, Gainesville, 32610, USA. sanderc@peds.ufl.edu</ad>
+<an>PMID: 16765300; S1526-0542(06)00029-7 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Review; IM</sf>
+<do>10.1016/j.prrv.2006.03.009</do>
+<wp>20060602</wp>
+<ol>Unknown(0)</ol>
+<pmid>16765300</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>657</id>
+<a1>Scott,E. W.</a1>
+<t1>Stem cell plasticity or fusion: two approaches to targeted cell therapy</t1>
+<jf>Blood cells, molecules &amp; diseases</jf>
+<jo>Blood Cells Mol.Dis.</jo>
+<yr>2004</yr>
+<fd>Jan-Feb</fd>
+<vo>32</vo>
+<is>1</is>
+<sp>65</sp>
+<op>67</op>
+<k1>Animals</k1>
+<k1>Cell Differentiation</k1>
+<k1>Cell Fusion</k1>
+<k1>Humans</k1>
+<k1>Liver Regeneration</k1>
+<k1>Stem Cell Transplantation/methods</k1>
+<k1>Stem Cells/cytology/physiology</k1>
+<ab>The possibility the adult stem cells may be able to differentiate along atypical developmental pathways has garnered widespread attention. Recent papers have demonstrated that some &amp;quot;plasticity&amp;quot; arises as a result of cellular fusion events. This review attempts to highlight and reconcile the current data on both sides of the plasticity debate.</ab>
+<no>LR: 20051116; JID: 9509932; RF: 22; ppublish</no>
+<pp>United States</pp>
+<sn>1079-9796; 1079-9796</sn>
+<ad>Program in Stem Cell Biology and Regenerative Medicine, Department of Molecular Genetics and Microbiology, University of Florida Shands Cancer Center, Gainesville, FL 32610-0232, USA. escott@ufl.edu</ad>
+<an>PMID: 14757415; S1079979603002602 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Review; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>14757415</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>693</id>
+<a1>Scott,E. W.</a1>
+<t1>The manpower dilemma revisited. Part 2</t1>
+<jf>Administrative Radiology : AR</jf>
+<jo>Adm.Radiol.</jo>
+<yr>1990</yr>
+<fd>Feb</fd>
+<vo>9</vo>
+<is>2</is>
+<sp>92, 94</sp>
+<k1>Competency-Based Education</k1>
+<k1>Hospital Departments/manpower</k1>
+<k1>Radiology Department, Hospital/manpower</k1>
+<k1>Radiotherapy/standards</k1>
+<k1>Technology, Radiologic/education</k1>
+<k1>United States</k1>
+<no>LR: 20001218; JID: 8712333; ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0738-6974; 0738-6974</sn>
+<an>PMID: 10104277</an>
+<la>eng</la>
+<sf>Journal Article; H</sf>
+<ol>Unknown(0)</ol>
+<pmid>10104277</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>702</id>
+<a1>Scott,E. W.</a1>
+<t1>Primary Publication</t1>
+<jf>Science (New York, N.Y.)</jf>
+<jo>Science</jo>
+<yr>1951</yr>
+<fd>Oct 26</fd>
+<vo>114</vo>
+<is>2965</is>
+<sp>3</sp>
+<no>JID: 0404511; ppublish</no>
+<sn>1095-9203; 0036-8075</sn>
+<an>PMID: 17832861; 114/2965/3 [pii]</an>
+<la>ENG</la>
+<sf>JOURNAL ARTICLE</sf>
+<do>10.1126/science.114.2965.3</do>
+<ol>Unknown(0)</ol>
+<pmid>17832861</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>703</id>
+<a1>Scott,E. W.</a1>
+<t1>Role of the Public Health Laboratory in Gas Defense</t1>
+<jf>American Journal of Public Health and the Nation&#39;s Health</jf>
+<jo>Am.J.Public Health Nations Health</jo>
+<yr>1944</yr>
+<fd>Mar</fd>
+<vo>34</vo>
+<is>3</is>
+<sp>275</sp>
+<op>278</op>
+<no>LR: 20081120; JID: 1254075; OID: NLM: PMC1626171; ppublish</no>
+<pp>United States</pp>
+<sn>0002-9572; 0002-9572</sn>
+<an>PMID: 18015964</an>
+<la>eng</la>
+<sf>Journal Article</sf>
+<ol>Unknown(0)</ol>
+<pmid>18015964</pmid>
+<pmcid>PMC1626171</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>689</id>
+<a1>Scott,E. W.</a1>
+<a1>Allison,H. E.</a1>
+<a1>Baker,H. V.</a1>
+<t1>Characterization of TPI gene expression in isogeneic wild-type and gcr1-deletion mutant strains of Saccharomyces cerevisiae</t1>
+<jf>Nucleic acids research</jf>
+<jo>Nucleic Acids Res.</jo>
+<yr>1990</yr>
+<fd>Dec 11</fd>
+<vo>18</vo>
+<is>23</is>
+<sp>7099</sp>
+<op>7107</op>
+<k1>Base Sequence</k1>
+<k1>Binding, Competitive</k1>
+<k1>Blotting, Northern</k1>
+<k1>Chromosome Deletion</k1>
+<k1>Chromosomes, Fungal</k1>
+<k1>Cloning, Molecular</k1>
+<k1>Gene Expression Regulation, Fungal</k1>
+<k1>Genes, Fungal</k1>
+<k1>Glycolysis</k1>
+<k1>Molecular Sequence Data</k1>
+<k1>Protein Biosynthesis</k1>
+<k1>Saccharomyces cerevisiae/enzymology/genetics</k1>
+<k1>Triose-Phosphate Isomerase/genetics</k1>
+<ab>In Saccharomyces cerevisiae the enzymes of glycolysis constitute 30-60 percent of the soluble protein. GCR1 gene function is required for high level glycolytic gene expression. We have undertaken a biochemical and genetic characterization of TPI, a gene affected by gcr1 lesions. Northern analysis showed that steady-state levels of TPI transcripts are severely reduced in gcr1 mutant strains. However, primer extension experiments revealed that TPI transcripts isolated from wild-type and gcr1 mutant strains have identical 5&amp;#39; ends. To map the 5&amp;#39; boundary of TPI controlling region, we employed a TPI::lacZ gene fusion carrying 3.5 kb 5&amp;#39; to the translational start of the TPI structural gene. Nuclease Bal31 deletion analysis demonstrated that sequences sufficient for high level expression of TPI reside within 392 nucleotides preceding the start of the structural gene. We have identified GRF1/RAPI/TUF-binding site positioned 339 to 349 bp 5&amp;#39; to the translation start of TPI. DNA band shift assays were carried out with wild-type and gcr1 deletion mutant strains, and similar patterns of band shifting were observed.</ab>
+<no>LR: 20091118; GR: GM-41330/GM/NIGMS NIH HHS/United States; JID: 0411011; EC 5.3.1.1 (Triose-Phosphate Isomerase); OID: NLM: PMC332775; ppublish</no>
+<pp>ENGLAND</pp>
+<sn>0305-1048; 0305-1048</sn>
+<ad>Department of Immunology, College of Medicine, University of Florida, JHMHC, Gainesville 32610.</ad>
+<an>PMID: 2263469</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>2263469</pmid>
+<pmcid>PMC332775</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>687</id>
+<a1>Scott,E. W.</a1>
+<a1>Armour,J.</a1>
+<t1>Effect of development of resistance to benzimidazoles, salicylanilides and ivermectin on the pathogenicity and survival of Haemonchus contortus</t1>
+<jf>The Veterinary record</jf>
+<jo>Vet.Rec.</jo>
+<yr>1991</yr>
+<fd>Apr 13</fd>
+<vo>128</vo>
+<is>15</is>
+<sp>346</sp>
+<op>349</op>
+<k1>Animals</k1>
+<k1>Benzimidazoles/pharmacology</k1>
+<k1>Drug Resistance</k1>
+<k1>Feces/parasitology</k1>
+<k1>Fertility/drug effects</k1>
+<k1>Haemonchiasis/parasitology/veterinary</k1>
+<k1>Haemonchus/drug effects/pathogenicity/physiology</k1>
+<k1>Ivermectin/pharmacology</k1>
+<k1>Male</k1>
+<k1>Ovum/drug effects/growth &amp; development</k1>
+<k1>Parasite Egg Count/veterinary</k1>
+<k1>Salicylanilides/pharmacology</k1>
+<k1>Sheep</k1>
+<k1>Sheep Diseases/parasitology</k1>
+<ab>Two groups of six lambs were infected either with an anthelmintic-susceptible strain of Haemonchus contortus or with a strain resistant to benzimidazoles, ivermectin and salicylanilides. The pathogenicity of the two strains of parasite was compared by monitoring the development of anaemia, changes in plasma proteins and abomasal damage in the two groups of lambs. There were no significant differences between the groups, suggesting that the development of resistance to several anthelmintics did not correlate with an increase in the pathogenicity of the parasites. Furthermore, the establishment rates and egg production of the susceptible and resistant parasites were similar. However, fewer of the eggs of the resistant parasites survived and developed at a variety of temperatures.</ab>
+<no>LR: 20061115; JID: 0031164; 0 (Benzimidazoles); 0 (Salicylanilides); 70288-86-7 (Ivermectin); ppublish</no>
+<pp>ENGLAND</pp>
+<sn>0042-4900; 0042-4900</sn>
+<ad>Department of Veterinary Pharmacology, University of Glasgow Veterinary School, Bearsden.</ad>
+<an>PMID: 2063534</an>
+<la>eng</la>
+<sf>Comparative Study; Journal Article; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>2063534</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>695</id>
+<a1>Scott,E. W.</a1>
+<a1>Bairden,K.</a1>
+<a1>Holmes,P. H.</a1>
+<a1>McKellar,Q. A.</a1>
+<t1>Benzimidazole resistance in nematodes of goats</t1>
+<jf>The Veterinary record</jf>
+<jo>Vet.Rec.</jo>
+<yr>1989</yr>
+<fd>May 6</fd>
+<vo>124</vo>
+<is>18</is>
+<sp>492</sp>
+<k1>Animals</k1>
+<k1>Benzimidazoles/therapeutic use</k1>
+<k1>Drug Resistance</k1>
+<k1>Feces/parasitology</k1>
+<k1>Fenbendazole/therapeutic use</k1>
+<k1>Goats/parasitology</k1>
+<k1>Haemonchiasis/drug therapy/parasitology/veterinary</k1>
+<k1>Haemonchus/drug effects/isolation &amp; purification</k1>
+<k1>Parasite Egg Count/veterinary</k1>
+<k1>Trichostrongyloidea/drug effects</k1>
+<k1>Trichostrongyloidiasis/veterinary</k1>
+<no>LR: 20031114; JID: 0031164; 0 (Benzimidazoles); 43210-67-9 (Fenbendazole); ppublish</no>
+<pp>ENGLAND</pp>
+<sn>0042-4900; 0042-4900</sn>
+<ad>Department of Veterinary Pharmacology, University of Glasgow Veterinary School.</ad>
+<an>PMID: 2750035</an>
+<la>eng</la>
+<sf>Journal Article; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>2750035</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>679</id>
+<a1>Scott,E. W.</a1>
+<a1>Baker,H. V.</a1>
+<t1>Concerted action of the transcriptional activators REB1, RAP1, and GCR1 in the high-level expression of the glycolytic gene TPI</t1>
+<jf>Molecular and cellular biology</jf>
+<jo>Mol.Cell.Biol.</jo>
+<yr>1993</yr>
+<fd>Jan</fd>
+<vo>13</vo>
+<is>1</is>
+<sp>543</sp>
+<op>550</op>
+<k1>Base Sequence</k1>
+<k1>Binding Sites</k1>
+<k1>DNA Mutational Analysis</k1>
+<k1>DNA-Binding Proteins/metabolism</k1>
+<k1>Fungal Proteins/genetics</k1>
+<k1>Gene Expression Regulation, Fungal</k1>
+<k1>Genes, Fungal</k1>
+<k1>Glycolysis</k1>
+<k1>Molecular Sequence Data</k1>
+<k1>Regulatory Sequences, Nucleic Acid</k1>
+<k1>Saccharomyces cerevisiae/enzymology/genetics</k1>
+<k1>Trans-Activators/genetics</k1>
+<k1>Transcriptional Activation</k1>
+<k1>Triose-Phosphate Isomerase/genetics</k1>
+<ab>In Saccharomyces cerevisiae, the TPI gene product, triosephosphate isomerase, makes up about 2% of the soluble cellular protein. Using in vitro and in vivo footprinting techniques, we have identified four binding sites for three factors in the 5&amp;#39; noncoding region of TPI: a REB1-binding site located at positions -401 to -392, two GCR1-binding sites located at positions -381 to -366 and -341 to -326, and a RAP1-binding site located at positions -358 to -346. We tested the effects of mutations at each of these binding sites on the expression of a TPI::lacZ gene fusion which carried 853 bp of the TPI 5&amp;#39; noncoding region integrated at the URA3 locus. The REB1-binding site is dispensable when material 5&amp;#39; to it is deleted; however, if the sequence 5&amp;#39; to the REB1-binding site is from the TPI locus, expression is reduced fivefold when the site is mutated. Because REB1 blocks nucleosome formation, the most likely function of its binding site in the TPI controlling region is to prevent the formation of nucleosomes over the TPI upstream activation sequence. Mutations in the RAP1-binding site resulted in a 10-fold reduction in expression of the reporter gene. Mutating either GCR1-binding site alone had a modest effect on expression of the fusion. However, mutating both GCR1-binding sites resulted in a 68-fold reduction in the level of expression of the reporter gene. A LexA-GCR1 fusion protein containing the DNA-binding domain of LexA fused to the amino terminus of GCR1 was able to activate expression of a lex operator::GAL1::lacZ reporter gene 116-fold over background levels. From this experiment, we conclude that GCR1 is able to activate gene expression in the absence of REB1 or RAP1 bound at adjacent binding sites. On the basis of these results, we suggest that GCR1 binding is required for activation of TPI and other GCR1-dependent genes and that the primary role of other factors which bind adjacent to GCR1-binding sites is to facilitate of modulate GCR1 binding in vivo.</ab>
+<no>LR: 20091118; GR: GM-41330/GM/NIGMS NIH HHS/United States; GR: T32 AI-07113/AI/NIAID NIH HHS/United States; JID: 8109087; 0 (DNA-Binding Proteins); 0 (Fungal Proteins); 0 (Trans-Activators); EC 5.3.1.1 (Triose-Phosphate Isomerase); OID: NLM: PMC358933; ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0270-7306; 0270-7306</sn>
+<ad>Department of Immunology and Medical Microbiology, University of Florida, College of Medicine, Gainesville 32610-0266.</ad>
+<an>PMID: 8417350</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>8417350</pmid>
+<pmcid>PMC358933</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>688</id>
+<a1>Scott,E. W.</a1>
+<a1>Baxter,P.</a1>
+<a1>Armour,J.</a1>
+<t1>Fecundity of anthelmintic resistant adult Haemonchus contortus after exposure to ivermectin or benzimidazoles in vivo</t1>
+<jf>Research in veterinary science</jf>
+<jo>Res.Vet.Sci.</jo>
+<yr>1991</yr>
+<fd>Mar</fd>
+<vo>50</vo>
+<is>2</is>
+<sp>247</sp>
+<op>249</op>
+<k1>Animals</k1>
+<k1>Benzimidazoles/pharmacology</k1>
+<k1>Drug Resistance</k1>
+<k1>Female</k1>
+<k1>Fertility/drug effects</k1>
+<k1>Haemonchus/drug effects</k1>
+<k1>Ivermectin/pharmacology</k1>
+<k1>Parasite Egg Count/veterinary</k1>
+<k1>Sheep</k1>
+<ab>A strain of Haemonchus contortus resistant to the benzimidazoles, ivermectin and salicylanilides was used to study the effect of exposure to ivermectin or oxfendazole on the number of eggs produced by adult female parasites. After anthelmintic administration there was a reduction in the faecal egg count of the infected lambs. Ivermectin caused a reduction in the number of eggs within adult parasites for up to 72 hours but this returned to higher than pre-treatment levels at 168 hours after treatment. After oxfendazole treatment there was an increase in the number of eggs stored in the adult parasites at 24 hours and then a significant reduction in the number of eggs for over 168 hours. This suggested that both ivermectin and oxfendazole have a deleterious effect on the reproductive potential of female H contortus although the parasites are resistant to these drugs. These results confirm the importance of allowing up to 10 days to elapse between the time of administration of an anthelmintic and the collecting of faecal samples when using the faecal egg count reduction test to identify anthelmintic resistance, especially when using benzimidazoles. The more prolonged effect on fecundity produced by oxfendazole may reflect the antimitotic action of the benzimidazole anthelmintics.</ab>
+<no>LR: 20061115; JID: 0401300; 0 (Benzimidazoles); 53716-50-0 (oxfendazole); 70288-86-7 (Ivermectin); ppublish</no>
+<pp>ENGLAND</pp>
+<sn>0034-5288; 0034-5288</sn>
+<ad>Department of Veterinary Pharmacology, University of Glasgow Veterinary School, Bearsden.</ad>
+<an>PMID: 2034909; 0034-5288(91)90117-7 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>2034909</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>694</id>
+<a1>Scott,E. W.</a1>
+<a1>Cazenave,C. R.</a1>
+<a1>Virapongse,C.</a1>
+<t1>Spinal subarachnoid hematoma complicating lumbar puncture: diagnosis and management</t1>
+<jf>Neurosurgery</jf>
+<jo>Neurosurgery</jo>
+<yr>1989</yr>
+<fd>Aug</fd>
+<vo>25</vo>
+<is>2</is>
+<sp>287</sp>
+<op>92; discussion 292-3</op>
+<k1>Adult</k1>
+<k1>Aged</k1>
+<k1>Hematoma/diagnosis/etiology/surgery</k1>
+<k1>Humans</k1>
+<k1>Laminectomy</k1>
+<k1>Lumbosacral Region</k1>
+<k1>Magnetic Resonance Imaging</k1>
+<k1>Male</k1>
+<k1>Spinal Cord Diseases/diagnosis/etiology/surgery</k1>
+<k1>Spinal Puncture/adverse effects</k1>
+<k1>Subarachnoid Space</k1>
+<k1>Tomography, X-Ray Computed</k1>
+<ab>Two patients with altered hemostatic mechanisms developed spinal subarachnoid hemorrhage after difficult lumbar punctures. One patient had received anticoagulation therapy soon after lumbar puncture and the other had a low platelet count (63,000/mm3) at the time of lumbar puncture. In both patients a hematoma evolved, producing blockage of cerebrospinal fluid flow. Clinical manifestations consisted of severe back and radicular pain with sphincteric disturbances followed by rapidly developing severe paraparesis. Of the methods of radiographic evaluation that were used, including computed tomography (CT) without contrast enhancement, myelography, CT with intrathecally administered contrast medium, and magnetic resonance imaging, we found the best study to be myelography via lateral cervical puncture followed by CT. Unfortunately, diagnosis was delayed, and surgical evacuation of the hematomas did not substantially improve the patients&amp;#39; conditions. The salient clinical and radiographic features of this disorder and its pathophysiology are reviewed. Prompt recognition of these lesions is necessary so that surgical intervention may maximize chances of recovery.</ab>
+<no>LR: 20041117; JID: 7802914; ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0148-396X; 0148-396X</sn>
+<ad>Department of Neurosurgery, University of Florida School of Medicine, Gainesville.</ad>
+<an>PMID: 2770992</an>
+<la>eng</la>
+<sf>Case Reports; Journal Article; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>2770992</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>680</id>
+<a1>Scott,E. W.</a1>
+<a1>Dolson,L.</a1>
+<a1>Day,A. L.</a1>
+<a1>Seeger,J. M.</a1>
+<t1>Carotid endarterectomy complicated by vein patch rupture</t1>
+<jf>Neurosurgery</jf>
+<jo>Neurosurgery</jo>
+<yr>1992</yr>
+<fd>Aug</fd>
+<vo>31</vo>
+<is>2</is>
+<sp>373</sp>
+<op>6; discussion 376-7</op>
+<k1>Aged</k1>
+<k1>Carotid Stenosis/pathology/surgery</k1>
+<k1>Endarterectomy, Carotid/methods</k1>
+<k1>Female</k1>
+<k1>Humans</k1>
+<k1>Intracranial Arteriosclerosis/pathology/surgery</k1>
+<k1>Male</k1>
+<k1>Necrosis</k1>
+<k1>Postoperative Complications/pathology/surgery</k1>
+<k1>Rupture, Spontaneous</k1>
+<k1>Saphenous Vein/pathology/transplantation</k1>
+<k1>Surgical Wound Dehiscence/pathology/surgery</k1>
+<ab>Saphenous vein patch angioplasty has been used to improve the results of carotid endarterectomy by decreasing the incidence of postoperative occlusion and recurrent stenosis. A rare but potentially lethal complication of this technique is aseptic necrosis and rupture of the vein patch during the postoperative period. We report three cases of this phenomenon and review an additional 13 cases from the literature. This event generally occurs without warning 2 to 7 days postoperatively and may result in death or stroke. At reoperation, the central portion of the vein patch is necrotic, without evidence of infection. Technical considerations in the harvesting and preparation of these grafts are reviewed, as are the physical parameters predisposing certain vein patches to rupture. Saphenous vein harvested from the ankle has been linked to every reported case. Small diameter veins in particular appear to carry a higher risk of rupture.</ab>
+<no>LR: 20041117; JID: 7802914; CIN: Neurosurgery. 1993 Jan;32(1):151-2. PMID: 8421550; ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0148-396X; 0148-396X</sn>
+<ad>Department of Neurological Surgery, University of Florida College of Medicine, Gainesville.</ad>
+<an>PMID: 1513447</an>
+<la>eng</la>
+<sf>Case Reports; Journal Article; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>1513447</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>686</id>
+<a1>Scott,E. W.</a1>
+<a1>Duncan,J. L.</a1>
+<a1>McKellar,Q. A.</a1>
+<a1>Coop,R. L.</a1>
+<a1>Jackson,F.</a1>
+<a1>Mitchell,G. B.</a1>
+<t1>Benzimidazole resistance in sheep nematodes</t1>
+<jf>The Veterinary record</jf>
+<jo>Vet.Rec.</jo>
+<yr>1991</yr>
+<fd>Jun 29</fd>
+<vo>128</vo>
+<is>26</is>
+<sp>618</sp>
+<op>619</op>
+<k1>Animals</k1>
+<k1>Benzimidazoles/pharmacology</k1>
+<k1>Drug Resistance</k1>
+<k1>Nematoda/drug effects</k1>
+<k1>Nematode Infections/parasitology/veterinary</k1>
+<k1>Sheep</k1>
+<k1>Sheep Diseases/parasitology</k1>
+<no>LR: 20031114; JID: 0031164; 0 (Benzimidazoles); CON: Vet Rec. 1991 Jan 12;128(2):44. PMID: 2017851; ppublish</no>
+<pp>ENGLAND</pp>
+<sn>0042-4900; 0042-4900</sn>
+<an>PMID: 1897102</an>
+<la>eng</la>
+<sf>Comment; Letter; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>1897102</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>673</id>
+<a1>Scott,E. W.</a1>
+<a1>Fisher,R. C.</a1>
+<a1>Olson,M. C.</a1>
+<a1>Kehrli,E. W.</a1>
+<a1>Simon,M. C.</a1>
+<a1>Singh,H.</a1>
+<t1>PU.1 functions in a cell-autonomous manner to control the differentiation of multipotential lymphoid-myeloid progenitors</t1>
+<jf>Immunity</jf>
+<jo>Immunity</jo>
+<yr>1997</yr>
+<fd>Apr</fd>
+<vo>6</vo>
+<is>4</is>
+<sp>437</sp>
+<op>447</op>
+<k1>Animals</k1>
+<k1>Bone Marrow Cells</k1>
+<k1>Cell Count</k1>
+<k1>Cell Differentiation/drug effects/genetics</k1>
+<k1>Cell Line</k1>
+<k1>Chimera/immunology</k1>
+<k1>DNA-Binding Proteins</k1>
+<k1>Embryo, Mammalian/cytology/immunology/metabolism</k1>
+<k1>Erythrocyte Transfusion</k1>
+<k1>Erythropoiesis/genetics/immunology</k1>
+<k1>Female</k1>
+<k1>Gene Expression Regulation/immunology</k1>
+<k1>Hematopoietic Stem Cells/cytology/drug effects</k1>
+<k1>Ikaros Transcription Factor</k1>
+<k1>Lymphoid Tissue/cytology</k1>
+<k1>Male</k1>
+<k1>Mice</k1>
+<k1>Mice, Inbred C57BL</k1>
+<k1>Mice, Mutant Strains</k1>
+<k1>Proto-Oncogene Proteins/genetics/physiology</k1>
+<k1>Radiation Chimera/immunology</k1>
+<k1>Trans-Activators/genetics/physiology</k1>
+<k1>Transcription Factors/genetics</k1>
+<ab>Transcription factor PU.1 is required for the development of lymphoid and myeloid progenitors during fetal hematopoiesis. By generating chimeric animals using PU.1-/- ES cells or PU.1(-/-) hematopoietic progenitors, we demonstrate that PU.1 functions in an exclusively cell-autonomous manner to regulate the development of the lymphoid-myeloid system. Multipotential lymphoid-myeloid progenitors (AA4.1+, Lin-) are significantly reduced in PU.1(-/-) embryos and fail to differentiate into B lymphoid or myeloid cells in vitro. These results suggest that the lymphoid and myeloid lineages develop in the fetal liver from a common hematopoietic progenitor not shared with erythrocytes and megakaryocytes. Finally, the Ikaros gene is expressed in PU.1 mutant embryos, suggesting that PU.1 and Ikaros are independently required for specification of embryonic lymphoid cell fates.</ab>
+<no>LR: 20071115; GR: F32 AI08933/AI/NIAID NIH HHS/United States; JID: 9432918; 0 (DNA-Binding Proteins); 0 (Proto-Oncogene Proteins); 0 (Trans-Activators); 0 (Transcription Factors); 0 (Zfpn1a1 protein, mouse); 0 (proto-oncogene protein Spi-1); 148971-36-2 (Ikaros Transcription Factor); ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>1074-7613; 1074-7613</sn>
+<ad>Howard Hughes Medical Institute, Department of Molecular Genetics and Cell Biology, University of Chicago, IL 60637, USA.</ad>
+<an>PMID: 9133423; S1074-7613(00)80287-3 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>9133423</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>692</id>
+<a1>Scott,E. W.</a1>
+<a1>Haid,R. W.,Jr</a1>
+<a1>Peace,D.</a1>
+<t1>Type I fractures of the odontoid process: implications for atlanto-occipital instability. Case report</t1>
+<jf>Journal of neurosurgery</jf>
+<jo>J.Neurosurg.</jo>
+<yr>1990</yr>
+<fd>Mar</fd>
+<vo>72</vo>
+<is>3</is>
+<sp>488</sp>
+<op>492</op>
+<k1>Adult</k1>
+<k1>Atlanto-Axial Joint/injuries</k1>
+<k1>Atlanto-Occipital Joint</k1>
+<k1>Axis/injuries</k1>
+<k1>Dislocations/complications</k1>
+<k1>Female</k1>
+<k1>Fractures, Bone/complications/radiography</k1>
+<k1>Humans</k1>
+<k1>Joint Instability</k1>
+<k1>Medical Illustration</k1>
+<k1>Odontoid Process/injuries</k1>
+<ab>Only four cases of Type I odontoid fracture have been previously described in the English literature. Most authors consider this lesion to be stable, although the mechanism(s) of injury has not been clearly elucidated. A case of Type I odontoid fracture in association with atlanto-occipital and atlantoaxial dislocation resulting in death is presented. The normal ligamentous anatomy is reviewed and proposed mechanisms for this injury are discussed. The radiographic features of all reported cases of this type are reviewed. It is proposed that the Type I odontoid fracture is a likely manifestation of atlanto-occipital instability and rarely occurs as an isolated or stable injury.</ab>
+<no>LR: 20051117; JID: 0253357; CIN: J Neurosurg. 1990 Oct;73(4):644. PMID: 2398400; ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0022-3085; 0022-3085</sn>
+<ad>Department of Neurosurgery, University of Florida, Gainesville.</ad>
+<an>PMID: 2303882</an>
+<la>eng</la>
+<sf>Case Reports; Journal Article; AIM; IM</sf>
+<do>10.3171/jns.1990.72.3.0488</do>
+<ol>Unknown(0)</ol>
+<pmid>2303882</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>690</id>
+<a1>Scott,E. W.</a1>
+<a1>Kinabo,L. D.</a1>
+<a1>McKellar,Q. A.</a1>
+<t1>Pharmacokinetics of ivermectin after oral or percutaneous administration to adult milking goats</t1>
+<jf>Journal of veterinary pharmacology and therapeutics</jf>
+<jo>J.Vet.Pharmacol.Ther.</jo>
+<yr>1990</yr>
+<fd>Dec</fd>
+<vo>13</vo>
+<is>4</is>
+<sp>432</sp>
+<op>435</op>
+<k1>Administration, Cutaneous</k1>
+<k1>Administration, Oral</k1>
+<k1>Animals</k1>
+<k1>Female</k1>
+<k1>Goats/metabolism</k1>
+<k1>Ivermectin/administration &amp; dosage/analysis/pharmacokinetics</k1>
+<k1>Lactation/metabolism</k1>
+<k1>Milk/chemistry</k1>
+<no>LR: 20061115; JID: 7910920; 70288-86-7 (Ivermectin); ppublish</no>
+<pp>ENGLAND</pp>
+<sn>0140-7783; 0140-7783</sn>
+<ad>Department of Veterinary Pharmacology, University of Glasgow Veterinary School, Bearsden, UK.</ad>
+<an>PMID: 2287037</an>
+<la>eng</la>
+<sf>Comparative Study; Journal Article; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>2287037</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>684</id>
+<a1>Scott,E. W.</a1>
+<a1>McKellar,Q. A.</a1>
+<t1>The distribution and some pharmacokinetic parameters of ivermectin in pigs</t1>
+<jf>Veterinary research communications</jf>
+<jo>Vet.Res.Commun.</jo>
+<yr>1992</yr>
+<vo>16</vo>
+<is>2</is>
+<sp>139</sp>
+<op>146</op>
+<k1>Animals</k1>
+<k1>Bile/metabolism</k1>
+<k1>Cerumen/metabolism</k1>
+<k1>Digestive System/metabolism</k1>
+<k1>Ear</k1>
+<k1>Female</k1>
+<k1>Gastric Mucosa/metabolism</k1>
+<k1>Gastrointestinal Contents/chemistry</k1>
+<k1>Injections, Subcutaneous/veterinary</k1>
+<k1>Intestinal Mucosa/metabolism</k1>
+<k1>Ivermectin/administration &amp; dosage/blood/pharmacokinetics</k1>
+<k1>Male</k1>
+<k1>Skin/metabolism</k1>
+<k1>Swine/metabolism</k1>
+<k1>Tissue Distribution</k1>
+<ab>Ivermectin was injected subcutaneously into five pigs at the usual dose rate of 300 micrograms/kg and found to distribute well to all tissues and body fluids which were sampled 24 h post-injection. Ivermectin was detected in the contents and mucus at all levels of the gastrointestinal tract. The drug was excreted in bile, with high concentrations of the drug in the intestines and faeces. High concentrations of ivermectin were measured in skin, ears and ear wax, suggesting that the drug should be effective in the treatment of ectoparasitic infestations, particularly ear mites. The high lipid solubility of the drug may explain the high concentrations found in ear wax and skin. Ivermectin was also detected in the body fluids and tissues of an untreated pig penned with the treated animals. Direct contact appeared to be necessary for transfer of ivermectin from the treated to the untreated pig but coprophagia or urine drinking is a possible explanation. The pharmacokinetics of ivermectin administered subcutaneously at a dose rate of 300 micrograms/kg to six pigs were studied. There was marked individual variation in the pharmacokinetics of ivermectin. In one pig the area under the plasma concentration-time curve was particularly high. This may reflect individual variation in uptake and excretion of the drug. The mean elimination half-life of the drug was 35.2 h, suggesting that the drug is cleared slowly from pigs with drug detectable in plasma for 6-10 days. This persistence should allow a short period of protection before re-infection with parasites.</ab>
+<no>LR: 20031114; JID: 8100520; 70288-86-7 (Ivermectin); ppublish</no>
+<pp>NETHERLANDS</pp>
+<sn>0165-7380; 0165-7380</sn>
+<ad>Department of Veterinary Pharmacology, University of Glasgow Veterinary School, Bearsden, UK.</ad>
+<an>PMID: 1496816</an>
+<la>eng</la>
+<sf>Journal Article; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>1496816</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>697</id>
+<a1>Scott,E. W.</a1>
+<a1>McKellar,Q. A.</a1>
+<a1>Armour,J.</a1>
+<a1>Bairden,K.</a1>
+<a1>Bogan,J. A.</a1>
+<t1>Production of strains of the sheep parasite Ostertagia circumcincta by implantation of adult parasites into the abomasum of lambs</t1>
+<jf>Research in veterinary science</jf>
+<jo>Res.Vet.Sci.</jo>
+<yr>1988</yr>
+<fd>Jul</fd>
+<vo>45</vo>
+<is>1</is>
+<sp>120</sp>
+<op>121</op>
+<k1>Abomasum/parasitology</k1>
+<k1>Animals</k1>
+<k1>Feces/parasitology</k1>
+<k1>Larva</k1>
+<k1>Ostertagia/physiology</k1>
+<k1>Parasite Egg Count/veterinary</k1>
+<k1>Sheep/parasitology</k1>
+<ab>The implantation of a single pair of adult parasites of Ostertagia circumcincta via the abomasa of four lambs resulted in the production of 19, 53, 393 and 425 viable larvae after faecal culture using faeces collected from day 6 to day 20 after implantation. Implantation of a single female parasite into two lambs failed to produce larvae.</ab>
+<no>LR: 20061115; JID: 0401300; ppublish</no>
+<pp>ENGLAND</pp>
+<sn>0034-5288; 0034-5288</sn>
+<ad>Department of Veterinary Pharmacology, University of Glasgow Veterinary School, Bearsden.</ad>
+<an>PMID: 3222542</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>3222542</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>699</id>
+<a1>Scott,E. W.</a1>
+<a1>Mickle,J. P.</a1>
+<t1>Pediatric diencephalic gliomas--a review of 18 cases</t1>
+<jf>Pediatric neuroscience</jf>
+<jo>Pediatr.Neurosci.</jo>
+<yr>1987</yr>
+<vo>13</vo>
+<is>5</is>
+<sp>225</sp>
+<op>232</op>
+<k1>Adolescent</k1>
+<k1>Brain Neoplasms/radiography/radiotherapy/surgery</k1>
+<k1>Child</k1>
+<k1>Child, Preschool</k1>
+<k1>Female</k1>
+<k1>Glioma/radiography/radiotherapy/surgery</k1>
+<k1>Humans</k1>
+<k1>Infant</k1>
+<k1>Male</k1>
+<k1>Prognosis</k1>
+<k1>Thalamus/physiopathology</k1>
+<ab>Eighteen cases of biopsy-proven pediatric diencephalic gliomas are reviewed in terms of clinical presentation, radiographic features and pathological findings. Treatment included radiation therapy (RT) in 14, chemotherapy in 4 and conservative management in 3. Actuarial survival and quality of life are analyzed. We conclude that: (1) thalamic involvement portends a poor prognosis both in terms of histology and survival, (2) beneficial effects of RT are difficult to demonstrate and (3) therapy for pediatric diencephalic gliomas should be individualized and long-term spontaneous remissions may occur.</ab>
+<no>LR: 20051116; JID: 8601677; RF: 44; ppublish</no>
+<pp>SWITZERLAND</pp>
+<sn>0255-7975; 0255-7975</sn>
+<ad>Department of Neurological Surgery, University of Florida School of Medicine, Gainesville.</ad>
+<an>PMID: 3332816</an>
+<la>eng</la>
+<sf>Journal Article; Review; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>3332816</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>696</id>
+<a1>Scott,E. W.</a1>
+<a1>Mitchell,E. S.</a1>
+<a1>Armour,J.</a1>
+<a1>Bairden,K.</a1>
+<a1>Soutar,A.</a1>
+<a1>Bogan,J. A.</a1>
+<t1>Level of benzimidazole resistance in a strain of Ostertagia circumcincta studied over several infections in lambs</t1>
+<jf>Veterinary parasitology</jf>
+<jo>Vet.Parasitol.</jo>
+<yr>1989</yr>
+<fd>Mar</fd>
+<vo>30</vo>
+<is>4</is>
+<sp>305</sp>
+<op>314</op>
+<k1>Albendazole</k1>
+<k1>Animals</k1>
+<k1>Anthelmintics/pharmacology</k1>
+<k1>Benzimidazoles/pharmacology</k1>
+<k1>Drug Resistance</k1>
+<k1>Fenbendazole/therapeutic use</k1>
+<k1>Ostertagia/drug effects</k1>
+<k1>Ostertagiasis/drug therapy/parasitology/veterinary</k1>
+<k1>Sheep</k1>
+<k1>Sheep Diseases/drug therapy/parasitology</k1>
+<k1>Thiabendazole/pharmacology</k1>
+<k1>Trichostrongyloidiasis/veterinary</k1>
+<ab>A benzimidazole-resistant strain of Ostertagia circumcincta (HFRO) was used experimentally to infect lambs. The level of resistance, measured by an egg hatch assay, was studied throughout each infection and also after treatment of the lambs with fenbendazole. The HFRO strain was highly resistant to benzimidazoles. There was day-to-day variation in the level of resistance throughout a single infection with a high level of resistance in the early part of the infection, around Day 27 post-inoculation of infective larvae, falling to a lower level later in the infection. Egg hatch assays on the 3 days immediately post-treatment with fenbendazole showed the resistance level was high then resistance fell to the pre-treatment level after 7 days. Selection for benzimidazole resistance using fenbendazole treatment at the normal dose rate of 5 mg kg-1 over five passages of the HFRO strain in lambs failed to increase the resistance level. Storage of larvae over a 5-month period at 4 degrees C, prior to infection of lambs, did not produce any alteration in the resistance level. The possible reasons for the variations in resistance found with the HFRO strain are discussed along with the implications for sheep parasite control and further development of benzimidazole resistance.</ab>
+<no>LR: 20031114; JID: 7602745; 0 (Anthelmintics); 0 (Benzimidazoles); 148-79-8 (Thiabendazole); 43210-67-9 (Fenbendazole); 54965-21-8 (Albendazole); ppublish</no>
+<pp>NETHERLANDS</pp>
+<sn>0304-4017; 0304-4017</sn>
+<ad>University of Glasgow Veterinary School, Bearsden, Gt. Britain.</ad>
+<an>PMID: 2728321</an>
+<la>eng</la>
+<sf>Journal Article; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>2728321</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>675</id>
+<a1>Scott,E. W.</a1>
+<a1>Simon,M. C.</a1>
+<a1>Anastasi,J.</a1>
+<a1>Singh,H.</a1>
+<t1>Requirement of transcription factor PU.1 in the development of multiple hematopoietic lineages</t1>
+<jf>Science (New York, N.Y.)</jf>
+<jo>Science</jo>
+<yr>1994</yr>
+<fd>Sep 9</fd>
+<vo>265</vo>
+<is>5178</is>
+<sp>1573</sp>
+<op>1577</op>
+<k1>Animals</k1>
+<k1>DNA-Binding Proteins/genetics/physiology</k1>
+<k1>Erythropoiesis</k1>
+<k1>Female</k1>
+<k1>Gene Rearrangement</k1>
+<k1>Hematopoiesis</k1>
+<k1>Hematopoietic Stem Cells/cytology/physiology</k1>
+<k1>Lymphocytes/cytology/physiology</k1>
+<k1>Macrophages/cytology/physiology</k1>
+<k1>Male</k1>
+<k1>Mice</k1>
+<k1>Mice, Inbred C57BL</k1>
+<k1>Monocytes/cytology/physiology</k1>
+<k1>Mutation</k1>
+<k1>Neutrophils/cytology/physiology</k1>
+<k1>Retroviridae Proteins, Oncogenic</k1>
+<k1>Transcription Factors/genetics/physiology</k1>
+<ab>The transcription factor PU.1 is a hematopoietic-specific member of the ets family. Mice carrying a mutation in the PU.1 locus were generated by gene targeting. Homozygous mutant embryos died at a late gestational stage. Mutant embryos produced normal numbers of megakaryocytes and erythroid progenitors, but some showed an impairment of erythroblast maturation. An invariant consequence of the mutation was a multilineage defect in the generation of progenitors for B and T lymphocytes, monocytes, and granulocytes. Thus, the developmental programs of lymphoid and myeloid lineages require a common genetic function likely acting at the level of a multipotential progenitor.</ab>
+<no>LR: 20071114; GR: F32 AI08933/AI/NIAID NIH HHS/United States; JID: 0404511; 0 (DNA-Binding Proteins); 0 (Retroviridae Proteins, Oncogenic); 0 (Transcription Factors); 0 (v-Spi-1 protein, Friend spleen focus-forming virus); ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0036-8075; 0036-8075</sn>
+<ad>Department of Molecular Genetics and Cell Biology, Howard Hughes Medical Institute, University of Chicago, IL 60637.</ad>
+<an>PMID: 8079170</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>8079170</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>660</id>
+<a1>Sengupta,N.</a1>
+<a1>Caballero,S.</a1>
+<a1>Mames,R. N.</a1>
+<a1>Butler,J. M.</a1>
+<a1>Scott,E. W.</a1>
+<a1>Grant,M. B.</a1>
+<t1>The role of adult bone marrow-derived stem cells in choroidal neovascularization</t1>
+<jf>Investigative ophthalmology &amp; visual science</jf>
+<jo>Invest.Ophthalmol.Vis.Sci.</jo>
+<yr>2003</yr>
+<fd>Nov</fd>
+<vo>44</vo>
+<is>11</is>
+<sp>4908</sp>
+<op>4913</op>
+<k1>Animals</k1>
+<k1>Antigens, CD31/metabolism</k1>
+<k1>Blood Cells/pathology</k1>
+<k1>Blood Vessels/pathology</k1>
+<k1>Bone Marrow/radiation effects</k1>
+<k1>Bruch Membrane/surgery</k1>
+<k1>Choroidal Neovascularization/metabolism/physiopathology</k1>
+<k1>Flow Cytometry</k1>
+<k1>Fluorescent Antibody Technique, Indirect</k1>
+<k1>Green Fluorescent Proteins</k1>
+<k1>Hematopoietic Stem Cell Transplantation</k1>
+<k1>Hematopoietic Stem Cells/cytology/physiology</k1>
+<k1>Indicators and Reagents/metabolism</k1>
+<k1>Laser Coagulation</k1>
+<k1>Luminescent Proteins/metabolism</k1>
+<k1>Mice</k1>
+<k1>Mice, Inbred C57BL</k1>
+<k1>Mice, Transgenic</k1>
+<k1>Microscopy, Confocal</k1>
+<ab>PURPOSE: Age-related macular degeneration (ARMD) is the primary cause of blindness in people aged of 50 years or more. The wet form leads to severe loss of central vision. Recent evidence supports that adult hematopoietic stem cells (HSCs) contribute to preretinal neovascularization. In the current study, it was determined whether HSCs, by producing both blood and blood vessels, provide functional hemangioblast activity during choroidal neovascularization (CNV) in mice. METHODS: Gfp chimeric mice were developed by bone marrow ablation of C57BL/6J mice and reconstitution with donor tissue from gfp(+/+) transgenic mice. Gfp chimeric mice underwent laser rupture of Bruch&amp;#39;s membrane and were killed and eyes enucleated at 1, 2, 3, and 4 weeks after laser injury. CNV was examined by confocal microscopy of retinal flatmounts. Because endothelial progenitor cells (EPCs) derive from HSCs, immunocytochemistry was used to quantify relative the EPC contribution to CNV. RESULTS: Laser injury alone was sufficient to induce stem cell recruitment and subsequent CNV. Gfp+ cells formed part of the functional vasculature in the choroid as early as 1 week after injury and were present for the duration of the study. The relative EPC contribution to CNV remained fairly constant throughout the study and constituted almost 50% of the total vasculature. CONCLUSIONS: Adult stem cells are recruited to the choroid in a model of CNV, where they contribute to forming aberrant new vessels. This observation suggests that targeting stem cell recruitment to the eye may offer a novel therapeutic strategy for ARMD.</ab>
+<no>LR: 20071114; GR: EY007739/EY/NEI NIH HHS/United States; GR: EY012601/EY/NEI NIH HHS/United States; JID: 7703701; 0 (Antigens, CD31); 0 (Indicators and Reagents); 0 (Luminescent Proteins); 147336-22-9 (Green Fluorescent Proteins); ppublish</no>
+<pp>United States</pp>
+<sn>0146-0404; 0146-0404</sn>
+<ad>Program in Stem Cell Biology, University of Florida, Florida, USA.</ad>
+<an>PMID: 14578416</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>14578416</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>634</id>
+<a1>Sengupta,N.</a1>
+<a1>Caballero,S.</a1>
+<a1>Sullivan,S. M.</a1>
+<a1>Chang,L. J.</a1>
+<a1>Afzal,A.</a1>
+<a1>Li Calzi,S.</a1>
+<a1>Kielczewski,J. L.</a1>
+<a1>Prabarakan,S.</a1>
+<a1>Ellis,E. A.</a1>
+<a1>Moldovan,L.</a1>
+<a1>Moldovan,N. I.</a1>
+<a1>Boulton,M. E.</a1>
+<a1>Grant,M. B.</a1>
+<a1>Scott,E. W.</a1>
+<a1>Harris,J. R.</a1>
+<t1>Regulation of adult hematopoietic stem cells fate for enhanced tissue-specific repair</t1>
+<jf>Molecular therapy : the journal of the American Society of Gene Therapy</jf>
+<jo>Mol.Ther.</jo>
+<yr>2009</yr>
+<fd>Sep</fd>
+<vo>17</vo>
+<is>9</is>
+<sp>1594</sp>
+<op>1604</op>
+<k1>Animals</k1>
+<k1>Carrier Proteins/genetics/physiology</k1>
+<k1>Cell Differentiation</k1>
+<k1>Cells, Cultured</k1>
+<k1>Electroretinography</k1>
+<k1>Eye Proteins/genetics/physiology</k1>
+<k1>Female</k1>
+<k1>Genetic Vectors/genetics</k1>
+<k1>Hematopoietic Stem Cells/cytology/metabolism/physiology</k1>
+<k1>Humans</k1>
+<k1>Immunohistochemistry</k1>
+<k1>Lentivirus/genetics</k1>
+<k1>Mice</k1>
+<k1>Mice, Inbred C57BL</k1>
+<k1>Microscopy, Electron, Transmission</k1>
+<k1>Oligonucleotide Array Sequence Analysis</k1>
+<k1>Polymerase Chain Reaction</k1>
+<k1>Retinal Degeneration/genetics/metabolism/therapy</k1>
+<k1>Retinal Pigment Epithelium/metabolism/pathology/ultrastructure</k1>
+<ab>The ability to control the differentiation of adult hematopoietic stem cells (HSCs) would promote development of new cell-based therapies to treat multiple degenerative diseases. Systemic injection of NaIO(3) was used to ablate the retinal pigment epithelial (RPE) layer in C57Bl6 mice and initiate neural retinal degeneration. HSCs infected ex vivo with lentiviral vector expressing the RPE-specific gene RPE65 restored a functional RPE layer, with typical RPE phenotype including coexpression of another RPE-specific marker, CRALBP, and photoreceptor outer segment phagocytosis. Retinal degeneration was prevented and visual function, as measured by electroretinography (ERG), was restored to levels similar to that found in normal animals. None of the controls (no HSCs, HSCs alone and HSCs infected with lentiviral vector expressing LacZ) showed these effects. In vitro gene array studies demonstrated that infection of HSC with RPE65 increased adenylate cyclase mRNA. In vitro exposure of HSCs to a pharmacological agonist of adenylate cyclase also led to in vitro differentiation of HSCs to RPE-like cells expressing pigment granules and the RPE-specific marker, CRALBP. Our data confirm that expression of the cell-specific gene RPE65 promoted fate determination of HSCs toward RPE for targeted tissue repair, and did so in part by activation of adenylate cyclase signaling pathways. Expression by HSCs of single genes unique to a differentiated cell may represent a novel experimental paradigm to influence HSC plasticity, force selective differentiation, and ultimately lead to identification of pharmacological alternatives to viral gene delivery.</ab>
+<no>LR: 20100316; GR: EY007739/EY/NEI NIH HHS/United States; GR: EY012601/EY/NEI NIH HHS/United States; JID: 100890581; 0 (Carrier Proteins); 0 (Eye Proteins); 0 (RPE65 protein, human); EIN: Mol Ther. 2009 Oct;17(10):1832. Scott, Edward W [added]; Harris, Jeffrey R [added]; OID: NLM: PMC2835259 [Available on 09/01/10]; 2009/07/07 [aheadofprint]; ppublish</no>
+<pp>United States</pp>
+<sn>1525-0024; 1525-0016</sn>
+<ad>Department of Pharmacology and Therapeutics, University of Florida, Gainesville, Florida 32610-0267, USA.</ad>
+<an>PMID: 19584817; mt2009145 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, N.I.H., Extramural; IM</sf>
+<do>10.1038/mt.2009.145</do>
+<wp>20090707</wp>
+<ol>Unknown(0)</ol>
+<pmid>19584817</pmid>
+<pmcid>PMC2835259</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>635</id>
+<a1>Sharma,P.</a1>
+<a1>Brown,S. C.</a1>
+<a1>Bengtsson,N.</a1>
+<a1>Zhang,Q.</a1>
+<a1>Walter,G. A.</a1>
+<a1>Grobmyer,S. R.</a1>
+<a1>Santra,S.</a1>
+<a1>Jiang,H.</a1>
+<a1>Scott,E. W.</a1>
+<a1>Moudgil,B. M.</a1>
+<t1>Gold-Speckled Multimodal Nanoparticles for Noninvasive Bioimaging</t1>
+<jf>Chemistry of materials : a publication of the American Chemical Society</jf>
+<jo>Chem.Mater.</jo>
+<yr>2008</yr>
+<fd>Oct 14</fd>
+<vo>20</vo>
+<is>19</is>
+<sp>6087</sp>
+<op>6094</op>
+<ab>Multimodal Gold-speckled silica nanoparticles as contrast agents for noninvasive imaging with magnetic resonance imaging and photoacoustic tomography have been prepared in a simple one-pot synthesis using nonionic microemulsions. Magnetic resonance contrast is provided through gadolinium incorporated in the silica matrix, whereas the photoacoustic signal originates from nonuniform, discontinuous gold nanodomains speckled across the silica surface.</ab>
+<no>JID: 9884133; 2008/04/11 [received]; 2008/06/26 [revised]; 2008/09/12 [epublish]; ppublish</no>
+<sn>0897-4756; 0897-4756</sn>
+<ad>Materials Science and Engineering and Particle Engineering Research Center, Molecular Genetics and Microbiology, Biomedical Engineering, Physiology and Functional Genomics, and Department of Surgery, University of Florida, P.O. Box 116135 Gainesville, Florida 32611, and NanoScience Technology Center, Chemistry and Biomolecular Science Center, University of Central Florida, Orlando, Florida 32826.</ad>
+<an>PMID: 19466201</an>
+<la>ENG</la>
+<sf>JOURNAL ARTICLE</sf>
+<do>10.1021/cm801020s</do>
+<wp>20080912</wp>
+<ol>Unknown(0)</ol>
+<pmid>19466201</pmid>
+<pmcid>PMC2664628</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>627</id>
+<a1>Sharma,P.</a1>
+<a1>Singh,A.</a1>
+<a1>Brown,S. C.</a1>
+<a1>Bengtsson,N.</a1>
+<a1>Walter,G. A.</a1>
+<a1>Grobmyer,S. R.</a1>
+<a1>Iwakuma,N.</a1>
+<a1>Santra,S.</a1>
+<a1>Scott,E. W.</a1>
+<a1>Moudgil,B. M.</a1>
+<t1>Multimodal nanoparticulate bioimaging contrast agents</t1>
+<jf>Methods in molecular biology (Clifton, N.J.)</jf>
+<jo>Methods Mol.Biol.</jo>
+<yr>2010</yr>
+<vo>624</vo>
+<sp>67</sp>
+<op>81</op>
+<ab>A wide variety of bioimaging techniques (e.g., ultrasound, computed X-ray tomography, magnetic resonance imaging (MRI), and positron emission tomography) are commonly employed for clinical diagnostics and scientific research. While all of these methods use a characteristic &amp;quot;energy-matter&amp;quot; interaction to provide specific details about biological processes, each modality differs from another in terms of spatial and temporal resolution, anatomical and molecular details, imaging depth, as well as the desirable material properties of contrast agents needed for augmented imaging. On many occasions, it is advantageous to apply multiple complimentary imaging modalities for faster and more accurate prognosis. Since most imaging modalities employ exogenous contrast agents to improve the signal-to-noise ratio, the development and use of multimodal contrast agents is considered to be highly advantageous for obtaining improved imagery from sought-after imaging modalities. Multimodal contrast agents offer improvements in patient care, and at the same time can reduce costs and enhance safety by limiting the number of contrast agent administrations required for imaging purposes. Herein, we describe the synthesis and characterization of nanoparticulate-based multimodal contrast agent for noninvasive bioimaging using MRI, optical, and photoacoustic tomography (PAT)-imaging modalities. The synthesis of these agents is described using microemulsions, which enable facile integration of the desired diversity of contrast agents and material components into a single entity.</ab>
+<no>GR: R01HL75258/HL/NHLBI NIH HHS/United States; GR: R01HL78670/HL/NHLBI NIH HHS/United States; JID: 9214969; ppublish</no>
+<pp>United States</pp>
+<sn>1940-6029; 1064-3745</sn>
+<ad>Department of Materials Science and Engineering, Particle Engineering Research Center, University of Florida, Gainesville, FL, USA.</ad>
+<an>PMID: 20217589</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, N.I.H., Extramural; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, Non-P.H.S.; IM</sf>
+<do>10.1007/978-1-60761-609-2_5</do>
+<ol>Unknown(0)</ol>
+<pmid>20217589</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>640</id>
+<a1>Slayton,W. B.</a1>
+<a1>Li,X. M.</a1>
+<a1>Butler,J.</a1>
+<a1>Guthrie,S. M.</a1>
+<a1>Jorgensen,M. L.</a1>
+<a1>Wingard,J. R.</a1>
+<a1>Scott,E. W.</a1>
+<t1>The role of the donor in the repair of the marrow vascular niche following hematopoietic stem cell transplant</t1>
+<jf>Stem cells (Dayton, Ohio)</jf>
+<jo>Stem Cells</jo>
+<yr>2007</yr>
+<fd>Nov</fd>
+<vo>25</vo>
+<is>11</is>
+<sp>2945</sp>
+<op>2955</op>
+<k1>Animals</k1>
+<k1>Bone Marrow/physiology/surgery</k1>
+<k1>Female</k1>
+<k1>Hematopoietic Stem Cell Transplantation/methods</k1>
+<k1>Male</k1>
+<k1>Mice</k1>
+<k1>Mice, Inbred C57BL</k1>
+<k1>Mice, Transgenic</k1>
+<k1>Tissue Donors</k1>
+<k1>Wound Healing/physiology</k1>
+<ab>Bone marrow sinusoids maintain homeostasis between developing hematopoietic cells and the circulation, and they provide niches for hematopoietic progenitors. Sinusoids are damaged by chemotherapy and radiation. Hematopoietic stem cells (HSCs) have been shown to produce endothelial progenitor cells that contribute to the repair of damaged blood vessels. Because HSCs home to the marrow during bone marrow transplant, these cells may play a role in repair of marrow sinusoids. Here, we explore the role of donor HSCs in the repair of damaged sinusoids following hematopoietic stem cell transplant. We used three methods to test this role: (a) expression of platelet endothelial cell adhesion molecule to identify endothelial progenitors and the presence of the Y chromosome to identify male donor cells in female recipients; (b) presence of the Y chromosome to identify male donor cells in female recipients, and expression of the panendothelial marker mouse endothelial cell antigen-32 to identify sinusoidal endothelium; and (c) use of Tie-2/green fluorescent protein mice as donors or recipients and presence of Dil-Ac-LDL to identify sinusoids. We found that sinusoids were predominantly host-derived posttransplant. Donor cells spread along the marrow vasculature early post-transplant in a pattern that matched stromal-derived factor-1 expression. Furthermore, these engrafting progenitors were positioned to provide physical support, as well as growth and survival signals in the form of vascular-endothelial growth factor-A. Occasionally, donor cells provide cellular &amp;quot;patches&amp;quot; in the damaged sinusoids, although this occurred at a low level compared with hematopoietic engraftment. Donor support for the repair of the marrow vascular niche may be a critical first step of hematopoietic engraftment.</ab>
+<no>GR: CA72769/CA/NCI NIH HHS/United States; GR: HL03962/HL/NHLBI NIH HHS/United States; GR: HL70738/HL/NHLBI NIH HHS/United States; JID: 9304532; 2007/07/26 [aheadofprint]; ppublish</no>
+<pp>United States</pp>
+<sn>1549-4918; 1066-5099</sn>
+<ad>University of Florida Program in Stem Cell Biology and Regenerative Medicine, Department of Pediatrics, University of Florida Health Science Center, Gainesville, Florida 32610, USA. slaytwb@peds.ufl.edu</ad>
+<an>PMID: 17656638; 2007-0158 [pii]</an>
+<la>eng</la>
+<sf>Comparative Study; Journal Article; Research Support, N.I.H., Extramural; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<do>10.1634/stemcells.2007-0158</do>
+<wp>20070726</wp>
+<ol>Unknown(0)</ol>
+<pmid>17656638</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>647</id>
+<a1>Slayton,W. B.</a1>
+<a1>Wainman,D. A.</a1>
+<a1>Li,X. M.</a1>
+<a1>Hu,Z.</a1>
+<a1>Jotwani,A.</a1>
+<a1>Cogle,C. R.</a1>
+<a1>Walker,D.</a1>
+<a1>Fisher,R. C.</a1>
+<a1>Wingard,J. R.</a1>
+<a1>Scott,E. W.</a1>
+<a1>Sola,M. C.</a1>
+<t1>Developmental differences in megakaryocyte maturation are determined by the microenvironment</t1>
+<jf>Stem cells (Dayton, Ohio)</jf>
+<jo>Stem Cells</jo>
+<yr>2005</yr>
+<fd>Oct</fd>
+<vo>23</vo>
+<is>9</is>
+<sp>1400</sp>
+<op>1408</op>
+<k1>Age Factors</k1>
+<k1>Animals</k1>
+<k1>DNA/genetics/metabolism</k1>
+<k1>Flow Cytometry</k1>
+<k1>Green Fluorescent Proteins/biosynthesis</k1>
+<k1>Hematopoiesis/physiology</k1>
+<k1>Megakaryocytes/cytology/physiology</k1>
+<k1>Mice</k1>
+<k1>Mice, Inbred C57BL</k1>
+<k1>Mice, Transgenic</k1>
+<k1>Peripheral Blood Stem Cell Transplantation</k1>
+<k1>Platelet Transfusion</k1>
+<k1>Ploidies</k1>
+<k1>Stem Cells/cytology/physiology</k1>
+<k1>Thrombopoiesis/genetics/physiology</k1>
+<ab>Historically, physicians have attributed delayed platelet engraftment following umbilical cord blood transplant to decreased numbers of stem cells in cord blood compared with adult bone marrow. However, recent studies suggest that delayed platelet engraftment may be caused by an intrinsic inability of neonatal stem cells to produce mature, polyploid megakaryocytes. We tested this hypothesis by transplanting adult bone marrow and newborn liver hematopoietic stem and progenitor cells from transgenic mice expressing green fluorescent protein into myeloablated wild-type recipients and comparing the size and ploidy levels of megakaryocytes that developed in adult transplant recipients. Transplanted stem and progenitor cells, regardless of their source, gave rise to megakaryocytes that were larger than normal adult megakaryocytes as early as 7 days post-transplant. However, megakaryocytes that developed after transplant of neonatal stem and progenitor cells were significantly smaller than those derived from adult stem and progenitor cells. Furthermore, megakaryocytes derived from neonatal cells had lower ploidy values than megakaryocytes derived from adult cells at 18 days post-transplant, when ploidy could first be reliably measured in the bone marrow. These differences in size and ploidy disappeared by 1 month post-transplant. The largest megakaryocytes developed in the spleen. These results suggest that, in the mouse, the microenvironment is responsible for some of the maturational differences in size and ploidy between neonatal and adult megakaryocytes. Furthermore, neonatal and adult megakaryocyte progenitors also have cell-intrinsic differences in the way they engraft and respond to thrombocytopenic stress. These differences may contribute to the delay in platelet engraftment that frequently complicates cord blood transplants.</ab>
+<no>LR: 20071114; GR: CA72769/CA/NCI NIH HHS/United States; GR: HL03962/HL/NHLBI NIH HHS/United States; GR: HL69990/HL/NHLBI NIH HHS/United States; JID: 9304532; 147336-22-9 (Green Fluorescent Proteins); 9007-49-2 (DNA); ppublish</no>
+<pp>United States</pp>
+<sn>1066-5099; 1066-5099</sn>
+<ad>University of Florida Department of Pediatrics, Gainesville, Florida 32610, USA. slaytwb@peds.ufl.edu</ad>
+<an>PMID: 16210411; 23/9/1400 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, N.I.H., Extramural; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<do>10.1634/stemcells.2004-0373</do>
+<ol>Unknown(0)</ol>
+<pmid>16210411</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>669</id>
+<a1>Spain,L. M.</a1>
+<a1>Guerriero,A.</a1>
+<a1>Kunjibettu,S.</a1>
+<a1>Scott,E. W.</a1>
+<t1>T cell development in PU.1-deficient mice</t1>
+<jf>Journal of immunology (Baltimore, Md.: 1950)</jf>
+<jo>J.Immunol.</jo>
+<yr>1999</yr>
+<fd>Sep 1</fd>
+<vo>163</vo>
+<is>5</is>
+<sp>2681</sp>
+<op>2687</op>
+<k1>Animals</k1>
+<k1>Biological Markers/analysis</k1>
+<k1>Cell Differentiation/genetics/immunology</k1>
+<k1>Fetus</k1>
+<k1>Immunophenotyping</k1>
+<k1>Mice</k1>
+<k1>Mice, Inbred C57BL</k1>
+<k1>Mice, Inbred Strains</k1>
+<k1>Mice, Transgenic</k1>
+<k1>Organ Culture Techniques</k1>
+<k1>Proto-Oncogene Proteins/biosynthesis/deficiency/genetics</k1>
+<k1>Proto-Oncogene Proteins c-ets</k1>
+<k1>Stem Cells/cytology/immunology/metabolism</k1>
+<k1>T-Lymphocyte Subsets/cytology/immunology/metabolism</k1>
+<k1>Thymus Gland/cytology/immunology/metabolism</k1>
+<k1>Time Factors</k1>
+<k1>Trans-Activators/biosynthesis/deficiency/genetics</k1>
+<k1>Transcription Factors/biosynthesis/genetics</k1>
+<ab>These studies address the role of PU.1 in T cell development through the analysis of PU.1-/- mice. We show that the majority of PU.1-/- thymocytes are blocked in differentiation prior to T cell commitment, and contain a population of thymocyte progenitors with the cell surface phenotype of CD44+, HSAbright, c-kitint, Thy-1-, CD25-, Sca-1-, CD4-, and CD8-. These cells correspond in both number and cell surface phenotype with uncommitted thymocyte progenitors found in wild-type fetal thymus. RT-PCR analysis demonstrated that PU.1 is normally expressed in this early progenitor population, but is down-regulated during T cell commitment. Rare PU.1-/- thymi, however, contained small numbers of thymocytes expressing markers of T cell commitment. Furthermore, almost 40% of PU.1-/- thymi placed in fetal thymic organ culture are capable of T cell development. Mature PU. 1-/- thymocytes generated during organ culture proliferated and produced IL-2 in response to stimulation through the TCR. These data demonstrate that PU.1 is not absolutely required for T cell development, but does play a role in efficient commitment and/or early differentiation of most T progenitors.</ab>
+<no>LR: 20071114; GR: AI36453/AI/NIAID NIH HHS/United States; GR: HL58716/HL/NHLBI NIH HHS/United States; GR: P01 DK53558/DK/NIDDK NIH HHS/United States; JID: 2985117R; 0 (Biological Markers); 0 (Proto-Oncogene Proteins); 0 (Proto-Oncogene Proteins c-ets); 0 (Trans-Activators); 0 (Transcription Factors); 0 (proto-oncogene protein Spi-1); ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0022-1767; 0022-1767</sn>
+<ad>Wistar Institute, Philadelphia, PA 19104, USA. spain@wistar.upenn.edu</ad>
+<an>PMID: 10453009; ji_v163n5p2681 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, Non-P.H.S.; Research Support, U.S. Gov&#39;t, P.H.S.; AIM; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>10453009</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>667</id>
+<a1>Terada,N.</a1>
+<a1>Hamazaki,T.</a1>
+<a1>Oka,M.</a1>
+<a1>Hoki,M.</a1>
+<a1>Mastalerz,D. M.</a1>
+<a1>Nakano,Y.</a1>
+<a1>Meyer,E. M.</a1>
+<a1>Morel,L.</a1>
+<a1>Petersen,B. E.</a1>
+<a1>Scott,E. W.</a1>
+<t1>Bone marrow cells adopt the phenotype of other cells by spontaneous cell fusion</t1>
+<jf>Nature</jf>
+<jo>Nature</jo>
+<yr>2002</yr>
+<fd>Apr 4</fd>
+<vo>416</vo>
+<is>6880</is>
+<sp>542</sp>
+<op>545</op>
+<k1>Animals</k1>
+<k1>Antigens, Differentiation</k1>
+<k1>Bone Marrow Cells/cytology</k1>
+<k1>Cell Differentiation</k1>
+<k1>Cell Fusion</k1>
+<k1>Cells, Cultured</k1>
+<k1>Embryo, Mammalian/cytology</k1>
+<k1>Female</k1>
+<k1>Genetic Markers</k1>
+<k1>Green Fluorescent Proteins</k1>
+<k1>Interleukin-3/pharmacology</k1>
+<k1>Karyotyping</k1>
+<k1>Luminescent Proteins/genetics</k1>
+<k1>Male</k1>
+<k1>Mice</k1>
+<k1>Mice, Transgenic</k1>
+<k1>Phenotype</k1>
+<k1>Ploidies</k1>
+<k1>Reverse Transcriptase Polymerase Chain Reaction</k1>
+<k1>Stem Cells/cytology</k1>
+<ab>Recent studies have demonstrated that transplanted bone marrow cells can turn into unexpected lineages including myocytes, hepatocytes, neurons and many others. A potential problem, however, is that reports discussing such &amp;#39;transdifferentiation&amp;#39; in vivo tend to conclude donor origin of transdifferentiated cells on the basis of the existence of donor-specific genes such as Y-chromosome markers. Here we demonstrate that mouse bone marrow cells can fuse spontaneously with embryonic stem cells in culture in vitro that contains interleukin-3. Moreover, spontaneously fused bone marrow cells can subsequently adopt the phenotype of the recipient cells, which, without detailed genetic analysis, might be interpreted as &amp;#39;dedifferentiation&amp;#39; or transdifferentiation.</ab>
+<no>LR: 20071115; JID: 0410462; 0 (Antigens, Differentiation); 0 (Genetic Markers); 0 (Interleukin-3); 0 (Luminescent Proteins); 147336-22-9 (Green Fluorescent Proteins); CIN: Nature. 2002 Apr 4;416(6880):485-7. PMID: 11932725; 2002/03/13 [aheadofprint]; ppublish</no>
+<pp>England</pp>
+<sn>0028-0836; 0028-0836</sn>
+<ad>Department of Pathology, University of Florida College of Medicine, Gainesville, Florida 32610, USA. terada@pathology.ufl.edu</ad>
+<an>PMID: 11932747; nature730 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<do>10.1038/nature730</do>
+<wp>20020313</wp>
+<ol>Unknown(0)</ol>
+<pmid>11932747</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>638</id>
+<a1>Ucar,D.</a1>
+<a1>Cogle,C. R.</a1>
+<a1>Zucali,J. R.</a1>
+<a1>Ostmark,B.</a1>
+<a1>Scott,E. W.</a1>
+<a1>Zori,R.</a1>
+<a1>Gray,B. A.</a1>
+<a1>Moreb,J. S.</a1>
+<t1>Aldehyde dehydrogenase activity as a functional marker for lung cancer</t1>
+<jf>Chemico-biological interactions</jf>
+<jo>Chem.Biol.Interact.</jo>
+<yr>2009</yr>
+<fd>Mar 16</fd>
+<vo>178</vo>
+<is>1-3</is>
+<sp>48</sp>
+<op>55</op>
+<k1>Aldehyde Dehydrogenase/metabolism</k1>
+<k1>Animals</k1>
+<k1>Cell Line, Tumor</k1>
+<k1>Humans</k1>
+<k1>Immunohistochemistry</k1>
+<k1>Lung Neoplasms/enzymology</k1>
+<k1>Mice</k1>
+<k1>Mice, Inbred NOD</k1>
+<k1>Mice, SCID</k1>
+<k1>Neoplasm Transplantation</k1>
+<k1>Stem Cells/metabolism</k1>
+<k1>Tumor Markers, Biological/metabolism</k1>
+<ab>Aldehyde dehydrogenase (ALDH) activity has been implicated in multiple biological and biochemical pathways and has been used to identify potential cancer stem cells. Our main hypothesis is that ALDH activity may be a lung cancer stem cell marker. Using flow cytometry, we sorted cells with bright (ALDH(br)) and dim (ALDH(lo)) ALDH activity found in H522 lung cancer cell line. We used in vitro proliferation and colony assays as well as a xenograft animal model to test our hypothesis. Cytogenetic analysis demonstrated that the ALDH(br) cells are indeed a different clone, but when left in normal culture conditions will give rise to ALDH(lo) cells. Furthermore, the ALDH(br) cells grow slower, have low clonal efficiency, and give rise to morphologically distinct colonies. The ability to form primary xenografts in NOD/SCID mice by ALDH(br) and ALDH(lo) cells was tested by injecting single cell suspension under the skin in each flank of same animal. Tumor size was calculated weekly. ALDH1A1 and ALDH3A1 immunohistochemistry (IHC) was performed on excised tumors. These tumors were also used to re-establish cell suspension, measure ALDH activity, and re-injection for secondary and tertiary transplants. The results indicate that both cell types can form tumors but the ones from ALDH(br) cells grew much slower in primary recipient mice. Histologically, there was no significant difference in the expression of ALDH in primary tumors originating from ALDH(br) or ALDH(lo) cells. Secondary and tertiary xenografts originating from ALDH(br) grew faster and bigger than those formed by ALDH(lo) cells. In conclusion, ALDH(br) cells may have some of the traditional features of stem cells in terms of being mostly dormant and slow to divide, but require support of other cells (ALDH(lo)) to sustain tumor growth. These observations and the known role of ALDH in drug resistance may have significant therapeutic implications in the treatment of lung cancer.</ab>
+<no>GR: 1K08DK067359/DK/NIDDK NIH HHS/United States; JID: 0227276; 0 (Tumor Markers, Biological); EC 1.2.1.3 (Aldehyde Dehydrogenase); 2008/08/25 [received]; 2008/09/22 [revised]; 2008/09/23 [accepted]; 2008/10/05 [aheadofprint]; ppublish</no>
+<pp>Ireland</pp>
+<sn>1872-7786; 0009-2797</sn>
+<ad>Department of Medicine, University of Florida, Gainesville, FL, USA.</ad>
+<an>PMID: 18952074; S0009-2797(08)00523-1 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, N.I.H., Extramural; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<do>10.1016/j.cbi.2008.09.029</do>
+<wp>20081005</wp>
+<ol>Unknown(0)</ol>
+<pmid>18952074</pmid></reference></refworks>

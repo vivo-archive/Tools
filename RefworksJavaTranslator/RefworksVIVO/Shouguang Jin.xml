@@ -1,0 +1,696 @@
+
+<?xml version="1.0" encoding="utf-8"?>
+<refworks xmlns:refworks="www.refworks.com/xml/">
+
+
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>273</id>
+<a1>Alaoui-El-Azher,M.</a1>
+<a1>Jia,J.</a1>
+<a1>Lian,W.</a1>
+<a1>Jin,S.</a1>
+<t1>ExoS of Pseudomonas aeruginosa induces apoptosis through a Fas receptor/caspase 8-independent pathway in HeLa cells</t1>
+<jf>Cellular microbiology</jf>
+<jo>Cell.Microbiol.</jo>
+<yr>2006</yr>
+<fd>Feb</fd>
+<vo>8</vo>
+<is>2</is>
+<sp>326</sp>
+<op>338</op>
+<k1>ADP Ribose Transferases/physiology</k1>
+<k1>Adaptor Proteins, Signal Transducing/metabolism</k1>
+<k1>Antibodies/metabolism</k1>
+<k1>Antigens, CD95/genetics/immunology/physiology</k1>
+<k1>Apoptosis</k1>
+<k1>Bacterial Toxins</k1>
+<k1>Caspase 8</k1>
+<k1>Caspases/genetics/physiology</k1>
+<k1>Fas Ligand Protein</k1>
+<k1>Fas-Associated Death Domain Protein</k1>
+<k1>Hela Cells</k1>
+<k1>Humans</k1>
+<k1>Membrane Glycoproteins/immunology/metabolism</k1>
+<k1>Microscopy, Confocal</k1>
+<k1>Poly(ADP-ribose) Polymerases/metabolism</k1>
+<k1>Pseudomonas aeruginosa/physiology</k1>
+<k1>RNA, Small Interfering/genetics/metabolism</k1>
+<k1>Signal Transduction</k1>
+<k1>Tumor Necrosis Factors/immunology/metabolism</k1>
+<ab>Pseudomonas aeruginosa infection is a serious complication in immunocompromised individuals and in patients with cystic fibrosis. We have previously shown that the type III secreted effector ExoS triggers apoptosis in various cultured cell lines via its ADP-ribosyltransferase (ADPRT) activity. The apoptosis process was further shown to involve intrinsic signalling pathway requiring c-Jun N-terminal kinase (JNK)-initiated mitochondrial pathway. In the present study, we investigated the role of Fas pathway activation in P. aeruginosa-induced apoptosis. P. aeruginosa infection resulted in caspase 8 cleavage in HeLa cells, which was inhibited by overexpression of a dominant negative version of Fas-associated death domain (FADD), suggesting that Fas pathway was activated. In fact, confocal laser scanning microscopy showed that P. aeruginosa induced clustering of FasR. In addition, the ADPRT activity of the ExoS was required for the induction of FasR clustering and caspase 8 cleavage. However, blocking the FasR-FasL interaction by antagonistic antibodies to FasR or to FasL had no effect on P. aeruginosa-induced caspase 8 and caspase 3 activation, neither did the silencing of FasR by small interfering RNA (siRNA), suggesting that caspase 8 activation through the FADD bypasses FasR/FasL-mediated signalling. Thus, FADD-mediated caspase 8 activation involves intracellular ExoS in an ADPRT-dependent manner. Furthermore, silencing of caspase 8 by siRNA did not interfere with P. aeruginosa-induced apoptosis, whereas it rendered HeLa cells markedly increased resistance towards FasL-induced apoptosis. In conclusion, our findings indicate that ExoS of P. aeruginosa induces apoptosis through a mechanism that is independent of Fas receptor/caspase 8 pathway.</ab>
+<no>LR: 20061115; JID: 100883691; 0 (Adaptor Proteins, Signal Transducing); 0 (Antibodies); 0 (Antigens, CD95); 0 (Bacterial Toxins); 0 (FADD protein, human); 0 (FASLG protein, human); 0 (Fas Ligand Protein); 0 (Fas-Associated Death Domain Protein); 0 (Membrane Glycoproteins); 0 (RNA, Small Interfering); 0 (Tumor Necrosis Factors); EC 2.4.2.- (ADP Ribose Transferases); EC 2.4.2.30 (PARP1 protein, human); EC 2.4.2.30 (Poly(ADP-ribose) Polymerases); EC 2.4.2.31 (exoenzyme S); EC 3.4.22.- (CASP8 protein, human); EC 3.4.22.- (Caspase 8); EC 3.4.22.- (Caspases); ppublish</no>
+<pp>England</pp>
+<sn>1462-5814; 1462-5814</sn>
+<ad>Department of Molecular Genetics and Microbiology, University of Florida College of Medicine, Gainesville, FL 32610, USA.</ad>
+<an>PMID: 16441442; CMI624 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<do>10.1111/j.1462-5822.2005.00624.x</do>
+<ol>Unknown(0)</ol>
+<pmid>16441442</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>270</id>
+<a1>Bai,F.</a1>
+<a1>Li,Y.</a1>
+<a1>Xu,H.</a1>
+<a1>Xia,H.</a1>
+<a1>Yin,T.</a1>
+<a1>Yao,H.</a1>
+<a1>Zhang,L.</a1>
+<a1>Zhang,X.</a1>
+<a1>Bai,Y.</a1>
+<a1>Jin,S.</a1>
+<a1>Qiao,M.</a1>
+<t1>Identification and functional characterization of pfm, a novel gene involved in swimming motility of Pseudomonas aeruginosa</t1>
+<jf>Gene</jf>
+<jo>Gene</jo>
+<yr>2007</yr>
+<fd>Oct 15</fd>
+<vo>401</vo>
+<is>1-2</is>
+<sp>19</sp>
+<op>27</op>
+<k1>Amino Acid Sequence</k1>
+<k1>Bacterial Proteins/physiology</k1>
+<k1>Chromosome Mapping</k1>
+<k1>Chromosomes, Bacterial</k1>
+<k1>Conserved Sequence</k1>
+<k1>DNA, Bacterial/chemistry/genetics</k1>
+<k1>Flagella/genetics</k1>
+<k1>Genes, Bacterial</k1>
+<k1>Glycine/chemistry</k1>
+<k1>Locomotion/genetics/physiology</k1>
+<k1>Molecular Sequence Data</k1>
+<k1>Mutation</k1>
+<k1>Operon</k1>
+<k1>Plasmids</k1>
+<k1>Promoter Regions, Genetic</k1>
+<k1>Pseudomonas aeruginosa/genetics/physiology</k1>
+<k1>Sequence Homology, Amino Acid</k1>
+<k1>Swimming/physiology</k1>
+<k1>Two-Hybrid System Techniques</k1>
+<k1>beta-Galactosidase/analysis/genetics</k1>
+<ab>Pseudomonas aeruginosa, an important opportunistic pathogen, has a single polar flagellum which is an important virulence and colonization factor by providing swimming motility. This paper describes the functional characterization of a novel gene pfm (PA2950) of P. aeruginosa. The pfm encodes a protein that is similar to a number of short-chain alcohol dehydrogenases of other bacterial species. Mutation of this gene results in a defect in swimming motility which can be completed back to that of wild type by a plasmid containing the pfm. Interestingly, the pfm mutant possesses an intact flagellum which does not rotate, thus giving rise to a non-motile phenotype. The pfm gene is encoded on an operon together with two upstream genes which code for electron transfer flavoprotein (ETF). Yeast two-hybrid tests indicated that the PFM interacts with the ETF, suggesting that the putative dehydrogenase (PFM) is involved in energy metabolism that is critical for the rotation of flagellum in P. aeruginosa.</ab>
+<no>LR: 20081121; JID: 7706761; 0 (Bacterial Proteins); 0 (DNA, Bacterial); 56-40-6 (Glycine); EC 3.2.1.23 (beta-Galactosidase); 2007/03/19 [received]; 2007/06/09 [revised]; 2007/06/14 [accepted]; 2007/07/10 [aheadofprint]; ppublish</no>
+<pp>Netherlands</pp>
+<sn>0378-1119; 0378-1119</sn>
+<ad>College of Life Sciences, Nankai University, Tianjin, PR China.</ad>
+<an>PMID: 17714889; S0378-1119(07)00329-0 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<do>10.1016/j.gene.2007.06.019</do>
+<wp>20070710</wp>
+<ol>Unknown(0)</ol>
+<pmid>17714889</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>271</id>
+<a1>Brandt,S.</a1>
+<a1>Shafikhani,S.</a1>
+<a1>Balachandran,P.</a1>
+<a1>Jin,S.</a1>
+<a1>Hartig,R.</a1>
+<a1>Konig,W.</a1>
+<a1>Engel,J.</a1>
+<a1>Backert,S.</a1>
+<t1>Use of a novel coinfection system reveals a role for Rac1, H-Ras, and CrkII phosphorylation in Helicobacter pylori-induced host cell actin cytoskeletal rearrangements</t1>
+<jf>FEMS immunology and medical microbiology</jf>
+<jo>FEMS Immunol.Med.Microbiol.</jo>
+<yr>2007</yr>
+<fd>Jul</fd>
+<vo>50</vo>
+<is>2</is>
+<sp>190</sp>
+<op>205</op>
+<k1>ADP Ribose Transferases/physiology</k1>
+<k1>Actins/metabolism</k1>
+<k1>Antigens, Bacterial/metabolism</k1>
+<k1>Bacterial Proteins/metabolism</k1>
+<k1>Bacterial Toxins</k1>
+<k1>Cell Line</k1>
+<k1>Cytoskeleton/metabolism</k1>
+<k1>Epithelial Cells/cytology/microbiology</k1>
+<k1>GTPase-Activating Proteins/physiology</k1>
+<k1>Helicobacter pylori/physiology</k1>
+<k1>Humans</k1>
+<k1>Phosphorylation</k1>
+<k1>Proto-Oncogene Proteins c-crk/metabolism</k1>
+<k1>Pseudomonas aeruginosa/physiology</k1>
+<k1>Signal Transduction</k1>
+<k1>rac1 GTP-Binding Protein/metabolism</k1>
+<k1>ras Proteins/metabolism</k1>
+<ab>The Helicobacter pylori CagA protein induces profound morphological changes in the host cytoskeleton and cell scattering, but the signalling involved is poorly understood. Pseudomonas aeruginosa also affects host actin cytoskeleton in a variety of ways by injecting the ExoS and ExoT toxins which encode N-terminal GTPase activating protein and C-terminal ADP-ribosyltransferase (ADPRT) activities. In this study we developed a novel coinfection assay to gain new insights into CagA effector protein functions. We found that P. aeruginosa injecting either ExoT or ExoS efficiently prevented the H. pylori-induced scattering phenotype. Both the Rho-GAP and the ADPRT domains of ExoS were needed to block the H. pylori-induced actin cytoskeletal rearrangements, whereas either domain of ExoT was sufficient for this activity. This strategy revealed common pathways subverted by different pathogens, and aided in the definition of signalling cascades that control the CagA-mediated cell scattering and elongation. We identified Crk adapter proteins, Rac1 and H-Ras, but not RhoA or Cdc42, which are the ExoS and/or ExoT targets, as crucial components of the CagA-induced phenotype. In addition, we show that ADP-ribosylation of CrkII by ExoT blocks phosphorylation of CrkII at Y-221, which is also important for the CagA-induced signalling.</ab>
+<no>LR: 20071203; GR: F32 AI054056/AI/NIAID NIH HHS/United States; GR: R01 AI42806/AI/NIAID NIH HHS/United States; GR: R01 AI53914/AI/NIAID NIH HHS/United States; JID: 9315554; 0 (Actins); 0 (Antigens, Bacterial); 0 (Bacterial Proteins); 0 (Bacterial Toxins); 0 (ExoT protein, Pseudomonas aeruginosa); 0 (GTPase-Activating Proteins); 0 (Proto-Oncogene Proteins c-crk); 0 (cagA protein, Helicobacter pylori); EC 2.4.2.- (ADP Ribose Transferases); EC 2.4.2.31 (exoenzyme S); EC 3.6.5.2 (rac1 GTP-Binding Protein); EC 3.6.5.2 (ras Proteins); 2007/04/11 [aheadofprint]; ppublish</no>
+<pp>England</pp>
+<sn>0928-8244; 0928-8244</sn>
+<ad>Department of Medical Microbiology, Otto von Guericke University, Magdeburg, Germany.</ad>
+<an>PMID: 17428306; FIM234 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, N.I.H., Extramural; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<do>10.1111/j.1574-695X.2007.00234.x</do>
+<wp>20070411</wp>
+<ol>Unknown(0)</ol>
+<pmid>17428306</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>269</id>
+<a1>Galle,M.</a1>
+<a1>Schotte,P.</a1>
+<a1>Haegman,M.</a1>
+<a1>Wullaert,A.</a1>
+<a1>Yang,H. J.</a1>
+<a1>Jin,S.</a1>
+<a1>Beyaert,R.</a1>
+<t1>The Pseudomonas aeruginosa Type III secretion system plays a dual role in the regulation of caspase-1 mediated IL-1beta maturation</t1>
+<jf>Journal of Cellular and Molecular Medicine</jf>
+<jo>J.Cell.Mol.Med.</jo>
+<yr>2008</yr>
+<fd>Sep-Oct</fd>
+<vo>12</vo>
+<is>5A</is>
+<sp>1767</sp>
+<op>1776</op>
+<k1>ADP Ribose Transferases/metabolism</k1>
+<k1>Animals</k1>
+<k1>Apoptosis</k1>
+<k1>Bacterial Toxins/metabolism</k1>
+<k1>Caspase 1/metabolism</k1>
+<k1>Cells, Cultured</k1>
+<k1>Female</k1>
+<k1>Interleukin-1beta/metabolism/secretion</k1>
+<k1>Macrophages/cytology/metabolism/secretion</k1>
+<k1>Mice</k1>
+<k1>Mice, Inbred DBA</k1>
+<k1>Pseudomonas Infections/genetics/metabolism/pathology</k1>
+<k1>Pseudomonas aeruginosa/metabolism</k1>
+<ab>Pseudomonas aeruginosa is an opportunistic bacterial pathogen that forms a serious problem for immunocompromised patients and also the leading cause of mortality in cystic fibrosis. The overall importance of a functional Type III secretion system (T3SS) in P. aeruginosa virulence has been well established, but the underlying mechanisms are still unclear. Using in vitro infected macrophages as w as a murine model of acute lung infection, we show that the Caspase-1 mediated maturation and secretion of IL-1beta needs a translocation competent T3SS and Flagellin, but not the Type III effector proteins ExoS, ExoT and ExoY. However, ExoS was found to negative regulate the P. aeruginosa induced IL-1beta maturation by a mechanism that is dependent on its ADP ribosyltransferase activity. Moreov ExoS deficiency also switched the mode of macrophage death from apoptosis to pro-inflammatory pyroptosis. Altogether, these data demonstrate a dual role for the P. aeruginosa T3SS in the regulation of Caspase-1 mediated IL-1beta production and provide new insights into the mechanisms of immune evasion by this pathogen.</ab>
+<no>JID: 101083777; 0 (Bacterial Toxins); 0 (Interleukin-1beta); EC 2.4.2.- (ADP Ribose Transferases); EC 2.4.2.31 (exoenzyme S); EC 3.4.22.36 (Caspase 1); 2007/12/10 [aheadofprint]; ppublish</no>
+<pp>Romania</pp>
+<sn>1582-1838; 1582-1838</sn>
+<ad>Department of Molecular Biology, Ghent University, Ghent, Belgium.</ad>
+<an>PMID: 18081695; JCMM190 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<do>10.1111/j.1582-4934.2007.00190.x</do>
+<wp>20071210</wp>
+<ol>Unknown(0)</ol>
+<pmid>18081695</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>262</id>
+<a1>Guo,M.</a1>
+<a1>Jin,S.</a1>
+<a1>Sun,D.</a1>
+<a1>Hew,C. L.</a1>
+<a1>Pan,S. Q.</a1>
+<t1>Recruitment of conjugative DNA transfer substrate to Agrobacterium type IV secretion apparatus</t1>
+<jf>Proceedings of the National Academy of Sciences of the United States of America</jf>
+<jo>Proc.Natl.Acad.Sci.U.S.A.</jo>
+<yr>2007</yr>
+<fd>Dec 11</fd>
+<vo>104</vo>
+<is>50</is>
+<sp>20019</sp>
+<op>20024</op>
+<k1>Amino Acid Sequence</k1>
+<k1>Bacterial Proteins/chemistry/genetics/metabolism</k1>
+<k1>Biological Transport</k1>
+<k1>Conserved Sequence</k1>
+<k1>DNA, Bacterial/genetics</k1>
+<k1>Molecular Sequence Data</k1>
+<k1>Mutation/genetics</k1>
+<k1>Plasmids/genetics</k1>
+<k1>Protein Binding</k1>
+<k1>Rhizobium radiobacter/classification/genetics/metabolism</k1>
+<k1>Sequence Alignment</k1>
+<k1>Threonine/genetics/metabolism</k1>
+<k1>Transfection</k1>
+<ab>Bacterial type IV secretion system (T4SS) belongs to a growing class of evolutionarily conserved transporters that translocate DNA and proteins into a wide variety of organisms including bacterial and eukaryotic cells. Archetypal is the Agrobacterium tumefaciens VirB/D4 T4SS that transfers oncogenic T-DNA to various eukaryotic cells, which is transferred as a nucleoprotein T-complex with VirD2 as the pilot protein. As a derivative of plasmid conjugation systems, the VirB/D4 T4SS can also transfer certain mobilizable plasmids and bacterial proteins like VirE2 and VirF, although it is unknown how the membrane-bound T4SS recruits different transfer substrates. Here, we show that a cytoplasmic VirD2-binding protein (VBP) is involved in the recruitment of the T-complex to the energizing components of the T4SS, including VirD4, VirB4, and VirB11. VBP is also important for the recruitment of a conjugative plasmid to a different transfer system independent of VirB/D4. These data indicate that VBP functions as a previously unrecognized recruiting protein that helps couple nucleoprotein substrates to the appropriate transport sites for conjugative DNA transfers. VBP has three functionally redundant homologs, and similar homologs can be found in different bacterial genomes, suggesting a previously uncharacterized class of proteins involved in conjugative DNA transfers.</ab>
+<no>LR: 20091118; JID: 7505876; 0 (Bacterial Proteins); 0 (DNA, Bacterial); 72-19-5 (Threonine); OID: NLM: PMC2148415; 2007/12/03 [aheadofprint]; ppublish</no>
+<pp>United States</pp>
+<sn>1091-6490; 0027-8424</sn>
+<ad>Department of Biological Sciences, National University of Singapore, Singapore 117543.</ad>
+<an>PMID: 18056647; 0701738104 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<do>10.1073/pnas.0701738104</do>
+<wp>20071203</wp>
+<ol>Unknown(0)</ol>
+<pmid>18056647</pmid>
+<pmcid>PMC2148415</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>266</id>
+<a1>Ha,U. H.</a1>
+<a1>Kim,J.</a1>
+<a1>Badrane,H.</a1>
+<a1>Jia,J.</a1>
+<a1>Baker,H. V.</a1>
+<a1>Wu,D.</a1>
+<a1>Jin,S.</a1>
+<t1>An in vivo inducible gene of Pseudomonas aeruginosa encodes an anti-ExsA to suppress the type III secretion system</t1>
+<jf>Molecular microbiology</jf>
+<jo>Mol.Microbiol.</jo>
+<yr>2004</yr>
+<fd>Oct</fd>
+<vo>54</vo>
+<is>2</is>
+<sp>307</sp>
+<op>320</op>
+<k1>Animals</k1>
+<k1>Bacterial Proteins/genetics/metabolism</k1>
+<k1>Copper/metabolism</k1>
+<k1>DNA-Binding Proteins/genetics/metabolism</k1>
+<k1>Gene Expression Profiling</k1>
+<k1>Gene Expression Regulation, Bacterial</k1>
+<k1>Humans</k1>
+<k1>Mice</k1>
+<k1>Oligonucleotide Array Sequence Analysis</k1>
+<k1>Pseudomonas aeruginosa/genetics/metabolism</k1>
+<k1>Recombinant Fusion Proteins/genetics/metabolism</k1>
+<k1>Repressor Proteins/genetics/metabolism</k1>
+<k1>Signal Transduction/physiology</k1>
+<k1>Trans-Activators/genetics/metabolism</k1>
+<k1>Two-Hybrid System Techniques</k1>
+<ab>We have previously reported on the isolation of in vivo inducible genes of Pseudomonas aeruginosa using IVET system. One of such genes isolated from burn mouse infection model encodes a short open reading frame with unknown function. In this study, we demonstrate that this gene product specifically suppresses the expression of type III secretion genes in P. aeruginosa, thus named PtrA (Pseudomonas type III repressor A). A direct interaction between the PtrA and type III transcriptional activator ExsA was demonstrated, suggesting that its repressor function is probably realized through inhibition of the ExsA protein function. Indeed, an elevated expression of the exsA compensates the repressor effect of the PtrA. Interestingly, expression of the ptrA is highly and specifically induced by copper cation. A copper- responsive two-component regulatory system, copR-copS, has also been identified and shown to be essential for the copper resistance in P. aeruginosa as well as the activation of ptrA in response to the copper signal. Elevated expression of the ptrA during the infection of mouse burn wound suggests that P. aeruginosa has evolved tight regulatory systems to shut down energy-expensive type III secretion apparatus in response to specific environmental signals, such as copper stress.</ab>
+<no>LR: 20080627; JID: 8712028; 0 (Bacterial Proteins); 0 (DNA-Binding Proteins); 0 (ExsA protein, bacteria); 0 (Recombinant Fusion Proteins); 0 (Repressor Proteins); 0 (Trans-Activators); 7440-50-8 (Copper); ppublish</no>
+<pp>England</pp>
+<sn>0950-382X; 0950-382X</sn>
+<ad>Department of Molecular Genetics and Microbiology, PO Box 100266, University of Florida, Gainesville, FL 32610, USA.</ad>
+<an>PMID: 15469505; MMI4282 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<do>10.1111/j.1365-2958.2004.04282.x</do>
+<ol>Unknown(0)</ol>
+<pmid>15469505</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>260</id>
+<a1>Ha,U. H.</a1>
+<a1>Lim,J. H.</a1>
+<a1>Kim,H. J.</a1>
+<a1>Wu,W.</a1>
+<a1>Jin,S.</a1>
+<a1>Xu,H.</a1>
+<a1>Li,J. D.</a1>
+<t1>MKP1 regulates the induction of MUC5AC mucin by Streptococcus pneumoniae pneumolysin by inhibiting the PAK4-JNK signaling pathway</t1>
+<jf>The Journal of biological chemistry</jf>
+<jo>J.Biol.Chem.</jo>
+<yr>2008</yr>
+<fd>Nov 7</fd>
+<vo>283</vo>
+<is>45</is>
+<sp>30624</sp>
+<op>30631</op>
+<k1>Animals</k1>
+<k1>Bacterial Proteins/immunology/metabolism/pharmacology</k1>
+<k1>Dual Specificity Phosphatase 1/genetics/immunology/metabolism</k1>
+<k1>Hela Cells</k1>
+<k1>Humans</k1>
+<k1>Immunity, Innate/drug effects/genetics/immunology</k1>
+<k1>Immunity, Mucosal</k1>
+<k1>MAP Kinase Kinase 4/genetics/immunology/metabolism</k1>
+<k1>Mice</k1>
+<k1>Mice, Mutant Strains</k1>
+<k1>Mucin 5AC/biosynthesis/genetics/immunology</k1>
+<k1>Myeloid Differentiation Factor 88</k1>
+<k1>Pneumococcal Infections/genetics/immunology/metabolism</k1>
+<k1>Respiratory Mucosa/immunology/metabolism</k1>
+<k1>Signal Transduction/drug effects/immunology</k1>
+<k1>Streptococcus pneumoniae/immunology/metabolism</k1>
+<k1>Streptolysins/immunology/metabolism/pharmacology</k1>
+<k1>TNF Receptor-Associated Factor 6</k1>
+<k1>Toll-Like Receptor 4/genetics/immunology/metabolism</k1>
+<k1>Transcription, Genetic/drug effects/genetics/immunology</k1>
+<k1>Up-Regulation/drug effects/genetics/immunology</k1>
+<k1>p21-Activated Kinases/genetics/immunology/metabolism</k1>
+<ab>Mucosal epithelial cells in the respiratory tract act as the first line of host innate defense against inhaled microbes by producing a range of molecules for clearance. In particular, epithelial mucins facilitate the mucociliary clearance by physically trapping the inhaled microbes. Up-regulation of mucin production thus represents an important host innate defense response against invading microbes. Excess mucin production, however, overwhelms the mucociliary clearance, resulting in defective mucosal defenses. Thus, tight regulation of mucin production is critical for maintaining an appropriate balance between beneficial and detrimental outcomes. Among various mechanisms, negative regulation plays an important role in tightly regulating mucin production. Here we show that the PAK4-JNK signaling pathway acted as a negative regulator for Streptococcus pneumoniae pneumolysin-induced MUC5AC mucin transcription. Moreover pneumolysin also selectively induced expression of MKP1 via a TLR4-dependent MyD88-TRAF6-ERK signaling pathway, which inhibited the PAK4-JNK signaling pathway, thereby leading to up-regulation of MUC5AC mucin production to maintain effective mucosal protection against S. pneumoniae infection. These studies provide novel insights into the molecular mechanisms underlying the tight regulation of mucin overproduction in the pathogenesis of airway infectious diseases and may lead to development of new therapeutic strategies.</ab>
+<no>LR: 20091119; GR: DC004562/DC/NIDCD NIH HHS/United States; GR: DC005843/DC/NIDCD NIH HHS/United States; GR: DC008703/DC/NIDCD NIH HHS/United States; JID: 2985121R; 0 (Bacterial Proteins); 0 (MUC5AC protein, human); 0 (MYD88 protein, human); 0 (Muc5ac protein, mouse); 0 (Mucin 5AC); 0 (Myd88 protein, mouse); 0 (Myeloid Differentiation Factor 88); 0 (Streptolysins); 0 (TLR4 protein, human); 0 (TNF Receptor-Associated Factor 6); 0 (Tlr4 protein, mouse); 0 (Toll-Like Receptor 4); 0 (plY protein, Streptococcus pneumoniae); EC 2.7.1.11 (PAK4 protein, human); EC 2.7.11.1 (Pak4 protein, mouse); EC 2.7.11.1 (p21-Activated Kinases); EC 2.7.12.2 (MAP Kinase Kinase 4); EC 3.1.3.48 (DUSP1 protein, human); EC 3.1.3.48 (Dual Specificity Phosphatase 1); EC 3.1.3.48 (Dusp1 protein, mouse); OID: NLM: PMC2576563; 2008/09/09 [aheadofprint]; ppublish</no>
+<pp>United States</pp>
+<sn>0021-9258; 0021-9258</sn>
+<ad>Department of Microbiology and Immunology, University of Rochester Medical Center, Rochester, New York 14642, USA.</ad>
+<an>PMID: 18782768; M802519200 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, N.I.H., Extramural; IM</sf>
+<do>10.1074/jbc.M802519200</do>
+<wp>20080909</wp>
+<ol>Unknown(0)</ol>
+<pmid>18782768</pmid>
+<pmcid>PMC2576563</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>272</id>
+<a1>Jia,J.</a1>
+<a1>Wang,Y.</a1>
+<a1>Zhou,L.</a1>
+<a1>Jin,S.</a1>
+<t1>Expression of Pseudomonas aeruginosa toxin ExoS effectively induces apoptosis in host cells</t1>
+<jf>Infection and immunity</jf>
+<jo>Infect.Immun.</jo>
+<yr>2006</yr>
+<fd>Dec</fd>
+<vo>74</vo>
+<is>12</is>
+<sp>6557</sp>
+<op>6570</op>
+<k1>ADP Ribose Transferases/analysis/genetics/metabolism</k1>
+<k1>ADP-Ribosylation Factors/analysis/genetics/metabolism</k1>
+<k1>Animals</k1>
+<k1>Apoptosis</k1>
+<k1>Bacterial Toxins/analysis/genetics/metabolism</k1>
+<k1>Cell Line</k1>
+<k1>Drosophila melanogaster/cytology</k1>
+<k1>Evolution, Molecular</k1>
+<k1>Genetic Vectors/genetics</k1>
+<k1>Green Fluorescent Proteins/analysis/genetics</k1>
+<k1>Hela Cells</k1>
+<k1>Humans</k1>
+<k1>MAP Kinase Kinase 4/metabolism</k1>
+<k1>Mitochondria/metabolism</k1>
+<k1>Recombinant Fusion Proteins/genetics/metabolism</k1>
+<k1>Signal Transduction</k1>
+<k1>Transfection</k1>
+<k1>Transgenes</k1>
+<ab>Pseudomonas aeruginosa is an opportunistic bacterial pathogen that primarily infects immunocompromised individuals and patients with cystic fibrosis. Invasive strains of P. aeruginosa are known to induce apoptosis at a high frequency in HeLa cells and in many other cell lines, a process that is dependent on the ADP-ribosylation (ADPRT) activity of a type III secreted protein ExoS. In our previous report, it was proposed that P. aeruginosa secreting ExoS, upon infection, shuts down host cell survival signal pathways by inhibiting ERK1/2 and p38 activation, and it activates proapoptotic pathways through activation of JNK1/2, leading ultimately to cytochrome c release and activation of caspases. In this study, we demonstrate that the expression of ExoS in HeLa cells by eukaryotic expression vector effectively caused apoptosis in an ADPRT activity-dependent manner, indicating that ExoS alone is sufficient to trigger apoptotic death of host cells independent of any other bacterial factors. By expressing an EGFP-ExoS fusion protein, we were able to directly correlate the death of HeLa cells with the presence of intracellular ExoS and further proved the dependence of this process on both JNK activation and mitochondrial proapoptotic event. The cellular pathway responsible for the ExoS-induced cytotoxicity appears to be well conserved, since the expression of the ADPRT-competent ExoS also induced rapid cell death in the Drosophila melanogaster S2 cell lines. The presented study not only highlights the ability of ExoS ADPRT to modulate host cell signaling, eventually leading to apoptosis, but also establishes ExoS as a valuable tool, in principle, for the elucidation of apoptosis mechanisms.</ab>
+<no>LR: 20091119; JID: 0246127; 0 (Bacterial Toxins); 0 (Recombinant Fusion Proteins); 0 (enhanced green fluorescent protein); 147336-22-9 (Green Fluorescent Proteins); EC 2.4.2.- (ADP Ribose Transferases); EC 2.4.2.31 (exoenzyme S); EC 2.7.12.2 (MAP Kinase Kinase 4); EC 3.6.5.2 (ADP-Ribosylation Factors); OID: NLM: PMC1698105; 2006/09/11 [aheadofprint]; ppublish</no>
+<pp>United States</pp>
+<sn>0019-9567; 0019-9567</sn>
+<ad>Department of Molecular Genetics and Microbiology, P.O. Box 100266, University of Florida, Gainesville, FL 32610, USA.</ad>
+<an>PMID: 16966406; IAI.00591-06 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, N.I.H., Extramural; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<do>10.1128/IAI.00591-06</do>
+<wp>20060911</wp>
+<ol>Unknown(0)</ol>
+<pmid>16966406</pmid>
+<pmcid>PMC1698105</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>261</id>
+<a1>Luo,Q.</a1>
+<a1>Jin,S.</a1>
+<t1>Molecular determinants in regulating Pseudomonas aeruginosa type III secretion system--a review</t1>
+<jf>Wei sheng wu xue bao = Acta microbiologica Sinica</jf>
+<jo>Wei Sheng Wu Xue Bao</jo>
+<yr>2008</yr>
+<fd>Oct 4</fd>
+<vo>48</vo>
+<is>10</is>
+<sp>1413</sp>
+<op>1417</op>
+<k1>Animals</k1>
+<k1>Bacterial Proteins/genetics/metabolism</k1>
+<k1>Gene Expression Regulation, Bacterial</k1>
+<k1>Humans</k1>
+<k1>Protein Transport</k1>
+<k1>Pseudomonas Infections/microbiology</k1>
+<k1>Pseudomonas aeruginosa/genetics/metabolism/pathogenicity</k1>
+<k1>Virulence Factors/genetics/metabolism</k1>
+<ab>Pseudomonas aeruginosa is a Gram-negative opportunistic bacterial pathogen. Successful injection of virulence factors into host cells, evasion of phagocytosis and promotion of pathogenesis depend primarily on the function of type III secretion system (T3SS). A complex set of signaling pathways have been shown to modulate T3SS expression. In this review, a brief introduction is given on the composition, function, and molecular determinants that regulate P. aeruginosa T3SS gene expression.</ab>
+<no>JID: 21610860R; 0 (Bacterial Proteins); 0 (Virulence Factors); RF: 29; ppublish</no>
+<pp>China</pp>
+<sn>0001-6209; 0001-6209</sn>
+<ad>Hubei Key Laboratory of Genetic Regulation and Integrative Biology, College of Life Science, Central China Normal University, Wuhan 430079, China. qinluo@mail.ccnu.edu.cn</ad>
+<an>PMID: 19160828</an>
+<la>chi</la>
+<sf>English Abstract; Journal Article; Research Support, Non-U.S. Gov&#39;t; Review; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>19160828</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>267</id>
+<a1>Luo,Y.</a1>
+<a1>Kong,X.</a1>
+<a1>Xu,A.</a1>
+<a1>Jin,S.</a1>
+<a1>Wu,D.</a1>
+<t1>Expression, purification, and functional characterization of recombinant human interleukin-7</t1>
+<jf>Protein expression and purification</jf>
+<jo>Protein Expr.Purif.</jo>
+<yr>2009</yr>
+<fd>Jan</fd>
+<vo>63</vo>
+<is>1</is>
+<sp>1</sp>
+<op>4</op>
+<k1>Bioreactors</k1>
+<k1>Blotting, Western</k1>
+<k1>Chromatography, Ion Exchange</k1>
+<k1>Cloning, Molecular</k1>
+<k1>Fermentation</k1>
+<k1>Humans</k1>
+<k1>Interleukin-7/biosynthesis/genetics/isolation &amp; purification/pharmacology</k1>
+<k1>Pichia/genetics/metabolism</k1>
+<k1>Protein Renaturation</k1>
+<k1>Recombinant Proteins/biosynthesis/genetics/isolation &amp; purification/pharmacology</k1>
+<k1>Sepharose</k1>
+<k1>Tetrazolium Salts</k1>
+<k1>Thiazoles</k1>
+<k1>Transformation, Genetic</k1>
+<ab>Human interleukin-7 (IL-7) is a member of the interleukin family. Numerous studies have demonstrated IL-7&amp;#39;s effect on B- and T-cell development as well as its potential in various clinical applications. Previously, a study reported that IL-7 could be purified from inclusion bodies using a prokaryotic system, however, the required refolding step limits the recovery rate. This study was designed to produce a bioactive recombinant human IL-7 (rhIL-7) in a eukaryotic expression system in order to obtain higher yields of the protein with simpler purification steps. We cloned human IL-7 cDNA and successfully expressed active recombinant protein in yeast using the Pichia pastoris expression system. A simple purification strategy was established to purify the rhIL-7 from the fermentation supernatant, yielding 35 mg/L at 95% purity by the use of a common SP Sepharose FF cation-exchange chromatography. Functional analysis of the purified rhIL-7 by the pre-B cell MTT (3-(4,5-dimethylthiazolyl-2)-2,5-diphenyltetrazolium bromide) proliferation assay demonstrated a specific activity comparable to commercial sources. These results suggest that purification of rhIL-7 from yeast provides a sound strategy for large-scale production of the rhIL-7 for clinical applications as well as basic researches.</ab>
+<no>JID: 9101496; 0 (IL7 protein, human); 0 (Interleukin-7); 0 (Recombinant Proteins); 0 (Tetrazolium Salts); 0 (Thiazoles); 159251-40-8 (sepharose fast flow SP); 298-93-1 (thiazolyl blue); 9012-36-6 (Sepharose); 2008/03/06 [received]; 2008/06/19 [revised]; 2008/08/26 [accepted]; 2008/09/06 [aheadofprint]; ppublish</no>
+<pp>United States</pp>
+<sn>1096-0279; 1046-5928</sn>
+<ad>Guangzhou Institute of Biomedicine and Health, Chinese Academy of Sciences, Guangzhou Science Park, Guangzhou 510663, China.</ad>
+<an>PMID: 18805490; S1046-5928(08)00223-4 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<do>10.1016/j.pep.2008.08.009</do>
+<wp>20080906</wp>
+<ol>Unknown(0)</ol>
+<pmid>18805490</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>268</id>
+<a1>Poon,K. K.</a1>
+<a1>Westman,E. L.</a1>
+<a1>Vinogradov,E.</a1>
+<a1>Jin,S.</a1>
+<a1>Lam,J. S.</a1>
+<t1>Functional characterization of MigA and WapR: putative rhamnosyltransferases involved in outer core oligosaccharide biosynthesis of Pseudomonas aeruginosa</t1>
+<jf>Journal of Bacteriology</jf>
+<jo>J.Bacteriol.</jo>
+<yr>2008</yr>
+<fd>Mar</fd>
+<vo>190</vo>
+<is>6</is>
+<sp>1857</sp>
+<op>1865</op>
+<k1>Bacterial Proteins/genetics/metabolism</k1>
+<k1>Carbohydrate Sequence</k1>
+<k1>Chromatography, Gel</k1>
+<k1>Genetic Complementation Test</k1>
+<k1>Glycosyltransferases/genetics/metabolism</k1>
+<k1>Lipopolysaccharides/biosynthesis/chemistry</k1>
+<k1>Magnetic Resonance Spectroscopy</k1>
+<k1>Molecular Sequence Data</k1>
+<k1>Mutation</k1>
+<k1>Oligosaccharides/biosynthesis/chemistry</k1>
+<k1>Pseudomonas aeruginosa/genetics/metabolism</k1>
+<k1>Rhamnose/chemistry/metabolism</k1>
+<k1>Spectrometry, Mass, Electrospray Ionization</k1>
+<ab>Pseudomonas aeruginosa lipopolysaccharide (LPS) contains two glycoforms of core oligosaccharide (OS); one form is capped with O antigen through an alpha-1,3-linked L-rhamnose (L-Rha), while the other is uncapped and contains an alpha-1,6-linked L-Rha. Two genes in strain PAO1, wapR (PA5000) and migA (PA0705), encode putative glycosyltransferases associated with core biosynthesis. We propose that WapR and MigA are the rhamnosyltransferases responsible for the two linkages of L-Rha to the core. Knockout mutants with mutations in both genes were generated. The wapR mutant produced LPS lacking O antigen, and addition of wapR in trans complemented this defect. The migA mutant produced LPS with a truncated outer core and showed no reactivity to outer core-specific monoclonal antibody (MAb) 5C101. Complementation of this mutant with migA restored reactivity of the LPS to MAb 5C101. Interestingly, LPS from the complemented migA strain was not reactive to MAb 18-19 (specific for the core-plus-one O repeat). This was due to overexpression of MigA in the complemented strain that caused an increase in the proportion of the uncapped core OS, thereby decreasing the amount of the core-plus-one O repeat, indicating that MigA has a regulatory role. The structures of LPS from both mutants were elucidated using nuclear magnetic resonance spectroscopy and mass spectrometry. The capped core of the wapR mutant was found to be truncated and lacked alpha-1,3-L-Rha. In contrast, uncapped core OS from the migA mutant lacked alpha-1,6-L-Rha. These results provide evidence that WapR is the alpha-1,3-rhamnosyltransferase, while MigA is the alpha-1,6-rhamnosyltransferase.</ab>
+<no>LR: 20091118; JID: 2985120R; 0 (Bacterial Proteins); 0 (Lipopolysaccharides); 0 (Oligosaccharides); 10485-94-6 (Rhamnose); EC 2.4.- (Glycosyltransferases); OID: NLM: PMC2258888; 2008/01/04 [aheadofprint]; ppublish</no>
+<pp>United States</pp>
+<sn>1098-5530; 0021-9193</sn>
+<ad>Department of Molecular and Cellular Biology, University of Guelph, Guelph, ON N1G 2W1, Canada.</ad>
+<an>PMID: 18178733; JB.01546-07 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<do>10.1128/JB.01546-07</do>
+<wp>20080104</wp>
+<ol>Unknown(0)</ol>
+<pmid>18178733</pmid>
+<pmcid>PMC2258888</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>259</id>
+<a1>Wang,F.</a1>
+<a1>Xiao,J.</a1>
+<a1>Pan,L.</a1>
+<a1>Yang,M.</a1>
+<a1>Zhang,G.</a1>
+<a1>Jin,S.</a1>
+<a1>Yu,J.</a1>
+<t1>A systematic survey of mini-proteins in bacteria and archaea</t1>
+<jf>PloS one</jf>
+<jo>PLoS One</jo>
+<yr>2008</yr>
+<vo>3</vo>
+<is>12</is>
+<sp>e4027</sp>
+<k1>Archaea/metabolism</k1>
+<k1>Archaeal Proteins/analysis/chemistry/metabolism</k1>
+<k1>Bacteria/metabolism</k1>
+<k1>Bacterial Proteins/analysis/chemistry/metabolism</k1>
+<k1>Computational Biology</k1>
+<k1>Conserved Sequence</k1>
+<k1>Databases, Protein</k1>
+<k1>Evolution, Molecular</k1>
+<k1>Models, Biological</k1>
+<k1>Phylogeny</k1>
+<k1>Protein Structure, Tertiary</k1>
+<k1>Sequence Alignment</k1>
+<ab>BACKGROUND: Mini-proteins, defined as polypeptides containing no more than 100 amino acids, are ubiquitous in prokaryotes and eukaryotes. They play significant roles in various biological processes, and their regulatory functions gradually attract the attentions of scientists. However, the functions of the majority of mini-proteins are still largely unknown due to the constraints of experimental methods and bioinformatic analysis. METHODOLOGY/PRINCIPAL FINDINGS: In this article, we extracted a total of 180,879 mini-proteins from the annotations of 532 sequenced genomes, including 491 strains of Bacteria and 41 strains of Archaea. The average proportion of mini-proteins among all genomic proteins is approximately 10.99%, but different strains exhibit remarkable fluctuations. These mini-proteins display two notable characteristics. First, the majority are species-specific proteins with an average proportion of 58.79% among six representative phyla. Second, an even larger proportion (70.03% among all strains) is hypothetical proteins. However, a fraction of highly conserved hypothetical proteins potentially play crucial roles in organisms. Among mini-proteins with known functions, it seems that regulatory and metabolic proteins are more abundant than essential structural proteins. Furthermore, domains in mini-proteins seem to have greater distributions in Bacteria than Eukarya. Analysis of the evolutionary progression of these domains reveals that they have diverged to new patterns from a single ancestor. CONCLUSIONS/SIGNIFICANCE: Mini-proteins are ubiquitous in bacterial and archaeal species and play significant roles in various functions. The number of mini-proteins in each genome displays remarkable fluctuation, likely resulting from the differential selective pressures that reflect the respective life-styles of the organisms. The answers to many questions surrounding mini-proteins remain elusive and need to be resolved experimentally.</ab>
+<no>LR: 20091118; JID: 101285081; 0 (Archaeal Proteins); 0 (Bacterial Proteins); OID: NLM: PMC2602986; 2008/10/22 [received]; 2008/11/15 [accepted]; 2008/12/24 [epublish]; ppublish</no>
+<pp>United States</pp>
+<sn>1932-6203</sn>
+<ad>CAS Key Laboratory of Genome Sciences and Information, Beijing Institute of Genomics, Chinese Academy of Sciences, Beijing, China.</ad>
+<an>PMID: 19107199</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<do>10.1371/journal.pone.0004027</do>
+<wp>20081224</wp>
+<ol>Unknown(0)</ol>
+<pmid>19107199</pmid>
+<pmcid>PMC2602986</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>264</id>
+<a1>Wu,W.</a1>
+<a1>Jin,S.</a1>
+<t1>PtrB of Pseudomonas aeruginosa suppresses the type III secretion system under the stress of DNA damage</t1>
+<jf>Journal of Bacteriology</jf>
+<jo>J.Bacteriol.</jo>
+<yr>2005</yr>
+<fd>Sep</fd>
+<vo>187</vo>
+<is>17</is>
+<sp>6058</sp>
+<op>6068</op>
+<k1>Bacterial Proteins/genetics/metabolism</k1>
+<k1>Base Sequence</k1>
+<k1>Cell Survival</k1>
+<k1>DNA Damage</k1>
+<k1>DNA Primers</k1>
+<k1>Hela Cells</k1>
+<k1>Humans</k1>
+<k1>Molecular Sequence Data</k1>
+<k1>Mutagenesis</k1>
+<k1>Promoter Regions, Genetic</k1>
+<k1>Pseudomonas aeruginosa/genetics</k1>
+<k1>Pyocins/biosynthesis</k1>
+<k1>Repressor Proteins/genetics/metabolism</k1>
+<k1>Reverse Transcriptase Polymerase Chain Reaction</k1>
+<ab>In a search for regulatory genes of the type III secretion system (TTSS) in Pseudomonas aeruginosa, transposon (Tn5) insertional mutants of the prtR gene were found defective in the TTSS. PrtR is an inhibitor of prtN, which encodes a transcriptional activator for pyocin synthesis genes. In P. aeruginosa, pyocin synthesis is activated when PrtR is degraded during the SOS response. Treatment of a wild-type P. aeruginosa strain with mitomycin C, a DNA-damaging agent, resulted in the inhibition of TTSS activation. A prtR/prtN double mutant had the same TTSS defect as the prtR mutant, and complementation by a prtR gene but not by a prtN gene restored the TTSS function. Also, overexpression of the prtN gene in wild-type PAK had no effect on the TTSS; thus, PrtN is not involved in the repression of the TTSS. To identify the PrtR-regulated TTSS repressor, another round of Tn mutagenesis was carried out in the background of a prtR/prtN double mutant. Insertion in a small gene, designated ptrB, restored the normal TTSS activity. Expression of ptrB is specifically repressed by PrtR, and mitomycin C-mediated suppression of the TTSS is also abolished in a ptrB mutant strain. Therefore, PtrB is a new TTSS repressor that coordinates TTSS repression and pyocin synthesis under the stress of DNA damage.</ab>
+<no>LR: 20091118; JID: 2985120R; 0 (Bacterial Proteins); 0 (DNA Primers); 0 (Pyocins); 0 (Repressor Proteins); OID: NLM: PMC1196158; ppublish</no>
+<pp>United States</pp>
+<sn>0021-9193; 0021-9193</sn>
+<ad>Department of Molecular Genetics and Microbiology, University of Florida College of Medicine, P.O. Box 100266, 1600 SW Archer Rd., Gainesville, FL 32610-0266, USA.</ad>
+<an>PMID: 16109947; 187/17/6058 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<do>10.1128/JB.187.17.6058-6068.2005</do>
+<ol>Unknown(0)</ol>
+<pmid>16109947</pmid>
+<pmcid>PMC1196158</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>263</id>
+<a1>Yang,H.</a1>
+<a1>Shan,Z.</a1>
+<a1>Kim,J.</a1>
+<a1>Wu,W.</a1>
+<a1>Lian,W.</a1>
+<a1>Zeng,L.</a1>
+<a1>Xing,L.</a1>
+<a1>Jin,S.</a1>
+<t1>Regulatory role of PopN and its interacting partners in type III secretion of Pseudomonas aeruginosa</t1>
+<jf>Journal of Bacteriology</jf>
+<jo>J.Bacteriol.</jo>
+<yr>2007</yr>
+<fd>Apr</fd>
+<vo>189</vo>
+<is>7</is>
+<sp>2599</sp>
+<op>2609</op>
+<k1>ADP Ribose Transferases/genetics/secretion</k1>
+<k1>Bacterial Proteins/genetics</k1>
+<k1>Bacterial Toxins/genetics</k1>
+<k1>Calcium-Binding Proteins/genetics</k1>
+<k1>DNA Mutational Analysis</k1>
+<k1>Enzyme-Linked Immunosorbent Assay</k1>
+<k1>Hela Cells</k1>
+<k1>Humans</k1>
+<k1>Mutagenesis</k1>
+<k1>Plasmids</k1>
+<k1>Pseudomonas aeruginosa/genetics/pathogenicity</k1>
+<ab>The type III secretion system (T3SS) of Pseudomonas aeruginosa plays a significant role in pathogenesis. We have previously identified type III secretion factor (TSF), which is required for effective secretion of the type III effector molecules, in addition to the low calcium signal. TSF includes many low-affinity high-capacity calcium binding proteins, such as serum albumin and casein. A search for the TSF binding targets on the bacterial outer membrane resulted in identification of PopN, a component of the T3SS that is readily detectable on the bacterial cell surface. PopN specifically interacts with Pcr1, and both popN and pcr1 mutants have a constitutive type III secretion phenotype, suggesting that the two proteins form a complex that functions as a T3SS repressor. Further analysis of the popN operon genes resulted in identification of protein-protein interactions between Pcr1 and Pcr4 and between Pcr4 and Pcr3, as well as between PopN and Pcr2 in the presence of PscB. Unlike popN and pcr1 mutants, pcr3 and pcr4 mutants are totally defective in type III secretion, while a pcr2 mutant exhibits reduced type III secretion. Interestingly, PopN, Pcr1, Pcr2, and Pcr4 are all secreted in a type III secretion machinery-dependent manner, while Pcr3 is not. These findings imply that these components have important regulatory roles in controlling type III secretion.</ab>
+<no>LR: 20091118; JID: 2985120R; 0 (Bacterial Proteins); 0 (Bacterial Toxins); 0 (Calcium-Binding Proteins); EC 2.4.2.- (ADP Ribose Transferases); EC 2.4.2.31 (exoenzyme S); OID: NLM: PMC1855783; 2007/01/19 [aheadofprint]; ppublish</no>
+<pp>United States</pp>
+<sn>0021-9193; 0021-9193</sn>
+<ad>Department of Molecular Genetics and Microbiology, P.O. Box 100266, University of Florida, Gainesville, FL 32610-0266, USA.</ad>
+<an>PMID: 17237176; JB.01680-06 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<do>10.1128/JB.01680-06</do>
+<wp>20070119</wp>
+<ol>Unknown(0)</ol>
+<pmid>17237176</pmid>
+<pmcid>PMC1855783</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>265</id>
+<a1>Zhao,X.</a1>
+<a1>Hilliard,L. R.</a1>
+<a1>Mechery,S. J.</a1>
+<a1>Wang,Y.</a1>
+<a1>Bagwe,R. P.</a1>
+<a1>Jin,S.</a1>
+<a1>Tan,W.</a1>
+<t1>A rapid bioassay for single bacterial cell quantitation using bioconjugated nanoparticles</t1>
+<jf>Proceedings of the National Academy of Sciences of the United States of America</jf>
+<jo>Proc.Natl.Acad.Sci.U.S.A.</jo>
+<yr>2004</yr>
+<fd>Oct 19</fd>
+<vo>101</vo>
+<is>42</is>
+<sp>15027</sp>
+<op>15032</op>
+<k1>Animals</k1>
+<k1>Antibodies, Bacterial</k1>
+<k1>Bacillus cereus/isolation &amp; purification</k1>
+<k1>Biological Assay/methods</k1>
+<k1>Cattle</k1>
+<k1>Colony Count, Microbial/methods</k1>
+<k1>Escherichia coli O157/isolation &amp; purification/ultrastructure</k1>
+<k1>Fluorescent Dyes</k1>
+<k1>Fluoroimmunoassay/methods</k1>
+<k1>Food Microbiology</k1>
+<k1>Meat/microbiology</k1>
+<k1>Microscopy, Electron, Scanning</k1>
+<k1>Nanotubes</k1>
+<k1>Salmonella typhimurium/isolation &amp; purification</k1>
+<k1>Spectrometry, Fluorescence</k1>
+<k1>Spores, Bacterial/isolation &amp; purification</k1>
+<k1>Water Microbiology</k1>
+<ab>The rapid and sensitive determination of pathogenic bacteria is extremely important in biotechnology, medical diagnosis, and the current fight against bioterrorism. Current methods either lack ultrasensitivity or take a long time for analysis. Here, we report a bioconjugated nanoparticle-based bioassay for in situ pathogen quantification down to single bacterium within 20 min. The bioconjugated nanoparticle provides an extremely high fluorescent signal for bioanalysis and can be easily incorporated with biorecognition molecules, such as antibody. The antibody-conjugated nanoparticles can readily and specifically identify a variety of bacterium, such as Escherichia coli O157:H7, through antibody-antigen interaction and recognition. The single-bacterium-detection capability within 20 min has been confirmed by the plate-counting method and realized by using two independent optical techniques. The two detection methods correlated extremely well. Furthermore, we were able to detect multiple bacterial samples with high throughput by using a 384-well microplate format. To show the usefulness of this assay, we have accurately detected 1-400 E. coli O157 bacterial cells in spiked ground beef samples. Our results demonstrate the potential for a broad application of bioconjugated nanoparticles in practical biotechnological and medical applications in various biodetection systems. The ultimate power of integrating bionanotechnology into complex biological systems will emerge as a revolutionary tool for ultrasensitive detection of disease markers and infectious agents.</ab>
+<no>LR: 20091118; JID: 7505876; 0 (Antibodies, Bacterial); 0 (Fluorescent Dyes); OID: NLM: PMC524056; 2004/10/11 [aheadofprint]; ppublish</no>
+<pp>United States</pp>
+<sn>0027-8424; 0027-8424</sn>
+<ad>Center for Research at the Bio/Nano Interface, Department of Chemistry, and The Shands Cancer Center, University of Florida, Gainesville, FL 32611, USA.</ad>
+<an>PMID: 15477593; 0404806101 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, Non-P.H.S.; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<do>10.1073/pnas.0404806101</do>
+<wp>20041011</wp>
+<ol>Unknown(0)</ol>
+<pmid>15477593</pmid>
+<pmcid>PMC524056</pmcid></reference></refworks>

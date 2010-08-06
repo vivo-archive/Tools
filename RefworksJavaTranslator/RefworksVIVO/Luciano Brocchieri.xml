@@ -1,0 +1,1088 @@
+
+<?xml version="1.0" encoding="utf-8"?>
+<refworks xmlns:refworks="www.refworks.com/xml/">
+
+
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>849</id>
+<a1>Brendel,V.</a1>
+<a1>Brocchieri,L.</a1>
+<a1>Sandler,S. J.</a1>
+<a1>Clark,A. J.</a1>
+<a1>Karlin,S.</a1>
+<t1>Evolutionary comparisons of RecA-like proteins across all major kingdoms of living organisms</t1>
+<jf>Journal of Molecular Evolution</jf>
+<jo>J.Mol.Evol.</jo>
+<yr>1997</yr>
+<fd>May</fd>
+<vo>44</vo>
+<is>5</is>
+<sp>528</sp>
+<op>541</op>
+<k1>Amino Acid Sequence</k1>
+<k1>Animals</k1>
+<k1>Archaeal Proteins</k1>
+<k1>Bacteria/genetics</k1>
+<k1>Bacterial Proteins</k1>
+<k1>Cell Cycle Proteins</k1>
+<k1>Consensus Sequence/genetics</k1>
+<k1>Conserved Sequence/genetics</k1>
+<k1>DNA-Binding Proteins/genetics</k1>
+<k1>Escherichia coli Proteins</k1>
+<k1>Evolution, Molecular</k1>
+<k1>Humans</k1>
+<k1>Molecular Sequence Data</k1>
+<k1>Phylogeny</k1>
+<k1>Rad51 Recombinase</k1>
+<k1>Rec A Recombinases/genetics</k1>
+<k1>Sequence Alignment</k1>
+<ab>Protein sequences with similarities to Escherichia coli RecA were compared across the major kingdoms of eubacteria, archaebacteria, and eukaryotes. The archaeal sequences branch monophyletically and are most closely related to the eukaryotic paralogous Rad51 and Dmc1 groups. A multiple alignment of the sequences suggests a modular structure of RecA-like proteins consisting of distinct segments, some of which are conserved only within subgroups of sequences. The eukaryotic and archaeal sequences share an N-terminal domain which may play a role in interactions with other factors and nucleic acids. Several positions in the alignment blocks are highly conserved within the eubacteria as one group and within the eukaryotes and archaebacteria as a second group, but compared between the groups these positions display nonconservative amino acid substitutions. Conservation within the RecA-like core domain identifies possible key residues involved in ATP-induced conformational changes. We propose that RecA-like proteins derive evolutionarily from an assortment of independent domains and that the functional homologs of RecA in noneubacteria comprise an array of RecA-like proteins acting in series or cooperatively.</ab>
+<no>LR: 20071114; GENBANK/D37788; GENBANK/D38488; GENBANK/D38489; GENBANK/D58419; GENBANK/D64107; GENBANK/D64108; GR: 2R01HG00335-09/HG/NHGRI NIH HHS/United States; GR: 5R01GM10452-32/GM/NIGMS NIH HHS/United States; GR: AI05371/AI/NIAID NIH HHS/United States; JID: 0360051; 0 (Archaeal Proteins); 0 (Bacterial Proteins); 0 (Cell Cycle Proteins); 0 (DNA-Binding Proteins); 0 (Escherichia coli Proteins); 0 (RadA protein, E coli); 0 (RadA protein, archaeal); 0 (RadA protein, bacteria); EC 2.7.7.- (RAD51 protein, human); EC 2.7.7.- (Rad51 Recombinase); EC 2.7.7.- (Rec A Recombinases); EC 3.6.1.- (DMC1 protein, human); ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0022-2844; 0022-2844</sn>
+<ad>Department of Mathematics, Stanford University, Stanford, CA 94305-2125, USA.</ad>
+<an>PMID: 9115177</an>
+<la>eng</la>
+<sf>Comparative Study; Journal Article; Research Support, U.S. Gov&#39;t, Non-P.H.S.; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>9115177</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>159</id>
+<a1>Brocchieri,L.</a1>
+<a1>Karlin,S.</a1>
+<t1>A symmetric-iterated multiple alignment of protein sequences</t1>
+<jf>Journal of Molecular Biology</jf>
+<jo>J.Mol.Biol.</jo>
+<yr>1998</yr>
+<is>276</is>
+<sp>249</sp>
+<op>264</op>
+<ol>Unknown(0)</ol></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>838</id>
+<a1>Brocchieri,L.</a1>
+<t1>Environmental signatures in proteome properties</t1>
+<jf>Proceedings of the National Academy of Sciences of the United States of America</jf>
+<jo>Proc.Natl.Acad.Sci.U.S.A.</jo>
+<yr>2004</yr>
+<fd>Jun 1</fd>
+<vo>101</vo>
+<is>22</is>
+<sp>8257</sp>
+<op>8258</op>
+<k1>Electrophoresis, Gel, Two-Dimensional</k1>
+<k1>Environment</k1>
+<k1>Models, Theoretical</k1>
+<k1>Phylogeny</k1>
+<k1>Proteins/chemistry/genetics</k1>
+<k1>Proteome</k1>
+<no>LR: 20091118; JID: 7505876; 0 (Proteins); 0 (Proteome); CON: Proc Natl Acad Sci U S A. 2004 Jun 1;101(22):8390-5. PMID: 15150418; OID: NLM: PMC420380; 2004/05/24 [aheadofprint]; ppublish</no>
+<pp>United States</pp>
+<sn>0027-8424; 0027-8424</sn>
+<ad>Department of Mathematics, Stanford University, 450 Serra Mall, Building 380, Stanford, CA 94305-2125, USA. luciano@stanford.edu</ad>
+<an>PMID: 15159533; 0402797101 [pii]</an>
+<la>eng</la>
+<sf>Comment; Journal Article; IM</sf>
+<do>10.1073/pnas.0402797101</do>
+<wp>20040524</wp>
+<ol>Unknown(0)</ol>
+<pmid>15159533</pmid>
+<pmcid>PMC420380</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>843</id>
+<a1>Brocchieri,L.</a1>
+<t1>Low-complexity regions in Plasmodium proteins: in search of a function</t1>
+<jf>Genome research</jf>
+<jo>Genome Res.</jo>
+<yr>2001</yr>
+<fd>Feb</fd>
+<vo>11</vo>
+<is>2</is>
+<sp>195</sp>
+<op>197</op>
+<k1>Amino Acid Motifs/physiology</k1>
+<k1>Animals</k1>
+<k1>Humans</k1>
+<k1>Plasmodium falciparum/chemistry/physiology</k1>
+<k1>Protozoan Proteins/chemistry/physiology</k1>
+<no>LR: 20071114; GR: 5R01GM10452-36/GM/NIGMS NIH HHS/United States; GR: 5R01HG00335-12/HG/NHGRI NIH HHS/United States; JID: 9518021; 0 (Protozoan Proteins); CON: Genome Res. 2001 Feb;11(2):218-29. PMID: 11157785; ppublish</no>
+<pp>United States</pp>
+<sn>1088-9051; 1088-9051</sn>
+<ad>Department of Mathematics, Stanford University, Stanford, California 94305-2125, USA. luciano@gea.stanford.edu</ad>
+<an>PMID: 11157782</an>
+<la>eng</la>
+<sf>Comment; Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<do>10.1101/gr.176401</do>
+<ol>Unknown(0)</ol>
+<pmid>11157782</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>842</id>
+<a1>Brocchieri,L.</a1>
+<t1>Phylogenetic inferences from molecular sequences: review and critique</t1>
+<jf>Theoretical population biology</jf>
+<jo>Theor.Popul.Biol.</jo>
+<yr>2001</yr>
+<fd>Feb</fd>
+<vo>59</vo>
+<is>1</is>
+<sp>27</sp>
+<op>40</op>
+<k1>Animals</k1>
+<k1>Bias (Epidemiology)</k1>
+<k1>Data Interpretation, Statistical</k1>
+<k1>Evolution</k1>
+<k1>Gene Transfer, Horizontal/genetics</k1>
+<k1>Humans</k1>
+<k1>Models, Genetic</k1>
+<k1>Mutation/genetics</k1>
+<k1>Phenotype</k1>
+<k1>Phylogeny</k1>
+<k1>Reproducibility of Results</k1>
+<k1>Sensitivity and Specificity</k1>
+<k1>Sequence Alignment</k1>
+<k1>Sequence Analysis, DNA/methods/standards</k1>
+<k1>Sequence Analysis, Protein/methods/standards</k1>
+<k1>Sequence Analysis, RNA/methods/standards</k1>
+<ab>Conflicting results often accompany phylogenetic analyses of RNA, DNA, or protein sequences across diverse species. Causes contributing to these conflicts relate to ambiguities in identifying homologous characters of alignments, sensitivity of tree-making methods to unequal evolutionary rates, biases in species sampling, unrecognized paralogy, functional differentiation, loss of phylogenetic informational content due to long branches or fast evolution, and difficulties with the assumptions and approximations used to infer phylogenetic relationships. Attempts to surmount these conflicts by averaging over many proteins are problematic due to inherent biases of selected families, lack of signal in others, and events of lateral transfer, fusion, and/or chimerism. The process of assessing reliability of the results using the bootstrap method is strewn with obstacles because of lack of independence and inhomogeneity in the molecular data. Problems inherent to the three major procedures for developing phylogenetic trees--parsimony, likelihood, distance--are reviewed. Special attention is given to the problem of inferring evolutionary distances from patterns of similarity among sequences. The difficulties encountered by methods of phylogenetic reconstructions based on the analysis of divergent sequence families make new methods based on the analysis of complete genomes reasonable alternatives. Several of these are considered, including the signature sequences of Gupta and associates, the study of genome profiles, and the genomic signature set forth by Karlin and colleagues.</ab>
+<no>LR: 20071114; GR: 2R01HG00335-09/HG/NHGRI NIH HHS/United States; GR: 5R01GM10452-33/GM/NIGMS NIH HHS/United States; JID: 0256422; RF: 104; ppublish</no>
+<pp>United States</pp>
+<sn>0040-5809; 0040-5809</sn>
+<ad>Department of Mathematics, Stanford University, Stanford, California 94305-2125, USA.</ad>
+<an>PMID: 11243926; S0040-5809(00)91485-0 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; Review; IM</sf>
+<do>10.1006/tpbi.2000.1485</do>
+<ol>Unknown(0)</ol>
+<pmid>11243926</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>830</id>
+<a1>Brocchieri,L.</a1>
+<a1>Conway de Macario,E.</a1>
+<a1>Macario,A. J.</a1>
+<t1>hsp70 genes in the human genome: Conservation and differentiation patterns predict a wide array of overlapping and specialized functions</t1>
+<jf>BMC evolutionary biology</jf>
+<jo>BMC Evol.Biol.</jo>
+<yr>2008</yr>
+<fd>Jan 23</fd>
+<vo>8</vo>
+<sp>19</sp>
+<k1>Evolution, Molecular</k1>
+<k1>Gene Expression Regulation, Developmental</k1>
+<k1>Genetic Variation</k1>
+<k1>Genome, Human</k1>
+<k1>HSP70 Heat-Shock Proteins/genetics</k1>
+<k1>Humans</k1>
+<k1>Multigene Family</k1>
+<k1>Phylogeny</k1>
+<k1>Protein Isoforms/genetics</k1>
+<k1>Pseudogenes</k1>
+<k1>Sequence Homology, Amino Acid</k1>
+<ab>BACKGROUND: Hsp70 chaperones are required for key cellular processes and response to environmental changes and survival but they have not been fully characterized yet. The human hsp70-gene family has an unknown number of members (eleven counted over ten years ago); some have been described but the information is incomplete and inconsistent. A coherent body of knowledge encompassing all family components that would facilitate their study individually and as a group is lacking. Nowadays, the study of chaperone genes benefits from the availability of genome sequences and a new protocol, chaperonomics, which we applied to elucidate the human hsp70 family. RESULTS: We identified 47 hsp70 sequences, 17 genes and 30 pseudogenes. The genes distributed into seven evolutionarily distinct groups with distinguishable subgroups according to phylogenetic and other data, such as exon-intron and protein features. The N-terminal ATP-binding domain (ABD) was conserved at least partially in the majority of the proteins but the C-terminal substrate-binding domain (SBD) was not. Nine proteins were typical Hsp70s (65-80 kDa) with ABD and SBD, two were lighter lacking partly or totally the SBD, and six were heavier (&amp;gt;80 kDa) with divergent C-terminal domains. We also analyzed exon-intron features, transcriptional variants and protein structure and isoforms, and modality and patterns of expression in various tissues and developmental stages. Evolutionary analyses, including human hsp70 genes and pseudogenes, and other eukaryotic hsp70 genes, showed that six human genes encoding cytosolic Hsp70s and 27 pseudogenes originated from retro-transposition of HSPA8, a gene highly expressed in most tissues and developmental stages. CONCLUSION: The human hsp70-gene family is characterized by a remarkable evolutionary diversity that mainly resulted from multiple duplications and retrotranspositions of a highly expressed gene, HSPA8. Human Hsp70 proteins are clustered into seven evolutionary Groups, with divergent C-terminal domains likely defining their distinctive functions. These functions may also be further defined by the observed differences in the N-terminal domain.</ab>
+<no>LR: 20091118; JID: 100966975; 0 (HSP70 Heat-Shock Proteins); 0 (HSPA12A protein, human); 0 (Protein Isoforms); OID: NLM: PMC2266713; 2007/11/05 [received]; 2008/01/23 [accepted]; 2008/01/23 [aheadofprint]; epublish</no>
+<pp>England</pp>
+<sn>1471-2148; 1471-2148</sn>
+<ad>University of Florida, Department of Molecular Genetics and Microbiology and UF Genetics Institute, Gainesville, FL 32610, USA. lucianob@ufl.edu</ad>
+<an>PMID: 18215318; 1471-2148-8-19 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; IM</sf>
+<do>10.1186/1471-2148-8-19</do>
+<wp>20080123</wp>
+<ol>Unknown(0)</ol>
+<pmid>18215318</pmid>
+<pmcid>PMC2266713</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>831</id>
+<a1>Brocchieri,L.</a1>
+<a1>Conway de Macario,E.</a1>
+<a1>Macario,A. J.</a1>
+<t1>Chaperonomics, a new tool to study ageing and associated diseases</t1>
+<jf>Mechanisms of ageing and development</jf>
+<jo>Mech.Ageing Dev.</jo>
+<yr>2007</yr>
+<fd>Jan</fd>
+<vo>128</vo>
+<is>1</is>
+<sp>125</sp>
+<op>136</op>
+<k1>Aging/genetics/pathology/physiology</k1>
+<k1>Amino Acid Sequence</k1>
+<k1>Animals</k1>
+<k1>Computational Biology</k1>
+<k1>HSP70 Heat-Shock Proteins/genetics</k1>
+<k1>Humans</k1>
+<k1>Molecular Chaperones/genetics/physiology</k1>
+<k1>Molecular Sequence Data</k1>
+<k1>Pseudogenes</k1>
+<ab>The participation of molecular chaperones in the process of senescence and in the mechanisms of age-related diseases is currently under investigation in many laboratories. However, accurate, complete information about the number and diversity of chaperone genes in any given genome is scarce. Consequently, the results of efforts aimed at elucidating the role of chaperones in ageing and disease are often confusing and contradictory. To remedy this situation, we have developed chaperonomics, including means to identify and characterize chaperone genes and their families applicable to humans and model organisms. The problem is difficult because in eukaryotic organisms chaperones have evolved into complex multi-gene families. For instance, the occurrence of multiple paralogs in a single genome makes it difficult to interpret results if consideration is not given to the fact that similar but distinct chaperone genes can be differentially expressed in separate cellular compartments, tissues, and developmental stages. The availability of complete genome sequences allows implementation of chaperonomics with the purpose of understanding the composition of chaperone families in all cell compartments, their evolutionary and functional relations and, ultimately, their role in pathogenesis. Here, we present a series of concatenated, complementary procedures for identifying, characterizing, and classifying chaperone genes in genomes and for elucidating evolutionary relations and structural features useful in predicting functional properties. We illustrate the procedures with applications to the complex family of hsp70 genes and show that the kind of data obtained can provide a solid basis for future research.</ab>
+<no>JID: 0347227; 0 (HSP70 Heat-Shock Proteins); 0 (Molecular Chaperones); RF: 58; 2006/11/22 [aheadofprint]; ppublish</no>
+<pp>Ireland</pp>
+<sn>0047-6374; 0047-6374</sn>
+<ad>University of Florida, College of Medicine, Department of Molecular Genetics and Microbiology, UF Genetics Institute, P.O. Box 103610, Gainesville, FL 32610-3610, USA.</ad>
+<an>PMID: 17123587; S0047-6374(06)00252-1 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Review; IM</sf>
+<do>10.1016/j.mad.2006.11.019</do>
+<wp>20061122</wp>
+<ol>Unknown(0)</ol>
+<pmid>17123587</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>834</id>
+<a1>Brocchieri,L.</a1>
+<a1>Karlin,S.</a1>
+<t1>Protein length in eukaryotic and prokaryotic proteomes</t1>
+<jf>Nucleic acids research</jf>
+<jo>Nucleic Acids Res.</jo>
+<yr>2005</yr>
+<fd>Jun 10</fd>
+<vo>33</vo>
+<is>10</is>
+<sp>3390</sp>
+<op>3400</op>
+<k1>Amino Acid Sequence</k1>
+<k1>Animals</k1>
+<k1>Archaeal Proteins/chemistry/classification</k1>
+<k1>Bacterial Proteins/chemistry/classification</k1>
+<k1>Eukaryotic Cells/metabolism</k1>
+<k1>Evolution, Molecular</k1>
+<k1>Humans</k1>
+<k1>Protein Structure, Tertiary</k1>
+<k1>Proteome/chemistry/classification</k1>
+<k1>Proteomics</k1>
+<ab>We analyzed length differences of eukaryotic, bacterial and archaeal proteins in relation to function, conservation and environmental factors. Comparing Eukaryotes and Prokaryotes, we found that the greater length of eukaryotic proteins is pervasive over all functional categories and involves the vast majority of protein families. The magnitude of these differences suggests that the evolution of eukaryotic proteins was influenced by processes of fusion of single-function proteins into extended multi-functional and multi-domain proteins. Comparing Bacteria and Archaea, we determined that the small but significant length difference observed between their proteins results from a combination of three factors: (i) bacterial proteomes include a greater proportion than archaeal proteomes of longer proteins involved in metabolism or cellular processes, (ii) within most functional classes, protein families unique to Bacteria are generally longer than protein families unique to Archaea and (iii) within the same protein family, homologs from Bacteria tend to be longer than the corresponding homologs from Archaea. These differences are interpreted with respect to evolutionary trends and prevailing environmental conditions within the two prokaryotic groups.</ab>
+<no>LR: 20091118; GR: 2 R01 GM010452/GM/NIGMS NIH HHS/United States; JID: 0411011; 0 (Archaeal Proteins); 0 (Bacterial Proteins); 0 (Proteome); OID: NLM: PMC1150220; 2005 [ppublish]; epublish</no>
+<pp>England</pp>
+<sn>1362-4962; 0305-1048</sn>
+<ad>Department of Mathematics, Stanford University Stanford, CA 94305-2125, USA.</ad>
+<an>PMID: 15951512; 33/10/3390 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, N.I.H., Extramural; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<do>10.1093/nar/gki615</do>
+<wp>20050610</wp>
+<ol>Unknown(0)</ol>
+<pmid>15951512</pmid>
+<pmcid>PMC1150220</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>845</id>
+<a1>Brocchieri,L.</a1>
+<a1>Karlin,S.</a1>
+<t1>Conservation among HSP60 sequences in relation to structure, function, and evolution</t1>
+<jf>Protein science : a publication of the Protein Society</jf>
+<jo>Protein Sci.</jo>
+<yr>2000</yr>
+<fd>Mar</fd>
+<vo>9</vo>
+<is>3</is>
+<sp>476</sp>
+<op>486</op>
+<k1>Adenosine Triphosphate/chemistry</k1>
+<k1>Amino Acid Sequence</k1>
+<k1>Binding Sites</k1>
+<k1>Chaperonin 60/chemistry</k1>
+<k1>Conserved Sequence</k1>
+<k1>Evolution, Molecular</k1>
+<k1>Magnesium/chemistry</k1>
+<k1>Models, Molecular</k1>
+<k1>Molecular Sequence Data</k1>
+<k1>Protein Structure, Quaternary</k1>
+<ab>The chaperonin HSP60 (GroEL) proteins are essential in eubacterial genomes and in eukaryotic organelles. Functional regions inferred from mutation studies and the Escherichia coli GroEL 3D crystal complexes are evaluated in a multiple alignment across 43 diverse HSP60 sequences, centering on ATP/ADP and Mg2+ binding sites, on residues interacting with substrate, on GroES contact positions, on interface regions between monomers and domains, and on residues important in allosteric conformational changes. The most evolutionary conserved residues relate to the ATP/ADP and Mg2+ binding sites. Hydrophobic residues that contribute in substrate binding are also significantly conserved. A large number of charged residues line the central cavity of the GroEL-GroES complex in the substrate-releasing conformation. These span statistically significant intra- and inter-monomer three-dimensional (3D) charge clusters that are highly conserved among sequences and presumably play an important role interacting with the substrate. Unaligned short segments between blocks of alignment are generally exposed at the outside wall of the Anfinsen cage complex. The multiple alignment reveals regions of divergence common to specific evolutionary groups. For example, rickettsial sequences diverge in the ATP/ADP binding domain and gram-positive sequences diverge in the allosteric transition domain. The evolutionary information of the multiple alignment proffers attractive sites for mutational studies.</ab>
+<no>LR: 20091118; GR: 2RO1HG00335-09/HG/NHGRI NIH HHS/United States; GR: 5R01GM10452-33/GM/NIGMS NIH HHS/United States; JID: 9211750; 0 (Chaperonin 60); 56-65-5 (Adenosine Triphosphate); 7439-95-4 (Magnesium); OID: NLM: PMC2144576; ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0961-8368; 0961-8368</sn>
+<ad>Department of Mathematics, Stanford University, California 94305-2125, USA.</ad>
+<an>PMID: 10752609</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM; S</sf>
+<do>10.1110/ps.9.3.476</do>
+<ol>Unknown(0)</ol>
+<pmid>10752609</pmid>
+<pmcid>PMC2144576</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>848</id>
+<a1>Brocchieri,L.</a1>
+<a1>Karlin,S.</a1>
+<t1>A symmetric-iterated multiple alignment of protein sequences</t1>
+<jf>Journal of Molecular Biology</jf>
+<jo>J.Mol.Biol.</jo>
+<yr>1998</yr>
+<fd>Feb 13</fd>
+<vo>276</vo>
+<is>1</is>
+<sp>249</sp>
+<op>264</op>
+<k1>Algorithms</k1>
+<k1>Amino Acid Sequence</k1>
+<k1>Consensus Sequence</k1>
+<k1>Eukaryotic Cells/chemistry</k1>
+<k1>Evaluation Studies as Topic</k1>
+<k1>Molecular Sequence Data</k1>
+<k1>Multigene Family</k1>
+<k1>Prokaryotic Cells/chemistry</k1>
+<k1>Rec A Recombinases/chemistry</k1>
+<k1>Sequence Alignment/methods</k1>
+<k1>Sequence Homology, Amino Acid</k1>
+<k1>Software</k1>
+<ab>A new symmetric-iterative method for multiple alignment of protein sequences is presented. The method can be described as a combination of motif finding and dynamic programming procedures. It uses each sequence as a standard to which all sequences are aligned based on the significant segment pair alignment (SSPA) protocol. Sequences are further matched using a reduced scoring threshold to provide fillers and extensions between highly significant segment pair matches. The method produces alignment blocks that accommodate indels and are separated by variable-length unaligned segments. Construction of consensus sequences is iterative, assigning greater weights to more distantly related sequences. A consensus sequence and various measures of conservation at each aligned position can be used for comparisons between protein families, for data base searches, and for analysis of functional and evolutionary features. The method is illustrated on the extended family of prokaryotic and eukaryotic RecA-like sequences. The RecA-like sequences reveal extended alignments among eubacterial RecA and separately among eukaryotic/archaebacterial Rad51/RadA. Eleven conserved blocks are common to both groups, two of them encompassing the ATP-binding A and B-sites. Among the most conserved positions are glycine residues. For example, they occur twice as doublets putatively serving as hinge connections that provide opportunity for alternative structural conformations. Also several charged/polar residues are highly conserved, probably consequent upon the extensive intermonomer interactions in RecA/Rad51 filament formation and possibly relevant protein-protein and protein-nucleic acid interactions.</ab>
+<no>LR: 20071115; GR: 2R01HG00335-09/HG/NHGRI NIH HHS/United States; GR: 5R01GM10452-33/GM/NIGMS NIH HHS/United States; JID: 2985088R; EC 2.7.7.- (Rec A Recombinases); ppublish</no>
+<pp>ENGLAND</pp>
+<sn>0022-2836; 0022-2836</sn>
+<ad>Department of Mathematics, Stanford University, CA 94305-2125, USA.</ad>
+<an>PMID: 9514731; S0022-2836(97)91527-8 [pii]</an>
+<la>eng</la>
+<sf>Comparative Study; Journal Article; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, Non-P.H.S.; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<do>10.1006/jmbi.1997.1527</do>
+<ol>Unknown(0)</ol>
+<pmid>9514731</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>852</id>
+<a1>Brocchieri,L.</a1>
+<a1>Karlin,S.</a1>
+<t1>How are close residues of protein structures distributed in primary sequence?</t1>
+<jf>Proceedings of the National Academy of Sciences of the United States of America</jf>
+<jo>Proc.Natl.Acad.Sci.U.S.A.</jo>
+<yr>1995</yr>
+<fd>Dec 19</fd>
+<vo>92</vo>
+<is>26</is>
+<sp>12136</sp>
+<op>12140</op>
+<k1>Amino Acid Sequence</k1>
+<k1>Macromolecular Substances</k1>
+<k1>Molecular Sequence Data</k1>
+<k1>Protein Conformation</k1>
+<k1>Protein Structure, Secondary</k1>
+<k1>Proteins/chemistry</k1>
+<k1>Solvents</k1>
+<ab>Structurally neighboring residues are categorized according to their separation in the primary sequence as proximal (1-4 positions apart) and otherwise distal, which in turn is divided into near (5-20 positions), far (21-50 positions), very far ( &amp;gt; 50 positions), and interchain (from different chains of the same structure). These categories describe the linear distance histogram (LDH) for three-dimensional neighboring residue types. Among the main results are the following: (i) nearest-neighbor hydrophobic residues tend to be increasingly distally separated in the linear sequence, thus most often connecting distinct secondary structure units. (ii) The LDHs of oppositely charged nearest-neighbors emphasize proximal positions with a subsidiary maximum for very far positions. (iii) Cysteine-cysteine structural interactions rarely involve proximal positions. (iv) The greatest numbers of interchain specific nearest-neighbors in protein structures are composed of oppositely charged residues. (v) The largest fraction of side-chain neighboring residues from beta-strands involves near positions, emphasizing associations between consecutive strands. (vi) Exposed residue pairs are predominantly located in proximal linear positions, while buried residue pairs principally correspond to far or very far distal positions. The results are principally invariant to protein sizes, amino acid usages, linear distance normalizations, and over- and underrepresentations among nearest-neighbor types. Interpretations and hypotheses concerning the LDHs, particularly those of hydrophobic and charged pairings, are discussed with respect to protein stability and functionality. The pronounced occurrence of oppositely charged interchain contacts is consistent with many observations on protein complexes where multichain stabilization is facilitated by electrostatic interactions.</ab>
+<no>LR: 20091118; GR: 2R01GM10452-31/GM/NIGMS NIH HHS/United States; GR: 5R01HG00335-07/HG/NHGRI NIH HHS/United States; JID: 7505876; 0 (Macromolecular Substances); 0 (Proteins); 0 (Solvents); OID: NLM: PMC40311; ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0027-8424; 0027-8424</sn>
+<ad>Department of Mathematics, Stanford University, CA 94305-2125, USA.</ad>
+<an>PMID: 8618859</an>
+<la>eng</la>
+<sf>Comparative Study; Journal Article; Research Support, U.S. Gov&#39;t, Non-P.H.S.; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>8618859</pmid>
+<pmcid>PMC40311</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>853</id>
+<a1>Brocchieri,L.</a1>
+<a1>Karlin,S.</a1>
+<t1>Geometry of interplanar residue contacts in protein structures</t1>
+<jf>Proceedings of the National Academy of Sciences of the United States of America</jf>
+<jo>Proc.Natl.Acad.Sci.U.S.A.</jo>
+<yr>1994</yr>
+<fd>Sep 27</fd>
+<vo>91</vo>
+<is>20</is>
+<sp>9297</sp>
+<op>9301</op>
+<k1>Mathematics</k1>
+<k1>Models, Theoretical</k1>
+<k1>Protein Conformation</k1>
+<k1>Proteins/chemistry</k1>
+<ab>The relative spatial disposition of interacting side-chain planar groups (aromatic, guanidinium, amide, carboxyl, imidazole) is analyzed for 186 non-homologous well-resolved protein structures. The dihedral angle of amide or carboxyl planar groups with other planar groups accords with a random distribution of planes. By contrast, the dihedral angle of the planes between close aromatic rings or of the histidine ring interacting with aromatic residues is significantly nonrandom, showing an approximately uniform distribution. Our results indicate that edge-to-edge and edge-to-center spatial dispositions of residue planar sections are prevalent, while complete stacking configurations are uncommon. The hypothesis that electrostatic forces are a major determinant of the geometry of interactions between side-chain planar groups is discussed.</ab>
+<no>LR: 20091118; GR: 2R01HG00335-06/HG/NHGRI NIH HHS/United States; GR: 5R01GM10452-30/GM/NIGMS NIH HHS/United States; JID: 7505876; 0 (Proteins); OID: NLM: PMC44799; ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0027-8424; 0027-8424</sn>
+<ad>Department of Mathematics, Stanford University, CA 94305-2125.</ad>
+<an>PMID: 7937759</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, Non-P.H.S.; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>7937759</pmid>
+<pmcid>PMC44799</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>835</id>
+<a1>Brocchieri,L.</a1>
+<a1>Kledal,T. N.</a1>
+<a1>Karlin,S.</a1>
+<a1>Mocarski,E. S.</a1>
+<t1>Predicting coding potential from genome sequence: application to betaherpesviruses infecting rats and mice</t1>
+<jf>Journal of virology</jf>
+<jo>J.Virol.</jo>
+<yr>2005</yr>
+<fd>Jun</fd>
+<vo>79</vo>
+<is>12</is>
+<sp>7570</sp>
+<op>7596</op>
+<k1>Amino Acid Sequence</k1>
+<k1>Animals</k1>
+<k1>Base Composition</k1>
+<k1>Computational Biology/methods</k1>
+<k1>Conserved Sequence</k1>
+<k1>Cytomegalovirus/genetics</k1>
+<k1>Databases, Genetic</k1>
+<k1>Genome, Viral</k1>
+<k1>Mice</k1>
+<k1>Molecular Sequence Data</k1>
+<k1>Muromegalovirus/genetics</k1>
+<k1>Open Reading Frames</k1>
+<k1>Rats</k1>
+<k1>Sequence Analysis, DNA</k1>
+<k1>Viral Proteins/chemistry/genetics</k1>
+<ab>Prediction of protein-coding regions and other features of primary DNA sequence have greatly contributed to experimental biology. Significant challenges remain in genome annotation methods, including the identification of small or overlapping genes and the assessment of mRNA splicing or unconventional translation signals in expression. We have employed a combined analysis of compositional biases and conservation together with frame-specific G+C representation to reevaluate and annotate the genome sequences of mouse and rat cytomegaloviruses. Our analysis predicts that there are at least 34 protein-coding regions in these genomes that were not apparent in earlier annotation efforts. These include 17 single-exon genes, three new exons of previously identified genes, a newly identified four-exon gene for a lectin-like protein (in rat cytomegalovirus), and 10 probable frameshift extensions of previously annotated genes. This expanded set of candidate genes provides an additional basis for investigation in cytomegalovirus biology and pathogenesis.</ab>
+<no>LR: 20091118; GR: 2 R01 GM010452/GM/NIGMS NIH HHS/United States; GR: R01A120211/PHS HHS/United States; GR: R01AI30363/AI/NIAID NIH HHS/United States; JID: 0113724; 0 (Viral Proteins); OID: NLM: PMC1143683; ppublish</no>
+<pp>United States</pp>
+<sn>0022-538X; 0022-538X</sn>
+<ad>Department of Mathematics, Stanford University, Stanford, CA 94305-2125, USA. luciano@stanford.edu</ad>
+<an>PMID: 15919911; 79/12/7570 [pii]</an>
+<la>eng</la>
+<sf>Comparative Study; Journal Article; Research Support, N.I.H., Extramural; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<do>10.1128/JVI.79.12.7570-7596.2005</do>
+<ol>Unknown(0)</ol>
+<pmid>15919911</pmid>
+<pmcid>PMC1143683</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>855</id>
+<a1>Brocchieri,L.</a1>
+<a1>Matessi,C.</a1>
+<a1>Marin,G.</a1>
+<t1>Inference of pair bonds from capture data based on low variation of the sex ratio among catches</t1>
+<jf>The American Naturalist</jf>
+<jo>Am.Nat.</jo>
+<yr>1992</yr>
+<fd>Sep</fd>
+<vo>140</vo>
+<is>3</is>
+<sp>492</sp>
+<op>508</op>
+<ab>Paired individuals of monogamous animal species often stay in close contact when moving in their home range and can be caught together if sampling is done by a method that does not disrupt their spatial association (e.g., capture of birds by mist nets). We propose a statistical procedure that uses the counts by sex of specimens in a number of samples to detect the presence of pairs and to roughly estimate the proportion of paired individuals in the population. This method appears to be efficient enough to be used with data sets of small to moderate size (10-40 samples of 2-10 specimens each). The use of the method is exemplified by an analysis of capture data from two European populations of bearded tit (Panurus biarmicus): a large set of 536 net samples (1,111 specimens) from Le Sambuc in Camargue, France, and a much smaller one of 46 samples (367 specimens) from Malcontenta, near Venice, Italy. A separate analysis of premolt juveniles in Malcontenta (15 samples, 53 individuals) detects a significant proportion of pairs among them. This finding confirms quantitatively the anecdotal observation of precocious pair formation in the bearded tit.</ab>
+<no>LR: 20090616; JID: 2984688R; ppublish</no>
+<pp>United States</pp>
+<sn>0003-0147; 0003-0147</sn>
+<an>PMID: 19426052</an>
+<la>eng</la>
+<sf>Journal Article</sf>
+<do>10.1086/285423</do>
+<ol>Unknown(0)</ol>
+<pmid>19426052</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>850</id>
+<a1>Chang,C. P.</a1>
+<a1>Brocchieri,L.</a1>
+<a1>Shen,W. F.</a1>
+<a1>Largman,C.</a1>
+<a1>Cleary,M. L.</a1>
+<t1>Pbx modulation of Hox homeodomain amino-terminal arms establishes different DNA-binding specificities across the Hox locus</t1>
+<jf>Molecular and cellular biology</jf>
+<jo>Mol.Cell.Biol.</jo>
+<yr>1996</yr>
+<fd>Apr</fd>
+<vo>16</vo>
+<is>4</is>
+<sp>1734</sp>
+<op>1745</op>
+<k1>Animals</k1>
+<k1>Base Sequence</k1>
+<k1>DNA/genetics/metabolism</k1>
+<k1>DNA-Binding Proteins/genetics/metabolism</k1>
+<k1>Drosophila/genetics</k1>
+<k1>Drosophila Proteins</k1>
+<k1>Genes, Homeobox</k1>
+<k1>Homeodomain Proteins/genetics/metabolism</k1>
+<k1>Macromolecular Substances</k1>
+<k1>Models, Molecular</k1>
+<k1>Molecular Sequence Data</k1>
+<k1>Proto-Oncogene Proteins/genetics/metabolism</k1>
+<k1>Transcription Factors/genetics/metabolism</k1>
+<ab>Pbx cofactors are implicated to play important roles in modulating the DNA-binding properties of heterologous homeodomain proteins, including class I Hox proteins. To assess how Pbx proteins influence Hox DNA-binding specificity, we used a binding-site selection approach to determine high-affinity target sites recognized by various Pbx-Hox homeoprotein complexes. Pbx-Hox heterodimers preferred to bind a bipartite sequence 5&amp;#39;-ATGATTNATNN-3&amp;#39; consisting of two adjacent half sites in which the Pbx component of the heterodimer contacted the 5&amp;#39; half (ATGAT) and the Hox component contacted the more variable 3&amp;#39; half (TNATNN). Binding sites matching the consensus were also obtained for Pbx1 complexed with HoxA10, which lacks a hexapeptide but requires a conserved tryptophan-containing motif for cooperativity with Pbx. Interactions with Pbx were found to play an essential role in modulating Hox homeodomain amino-terminal arm contact with DNA in the core of the Hox half site such that heterodimers of different compositions could distinguish single nucleotide alterations in the Hox half site both in vitro and in cellular assays measuring transactivation. When complexed with Pbx, Hox proteins B1 through B9 and A10 showed stepwise differences in their preferences for nucleotides in the Hox half site core (TTAT to TGAT, 5&amp;#39; to 3&amp;#39;) that correlated with the locations of their respective genes in the Hox cluster. These observations demonstrate previously undetected DNA-binding specificity for the amino-terminal arm of the Hox homeodomain and suggest that different binding activities of Pbx-Hox complexes are at least part of the position-specific activities of the Hox genes.</ab>
+<no>LR: 20091118; GR: CA42971/CA/NCI NIH HHS/United States; GR: GM10452-31/GM/NIGMS NIH HHS/United States; JID: 8109087; 0 (DNA-Binding Proteins); 0 (Drosophila Proteins); 0 (Homeodomain Proteins); 0 (Macromolecular Substances); 0 (Proto-Oncogene Proteins); 0 (Transcription Factors); 0 (extradenticle protein, Drosophila); 0 (pbx1 protein, human); 9007-49-2 (DNA); OID: NLM: PMC231160; ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0270-7306; 0270-7306</sn>
+<ad>Department of Pathology, Stanford University, California 94305, USA.</ad>
+<an>PMID: 8657149</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, Non-P.H.S.; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>8657149</pmid>
+<pmcid>PMC231160</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>839</id>
+<a1>Kagawa,H. K.</a1>
+<a1>Yaoi,T.</a1>
+<a1>Brocchieri,L.</a1>
+<a1>McMillan,R. A.</a1>
+<a1>Alton,T.</a1>
+<a1>Trent,J. D.</a1>
+<t1>The composition, structure and stability of a group II chaperonin are temperature regulated in a hyperthermophilic archaeon</t1>
+<jf>Molecular microbiology</jf>
+<jo>Mol.Microbiol.</jo>
+<yr>2003</yr>
+<fd>Apr</fd>
+<vo>48</vo>
+<is>1</is>
+<sp>143</sp>
+<op>156</op>
+<k1>Amino Acid Sequence</k1>
+<k1>Base Sequence</k1>
+<k1>Calorimetry, Differential Scanning</k1>
+<k1>Chaperonins/chemistry/genetics/ultrastructure</k1>
+<k1>Cloning, Molecular</k1>
+<k1>DNA, Archaeal</k1>
+<k1>Hot Temperature</k1>
+<k1>Molecular Sequence Data</k1>
+<k1>Phylogeny</k1>
+<k1>Protein Conformation</k1>
+<k1>Sequence Homology, Amino Acid</k1>
+<k1>Sulfolobus/chemistry/genetics</k1>
+<ab>The hyperthermoacidophilic archaeon Sulfolobus shibatae contains group II chaperonins, known as rosettasomes, which are two nine-membered rings composed of three different 60 kDa subunits (TF55 alpha, beta and gamma). We sequenced the gene for the gamma subunit and studied the temperature-dependent changes in alpha, beta and gamma expression, their association into rosettasomes and their phylogenetic relationships. Alpha and beta gene expression was increased by heat shock (30 min, 86 degrees C) and decreased by cold shock (30 min, 60 degrees C). Gamma expression was undetectable at heat shock temperatures and low at normal temperatures (75-79 degrees C), but induced by cold shock. Polyacrylamide gel electrophoresis indicated that in vitro alpha and beta subunits form homo-oligomeric rosettasomes, and mixtures of alpha, beta and gamma form hetero-oligomeric rosettasomes. Transmission electron microscopy revealed that beta homo-oligomeric rosettasomes and all hetero-oligomeric rosettasomes associate into filaments. In vivo rosettasomes were hetero-oligomeric with an average subunit ratio of 1alpha:1beta:0.1gamma in cultures grown at 75 degrees C, a ratio of 1alpha:3beta:1gamma in cultures grown at 60 degrees C and a ratio of 2alpha:3beta:0gamma after 86 degrees C heat shock. Using differential scanning calorimetry, we determined denaturation temperatures (Tm) for alpha, beta and gamma subunits of 95.7 degrees C, 96.7 degrees C and 80.5 degrees C, respectively, and observed that rosettasomes containing gamma were relatively less stable than those with alpha and/or beta only. We propose that, in vivo, the rosettasome structure is determined by the relative abundance of subunits and not by a fixed geometry. Furthermore, phylogenetic analyses indicate that archaeal chaperonin subunits underwent multiple duplication events within species (paralogy). The independent evolution of these paralogues raises the possibility that chaperonins have functionally diversified between species.</ab>
+<no>LR: 20091119; JID: 8712028; 0 (DNA, Archaeal); EC 3.6.1.- (Chaperonins); ppublish</no>
+<pp>England</pp>
+<sn>0950-382X; 0950-382X</sn>
+<ad>SETI Institute, 2035 Landings Dr., Mountain View, CA 94043, USA.</ad>
+<an>PMID: 12657051; 3418 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, Non-P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>12657051</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>844</id>
+<a1>Karlin,S.</a1>
+<a1>Brocchieri,L.</a1>
+<t1>Heat shock protein 60 sequence comparisons: duplications, lateral transfer, and mitochondrial evolution</t1>
+<jf>Proceedings of the National Academy of Sciences of the United States of America</jf>
+<jo>Proc.Natl.Acad.Sci.U.S.A.</jo>
+<yr>2000</yr>
+<fd>Oct 10</fd>
+<vo>97</vo>
+<is>21</is>
+<sp>11348</sp>
+<op>11353</op>
+<k1>Bacteria/genetics</k1>
+<k1>Chaperonin 60/genetics</k1>
+<k1>Evolution, Molecular</k1>
+<k1>Fungi/genetics</k1>
+<k1>Gene Duplication</k1>
+<k1>Gene Transfer Techniques</k1>
+<k1>Mitochondria/genetics</k1>
+<k1>Plants/genetics</k1>
+<k1>Sequence Homology, Nucleic Acid</k1>
+<ab>Heat shock proteins 60 (GroEL) are highly expressed essential proteins in eubacterial genomes and in eukaryotic organelles. These chaperone proteins have been advanced as propitious marker sequences for tracing the evolution of mitochondrial (Mt) genomes. Similarities among HSP60 sequences based on significant segment pair alignment calculations are used to deduce associations of sequences taking into account GroEL functional/structural domain differences and to relate HSP60 duplications pervasive in alpha-proteobacterial lineages to the dynamics of lateral transfer and plasmid integration. Multiple alignments with consensuses are determined for 10 natural groups. The group consensuses sharpen the similarity contrasts among individual sequences. In particular, the Mt group matches best with the classical alpha-proteobacteria and closely with Rickettsia but significantly worse with the rickettsial groups Ehrlichia and Orientia. However, across broad protein sequence comparisons, there appears to be no consistent prokaryote whose protein sequences align best with animal Mt genomes. There are plausible scenarios indicating that the nuclear-encoded HSP60 (and HSP70) sequences functioning in Mt are results of lateral transfer and are probably derived from an alpha-proteobacterium. This hypothesis relates to the plethora of duplicated HSP60 sequences among the classical alpha-proteobacteria contrasted with no duplications of HSP60 among other clades of proteobacterial genomes. Evolutionary relations are confounded by differential selection pressures, convergence, variable mutational rates, site variability, and lateral gene transfer.</ab>
+<no>LR: 20091119; GR: 5R01GM10452-36/GM/NIGMS NIH HHS/United States; GR: 5R01HG00335-12/HG/NHGRI NIH HHS/United States; JID: 7505876; 0 (Chaperonin 60); OID: NLM: PMC17203; ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0027-8424; 0027-8424</sn>
+<ad>Department of Mathematics, Stanford University, Stanford, CA 94305-2125, USA. karlin@math.stanford.edu</ad>
+<an>PMID: 11027334; 97/21/11348 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, Non-P.H.S.; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<do>10.1073/pnas.97.21.11348</do>
+<ol>Unknown(0)</ol>
+<pmid>11027334</pmid>
+<pmcid>PMC17203</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>847</id>
+<a1>Karlin,S.</a1>
+<a1>Brocchieri,L.</a1>
+<t1>Heat shock protein 70 family: multiple sequence comparisons, function, and evolution</t1>
+<jf>Journal of Molecular Evolution</jf>
+<jo>J.Mol.Evol.</jo>
+<yr>1998</yr>
+<fd>Nov</fd>
+<vo>47</vo>
+<is>5</is>
+<sp>565</sp>
+<op>577</op>
+<k1>Amino Acid Sequence</k1>
+<k1>Consensus Sequence</k1>
+<k1>Conserved Sequence</k1>
+<k1>Evolution, Molecular</k1>
+<k1>HSP70 Heat-Shock Proteins/genetics/physiology</k1>
+<k1>Molecular Sequence Data</k1>
+<k1>Sequence Homology, Amino Acid</k1>
+<k1>Species Specificity</k1>
+<ab>The heat shock protein 70 kDa sequences (HSP70) are of great importance as molecular chaperones in protein folding and transport. They are abundant under conditions of cellular stress. They are highly conserved in all domains of life: Archaea, eubacteria, eukaryotes, and organelles (mitochondria, chloroplasts). A multiple alignment of a large collection of these sequences was obtained employing our symmetric-iterative ITERALIGN program (Brocchieri and Karlin 1998). Assessments of conservation are interpreted in evolutionary terms and with respect to functional implications. Many archaeal sequences (methanogens and halophiles) tend to align best with the Gram-positive sequences. These two groups also miss a signature segment [about 25 amino acids (aa) long] present in all other HSP70 species (Gupta and Golding 1993). We observed a second signature sequence of about 4 aa absent from all eukaryotic homologues, significantly aligned in all prokaryotic sequences. Consensus sequences were developed for eight groups [Archaea, Gram-positive, proteobacterial Gram-negative, singular bacteria, mitochondria, plastids, eukaryotic endoplasmic reticulum (ER) isoforms, eukaryotic cytoplasmic isoforms]. All group consensus comparisons tend to summarize better the alignments than do the individual sequence comparisons. The global individual consensus &amp;quot;matches&amp;quot; 87% with the consensus of consensuses sequence. A functional analysis of the global consensus identifies a (new) highly significant mixed charge cluster proximal to the carboxyl terminus of the sequence highlighting the hypercharge run EEDKKRRER (one-letter aa code used). The individual Archaea and Gram-positive sequences contain a corresponding significant mixed charge cluster in the location of the charge cluster of the consensus sequence. In contrast, the four Gram-negative proteobacterial sequences of the alignment do not have a charge cluster (even at the 5% significance level). All eukaryotic HSP70 sequences have the analogous charge cluster. Strikingly, several of the eukaryotic isoforms show multiple mixed charged clusters. These clusters were interpreted with supporting data related to HSP70 activity in facilitating chaperone, transport, and secretion function. We observed that the consensus contains only a single tryptophan residue and a single conserved cysteine. This is interpreted with respect to the target rule for disaggregating misfolded proteins. The mitochondrial HSP70 connections to bacterial HSP70 are analyzed, suggesting a polyphyletic split of Trypanosoma and Leishmania protist mitochondrial (Mt) homologues separated from Mt-animal/fungal/plant homologues. Moreover, the HSP70 sequences from the amitochondrial Entamoeba histolytica and Trichomonas vaginalis species were analyzed. The E. histolytica HSP70 is most similar to the higher eukaryotic cytoplasmic sequences, with significantly weaker alignments to ER sequences and much diminished matching to all eubacterial, mitochondrial, and chloroplast sequences. This appears to be at variance with the hypothesis that E. histolytica rather recently lost its mitochondrial organelle. T. vaginalis contains two HSP70 sequences, one Mt-like and the second similar to eukaryotic cytoplasmic sequences suggesting two diverse origins.</ab>
+<no>LR: 20071114; GR: 2RO1HG00335-09/HG/NHGRI NIH HHS/United States; GR: 5RO1GM10452-33/GM/NIGMS NIH HHS/United States; JID: 0360051; 0 (HSP70 Heat-Shock Proteins); ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0022-2844; 0022-2844</sn>
+<ad>Department of Mathematics, Stanford University, Stanford, CA 94305-2125, USA.</ad>
+<an>PMID: 9797407</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, Non-P.H.S.; Research Support, U.S. Gov&#39;t, P.H.S.; IM; S</sf>
+<ol>Unknown(0)</ol>
+<pmid>9797407</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>851</id>
+<a1>Karlin,S.</a1>
+<a1>Brocchieri,L.</a1>
+<t1>Evolutionary conservation of RecA genes in relation to protein structure and function</t1>
+<jf>Journal of Bacteriology</jf>
+<jo>J.Bacteriol.</jo>
+<yr>1996</yr>
+<fd>Apr</fd>
+<vo>178</vo>
+<is>7</is>
+<sp>1881</sp>
+<op>1894</op>
+<k1>Amino Acid Sequence</k1>
+<k1>Binding Sites</k1>
+<k1>Conserved Sequence</k1>
+<k1>Escherichia coli/chemistry/genetics/physiology</k1>
+<k1>Evolution</k1>
+<k1>Genes, Bacterial/physiology</k1>
+<k1>Genetic Variation</k1>
+<k1>Molecular Sequence Data</k1>
+<k1>Protein Conformation</k1>
+<k1>Rec A Recombinases/chemistry/genetics</k1>
+<k1>Sequence Homology, Amino Acid</k1>
+<k1>Structure-Activity Relationship</k1>
+<ab>Functional and structural regions inferred from the Escherichia coli R ecA protein crystal structure and mutation studies are evaluated in terms of evolutionary conservation across 63 RecA eubacterial sequences. Two paramount segments invariant in specific amino acids correspond to the ATP-binding A site and the functionally unassigned segment from residues 145 to 149 immediately carboxyl to the ATP hydrolysis B site. Not only are residues 145 to 149 conserved individually, but also all three-dimensional structural neighbors of these residues are invariant, strongly attesting to the functional or structural importance of this segment. The conservation of charged residues at the monomer-monomer interface, emphasizing basic residues on one surface and acidic residues on the other, suggests that RecA monomer polymerization is substantially mediated by electrostatic interactions. Different patterns of conservation also allow determination of regions proposed to interact with DNA, of LexA binding sites, and of filament-filament contact regions. Amino acid conservation is also compared with activities and properties of certain RecA protein mutants. Arginine 243 and its strongly cationic structural environment are proposed as the major site of competition for DNA and LexA binding to RecA. The conserved acidic and glycine residues of the disordered loop L1 and its proximity to the RecA acidic monomer interface suggest its involvement in monomer-monomer interactions rather than DNA binding. The conservation of various RecA positions and regions suggests a model for RecA-double-stranded DNA interaction and other functional and structural assignments.</ab>
+<no>LR: 20091118; GR: 5R01GM10452-31/GM/NIGMS NIH HHS/United States; GR: 5R01HG00335-07/HG/NHGRI NIH HHS/United States; JID: 2985120R; EC 2.7.7.- (Rec A Recombinases); OID: NLM: PMC177882; ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0021-9193; 0021-9193</sn>
+<ad>Department of Mathematics, Stanford University, Stanford, California 94305-2125, USA.</ad>
+<an>PMID: 8606161</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, Non-P.H.S.; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>8606161</pmid>
+<pmcid>PMC177882</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>841</id>
+<a1>Karlin,S.</a1>
+<a1>Brocchieri,L.</a1>
+<a1>Bergman,A.</a1>
+<a1>Mrazek,J.</a1>
+<a1>Gentles,A. J.</a1>
+<t1>Amino acid runs in eukaryotic proteomes and disease associations</t1>
+<jf>Proceedings of the National Academy of Sciences of the United States of America</jf>
+<jo>Proc.Natl.Acad.Sci.U.S.A.</jo>
+<yr>2002</yr>
+<fd>Jan 8</fd>
+<vo>99</vo>
+<is>1</is>
+<sp>333</sp>
+<op>338</op>
+<k1>Animals</k1>
+<k1>Arabidopsis/genetics</k1>
+<k1>Asparagine/chemistry</k1>
+<k1>Caenorhabditis elegans/genetics</k1>
+<k1>Drosophila melanogaster/genetics</k1>
+<k1>Genome</k1>
+<k1>Genome, Human</k1>
+<k1>Glutamine/chemistry</k1>
+<k1>Humans</k1>
+<k1>Leucine/chemistry</k1>
+<k1>Saccharomyces cerevisiae/genetics</k1>
+<k1>Serine/chemistry</k1>
+<k1>Species Specificity</k1>
+<k1>Transcription, Genetic</k1>
+<ab>We present a comparative proteome analysis of the five complete eukaryotic genomes (human, Drosophila melanogaster, Caenorhabditis elegans, Saccharomyces cerevisiae, Arabidopsis thaliana), focusing on individual and multiple amino acid runs, charge and hydrophobic runs. We found that human proteins with multiple long runs are often associated with diseases; these include long glutamine runs that induce neurological disorders, various cancers, categories of leukemias (mostly involving chromosomal translocations), and an abundance of Ca(2 +) and K(+) channel proteins. Many human proteins with multiple runs function in development and/or transcription regulation and are Drosophila homeotic homologs. A large number of these proteins are expressed in the nervous system. More than 80% of Drosophila proteins with multiple runs seem to function in transcription regulation. The most frequent amino acid runs in Drosophila sequences occur for glutamine, alanine, and serine, whereas human sequences highlight glutamate, proline, and leucine. The most frequent runs in yeast are of serine, glutamine, and acidic residues. Compared with the other eukaryotic proteomes, amino acid runs are significantly more abundant in the fly. This finding might be interpreted in terms of innate differences in DNA-replication processes, repair mechanisms, DNA-modification systems, and mutational biases. There are striking differences in amino acid runs for glutamine, asparagine, and leucine among the five proteomes.</ab>
+<no>LR: 20091118; GR: 5R01GM10452-36/GM/NIGMS NIH HHS/United States; GR: 5R01HG00335-14/HG/NHGRI NIH HHS/United States; JID: 7505876; 56-45-1 (Serine); 56-85-9 (Glutamine); 61-90-5 (Leucine); 7006-34-0 (Asparagine); OID: NLM: PMC117561; ppublish</no>
+<pp>United States</pp>
+<sn>0027-8424; 0027-8424</sn>
+<ad>Department of Mathematics, and Center for Computational Genetics and Biological Modeling, Stanford University, Stanford, CA 94305-2125, USA. karlin@math.stanford.edu</ad>
+<an>PMID: 11782551; 99/1/333 [pii]</an>
+<la>eng</la>
+<sf>Comparative Study; Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<do>10.1073/pnas.012608599</do>
+<ol>Unknown(0)</ol>
+<pmid>11782551</pmid>
+<pmcid>PMC117561</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>837</id>
+<a1>Karlin,S.</a1>
+<a1>Brocchieri,L.</a1>
+<a1>Campbell,A.</a1>
+<a1>Cyert,M.</a1>
+<a1>Mrazek,J.</a1>
+<t1>Genomic and proteomic comparisons between bacterial and archaeal genomes and related comparisons with the yeast and fly genomes</t1>
+<jf>Proceedings of the National Academy of Sciences of the United States of America</jf>
+<jo>Proc.Natl.Acad.Sci.U.S.A.</jo>
+<yr>2005</yr>
+<fd>May 17</fd>
+<vo>102</vo>
+<is>20</is>
+<sp>7309</sp>
+<op>7314</op>
+<k1>Animals</k1>
+<k1>Drosophila melanogaster/genetics</k1>
+<k1>Gene Expression</k1>
+<k1>Genome, Archaeal</k1>
+<k1>Genome, Bacterial</k1>
+<k1>Genomics/methods</k1>
+<k1>Proteomics/methods</k1>
+<k1>Repetitive Sequences, Nucleic Acid/genetics</k1>
+<k1>Replication Origin/genetics</k1>
+<k1>Ribosomal Proteins/genetics</k1>
+<k1>Saccharomyces cerevisiae/genetics</k1>
+<ab>Bacterial, archaeal, yeast, and fly genomes are compared with respect to predicted highly expressed (PHX) genes and several genomic properties. There is a striking difference in the status of PHX ribosomal protein (RP) genes where the archaeal genome generally encodes more RP genes and fewer PHX RPs compared with bacterial genomes. The increase in RPs in archaea and eukaryotes compared with that in bacteria may reflect a more complex set of interactions in archaea and eukaryotes in regulating translation, e.g., differences in structure requiring scaffolding of longer rRNA molecules, expanded interactions with the chaperone machinery, and, in eukaryotic interactions with endoplasmic reticulum components. The yeast genome is similar to fast-growing bacteria in PHX genes but also features several cytoskeletal genes, including actin and tropomyosin, and several signal transduction regulatory proteins from the 14.3.3 family. The most PHX genes of Drosophila encode cytoskeletal and exoskeletal proteins. We found that the preference of a microorganism for an anaerobic metabolism correlates with the number of PHX enzymes of the glycolysis pathway that well exceeds the number of PHX enzymes acting in the tricarboxylic acid cycle. Conversely, if the number of PHX enzymes of the tricarboxylic acid cycle well exceeds the PHX enzymes of glycolysis, an aerobic metabolism is preferred. Where the numbers are approximately commensurate, a facultative growth behavior prevails.</ab>
+<no>LR: 20091118; GR: 5R01GM10452-40/GM/NIGMS NIH HHS/United States; JID: 7505876; 0 (Ribosomal Proteins); OID: NLM: PMC1129125; 2005/05/09 [aheadofprint]; ppublish</no>
+<pp>United States</pp>
+<sn>0027-8424; 0027-8424</sn>
+<ad>Department of Mathematics, Stanford University, Stanford, CA 94305-2125, USA. karlin@math.stanford.edu</ad>
+<an>PMID: 15883367; 0502314102 [pii]</an>
+<la>eng</la>
+<sf>Comparative Study; Journal Article; Research Support, N.I.H., Extramural; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<do>10.1073/pnas.0502314102</do>
+<wp>20050509</wp>
+<ol>Unknown(0)</ol>
+<pmid>15883367</pmid>
+<pmcid>PMC1129125</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>846</id>
+<a1>Karlin,S.</a1>
+<a1>Brocchieri,L.</a1>
+<a1>Mrazek,J.</a1>
+<a1>Campbell,A. M.</a1>
+<a1>Spormann,A. M.</a1>
+<t1>A chimeric prokaryotic ancestry of mitochondria and primitive eukaryotes</t1>
+<jf>Proceedings of the National Academy of Sciences of the United States of America</jf>
+<jo>Proc.Natl.Acad.Sci.U.S.A.</jo>
+<yr>1999</yr>
+<fd>Aug 3</fd>
+<vo>96</vo>
+<is>16</is>
+<sp>9190</sp>
+<op>9195</op>
+<k1>Amino Acid Sequence</k1>
+<k1>Animals</k1>
+<k1>Archaea/genetics</k1>
+<k1>Bacteria/genetics</k1>
+<k1>Chimera</k1>
+<k1>Clostridium/genetics</k1>
+<k1>DNA, Mitochondrial/genetics</k1>
+<k1>Energy Metabolism/genetics</k1>
+<k1>Eukaryotic Cells</k1>
+<k1>Evolution</k1>
+<k1>Heat-Shock Proteins/genetics</k1>
+<k1>Humans</k1>
+<k1>Mitochondria/genetics</k1>
+<k1>Models, Genetic</k1>
+<k1>Proteins/chemistry/genetics</k1>
+<k1>Sulfolobus/genetics</k1>
+<k1>Vertebrates</k1>
+<ab>We provide data and analysis to support the hypothesis that the ancestor of animal mitochondria (Mt) and many primitive amitochondrial (a-Mt) eukaryotes was a fusion microbe composed of a Clostridium-like eubacterium and a Sulfolobus-like archaebacterium. The analysis is based on several observations: (i) The genome signatures (dinucleotide relative abundance values) of Clostridium and Sulfolobus are compatible (sufficiently similar) and each has significantly more similarity in genome signatures with animal Mt sequences than do all other available prokaryotes. That stable fusions may require compatibility in genome signatures is suggested by the compatibility of plasmids and hosts. (ii) The expanded energy metabolism of the fusion organism was strongly selective for cementing such a fusion. (iii) The molecular apparatus of endospore formation in Clostridium serves as raw material for the development of the nucleus and cytoplasm of the eukaryotic cell.</ab>
+<no>LR: 20091118; GR: 5R01GM10452-34/GM/NIGMS NIH HHS/United States; GR: 5R01HG00335-11/HG/NHGRI NIH HHS/United States; JID: 7505876; 0 (DNA, Mitochondrial); 0 (Heat-Shock Proteins); 0 (Proteins); OID: NLM: PMC17755; ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0027-8424; 0027-8424</sn>
+<ad>Department of Mathematics, Stanford University, Stanford, CA 94305-2125, USA.</ad>
+<an>PMID: 10430918</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, Non-P.H.S.; Research Support, U.S. Gov&#39;t, P.H.S.; IM; S</sf>
+<ol>Unknown(0)</ol>
+<pmid>10430918</pmid>
+<pmcid>PMC17755</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>832</id>
+<a1>Karlin,S.</a1>
+<a1>Brocchieri,L.</a1>
+<a1>Mrazek,J.</a1>
+<a1>Kaiser,D.</a1>
+<t1>Distinguishing features of delta-proteobacterial genomes</t1>
+<jf>Proceedings of the National Academy of Sciences of the United States of America</jf>
+<jo>Proc.Natl.Acad.Sci.U.S.A.</jo>
+<yr>2006</yr>
+<fd>Jul 25</fd>
+<vo>103</vo>
+<is>30</is>
+<sp>11352</sp>
+<op>11357</op>
+<k1>Amino Acyl-tRNA Synthetases/genetics</k1>
+<k1>Bdellovibrio/metabolism</k1>
+<k1>Deltaproteobacteria/genetics</k1>
+<k1>Energy Metabolism</k1>
+<k1>Genome, Bacterial</k1>
+<k1>Glycolysis</k1>
+<k1>Models, Genetic</k1>
+<k1>Models, Statistical</k1>
+<k1>Molecular Sequence Data</k1>
+<k1>Multigene Family</k1>
+<k1>Protons</k1>
+<k1>Ribosomal Proteins/metabolism</k1>
+<k1>Ribosomes/metabolism</k1>
+<k1>Tricarboxylic Acids/metabolism</k1>
+<ab>We analyzed several features of five currently available delta-proteobacterial genomes, including two aerobic bacteria exhibiting predatory behavior and three anaerobic sulfate-reducing bacteria. The delta genomes are distinguished from other bacteria by several properties: (i) The delta genomes contain two &amp;quot;giant&amp;quot; S1 ribosomal protein genes in contrast to all other bacterial types, which encode a single or no S1; (ii) in most delta-proteobacterial genomes the major ribosomal protein (RP) gene cluster is near the replication terminus whereas most bacterial genomes place the major RP cluster near the origin of replication; (iii) the delta genomes possess the rare combination of discriminating asparaginyl and glutaminyl tRNA synthetase (AARS) together with the amido-transferase complex (Gat CAB) genes that modify Asp-tRNA(Asn) into Asn-tRNA(Asn) and Glu-tRNA(Gln) into Gln-tRNA(Gln); (iv) the TonB receptors and ferric siderophore receptors that facilitate uptake and removal of complex metals are common among delta genomes; (v) the anaerobic delta genomes encode multiple copies of the anaerobic detoxification protein rubrerythrin that can neutralize hydrogen peroxide; and (vi) sigma(54) activators play a more important role in the delta genomes than in other bacteria. delta genomes have a plethora of enhancer binding proteins that respond to environmental and intracellular cues, often as part of two-component systems; (vii) delta genomes encode multiple copies of metallo-beta-lactamase enzymes; (viii) a host of secretion proteins emphasizing SecA, SecB, and SecY may be especially useful in the predatory activities of Myxococcus xanthus; (ix) delta proteobacteria drive many multiprotein machines in their periplasms and outer membrane, including chaperone-feeding machines, jets for slime secretion, and type IV pili. Bdellovibrio replicates in the periplasm of prey cells. The sulfate-reducing delta proteobacteria metabolize hydrogen and generate a proton gradient by electron transport. The predicted highly expressed genes from delta genomes reflect their different ecologies, metabolic strategies, and adaptations.</ab>
+<no>LR: 20091118; RefSeq/NC_007517; RefSeq/NC_007519; JID: 7505876; 0 (Protons); 0 (Ribosomal Proteins); 0 (Tricarboxylic Acids); 0 (ribosomal protein S1); EC 6.1.1.- (Amino Acyl-tRNA Synthetases); OID: NLM: PMC1544090; 2006/07/14 [aheadofprint]; ppublish</no>
+<pp>United States</pp>
+<sn>0027-8424; 0027-8424</sn>
+<ad>Department of Mathematics, Stanford University, Stanford, CA 94305, USA. karlin@math.stanford.edu</ad>
+<an>PMID: 16844781; 0604311103 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; IM</sf>
+<do>10.1073/pnas.0604311103</do>
+<wp>20060714</wp>
+<ol>Unknown(0)</ol>
+<pmid>16844781</pmid>
+<pmcid>PMC1544090</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>840</id>
+<a1>Karlin,S.</a1>
+<a1>Brocchieri,L.</a1>
+<a1>Trent,J.</a1>
+<a1>Blaisdell,B. E.</a1>
+<a1>Mrazek,J.</a1>
+<t1>Heterogeneity of genome and proteome content in bacteria, archaea, and eukaryotes</t1>
+<jf>Theoretical population biology</jf>
+<jo>Theor.Popul.Biol.</jo>
+<yr>2002</yr>
+<fd>Jun</fd>
+<vo>61</vo>
+<is>4</is>
+<sp>367</sp>
+<op>390</op>
+<k1>Amino Acids/chemistry</k1>
+<k1>Animals</k1>
+<k1>Archaea/genetics/metabolism</k1>
+<k1>Bacteria/genetics/metabolism</k1>
+<k1>Eukaryotic Cells</k1>
+<k1>Genome</k1>
+<k1>Humans</k1>
+<k1>Proteins/chemistry</k1>
+<k1>Proteome</k1>
+<ab>Our analysis compares bacteria, archaea, and eukaryota with respect to a wide assortment of genome and proteome properties. These properties include ribosomal protein gene distributions, chaperone protein contrasts, major variation of transcription/translation factors, gene encoding pathways of energy metabolism, and predicted protein expression levels. Significant differences within and between the three domains of life include protein lengths, information processing procedures, many metabolic and lipid biosynthesis pathways, cellular controls, and regulatory proteins. Differences among genomes are influenced by lifestyle, habitat, physiology, energy sources, and other factors.</ab>
+<no>LR: 20071114; CI: Copyright 2002; GR: 5R01GM10452-40/GM/NIGMS NIH HHS/United States; GR: 5R01HG00335-15/HG/NHGRI NIH HHS/United States; JID: 0256422; 0 (Amino Acids); 0 (Proteins); 0 (Proteome); RF: 82; ppublish</no>
+<pb>Elsevier Science (USA)</pb>
+<pp>United States</pp>
+<sn>0040-5809; 0040-5809</sn>
+<ad>Department of Mathematics, Stanford University, California 94305-2125, USA.</ad>
+<an>PMID: 12167359; S0040580902916060 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; Review; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>12167359</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>836</id>
+<a1>Karlin,S.</a1>
+<a1>Mrazek,J.</a1>
+<a1>Ma,J.</a1>
+<a1>Brocchieri,L.</a1>
+<t1>Predicted highly expressed genes in archaeal genomes</t1>
+<jf>Proceedings of the National Academy of Sciences of the United States of America</jf>
+<jo>Proc.Natl.Acad.Sci.U.S.A.</jo>
+<yr>2005</yr>
+<fd>May 17</fd>
+<vo>102</vo>
+<is>20</is>
+<sp>7303</sp>
+<op>7308</op>
+<k1>Archaea/genetics</k1>
+<k1>Archaeal Proteins/genetics/metabolism</k1>
+<k1>Chaperonins/genetics/metabolism</k1>
+<k1>Codon/genetics</k1>
+<k1>Gene Expression</k1>
+<k1>Genome, Archaeal</k1>
+<k1>Ribosomal Proteins/genetics/metabolism</k1>
+<k1>Thermosomes</k1>
+<k1>Transcription Factors/genetics/metabolism</k1>
+<ab>Based primarily on 16S rRNA sequence comparisons, life has been broadly divided into the three domains of Bacteria, Archaea, and Eukarya. Archaea is further classified into Crenarchaea and Euryarchaea. Archaea generally thrive in extreme environments as assessed by temperature, pH, and salinity. For many prokaryotic organisms, ribosomal proteins (RP), transcription/translation factors, and chaperone genes tend to be highly expressed. A gene is predicted highly expressed (PHX) if its codon usage is rather similar to the average codon usage of at least one of the RP, transcription/translation factors, and chaperone gene classes and deviates strongly from the average gene of the genome. The thermosome (Ths) chaperonin family represents the most salient PHX genes among Archaea. The chaperones Trigger factor and HSP70 have overlapping functions in the folding process, but both of these proteins are lacking in most archaea where they may be substituted by the chaperone prefoldin. Other distinctive PHX proteins of Archaea, absent from Bacteria, include the proliferating cell nuclear antigen PCNA, a replication auxiliary factor responsible for tethering the catalytic unit of DNA polymerase to DNA during high-speed replication, and the acidic RP P0, which helps to initiate mRNA translation at the ribosome. Other PHX genes feature Cell division control protein 48 (Cdc48), whereas the bacterial septation proteins FtsZ and minD are lacking in Crenarchaea. RadA is a major DNA repair and recombination protein of Archaea. Archaeal genomes feature a strong Shine-Dalgarno ribosome-binding motif more pronounced in Euryarchaea compared with Crenarchaea.</ab>
+<no>LR: 20091119; GR: 5R01GM10452-40/GM/NIGMS NIH HHS/United States; JID: 7505876; 0 (Archaeal Proteins); 0 (Codon); 0 (Ribosomal Proteins); 0 (Transcription Factors); EC 3.6.1.- (Chaperonins); EC 3.6.1.- (Thermosomes); OID: NLM: PMC1129124; 2005/05/09 [aheadofprint]; ppublish</no>
+<pp>United States</pp>
+<sn>0027-8424; 0027-8424</sn>
+<ad>Department of Mathematics, Stanford University, Stanford, CA 94305-2125, USA. karlin@math.stanford.edu</ad>
+<an>PMID: 15883368; 0502313102 [pii]</an>
+<la>eng</la>
+<sf>Comparative Study; Journal Article; Research Support, N.I.H., Extramural; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<do>10.1073/pnas.0502313102</do>
+<wp>20050509</wp>
+<ol>Unknown(0)</ol>
+<pmid>15883368</pmid>
+<pmcid>PMC1129124</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>854</id>
+<a1>Karlin,S.</a1>
+<a1>Zuker,M.</a1>
+<a1>Brocchieri,L.</a1>
+<t1>Measuring residue associations in protein structures. Possible implications for protein folding</t1>
+<jf>Journal of Molecular Biology</jf>
+<jo>J.Mol.Biol.</jo>
+<yr>1994</yr>
+<fd>Jun 3</fd>
+<vo>239</vo>
+<is>2</is>
+<sp>227</sp>
+<op>248</op>
+<k1>Amino Acid Sequence</k1>
+<k1>Amino Acids</k1>
+<k1>Mathematics</k1>
+<k1>Models, Theoretical</k1>
+<k1>Molecular Sequence Data</k1>
+<k1>Probability</k1>
+<k1>Protein Folding</k1>
+<k1>Proteins/chemistry/metabolism</k1>
+<ab>We propose a number of distance measures between residues in protein structures based on average, minimum and maximum distances of all atom (backbone and side-chain) coordinates or with respect to side-chain atom coordinates only. The d1-distance (D1-distance) refers to the average distance between side-chain (backbone and side-chain) atoms of a residue pair in a given structure. The dm-distance (Dm-distance) refers to the minimum distance between side-chain atoms (non-trivial minimum distance between all atoms of a residue pair). For each distance measure, averaging and normalizing over representative protein structures, association values and closeness orderings for all amino acid types are determined. The expected associations of side-chain interactions between oppositely charged residues, among hydrophobic residues and of cysteine with cysteine are confirmed. Several surprising associations are observed relative to (1) the aromatic residues tyrosine and tryptophan, but not phenylalanine; (2) multiple histidine residues; (3) asymmetries of arginine versus lysine, aspartate versus glutamate, alanine versus glycine, and asparagine versus glutamine; (4) absence of correlations of alpha-carbon distances with side-chain distances. The all atoms D1-distance attractions are dominated by steric relationships, with glycine and alanine significantly close to all amino acids, whereas large residues are under-associated with all residue types. In contrast, for the closeness ordering corresponding to the minimum side-chain dm-distance, glycine and alanine are among the least associated. However, in the d1-distance alanine is significantly close to all hydrophobic residues with the exception of tryptophan. The dm-distance preferences display a pervasive attraction for tyrosine by almost all residue types, the prominence of tyrosine and tryptophan in cation-aromatic interactions, and the versatility of histidine in functionality. The principal findings suggest a new perspective on the early and intermediate stages of protein folding.</ab>
+<no>LR: 20071114; GR: 5R01GM10452-30/GM/NIGMS NIH HHS/United States; GR: 5R01HG00335-05/HG/NHGRI NIH HHS/United States; JID: 2985088R; 0 (Amino Acids); 0 (Proteins); ppublish</no>
+<pp>ENGLAND</pp>
+<sn>0022-2836; 0022-2836</sn>
+<ad>Department of Mathematics, Stanford University, CA 94305-2125.</ad>
+<an>PMID: 8196056; S0022283684713659 [pii]</an>
+<la>eng</la>
+<sf>Comparative Study; Journal Article; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, Non-P.H.S.; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>8196056</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>833</id>
+<a1>Macario,A. J.</a1>
+<a1>Brocchieri,L.</a1>
+<a1>Shenoy,A. R.</a1>
+<a1>de Macario,E. C.</a1>
+<t1>Evolution of a protein-folding machine: genomic and evolutionary analyses reveal three lineages of the archaeal hsp70(dnaK) gene</t1>
+<jf>Journal of Molecular Evolution</jf>
+<jo>J.Mol.Evol.</jo>
+<yr>2006</yr>
+<fd>Jul</fd>
+<vo>63</vo>
+<is>1</is>
+<sp>74</sp>
+<op>86</op>
+<k1>Amino Acid Sequence</k1>
+<k1>Evolution, Molecular</k1>
+<k1>Genes, Archaeal</k1>
+<k1>Genes, Bacterial</k1>
+<k1>Genetic Structures</k1>
+<k1>Genome, Archaeal</k1>
+<k1>HSP40 Heat-Shock Proteins/genetics</k1>
+<k1>HSP70 Heat-Shock Proteins/genetics</k1>
+<k1>Internal-External Control</k1>
+<k1>Molecular Chaperones/genetics</k1>
+<k1>Phylogeny</k1>
+<k1>Protein Folding</k1>
+<k1>Protein Isoforms/genetics</k1>
+<ab>The stress chaperone protein Hsp70 (DnaK) (abbreviated DnaK) and its co-chaperones Hsp40(DnaJ) (or DnaJ) and GrpE are universal in bacteria and eukaryotes but occur only in some archaea clustered in the order 5&amp;#39;-grpE-dnaK-dnaJ-3&amp;#39; in a locus termed Locus I. Three structural varieties of Locus I, termed Types I, II, and III, were identified, respectively, in Methanosarcinales, in Thermoplasmatales and Methanothermobacter thermoautotrophicus, and in Halobacteriales. These Locus I types corresponded to three groups identified by phylogenetic trees of archaeal DnaK proteins including the same archaeal subdivisions. These archaeal DnaK groups were not significantly interrelated, clustering instead with DnaKs from three bacterial lineages, Methanosarcinales with Firmicutes, Thermoplasmatales and M. thermoautotrophicus with Thermotoga, and Halobacteriales with Actinobacteria, suggesting that the three archaeal types of Locus I were acquired by independent events of lateral gene transfer. These associations, however, lacked strong bootstrap support and were sensitive to dataset choice and tree-reconstruction method. Structural features of dnaK loci in bacteria revealed that Methanosarcinales and Firmicutes shared a similar structure, also common to most other bacterial groups. Structural differences were observed instead in Thermotoga compared to Thermoplasmatales and M. thermoautotrophicus, and in Actinobacteria compared to Halobacteriales. It was also found that the association between the DnaK sequences from Halobacteriales and Actinobacteria likely reflects common biases in their amino acid compositions. Although the loci structural features and the DnaK trees suggested the possibility of lateral gene transfer between Firmicutes and Methanosarcinales, the similarity between the archaeal and the ancestral bacterial loci favors the more parsimonious hypothesis that all archaeal sequences originated from a unique prokaryotic ancestor.</ab>
+<no>LR: 20071114; GR: 2 R01 GM010452/GM/NIGMS NIH HHS/United States; JID: 0360051; 0 (HSP40 Heat-Shock Proteins); 0 (HSP70 Heat-Shock Proteins); 0 (Molecular Chaperones); 0 (Protein Isoforms); 2005/08/30 [received]; 2006/03/14 [accepted]; 2006/06/20 [aheadofprint]; ppublish</no>
+<pp>Germany</pp>
+<sn>0022-2844; 0022-2844</sn>
+<ad>Division of Molecular Medicine, Wadsworth Center, Room B-749, New York State Department of Health, Empire State Plaza, P.O. Box 509, Albany, NY 12201-0509, USA.</ad>
+<an>PMID: 16788741</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, N.I.H., Extramural; IM</sf>
+<do>10.1007/s00239-005-6207-1</do>
+<wp>20060620</wp>
+<ol>Unknown(0)</ol>
+<pmid>16788741</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>829</id>
+<a1>Mukherjee,K.</a1>
+<a1>Brocchieri,L.</a1>
+<a1>Burglin,T. R.</a1>
+<t1>A comprehensive classification and evolutionary analysis of plant homeobox genes</t1>
+<jf>Molecular biology and evolution</jf>
+<jo>Mol.Biol.Evol.</jo>
+<yr>2009</yr>
+<fd>Dec</fd>
+<vo>26</vo>
+<is>12</is>
+<sp>2775</sp>
+<op>2794</op>
+<k1>Amino Acid Motifs/genetics</k1>
+<k1>Amino Acid Sequence</k1>
+<k1>Evolution, Molecular</k1>
+<k1>Genes, Homeobox/genetics</k1>
+<k1>Genes, Plant/genetics</k1>
+<k1>Homeodomain Proteins/chemistry/classification/genetics</k1>
+<k1>Introns/genetics</k1>
+<k1>Leucine Zippers/genetics</k1>
+<k1>Likelihood Functions</k1>
+<k1>Models, Genetic</k1>
+<k1>Molecular Sequence Data</k1>
+<k1>Phylogeny</k1>
+<k1>Plants/genetics</k1>
+<k1>Protein Structure, Tertiary</k1>
+<k1>Sequence Alignment</k1>
+<k1>Zinc Fingers/genetics</k1>
+<ab>The full complement of homeobox transcription factor sequences, including genes and pseudogenes, was determined from the analysis of 10 complete genomes from flowering plants, moss, Selaginella, unicellular green algae, and red algae. Our exhaustive genome-wide searches resulted in the discovery in each class of a greater number of homeobox genes than previously reported. All homeobox genes can be unambiguously classified by sequence evolutionary analysis into 14 distinct classes also characterized by conserved intron-exon structure and by unique codomain architectures. We identified many new genes belonging to previously defined classes (HD-ZIP I to IV, BEL, KNOX, PLINC, WOX). Other newly identified genes allowed us to characterize PHD, DDT, NDX, and LD genes as members of four new evolutionary classes and to define two additional classes, which we named SAWADEE and PINTOX. Our comprehensive analysis allowed us to identify several newly characterized conserved motifs, including novel zinc finger motifs in SAWADEE and DDT. Members of the BEL and KNOX classes were found in Chlorobionta (green plants) and in Rhodophyta. We found representatives of the DDT, WOX, and PINTOX classes only in green plants, including unicellular green algae, moss, and vascular plants. All 14 homeobox gene classes were represented in flowering plants, Selaginella, and moss, suggesting that they had already differentiated in the last common ancestor of moss and vascular plants.</ab>
+<no>JID: 8501455; 0 (Homeodomain Proteins); OID: NLM: PMC2775110; 2009/09/04 [aheadofprint]; ppublish</no>
+<pp>United States</pp>
+<sn>1537-1719; 0737-4038</sn>
+<ad>Genetics Institute, Department of Molecular Genetics and Microbiology, College of Medicine, University of Florida, USA. krishanu@ufl.edu</ad>
+<an>PMID: 19734295; msp201 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<do>10.1093/molbev/msp201</do>
+<wp>20090904</wp>
+<ol>Unknown(0)</ol>
+<pmid>19734295</pmid>
+<pmcid>PMC2775110</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>828</id>
+<a1>Mukherjee,K.</a1>
+<a1>Conway de Macario,E.</a1>
+<a1>Macario,A. J.</a1>
+<a1>Brocchieri,L.</a1>
+<t1>Chaperonin genes on the rise: new divergent classes and intense duplication in human and other vertebrate genomes</t1>
+<jf>BMC evolutionary biology</jf>
+<jo>BMC Evol.Biol.</jo>
+<yr>2010</yr>
+<fd>Mar 1</fd>
+<vo>10</vo>
+<sp>64</sp>
+<k1>Adenosine Triphosphate/metabolism</k1>
+<k1>Animals</k1>
+<k1>Chaperonins/genetics/metabolism</k1>
+<k1>Evolution, Molecular</k1>
+<k1>Gene Duplication</k1>
+<k1>Humans</k1>
+<k1>Mice</k1>
+<k1>Protein Folding</k1>
+<k1>Rats</k1>
+<ab>BACKGROUND: Chaperonin proteins are well known for the critical role they play in protein folding and in disease. However, the recent identification of three diverged chaperonin paralogs associated with the human Bardet-Biedl and McKusick-Kaufman Syndromes (BBS and MKKS, respectively) indicates that the eukaryotic chaperonin-gene family is larger and more differentiated than previously thought. The availability of complete genome sequences makes possible a definitive characterization of the complete set of chaperonin sequences in human and other species. RESULTS: We identified fifty-four chaperonin-like sequences in the human genome and similar numbers in the genomes of the model organisms mouse and rat. In mammal genomes we identified, besides the well-known CCT chaperonin genes and the three genes associated with the MKKS and BBS pathological conditions, a newly-defined class of chaperonin genes named CCT8L, represented in human by the two sequences CCT8L1 and CCT8L2. Comparative analyses from several vertebrate genomes established the monophyletic origin of chaperonin-like MKKS and BBS genes from the CCT8 lineage. The CCT8L gene originated from a later duplication also in the CCT8 lineage at the onset of mammal evolution and duplicated in primate genomes. The functionality of CCT8L genes in different species was confirmed by evolutionary analyses and in human by expression data. Detailed sequence analysis and structural predictions of MKKS, BBS and CCT8L proteins strongly suggested that they conserve a typical chaperonin-like core structure but that they are unlikely to form a CCT-like oligomeric complex. The characterization of many newly-discovered chaperonin pseudogenes uncovered the intense duplication activity of eukaryotic chaperonin genes. CONCLUSIONS: In vertebrates, chaperonin genes, driven by intense duplication processes, have diversified into multiple classes and functionalities that extend beyond their well-known protein-folding role as part of the typical oligomeric chaperonin complex, emphasizing previous observations on the involvement of individual CCT monomers in microtubule elongation. The functional characterization of newly identified chaperonin genes will be a challenge for future experimental analyses.</ab>
+<no>JID: 100966975; 56-65-5 (Adenosine Triphosphate); EC 3.6.1.- (Chaperonins); OID: NLM: PMC2846930; 2009/08/13 [received]; 2010/03/01 [accepted]; 2010/03/01 [aheadofprint]; epublish</no>
+<pp>England</pp>
+<sn>1471-2148; 1471-2148</sn>
+<ad>Department of Molecular Genetics and Microbiology, University of Florida, College of Medicine, 1660 SW Archer Road, Gainesville, FL 32610, USA.</ad>
+<an>PMID: 20193073; 1471-2148-10-64 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<do>10.1186/1471-2148-10-64</do>
+<wp>20100301</wp>
+<ol>Unknown(0)</ol>
+<pmid>20193073</pmid>
+<pmcid>PMC2846930</pmcid></reference></refworks>

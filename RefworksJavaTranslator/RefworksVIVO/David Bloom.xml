@@ -1,0 +1,2516 @@
+
+<?xml version="1.0" encoding="utf-8"?>
+<refworks xmlns:refworks="www.refworks.com/xml/">
+
+
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>2020</id>
+<a1>Amelio,A. L.</a1>
+<a1>Giordani,N. V.</a1>
+<a1>Kubat,N. J.</a1>
+<a1>O&#39;neil,J. E.</a1>
+<a1>Bloom,D. C.</a1>
+<t1>Deacetylation of the herpes simplex virus type 1 latency-associated transcript (LAT) enhancer and a decrease in LAT abundance precede an increase in ICP0 transcriptional permissiveness at early times postexplant </t1>
+<jf>Journal of virology</jf>
+<jo>J.Virol.</jo>
+<yr>2006</yr>
+<fd>Feb</fd>
+<vo>80</vo>
+<is>4</is>
+<sp>2063</sp>
+<op>2068</op>
+<k1>Acetylation</k1>
+<k1>Animals</k1>
+<k1>Enhancer Elements, Genetic</k1>
+<k1>Female</k1>
+<k1>Ganglia, Spinal/virology</k1>
+<k1>Gene Expression Regulation, Viral</k1>
+<k1>Herpesvirus 1, Human/genetics/physiology</k1>
+<k1>Histones/metabolism</k1>
+<k1>Immediate-Early Proteins/genetics</k1>
+<k1>Mice</k1>
+<k1>Promoter Regions, Genetic</k1>
+<k1>RNA, Untranslated/analysis</k1>
+<k1>RNA, Viral/analysis</k1>
+<k1>Transcription, Genetic</k1>
+<k1>Ubiquitin-Protein Ligases/genetics</k1>
+<k1>Virus Latency/physiology</k1>
+<ab>Only the latency-associated transcript (LAT) of the herpes simplex virus type 1 (HSV-1) genome is transcribed during latency, while the lytic genes are suppressed, possibly by LAT antisense mechanisms and/or chromatin modifications. In the present study, latently infected dorsal root ganglia were explanted to assess both relative levels of LAT and histone H3 (K9, K14) acetylation of the LAT locus and ICP0 promoter at early times postexplant. We observed that a decrease in both LAT enhancer histone H3 (K9, K14) acetylation and LAT RNA abundance occurs prior to an increase in acetylation, or transcriptional permissiveness, at the ICP0 promoter. </ab>
+<no>id: 4; LR: 20091118; GR: AI07110/AI/NIAID NIH HHS/United States; GR: AI48633/AI/NIAID NIH HHS/United States; JID: 0113724; 0 (Histones); 0 (Immediate-Early Proteins); 0 (RNA, Untranslated); 0 (RNA, Viral); EC 6.3.2.19 (Ubiquitin-Protein Ligases); EC 6.3.2.19 (Vmw110 protein, Human herpesvirus 1); OID: NLM: PMC1367155; ppublish </no>
+<pp>United States</pp>
+<sn>0022-538X; 0022-538X</sn>
+<ad>Department of Molecular Genetics and Microbiology, Box 100266, University of Florida College of Medicine, Gainesville, FL 32610-0266, USA.</ad>
+<an>PMID: 16439563; 80/4/2063 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, N.I.H., Extramural; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<do>10.1128/JVI.80.4.2063-2068.2006</do>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>16439563</pmid>
+<pmcid>PMC1367155</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>2019</id>
+<a1>Amelio,A. L.</a1>
+<a1>McAnany,P. K.</a1>
+<a1>Bloom,D. C.</a1>
+<t1>A chromatin insulator-like element in the herpes simplex virus type 1 latency-associated transcript region binds CCCTC-binding factor and displays enhancer-blocking and silencing activities </t1>
+<jf>Journal of virology</jf>
+<jo>J.Virol.</jo>
+<yr>2006</yr>
+<fd>Mar</fd>
+<vo>80</vo>
+<is>5</is>
+<sp>2358</sp>
+<op>2368</op>
+<k1>Animals</k1>
+<k1>Binding Sites</k1>
+<k1>Cell Line</k1>
+<k1>Chromatin Immunoprecipitation</k1>
+<k1>DNA, Viral/genetics/physiology</k1>
+<k1>DNA-Binding Proteins/metabolism</k1>
+<k1>Enhancer Elements, Genetic</k1>
+<k1>Female</k1>
+<k1>Gene Silencing</k1>
+<k1>Genes, Reporter/genetics/physiology</k1>
+<k1>Genome, Viral</k1>
+<k1>Herpesvirus 1, Human/genetics/physiology</k1>
+<k1>Insulator Elements/genetics/physiology</k1>
+<k1>Luciferases/analysis/genetics</k1>
+<k1>Mice</k1>
+<k1>Protein Binding</k1>
+<k1>Repressor Proteins/metabolism</k1>
+<k1>Sequence Analysis, DNA</k1>
+<ab>A previous study demonstrated that the latency-associated transcript (LAT) promoter and the LAT enhancer/reactivation critical region (rcr) are enriched in acetyl histone H3 (K9, K14) during herpes simplex virus type 1 (HSV-1) latency, whereas all lytic genes analyzed (ICP0, UL54, ICP4, and DNA polymerase) are not (N. J. Kubat, R. K. Tran, P. McAnany, and D. C. Bloom, J. Virol. 78:1139-1149, 2004). This suggests that the HSV-1 latent genome is organized into histone H3 (K9, K14) hyperacetylated and hypoacetylated regions corresponding to transcriptionally permissive and transcriptionally repressed chromatin domains, respectively. Such an organization implies that chromatin insulators, similar to those of cellular chromosomes, may separate distinct transcriptional domains of the HSV-1 latent genome. In the present study, we sought to identify cis elements that could partition the HSV-1 genome into distinct chromatin domains. Sequence analysis coupled with chromatin immunoprecipitation and luciferase reporter assays revealed that (i) the long and short repeats and the unique-short region of the HSV-1 genome contain clustered CTCF (CCCTC-binding factor) motifs, (ii) CTCF motif clusters similar to those in HSV-1 are conserved in other alphaherpesviruses, (iii) CTCF binds to these motifs on latent HSV-1 genomes in vivo, and (iv) a 1.5-kb region containing the CTCF motif cluster in the LAT region possesses insulator activities, specifically, enhancer blocking and silencing. The finding that CTCF, a cellular protein associated with chromatin insulators, binds to motifs on the latent genome and insulates the LAT enhancer suggests that CTCF may facilitate the formation of distinct chromatin boundaries during herpesvirus latency. </ab>
+<no>id: 3; LR: 20091118; GR: AI48633/AI/NIAID NIH HHS/United States; JID: 0113724; 0 (CCCTC-binding factor); 0 (DNA, Viral); 0 (DNA-Binding Proteins); 0 (Repressor Proteins); EC 1.13.12.- (Luciferases); OID: NLM: PMC1395413; ppublish </no>
+<pp>United States</pp>
+<sn>0022-538X; 0022-538X</sn>
+<ad>Department of Molecular Genetics and Microbiology, University of Florida College of Medicine, Gainesville, 32610-0266, USA.</ad>
+<an>PMID: 16474142; 80/5/2358 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, N.I.H., Extramural; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<do>10.1128/JVI.80.5.2358-2368.2006</do>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>16474142</pmid>
+<pmcid>PMC1395413</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>2033</id>
+<a1>Bhattacharjee,P. S.</a1>
+<a1>Tran,R. K.</a1>
+<a1>Myles,M. E.</a1>
+<a1>Maruyama,K.</a1>
+<a1>Mallakin,A.</a1>
+<a1>Bloom,D. C.</a1>
+<a1>Hill,J. M.</a1>
+<t1>Overlapping subdeletions within a 348-bp in the 5&amp;#39; exon of the LAT region that facilitates epinephrine-induced reactivation of HSV-1 in the rabbit ocular model do not further define a functional element </t1>
+<jf>Virology</jf>
+<jo>Virology</jo>
+<yr>2003</yr>
+<fd>Jul 20</fd>
+<vo>312</vo>
+<is>1</is>
+<sp>151</sp>
+<op>158</op>
+<k1>Animals</k1>
+<k1>Disease Models, Animal</k1>
+<k1>Epinephrine/pharmacology</k1>
+<k1>Exons/genetics</k1>
+<k1>Genes, Viral/genetics</k1>
+<k1>Herpes Simplex/virology</k1>
+<k1>Keratitis, Herpetic/virology</k1>
+<k1>Rabbits</k1>
+<k1>Sequence Deletion/genetics</k1>
+<k1>Simplexvirus/drug effects/genetics/physiology</k1>
+<k1>Virus Activation/drug effects</k1>
+<k1>Virus Latency/drug effects/genetics</k1>
+<ab>A previous study identified a 348-bp region at the 5&amp;#39; end of the 8.5-kb latency-associated transcript (LAT) of HSV-1 strain 17Syn+ that is necessary for maximum adrenergically induced reactivation following transcorneal iontophoresis of epinephrine (D.C. Bloom et al., 1996, J. Virol. 70, 2449-2459). In that study, the construct with complete deletion of the 348-bp region, 17delta348, failed to achieve the high reactivation frequency demonstrated by the parent (17Syn+) and rescued (17delta348R) viruses. To further characterize the function of the 348-bp region, we analyzed two genetic constructs with partial deletions in the same 348-bp region, 17delta201 and 17delta207, in the rabbit model. Both constructs exhibited the same high reactivation frequencies demonstrated by the parent 17Syn+ and the rescued 17delta348R viruses. These results suggest that the control of reactivation is distributed over a large portion of the 348-bp region, rather than being confined within a smaller, more discrete region. To assess whether the low reactivation phenotype of the 17delta348 construct was caused by a requirement for proper spacing of elements outside the 348-bp region, we constructed a virus (17delta348St) that contained a 360-bp stuffer fragment of heterologous DNA (lacZ) to maintain the proper spacing. The 17delta348St construct also displayed a low reactivation phenotype, similar to that of 17delta348, suggesting that the effect of deleting this segment of the 5&amp;#39; exon of LAT is obtained through a mechanism other than the disruption of spacing. </ab>
+<no>id: 7; LR: 20071114; GR: P30EY02377/EY/NEI NIH HHS/United States; GR: R01AI48633/AI/NIAID NIH HHS/United States; GR: R01EY06311/EY/NEI NIH HHS/United States; JID: 0110674; 51-43-4 (Epinephrine); ppublish </no>
+<pp>United States</pp>
+<sn>0042-6822; 0042-6822</sn>
+<ad>LSU Eye Center, Department of Ophthalmology, Louisiana State University Health Sciences Center, New Orleans, LA 70112, USA.</ad>
+<an>PMID: 12890628; S0042682203001740 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>12890628</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>2026</id>
+<a1>Binder,W. J.</a1>
+<a1>Bloom,D. C.</a1>
+<t1>The use of custom-designed midfacial and submalar implants in the treatment of facial wasting syndrome </t1>
+<jf>Archives of facial plastic surgery : official publication for the American Academy of Facial Plastic and Reconstructive Surgery, Inc.and the International Federation of Facial Plastic Surgery Societies</jf>
+<jo>Arch.Facial Plast.Surg.</jo>
+<yr>2004</yr>
+<fd>Nov-Dec</fd>
+<vo>6</vo>
+<is>6</is>
+<sp>394</sp>
+<op>397</op>
+<k1>Face/surgery</k1>
+<k1>HIV Wasting Syndrome/complications</k1>
+<k1>Humans</k1>
+<k1>Prostheses and Implants</k1>
+<k1>Prosthesis Design</k1>
+<k1>Retrospective Studies</k1>
+<ab>Facial wasting syndrome is part of a lipodystrophy that occurs as a complication of highly active antiretroviral therapy. The loss of subcutaneous fat in the cheeks and temples results in a hollow-eyed, bony, emaciated appearance that is characteristic of the results of treatment of human immunodeficiency virus. Cessation of therapy results in a rebound in viral load and subsequent morbidity. The appearance of facial wasting syndrome is optimally treated with custom-designed implants that are made using high-resolution computed tomography combined with surgeon input and computer-aided design and manufacturing technology. Twenty-two patients with facial wasting syndrome were treated using either submalar implants (in more moderate cases) or custom-designed implants (in more severe cases). In each patient, the appearance of volumetric soft tissue restoration was successfully achieved, returning a permanent and more healthful appearance to the face. </ab>
+<no>id: 10; JID: 100883500; ppublish </no>
+<pp>United States</pp>
+<sn>1521-2491; 1521-2491</sn>
+<ad>Department of Head and Neck Surgery, UCLA David Geffen School of Medicine, University of California-Los Angeles, Los Angeles, CA, USA. info@doctorbinder.com</ad>
+<an>PMID: 15545534; 6/6/394 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; IM</sf>
+<do>10.1001/archfaci.6.6.394</do>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>15545534</pmid></reference>
+<reference>
+<rt>Book, Section</rt>
+<sr> Print(0)</sr>
+<id>3084</id>
+<a1>Bloom,D. C.</a1>
+<t1>HSV-1 Latency and the roles of the LATs</t1>
+<jf>Alpha Herpesviruses, Molecular and Cellular Biology</jf>
+<yr>2006</yr>
+<sp>325–42</sp>
+<a2>Sandri-Goldin,R. M.</a2>
+<t2>Alpha Herpesviruses: Molecular and Cellular  Biology</t2>
+<pb>Horizon Press</pb>
+<ds>google</ds>
+<ol>Unknown(0)</ol></reference>
+<reference>
+<rt>Book, Section</rt>
+<sr> Print(0)</sr>
+<id>2877</id>
+<a1>Bloom,D. C.</a1>
+<t1>HSV vectors for gene therapy</t1>
+<jf>Methods in molecular medicine.Humana Press, Inc., Totowa, NJ</jf>
+<yr>1999</yr>
+<sp>369</sp>
+<op>386</op>
+<a2>Brown, S. Moira and MacLean, Alasdair R.</a2>
+<t2>Herpes Simplex Virus Protocols</t2>
+<pb>Humana Press</pb>
+<t3>Methods in Molecular Medicine</t3>
+<ds>google</ds>
+<ol>Unknown(0)</ol></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>2032</id>
+<a1>Bloom,D. C.</a1>
+<t1>HSV LAT and neuronal survival </t1>
+<jf>International reviews of immunology</jf>
+<jo>Int.Rev.Immunol.</jo>
+<yr>2004</yr>
+<fd>Jan-Apr</fd>
+<vo>23</vo>
+<is>1-2</is>
+<sp>187</sp>
+<op>198</op>
+<k1>Animals</k1>
+<k1>Apoptosis</k1>
+<k1>Cell Survival</k1>
+<k1>Genome, Viral</k1>
+<k1>Herpes Simplex/pathology/virology</k1>
+<k1>Herpesvirus 1, Human/genetics/pathogenicity</k1>
+<k1>Herpesvirus 2, Human/genetics/pathogenicity</k1>
+<k1>Humans</k1>
+<k1>Mice</k1>
+<k1>MicroRNAs</k1>
+<k1>Mutation</k1>
+<k1>Neurons/pathology/virology</k1>
+<k1>Rabbits</k1>
+<k1>Transcription, Genetic</k1>
+<k1>Viral Proteins/genetics</k1>
+<ab>Herpes Simplex Virus (HSV) establishes a latent infection within sensory neurons and periodically reactivates in response to stress. HSV&amp;#39;s ability to inhabit neurons for the life of the host involves a number of virally encoded functions that tightly regulate the latency-reactivation cycle, preventing uncontrolled spread of reactivating virus and large-scale death of neurons. The HSV latency-associated transcript (LAT) is a complex transcription unit expressed primarily in neurons containing latent genomes. While mutational analyses indicate LAT is nonessential for viral replication, the 5&amp;#39; exon of LAT greatly enhances reactivation. Several studies have also identified LAT mutations that reduce establishment of latency and enhance virulence. Recently, LAT has also been shown to inhibit cell death through by blocking caspase-8 and caspase-9 pathways. While blocking apoptosis is not essential for either establishment of latency or reactivation, it likely augments these processes and may contribute to HSV&amp;#39;s long-term persistence and spread. </ab>
+<no>id: 6; LR: 20081121; JID: 8712260; 0 (LAT protein, Human herpesvirus 2); 0 (MicroRNAs); 0 (Viral Proteins); 0 (latency associated transcript, herpes simplex virus-1); RF: 31; ppublish </no>
+<pp>United States</pp>
+<sn>0883-0185; 0883-0185</sn>
+<ad>Department of Molecular Genetics &amp; Microbiology, University of Florida College of Medicine, Gainesville, Florida 32610-0266, USA. dbloom@ufl.edu</ad>
+<an>PMID: 14690860; PBD572D6DK8N3TUN [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Review; IM</sf>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>14690860</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>2051</id>
+<a1>Bloom,D. C.</a1>
+<a1>Devi-Rao,G. B.</a1>
+<a1>Hill,J. M.</a1>
+<a1>Stevens,J. G.</a1>
+<a1>Wagner,E. K.</a1>
+<t1>Molecular analysis of herpes simplex virus type 1 during epinephrine-induced reactivation of latently infected rabbits in vivo </t1>
+<jf>Journal of virology</jf>
+<jo>J.Virol.</jo>
+<yr>1994</yr>
+<fd>Mar</fd>
+<vo>68</vo>
+<is>3</is>
+<sp>1283</sp>
+<op>1292</op>
+<k1>Animals</k1>
+<k1>Base Sequence</k1>
+<k1>Capsid/genetics</k1>
+<k1>Capsid Proteins</k1>
+<k1>Cornea/microbiology</k1>
+<k1>Epinephrine/pharmacology</k1>
+<k1>Herpes Simplex/microbiology</k1>
+<k1>Herpesvirus 1, Human/growth &amp; development</k1>
+<k1>In Situ Hybridization</k1>
+<k1>Molecular Sequence Data</k1>
+<k1>Mutation</k1>
+<k1>Neurons/microbiology</k1>
+<k1>RNA, Messenger/biosynthesis/genetics</k1>
+<k1>RNA, Viral/biosynthesis/genetics</k1>
+<k1>Rabbits</k1>
+<k1>Transcription, Genetic</k1>
+<k1>Trigeminal Ganglion/microbiology</k1>
+<k1>Virus Activation/drug effects</k1>
+<k1>Virus Latency/drug effects/genetics</k1>
+<ab>Infectious virus assays and PCR amplification of DNA and RNA were used to investigate herpes simplex virus (HSV) DNA replication and gene expression in the rabbit corneal model for virus reactivation in vivo. We used carefully defined latency-associated transcript-negative (LAT-) and LAT+ promoter mutants of the 17syn+ strain of HSV type 1. In agreement with earlier studies using a more extensive LAT- deletion mutant, the 17 delta Pst(LAT-) virus reactivated with extremely low frequency upon epinephrine induction. In contrast to our findings with murine latency models, amounts of viral DNA recovered from rabbit ganglia latently infected with either LAT+ or LAT- virus were equivalent. Also in contrast with the murine models, no net increase in viral DNA was seen in latently infected rabbit trigeminal ganglia induced to reactivate in vivo by iontophoresis of epinephrine. Despite this, transcription of lytic-phase genes could be detected within 4 h following induction of rabbits latently infected with either LAT+ or LAT- virus; this transcription diminished by 16 h following induction. These results are discussed in relation to models for the mechanism of action of HSV LAT. </ab>
+<no>id: 5; LR: 20091118; GR: AI06236/AI/NIAID NIH HHS/United States; GR: CA11861/CA/NCI NIH HHS/United States; GR: EY06311/EY/NEI NIH HHS/United States; JID: 0113724; 0 (Capsid Proteins); 0 (RNA, Messenger); 0 (RNA, Viral); 0 (VP5 protein, Herpes simplex virus type 1); 51-43-4 (Epinephrine); OID: NLM: PMC236581; ppublish </no>
+<pp>UNITED STATES</pp>
+<sn>0022-538X; 0022-538X</sn>
+<ad>Department of Microbiology and Immunology, UCLA Medical School 90024.</ad>
+<an>PMID: 8107194</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>8107194</pmid>
+<pmcid>PMC236581</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>2057</id>
+<a1>Bloom,D. C.</a1>
+<a1>Edwards,K. M.</a1>
+<a1>Hager,C.</a1>
+<a1>Moyer,R. W.</a1>
+<t1>Identification and characterization of two nonessential regions of the rabbitpox virus genome involved in virulence </t1>
+<jf>Journal of virology</jf>
+<jo>J.Virol.</jo>
+<yr>1991</yr>
+<fd>Mar</fd>
+<vo>65</vo>
+<is>3</is>
+<sp>1530</sp>
+<op>1542</op>
+<k1>Amino Acid Sequence</k1>
+<k1>Animals</k1>
+<k1>Base Sequence</k1>
+<k1>Cells, Cultured</k1>
+<k1>Chick Embryo</k1>
+<k1>DNA, Viral/genetics/isolation &amp; purification</k1>
+<k1>Female</k1>
+<k1>Fibroblasts</k1>
+<k1>Genes, Viral</k1>
+<k1>Lethal Dose 50</k1>
+<k1>Mice</k1>
+<k1>Mice, Inbred BALB C</k1>
+<k1>Molecular Sequence Data</k1>
+<k1>Plasmids</k1>
+<k1>Restriction Mapping</k1>
+<k1>Sequence Homology, Nucleic Acid</k1>
+<k1>Transfection</k1>
+<k1>Vaccinia virus/genetics/pathogenicity</k1>
+<k1>Virulence/genetics</k1>
+<ab>We have developed a means to identify genes associated with particular aspects of virulence. By beginning with an avirulent deletion mutant of rabbitpox virus and systematically reintroducing overlapping segments of the deleted region, we have identified two regions of the viral genome associated with increased virulence in mice. Evaluation of illness has been aided by the exploitation of weight loss as an indicator of pathogenesis. One of the regions identified by this method contains several open reading frames and includes two previously described genes. A third, as yet undescribed, gene within this region potentially encodes a product related to the C5 protein of human complement. The second region of DNA associated with increased virulence is the HindIII M fragment, which contains only one complete open reading frame. Analysis of this previously unreported gene shows coding potential for a polypeptide of 254 amino acids (approximately 25 kDa) which is related to the C4 component of human complement. The elucidation of two new viral genes related to complement components, taken together with the recent report of the biological activity of a poxvirus-encoded complement-binding protein, suggests the importance of interactions of the virus with the complement system during a normal infection. </ab>
+<no>id: 1; LR: 20091118; GENBANK/M59884; GENBANK/M59885; GENBANK/M59886; GENBANK/M59887; GENBANK/M59888; GENBANK/M59889; GENBANK/M59890; GENBANK/M59891; GENBANK/M59892; GENBANK/M60387; GR: AI15722/AI/NIAID NIH HHS/United States; JID: 0113724; 0 (DNA, Viral); OID: NLM: PMC239934; ppublish </no>
+<pp>UNITED STATES</pp>
+<sn>0022-538X; 0022-538X</sn>
+<ad>Department of Immunology and Medical Microbiology, University of Florida, Gainesville 32610-0266.</ad>
+<an>PMID: 1847470</an>
+<la>eng</la>
+<sf>Comparative Study; Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>1847470</pmid>
+<pmcid>PMC239934</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>2008</id>
+<a1>Bloom,D. C.</a1>
+<a1>Giordani,N. V.</a1>
+<a1>Kwiatkowski,D. L.</a1>
+<t1>Epigenetic regulation of latent HSV-1 gene expression </t1>
+<jf>Biochimica et biophysica acta</jf>
+<jo>Biochim.Biophys.Acta</jo>
+<yr>2010</yr>
+<fd>Mar-Apr</fd>
+<vo>1799</vo>
+<is>3-4</is>
+<sp>246</sp>
+<op>256</op>
+<k1>Animals</k1>
+<k1>Base Sequence</k1>
+<k1>Epigenesis, Genetic</k1>
+<k1>Gene Expression Regulation, Viral</k1>
+<k1>Herpesvirus 1, Human/genetics</k1>
+<k1>Humans</k1>
+<k1>MicroRNAs/genetics/metabolism</k1>
+<k1>Molecular Sequence Data</k1>
+<k1>Virus Latency/genetics</k1>
+<ab>Like other alpha-herpesviruses, Herpes Simplex Virus Type 1 (HSV-1) possesses the ability to establish latency in sensory ganglia as a non-integrated, nucleosome-associated episome in the host cell nucleus. Transcription of the genome is limited to the Latency-Associated Transcript (LAT), while the lytic genes are maintained in a transcriptionally repressed state. This partitioning of the genome into areas of active and inactive transcription suggests epigenetic control of HSV-1 latent gene expression. During latency viral transcription is not regulated by DNA methylation but likely by post-translational histone modifications. The LAT region is the only region of the genome enriched in marks indicative of transcriptional permissiveness, specifically dimethyl H3 K4 and acetyl H3 K9, K14, while the lytic genes appear under-enriched in those same marks. In addition, facultative heterochromatin marks, specifically trimethyl H3 K27 and the histone variant macroH2A, are enriched on lytic genes during latency. The distinct epigenetic domains of the LAT and the lytic genes appear to be separated by chromatin insulators. Binding of CTCF, a protein that binds to all known vertebrate insulators, to sites within the HSV-1 genome likely prevents heterochromatic spreading and blocks enhancer activity. When the latent viral genome undergoes stress-induced reactivation, it is possible that CTCF binding and insulator function are abrogated, enabling lytic gene transcription to ensue. In this review we summarize our current understanding of latent HSV-1 epigenetic regulation as it pertains to infections in both the rabbit and mouse models. CTCF insulator function and regulation of histone tail modifications will be discussed. We will also present a current model of how the latent genome is carefully controlled at the epigenetic level and how stress-induced changes to it may trigger reactivation. </ab>
+<no>id: 2; CI: 2009; JID: 0217513; 0 (MicroRNAs); 0 (latency associated transcript, herpes simplex virus-1); RF: 58; NIHMS168471; OID: NLM: NIHMS168471 [Available on 03/01/11]; OID: NLM: PMC2838971 [Available on 03/01/11]; 2009/06/04 [received]; 2009/12/11 [revised]; 2009/12/16 [accepted]; 2010/01/04 [aheadofprint]; ppublish </no>
+<pb>Elsevier B.V</pb>
+<pp>Netherlands</pp>
+<sn>0006-3002; 0006-3002</sn>
+<ad>Department of Molecular Genetics and Microbiology, University of Florida College of Medicine, Gainesville, FL 32610-0266, USA. dbloom@ufl.edu</ad>
+<an>PMID: 20045093; S1874-9399(09)00166-7 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Review; IM</sf>
+<do>10.1016/j.bbagrm.2009.12.001</do>
+<ds>refworks</ds>
+<wp>20100104</wp>
+<ol>Unknown(0)</ol>
+<pmid>20045093</pmid>
+<pmcid>PMC2838971</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>2047</id>
+<a1>Bloom,D. C.</a1>
+<a1>Hill,J. M.</a1>
+<a1>Devi-Rao,G.</a1>
+<a1>Wagner,E. K.</a1>
+<a1>Feldman,L. T.</a1>
+<a1>Stevens,J. G.</a1>
+<t1>A 348-base-pair region in the latency-associated transcript facilitates herpes simplex virus type 1 reactivation </t1>
+<jf>Journal of virology</jf>
+<jo>J.Virol.</jo>
+<yr>1996</yr>
+<fd>Apr</fd>
+<vo>70</vo>
+<is>4</is>
+<sp>2449</sp>
+<op>2459</op>
+<k1>Animals</k1>
+<k1>Base Sequence</k1>
+<k1>Conserved Sequence</k1>
+<k1>Epinephrine/pharmacology</k1>
+<k1>Herpesvirus 1, Human/genetics/physiology</k1>
+<k1>Humans</k1>
+<k1>Mice</k1>
+<k1>Molecular Sequence Data</k1>
+<k1>Mutagenesis, Insertional</k1>
+<k1>Poly A/metabolism</k1>
+<k1>RNA, Viral/physiology</k1>
+<k1>Rabbits</k1>
+<k1>Sequence Deletion</k1>
+<k1>Trinucleotide Repeats</k1>
+<k1>Virus Activation/drug effects/genetics</k1>
+<ab>Latency-associated transcript (LAT) promoter deletion mutants of herpes simplex virus type 1 have a reduced capacity to reactivate following adrenergic induction in the rabbit eye model. We have mapped a reactivation phenotype within LAT and describe the construction of recombinants in which poly(A) addition sites have been placed at intervals within the LAT region to form truncated LAT transcripts. These mutants localize the induced reactivation phenotype to the 5&amp;#39; end of LAT. To further define this region, we constructed a recombinant containing a 348-bp deletion located 217 bp downstream of the transcription start site of the 8.5-kb LAT. This virus, 17delta348, expresses LAT but exhibits a significantly reduced ability to reactivate following epinephrine iontophoresis into the cornea. Quantitative DNA PCR analysis reveals that 17delta 348 establishes a latent infection within rabbit trigeminal ganglia with the same efficiency as does either the rescuant or wild-type virus. The region deleted in 17delta348 encodes three potential translational initiators (ATGs) which we have mutated and demonstrated to be dispensable for epinephrine-induced reactivation. In addition, three smaller deletions within this region have been constructed and were shown to reactivate at wild-type (parent) frequencies. These studies indicate that an undefined portion of the 348-bp region is required to facilitate induced reactivation. Sequence analysis of this 348-bp region revealed a CpG island which extends into the LAT promoter and which possesses homology to conserved elements within the mouse and human XIST transcript encoded on the X chromosome. Possible implications of these elements in the regulation of LAT expression are discussed. </ab>
+<no>id: 1; LR: 20091118; GR: AI06246/AI/NIAID NIH HHS/United States; GR: CA11861/CA/NCI NIH HHS/United States; GR: EY06311/EY/NEI NIH HHS/United States; GR: etc.; JID: 0113724; 0 (RNA, Viral); 24937-83-5 (Poly A); 51-43-4 (Epinephrine); OID: NLM: PMC190088; ppublish </no>
+<pp>UNITED STATES</pp>
+<sn>0022-538X; 0022-538X</sn>
+<ad>Department of Microbiology and Immunology, UCLA School of Medicine, Los Angeles, California 90095, USA.</ad>
+<an>PMID: 8642650</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>8642650</pmid>
+<pmcid>PMC190088</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>2041</id>
+<a1>Bloom,D. C.</a1>
+<a1>Jarman,R. G.</a1>
+<t1>Generation and use of recombinant reporter viruses for study of herpes simplex virus infections in vivo </t1>
+<jf>Methods (San Diego, Calif.)</jf>
+<jo>Methods</jo>
+<yr>1998</yr>
+<fd>Sep</fd>
+<vo>16</vo>
+<is>1</is>
+<sp>117</sp>
+<op>125</op>
+<k1>Animals</k1>
+<k1>Antigens, Viral/immunology</k1>
+<k1>Brain/cytology/virology</k1>
+<k1>Cells, Cultured</k1>
+<k1>DNA, Viral/genetics</k1>
+<k1>Ganglia, Spinal/cytology/virology</k1>
+<k1>Gene Expression Regulation, Viral/genetics</k1>
+<k1>Genes, Reporter/genetics</k1>
+<k1>Herpesvirus 1, Human/pathogenicity</k1>
+<k1>Immunohistochemistry</k1>
+<k1>Mice</k1>
+<k1>Mice, Inbred Strains</k1>
+<k1>Promoter Regions, Genetic/genetics</k1>
+<k1>Rats</k1>
+<k1>Rats, Inbred Strains</k1>
+<k1>Recombination, Genetic/genetics</k1>
+<k1>Transcription, Genetic/genetics</k1>
+<k1>Transfection/genetics</k1>
+<k1>beta-Galactosidase/genetics/metabolism</k1>
+<ab>It has become increasingly clear that the fate of herpes simplex virus (HSV) infections involves complex interactions between the virus and the specific cell types that comprise the tissues of the animal host. No reliable cell culture system for studying the establishment of latency and reactivation exists, and therefore these studies must be performed within animal models. One difficulty in elucidating the molecular regulation of these events is in determining the transcriptional activity of key viral genes during different stages of the infection in vivo. The heterogeneous cell types comprising infected tissues make PCR analysis of tissue homogenates difficult to interpret. The need to characterize expression of multiple transcriptional markers reliably and quantitatively at the level of individual cells is therefore key to determining the interplay between viral and cellular genes during latency and reactivation. Here we discuss the construction and evaluation of HSV reporter viruses that have been used in these analyses. HSV-1 recombinants have been engineered with representative viral promoters driving beta-galactosidase as a reporter. Methodology used to evaluate the levels of gene expression using (1) quantitative enzyme assays, (2) precipitatable substrate assays to localize the positive cells, and (3) immunohistochemistry and fluorescence assays to look at colocalization of markers during in vivo infection is presented. In addition to studying the molecular pathogenesis of HSV, the application of similar reporter viruses to evaluate promoters for targeting various differentiated tissues will be useful in developing these viruses as potential vectors for gene therapy. </ab>
+<no>id: 5; LR: 20081121; CI: Copyright 1998; GR: AI06246/AI/NIAID NIH HHS/United States; JID: 9426302; 0 (Antigens, Viral); 0 (DNA, Viral); EC 3.2.1.23 (beta-Galactosidase); ppublish </no>
+<pb>Academic Press</pb>
+<pp>UNITED STATES</pp>
+<sn>1046-2023; 1046-2023</sn>
+<ad>Department of Microbiology, Arizona State University, Tempe, Arizona, 85287-2701, USA. dcbloom@asu.edu</ad>
+<an>PMID: 9774521; S1046-2023(98)90649-1 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<do>10.1006/meth.1998.0649</do>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>9774521</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>2053</id>
+<a1>Bloom,D. C.</a1>
+<a1>Lokensgard,J. R.</a1>
+<a1>Maidment,N. T.</a1>
+<a1>Feldman,L. T.</a1>
+<a1>Stevens,J. G.</a1>
+<t1>Long-term expression of genes in vivo using non-replicating HSV vectors </t1>
+<jf>Gene therapy</jf>
+<jo>Gene Ther.</jo>
+<yr>1994</yr>
+<vo>1 Suppl 1</vo>
+<sp>S36</sp>
+<op>8</op>
+<k1>Animals</k1>
+<k1>DNA, Viral/analysis</k1>
+<k1>Defective Viruses/genetics/physiology</k1>
+<k1>Gene Expression Regulation, Viral</k1>
+<k1>Hippocampus/virology</k1>
+<k1>Promoter Regions, Genetic</k1>
+<k1>RNA, Viral/analysis</k1>
+<k1>Rats</k1>
+<k1>Recombinant Fusion Proteins/genetics</k1>
+<k1>Repetitive Sequences, Nucleic Acid</k1>
+<k1>Simplexvirus/genetics/physiology</k1>
+<k1>Virus Latency</k1>
+<no>id: 7; LR: 20081121; JID: 9421525; 0 (DNA, Viral); 0 (RNA, Viral); 0 (Recombinant Fusion Proteins); ppublish </no>
+<pp>ENGLAND</pp>
+<sn>0969-7128; 0969-7128</sn>
+<ad>UCLA School of Medicine, USA.</ad>
+<an>PMID: 8542391</an>
+<la>eng</la>
+<sf>Journal Article; IM</sf>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>8542391</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>2048</id>
+<a1>Bloom,D. C.</a1>
+<a1>Maidment,N. T.</a1>
+<a1>Tan,A.</a1>
+<a1>Dissette,V. B.</a1>
+<a1>Feldman,L. T.</a1>
+<a1>Stevens,J. G.</a1>
+<t1>Long-term expression of a reporter gene from latent herpes simplex virus in the rat hippocampus </t1>
+<jf>Brain research.Molecular brain research</jf>
+<jo>Brain Res.Mol.Brain Res.</jo>
+<yr>1995</yr>
+<fd>Jul</fd>
+<vo>31</vo>
+<is>1-2</is>
+<sp>48</sp>
+<op>60</op>
+<k1>Animals</k1>
+<k1>Evaluation Studies as Topic</k1>
+<k1>Gene Expression Regulation, Enzymologic/physiology</k1>
+<k1>Gene Expression Regulation, Viral/physiology</k1>
+<k1>Genes, Reporter</k1>
+<k1>Hippocampus/cytology/metabolism/virology</k1>
+<k1>Histocytochemistry</k1>
+<k1>In Situ Hybridization</k1>
+<k1>Male</k1>
+<k1>Neurons/metabolism</k1>
+<k1>Polymerase Chain Reaction</k1>
+<k1>Rats</k1>
+<k1>Rats, Sprague-Dawley</k1>
+<k1>Simplexvirus/genetics/physiology</k1>
+<k1>Time Factors</k1>
+<k1>Virus Latency/genetics</k1>
+<k1>beta-Galactosidase/analysis/genetics</k1>
+<ab>A problem in utilizing herpes simplex virus (HSV) as a vector for expression of foreign genes in CNS neurons has been the inability to facilitate long-term expression of the engineered genes. Previously, we showed that the murine moloney leukemia virus LTR would drive beta-galactosidase (beta-gal) transcription for extended periods from the latent viral genome in sensory, but not motor neurons. In this communication we further evaluate the utility of the LTR promoter for use in long-term expression vectors. Following stereotactic injection of 8117/43 (an ICP4 minus, non-replicating virus with the LTR driving the beta-gal gene, or KD6 (an ICP4 minus non-replicating virus not expressing beta-gal) into the hippocampus of rats, polymerase chain reaction (PCR) analysis of viral DNA after 2 months indicated that latent infections were established. Assaying by both x-gal staining and reverse transcriptase PCR we demonstrate that (1) beta-gal can be detected for at least 6 months in hippocampal neurons, and (2) although the number of beta-gal transcripts in these cells drops considerably by 2 weeks, they can be detected during the period studied. These studies indicate that the LTR promoter is active and affords long-term expression in the CNS, albeit at comparatively low levels compared to those observed at acute times. </ab>
+<no>id: 2; LR: 20071115; GR: 2 T32 AI07323-07/AI/NIAID NIH HHS/United States; GR: AI-06246/AI/NIAID NIH HHS/United States; GR: NS-30420/NS/NINDS NIH HHS/United States; JID: 8908640; EC 3.2.1.23 (beta-Galactosidase); ppublish </no>
+<pp>NETHERLANDS</pp>
+<sn>0169-328X; 0169-328X</sn>
+<ad>Department of Microbiology and Immunology, UCLA School of Medicine 90024, USA.</ad>
+<an>PMID: 7476033</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>7476033</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>2058</id>
+<a1>Bloom,D. C.</a1>
+<a1>Massung,R.</a1>
+<a1>Savage,L.</a1>
+<a1>Morrison,D. K.</a1>
+<a1>Moyer,R. W.</a1>
+<t1>Recruitment to the cytoplasm of a cellular lamin-like protein from the nucleus during a poxvirus infection </t1>
+<jf>Virology</jf>
+<jo>Virology</jo>
+<yr>1989</yr>
+<fd>Mar</fd>
+<vo>169</vo>
+<is>1</is>
+<sp>115</sp>
+<op>126</op>
+<k1>Amino Acid Sequence</k1>
+<k1>Animals</k1>
+<k1>Antibodies, Monoclonal</k1>
+<k1>Base Sequence</k1>
+<k1>Carcinoma</k1>
+<k1>Cell Line</k1>
+<k1>Cell Nucleus/analysis</k1>
+<k1>Cytoplasm/analysis</k1>
+<k1>DNA/analysis/genetics</k1>
+<k1>Fluorescent Antibody Technique</k1>
+<k1>Humans</k1>
+<k1>Immunoblotting</k1>
+<k1>Lamins</k1>
+<k1>Lung Neoplasms</k1>
+<k1>Molecular Sequence Data</k1>
+<k1>Molecular Weight</k1>
+<k1>Nuclear Proteins/analysis/genetics</k1>
+<k1>Poxviridae/genetics</k1>
+<k1>Recombinant Fusion Proteins/analysis/genetics</k1>
+<k1>Repetitive Sequences, Nucleic Acid</k1>
+<k1>Tumor Cells, Cultured</k1>
+<k1>Vaccinia virus/genetics/physiology</k1>
+<ab>Monoclonal antibodies (Mabs) directed against core proteins of rabbit poxvirus (RPV) have proven effective in the identification of host cell proteins such as RNA polymerase II (Pol II) that may play a role in the infectious process (D. K. Morrison and R. W. Moyer, 1986, Cell 44, 587-596). In this article we describe a Mab that has allowed the detection and characterization of a lamin-like protein derived from the nucleus of the infected cell, which like Pol II is recruited to the cytoplasm following RPV infection. A portion of the gene encoding this protein has been isolated through the screening of a lambda gt11 expression vector library. Sequence analysis of the gene shows it to be derived from a member of the HindIII 1.9-kb repetitive element, a family of mammalian repetitive sequences that are highly conserved. Immunoblot analysis and sequence analysis of the open reading frame show divergent relatedness to certain nuclear lamins. The protein is not, however, one of the three principal lamins characterized to date, but instead appears to be a perinuclear protein related to the highly conserved nuclear lamins that is recruited to the cytoplasm during the infectious process. </ab>
+<no>id: 2; LR: 20071114; GENBANK/M24732; GR: AI-15722/AI/NIAID NIH HHS/United States; GR: CA09085-05/CA/NCI NIH HHS/United States; JID: 0110674; 0 (Antibodies, Monoclonal); 0 (Lamins); 0 (Nuclear Proteins); 0 (Recombinant Fusion Proteins); 9007-49-2 (DNA); ppublish </no>
+<pp>UNITED STATES</pp>
+<sn>0042-6822; 0042-6822</sn>
+<ad>Department of Microbiology, Vanderbilt University, Nashville, Tennessee 37232.</ad>
+<an>PMID: 2538026</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>2538026</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>2055</id>
+<a1>Bloom,D. C.</a1>
+<a1>Stern,R.</a1>
+<a1>Duke,M.</a1>
+<a1>Smith,D.</a1>
+<a1>Moyer,R. W.</a1>
+<t1>A revised HindIII map and sequence analysis of a large &amp;#39;left-hand&amp;#39; non-essential region of the rabbit poxvirus genome </t1>
+<jf>Virus research</jf>
+<jo>Virus Res.</jo>
+<yr>1993</yr>
+<fd>May</fd>
+<vo>28</vo>
+<is>2</is>
+<sp>125</sp>
+<op>140</op>
+<k1>Amino Acid Sequence</k1>
+<k1>Animals</k1>
+<k1>DNA, Viral/genetics</k1>
+<k1>Deoxyribonuclease HindIII</k1>
+<k1>Molecular Sequence Data</k1>
+<k1>Open Reading Frames/genetics</k1>
+<k1>Rabbits</k1>
+<k1>Restriction Mapping</k1>
+<k1>Sequence Analysis, DNA</k1>
+<k1>Sequence Homology, Amino Acid</k1>
+<k1>Vaccinia virus/genetics/pathogenicity</k1>
+<k1>Viral Proteins/genetics</k1>
+<ab>Sequence analysis of a 21.5 kb region of the left-hand non-essential region of rabbit poxvirus (RPV) was performed to analyze the structure and gene organization of this region. Initial mapping and cloning studies revealed that the early published HindIII maps are incorrect in that the location of the terminal HindIII B and C fragments, as previously published, are reversed. The sequence of this region was compared to similar regions of several strains of vaccinia virus. The results indicate that this region of RPV has a high degree of homology with a similar region of vaccinia. Analysis of the translated open reading frames (ORFs) has facilitated the detection of several previously unreported ORFs related to human complement proteins. In addition, two defective copies of a homologue of the 77 kDa cowpox virus (CPV) host range gene which allows CPV to grow on Chinese hamster ovary cells have been detected, suggesting a gene duplication has occurred. However, one copy of this gene is segmented into three separate ORFs. Analysis has also identified a large number of indirect repeat elements. A possible role of these repeats in the generation of deletions and gene duplications is suggested. </ab>
+<no>id: 9; LR: 20071114; GENBANK/M60387; GR: AI15722/AI/NIAID NIH HHS/United States; JID: 8410979; 0 (DNA, Viral); 0 (Viral Proteins); EC 3.1.21.- (Deoxyribonuclease HindIII); ppublish </no>
+<pp>NETHERLANDS</pp>
+<sn>0168-1702; 0168-1702</sn>
+<ad>Department of Immunology and Medical Microbiology, University of Florida, Gainesville 32610.</ad>
+<an>PMID: 8391191</an>
+<la>eng</la>
+<sf>Comparative Study; Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>8391191</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>2050</id>
+<a1>Bloom,D. C.</a1>
+<a1>Stevens,J. G.</a1>
+<t1>Neuron-specific restriction of a herpes simplex virus recombinant maps to the UL5 gene </t1>
+<jf>Journal of virology</jf>
+<jo>J.Virol.</jo>
+<yr>1994</yr>
+<fd>Jun</fd>
+<vo>68</vo>
+<is>6</is>
+<sp>3761</sp>
+<op>3772</op>
+<k1>Amino Acid Sequence</k1>
+<k1>Animals</k1>
+<k1>Base Sequence</k1>
+<k1>Cells, Cultured</k1>
+<k1>Chromosome Mapping</k1>
+<k1>DNA, Viral/genetics</k1>
+<k1>Ganglia, Spinal/microbiology</k1>
+<k1>Genes, Viral</k1>
+<k1>Herpes Simplex/etiology/microbiology</k1>
+<k1>Herpesvirus 1, Human/genetics/pathogenicity/physiology</k1>
+<k1>Herpesvirus 2, Human/genetics/pathogenicity/physiology</k1>
+<k1>Mice</k1>
+<k1>Molecular Sequence Data</k1>
+<k1>Neurons, Afferent/microbiology</k1>
+<k1>Recombination, Genetic</k1>
+<k1>Sequence Homology, Amino Acid</k1>
+<k1>Virulence/genetics</k1>
+<k1>Virus Replication/genetics</k1>
+<ab>We have previously shown that, when compared with either parent, a herpes simplex virus type 1/herpes simplex virus type 2 intertypic recombinant (R13-1) is attenuated by 10,000-fold with respect to neurovirulence in mice. Despite this, after intracranial inoculation, R13-1 replicated to titers of 10(5) PFU per brain. We present evidence that the restriction is specific for replication in neurons and have taken a three-step approach in determining the basis of the attenuation by (i) characterizing cellular tropism of the virus in both central and peripheral nervous systems, (ii) defining where in the viral replication cycle the restriction is manifest, and (iii) identifying the genetic basis of the restriction through marker rescue analysis. Following inoculation into the animal, R13-1 viral antigens predominate in nonneuronal cells, and the block to replication in neurons was found to be beyond the level of adsorption and penetration. Despite the restricted replication within neurons, the virus established a latent infection in spinal ganglia and could be reactivated by in vitro cocultivation of the ganglia. In studies carried out in cell culture, R13-1 was found to replicate normally in mouse embryo fibroblasts and primary mouse glial cells but was restricted by 1,000-fold in primary mouse neurons and PC12 cells. R13-1 appeared to produce normal levels of early RNA in these cells, but production of DNA and late RNA was less than that of the wild type. Marker rescue analysis localized the fragment responsible for restoring neurovirulence to UL5, a component of the origin-binding complex implicated in replication of the viral genome. Our results with this virus, with a cell-specific restriction, suggest that a neuron-specific component is involved in viral replication. </ab>
+<no>id: 4; LR: 20091118; GR: AI-06246/AI/NIAID NIH HHS/United States; GR: NS-30420/NS/NINDS NIH HHS/United States; JID: 0113724; 0 (DNA, Viral); OID: NLM: PMC236881; ppublish </no>
+<pp>UNITED STATES</pp>
+<sn>0022-538X; 0022-538X</sn>
+<ad>Department of Microbiology and Immunology, University of California, School of Medicine, Los Angeles 90024.</ad>
+<an>PMID: 8189514</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>8189514</pmid>
+<pmcid>PMC236881</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>2042</id>
+<a1>Bloom,D. C.</a1>
+<a1>Stevens,J. G.</a1>
+<a1>Hill,J. M.</a1>
+<a1>Tran,R. K.</a1>
+<t1>Mutagenesis of a cAMP response element within the latency-associated transcript promoter of HSV-1 reduces adrenergic reactivation </t1>
+<jf>Virology</jf>
+<jo>Virology</jo>
+<yr>1997</yr>
+<fd>Sep 15</fd>
+<vo>236</vo>
+<is>1</is>
+<sp>202</sp>
+<op>207</op>
+<k1>Actins/biosynthesis</k1>
+<k1>Animals</k1>
+<k1>Base Sequence</k1>
+<k1>Binding Sites</k1>
+<k1>Cells, Cultured</k1>
+<k1>Cyclic AMP/pharmacology</k1>
+<k1>Cyclic AMP Response Element-Binding Protein/metabolism</k1>
+<k1>DNA Primers</k1>
+<k1>DNA, Viral/biosynthesis/chemistry/isolation &amp; purification</k1>
+<k1>Herpes Simplex</k1>
+<k1>Molecular Sequence Data</k1>
+<k1>Mutagenesis, Site-Directed</k1>
+<k1>Polymerase Chain Reaction</k1>
+<k1>Promoter Regions, Genetic</k1>
+<k1>Rabbits</k1>
+<k1>Simplexvirus/genetics/growth &amp; development/isolation &amp; purification</k1>
+<k1>Skin</k1>
+<k1>Transcription, Genetic</k1>
+<k1>Trigeminal Ganglion/virology</k1>
+<k1>Virus Activation</k1>
+<ab>Mutagenesis of a cyclic AMP response element (CRE) within the LAT promoter of HSV-1 reduces the ability of LAT expression to be induced in transient assays, but has only a minimal impact on reactivation of the virus in in vitro systems. Here we show that a CRE mutation results in a significant reduction of adrenergically induced reactivation in vivo in the rabbit eye model. Spontaneous reactivation frequencies were also reduced. In addition, we demonstrate that this mutation has no effect on the amount of LAT expressed during latency when compared with the parent, 17syn+, and the rescuant. These results indicate a greater effect of CRE on induced reactivation in vivo than in in vitro systems, but also suggest that the CRE in the LAT promoter is not autonomous in conducting the reactivation signal. </ab>
+<no>id: 6; LR: 20081121; CI: Copyright 1997; GR: AI06246/AI/NIAID NIH HHS/United States; GR: EY-2377/EY/NEI NIH HHS/United States; GR: EY06311/EY/NEI NIH HHS/United States; JID: 0110674; 0 (Actins); 0 (Cyclic AMP Response Element-Binding Protein); 0 (DNA Primers); 0 (DNA, Viral); 60-92-4 (Cyclic AMP); ppublish </no>
+<pb>Academic Press</pb>
+<pp>UNITED STATES</pp>
+<sn>0042-6822; 0042-6822</sn>
+<ad>Department of Microbiology, Arizona State University, Tempe, Arizona 85287, USA. dcbloom@asuvm.inre.asu.edu</ad>
+<an>PMID: 9299632; S0042-6822(97)98723-7 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<do>10.1006/viro.1997.8723</do>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>9299632</pmid></reference>
+<reference>
+<rt>Book, Section</rt>
+<sr> Print(0)</sr>
+<id>3085</id>
+<a1>Bloom,David C.</a1>
+<t1>The  Herpes Simplex Viruses</t1>
+<yr>2008</yr>
+<sp>212-224</sp>
+<a2>Shoshkes Reiss,Carol</a2>
+<t2>Neurotropic Viral  Infections</t2>
+<pb>Cambridge University Press</pb>
+<pp>Cambridge, UK</pp>
+<ol>Unknown(0)</ol></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>3081</id>
+<a1>Bloom,David C.</a1>
+<a1>Jarman,Richard G.</a1>
+<t1>Generation and Use of Recombinant Reporter Viruses for Study of Herpes Simplex Virus Infectionsin Vivo</t1>
+<jf>Methods</jf>
+<jo>Methods</jo>
+<yr>1998</yr>
+<fd>9</fd>
+<vo>16</vo>
+<is>1</is>
+<sp>117</sp>
+<op>125</op>
+<sn>1046-2023</sn>
+<do>DOI: 10.1006/meth.1998.0649</do>
+<ul>http://www.sciencedirect.com/science/article/B6WN5-45S487S-1F/2/66d7e6d057d29a50e7eeccea271d95aa</ul>
+<ol>Unknown(0)</ol></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>2056</id>
+<a1>Brown,C. K.</a1>
+<a1>Bloom,D. C.</a1>
+<a1>Moyer,R. W.</a1>
+<t1>The nature of naturally occurring mutations in the hemagglutinin gene of vaccinia virus and the sequence of immediately adjacent genes </t1>
+<jf>Virus genes</jf>
+<jo>Virus Genes</jo>
+<yr>1991</yr>
+<fd>Jul</fd>
+<vo>5</vo>
+<is>3</is>
+<sp>235</sp>
+<op>242</op>
+<k1>Amino Acid Sequence</k1>
+<k1>Base Sequence</k1>
+<k1>Gene Expression Regulation, Viral</k1>
+<k1>Genes, Viral</k1>
+<k1>Hemagglutinins, Viral/genetics</k1>
+<k1>Molecular Sequence Data</k1>
+<k1>Mutation</k1>
+<k1>Open Reading Frames</k1>
+<k1>Sequence Homology, Nucleic Acid</k1>
+<k1>Vaccinia virus/genetics</k1>
+<ab>The expression of the vaccinia IHD-J hemagglutinin (HA) gene is regulated by two promoters, an early/late and a second distinct late promoter. The first promoter results in transcripts that begin early and are synthesized throughout the infection. All transcripts from this promoter initiate at the same 5&amp;#39; site. A second promoter is only active late in infection and initiates transcription some distance upstream of the first promoter. We have previously shown that the transcriptional start site controlled by this second, &amp;quot;late only&amp;quot; promoter lies within the coding sequence of an upstream reading frame (p16-ORF), whereas the termination of early transcription of the HA gene utilizes a transcription termination signal (TTTTTNT) located just beyond the coding region of an immediately downstream reading frame (p17-ORF). In order to assist our understanding of HA gene expression, we report here the sequence of these two ORFs adjacent to the HA gene. The HA-ORF itself consists of 945 bp, whereas the upstream p16-ORF consists of 429 bp and the downstream p17-ORF of 453 bp, sufficient to encode polypeptides of 16 and 17 kD, respectively. While many strains of vaccinia are HA+, rabbitpox virus and the variant of vaccinia IHD-J, designated IHD-W, are HA-. We report and compare here the HA gene sequences of wild-type rabbit poxvirus, two spontaneous HA+ revertants of rabbit poxvirus, and the HA- vaccinia strain IHD-W to that of the previously sequenced (1) prototype HA+ IHD-J strain of vaccinia. All differences were found to occur within the HA open reading frame.(ABSTRACT TRUNCATED AT 250 WORDS) </ab>
+<no>id: 10; LR: 20071114; GENBANK/UNKNOWN; GR: AI 15722/AI/NIAID NIH HHS/United States; JID: 8803967; 0 (Hemagglutinins, Viral); ppublish </no>
+<pp>UNITED STATES</pp>
+<sn>0920-8569; 0920-8569</sn>
+<ad>Department of Immunology and Medical Microbiology, College of Medicine, University of Florida, Gainesville 32610.</ad>
+<an>PMID: 1771764</an>
+<la>eng</la>
+<sf>Comparative Study; Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>1771764</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>2014</id>
+<a1>Clement,C.</a1>
+<a1>Popp,M. P.</a1>
+<a1>Bloom,D. C.</a1>
+<a1>Schultz,G.</a1>
+<a1>Liu,L.</a1>
+<a1>Neumann,D. M.</a1>
+<a1>Bhattacharjee,P. S.</a1>
+<a1>Hill,J. M.</a1>
+<t1>Microarray analysis of host gene expression for comparison between naive and HSV-1 latent rabbit trigeminal ganglia </t1>
+<jf>Molecular vision</jf>
+<jo>Mol.Vis.</jo>
+<yr>2008</yr>
+<fd>Jul 3</fd>
+<vo>14</vo>
+<sp>1209</sp>
+<op>1221</op>
+<k1>Animals</k1>
+<k1>Down-Regulation/genetics</k1>
+<k1>Gene Expression Profiling</k1>
+<k1>Herpesvirus 1, Human/physiology</k1>
+<k1>Oligonucleotide Array Sequence Analysis</k1>
+<k1>Rabbits</k1>
+<k1>Reverse Transcriptase Polymerase Chain Reaction</k1>
+<k1>Trigeminal Ganglion/metabolism/virology</k1>
+<k1>Up-Regulation</k1>
+<k1>Virus Latency/genetics</k1>
+<ab>PURPOSE: To analyze the rabbit host global gene expression patterns in uninfected and herpes simplex virus type 1 (HSV-1) latent trigeminal ganglia (TG) for identification of host response-initiated transcriptional changes during the maintenance of viral latency. METHODS: The corneas of eight-week-old New Zealand White rabbits were scarified and inoculated with HSV-1 strain McKrae, 5x10(5) plaque forming units/eye. Corneal infection was verified by slit-lamp examination. Prior to sacrifice at 30 days post infection, ocular swabs confirmed no infectious virus was present. TG were aseptically removed from rabbits and placed in RNA stabilization solution. Host RNA was isolated from two groups of TG, uninfected and HSV-1 latent infected, and used to create labeled cRNA. Labeled cRNA was hybridized to two new and novel custom oligonucleotide rabbit arrays, containing a total of 3,123 probes for rabbit genes. RESULTS: The rabbit TG expressed approximately 80% of genes out of a total of 3,123. A one-way ANOVA performed on the log2 transformed signal ratios showed 611 genes were significantly altered (p</ab>
+<no>id: 8; LR: 20091118; GR: AI48633/AI/NIAID NIH HHS/United States; GR: EY006311/EY/NEI NIH HHS/United States; GR: EY02377/EY/NEI NIH HHS/United States; GR: F32EY016316/EY/NEI NIH HHS/United States; JID: 9605351; OID: NLM: PMC2443748; 2007/08/13 [received]; 2008/04/03 [accepted]; epublish </no>
+<pp>United States</pp>
+<sn>1090-0535; 1090-0535</sn>
+<ad>Department of Ophthalmology, New Orleans, LA 70112, USA.</ad>
+<an>PMID: 18615202</an>
+<la>eng</la>
+<sf>Comparative Study; Journal Article; Research Support, N.I.H., Extramural; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<ds>refworks</ds>
+<wp>20080703</wp>
+<ol>Unknown(0)</ol>
+<pmid>18615202</pmid>
+<pmcid>PMC2443748</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>2023</id>
+<a1>Corso,T. D.</a1>
+<a1>Torres,G.</a1>
+<a1>Goulah,C.</a1>
+<a1>Roy,I.</a1>
+<a1>Gambino,A. S.</a1>
+<a1>Nayda,J.</a1>
+<a1>Buckley,T.</a1>
+<a1>Stachowiak,E. K.</a1>
+<a1>Bergey,E. J.</a1>
+<a1>Pudavar,H.</a1>
+<a1>Dutta,P.</a1>
+<a1>Bloom,D. C.</a1>
+<a1>Bowers,W. J.</a1>
+<a1>Stachowiak,M. K.</a1>
+<t1>Assessment of viral and non-viral gene transfer into adult rat brains using HSV-1, calcium phosphate and PEI-based methods </t1>
+<jf>Folia morphologica</jf>
+<jo>Folia.Morphol.(Warsz)</jo>
+<yr>2005</yr>
+<fd>Aug</fd>
+<vo>64</vo>
+<is>3</is>
+<sp>130</sp>
+<op>144</op>
+<k1>Animals</k1>
+<k1>Animals, Newborn</k1>
+<k1>Brain/metabolism/pathology/virology</k1>
+<k1>Calcium Phosphates/chemistry</k1>
+<k1>Cells, Cultured</k1>
+<k1>Cricetinae</k1>
+<k1>Genetic Vectors</k1>
+<k1>Herpesvirus 1, Human/genetics</k1>
+<k1>Mice</k1>
+<k1>NIH 3T3 Cells</k1>
+<k1>Nanotechnology</k1>
+<k1>Parkinson Disease/etiology</k1>
+<k1>Polyethyleneimine/chemistry</k1>
+<k1>Rats</k1>
+<k1>Receptor Protein-Tyrosine Kinases/chemistry/genetics/metabolism</k1>
+<k1>Receptor, Fibroblast Growth Factor, Type 1</k1>
+<k1>Receptors, Fibroblast Growth Factor/chemistry/genetics/metabolism</k1>
+<k1>Substantia Nigra/metabolism/virology</k1>
+<k1>Transduction, Genetic/methods</k1>
+<ab>CNS gene transfer could provide new approaches to the modelling of neurodegenerative diseases and devising potential therapies. One such disorder is Parkinson&amp;#39;s disease (PD), in which dysfunction of several different metabolic processes has been implicated. Here we review the literature on gene transfer systems based on herpes simplex virus type 1 (HSV-1) and non-viral polyethyleneimine (PEI) and calcium phosphate nanoparticle methods. We also assess the usefulness of various CNS gene delivery methods and present some of our own data to exemplify such usefulness. Our data result from vectors stereotaxically introduced to the substantia nigra (SN) of adult rats and evaluated 1 week and/or 1 month post injection using histochemical methods to assess recombinant ss-galactosidase enzyme activity. Gene transfer using PEI or calcium phosphate-mediated transfections was observed for both methods and PEI was comparable to that of HSV-1 amplicon. Our data show that the amplicon delivery was markedly increased when packaged with a helper virus and was similar to the expression profile achieved with a full-size replication-defective HSV-1 recombinant (8117/43). We also examine whether PEI or HSV-1 amplicon-mediated gene transfer could facilitate assessment of the biological effects induced by a dominant negative FGF receptor-1 mutant to model the reduced FGF signalling thought to occur in Parkinson&amp;#39;s disease. </ab>
+<no>id: 7; LR: 20091119; GR: NS43621-01/NS/NINDS NIH HHS/United States; JID: 0374620; 0 (Calcium Phosphates); 0 (Receptors, Fibroblast Growth Factor); 10103-46-5 (calcium phosphate); 9002-98-6 (Polyethyleneimine); EC 2.7.1.112 (Fgfr1 protein, mouse); EC 2.7.1.112 (Fgfr1 protein, rat); EC 2.7.10.1 (Receptor Protein-Tyrosine Kinases); EC 2.7.10.1 (Receptor, Fibroblast Growth Factor, Type 1); ppublish </no>
+<pp>Poland</pp>
+<sn>0015-5659; 0015-5659</sn>
+<ad>Molecular and Structural Neurobiology and Gene Therapy Program, SUNY, University at Buffalo, Buffalo, NY 14214, USA.</ad>
+<an>PMID: 16228947</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, N.I.H., Extramural; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, Non-P.H.S.; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>16228947</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>2024</id>
+<a1>Corso,T. D.</a1>
+<a1>Torres,G.</a1>
+<a1>Goulah,C.</a1>
+<a1>Roy,I.</a1>
+<a1>Gambino,A. S.</a1>
+<a1>Nayda,J.</a1>
+<a1>Buckley,T.</a1>
+<a1>Stachowiak,E. K.</a1>
+<a1>Bergey,E. J.</a1>
+<a1>Pudavar,H.</a1>
+<a1>Dutta,P.</a1>
+<a1>Bloom,D. C.</a1>
+<a1>Bowers,W. J.</a1>
+<a1>Stachowiak,M. K.</a1>
+<t1>Transfection of tyrosine kinase deleted FGF receptor-1 into rat brain substantia nigra reduces the number of tyrosine hydroxylase expressing neurons and decreases concentration levels of striatal dopamine </t1>
+<jf>Brain research.Molecular brain research</jf>
+<jo>Brain Res.Mol.Brain Res.</jo>
+<yr>2005</yr>
+<fd>Oct 3</fd>
+<vo>139</vo>
+<is>2</is>
+<sp>361</sp>
+<op>366</op>
+<k1>Animals</k1>
+<k1>Dopamine/metabolism</k1>
+<k1>Gene Expression Regulation/drug effects/physiology</k1>
+<k1>Herpesvirus 1, Human/physiology</k1>
+<k1>Male</k1>
+<k1>Microinjections/methods</k1>
+<k1>Mutagenesis/physiology</k1>
+<k1>Neurons/metabolism/virology</k1>
+<k1>Polyethyleneimine/pharmacology</k1>
+<k1>Protein-Tyrosine Kinases/deficiency</k1>
+<k1>Rats</k1>
+<k1>Rats, Inbred F344</k1>
+<k1>Receptor, Fibroblast Growth Factor, Type 1/genetics/metabolism</k1>
+<k1>Substantia Nigra/cytology/metabolism/virology</k1>
+<k1>Time Factors</k1>
+<k1>Transfection/methods</k1>
+<k1>Tyrosine 3-Monooxygenase/metabolism</k1>
+<k1>beta-Galactosidase/metabolism</k1>
+<ab>The effects of HSV-1 amplicon and polyethyleneimine (PEI)-mediated transfection of dominant negative FGF receptor-1 mutant FGFR1(TK-) into the rat brain substantia nigra (SN) were examined in vivo to model the reduced FGF signaling documented to occur in Parkinson&amp;#39;s disease. The number of SN neurons that expressed tyrosine hydroxylase (TH) was significantly reduced following HSV-1 FGFR1(TK-) intranigral delivery and similar changes were observed after PEI-mediated FGFR1(TK-) transfections. Further, we also observed a significantly lower striatal dopamine content following the PEI transfection of FGFR1(TK-). Thus, we conclude that reduced FGF signaling in the SN of Parkinsonian patients could play a role in the impaired dopaminergic transmission associated with the degenerative disease. </ab>
+<no>id: 8; LR: 20091119; GR: NS43621-01/NS/NINDS NIH HHS/United States; JID: 8908640; 9002-98-6 (Polyethyleneimine); EC 1.14.16.2 (Tyrosine 3-Monooxygenase); EC 2.7.1.112 (Fgfr1 protein, rat); EC 2.7.10.1 (Protein-Tyrosine Kinases); EC 2.7.10.1 (Receptor, Fibroblast Growth Factor, Type 1); EC 3.2.1.23 (beta-Galactosidase); 2004/10/16 [received]; 2005/05/26 [revised]; 2005/05/27 [accepted]; ppublish </no>
+<pp>Netherlands</pp>
+<sn>0169-328X; 0169-328X</sn>
+<ad>Molecular and Structural Neurobiology and Gene Therapy Program, University at Buffalo, SUNY, Buffalo, NY 14260, USA.</ad>
+<an>PMID: 16039006; S0169-328X(05)00252-4 [pii]</an>
+<la>eng</la>
+<sf>Comparative Study; Journal Article; Research Support, N.I.H., Extramural; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, Non-P.H.S.; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<do>10.1016/j.molbrainres.2005.05.032</do>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>16039006</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>2043</id>
+<a1>Devi-Rao,G. B.</a1>
+<a1>Aguilar,J. S.</a1>
+<a1>Rice,M. K.</a1>
+<a1>Garza,H. H.,Jr</a1>
+<a1>Bloom,D. C.</a1>
+<a1>Hill,J. M.</a1>
+<a1>Wagner,E. K.</a1>
+<t1>Herpes simplex virus genome replication and transcription during induced reactivation in the rabbit eye </t1>
+<jf>Journal of virology</jf>
+<jo>J.Virol.</jo>
+<yr>1997</yr>
+<fd>Sep</fd>
+<vo>71</vo>
+<is>9</is>
+<sp>7039</sp>
+<op>7047</op>
+<k1>Adrenergic Agonists/pharmacology</k1>
+<k1>Animals</k1>
+<k1>Capsid/genetics</k1>
+<k1>Capsid Proteins</k1>
+<k1>Cells, Cultured</k1>
+<k1>Cercopithecus aethiops</k1>
+<k1>Cornea/virology</k1>
+<k1>DNA Replication</k1>
+<k1>DNA, Viral/biosynthesis</k1>
+<k1>Disease Models, Animal</k1>
+<k1>Epinephrine/pharmacology</k1>
+<k1>Genome, Viral</k1>
+<k1>Herpesvirus 1, Human/genetics/growth &amp; development/physiology</k1>
+<k1>Humans</k1>
+<k1>Keratinocytes/cytology/virology</k1>
+<k1>Polymerase Chain Reaction</k1>
+<k1>RNA, Viral/biosynthesis</k1>
+<k1>Rabbits</k1>
+<k1>Transcription, Genetic</k1>
+<k1>Trigeminal Ganglion/virology</k1>
+<k1>Vero Cells</k1>
+<k1>Virus Activation</k1>
+<k1>Virus Latency</k1>
+<k1>Virus Replication</k1>
+<ab>PCR analysis of herpes simplex virus (HSV) genome replication and productive-cycle transcription was used to examine the role of the cornea in the latency-associated transcript (LAT)-mediated reactivation of HSV type 1 (HSV-1) in the rabbit eye model. The reduced relative reactivation frequency of 17 delta Pst (a LAT- virus) compared to those of wild-type and LAT+ rescuants correlated with reduced levels of viral DNA and transcription in the cornea following epinephrine induction. The timing of virus appearance in the cornea was most consistent with tissue peripheral to the cornea itself mediating a LAT-sensitive step in the reactivation process. Specific results include the following. (i) While viral DNA was found in the corneas of rabbits latently infected with either the LAT+ or LAT- virus prior to and during the first 16 to 24 h following induction, more was found in animals infected with the LAT+ virus. (ii) A significant increase in levels of viral DNA occurred 20 to 168 h following induction. (iii) The average relative amount of viral DNA was lower at all time points following reactivation of animals infected with the LAT- virus. (iv) Expression of productive-cycle transcripts could be detected in corneas of some rabbits latently infected with either the LAT+ or LAT- virus, and the amount recovered and the timing of appearance differed during the reactivation of rabbits latently infected with the LAT+ or LAT- virus. (v) Despite the reduced recoveries of LAT- virus DNA and productive-cycle transcripts in reactivating corneas in vivo compared to those of their LAT+ counterparts, such differences were not detected in cultured keratinocytes or in experiments in which relatively high titers of virus were superinfected into the eyes of latently infected rabbits. (vi) A number of LAT(+)-virus-infected rabbits expressed LAT in corneas isolated from uninduced rabbits. When seen, its amount was significantly higher than that of a productive-cycle (VP5) transcript. </ab>
+<no>id: 7; LR: 20091118; GR: AI06245/AI/NIAID NIH HHS/United States; GR: CA11861/CA/NCI NIH HHS/United States; GR: EY06789/EY/NEI NIH HHS/United States; GR: etc.; JID: 0113724; 0 (Adrenergic Agonists); 0 (Capsid Proteins); 0 (DNA, Viral); 0 (RNA, Viral); 0 (VP5 protein, Herpes simplex virus type 1); 51-43-4 (Epinephrine); OID: NLM: PMC191991; ppublish </no>
+<pp>UNITED STATES</pp>
+<sn>0022-538X; 0022-538X</sn>
+<ad>Department of Molecular Biology and Biochemistry, University of California-Irvine 92697-3900, USA.</ad>
+<an>PMID: 9261434</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>9261434</pmid>
+<pmcid>PMC191991</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>2052</id>
+<a1>Devi-Rao,G. B.</a1>
+<a1>Bloom,D. C.</a1>
+<a1>Stevens,J. G.</a1>
+<a1>Wagner,E. K.</a1>
+<t1>Herpes simplex virus type 1 DNA replication and gene expression during explant-induced reactivation of latently infected murine sensory ganglia </t1>
+<jf>Journal of virology</jf>
+<jo>J.Virol.</jo>
+<yr>1994</yr>
+<fd>Mar</fd>
+<vo>68</vo>
+<is>3</is>
+<sp>1271</sp>
+<op>1282</op>
+<k1>Animals</k1>
+<k1>Base Sequence</k1>
+<k1>Cells, Cultured</k1>
+<k1>DNA, Viral/biosynthesis</k1>
+<k1>Ganglia, Sensory/microbiology</k1>
+<k1>Herpesvirus 1, Human/genetics/growth &amp; development</k1>
+<k1>Mice</k1>
+<k1>Molecular Sequence Data</k1>
+<k1>Polymerase Chain Reaction</k1>
+<k1>RNA, Messenger/analysis</k1>
+<k1>Rabbits</k1>
+<k1>Transcription, Genetic</k1>
+<k1>Trigeminal Ganglion/microbiology</k1>
+<k1>Virus Activation</k1>
+<k1>Virus Latency</k1>
+<ab>Infectious virus assays and PCR amplification of DNA and RNA were used to investigate herpes simplex virus DNA replication and gene expression in two murine in vitro models for virus reactivation. We examined latent infections with wild-type (wt), precisely defined latency-associated transcript-negative (LAT-) mutants, and LAT+ rescuants of these mutants of the 17syn+ strain of virus in both murine trigeminal and lumbosacral ganglia and of the KOS(M) strain in the latter. In explants of ganglia latently infected with the LAT- mutant of strain 17syn+ virus, a reduction in number of cultures exhibiting cytopathic effects due to virus reactivation and measurable delays in virus recovery were observed compared with wt or the LAT+ rescuant. This LAT-specific effect was not seen in explants of lumbosacral ganglia latently infected with mutants derived from the KOS(M) strain of virus. Although there was appreciable variation between individual animals, no significant difference between LAT+ and LAT- virus in time of onset of viral DNA replication in explanted ganglia was seen with use of either virus strain. There was a slight decrease in the relative amount of viral DNA recovered compared with internal cellular controls in latently infected ganglia harboring the LAT- mutant of 17syn+ compared with the wt virus or the LAT+ rescuant. This reduced relative amount ranged from 0 to as much as 50% but averaged 20%. Such differences were not seen in infections with KOS(M)-derived mutants. In contrast, although expression of productive-cycle transcripts could be detected within 4 h following explant cultivation of latently infected ganglia, no differences between LAT+ and LAT- viruses could be seen. As discussed, these data place specific constraints on possible models for the role of LAT expression in in vitro reactivation systems. </ab>
+<no>id: 6; LR: 20091118; GR: AI06236/AI/NIAID NIH HHS/United States; GR: CA11861/CA/NCI NIH HHS/United States; JID: 0113724; 0 (DNA, Viral); 0 (RNA, Messenger); OID: NLM: PMC236580; ppublish </no>
+<pp>UNITED STATES</pp>
+<sn>0022-538X; 0022-538X</sn>
+<ad>Department of Molecular Biology and Biochemistry, University of California, Irvine 92717.</ad>
+<an>PMID: 8107193</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>8107193</pmid>
+<pmcid>PMC236580</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>2016</id>
+<a1>Giordani,N. V.</a1>
+<a1>Neumann,D. M.</a1>
+<a1>Kwiatkowski,D. L.</a1>
+<a1>Bhattacharjee,P. S.</a1>
+<a1>McAnany,P. K.</a1>
+<a1>Hill,J. M.</a1>
+<a1>Bloom,D. C.</a1>
+<t1>During herpes simplex virus type 1 infection of rabbits, the ability to express the latency-associated transcript increases latent-phase transcription of lytic genes </t1>
+<jf>Journal of virology</jf>
+<jo>J.Virol.</jo>
+<yr>2008</yr>
+<fd>Jun</fd>
+<vo>82</vo>
+<is>12</is>
+<sp>6056</sp>
+<op>6060</op>
+<k1>Animals</k1>
+<k1>Cornea/virology</k1>
+<k1>Gene Expression/genetics</k1>
+<k1>Genes, Viral/physiology</k1>
+<k1>Herpesvirus 1, Human/genetics/physiology</k1>
+<k1>Rabbits</k1>
+<k1>Transcription, Genetic</k1>
+<k1>Trigeminal Ganglion/virology</k1>
+<k1>Virus Latency/physiology</k1>
+<ab>Trigeminal ganglia (TG) from rabbits latently infected with either wild-type herpes simplex virus type 1 (HSV-1) or the latency-associated transcript (LAT) promoter deletion mutant 17DeltaPst were assessed for their viral chromatin profile and transcript abundance. The wild-type 17syn+ genomes were more enriched in the transcriptionally permissive mark dimethyl H3 K4 than were the 17DeltaPst genomes at the 5&amp;#39; exon and ICP0 and ICP27 promoters. Reverse transcription-PCR analysis revealed significantly more ICP4, tk, and glycoprotein C lytic transcripts in 17syn+ than in 17DeltaPst. These results suggest that, for efficient reactivation from latency in rabbits, the LAT is important for increased transcription of lytic genes during latency. </ab>
+<no>id: 10; LR: 20091118; GR: AI07110/AI/NIAID NIH HHS/United States; GR: AI48633/AI/NIAID NIH HHS/United States; GR: EY006311/EY/NEI NIH HHS/United States; GR: EY016316/EY/NEI NIH HHS/United States; JID: 0113724; OID: NLM: PMC2395138; 2008/04/09 [aheadofprint]; ppublish </no>
+<pp>United States</pp>
+<sn>1098-5514; 0022-538X</sn>
+<ad>Department of Molecular Genetics and Microbiology, Box 100266, University of Florida College of Medicine, Gainesville, FL 32610-0266, USA.</ad>
+<an>PMID: 18400860; JVI.02661-07 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, N.I.H., Extramural; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<do>10.1128/JVI.02661-07</do>
+<ds>refworks</ds>
+<wp>20080409</wp>
+<ol>Unknown(0)</ol>
+<pmid>18400860</pmid>
+<pmcid>PMC2395138</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>2018</id>
+<a1>Gussow,A. M.</a1>
+<a1>Giordani,N. V.</a1>
+<a1>Tran,R. K.</a1>
+<a1>Imai,Y.</a1>
+<a1>Kwiatkowski,D. L.</a1>
+<a1>Rall,G. F.</a1>
+<a1>Margolis,T. P.</a1>
+<a1>Bloom,D. C.</a1>
+<t1>Tissue-specific splicing of the herpes simplex virus type 1 latency-associated transcript (LAT) intron in LAT transgenic mice </t1>
+<jf>Journal of virology</jf>
+<jo>J.Virol.</jo>
+<yr>2006</yr>
+<fd>Oct</fd>
+<vo>80</vo>
+<is>19</is>
+<sp>9414</sp>
+<op>9423</op>
+<k1>Acute Disease</k1>
+<k1>Aging/physiology</k1>
+<k1>Animals</k1>
+<k1>Exons/genetics</k1>
+<k1>Ganglia, Sensory/pathology/virology</k1>
+<k1>Herpes Simplex/pathology/virology</k1>
+<k1>Herpesvirus 1, Human/genetics/physiology</k1>
+<k1>Introns/genetics</k1>
+<k1>Mice</k1>
+<k1>Mice, Inbred C3H</k1>
+<k1>Mice, Transgenic</k1>
+<k1>Neurons/pathology/virology</k1>
+<k1>Organ Specificity</k1>
+<k1>Promoter Regions, Genetic/genetics</k1>
+<k1>RNA Splicing/genetics</k1>
+<k1>Transcription, Genetic/genetics</k1>
+<k1>Virus Latency/genetics</k1>
+<ab>To study the regulation of herpes simplex virus type 1 (HSV-1) latency-associated transcript (LAT) expression and processing in the absence of other cis and trans viral functions, a transgenic mouse containing the region encompassing the LAT promoter (LAP1) and the LAT 5&amp;#39; exon through the 2.0-kb intron was created. LAT expression was detectable by reverse transcriptase PCR (RT-PCR) in a number of tissues, including the dorsal root ganglia (DRG), trigeminal ganglia (TG), brain, skin, liver, and kidney. However, when the accumulation of the 2.0-kb LAT intron was analyzed at the cellular level by in situ hybridization, little or no detectable accumulation was observed in the brain, spinal cord, kidney, or foot, although the 2.0-kb LAT intron was detected at high levels (over 90% of neurons) in the DRG and TG. Northern blot analysis detected the stable 2.0-kb LAT intron only in the sensory ganglia. When relative amounts of the spliced and unspliced LAT within the brain, liver, kidney, spinal cord, TG, and DRG were analyzed by real-time RT-PCR, splicing of the 2.0-kb LAT intron was significantly more efficient in the sensory ganglia than in other tissues. Finally, infection of both transgenic mice and nontransgenic littermates with HSV-1 revealed no differences in lytic replication, establishment of latency, or reactivation, suggesting that expression of the LAT transgene in trans has no significant effect on those functions. Taken together, these data indicate that the regulation of expression and processing of LAT RNA within the mouse is highly cell-type specific and occurs in the absence of other viral cis- and trans-acting factors. </ab>
+<no>id: 2; LR: 20091118; GR: AI07110/AI/NIAID NIH HHS/United States; GR: AI48633/AI/NIAID NIH HHS/United States; GR: EY02162/EY/NEI NIH HHS/United States; GR: EY10008/EY/NEI NIH HHS/United States; GR: NS40500/NS/NINDS NIH HHS/United States; JID: 0113724; OID: NLM: PMC1617271; ppublish </no>
+<pp>United States</pp>
+<sn>0022-538X; 0022-538X</sn>
+<ad>Department of Molecular Genetics and Microbiology, Box 100266, University of Florida College of Medicine, Gainesville, FL 32610-0266, USA.</ad>
+<an>PMID: 16973547; 80/19/9414 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, N.I.H., Extramural; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<do>10.1128/JVI.00530-06</do>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>16973547</pmid>
+<pmcid>PMC1617271</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>2044</id>
+<a1>Hill,J. M.</a1>
+<a1>Garza,H. H.,Jr</a1>
+<a1>Su,Y. H.</a1>
+<a1>Meegalla,R.</a1>
+<a1>Hanna,L. A.</a1>
+<a1>Loutsch,J. M.</a1>
+<a1>Thompson,H. W.</a1>
+<a1>Varnell,E. D.</a1>
+<a1>Bloom,D. C.</a1>
+<a1>Block,T. M.</a1>
+<t1>A 437-base-pair deletion at the beginning of the latency-associated transcript promoter significantly reduced adrenergically induced herpes simplex virus type 1 ocular reactivation in latently infected rabbits </t1>
+<jf>Journal of virology</jf>
+<jo>J.Virol.</jo>
+<yr>1997</yr>
+<fd>Sep</fd>
+<vo>71</vo>
+<is>9</is>
+<sp>6555</sp>
+<op>6559</op>
+<k1>Adrenergic Agonists/pharmacology</k1>
+<k1>Animals</k1>
+<k1>Base Composition</k1>
+<k1>Blotting, Southern</k1>
+<k1>Cell Line</k1>
+<k1>Cercopithecus aethiops</k1>
+<k1>Cornea/virology</k1>
+<k1>DNA, Viral/metabolism</k1>
+<k1>Epinephrine/pharmacology</k1>
+<k1>Genotype</k1>
+<k1>Herpesvirus 1, Human/genetics</k1>
+<k1>Humans</k1>
+<k1>Keratitis, Herpetic/virology</k1>
+<k1>Promoter Regions, Genetic</k1>
+<k1>Rabbits</k1>
+<k1>Sequence Deletion</k1>
+<k1>Trigeminal Ganglion/virology</k1>
+<k1>Vero Cells</k1>
+<k1>Virus Activation/drug effects/genetics</k1>
+<k1>Virus Latency</k1>
+<ab>In this study we used a herpes simplex virus type 1 (HSV-1) deletion mutant to identify a segment of the genome necessary for epinephrine-induced reactivation in the rabbit eye model of herpetic recurrent disease. In HSV-1 latently infected neural tissue, the only abundant viral products are the latency-associated transcripts (LATs). At least one promoter of LAT has been identified, and mutations in the LAT domain have been used to investigate HSV-1 reactivation. We used an ocular rabbit model of epinephrine-induced HSV-1 reactivation to study the effects of deleting a 437-bp region beginning 796 bp upstream of the LAT CAP site. Specifically, the 437-bp deletion is located between genomic positions 118006 and 118443 of the parent 17Syn+, and the construct is designated 17 delta S/N. This region also controls a portion of the genome encoding two transcripts (1.1 and 1.8 kb) from the LAT domain. A rescuant, 17 delta S/N-Res, was constructed from 17 delta S/N. Following ocular infection, all three viruses produced similar acute dendritic lesions in rabbits. Five weeks after infection, rabbits received transcorneal iontophoresis of epinephrine. The parent, 17Syn+, and the rescuant, 17 delta S/N-Res, underwent a high frequency of HSV-1 ocular reactivation as determined by recovery of infectious virus in the tear film. Rabbits infected with 17 delta S/N had a significantly lower frequency of ocular reactivation. Analysis of the trigeminal ganglia from all three groups of latently infected rabbits revealed (i) similar amounts of HSV DNA (genomic equivalents), (ii) accumulation of 2.0- and 1.45-kb LATs, and (iii) explant reactivation at the same high frequency. Therefore, these studies indicate that the 437-bp deleted region in 17 delta S/N is essential for epinephrine-induced reactivation and could implicate the 1.1- and 1.8-kb transcripts in the mechanisms controlling HSV-1 reactivation. </ab>
+<no>id: 8; LR: 20091118; GR: AI06246/AI/NIAID NIH HHS/United States; GR: EY06311/EY/NEI NIH HHS/United States; GR: NS33768/NS/NINDS NIH HHS/United States; GR: etc.; JID: 0113724; 0 (Adrenergic Agonists); 0 (DNA, Viral); 51-43-4 (Epinephrine); OID: NLM: PMC191932; ppublish </no>
+<pp>UNITED STATES</pp>
+<sn>0022-538X; 0022-538X</sn>
+<ad>LSU Eye Center, Louisiana State University School of Medicine, New Orleans 70112-2234, USA. JHILL@LSUMC.EDU</ad>
+<an>PMID: 9261376</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>9261376</pmid>
+<pmcid>PMC191932</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>2035</id>
+<a1>Jarman,R. G.</a1>
+<a1>Loutsch,J. M.</a1>
+<a1>Devi-Rao,G. B.</a1>
+<a1>Marquart,M. E.</a1>
+<a1>Banaszak,M. P.</a1>
+<a1>Zheng,X.</a1>
+<a1>Hill,J. M.</a1>
+<a1>Wagner,E. K.</a1>
+<a1>Bloom,D. C.</a1>
+<t1>The region of the HSV-1 latency-associated transcript required for epinephrine-induced reactivation in the rabbit does not include the 2.0-kb intron </t1>
+<jf>Virology</jf>
+<jo>Virology</jo>
+<yr>2002</yr>
+<fd>Jan 5</fd>
+<vo>292</vo>
+<is>1</is>
+<sp>59</sp>
+<op>69</op>
+<k1>Animals</k1>
+<k1>Disease Models, Animal</k1>
+<k1>Epinephrine/pharmacology</k1>
+<k1>Gene Deletion</k1>
+<k1>Herpesvirus 1, Human/genetics/physiology</k1>
+<k1>Humans</k1>
+<k1>Introns</k1>
+<k1>Keratitis, Herpetic/virology</k1>
+<k1>Rabbits</k1>
+<k1>Transcription, Genetic</k1>
+<k1>Viral Proteins/genetics/metabolism</k1>
+<k1>Virus Activation/drug effects</k1>
+<k1>Virus Latency</k1>
+<ab>Previous studies have localized the region of the latency-associated transcript (LAT) of HSV-1 responsible for epinephrine-induced reactivation in the rabbit eye model to the first 1.5 kb of the primary transcript. This region extends from the 5prime prime or minute exon of the primary LAT transcript through the 5prime prime or minute half of the LAT 2.0-kb intron. To determine whether the 5prime prime or minute end of the LAT intron contributes to the induced reactivation phenotype, three recombinant viruses containing deletions within this portion of the LAT intron were constructed. The three recombinants, containing deletions spanning a combined region of 969 bp at the 5prime prime or minute end of the LAT intron, reactivated with the wild-type frequency of 17syn+. These results indicate that the elements governing induced reactivation reside within the first 699 bp of the primary LAT transcript encoding the 5prime prime or minute LAT exon. </ab>
+<no>id: 9; LR: 20071114; GR: AI06246/AI/NIAID NIH HHS/United States; GR: CA11861/CA/NCI NIH HHS/United States; GR: EY06311/EY/NEI NIH HHS/United States; GR: EY06986/EY/NEI NIH HHS/United States; GR: EY06996/EY/NEI NIH HHS/United States; JID: 0110674; 0 (Viral Proteins); 51-43-4 (Epinephrine); ppublish </no>
+<pp>United States</pp>
+<sn>0042-6822; 0042-6822</sn>
+<ad>Department of Microbiology, Arizona State University, Tempe, Arizona 85287-2701, USA.</ad>
+<an>PMID: 11878908; S0042682201912656 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<do>10.1006/viro.2001.1265</do>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>11878908</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>2040</id>
+<a1>Jarman,R. G.</a1>
+<a1>Wagner,E. K.</a1>
+<a1>Bloom,D. C.</a1>
+<t1>LAT expression during an acute HSV infection in the mouse </t1>
+<jf>Virology</jf>
+<jo>Virology</jo>
+<yr>1999</yr>
+<fd>Sep 30</fd>
+<vo>262</vo>
+<is>2</is>
+<sp>384</sp>
+<op>397</op>
+<k1>Acute Disease</k1>
+<k1>Animals</k1>
+<k1>Cell Line</k1>
+<k1>DNA, Recombinant/genetics</k1>
+<k1>Epithelium/metabolism/virology</k1>
+<k1>Female</k1>
+<k1>Foot/virology</k1>
+<k1>Ganglia, Spinal/metabolism/virology</k1>
+<k1>Gene Dosage</k1>
+<k1>Gene Expression Regulation, Viral</k1>
+<k1>Genes, Reporter/genetics</k1>
+<k1>Genes, Viral/genetics</k1>
+<k1>Herpes Simplex/virology</k1>
+<k1>Herpesvirus 1, Human/genetics/physiology</k1>
+<k1>Kinetics</k1>
+<k1>Mice</k1>
+<k1>Neurons/metabolism/virology</k1>
+<k1>Organ Specificity</k1>
+<k1>Promoter Regions, Genetic/genetics</k1>
+<k1>Pyrophosphatases/genetics</k1>
+<k1>RNA, Messenger/analysis/genetics</k1>
+<k1>Virus Latency/genetics</k1>
+<k1>Virus Replication/genetics</k1>
+<ab>Previous studies using cell culture systems to evaluate LAT expression demonstrated that the LAT promoter expresses at much higher levels in neuroblastoma cell lines than fibroblast lines. The high level of LAT expression in neuronal-derived cell lines correlates with the high level of LAT accumulation observed in sensory ganglia neurons during a latent infection. We have found that using LAT promoters to express reporter genes from recombinant viruses in vivo produces high levels of LAT promoter activity in the epithelium of the mouse foot. An analysis of LAT promoter activity during an acute infection in the mouse clearly demonstrates that in contrast to studies performed with selected cell lines, the LAT promoter expresses similar levels of reporter gene product in peripheral cells and in neurons. In addition, the amount of reporter gene product is higher when the LAT promoter is located within the R(L) as compared to the U(L) region, and when expression is adjusted for copy number of the reporter construct, expression is roughly the same. These results suggest the activity of the LAT promoter varies greatly according to cell type and that high levels of expression is not limited solely to neurons, especially in the in vivo setting. </ab>
+<no>id: 4; LR: 20081121; CI: Copyright 1999; GR: AI06246/AI/NIAID NIH HHS/United States; JID: 0110674; 0 (DNA, Recombinant); 0 (RNA, Messenger); EC 3.6.1.- (Pyrophosphatases); EC 3.6.1.23 (dUTP pyrophosphatase); ppublish </no>
+<pb>Academic Press</pb>
+<pp>UNITED STATES</pp>
+<sn>0042-6822; 0042-6822</sn>
+<ad>Department of Microbiology, Arizona State University, Tempe, Arizona, 85287-2701, USA.</ad>
+<an>PMID: 10502517; S0042-6822(99)99861-6 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<do>10.1006/viro.1999.9861</do>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>10502517</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>2012</id>
+<a1>Johnson,A. J.</a1>
+<a1>Pessier,A. P.</a1>
+<a1>Wellehan,J. F.</a1>
+<a1>Childress,A.</a1>
+<a1>Norton,T. M.</a1>
+<a1>Stedman,N. L.</a1>
+<a1>Bloom,D. C.</a1>
+<a1>Belzer,W.</a1>
+<a1>Titus,V. R.</a1>
+<a1>Wagner,R.</a1>
+<a1>Brooks,J. W.</a1>
+<a1>Spratt,J.</a1>
+<a1>Jacobson,E. R.</a1>
+<t1>Ranavirus infection of free-ranging and captive box turtles and tortoises in the United States </t1>
+<jf>Journal of wildlife diseases</jf>
+<jo>J.Wildl.Dis.</jo>
+<yr>2008</yr>
+<fd>Oct</fd>
+<vo>44</vo>
+<is>4</is>
+<sp>851</sp>
+<op>863</op>
+<k1>Animals</k1>
+<k1>Animals, Wild/virology</k1>
+<k1>Base Sequence</k1>
+<k1>DNA Virus Infections/epidemiology/mortality/veterinary/virology</k1>
+<k1>DNA, Viral/chemistry</k1>
+<k1>Disease Reservoirs/veterinary/virology</k1>
+<k1>Female</k1>
+<k1>Gene Amplification</k1>
+<k1>Inclusion Bodies, Viral</k1>
+<k1>Male</k1>
+<k1>Microscopy, Electron, Transmission/veterinary</k1>
+<k1>Polymerase Chain Reaction/methods/veterinary</k1>
+<k1>Ranavirus/isolation &amp; purification</k1>
+<k1>Reptiles/virology</k1>
+<k1>Restriction Mapping/veterinary</k1>
+<k1>Sequence Analysis, DNA/veterinary</k1>
+<k1>Turtles/virology</k1>
+<k1>United States/epidemiology</k1>
+<ab>Iridoviruses of the genus Ranavirus are well known for causing mass mortality events of fish and amphibians with sporadic reports of infection in reptiles. This article describes five instances of Ranavirus infection in chelonians between 2003 and 2005 in Georgia, Florida, New York, and Pennsylvania, USA. Affected species included captive Burmese star tortoises (Geochelone platynota), a free-ranging gopher tortoise (Gopherus polyphemus), free-ranging eastern box turtles (Terrapene carolina carolina), and a Florida box turtle (Terrepene carolina bauri). Evidence for Ranavirus infection was also found in archived material from previously unexplained mass mortality events of eastern box turtles from Georgia in 1991 and from Texas in 1998. Consistent lesions in affected animals included necrotizing stomatitis and/or esophagitis, fibrinous and necrotizing splenitis, and multicentric fibrinoid vasculitis. Intracytoplasmic inclusion bodies were rarely observed in affected tissues. A portion of the major capsid protein (MCP) gene was sequenced from each case in 2003-2005 and found to be identical to each other and to Frog virus 3 (FV3) across 420 base pairs. Ranavirus infections were also documented in sympatric species of amphibians at two locations with infected chelonians. The fragment profiles of HindIII-digested whole genomic DNA of Ranavirus, isolated from a dead Burmese star tortoise and a southern leopard frog (Rana utricularia) found nearby, were similar. The box turtle isolate had a low molecular weight fragment that was not seen in the digestion profiles for the other isolates. These results suggest that certain amphibians and chelonians are infected with a similar virus and that different viruses exist among different chelonians. Amphibians may serve as a reservoir host for susceptible chelonians. This report also demonstrated that significant disease associated with Ranavirus infections are likely more widespread in chelonians than previously suspected. </ab>
+<no>id: 6; JID: 0244160; 0 (DNA, Viral); ppublish </no>
+<pp>United States</pp>
+<sn>0090-3558; 0090-3558</sn>
+<ad>Department of Small Animal Clinical Sciences, College of Veterinary Medicine, University of Florida, Gainesville, Florida 32610, USA.</ad>
+<an>PMID: 18957641; 44/4/851 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>18957641</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>2037</id>
+<a1>Klebe,S.</a1>
+<a1>Sykes,P. J.</a1>
+<a1>Coster,D. J.</a1>
+<a1>Bloom,D. C.</a1>
+<a1>Williams,K. A.</a1>
+<t1>Gene transfer to ovine corneal endothelium </t1>
+<jf>Clinical &amp; experimental ophthalmology</jf>
+<jo>Clin.Experiment.Ophthalmol.</jo>
+<yr>2001</yr>
+<fd>Oct</fd>
+<vo>29</vo>
+<is>5</is>
+<sp>316</sp>
+<op>322</op>
+<k1>Adenoviridae/genetics</k1>
+<k1>Animals</k1>
+<k1>Cell Count</k1>
+<k1>Defective Viruses</k1>
+<k1>Endothelium, Corneal/metabolism</k1>
+<k1>Gene Therapy/methods</k1>
+<k1>Gene Transfer Techniques</k1>
+<k1>Genes, Reporter</k1>
+<k1>Genetic Vectors</k1>
+<k1>Herpesvirus 1, Human/genetics</k1>
+<k1>Lac Operon</k1>
+<k1>Organ Culture Techniques</k1>
+<k1>Sheep</k1>
+<k1>beta-Galactosidase/metabolism</k1>
+<ab>PURPOSE: Modification of a donor cornea by gene therapy has potential to modulate irreversible rejection, the major cause of corneal graft failure. The sheep is a useful model for the human in this respect, as ovine endothelial cells are amitotic. The aim of the study was to investigate the ability of various non-viral and viral agents to transfer a reporter gene to ovine corneal endothelium. METHODS: The non-viral agents Transfectin-10, Transfectin-20, Transfectin-50, SuperFect, Effectene and CLONfectin were used to deliver the reporter gene, Escherichia coli lacZ, to ovine corneal endothelium in vitro. A Herpes simplex virus-1 and an adenoviral vector each encoding E. coli lacZ were similarly tested. Infected corneas were organ-cutured for up to 7 days in vitro to allow transfection efficiency, duration of gene expression and toxicity attributable to each vector to be compared. RESULTS: Scattered single or clusters of endothelial cells expressing the reporter gene were observed after transfection with CLONfectin, Transfectin-10, Transfectin-20 and Transfectin-50. SuperFect and Effectene were virtually ineffective. At best, the absolute number of infected cells per endothelial monolayer after 3 or 7 days of organ culture was estimated as </ab>
+<no>id: 1; LR: 20061115; JID: 100896531; EC 3.2.1.23 (beta-Galactosidase); ppublish </no>
+<pp>Australia</pp>
+<sn>1442-6404; 1442-6404</sn>
+<ad>Department of Ophthalmology, Flinders University of South Australia, Bedford Park, Australia.</ad>
+<an>PMID: 11720159</an>
+<la>eng</la>
+<sf>Comparative Study; Journal Article; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>11720159</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>2027</id>
+<a1>Kubat,N. J.</a1>
+<a1>Amelio,A. L.</a1>
+<a1>Giordani,N. V.</a1>
+<a1>Bloom,D. C.</a1>
+<t1>The herpes simplex virus type 1 latency-associated transcript (LAT) enhancer/rcr is hyperacetylated during latency independently of LAT transcription </t1>
+<jf>Journal of virology</jf>
+<jo>J.Virol.</jo>
+<yr>2004</yr>
+<fd>Nov</fd>
+<vo>78</vo>
+<is>22</is>
+<sp>12508</sp>
+<op>12518</op>
+<k1>Acetylation</k1>
+<k1>Animals</k1>
+<k1>Chromatin/chemistry</k1>
+<k1>Enhancer Elements, Genetic/physiology</k1>
+<k1>Exons</k1>
+<k1>Female</k1>
+<k1>Histones/metabolism</k1>
+<k1>Immediate-Early Proteins/genetics</k1>
+<k1>Mice</k1>
+<k1>MicroRNAs</k1>
+<k1>Promoter Regions, Genetic</k1>
+<k1>Transcription, Genetic</k1>
+<k1>Ubiquitin-Protein Ligases</k1>
+<k1>Viral Proteins/genetics</k1>
+<k1>Virus Activation</k1>
+<k1>Virus Latency</k1>
+<ab>During herpes simplex virus type 1 (HSV-1) latency, only one region of the viral genome is actively transcribed: the region encoding the latency-associated transcript (LAT). A previous study demonstrated that during latency the LAT promoter is hyperacetylated at histone H3 (K9, K14) relative to lytic genes examined. In the present study, we examine the acetylation profile of regions downstream of the LAT promoter during a latent infection of murine dorsal root ganglia. These analyses revealed the following: (i) the region of the genome containing the 5&amp;#39; exon of the LAT primary transcript was at least as enriched in acetylated H3 as the LAT promoter, and (ii) the region of hyperacetylation does not extend to the ICP0 promoter. In order to assess the contribution of LAT transcription to the acetylation of the 5&amp;#39; exon region, the acetylation profile of KOS/29, a recombinant with a deletion of the LAT promoter, was examined. The region containing the 5&amp;#39; exon of KOS/29 was hyperacetylated relative to lytic gene regions in the absence of detectable LAT transcription. These results indicate that the region containing the 5&amp;#39; exon of LAT, known to contain enhancer activities and to be critical for induced reactivation (rcr), exists in a chromatin structure during latency that is distinct from other lytic gene regions. This result suggests a role for the 5&amp;#39; exon LAT enhancer region as a cis-acting regulator of transcription that maintains a transcriptionally permissive chromatin domain in the HSV-1 latent episome. </ab>
+<no>id: 1; LR: 20091118; GR: AI 07110/AI/NIAID NIH HHS/United States; GR: AI 48633/AI/NIAID NIH HHS/United States; JID: 0113724; 0 (Chromatin); 0 (Histones); 0 (Immediate-Early Proteins); 0 (MicroRNAs); 0 (Viral Proteins); 0 (latency associated transcript, herpes simplex virus-1); EC 6.3.2.19 (Ubiquitin-Protein Ligases); EC 6.3.2.19 (Vmw110 protein, Human herpesvirus 1); OID: NLM: PMC525101; ppublish </no>
+<pp>United States</pp>
+<sn>0022-538X; 0022-538X</sn>
+<ad>Department of Molecular Genetics and Microbiology, Box 100266, University of Florida College of Medicine, Gainesville, FL 32610-0266, USA.</ad>
+<an>PMID: 15507638; 78/22/12508 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<do>10.1128/JVI.78.22.12508-12518.2004</do>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>15507638</pmid>
+<pmcid>PMC525101</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>2030</id>
+<a1>Kubat,N. J.</a1>
+<a1>Tran,R. K.</a1>
+<a1>McAnany,P.</a1>
+<a1>Bloom,D. C.</a1>
+<t1>Specific histone tail modification and not DNA methylation is a determinant of herpes simplex virus type 1 latent gene expression </t1>
+<jf>Journal of virology</jf>
+<jo>J.Virol.</jo>
+<yr>2004</yr>
+<fd>Feb</fd>
+<vo>78</vo>
+<is>3</is>
+<sp>1139</sp>
+<op>1149</op>
+<k1>Acetylation</k1>
+<k1>Animals</k1>
+<k1>Chromatin</k1>
+<k1>DNA Methylation</k1>
+<k1>DNA, Viral/analysis</k1>
+<k1>Female</k1>
+<k1>Ganglia, Spinal/virology</k1>
+<k1>Gene Expression Regulation, Viral</k1>
+<k1>Herpes Simplex/virology</k1>
+<k1>Herpesvirus 1, Human/genetics/metabolism/physiology</k1>
+<k1>Histones/metabolism</k1>
+<k1>Mice</k1>
+<k1>MicroRNAs</k1>
+<k1>Precipitin Tests</k1>
+<k1>Viral Proteins/genetics/metabolism</k1>
+<k1>Virus Latency</k1>
+<ab>During herpes simplex virus type 1 (HSV-1) latency, gene expression is tightly repressed except for the latency-associated transcript (LAT). The mechanistic basis for this repression is unknown, but its global nature suggests regulation by an epigenetic mechanism such as DNA methylation. Previous work demonstrated that latent HSV-1 genomes are not extensively methylated, but these studies lacked the resolution to examine methylation of individual CpGs that could repress transcription from individual promoters during latency. To address this point, we employed established models to predict genomic regions with the highest probability of being methylated and, using bisulfite sequencing, analyzed the methylation profiles of these regions. We found no significant methylation of latent DNA isolated from mouse dorsal root ganglia in any of the regions examined, including the ICP4 and LAT promoters. This analysis indicates that methylation is unlikely to play a major role in regulating HSV-1 latent gene expression. Subsequently we focused on differential histone modification as another epigenetic mechanism that could regulate latent transcription. Chromatin immunoprecipitation analysis of the latent HSV-1 DNA repeat regions demonstrated that a portion of the LAT region is associated with histone H3 acetylated at lysines 9 and 14, consistent with a euchromatic and nonrepressed structure. In contrast, the chromatin associated with the HSV-1 DNA polymerase gene located in the unique long segment was not enriched in H3 acetylated at lysines 9 and 14, suggesting a transcriptionally inactive structure. These data suggest that histone composition may be a major regulatory determinant of HSV latency. </ab>
+<no>id: 4; LR: 20091118; GR: AI07110/AI/NIAID NIH HHS/United States; GR: AI48633/AI/NIAID NIH HHS/United States; JID: 0113724; 0 (Chromatin); 0 (DNA, Viral); 0 (Histones); 0 (MicroRNAs); 0 (Viral Proteins); 0 (latency associated transcript, herpes simplex virus-1); OID: NLM: PMC321404; ppublish </no>
+<pp>United States</pp>
+<sn>0022-538X; 0022-538X</sn>
+<ad>Department of Molecular Genetics and Microbiology, University of Florida College of Medicine, Gainesville, Florida 32610-0266, USA.</ad>
+<an>PMID: 14722269</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>14722269</pmid>
+<pmcid>PMC321404</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>2010</id>
+<a1>Kwiatkowski,D. L.</a1>
+<a1>Thompson,H. W.</a1>
+<a1>Bloom,D. C.</a1>
+<t1>The polycomb group protein Bmi1 binds to the herpes simplex virus 1 latent genome and maintains repressive histone marks during latency </t1>
+<jf>Journal of virology</jf>
+<jo>J.Virol.</jo>
+<yr>2009</yr>
+<fd>Aug</fd>
+<vo>83</vo>
+<is>16</is>
+<sp>8173</sp>
+<op>8181</op>
+<k1>Animals</k1>
+<k1>Gene Expression Regulation, Viral</k1>
+<k1>Genome, Viral</k1>
+<k1>Herpes Simplex/metabolism/virology</k1>
+<k1>Herpesvirus 1, Human/genetics/physiology</k1>
+<k1>Heterochromatin/metabolism</k1>
+<k1>Histones/genetics/metabolism</k1>
+<k1>Humans</k1>
+<k1>Methylation</k1>
+<k1>Mice</k1>
+<k1>Nuclear Proteins/genetics/metabolism</k1>
+<k1>Protein Binding</k1>
+<k1>Proto-Oncogene Proteins/genetics/metabolism</k1>
+<k1>Repressor Proteins/genetics/metabolism</k1>
+<k1>Virus Latency</k1>
+<ab>The mechanism by which herpes simplex virus 1 (HSV-1) establishes latency in sensory neurons is largely unknown. Recent studies indicate that epigenetic modifications of the chromatin associated with the latent genome may play a key role in the transcriptional control of lytic genes during latency. In this study, we found both constitutive and facultative types of heterochromatin to be present on the latent HSV-1 genome. Deposition of the facultative marks trimethyl H3K27 and histone variant macroH2A varied at different sites on the genome, whereas the constitutive marker trimethyl H3K9 did not. In addition, we show that in the absence of the latency-associated transcript (LAT), the latent genome shows a dramatic increase in trimethyl H3K27, suggesting that expression of the LAT during latency may act to promote an appropriate heterochromatic state that represses lytic genes but is still poised for reactivation. Due to the presence of the mark trimethyl H3K27, we examined whether Polycomb group proteins, which methylate H3K27, were present on the HSV-1 genome during latency. Our data indicate that Bmi1, a member of the Polycomb repressive complex 1 (PRC1) maintenance complex, associates with specific sites in the genome, with the highest level of enrichment at the LAT enhancer. To our knowledge, these are the first data demonstrating that a virus can repress its gene transcription to enter latency by exploiting the mechanism of Polycomb-mediated repression. </ab>
+<no>id: 4; LR: 20100202; GR: R01 AI48633/AI/NIAID NIH HHS/United States; GR: T32 AI007110/AI/NIAID NIH HHS/United States; GR: T32 AI060527/AI/NIAID NIH HHS/United States; JID: 0113724; 0 (Bmi1 protein, mouse); 0 (Heterochromatin); 0 (Histones); 0 (Nuclear Proteins); 0 (Proto-Oncogene Proteins); 0 (Repressor Proteins); 0 (polycomb group proteins); OID: NLM: PMC2715759; 2009/06/10 [aheadofprint]; ppublish </no>
+<pp>United States</pp>
+<sn>1098-5514; 0022-538X</sn>
+<ad>Department of Molecular Genetics &amp; Microbiology, University of Florida College of Medicine, Gainesville, 32610-0266, USA.</ad>
+<an>PMID: 19515780; JVI.00686-09 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, N.I.H., Extramural; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<do>10.1128/JVI.00686-09</do>
+<ds>refworks</ds>
+<wp>20090610</wp>
+<ol>Unknown(0)</ol>
+<pmid>19515780</pmid>
+<pmcid>PMC2715759</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>2013</id>
+<a1>Lane,M. A.</a1>
+<a1>White,T. E.</a1>
+<a1>Coutts,M. A.</a1>
+<a1>Jones,A. L.</a1>
+<a1>Sandhu,M. S.</a1>
+<a1>Bloom,D. C.</a1>
+<a1>Bolser,D. C.</a1>
+<a1>Yates,B. J.</a1>
+<a1>Fuller,D. D.</a1>
+<a1>Reier,P. J.</a1>
+<t1>Cervical prephrenic interneurons in the normal and lesioned spinal cord of the adult rat </t1>
+<jf>The Journal of comparative neurology</jf>
+<jo>J.Comp.Neurol.</jo>
+<yr>2008</yr>
+<fd>Dec 10</fd>
+<vo>511</vo>
+<is>5</is>
+<sp>692</sp>
+<op>709</op>
+<k1>Animals</k1>
+<k1>Biological Markers</k1>
+<k1>Brain Mapping</k1>
+<k1>Diaphragm/innervation/physiology</k1>
+<k1>Electric Stimulation</k1>
+<k1>Female</k1>
+<k1>Functional Laterality/physiology</k1>
+<k1>Herpesvirus 1, Suid</k1>
+<k1>Interneurons/cytology/physiology/virology</k1>
+<k1>Medulla Oblongata/cytology/physiology</k1>
+<k1>Motor Neurons/cytology/physiology/virology</k1>
+<k1>Nerve Net/cytology/physiology</k1>
+<k1>Neural Pathways/cytology/physiology</k1>
+<k1>Phrenic Nerve/cytology/physiology</k1>
+<k1>Rats</k1>
+<k1>Rats, Sprague-Dawley</k1>
+<k1>Recovery of Function/physiology</k1>
+<k1>Respiratory Center/cytology/physiology</k1>
+<k1>Respiratory Physiological Phenomena</k1>
+<k1>Spinal Cord/cytology/physiology</k1>
+<k1>Spinal Cord Injuries/physiopathology</k1>
+<k1>Staining and Labeling</k1>
+<ab>Although monosynaptic bulbospinal projections to phrenic motoneurons have been extensively described, little is known about the organization of phrenic premotor neurons in the adult rat spinal cord. Because interneurons may play an important role in normal breathing and recovery following spinal cord injury, the present study has used anterograde and transneuronal retrograde tracing to study their distribution and synaptic relations. Exclusive unilateral, first-order labeling of the phrenic motoneuron pool with pseudorabies virus demonstrated a substantial number of second-order, bilaterally distributed cervical interneurons predominantly in the dorsal horn and around the central canal. Combined transneuronal and anterograde tracing revealed ventral respiratory column projections to prephrenic interneurons, suggesting that some propriospinal relays exist between medullary neurons and the phrenic nucleus. Dual-labeling studies with pseudorabies virus recombinants also showed prephrenic interneurons integrated with either contralateral phrenic or intercostal motoneuron pools. The stability of interneuronal pseudorabies virus labeling patterns following lateral cervical hemisection was then addressed. Except for fewer infected contralateral interneurons at the level of the central canal, the number and distribution of phrenic-associated interneurons was not significantly altered 2 weeks posthemisection (i.e., the point at which the earliest postinjury recovery of phrenic activity has been reported). These results demonstrate a heterogeneous population of phrenic-related interneurons. Their connectivity and relative stability after cervical hemisection raise speculation for potentially diverse roles in modulating phrenic function normally and postinjury. </ab>
+<no>id: 7; LR: 20091216; CI: Copyright 2008; GR: P40 RRO118604/PHS HHS/United States; GR: R01 DC003732-09/DC/NIDCD NIH HHS/United States; GR: R01 DC003732-10/DC/NIDCD NIH HHS/United States; GR: R01 NS054025/NS/NINDS NIH HHS/United States; GR: R01 NS054025-03/NS/NINDS NIH HHS/United States; JID: 0406041; 0 (Biological Markers); NIHMS70944; OID: NLM: NIHMS70944; OID: NLM: PMC2597676; ppublish </no>
+<pb>Wiley-Liss, Inc</pb>
+<pp>United States</pp>
+<sn>1096-9861; 0021-9967</sn>
+<ad>Department of Neuroscience, College of Medicine, University of Florida, Gainesville, Florida 32610, USA. michael.lane@mbi.ufl.edu</ad>
+<an>PMID: 18924146</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, N.I.H., Extramural; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<do>10.1002/cne.21864</do>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>18924146</pmid>
+<pmcid>PMC2597676</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>2015</id>
+<a1>Liu,J.</a1>
+<a1>Lewin,A. S.</a1>
+<a1>Tuli,S. S.</a1>
+<a1>Ghivizzani,S. C.</a1>
+<a1>Schultz,G. S.</a1>
+<a1>Bloom,D. C.</a1>
+<t1>Reduction in severity of a herpes simplex virus type 1 murine infection by treatment with a ribozyme targeting the UL20 gene RNA </t1>
+<jf>Journal of virology</jf>
+<jo>J.Virol.</jo>
+<yr>2008</yr>
+<fd>Aug</fd>
+<vo>82</vo>
+<is>15</is>
+<sp>7467</sp>
+<op>7474</op>
+<k1>Adenoviridae/genetics</k1>
+<k1>Animals</k1>
+<k1>Antiviral Agents/metabolism/therapeutic use</k1>
+<k1>DNA, Viral/genetics</k1>
+<k1>Foot/virology</k1>
+<k1>Ganglia, Spinal/virology</k1>
+<k1>Gene Therapy/methods</k1>
+<k1>Genetic Vectors</k1>
+<k1>Herpes Simplex</k1>
+<k1>Herpesvirus 1, Human/drug effects/genetics</k1>
+<k1>Kinetics</k1>
+<k1>Mice</k1>
+<k1>RNA, Catalytic/genetics/metabolism/therapeutic use</k1>
+<k1>Spinal Cord/virology</k1>
+<k1>Survival Analysis</k1>
+<k1>Transduction, Genetic</k1>
+<k1>Viral Proteins/antagonists &amp; inhibitors/genetics</k1>
+<ab>Hammerhead ribozymes were designed to target mRNA of several essential herpes simplex virus type 1 (HSV-1) genes. A ribozyme specific for the late gene U(L)20 was packaged in an adenovirus vector (Ad-U(L)20 Rz) and evaluated for its capacity to inhibit the viral replication of several HSV-1 strains, including that of the wild-type HSV-1 (17syn+ and KOS) and several acycloguanosine-resistant strains (PAAr5, tkLTRZ1, and ACGr4) in tissue culture. The Ad-U(L)20 Rz was also tested for its ability to block an HSV-1 infection, using the mouse footpad model. Mouse footpads were treated with either the Ad-U(L)20 Rz or an adenoviral vector expressing green fluorescent protein (Ad-GFP) and then infected immediately thereafter with 10(4) PFU of HSV-1 strain 17syn+. Ad-U(L)20 ribozyme treatment consistently led to a 90% rate of protection for mice from lethal HSV-1 infection, while the survival rate in the control groups was less than 45%. Consistent with this protective effect, treatment with the Ad-U(L)20 Rz reduced the viral DNA load in the feet, the dorsal root ganglia, and the spinal cord relative to that of the Ad-GFP-treated animals. This study suggests that ribozymes targeting essential genes of the late kinetic class may represent a new therapeutic strategy for inhibiting HSV infection. </ab>
+<no>id: 9; LR: 20091118; GR: AR48566/AR/NIAMS NIH HHS/United States; GR: EY05587/EY/NEI NIH HHS/United States; JID: 0113724; 0 (Antiviral Agents); 0 (DNA, Viral); 0 (RNA, Catalytic); 0 (UL20 protein, Herpes simplex virus type 1); 0 (Viral Proteins); 0 (hammerhead ribozyme); OID: NLM: PMC2493317; 2008/05/28 [aheadofprint]; ppublish </no>
+<pp>United States</pp>
+<sn>1098-5514; 0022-538X</sn>
+<ad>Department of Molecular Genetics and Microbiology, Box 100266, University of Florida College of Medicine, Gainesville, FL 32610-0266, USA.</ad>
+<an>PMID: 18508896; JVI.02720-07 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, N.I.H., Extramural; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<do>10.1128/JVI.02720-07</do>
+<ds>refworks</ds>
+<wp>20080528</wp>
+<ol>Unknown(0)</ol>
+<pmid>18508896</pmid>
+<pmcid>PMC2493317</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>2011</id>
+<a1>Liu,J.</a1>
+<a1>Saghizadeh,M.</a1>
+<a1>Tuli,S. S.</a1>
+<a1>Kramerov,A. A.</a1>
+<a1>Lewin,A. S.</a1>
+<a1>Bloom,D. C.</a1>
+<a1>Hauswirth,W. W.</a1>
+<a1>Castro,M. G.</a1>
+<a1>Schultz,G. S.</a1>
+<a1>Ljubimov,A. V.</a1>
+<t1>Different tropism of adenoviruses and adeno-associated viruses to corneal cells: implications for corneal gene therapy </t1>
+<jf>Molecular vision</jf>
+<jo>Mol.Vis.</jo>
+<yr>2008</yr>
+<vo>14</vo>
+<sp>2087</sp>
+<op>2096</op>
+<k1>Adenoviridae/metabolism</k1>
+<k1>Animals</k1>
+<k1>Chickens</k1>
+<k1>Cornea/cytology/metabolism/pathology</k1>
+<k1>Dependovirus/metabolism</k1>
+<k1>Diabetes Mellitus/pathology</k1>
+<k1>Epithelium, Corneal/cytology</k1>
+<k1>Gene Therapy</k1>
+<k1>Genetic Vectors</k1>
+<k1>Green Fluorescent Proteins/metabolism</k1>
+<k1>Humans</k1>
+<k1>Organ Culture Techniques</k1>
+<k1>Organ Specificity</k1>
+<k1>Rabbits</k1>
+<k1>Transduction, Genetic</k1>
+<ab>PURPOSE: Diseased corneas are potential targets for viral-based gene therapy to normalize (stimulate or inhibit) the expression of specific proteins. The choice of viral vectors is important to achieve optimal effect. The purpose of this study was to compare the tropism to different corneal cells of recombinant adenovirus (rAV) and recombinant adeno-associated virus (rAAV) constructs using live rabbit and organ-cultured human corneas. METHODS: rAV constructs harbored the green fluorescent protein (GFP) gene under the control of major immediate early cytomegalovirus (CMV) promoter. rAAV constructs from virus serotypes 1, 2 5, 7, and 8 had GFP under the chicken beta-actin promoter and CMV enhancer. For organ culture, 16 healthy and diabetic postmortem human corneas were used. Five or fifteen microl rAV at 10(7) plaque forming units per 1 microl were added for 2 days to culture medium of uninjured corneas that were further cultured for 5-32 days. rAAV were added at 1.2-7.8x10(10) vector genomes per cornea for 3 days to each cornea; the culture then continued for another 14-23 days. Corneal cryostat sections were examined by immunohistochemistry. Live rabbit corneas were used following excimer laser ablation of the corneal epithelium with preservation of the basal cell layer. Equal numbers of rAAV particles (2x10(11) vector genomes) were applied to the cornea for 10 min. After seven days to allow for corneal healing and gene expression the animals were euthanized, the corneas were excised, and sections analyzed by immunohistochemistry. RESULTS: By direct fluorescence microscopy of live organ-cultured human corneas GFP signal after rAV transduction was strong in the epithelium with dose-dependent intensity. On corneal sections, GFP was seen in all epithelial layers and some endothelial cells but most keratocytes were negative. In rAAV-transduced organ-cultured human corneas GFP signal could only be detected with anti-GFP antibody immunohistochemistry. GFP was observed in the epithelium, keratocytes, and endothelium, with more pronounced basal epithelial cell staining with rAAV1 than with other serotypes. No difference in the GFP expression patterns or levels between normal and diabetic corneas was noted. The rabbit corneas showed very similar patterns of GFP distribution to human corneas. With all rAAV serotype vectors, GFP staining in the epithelium was significantly (p=0.007) higher than the background staining in non-transduced corneas, with a trend for rAAV1 and rAAV8 to produce higher staining intensities than for rAAV2, rAAV5 (p=0.03; rAAV5 versus rAAV1), and rAAV7. rAAV serotype vectors also transduced stromal and endothelial cells in rabbit corneas to a different extent. CONCLUSIONS: rAAV appears to reach many more corneal cells than rAV, especially keratocytes, although GFP expression levels were lower compared to rAV. rAV may be more useful than rAAV for gene therapy applications requiring high protein expression levels, but rAAV may be superior for keratocyte targeting. </ab>
+<no>id: 5; LR: 20091118; GR: EY05587/EY/NEI NIH HHS/United States; GR: EY13431/EY/NEI NIH HHS/United States; GR: M01 RR00425/RR/NCRR NIH HHS/United States; GR: NS052465/NS/NINDS NIH HHS/United States; GR: NS44556/NS/NINDS NIH HHS/United States; GR: R01 EY013431-08/EY/NEI NIH HHS/United States; JID: 9605351; 147336-22-9 (Green Fluorescent Proteins); OID: NLM: PMC2584774; 2008/09/17 [received]; 2008/11/11 [accepted]; 2008/11/18 [epublish]; ppublish </no>
+<pp>United States</pp>
+<sn>1090-0535; 1090-0535</sn>
+<ad>Department of Molecular Genetics and Microbiology, University of Florida, Gainesville, FL, USA.</ad>
+<an>PMID: 19023450</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, N.I.H., Extramural; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<ds>refworks</ds>
+<wp>20081118</wp>
+<ol>Unknown(0)</ol>
+<pmid>19023450</pmid>
+<pmcid>PMC2584774</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>2049</id>
+<a1>Lokensgard,J. R.</a1>
+<a1>Bloom,D. C.</a1>
+<a1>Dobson,A. T.</a1>
+<a1>Feldman,L. T.</a1>
+<t1>Long-term promoter activity during herpes simplex virus latency </t1>
+<jf>Journal of virology</jf>
+<jo>J.Virol.</jo>
+<yr>1994</yr>
+<fd>Nov</fd>
+<vo>68</vo>
+<is>11</is>
+<sp>7148</sp>
+<op>7158</op>
+<k1>Animals</k1>
+<k1>Antigens, Viral/biosynthesis</k1>
+<k1>Base Sequence</k1>
+<k1>Female</k1>
+<k1>Mice</k1>
+<k1>Mice, Inbred C57BL</k1>
+<k1>Molecular Sequence Data</k1>
+<k1>Moloney murine leukemia virus/genetics</k1>
+<k1>Promoter Regions, Genetic</k1>
+<k1>Recombination, Genetic</k1>
+<k1>Repetitive Sequences, Nucleic Acid</k1>
+<k1>Simplexvirus/genetics/physiology</k1>
+<k1>Trigeminal Ganglion/virology</k1>
+<k1>Virus Latency</k1>
+<k1>beta-Galactosidase/biosynthesis</k1>
+<ab>The ability to direct foreign gene expression from the herpes simplex virus type 1 (HSV-1) genome during an acute or latent infection is a subject of increasing importance in the utilization of HSV vectors for gene therapy. Little is known about the types of transcription factors present in neurons or about whether different neuronal populations within a ganglion vary in their complement of these factors. With respect to HSV-1 latency, it is not known how or why the latency-associated transcript (LAT) promoter is able to function continually during latency while all other viral promoters are inactive. To further studies of these two phenomena, we constructed seven recombinant viruses with various promoter constructs driving expression of the lacZ reporter gene. Each construct was inserted into HSV-1 at the glycoprotein C locus, and recombinant viruses were evaluated for the ability to express beta-galactosidase during acute and latent viral infections in murine dorsal root ganglia. During acute infection of murine dorsal root ganglia, the activities of the promoters varied over a wide range. Constructs containing the murine metallothionein promoter (MT1), the phosphoglycerate kinase promoter, the Moloney murine leukemia virus long terminal repeat (LTR), or the region upstream of and including the HSV LAT core promoter (LAT) were active during the acute but not the latent phase of infection. The addition of transcription factor binding sites present in the upstream LAT region to the MT1 and LTR promoters (LAT-MT1 and LAT-LTR, respectively) significantly increased acute-phase expression. Despite these high initial rates of transcription, of all the promoter constructs only LAT-LTR was able to remain transcriptionally active after the establishment of a latent state. Thus, the Moloney murine leukemia virus LTR provides a DNA element which functions to prevent promoter inactivation during latency. An analogous HSV long-term-expression element is evidently not present in the upstream LAT promoter, indicating that the HSV long-term-expression function is provided by a region outside of that which gives high-level neuronal expression during the acute phase of infection. </ab>
+<no>id: 3; LR: 20091118; GR: AI06236/AI/NIAID NIH HHS/United States; GR: AI28338/AI/NIAID NIH HHS/United States; GR: NS30420/NS/NINDS NIH HHS/United States; JID: 0113724; 0 (Antigens, Viral); EC 3.2.1.23 (beta-Galactosidase); OID: NLM: PMC237154; ppublish </no>
+<pp>UNITED STATES</pp>
+<sn>0022-538X; 0022-538X</sn>
+<ad>Department of Microbiology and Immunology, UCLA School of Medicine 90024.</ad>
+<an>PMID: 7933097</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>7933097</pmid>
+<pmcid>PMC237154</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>2046</id>
+<a1>Maidment,N. T.</a1>
+<a1>Tan,A. M.</a1>
+<a1>Bloom,D. C.</a1>
+<a1>Anton,B.</a1>
+<a1>Feldman,L. T.</a1>
+<a1>Stevens,J. G.</a1>
+<t1>Expression of the lacZ reporter gene in the rat basal forebrain, hippocampus, and nigrostriatal pathway using a nonreplicating herpes simplex vector </t1>
+<jf>Experimental neurology</jf>
+<jo>Exp.Neurol.</jo>
+<yr>1996</yr>
+<fd>May</fd>
+<vo>139</vo>
+<is>1</is>
+<sp>107</sp>
+<op>114</op>
+<k1>Animals</k1>
+<k1>Base Sequence</k1>
+<k1>Caudate Nucleus/physiology/virology</k1>
+<k1>DNA, Viral/analysis</k1>
+<k1>Gene Expression/genetics</k1>
+<k1>Genes, Reporter/genetics</k1>
+<k1>Genetic Vectors</k1>
+<k1>Herpesvirus 1, Human/genetics</k1>
+<k1>Hippocampus/physiology/virology</k1>
+<k1>Lac Operon/genetics</k1>
+<k1>Male</k1>
+<k1>Microinjections</k1>
+<k1>Molecular Sequence Data</k1>
+<k1>Polymerase Chain Reaction</k1>
+<k1>Promoter Regions, Genetic/genetics</k1>
+<k1>Prosencephalon/physiology/virology</k1>
+<k1>Rats</k1>
+<k1>Rats, Sprague-Dawley</k1>
+<k1>Substantia Nigra/physiology/virology</k1>
+<ab>We recently demonstrated the efficacy of a nonreplicating herpes simplex type 1 virus construct, employing the Moloney murine leukemia virus long terminal repeat promoter, in providing long-term expression of the lacZ gene in rat hippocampal neurons. We now report the utility of this construct in expressing the reporter gene in neurons of the basal forebrain and substantia nigra and examine the spread of the virus to other brain regions. Dorsal and ventrolateral hippocampal formation injection of the virus resulted in numerous beta-gal-expressing cells in the stratum pyramidale, stratum oriens, stratum lacunosum-moleculare, and stratum granulosum. Scattered cells of the medial septum/diagonal band were positively stained following direct injection into this region. More intense staining of the basal forebrain was observed following hippocampal injection as a result of retrograde transport of the virus as shown by PCR analysis of viral DNA. Hippocampal injection also resulted in positive cell staining in several other afferent projection nuclei, namely, the supramammillary bodies, dorsal and caudal linear raphe, and perirhinal/entorhinal cortex. Very few cells were labeled around injection sites in the striatum or substantia nigra. However, substantia nigra zona compacta cells were blue following striatal injection, as were pallidal neurons following nigral injection. These data demonstrate the feasibility of using this virus construct to express foreign genes such as neurotrophic factors in basal forebrain and substantia nigra neurons, taking advantage of retrograde transport of the virus to preserve local anatomy. </ab>
+<no>id: 10; LR: 20081121; GR: AI 107323-07/AI/NIAID NIH HHS/United States; GR: NS-30420/NS/NINDS NIH HHS/United States; JID: 0370712; 0 (DNA, Viral); ppublish </no>
+<pp>UNITED STATES</pp>
+<sn>0014-4886; 0014-4886</sn>
+<ad>Department of Psychiatry and Biobehavioral Sciences, UCLA School of Medicine 90024, USA.</ad>
+<an>PMID: 8635556; S0014-4886(96)90085-0 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<do>10.1006/exnr.1996.0085</do>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>8635556</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>2054</id>
+<a1>Margolis,T. P.</a1>
+<a1>Bloom,D. C.</a1>
+<a1>Dobson,A. T.</a1>
+<a1>Feldman,L. T.</a1>
+<a1>Stevens,J. G.</a1>
+<t1>Decreased reporter gene expression during latent infection with HSV LAT promoter constructs </t1>
+<jf>Virology</jf>
+<jo>Virology</jo>
+<yr>1993</yr>
+<fd>Dec</fd>
+<vo>197</vo>
+<is>2</is>
+<sp>585</sp>
+<op>592</op>
+<k1>Animals</k1>
+<k1>Base Sequence</k1>
+<k1>Ganglia/microbiology</k1>
+<k1>Gene Expression Regulation, Viral</k1>
+<k1>Genes, Reporter</k1>
+<k1>Immunohistochemistry</k1>
+<k1>Mice</k1>
+<k1>Molecular Sequence Data</k1>
+<k1>Promoter Regions, Genetic/genetics</k1>
+<k1>RNA, Messenger/biosynthesis</k1>
+<k1>Recombinant Fusion Proteins/biosynthesis</k1>
+<k1>Simplexvirus/genetics</k1>
+<k1>Virus Latency/genetics</k1>
+<ab>The latency-associated transcripts (LAT), which code from an 8.5 kb segment of the internal repeat region of the HSV genome, are the only viral transcripts that are present during HSV latent infection. However, little is known about the relative contribution of promoter activity, degradative processes, and elements or regions affecting long term expression of these transcripts in latently infected neurons. To begin to address this question we investigated LAT promoter activity during acute and latent infection. Mouse footpads were infected with KOS/62-3, an engineered herpes simplex virus in which both copies of the LAT promoter are used to drive expression of the Escherichia coli lac Z gene. Four days post-inoculation (p.i.) abundant beta-galactosidase (beta-gal) protein and transcripts were present within ganglionic neurons as assayed by enzyme histochemistry and in situ hybridization. In contrast, by Day 21 (at which time a latent infection had been established) no beta-gal transcripts were present in infected ganglia, even when assayed by the polymerase chain reaction (PCR). These findings indicate a significant drop in LAT promoter activity between Day 4 and Day 21 p.i. To provide confirmatory evidence for this conclusion we infected mice with a second viral construct, KOS/67-7, in which the LAT promoter was used to drive expression of the nerve growth factor (NGF) gene. Four days p.i., abundant NGF antigen and transcripts were present in infected ganglionic neurons, but no evidence of transcription of the cloned NGF gene could be found in latently infected ganglia. Our findings suggest that LAT promoter activity is severely restricted during the latent phase of ganglionic infection. </ab>
+<no>id: 8; LR: 20081121; GR: AI-06426/AI/NIAID NIH HHS/United States; GR: GM08042-06/GM/NIGMS NIH HHS/United States; GR: NS30420/NS/NINDS NIH HHS/United States; JID: 0110674; 0 (RNA, Messenger); 0 (Recombinant Fusion Proteins); ppublish </no>
+<pp>UNITED STATES</pp>
+<sn>0042-6822; 0042-6822</sn>
+<ad>F. I. Proctor Foundation, UCSF Medical Center.</ad>
+<an>PMID: 8249281; S0042-6822(83)71632-6 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<do>10.1006/viro.1993.1632</do>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>8249281</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>2038</id>
+<a1>Marquart,M. E.</a1>
+<a1>Zheng,X.</a1>
+<a1>Tran,R. K.</a1>
+<a1>Thompson,H. W.</a1>
+<a1>Bloom,D. C.</a1>
+<a1>Hill,J. M.</a1>
+<t1>A cAMP response element within the latency-associated transcript promoter of HSV-1 facilitates induced ocular reactivation in a mouse hyperthermia model </t1>
+<jf>Virology</jf>
+<jo>Virology</jo>
+<yr>2001</yr>
+<fd>May 25</fd>
+<vo>284</vo>
+<is>1</is>
+<sp>62</sp>
+<op>69</op>
+<k1>Animals</k1>
+<k1>Cornea/virology</k1>
+<k1>Cyclic AMP Response Element-Binding Protein/genetics</k1>
+<k1>Disease Models, Animal</k1>
+<k1>Heat Stress Disorders/complications</k1>
+<k1>Herpesvirus 1, Human/genetics</k1>
+<k1>Keratitis, Herpetic/genetics</k1>
+<k1>Mice</k1>
+<k1>Mice, Inbred BALB C</k1>
+<k1>Mutagenesis, Site-Directed</k1>
+<k1>Phenotype</k1>
+<k1>Promoter Regions, Genetic</k1>
+<k1>Rabbits</k1>
+<k1>Recurrence</k1>
+<k1>Trigeminal Ganglion/virology</k1>
+<k1>Virus Latency/genetics</k1>
+<ab>Herpes simplex virus type 1 (HSV-1) recombinant strain 17CRE contains a site-directed mutation in the 7-bp CRE consensus sequence located 38 nucleotides upstream of the transcription start site. Scarified mouse corneas received inoculations of 17syn+ (parent), 17CRE, and rescue 17CREr. Slit lamp examination of herpetic lesions and tear film swabs containing infectious virus showed that 17CRE had the same acute phenotype as 17syn+ and 17CREr. At 4 weeks, when the corneas had healed and latency was established, mice received hyperthermic shock. Eye swabs taken 24 h after hyperthermia showed that 17CRE reactivated significantly less than 17syn+ and 17CREr, while no significant differences were found in HSV-1 DNA genome copy numbers and latent virus in the trigeminal ganglia. These results are evidence that this CRE site in the LAT promoter facilitates ocular HSV-1 reactivation in mice. </ab>
+<no>id: 2; LR: 20081121; CI: Copyright 2001; GR: F32EY06986/EY/NEI NIH HHS/United States; GR: P30EY02377/EY/NEI NIH HHS/United States; GR: R01AI06246/AI/NIAID NIH HHS/United States; GR: R01EY06311/EY/NEI NIH HHS/United States; JID: 0110674; 0 (Cyclic AMP Response Element-Binding Protein); ppublish </no>
+<pb>Academic Press</pb>
+<pp>United States</pp>
+<sn>0042-6822; 0042-6822</sn>
+<ad>Department of Ophthalmology, Microbiology, Pharmacology, and Neuroscience, LSU Health Sciences Center, New Orleans, Louisiana, 70112, USA.</ad>
+<an>PMID: 11352668; S0042-6822(01)90911-0 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<do>10.1006/viro.2001.0911</do>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>11352668</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>2034</id>
+<a1>Mitchell,B. M.</a1>
+<a1>Bloom,D. C.</a1>
+<a1>Cohrs,R. J.</a1>
+<a1>Gilden,D. H.</a1>
+<a1>Kennedy,P. G.</a1>
+<t1>Herpes simplex virus-1 and varicella-zoster virus latency in ganglia </t1>
+<jf>Journal of neurovirology</jf>
+<jo>J.Neurovirol.</jo>
+<yr>2003</yr>
+<fd>Apr</fd>
+<vo>9</vo>
+<is>2</is>
+<sp>194</sp>
+<op>204</op>
+<k1>Animals</k1>
+<k1>Ganglia/virology</k1>
+<k1>Herpes Simplex/virology</k1>
+<k1>Herpes Zoster/virology</k1>
+<k1>Herpesvirus 1, Human/genetics/growth &amp; development</k1>
+<k1>Herpesvirus 3, Human/genetics/growth &amp; development</k1>
+<k1>Humans</k1>
+<k1>Virus Latency/physiology</k1>
+<ab>Two human alpha-herpesviruses, herpes simplex virus (HSV)-1 and varicella zoster virus (VZV), account for the most frequent and serious neurologic disease caused by any of the eight human herpesviruses. Both HSV-1 and VZV become latent in ganglia. In this review, the authors describe features of latency for these viruses, such as distribution, prevalence, abundance, and configuration of viral DNA in latently infected human ganglia, as well as transcription, translation, and cell type infected. Studies of viral latency in animal models are also discussed. For each virus, remaining questions and future studies to understand the mechanism of latency are discussed with respect to prevention of serious cutaneous, ocular, and neurologic disease produced by virus reactivation. </ab>
+<no>id: 8; LR: 20071114; GR: AG06127/AG/NIA NIH HHS/United States; GR: AI48633/AI/NIAID NIH HHS/United States; GR: NS32623/NS/NINDS NIH HHS/United States; JID: 9508123; RF: 112; 2002/11/13 [accepted]; 2002/11/11 [revised]; 2002/10/22 [received]; ppublish </no>
+<pp>United States</pp>
+<sn>1355-0284; 1355-0284</sn>
+<ad>Department of Ophthalmology, Baylor College of Medicine, Houston, Texas, USA.</ad>
+<an>PMID: 12707850; C0E3P889JX2YTEG9 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, P.H.S.; Review; IM</sf>
+<do>10.1080/13550280390194000</do>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>12707850</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>2017</id>
+<a1>Neumann,D. M.</a1>
+<a1>Bhattacharjee,P. S.</a1>
+<a1>Giordani,N. V.</a1>
+<a1>Bloom,D. C.</a1>
+<a1>Hill,J. M.</a1>
+<t1>In vivo changes in the patterns of chromatin structure associated with the latent herpes simplex virus type 1 genome in mouse trigeminal ganglia can be detected at early times after butyrate treatment </t1>
+<jf>Journal of virology</jf>
+<jo>J.Virol.</jo>
+<yr>2007</yr>
+<fd>Dec</fd>
+<vo>81</vo>
+<is>23</is>
+<sp>13248</sp>
+<op>13253</op>
+<k1>Animals</k1>
+<k1>Butyrates/pharmacology</k1>
+<k1>Chromatin/metabolism</k1>
+<k1>Chromatin Assembly and Disassembly/drug effects</k1>
+<k1>Chromatin Immunoprecipitation</k1>
+<k1>DNA, Viral/metabolism</k1>
+<k1>Enzyme Inhibitors/pharmacology</k1>
+<k1>Female</k1>
+<k1>Herpesvirus 1, Human/genetics/physiology</k1>
+<k1>Histone Deacetylase Inhibitors</k1>
+<k1>Histones/metabolism</k1>
+<k1>Mice</k1>
+<k1>Promoter Regions, Genetic</k1>
+<k1>Trigeminal Ganglion/virology</k1>
+<k1>Virus Activation/genetics/physiology</k1>
+<ab>During herpes simplex virus type 1 (HSV-1) latency in mouse dorsal root ganglia (DRG), chromatin associated with the latency-associated transcript (LAT) region of the viral genome is hyperacetylated at lysines 9 and 14 of histone 3 [H3(K9, K14)], while lytic genes are hypoacetylated. Explanted DRG exhibit a pattern of deacetylation of the LAT enhancer followed by acetylation of the ICP0 promoter at early times postexplant. Recently, we reported that sodium butyrate induced in vivo reactivation of HSV-1 in latent mice. In this study, we assessed the effect of sodium butyrate on the chromatin patterns of latent and butyrate-treated mouse trigeminal ganglia (TG) via chromatin immunoprecipitation (ChIP). We detected deacetylation of acetyl H3(K9, K14) of the LAT promoter and LAT enhancer regions as early as 0.5 h post-butyrate treatment, and this deacetylation corresponded to an increase in the acetylation of the lytic promoters ICP0 and ICP4 at 0.5 h and 1 h post-butyrate treatment, respectively. This is the first study to combine in vivo reactivation with the examination of the HSV-1 genome through ChIP assays at early times after the introduction of in vivo reactivation stimuli. </ab>
+<no>id: 1; LR: 20091119; GR: AI07110/AI/NIAID NIH HHS/United States; GR: AI48633/AI/NIAID NIH HHS/United States; GR: F32EY016316/EY/NEI NIH HHS/United States; GR: P30EY002377/EY/NEI NIH HHS/United States; GR: R01EY006311/EY/NEI NIH HHS/United States; JID: 0113724; 0 (Butyrates); 0 (Chromatin); 0 (DNA, Viral); 0 (Enzyme Inhibitors); 0 (Histone Deacetylase Inhibitors); 0 (Histones); OID: NLM: PMC2169074; 2007/09/19 [aheadofprint]; ppublish </no>
+<pp>United States</pp>
+<sn>1098-5514; 0022-538X</sn>
+<ad>Department of Ophthalmology (LSU Eye Center of Excellence), Louisiana State University Health Sciences Center, New Orleans, Louisiana 70112, USA.</ad>
+<an>PMID: 17881451; JVI.01569-07 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, N.I.H., Extramural; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<do>10.1128/JVI.01569-07</do>
+<ds>refworks</ds>
+<wp>20070919</wp>
+<ol>Unknown(0)</ol>
+<pmid>17881451</pmid>
+<pmcid>PMC2169074</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>2029</id>
+<a1>O&#39;Neil,J. E.</a1>
+<a1>Loutsch,J. M.</a1>
+<a1>Aguilar,J. S.</a1>
+<a1>Hill,J. M.</a1>
+<a1>Wagner,E. K.</a1>
+<a1>Bloom,D. C.</a1>
+<t1>Wide variations in herpes simplex virus type 1 inoculum dose and latency-associated transcript expression phenotype do not alter the establishment of latency in the rabbit eye model </t1>
+<jf>Journal of virology</jf>
+<jo>J.Virol.</jo>
+<yr>2004</yr>
+<fd>May</fd>
+<vo>78</vo>
+<is>10</is>
+<sp>5038</sp>
+<op>5044</op>
+<k1>Animals</k1>
+<k1>Cornea/virology</k1>
+<k1>DNA, Viral/analysis</k1>
+<k1>Disease Models, Animal</k1>
+<k1>Genotype</k1>
+<k1>Herpesvirus 1, Human/physiology</k1>
+<k1>Keratitis, Herpetic/virology</k1>
+<k1>MicroRNAs</k1>
+<k1>Phenotype</k1>
+<k1>Rabbits</k1>
+<k1>Trigeminal Ganglion</k1>
+<k1>Viral Proteins/physiology</k1>
+<k1>Virus Latency</k1>
+<k1>Virus Replication</k1>
+<ab>The latency-associated transcript (LAT) is required for efficient reactivation of herpes simplex virus type 1 from latent infection in the rabbit eye model, but LAT&amp;#39;s mechanism of action is unknown. In addition to reactivation, the LAT region seems to correspond to multiple functions, with some LAT deletion mutants exhibiting increased virulence, increased neuronal death, and restricted establishment of latency. While a LAT promoter deletion mutant (17DeltaPst) seems to be primarily restricted in reactivation in the rabbit, subtle effects on virulence or the establishment of latency cannot be precluded at the normal high levels of virus inoculum used in the rabbit model. Since such additional LAT phenotypes may be more evident with lower doses of virus, we evaluated the influence of initial viral inoculum and LAT expression on the progression of acute infection and the establishment of latency. We have assayed both virus recovery rates and viral genome loads in rabbit corneas and trigeminal ganglia. Our results show that (i) in the corneas and trigeminal ganglia, the maximum amount of virus present during acute infection is independent of the LAT genotype and inoculum dose, although greater viral yields are obtained earlier with higher inoculum doses, and (ii) the range in numbers of latent genomes detected in the ganglia is independent of the inoculum dose and the LAT genotype and therefore no difference in establishment of latency is observed. </ab>
+<no>id: 3; LR: 20091118; GR: AI 06246/AI/NIAID NIH HHS/United States; GR: AI 48633/AI/NIAID NIH HHS/United States; GR: CA 11861/CA/NCI NIH HHS/United States; GR: EY 06311/EY/NEI NIH HHS/United States; GR: EY 06996/EY/NEI NIH HHS/United States; JID: 0113724; 0 (DNA, Viral); 0 (MicroRNAs); 0 (Viral Proteins); 0 (latency associated transcript, herpes simplex virus-1); OID: NLM: PMC400357; ppublish </no>
+<pp>United States</pp>
+<sn>0022-538X; 0022-538X</sn>
+<ad>Department of Molecular Genetics &amp; Microbiology, University of Florida College of Medicine, Gainesville, FL 32610-0266, USA.</ad>
+<an>PMID: 15113885</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>15113885</pmid>
+<pmcid>PMC400357</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>2031</id>
+<a1>Origgi,F. C.</a1>
+<a1>Romero,C. H.</a1>
+<a1>Bloom,D. C.</a1>
+<a1>Klein,P. A.</a1>
+<a1>Gaskin,J. M.</a1>
+<a1>Tucker,S. J.</a1>
+<a1>Jacobson,E. R.</a1>
+<t1>Experimental transmission of a herpesvirus in Greek tortoises (Testudo graeca) </t1>
+<jf>Veterinary pathology</jf>
+<jo>Vet.Pathol.</jo>
+<yr>2004</yr>
+<fd>Jan</fd>
+<vo>41</vo>
+<is>1</is>
+<sp>50</sp>
+<op>61</op>
+<k1>Animals</k1>
+<k1>Antibodies, Viral/blood</k1>
+<k1>Brain/virology</k1>
+<k1>Cranial Nerves/virology</k1>
+<k1>DNA Primers</k1>
+<k1>Enzyme-Linked Immunosorbent Assay</k1>
+<k1>Herpesviridae/genetics/immunology/pathogenicity</k1>
+<k1>Herpesviridae Infections/transmission/veterinary</k1>
+<k1>Immunohistochemistry</k1>
+<k1>Reverse Transcriptase Polymerase Chain Reaction</k1>
+<k1>Rhinitis/veterinary/virology</k1>
+<k1>Stomatitis/veterinary/virology</k1>
+<k1>Turtles/virology</k1>
+<ab>An experimental transmission study aimed at fulfilling Koch&amp;#39;s postulates for a herpesvirus-associated stomatitis-rhinitis in Mediterranean tortoises is presented. Clinical, pathologic, serologic, and molecular studies were performed linking tortoise herpesvirus with the pathogenesis of stomatitis-rhinitis. Four adult Greek tortoises received either intranasally or intramuscularly two tortoise herpesvirus isolates by primary experimental infection and secondary challenge 11 months later. After the primary experimental infection and the secondary challenge, clinical signs of illness developed, which included conjunctivitis, diphtheritic oral plaques, and oral discharge. At 4 weeks after the secondary challenge, all tortoises were humanely euthanatized and evaluated. Although neutralizing antibodies developed after the primary experimental infection, they apparently did not prevent the later development of recurrent clinical signs. Polymerase chain reaction (PCR) and reverse transcription-PCR analyses allowed sensitive characterization of the systemic distribution of the herpesvirus DNA sequences and their presence in the cranial nerves and brains of the infected tortoises. Despite the failure to recover the herpesviruses used in the transmission study, the findings support the premise that tortoise herpes-virus is a primary pathogen of Greek tortoises. </ab>
+<no>id: 5; LR: 20061115; JID: 0312020; 0 (Antibodies, Viral); 0 (DNA Primers); ppublish </no>
+<pp>United States</pp>
+<sn>0300-9858; 0300-9858</sn>
+<ad>Department of Small Animal Clinical Sciences, College of Veterinary Medicine, University of Florida, Gainesville, USA. origgi.francesco@hsr.it</ad>
+<an>PMID: 14715968; 41/1/50 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, Non-P.H.S.; IM</sf>
+<do>10.1354/vp.41-1-50</do>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>14715968</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>2028</id>
+<a1>Sun,A.</a1>
+<a1>Devi-Rao,G. V.</a1>
+<a1>Rice,M. K.</a1>
+<a1>Gary,L. W.</a1>
+<a1>Bloom,D. C.</a1>
+<a1>Sandri-Goldin,R. M.</a1>
+<a1>Ghazal,P.</a1>
+<a1>Wagner,E. K.</a1>
+<t1>Immediate-early expression of the herpes simplex virus type 1 ICP27 transcript is not critical for efficient replication in vitro or in vivo </t1>
+<jf>Journal of virology</jf>
+<jo>J.Virol.</jo>
+<yr>2004</yr>
+<fd>Oct</fd>
+<vo>78</vo>
+<is>19</is>
+<sp>10470</sp>
+<op>10478</op>
+<k1>Animals</k1>
+<k1>Blotting, Western</k1>
+<k1>Cells, Cultured</k1>
+<k1>Disease Models, Animal</k1>
+<k1>Ganglia, Spinal/virology</k1>
+<k1>Gene Expression Profiling</k1>
+<k1>Gene Expression Regulation, Viral</k1>
+<k1>Genes, Immediate-Early</k1>
+<k1>Herpes Simplex/virology</k1>
+<k1>Herpesvirus 1, Human/genetics/physiology</k1>
+<k1>Humans</k1>
+<k1>Immediate-Early Proteins/biosynthesis/genetics</k1>
+<k1>Mice</k1>
+<k1>Mutation</k1>
+<k1>Oligonucleotide Array Sequence Analysis</k1>
+<k1>Plaque Assay</k1>
+<k1>Promoter Regions, Genetic</k1>
+<k1>Transcription, Genetic</k1>
+<k1>Virus Replication</k1>
+<ab>We constructed a promoter mutation altering the immediate-early expression of the herpes simplex virus type 1 (HSV-1) ICP27 transcript and its cognate wild-type rescue viruses in order to assess the role of the ICP27 protein in the earliest stages of viral infection by global transcriptional analysis with a DNA microarray. This mutant, ICP27/VP16, replaces the whole ICP27 promoter/enhancer with the VP16 promoter. It demonstrates loss of immediate-early expression of ICP27 according to the criteria expression in the absence of de novo protein synthesis and earliest expression in the kinetic cascade. Significant differences in relative transcript abundances between the mutant and wild-type rescue viruses were limited at the earliest times measured and not evident at all by 4 h after infection. Consistent with this observation, levels of some critical proteins were reduced in the mutant as compared to rescue virus infections at the earliest times tested, but were equivalent by 8 h postinfection. Further, both single and multistep levels of virus replication were equivalent with both mutant and rescue viruses. Thus, altering the immediate-early kinetics of ICP27 leads to a suboptimal quantitative lag phase in gene expression but without consequence for replication fitness in vitro. Infections in vivo also revealed equivalent ability of mutant and rescue viruses to invade the central nervous system of mice following footpad injections. Limitations to an immediate-early role of ICP27 in the biology of HSV are discussed in light of these observations. </ab>
+<no>id: 2; LR: 20091118; GR: AI21515/AI/NIAID NIH HHS/United States; GR: AI48633/AI/NIAID NIH HHS/United States; GR: CA11861/CA/NCI NIH HHS/United States; GR: CA90287/CA/NCI NIH HHS/United States; JID: 0113724; 0 (ICP27 protein, human herpesvirus 1); 0 (Immediate-Early Proteins); OID: NLM: PMC516393; ppublish </no>
+<pp>United States</pp>
+<sn>0022-538X; 0022-538X</sn>
+<ad>Department of Molecular Biology and Biochemistry and Center for Virus Research, University of California, Irvine, CA 92717-3900, USA.</ad>
+<an>PMID: 15367613; 78/19/10470 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<do>10.1128/JVI.78.19.10470-10478.2004</do>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>15367613</pmid>
+<pmcid>PMC516393</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>2025</id>
+<a1>Sun,A.</a1>
+<a1>Devi-Rao,G. V.</a1>
+<a1>Rice,M. K.</a1>
+<a1>Gary,L. W.</a1>
+<a1>Bloom,D. C.</a1>
+<a1>Sandri-Goldin,R. M.</a1>
+<a1>Wagner,P.</a1>
+<a1>Wager,E. K.</a1>
+<t1>The TATGARAT box of the HSV-1 ICP27 gene is essential for immediate early expression but not critical for efficient replication in vitro or in vivo </t1>
+<jf>Virus genes</jf>
+<jo>Virus Genes</jo>
+<yr>2004</yr>
+<fd>Dec</fd>
+<vo>29</vo>
+<is>3</is>
+<sp>335</sp>
+<op>343</op>
+<k1>Animals</k1>
+<k1>Cell Line</k1>
+<k1>Gene Expression Profiling</k1>
+<k1>Gene Expression Regulation, Viral</k1>
+<k1>Genes, Immediate-Early</k1>
+<k1>Herpesvirus 1, Human/genetics/physiology</k1>
+<k1>Humans</k1>
+<k1>Immediate-Early Proteins/genetics</k1>
+<k1>Mice</k1>
+<k1>Plaque Assay</k1>
+<k1>Promoter Regions, Genetic</k1>
+<k1>RNA, Messenger/analysis</k1>
+<k1>RNA, Viral/analysis</k1>
+<k1>Sequence Deletion</k1>
+<k1>Transcription, Genetic</k1>
+<k1>Virus Replication/genetics</k1>
+<ab>We constructed a recombinant virus containing a promoter mutation altering the immediate-early expression of the HSV-1 ICP27 transcript, ICP27DeltaSma, which contains a deletion of the &amp;quot;TATGARAT&amp;quot; and surrounding sequences, but retains the rest of the ICP27 promoter. This mutant does not exhibit immediate-early expression of ICP27 using criteria of expression in the absence of de novo protein synthesis and earliest expression in the kinetic cascade. While transcript abundance at 1h after infection at 0.1 PFU/cell in mouse embryo fibroblasts was significantly altered compared to infections with wt -rescues, by 4 h after infection these differences were diminished or absent. Consistent with this observation, levels of some critical proteins were reduced in the mutant as compared to rescue infections at the earliest times tested, but were equivalent by 8-12 h pi. Further, both single and multi-step virus replication was equivalent with both mutants and rescues. Thus, altering the immediate early kinetics of ICP27 leads to a sub-optimal quantitative lag-phase in gene expression but without consequence to replication fitness in vitro . Infections in vivo also revealed the ability of mutant and rescue virus to invade the CNS of mice following footpad injections was equivalent. The nature of the role of immediate-early ICP27 expression is discussed in light of these observations. </ab>
+<no>id: 9; LR: 20091103; GR: AI21515/AI/NIAID NIH HHS/United States; GR: AI48699/AI/NIAID NIH HHS/United States; GR: CA11861/CA/NCI NIH HHS/United States; GR: CA90287/CA/NCI NIH HHS/United States; JID: 8803967; 0 (ICP27 protein, human herpesvirus 1); 0 (Immediate-Early Proteins); 0 (RNA, Messenger); 0 (RNA, Viral); ppublish </no>
+<pp>United States</pp>
+<sn>0920-8569; 0920-8569</sn>
+<ad>Department of Molecular Biology and Biochemistry and Center for Virus Research, University of California, California 92717, USA.</ad>
+<an>PMID: 15550774; 5277437 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<do>10.1007/s11262-004-7437-9</do>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>15550774</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>3082</id>
+<a1>Tabbaa,S.</a1>
+<a1>Goulah,C.</a1>
+<a1>Tran,R. K.</a1>
+<a1>Lis,A.</a1>
+<a1>Korody,R.</a1>
+<a1>Stachowski,B.</a1>
+<a1>Horowitz,J. M.</a1>
+<a1>Torres,G.</a1>
+<a1>Stachowiak,E. K.</a1>
+<a1>Bloom,D. C.</a1>
+<t1>Gene transfer into the central nervous system using herpes simplex virus-1 vectors</t1>
+<jf>Folia morphologica</jf>
+<jo>Folia Morphol.</jo>
+<yr>2000</yr>
+<vo>59</vo>
+<is>4</is>
+<sp>221</sp>
+<op>232</op>
+<pb>Via Medica Medical Publishers</pb>
+<ds>google</ds>
+<ol>Unknown(0)</ol></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>2022</id>
+<a1>Tabbaa,S.</a1>
+<a1>Corso,T. D.</a1>
+<a1>Jenkins,L.</a1>
+<a1>Tran,R. K.</a1>
+<a1>Bloom,D. C.</a1>
+<a1>Stachowiak,M. K.</a1>
+<t1>In vivo gene transfer to the brain cortex using a single injection of HSV-1 vector into the medial septum </t1>
+<jf>Folia morphologica</jf>
+<jo>Folia.Morphol.(Warsz)</jo>
+<yr>2005</yr>
+<fd>Nov</fd>
+<vo>64</vo>
+<is>4</is>
+<sp>273</sp>
+<op>281</op>
+<k1>Animals</k1>
+<k1>Gene Transfer Techniques</k1>
+<k1>Genes, Reporter</k1>
+<k1>Genetic Vectors</k1>
+<k1>Herpesvirus 1, Human/genetics/metabolism</k1>
+<k1>Humans</k1>
+<k1>Microinjections</k1>
+<k1>Random Allocation</k1>
+<k1>Rats</k1>
+<k1>Rats, Inbred F344</k1>
+<k1>Septal Nuclei/anatomy &amp; histology/physiology</k1>
+<k1>beta-Galactosidase/genetics/metabolism</k1>
+<ab>This study shows that an ICP4-replication-deficient herpes simplex virus containing the Moloney murine leukaemia virus LTR fused with the coding sequence for the beta-galactosidase gene can be used as a very effective vector for delivering the beta-galactosidase reporter gene into the rat brain septum. F344 rats received bilateral stereotaxic injections into the nucleus of the diagonal band and into the medial septum. The X-gal stain was used to detect the activity of the expressed beta-galactosidase enzyme. The delivered reporter gene was expressed successfully not only in the neuronal cells of the injected areas but also in cells that project to the injection area such as cortex cells about 6 mm away from the injection sites. Expression was visible at 1, 3 and 9 weeks following injection. We conclude that this vector can effectively deliver genes into different regions of the mature mammalian brain and also to areas distant from the injection site. </ab>
+<no>id: 6; LR: 20071114; GR: DE00158/DE/NIDCR NIH HHS/United States; GR: HL-49376/HL/NHLBI NIH HHS/United States; JID: 0374620; EC 3.2.1.23 (beta-Galactosidase); ppublish </no>
+<pp>Poland</pp>
+<sn>0015-5659; 0015-5659</sn>
+<ad>Department Pathology and Anatomical Sciences, Buffalo, Suny, NY, USA.</ad>
+<an>PMID: 16425153</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, N.I.H., Extramural; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, Non-P.H.S.; IM</sf>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>16425153</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>2039</id>
+<a1>Tabbaa,S.</a1>
+<a1>Goulah,C.</a1>
+<a1>Tran,R. K.</a1>
+<a1>Lis,A.</a1>
+<a1>Korody,R.</a1>
+<a1>Stachowski,B.</a1>
+<a1>Horowitz,J. M.</a1>
+<a1>Torres,G.</a1>
+<a1>Stachowiak,E. K.</a1>
+<a1>Bloom,D. C.</a1>
+<a1>Stachowiak,M. K.</a1>
+<t1>Gene transfer into the central nervous system using herpes simplex virus-1 vectors </t1>
+<jf>Folia morphologica</jf>
+<jo>Folia.Morphol.(Warsz)</jo>
+<yr>2000</yr>
+<vo>59</vo>
+<is>4</is>
+<sp>221</sp>
+<op>232</op>
+<k1>Animals</k1>
+<k1>Brain/cytology/metabolism</k1>
+<k1>Gene Therapy/methods</k1>
+<k1>Gene Transfer Techniques</k1>
+<k1>Genetic Vectors</k1>
+<k1>Herpesvirus 1, Human</k1>
+<k1>Male</k1>
+<k1>Rats</k1>
+<k1>Rats, Inbred F344</k1>
+<k1>Stereotaxic Techniques</k1>
+<k1>beta-Galactosidase/analysis/genetics</k1>
+<ab>Manipulation of gene expression in developing or in mature central nervous systems (CNS) holds a promise for the resolution of many compelling neurobiological questions, including the feasibility of gene therapy to treat diseases of the brain. In this context, a number of viral vectors have been used in recent years to introduce and express genes into the CNS. This article discusses a gene transfer system based on the Herpes Simplex Virus-1 (HSV-1). We describe here the use of non-replicating, non-toxic HSV-1 vector, 8117/43, in a series of studies carried in our joint program. This vector proves further the utility of HSV-1 as a delivery vehicle to a number of distinct sites within the CNS. </ab>
+<no>id: 3; LR: 20071114; GR: AI06246/AI/NIAID NIH HHS/United States; GR: DE00158/DE/NIDCR NIH HHS/United States; GR: HL-49376/HL/NHLBI NIH HHS/United States; JID: 0374620; EC 3.2.1.23 (beta-Galactosidase); ppublish </no>
+<pp>POLAND</pp>
+<sn>0015-5659; 0015-5659</sn>
+<ad>Department of Anatomy and Cell Biology, State University of New York, Buffalo, USA.</ad>
+<an>PMID: 11107692</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, Non-P.H.S.; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>11107692</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>2036</id>
+<a1>Tran,R. K.</a1>
+<a1>Lieu,P. T.</a1>
+<a1>Aguilar,S.</a1>
+<a1>Wagner,E. K.</a1>
+<a1>Bloom,D. C.</a1>
+<t1>Altering the expression kinetics of VP5 results in altered virulence and pathogenesis of herpes simplex virus type 1 in mice </t1>
+<jf>Journal of virology</jf>
+<jo>J.Virol.</jo>
+<yr>2002</yr>
+<fd>Mar</fd>
+<vo>76</vo>
+<is>5</is>
+<sp>2199</sp>
+<op>2205</op>
+<k1>Animals</k1>
+<k1>Capsid/metabolism</k1>
+<k1>Capsid Proteins</k1>
+<k1>Cells, Cultured</k1>
+<k1>Herpes Simplex/physiopathology/virology</k1>
+<k1>Herpesvirus 1, Human/genetics/metabolism/pathogenicity</k1>
+<k1>Kinetics</k1>
+<k1>Mice</k1>
+<k1>Neuroblastoma</k1>
+<k1>Neurons/virology</k1>
+<k1>Promoter Regions, Genetic/genetics</k1>
+<k1>Spinal Cord/virology</k1>
+<k1>Transcription, Genetic</k1>
+<k1>Tumor Cells, Cultured</k1>
+<k1>Virulence</k1>
+<k1>Virus Replication</k1>
+<ab>While many herpes simplex virus (HSV) structural proteins are expressed with strict-late kinetics, the HSV virion protein 5 (VP5) is expressed as a &amp;quot;leaky-late&amp;quot; protein, such that appreciable amounts of VP5 are made prior to DNA replication. Our goal has been to determine if leaky-late expression of VP5 is a requirement for a normal HSV infection. It had been shown previously that recombinant viruses in which the VP5 promoter was replaced with promoters of other kinetic classes (including a strict late promoter) exhibited no alterations in replication kinetics or virus yields in vitro. In contrast, here we report that alterations in pathogenesis were observed when these recombinants were analyzed by experimental infection of mice. Following intracranial inoculation, a recombinant expressing VP5 from a strict-late promoter (U(L)38) exhibited an increased 50% lethal dose and a 10-fold decrease in virus yields in the central nervous system, while a recombinant expressing VP5 from an early (dUTPase) or another leaky-late (VP16) promoter exhibited wild-type neurovirulence. Moreover, following infection of the footpad, changing the expression kinetics of VP5 from leaky-late to strict-late resulted in 100-fold-less virus in the spinal ganglia during the acute infection than produced by either the parent virus or the rescued virus. These data indicate that the precise timing of appearance of the major capsid protein plays a role in the pathogenesis of HSV infections and that changing the expression kinetics has different effects in different cell types and tissues. </ab>
+<no>id: 10; LR: 20091118; GR: AI 06246/AI/NIAID NIH HHS/United States; GR: CA 11861/CA/NCI NIH HHS/United States; JID: 0113724; 0 (Capsid Proteins); 0 (VP5 protein, Herpes simplex virus type 1); OID: NLM: PMC153803; ppublish </no>
+<pp>United States</pp>
+<sn>0022-538X; 0022-538X</sn>
+<ad>Department of Molecular Genetics and Microbiology, University of Florida College of Medicine, Gainesville, FL 32610-0266, USA.</ad>
+<an>PMID: 11836397</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>11836397</pmid>
+<pmcid>PMC153803</pmcid></reference>
+<reference>
+<rt>Book, Section</rt>
+<sr> Print(0)</sr>
+<id>2879</id>
+<a1>Wagner,E. K.</a1>
+<a1>Bloom,D. C.</a1>
+<t1>HSV Gene Expression during Latent Infection and Reactivation</t1>
+<jf>Herpesviruses and Immunity</jf>
+<yr>2002</yr>
+<sp>53</sp>
+<op>77</op>
+<t2>Herpesviruses and Immunity</t2>
+<pb>Springer</pb>
+<t3>Infectious Agents and Pathogenesis</t3>
+<ds>google</ds>
+<ol>Unknown(0)</ol></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>2045</id>
+<a1>Wagner,E. K.</a1>
+<a1>Bloom,D. C.</a1>
+<t1>Experimental investigation of herpes simplex virus latency </t1>
+<jf>Clinical microbiology reviews</jf>
+<jo>Clin.Microbiol.Rev.</jo>
+<yr>1997</yr>
+<fd>Jul</fd>
+<vo>10</vo>
+<is>3</is>
+<sp>419</sp>
+<op>443</op>
+<k1>Animals</k1>
+<k1>Disease Models, Animal</k1>
+<k1>Encephalitis</k1>
+<k1>Gene Expression Regulation, Viral</k1>
+<k1>Herpes Simplex/complications/immunology</k1>
+<k1>Herpesvirus 3, Human/pathogenicity/physiology</k1>
+<k1>Humans</k1>
+<k1>In Situ Hybridization, Fluorescence</k1>
+<k1>Mice</k1>
+<k1>Neurons/virology</k1>
+<k1>Promoter Regions, Genetic</k1>
+<k1>Rabbits</k1>
+<k1>Simplexvirus/genetics/growth &amp; development/immunology/physiology</k1>
+<k1>Virus Activation</k1>
+<k1>Virus Latency/genetics/immunology</k1>
+<ab>The clinical manifestations of herpes simplex virus infection generally involve a mild and localized primary infection followed by asymptomatic (latent) infection interrupted sporadically by periods of recrudescence (reactivation) where virus replication and associated cytopathologic findings are manifest at the site of initial infection. During the latent phase of infection, viral genomes, but not infectious virus itself, can be detected in sensory and autonomic neurons. The process of latent infection and reactivation has been subject to continuing investigation in animal models and, more recently, in cultured cells. The initiation and maintenance of latent infection in neurons are apparently passive phenomena in that no virus gene products need be expressed or are required. Despite this, a single latency-associated transcript (LAT) encoded by DNA encompassing about 6% of the viral genome is expressed during latent infection in a minority of neurons containing viral DNA. This transcript is spliced, and the intron derived from this splicing is stably maintained in the nucleus of neurons expressing it. Reactivation, which can be induced by stress and assayed in several animal models, is facilitated by the expression of LAT. Although the mechanism of action of LAT-mediated facilitation of reactivation is not clear, all available evidence argues against its involving the expression of a protein. Rather, the most consistent models of action involve LAT expression playing a cis-acting role in a very early stage of the reactivation process. </ab>
+<no>id: 9; LR: 20091118; JID: 8807282; RF: 332; OID: NLM: PMC172928; ppublish </no>
+<pp>UNITED STATES</pp>
+<sn>0893-8512; 0893-8512</sn>
+<ad>Department of Molecular Biology and Biochemistry, University of California, Irvine 92697-3900, USA. Ewagner@uci.edu</ad>
+<an>PMID: 9227860</an>
+<la>eng</la>
+<sf>Journal Article; Review; IM</sf>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>9227860</pmid>
+<pmcid>PMC172928</pmcid></reference>
+<reference>
+<rt>Book, Whole</rt>
+<sr> Print(0)</sr>
+<id>3086</id>
+<a1>Wagner,Edward K.</a1>
+<a1>Hewlett,M.</a1>
+<a1>Bloom,D. C.</a1>
+<a1>Camerini,D.</a1>
+<t1>Basic Virology</t1>
+<yr>2008</yr>
+<sp>550</sp>
+<k1>Maladies à virus</k1>
+<k1>Medical virology</k1>
+<k1>Virologie</k1>
+<k1>Virologie médicale</k1>
+<k1>Virology</k1>
+<k1>Virus</k1>
+<k1>Virus diseases</k1>
+<k1>Viruses</k1>
+<k1>Genome, Viral</k1>
+<k1>Virus Diseases -- virology</k1>
+<k1>Virus Replication</k1>
+<k1>Viruses -- pathogenicity</k1>
+<ab>Contents: 01 Introduction : the impact of viruses on our view of life -- An outline of virus replication and viral pathogenesis -- Virus disease in populations and individual animals -- Patterns of some viral diseases of humans -- Virus structure and classification -- The beginning and end of the virus replication cycle -- Host immune response to viral infection : the nature of the vertebrate immune response -- Strategies to protect against and combat viral infection -- Visualization and enumeration of virus particles -- Replicating and measuring biological activity of viruses -- Physical and chemical manipulation of the structural components of viruses -- Characterization of viral products expressed in the infected cell -- Viruses use cellular processes to express their genetic information -- Replication of positive-sense RNA viruses -- Replication strategies of RNA viruses requiring RNA-directed mRNA transcription as the first step in viral gene expression -- Replication strategies of small and medium-sized DNA viruses -- Replication of some nuclear-replicating eukaryotic DNA viruses with large genomes -- Replication of cytoplasmic DNA viruses and &amp;quot;large&amp;quot; bacteriophages -- Retroviruses : converting RNA to DNA -- HIV and related lentiviruses -- Hepadnaviruses : variations on the retrovirus theme -- The molecular genetics of viruses -- Molecular pathogenesis -- Viral bioinformatics and beyond -- Viruses and the future : problems and promises.</ab>
+<no>Edward K. Wagner ... [et al.]. : Edward K. Wagner ... [et al.].; 50011 Rev. ed. of: Basic virology / Edward K. Wagner, Martinez J. Hewlett. 2nd ed. 2004.; 50412 Includes bibliographical references and index.</no>
+<ed>3</ed>
+<pb>Blackwell Pub</pb>
+<pp>Malden, MA ; Oxford</pp>
+<sn>1405147156 (pbk.; 9781405147156 (pbk.</sn>
+<lk>Contributor biographical information http://www.loc.gov/catdir/enhancements/fy0802/2007019839-b.html; Publisher description http://www.loc.gov/catdir/enhancements/fy0802/2007019839-d.html; Table of contents only http://www.loc.gov/catdir/toc/ecip0717/2007019839.html</lk>
+<cn>QW160.W132b 2008 (HEALTH SCIENCE CENTER LIBRARY General Collection)</cn>
+<ol>Unknown(0)</ol></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>2021</id>
+<a1>Walwyn,W. M.</a1>
+<a1>Matsuka,Y.</a1>
+<a1>Arai,D.</a1>
+<a1>Bloom,D. C.</a1>
+<a1>Lam,H.</a1>
+<a1>Tran,C.</a1>
+<a1>Spigelman,I.</a1>
+<a1>Maidment,N. T.</a1>
+<t1>HSV-1-mediated NGF delivery delays nociceptive deficits in a genetic model of diabetic neuropathy </t1>
+<jf>Experimental neurology</jf>
+<jo>Exp.Neurol.</jo>
+<yr>2006</yr>
+<fd>Mar</fd>
+<vo>198</vo>
+<is>1</is>
+<sp>260</sp>
+<op>270</op>
+<k1>Action Potentials/physiology</k1>
+<k1>Age Factors</k1>
+<k1>Animals</k1>
+<k1>Behavior, Animal</k1>
+<k1>Blotting, Northern/methods</k1>
+<k1>Cell Count/methods</k1>
+<k1>Diabetic Nephropathies/genetics/therapy</k1>
+<k1>Disease Models, Animal</k1>
+<k1>Dose-Response Relationship, Radiation</k1>
+<k1>Electric Stimulation/methods</k1>
+<k1>Ganglia, Spinal/physiopathology</k1>
+<k1>Gene Therapy</k1>
+<k1>Genetic Vectors/physiology</k1>
+<k1>Immunohistochemistry/methods</k1>
+<k1>Male</k1>
+<k1>Mice</k1>
+<k1>Mice, Inbred C57BL</k1>
+<k1>Nerve Fibers/physiology/radiation effects</k1>
+<k1>Nerve Growth Factors/physiology</k1>
+<k1>Pain Measurement/methods</k1>
+<k1>RNA, Messenger/metabolism</k1>
+<k1>Reaction Time</k1>
+<k1>Receptor, Nerve Growth Factor/metabolism</k1>
+<k1>Reverse Transcriptase Polymerase Chain Reaction/methods</k1>
+<k1>Simplexvirus/physiology</k1>
+<k1>Substance P/metabolism</k1>
+<ab>A previous phase III clinical trial failed to show significant therapeutic benefit of repeated subcutaneous nerve growth factor (NGF) administration in the treatment of diabetic neuropathy. Animal studies have since shown that site-specific viral-mediated expression of NGF in the lumbar dorsal root ganglia prevents peripheral nerve dysfunction associated with chemically induced neuropathy. Using a Herpes simplex virus expression vector, we have investigated the effect of localized NGF expression in a genetic mouse model of progressive diabetic neuropathy, the +/+ Leprdb mouse. We found that site-specific delivery of NGF initially delayed the appearance of hypoalgesia, assessed by the Hargreaves test, by 1 month and effectively attenuated this deficit for 2 months over the approximately 10 months normal life-span of these animals. Once the disease progressed into its more severe stages, NGF, although still capable of altering the electrophysiological profile of the sensory A- and C-fibers and influencing the expression of p75 and substance P in the dorsal root ganglia, could no longer maintain normal nociception. These data suggest that maximal therapeutic benefit in future NGF-based gene therapy trials will be gained from early applications of such viral-mediated neurotrophin delivery. </ab>
+<no>id: 5; LR: 20061115; JID: 0370712; 0 (Nerve Growth Factors); 0 (RNA, Messenger); 0 (Receptor, Nerve Growth Factor); 33507-63-0 (Substance P); 2005/07/25 [received]; 2005/10/19 [revised]; 2005/12/07 [accepted]; 2006/01/20 [aheadofprint]; ppublish </no>
+<pp>United States</pp>
+<sn>0014-4886; 0014-4886</sn>
+<ad>Department of Psychiatry and Biobehavioral Sciences, Semel Institute for Neuroscience and Human Behavior, UCLA, Los Angeles, CA 90024-1759, USA. wwalwyn@ucla.edu</ad>
+<an>PMID: 16427624; S0014-4886(05)00465-6 [pii]</an>
+<la>eng</la>
+<sf>Comparative Study; Journal Article; IM</sf>
+<do>10.1016/j.expneurol.2005.12.006</do>
+<ds>refworks</ds>
+<wp>20060120</wp>
+<ol>Unknown(0)</ol>
+<pmid>16427624</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>2009</id>
+<a1>Zeier,Z.</a1>
+<a1>Kumar,A.</a1>
+<a1>Bodhinathan,K.</a1>
+<a1>Feller,J. A.</a1>
+<a1>Foster,T. C.</a1>
+<a1>Bloom,D. C.</a1>
+<t1>Fragile X mental retardation protein replacement restores hippocampal synaptic function in a mouse model of fragile X syndrome </t1>
+<jf>Gene therapy</jf>
+<jo>Gene Ther.</jo>
+<yr>2009</yr>
+<fd>Sep</fd>
+<vo>16</vo>
+<is>9</is>
+<sp>1122</sp>
+<op>1129</op>
+<ab>Fragile X syndrome (FXS) is caused by a mutation that silences the fragile X mental retardation gene (FMR1), which encodes the fragile X mental retardation protein (FMRP). To determine whether FMRP replacement can rescue phenotypic deficits in a fmr1-knockout (KO) mouse model of FXS, we constructed an adeno-associated virus-based viral vector that expresses the major central nervous system (CNS) isoform of FMRP. Using this vector, we tested whether FMRP replacement could rescue the fmr1-KO phenotype of enhanced long-term depression (LTD), a form of synaptic plasticity that may be linked to cognitive impairments associated with FXS. Extracellular excitatory postsynaptic field potentials were recorded from CA3-CA1 synaptic contacts in hippocampal slices from wild-type (WT) and fmr1-KO mice in the presence of AP-5 and anisomycin. Paired-pulse low-frequency stimulation (PP-LFS)-induced LTD is enhanced in slices obtained from fmr1 KO compared with WT mice. Analyses of hippocampal synaptic function in fmr1-KO mice that received hippocampal injections of vector showed that the PP-LFS-induced LTD was restored to WT levels. These results indicate that expression of the major CNS isoform of FMRP alone is sufficient to rescue this phenotype and suggest that post-developmental protein replacement may have the potential to improve cognitive function in FXS. </ab>
+<no>id: 3; GR: AG14979/AG/NIA NIH HHS/United States; GR: MH059891/MH/NIMH NIH HHS/United States; GR: R01 AG014979-11/AG/NIA NIH HHS/United States; JID: 9421525; NIHMS94929; OID: NLM: NIHMS94929; OID: NLM: PMC2741536; 2009/07/02 [aheadofprint]; ppublish </no>
+<pp>England</pp>
+<sn>1476-5462; 0969-7128</sn>
+<ad>Department of Molecular Genetics and Microbiology, University of Florida College of Medicine, Gainesville, FL 32610-0266, USA.</ad>
+<an>PMID: 19571888; gt200983 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, N.I.H., Extramural; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<do>10.1038/gt.2009.83</do>
+<ds>refworks</ds>
+<wp>20090702</wp>
+<ol>Unknown(0)</ol>
+<pmid>19571888</pmid>
+<pmcid>PMC2741536</pmcid></reference></refworks>

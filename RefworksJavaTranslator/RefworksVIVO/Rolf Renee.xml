@@ -1,0 +1,2280 @@
+
+<?xml version="1.0" encoding="utf-8"?>
+<refworks xmlns:refworks="www.refworks.com/xml/">
+
+
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>721</id>
+<a1>An,F. Q.</a1>
+<a1>Compitello,N.</a1>
+<a1>Horwitz,E.</a1>
+<a1>Sramkoski,M.</a1>
+<a1>Knudsen,E. S.</a1>
+<a1>Renne,R.</a1>
+<t1>The latency-associated nuclear antigen of Kaposi&amp;#39;s sarcoma-associated herpesvirus modulates cellular gene expression and protects lymphoid cells from p16 INK4A-induced cell cycle arrest</t1>
+<jf>The Journal of biological chemistry</jf>
+<jo>J.Biol.Chem.</jo>
+<yr>2005</yr>
+<fd>Feb 4</fd>
+<vo>280</vo>
+<is>5</is>
+<sp>3862</sp>
+<op>3874</op>
+<k1>Antigens, Viral</k1>
+<k1>Burkitt Lymphoma</k1>
+<k1>Cell Cycle Proteins/metabolism</k1>
+<k1>Cell Line, Tumor</k1>
+<k1>Cyclin-Dependent Kinase Inhibitor p16/genetics</k1>
+<k1>Cytoskeletal Proteins/metabolism</k1>
+<k1>DNA-Binding Proteins/metabolism</k1>
+<k1>E2F Transcription Factors</k1>
+<k1>Gene Expression Profiling</k1>
+<k1>Gene Expression Regulation, Viral</k1>
+<k1>Herpesvirus 8, Human/genetics</k1>
+<k1>Humans</k1>
+<k1>Lymphocytes/cytology/virology</k1>
+<k1>Nuclear Proteins/genetics</k1>
+<k1>Retinoblastoma Protein/metabolism</k1>
+<k1>S Phase/physiology</k1>
+<k1>Trans-Activators/metabolism</k1>
+<k1>Transcription Factors/metabolism</k1>
+<k1>Transfection</k1>
+<k1>beta Catenin</k1>
+<ab>Latently infected Kaposi&amp;#39;s sarcoma-associated herpes-virus (KSHV)-associated tumor cells have both endothelial and lymphoid origins and express a limited set of latent viral genes. One such gene, ORF73, encodes the latency-associated nuclear antigen (LANA), a multifunctional protein that plays roles in viral DNA replication, episome maintenance, and transcriptional regulation. LANA interacts with cellular proteins involved in transcriptional regulation such as the tumor suppressors, retinoblastoma (Rb) and p53, and RING3 family members. Although several reports about specific LANA-regulated promoters exist, only limited data are available that address how LANA expression in KSHV-infected cells globally affects cellular gene expression, thereby potentially contributing to KSHV pathogenicity. To investigate this question, we generated an Epstein-Barr virus-negative Burkitts lymphoma line that expresses LANA from a tetracycline-inducible promoter (BJAB/Tet-On/LANA), and we performed microarray-based gene expression profiling. Expression profiling at different time points post-induction revealed that 186 genes were activated or repressed over 2-fold in the presence of LANA. Of these genes, 41 are regulated in the Rb/E2F pathway, whereas 7 are related to p53 signaling. To determine whether these gene expression changes translate into LANA-dependent changes in cell cycle regulation, we overexpressed p16 INK4a, a CDK4/6 inhibitor that efficiently induces cell cycle arrest in Rb-positive cells. Under these conditions, LANA expression protects lymphoid cells from p16 INK4a-induced cell cycle arrest and induces S-phase entry.</ab>
+<no>LR: 20071114; GR: CA097939/CA/NCI NIH HHS/United States; GR: CA88763/CA/NCI NIH HHS/United States; JID: 2985121R; 0 (Antigens, Viral); 0 (CTNNB1 protein, human); 0 (Cell Cycle Proteins); 0 (Cyclin-Dependent Kinase Inhibitor p16); 0 (Cytoskeletal Proteins); 0 (DNA-Binding Proteins); 0 (E2F Transcription Factors); 0 (Nuclear Proteins); 0 (Retinoblastoma Protein); 0 (Trans-Activators); 0 (Transcription Factors); 0 (beta Catenin); 0 (latency-associated nuclear antigen); 2004/11/02 [aheadofprint]; ppublish</no>
+<pp>United States</pp>
+<sn>0021-9258; 0021-9258</sn>
+<ad>Division of Hematology/Oncology and the Department of Molecular Biology and Microbiology, Case Comprehensive Cancer Center, Case Western Reserve University, Cleveland, Ohio 44106, USA.</ad>
+<an>PMID: 15525642; M407435200 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<do>10.1074/jbc.M407435200</do>
+<wp>20041102</wp>
+<ol>Unknown(0)</ol>
+<pmid>15525642</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>718</id>
+<a1>An,F. Q.</a1>
+<a1>Folarin,H. M.</a1>
+<a1>Compitello,N.</a1>
+<a1>Roth,J.</a1>
+<a1>Gerson,S. L.</a1>
+<a1>McCrae,K. R.</a1>
+<a1>Fakhari,F. D.</a1>
+<a1>Dittmer,D. P.</a1>
+<a1>Renne,R.</a1>
+<t1>Long-term-infected telomerase-immortalized endothelial cells: a model for Kaposi&amp;#39;s sarcoma-associated herpesvirus latency in vitro and in vivo</t1>
+<jf>Journal of virology</jf>
+<jo>J.Virol.</jo>
+<yr>2006</yr>
+<fd>May</fd>
+<vo>80</vo>
+<is>10</is>
+<sp>4833</sp>
+<op>4846</op>
+<k1>Animals</k1>
+<k1>Cell Culture Techniques/methods</k1>
+<k1>Cell Line, Transformed</k1>
+<k1>Cytokines/biosynthesis/genetics</k1>
+<k1>Disease Susceptibility</k1>
+<k1>Endothelial Cells/cytology/enzymology/metabolism/virology</k1>
+<k1>Endothelium, Vascular/cytology/enzymology/metabolism/virology</k1>
+<k1>Gene Expression Regulation, Viral</k1>
+<k1>Herpesviridae/physiology</k1>
+<k1>Humans</k1>
+<k1>Mice</k1>
+<k1>Mice, Inbred BALB C</k1>
+<k1>Mice, Nude</k1>
+<k1>Sarcoma, Kaposi/virology</k1>
+<k1>Telomerase/physiology</k1>
+<k1>Virus Latency/physiology</k1>
+<k1>Virus Replication/physiology</k1>
+<ab>Kaposi&amp;#39;s sarcoma-associated herpesvirus (KSHV) is associated with Kaposi&amp;#39;s sarcoma (KS), primary effusion lymphoma (PEL), and multicentric Castleman&amp;#39;s disease. Most KS tumor cells are latently infected with KSHV and are of endothelial origin. While PEL-derived cell lines maintain KSHV indefinitely, all KS tumor-derived cells to date have lost viral genomes upon ex vivo cultivation. To study KSHV latency and tumorigenesis in endothelial cells, we generated telomerase-immortalized human umbilical vein endothelial (TIVE) cells. TIVE cells express all KSHV latent genes 48 h postinfection, and productive lytic replication could be induced by RTA/Orf50. Similar to prior models, infected cultures gradually lost viral episomes. However, we also obtained, for the first time, two endothelial cell lines in which KSHV episomes were maintained indefinitely in the absence of selection. Long-term KSHV maintenance correlated with loss of reactivation in response to RTA/Orf50 and complete oncogenic transformation. Long-term-infected TIVE cells (LTC) grew in soft agar and proliferated under reduced-serum conditions. LTC, but not parental TIVE cells, formed tumors in nude mice. These tumors expressed high levels of the latency-associated nuclear antigen (LANA) and expressed lymphatic endothelial specific antigens as found in KS (LYVE-1). Furthermore, host genes, like those encoding interleukin 6, vascular endothelial growth factor, and basic fibroblast growth factor, known to be highly expressed in KS lesions were also induced in LTC-derived tumors. KSHV-infected LTCs represent the first xenograft model for KS and should be of use to study KS pathogenesis and for the validation of anti-KS drug candidates.</ab>
+<no>LR: 20091118; GR: CA109232/CA/NCI NIH HHS/United States; GR: CA110136/CA/NCI NIH HHS/United States; GR: CA73062/CA/NCI NIH HHS/United States; GR: CA83134/CA/NCI NIH HHS/United States; GR: CA88763/CA/NCI NIH HHS/United States; GR: CA97939/CA/NCI NIH HHS/United States; GR: HL076810/HL/NHLBI NIH HHS/United States; GR: P5043703/PHS HHS/United States; JID: 0113724; 0 (Cytokines); EC 2.7.7.49 (Telomerase); OID: NLM: PMC1472065; ppublish</no>
+<pp>United States</pp>
+<sn>0022-538X; 0022-538X</sn>
+<ad>Department of Molecular Genetics and Microbiology, University of Florida, Shands Cancer Center, Gainesville, FL 32610-0232, USA.</ad>
+<an>PMID: 16641275; 80/10/4833 [pii]</an>
+<la>eng</la>
+<sf>Comparative Study; Journal Article; Research Support, N.I.H., Extramural; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<do>10.1128/JVI.80.10.4833-4846.2006</do>
+<ol>Unknown(0)</ol>
+<pmid>16641275</pmid>
+<pmcid>PMC1472065</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>708</id>
+<a1>Boss,I. W.</a1>
+<a1>Plaisance,K. B.</a1>
+<a1>Renne,R.</a1>
+<t1>Role of virus-encoded microRNAs in herpesvirus biology</t1>
+<jf>Trends in microbiology</jf>
+<jo>Trends Microbiol.</jo>
+<yr>2009</yr>
+<fd>Dec</fd>
+<vo>17</vo>
+<is>12</is>
+<sp>544</sp>
+<op>553</op>
+<k1>Gene Expression Regulation, Viral</k1>
+<k1>Herpesviridae/genetics/metabolism</k1>
+<k1>MicroRNAs/genetics/metabolism</k1>
+<k1>RNA, Viral/genetics/metabolism</k1>
+<ab>MicroRNAs (miRNAs) are short RNAs of about 22 nucleotides in length that post-transcriptionally regulate gene expression by binding to 3&amp;#39; untranslated regions of mRNAs, thereby inducing translational silencing. Recently, more than 140 miRNAs have been identified in the genomes of herpesviruses. Deciphering their role in viral biology requires the identification of target genes, a challenging task because miRNAs require only limited complementarity. The subject of this review will be the herpesvirus miRNAs and their respective target genes that have been determined experimentally to date. These miRNAs regulate fundamental cellular processes including immunity, angiogenesis, apoptosis, and key steps in the herpesvirus life cycle, latency and the switch from latent to lytic replication.</ab>
+<no>GR: R01 CA 119917/CA/NCI NIH HHS/United States; GR: R01 CA88763/CA/NCI NIH HHS/United States; GR: RC2CA148407/CA/NCI NIH HHS/United States; JID: 9310916; 0 (MicroRNAs); 0 (RNA, Viral); RF: 74; NIHMS152187; OID: NLM: NIHMS152187 [Available on 12/01/10]; OID: NLM: PMC2802859 [Available on 12/01/10]; 2009/04/02 [received]; 2009/09/03 [revised]; 2009/09/11 [accepted]; 2009/10/12 [aheadofprint]; ppublish</no>
+<pp>England</pp>
+<sn>1878-4380; 0966-842X</sn>
+<ad>Department of Molecular Genetics and Microbiology and UF Shands Cancer Center, University of Florida, Gainesville, Florida 32610, USA.</ad>
+<an>PMID: 19828316; S0966-842X(09)00189-9 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, N.I.H., Extramural; Review; IM</sf>
+<do>10.1016/j.tim.2009.09.002</do>
+<wp>20091012</wp>
+<ol>Unknown(0)</ol>
+<pmid>19828316</pmid>
+<pmcid>PMC2802859</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>752</id>
+<a1>Bucher,J. R.</a1>
+<a1>Elwell,M. R.</a1>
+<a1>Thompson,M. B.</a1>
+<a1>Chou,B. J.</a1>
+<a1>Renne,R.</a1>
+<a1>Ragan,H. A.</a1>
+<t1>Inhalation toxicity studies of cobalt sulfate in F344/N rats and B6C3F1 mice</t1>
+<jf>Fundamental and applied toxicology : official journal of the Society of Toxicology</jf>
+<jo>Fundam.Appl.Toxicol.</jo>
+<yr>1990</yr>
+<fd>Aug</fd>
+<vo>15</vo>
+<is>2</is>
+<sp>357</sp>
+<op>372</op>
+<k1>Administration, Inhalation</k1>
+<k1>Aerosols</k1>
+<k1>Animals</k1>
+<k1>Body Weight/drug effects</k1>
+<k1>Cobalt/administration &amp; dosage/toxicity/urine</k1>
+<k1>Epiglottis/pathology</k1>
+<k1>Female</k1>
+<k1>Lung/drug effects</k1>
+<k1>Male</k1>
+<k1>Mice</k1>
+<k1>Mice, Inbred Strains</k1>
+<k1>Organ Size/drug effects</k1>
+<k1>Polycythemia/chemically induced/pathology</k1>
+<k1>Rats</k1>
+<k1>Rats, Inbred F344</k1>
+<k1>Respiratory Tract Neoplasms/pathology</k1>
+<k1>Species Specificity</k1>
+<k1>Spermatozoa/drug effects/ultrastructure</k1>
+<k1>Thyroid Hormones/blood</k1>
+<k1>Vagina/cytology/drug effects</k1>
+<ab>Groups of 10 F344/N rats and B6C3F1 mice of each sex were exposed to cobalt sulfate heptahydrate aerosols of 0, 0.3, 1.0, 3.0, 10, or 30 mg/m3, 6 hr per day, 5 days per week, for 13 weeks. All rats and female mice and all but 2/10 male mice exposed at the top concentration survived to the end of the studies. Polycythemia was observed in exposed rats but not in mice. Sperm motility was decreased in mice exposed at 3 mg/m3 (the lowest concentration evaluated) and at higher concentrations, and increased numbers of abnormal sperm and decreased testis and epididymal weights occurred in mice exposed to 30 mg/m3. Cobalt content in the urine of rats increased with increasing atmospheric cobalt exposure. Primary histopathologic effects were limited to the respiratory tract. Lesions in rats and mice included degeneration of the olfactory epithelium, squamous metaplasia of the respiratory epithelium, and inflammation in the nose; inflammation, necrosis, squamous metaplasia, ulcers (rats), and inflammatory polyps (rats) of the larynx; metaplasia of the trachea (mice); and fibrosis, histiocytic infiltrates, bronchiolar epithelial regeneration, and epithelial hyperplasia in the alveoli of the lung. The most sensitive tissue was the larynx, with squamous metaplasia observed in rats and mice at the lowest exposure concentration of 0.3 mg/m3. Thus, a no-observed-adverse-effect level was not reached in these studies.</ab>
+<no>LR: 20041117; JID: 8200838; 0 (Aerosols); 0 (Thyroid Hormones); 10124-43-3 (cobalt sulfate); 7440-48-4 (Cobalt); ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0272-0590; 0272-0590</sn>
+<ad>National Institute of Environmental Health Sciences, National Toxicology Program, Research Triangle Park, North Carolina 27709.</ad>
+<an>PMID: 2227161</an>
+<la>eng</la>
+<sf>Journal Article; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>2227161</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>744</id>
+<a1>Campbell,M.</a1>
+<a1>Renshaw-Gegg,L.</a1>
+<a1>Renne,R.</a1>
+<a1>Luciw,P. A.</a1>
+<t1>Characterization of the internal promoter of simian foamy viruses</t1>
+<jf>Journal of virology</jf>
+<jo>J.Virol.</jo>
+<yr>1994</yr>
+<fd>Aug</fd>
+<vo>68</vo>
+<is>8</is>
+<sp>4811</sp>
+<op>4820</op>
+<k1>Animals</k1>
+<k1>Base Sequence</k1>
+<k1>Cell Line</k1>
+<k1>Cell Line, Transformed</k1>
+<k1>Cercopithecus aethiops</k1>
+<k1>Chromosomal Proteins, Non-Histone</k1>
+<k1>DNA, Viral</k1>
+<k1>DNA-Binding Proteins/metabolism</k1>
+<k1>Exons</k1>
+<k1>Histone Chaperones</k1>
+<k1>Humans</k1>
+<k1>Macaca mulatta</k1>
+<k1>Mice</k1>
+<k1>Molecular Sequence Data</k1>
+<k1>Open Reading Frames</k1>
+<k1>Promoter Regions, Genetic</k1>
+<k1>Repetitive Sequences, Nucleic Acid</k1>
+<k1>Retroviridae Proteins/metabolism</k1>
+<k1>Sequence Homology, Nucleic Acid</k1>
+<k1>Spumavirus/genetics</k1>
+<k1>TATA Box</k1>
+<k1>Trans-Activators/metabolism</k1>
+<k1>Transcription Factors</k1>
+<k1>Transcriptional Activation</k1>
+<k1>Viral Envelope Proteins/genetics</k1>
+<ab>Simian and human foamy viruses (HFV and SFV), genetically related members of the spumavirus genus of retroviruses, have complex genome structures which encode the gag, pol, and env genes for virion proteins as well as additional open reading frames. One of these open reading frames is a viral transactivator, encoded by genes designated taf for SFV and bel-1 for HFV, which augments transcription directed by the long terminal repeat (LTR) through cis-acting targets in the U3 domain of the LTR. Recently, an internal transcriptional promoter has been identified in sequences within the 3&amp;#39; end of the HFV env gene (M. Lochelt, W. Muranyi, and R. M. Flugel, Proc. Natl. Acad. Sci. 90:7317-7321, 1993). We have demonstrated by using transient expression assays in several tissue culture cell lines and by analyzing viral transcripts in infected cells that SFV-1 from a rhesus macaque and SFV-3 from an African green monkey also encode an internal promoter in the env gene. Transcription directed by the internal promoters of SFV-1 and SFV-3 is activated by the taf-1 and taf-3 gene products, respectively, in several cell types. The importance of a TATA box for the SFV-1 internal promoter was established by site-specific mutagenesis, and the 5&amp;#39; ends of transcripts initiating in the internal promoter have been determined. cis-acting sequences in the SFV-1 env gene required for the response to taf-1 are contained within a 121-bp element located 5&amp;#39; to the TATA box in the internal promoter. This taf-1-responsive element in the internal promoter functions in a position- and orientation-independent fashion in a heterologous promoter and thus has the properties of an enhancer which depends on taf-1 activity. Alignments reveal that the SFV-1 internal promoter and the SFV-1 LTR have little sequence relatedness. Cross-transactivation studies show that the transactivators of SFV-1 and HFV function on the internal promoter and LTR of the homologous virus but not on the heterologous virus. In summary, the genomes of simian and human foamy viruses direct viral transcription through both the promoter in the LTR and an internal promoter within the env gene, and each promoter contains unique enhancer-like elements regulated by the viral transactivator.</ab>
+<no>LR: 20091119; GENBANK/M33561; GENBANK/M55729; GENBANK/M74895; GENBANK/X58484; GR: AI30525/AI/NIAID NIH HHS/United States; GR: RR00169/RR/NCRR NIH HHS/United States; JID: 0113724; 0 (Chromosomal Proteins, Non-Histone); 0 (DNA, Viral); 0 (DNA-Binding Proteins); 0 (Histone Chaperones); 0 (Retroviridae Proteins); 0 (SET protein, human); 0 (Trans-Activators); 0 (Transcription Factors); 0 (Viral Envelope Proteins); 0 (bel1 protein, Human foamy virus); OID: NLM: PMC236420; ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0022-538X; 0022-538X</sn>
+<ad>Department of Pathology, School of Medicine, University of California, Davis 95616.</ad>
+<an>PMID: 8035481</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>8035481</pmid>
+<pmcid>PMC236420</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>733</id>
+<a1>Chang,J.</a1>
+<a1>Renne,R.</a1>
+<a1>Dittmer,D.</a1>
+<a1>Ganem,D.</a1>
+<t1>Inflammatory cytokines and the reactivation of Kaposi&amp;#39;s sarcoma-associated herpesvirus lytic replication</t1>
+<jf>Virology</jf>
+<jo>Virology</jo>
+<yr>2000</yr>
+<fd>Jan 5</fd>
+<vo>266</vo>
+<is>1</is>
+<sp>17</sp>
+<op>25</op>
+<k1>Cytokines/pharmacology</k1>
+<k1>Flow Cytometry</k1>
+<k1>Herpesvirus 8, Human/physiology</k1>
+<k1>Humans</k1>
+<k1>Ionomycin/pharmacology</k1>
+<k1>Ionophores/pharmacology</k1>
+<k1>Phorbol Esters/pharmacology</k1>
+<k1>Reverse Transcriptase Polymerase Chain Reaction</k1>
+<k1>Tumor Cells, Cultured</k1>
+<k1>Virus Activation/drug effects</k1>
+<k1>Virus Latency</k1>
+<k1>Virus Replication/drug effects</k1>
+<ab>Kaposi&amp;#39;s sarcoma (KS) is a complex proliferative lesion long suspected of being dependent on exogenous paracrine signaling molecules to stimulate its proliferative, angiogenic, and inflammatory components. In particular, both clinical and experimental observations have pointed to a potential role for inflammatory cytokines as permissive factors for KS development, but KS pathogenesis is also critically dependent on infection by an exogenous herpesvirus, the KS-associated herpesvirus (KSHV). To examine the possible links between inflammatory cytokines and KSHV replication, we tested for the ability of such cytokines to induce lytic viral reactivation in the latently infected BCBL-1 cell line. Interferon-gamma consistently activated KSHV replication, whereas tumor necrosis factor, interleukin-1, interleukin-2, interleukin-6, granulocyte-macrophage colony stimulating factor, and basic fibroblast growth factor did not. Glucocorticoids also failed to induce lytic KSHV growth in these cells, but ionomycin, a calcium ionophore, induced replication and strongly augmented the known inductive effects of phorbol esters. Interferon-alpha had a dose-dependent inhibitory effect on KSHV induction by ionomycin. The identification of interferon-gamma as an activator and interferon-alpha as an inhibitor of KSHV induction in vitro correlates well with in vivo observations and demonstrates for the first time that inflammatory cytokines can directly modulate KSHV replication.</ab>
+<no>LR: 20061115; CI: Copyright 2000; JID: 0110674; 0 (Cytokines); 0 (Ionophores); 0 (Phorbol Esters); 56092-81-0 (Ionomycin); ppublish</no>
+<pb>Academic Press</pb>
+<pp>UNITED STATES</pp>
+<sn>0042-6822; 0042-6822</sn>
+<ad>Howard Hughes Medical Institute, University of California, San Francisco, San Francisco, California, 94143-0414, USA.</ad>
+<an>PMID: 10612656; S0042-6822(99)90077-6 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; IM; X</sf>
+<do>10.1006/viro.1999.0077</do>
+<ol>Unknown(0)</ol>
+<pmid>10612656</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>713</id>
+<a1>Di Bartolo,D. L.</a1>
+<a1>Cannon,M.</a1>
+<a1>Liu,Y. F.</a1>
+<a1>Renne,R.</a1>
+<a1>Chadburn,A.</a1>
+<a1>Boshoff,C.</a1>
+<a1>Cesarman,E.</a1>
+<t1>KSHV LANA inhibits TGF-beta signaling through epigenetic silencing of the TGF-beta type II receptor</t1>
+<jf>Blood</jf>
+<jo>Blood</jo>
+<yr>2008</yr>
+<fd>May 1</fd>
+<vo>111</vo>
+<is>9</is>
+<sp>4731</sp>
+<op>4740</op>
+<k1>Antigens, Viral/physiology</k1>
+<k1>Cell Line, Tumor</k1>
+<k1>Epigenesis, Genetic</k1>
+<k1>Gene Silencing</k1>
+<k1>Herpesvirus 8, Human/chemistry</k1>
+<k1>Humans</k1>
+<k1>Lymphoma, Primary Effusion/virology</k1>
+<k1>Nuclear Proteins/physiology</k1>
+<k1>Protein-Serine-Threonine Kinases/genetics</k1>
+<k1>Receptors, Transforming Growth Factor beta/genetics</k1>
+<k1>Signal Transduction</k1>
+<k1>Transforming Growth Factor beta/antagonists &amp; inhibitors</k1>
+<ab>Signaling through the transforming growth factor-beta (TGF-beta) pathway results in growth inhibition and induction of apoptosis in various cell types. We show that this pathway is blocked in Kaposi sarcoma herpesvirus (KSHV)-infected primary effusion lymphoma through down-regulation of the TGF-beta type II receptor (TbetaRII) by epigenetic mechanisms. Our data also suggest that KSHV infection may result in lower expression of TbetaRII in Kaposi sarcoma and multicentric Castleman disease. KSHV-encoded LANA associates with the promoter of TbetaRII and leads to its methylation and to the deacetylation of proximal histones. Reestablishment of signaling through this pathway reduces viability of these cells, inferring that KSHV-mediated blockage of TGF-beta signaling plays a role in the establishment and progression of KSHV-associated neoplasia. These data suggest a mechanism whereby KSHV evades both the antiproliferative effects of TGF-beta signaling by silencing TbetaRII gene expression and immune recognition by suppressing TGF-beta-responsive immune cells through the elevated secretion of TGF-beta1.</ab>
+<no>LR: 20091118; GR: K08-AI153971/AI/NIAID NIH HHS/United States; GR: R01-CA68939/CA/NCI NIH HHS/United States; JID: 7603509; 0 (Antigens, Viral); 0 (Nuclear Proteins); 0 (Receptors, Transforming Growth Factor beta); 0 (Transforming Growth Factor beta); 0 (latency-associated nuclear antigen); EC 2.7.11.1 (Protein-Serine-Threonine Kinases); EC 2.7.11.30 (transforming growth factor-beta type II receptor); CIN: Blood. 2008 May 1;111(9):4425-6. PMID: 18441240; OID: NLM: PMC2343603; 2008/01/16 [aheadofprint]; ppublish</no>
+<pp>United States</pp>
+<sn>1528-0020; 0006-4971</sn>
+<ad>Department of Pathology and Laboratory Medicine, Weill Cornell Medical College, New York, NY 10021, USA.</ad>
+<an>PMID: 18199825; blood-2007-09-110544 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, N.I.H., Extramural; Research Support, Non-U.S. Gov&#39;t; AIM; IM</sf>
+<do>10.1182/blood-2007-09-110544</do>
+<wp>20080116</wp>
+<ol>Unknown(0)</ol>
+<pmid>18199825</pmid>
+<pmcid>PMC2343603</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>737</id>
+<a1>Dittmer,D.</a1>
+<a1>Lagunoff,M.</a1>
+<a1>Renne,R.</a1>
+<a1>Staskus,K.</a1>
+<a1>Haase,A.</a1>
+<a1>Ganem,D.</a1>
+<t1>A cluster of latently expressed genes in Kaposi&amp;#39;s sarcoma-associated herpesvirus</t1>
+<jf>Journal of virology</jf>
+<jo>J.Virol.</jo>
+<yr>1998</yr>
+<fd>Oct</fd>
+<vo>72</vo>
+<is>10</is>
+<sp>8309</sp>
+<op>8315</op>
+<k1>Alternative Splicing</k1>
+<k1>Base Sequence</k1>
+<k1>DNA Primers</k1>
+<k1>DNA, Viral</k1>
+<k1>Genes, Reporter</k1>
+<k1>Genes, Viral</k1>
+<k1>Herpesvirus 8, Human/genetics</k1>
+<k1>In Situ Hybridization</k1>
+<k1>Multigene Family</k1>
+<k1>Open Reading Frames</k1>
+<k1>Promoter Regions, Genetic</k1>
+<k1>RNA, Messenger/genetics</k1>
+<k1>Transcription, Genetic</k1>
+<ab>Infection with Kaposi&amp;#39;s sarcoma-associated herpesvirus (KSHV) is closely associated with Kaposi&amp;#39;s sarcoma (KS) and primary effusion lymphoma, with viral genomes present in a latent state in the majority of tumor cells. Here we describe a cluster of latently expressed viral genes whose mRNAs are generated from a common promoter. Two mRNAs in this region encode the latency-associated nuclear antigen, the product of open reading frame 73 (ORF73). The larger RNA, of 5.8 kb, is an unspliced transcript that includes ORF72 and -71 at its 3&amp;#39; end; it initiates at nucleotides (nt) 127880 to 127886 from a promoter lacking recognizable TATA elements. A less abundant mRNA, of 5.4 kb, is a variant of this transcript, in which 336 nt of 5&amp;#39; noncoding information has been removed by RNA splicing. A third, more abundant RNA is generated from the same promoter region via splicing from the common splice donor at nt 127813 to an acceptor 5&amp;#39; to ORF72; this transcript is the presumed mRNA for ORF72, which encodes the viral cyclin D homolog. All three RNAs are 3&amp;#39; coterminal. In situ hybridization analysis with probes that can detect all three transcripts shows that the RNAs are detectable in a large fraction of BCBL-1 cells prior to lytic induction and in &amp;gt;70% of KS spindle cells in primary KS tumors. This confirms that these transcripts are indeed latent RNAs and suggests a role for their products in viral persistence and/or KSHV-associated proliferation.</ab>
+<no>LR: 20091118; JID: 0113724; 0 (DNA Primers); 0 (DNA, Viral); 0 (RNA, Messenger); OID: NLM: PMC110196; ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0022-538X; 0022-538X</sn>
+<ad>Department of Microbiology and Immunology, University of California San Francisco, San Francisco, California 94143-0414, USA.</ad>
+<an>PMID: 9733875</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM; X</sf>
+<ol>Unknown(0)</ol>
+<pmid>9733875</pmid>
+<pmcid>PMC110196</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>734</id>
+<a1>Dittmer,D.</a1>
+<a1>Stoddart,C.</a1>
+<a1>Renne,R.</a1>
+<a1>Linquist-Stepps,V.</a1>
+<a1>Moreno,M. E.</a1>
+<a1>Bare,C.</a1>
+<a1>McCune,J. M.</a1>
+<a1>Ganem,D.</a1>
+<t1>Experimental transmission of Kaposi&amp;#39;s sarcoma-associated herpesvirus (KSHV/HHV-8) to SCID-hu Thy/Liv mice</t1>
+<jf>The Journal of experimental medicine</jf>
+<jo>J.Exp.Med.</jo>
+<yr>1999</yr>
+<fd>Dec 20</fd>
+<vo>190</vo>
+<is>12</is>
+<sp>1857</sp>
+<op>1868</op>
+<k1>Animals</k1>
+<k1>Disease Models, Animal</k1>
+<k1>Herpesviridae Infections/transmission/virology</k1>
+<k1>Herpesvirus 8, Human</k1>
+<k1>Humans</k1>
+<k1>Mice</k1>
+<k1>Mice, SCID</k1>
+<ab>Kaposi&amp;#39;s sarcoma-associated herpesvirus (KSHV/HHV-8) is a novel human lymphotropic herpesvirus linked to several human neoplasms. To date, no animal model for infection by this virus has been described. We have examined the susceptibility of C.B-17 scid/scid mice implanted with human fetal thymus and liver grafts (SCID-hu Thy/Liv mice) to KSHV infection. KSHV virions were inoculated directly into the implants, and viral DNA and mRNA production was assayed using real-time quantitative polymerase chain reaction. This revealed a biphasic infection, with an early phase of lytic replication accompanied and followed by sustained latency. Ultraviolet irradiation of the inoculum abolished all DNA- and mRNA-derived signals, and infection was inhibited by ganciclovir. Viral gene expression was most abundant in CD19(+) B lymphocytes, suggesting that this model faithfully mimics the natural tropism of this virus. Short-term coinfection with HIV-1 did not alter the course of KSHV replication, nor did KSHV alter levels of HIV-1 p24 during the acute phase of the infection. Although no disease was evident in infected animals, SCID-hu Thy/Liv mice should allow the detailed study of KSHV tropism, latency, and drug susceptibility.</ab>
+<no>LR: 20091118; GR: AI-40312/AI/NIAID NIH HHS/United States; GR: AI-65309/AI/NIAID NIH HHS/United States; GR: P30 MH59037/MH/NIMH NIH HHS/United States; JID: 2985109R; OID: NLM: PMC2195708; ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0022-1007; 0022-1007</sn>
+<ad>Department of Microbiology, University of California, San Francisco, California 94143, USA.</ad>
+<an>PMID: 10601360</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, P.H.S.; IM; X</sf>
+<ol>Unknown(0)</ol>
+<pmid>10601360</pmid>
+<pmcid>PMC2195708</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>722</id>
+<a1>Doi,A.</a1>
+<a1>Peckham,J.</a1>
+<a1>Chou,B.</a1>
+<a1>Dill,J.</a1>
+<a1>Renne,R.</a1>
+<a1>Grumbein,S.</a1>
+<a1>Chhabra,R.</a1>
+<t1>Development of alpha2u-globulin nephropathy and adrenal medullary pheochromocytomas in male rats following exposure to Stoddard solvent IIC</t1>
+<jf>Inhalation toxicology</jf>
+<jo>Inhal.Toxicol.</jo>
+<yr>2004</yr>
+<fd>May</fd>
+<vo>16</vo>
+<is>5</is>
+<sp>247</sp>
+<op>257</op>
+<k1>Adenoma/chemically induced/metabolism/pathology</k1>
+<k1>Administration, Inhalation</k1>
+<k1>Adrenal Gland Neoplasms/chemically induced/metabolism/pathology</k1>
+<k1>Alpha-Globulins/metabolism</k1>
+<k1>Animals</k1>
+<k1>Carcinogenicity Tests</k1>
+<k1>Carcinogens/administration &amp; dosage/toxicity</k1>
+<k1>Dose-Response Relationship, Drug</k1>
+<k1>Environmental Exposure</k1>
+<k1>Female</k1>
+<k1>Hydrocarbons/administration &amp; dosage/toxicity</k1>
+<k1>Inhalation Exposure</k1>
+<k1>Kidney Neoplasms/chemically induced/metabolism/pathology</k1>
+<k1>Kidney Tubules, Proximal/drug effects/metabolism/pathology</k1>
+<k1>Male</k1>
+<k1>Mice</k1>
+<k1>Mice, Inbred Strains</k1>
+<k1>Pheochromocytoma/chemically induced/metabolism/pathology</k1>
+<k1>Rats</k1>
+<k1>Rats, Inbred F344</k1>
+<ab>Stoddard solvent IIC is widely used as a solvent in paints and varnishes, and for dry cleaning and other grease removal applications. Because concern exists regarding the long-term effects of occupational exposure in industrial settings, the toxicity and carcinogenicity of Stoddard solvent IIC were evaluated in male and female F344/N rats and B6C3F1 mice. Rats and mice were exposed to 0, 138, 275, 550, 1100, or 2200 mg/m3 Stoddard solvent IIC by whole-body inhalation for 3 mo, and to 0, 138 (male rats), 550, 1100, or 2200 (female rats and male and female mice) mg/m3 for 2 yr. The kidney, liver, and adrenal medulla were targets of Stoddard solvent IIC toxicity in rats. After 3 mo of exposure, male rats developed lesions characteristic of alpha2u-globulin nephropathy. Male and female rats displayed increased liver weights and/or clinical pathology changes suggestive of hepatic injury, although no accompanying histopathologic changes were observed. After 2 yr, increased incidences of adrenal medullary pheochromocytomas provided some evidence of carcinogenicity in male rats. Renal tubule adenomas were slightly increased in male rats after 2 yr, and may have been related to exposure. In mice, there was no chemical-related toxicity after 3 mo, with the exception of increased liver weights in male mice exposed to 2200 mg/m3. After 2 yr, the incidences of hepatocellular adenomas were increased in female mice exposed to 2200 mg/m3; however, these increases were marginal and associated with increases in body weight. There was no evidence of Stoddard solvent IIC carcinogenicity in female rats or male mice. In summary, inhalation exposures of Stoddard solvent IIC resulted in renal toxicity and adrenal medullary pheochromocytomas in male rats. The liver also appeared to be a site of toxicity in male and female rats and mice.</ab>
+<no>CI: Copyright Taylor &amp;amp; Francis Inc.; JID: 8910739; 0 (Alpha-Globulins); 0 (Carcinogens); 0 (Hydrocarbons); 0 (alpha 2u globulin); 8052-41-3 (Stoddard solvent); ppublish</no>
+<pp>United States</pp>
+<sn>0895-8378; 0895-8378</sn>
+<ad>National Institute of Environmental Health Sciences, Research Triangle Park, North Carolina 27709, USA. doi@niehs.nih.gov</ad>
+<an>PMID: 15371178; 50UX7T26RRENWLAH [pii]</an>
+<la>eng</la>
+<sf>Journal Article; IM</sf>
+<do>10.1080/08958370490427842</do>
+<ol>Unknown(0)</ol>
+<pmid>15371178</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>727</id>
+<a1>Garber,A. C.</a1>
+<a1>Hu,J.</a1>
+<a1>Renne,R.</a1>
+<t1>Latency-associated nuclear antigen (LANA) cooperatively binds to two sites within the terminal repeat, and both sites contribute to the ability of LANA to suppress transcription and to facilitate DNA replication</t1>
+<jf>The Journal of biological chemistry</jf>
+<jo>J.Biol.Chem.</jo>
+<yr>2002</yr>
+<fd>Jul 26</fd>
+<vo>277</vo>
+<is>30</is>
+<sp>27401</sp>
+<op>27411</op>
+<k1>Antigens, Viral</k1>
+<k1>Base Sequence</k1>
+<k1>Binding Sites</k1>
+<k1>Chromatin/metabolism</k1>
+<k1>DNA/metabolism</k1>
+<k1>DNA-Binding Proteins/metabolism</k1>
+<k1>Dose-Response Relationship, Drug</k1>
+<k1>Humans</k1>
+<k1>Kinetics</k1>
+<k1>Molecular Sequence Data</k1>
+<k1>Mutation</k1>
+<k1>Nuclear Proteins/metabolism</k1>
+<k1>Plasmids/metabolism</k1>
+<k1>Point Mutation</k1>
+<k1>Protein Binding</k1>
+<k1>Protein Structure, Tertiary</k1>
+<k1>Transcription, Genetic</k1>
+<k1>Transfection</k1>
+<ab>The latency-associated nuclear antigen (LANA) of Kaposi&amp;#39;s sarcoma-associated herpesvirus is a multifunctional protein with important roles in both transcriptional regulation and episomal maintenance. LANA is also a DNA-binding protein and has been shown to specifically bind to a region within the terminal repeat. Here, we have performed a detailed analysis of the DNA-binding activity of LANA and show that it binds two sites separated by 22 bp. We used electrophoretic mobility shift assay to quantitatively analyze the binding sites and determined that the K(d) of the high affinity site is 1.51 +/- 0.16 nm. Examination of the contribution of nucleotides near the ends of the site showed that the core binding site consists of 16 bp, 13 of which are conserved between both sites. Analysis of the affinity of each site alone and in tandem revealed that the binding to the second site is primarily due to cooperativity with the first site. Using deletion and point mutations, we show that both sites contribute to the ability of LANA to suppress transcription and to facilitate DNA replication. In addition, we show that the ability of LANA to carry out these functions is directly proportional to its affinity for the sites in this region. The affinities, spacing, and cooperative binding between the two sites is similar to that of the Epstein-Barr virus dyad symmetry element oriP, suggesting a requirement for such an element in latent replication of these related DNA tumor viruses.</ab>
+<no>LR: 20071114; GR: CA 88763-02/CA/NCI NIH HHS/United States; GR: T32 HL 07147/HL/NHLBI NIH HHS/United States; JID: 2985121R; 0 (Antigens, Viral); 0 (Chromatin); 0 (DNA-Binding Proteins); 0 (Nuclear Proteins); 0 (latency-associated nuclear antigen); 9007-49-2 (DNA); 2002/05/15 [aheadofprint]; ppublish</no>
+<pp>United States</pp>
+<sn>0021-9258; 0021-9258</sn>
+<ad>Division of Hematology/Oncology, Department of Molecular Biology and Microbiology, Case Western Reserve University, 2109 Adelbert Road, Cleveland, OH 44106, USA.</ad>
+<an>PMID: 12015325; M203489200 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<do>10.1074/jbc.M203489200</do>
+<wp>20020515</wp>
+<ol>Unknown(0)</ol>
+<pmid>12015325</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>730</id>
+<a1>Garber,A. C.</a1>
+<a1>Shu,M. A.</a1>
+<a1>Hu,J.</a1>
+<a1>Renne,R.</a1>
+<t1>DNA binding and modulation of gene expression by the latency-associated nuclear antigen of Kaposi&amp;#39;s sarcoma-associated herpesvirus</t1>
+<jf>Journal of virology</jf>
+<jo>J.Virol.</jo>
+<yr>2001</yr>
+<fd>Sep</fd>
+<vo>75</vo>
+<is>17</is>
+<sp>7882</sp>
+<op>7892</op>
+<k1>Animals</k1>
+<k1>Antigens, Viral</k1>
+<k1>Binding Sites</k1>
+<k1>Cell Line</k1>
+<k1>DNA, Viral/metabolism</k1>
+<k1>DNA-Directed RNA Polymerases</k1>
+<k1>Gene Expression Regulation, Viral</k1>
+<k1>Genetic Vectors</k1>
+<k1>Herpesvirus 8, Human/genetics/metabolism</k1>
+<k1>Humans</k1>
+<k1>Nuclear Proteins/chemistry/genetics/metabolism</k1>
+<k1>Promoter Regions, Genetic/genetics/physiology</k1>
+<k1>Terminal Repeat Sequences/genetics/physiology</k1>
+<k1>Transcription, Genetic</k1>
+<k1>Transfection</k1>
+<k1>Vaccinia virus/genetics/metabolism</k1>
+<k1>Viral Proteins</k1>
+<ab>Kaposi&amp;#39;s sarcoma-associated herpesvirus (KSHV) is associated with Kaposi&amp;#39;s sarcoma, primary effusion lymphoma, and multicentric Castleman&amp;#39;s disease. The latency-associated nuclear antigen (LANA) is highly expressed in these malignancies and has been shown to play an important role in episomal maintenance, presumably by binding to a putative oriP. In addition, LANA modulates cellular and viral gene expression and interacts with the cellular tumor suppressors p53 and retinoblastoma suppressor protein. Many of these features are reminiscent of Epstein-Barr virus nuclear antigens (EBNAs), a family of six proteins expressed during latency. EBNA-1 is required for episome maintenance, binds to oriP, and strongly activates transcription from two promoters, including its own. We have previously shown that LANA can transactivate its own promoter and therefore asked whether LANA, like EBNA-1, activates transcription by direct binding to DNA. By using recombinant LANA expressed from vaccinia virus vectors for electrophoretic mobility shift assays, we found that LANA does not bind to its own promoter. In contrast, LANA binds specifically to sequences containing an imperfect 20-bp palindrome in the terminal repeat (TR) of KSHV. We further show that the C-terminal domain of LANA is sufficient for site-specific DNA binding. Unlike EBNA-1, which activates transcription through binding of oriP, we found that LANA inhibits transcription from a single TR binding site. A multimerized TR as found in the viral genome results in strong transcriptional suppression when linked to a heterologous promoter. These data suggest that LANA, although fulfilling functions similar to those of EBNA-1, does so by very different mechanisms.</ab>
+<no>LR: 20091118; GR: CA CA88763-01/CA/NCI NIH HHS/United States; JID: 0113724; 0 (Antigens, Viral); 0 (DNA, Viral); 0 (Nuclear Proteins); 0 (Viral Proteins); 0 (latency-associated nuclear antigen); EC 2.7.7.- (bacteriophage T7 RNA polymerase); EC 2.7.7.6 (DNA-Directed RNA Polymerases); OID: NLM: PMC115032; ppublish</no>
+<pp>United States</pp>
+<sn>0022-538X; 0022-538X</sn>
+<ad>Division of Hematology/Oncology and Department of Molecular Biology and Microbiology, Case Western Reserve University, Cleveland, Ohio 44106, USA.</ad>
+<an>PMID: 11483733</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>11483733</pmid>
+<pmcid>PMC115032</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>626</id>
+<a1>Han,S. J.</a1>
+<a1>Hu,J.</a1>
+<a1>Pierce,B.</a1>
+<a1>Weng,Z.</a1>
+<a1>Renne,R.</a1>
+<t1>Mutational analysis of the Latency-associated nuclear antigen DNA binding domain of Kaposi&amp;#39;s sarcoma-associated Herpesvirus reveals structural conservation among {gamma}-Herpesvirus origin binding proteins</t1>
+<jf>The Journal of general virology</jf>
+<jo>J.Gen.Virol.</jo>
+<yr>2010</yr>
+<fd>May 19</fd>
+<ab>The latency-associated nuclear antigen (LANA) of Kaposi&amp;#39;s sarcoma-associated herpesvirus functions as origin-binding protein (OBP) and transcriptional regulator. LANA binds the terminal repeats via the C-terminal DNA binding domain (DBD) to support latent DNA replication. To date, the structure of LANA has not been solved. Sequence alignments among OBPs of gamma-herpesviruses revealed that the C-terminus of LANA is structurally related to EBNA1, the OBP of Epstein-Barr virus. Based on secondary structure predictions for LANADBD and published structures of EBNA1DBD, we used bioinformatics tools to model a putative structure for LANADBD bound to DNA. To validate the predicted model, 38 mutants targeting the most conserved motifs, namely three alpha-helices and a conserved proline loop, were constructed and functionally tested. In congruence with EBNA1, residues in both helices 1 and 2 mainly contribute to sequence-specific DNA binding and replication activity, while mutations in helix 3 affected replication activity and multimer formation. Additionally, we isolated several mutants with discordant phenotypes, which may aid further studies into LANA function. In summary, these data suggest that the secondary and tertiary structures of LANA and EBNA1 DBDs are conserved and are critical for (i) sequence-specific DNA binding, (ii) multimer formation, (iii) LANA-dependent transcriptional repression, and (iv) DNA replication.</ab>
+<no>JID: 0077340; aheadofprint</no>
+<sn>1465-2099; 0022-1317</sn>
+<ad>University of Florida;</ad>
+<an>PMID: 20484563; vir.0.020958-0 [pii]</an>
+<la>ENG</la>
+<sf>JOURNAL ARTICLE</sf>
+<do>10.1099/vir.0.020958-0</do>
+<wp>20100519</wp>
+<ol>Unknown(0)</ol>
+<pmid>20484563</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>706</id>
+<a1>Hansen,A.</a1>
+<a1>Henderson,S.</a1>
+<a1>Lagos,D.</a1>
+<a1>Nikitenko,L.</a1>
+<a1>Coulter,E.</a1>
+<a1>Roberts,S.</a1>
+<a1>Gratrix,F.</a1>
+<a1>Plaisance,K.</a1>
+<a1>Renne,R.</a1>
+<a1>Bower,M.</a1>
+<a1>Kellam,P.</a1>
+<a1>Boshoff,C.</a1>
+<t1>KSHV-encoded miRNAs target MAF to induce endothelial cell reprogramming</t1>
+<jf>Genes &amp; development</jf>
+<jo>Genes Dev.</jo>
+<yr>2010</yr>
+<fd>Jan 15</fd>
+<vo>24</vo>
+<is>2</is>
+<sp>195</sp>
+<op>205</op>
+<k1>Cell Differentiation</k1>
+<k1>Cell Line</k1>
+<k1>Cell Line, Tumor</k1>
+<k1>Down-Regulation</k1>
+<k1>Endothelial Cells/cytology/metabolism/pathology/virology</k1>
+<k1>Gene Expression Regulation, Viral</k1>
+<k1>Gene Silencing</k1>
+<k1>Hela Cells</k1>
+<k1>Herpesviridae Infections/physiopathology</k1>
+<k1>Herpesvirus 8, Human/genetics/metabolism</k1>
+<k1>Humans</k1>
+<k1>MicroRNAs/metabolism</k1>
+<k1>Nuclear Reprogramming</k1>
+<k1>Oncogene Protein v-maf/metabolism</k1>
+<k1>Sarcoma, Kaposi/physiopathology</k1>
+<ab>Kaposi sarcoma herpesvirus (KSHV) induces transcriptional reprogramming of endothelial cells. In particular, KSHV-infected lymphatic endothelial cells (LECs) show an up-regulation of genes associated with blood vessel endothelial cells (BECs). Consequently, KSHV-infected tumor cells in Kaposi sarcoma are poorly differentiated endothelial cells, expressing markers of both LECs and BECs. MicroRNAs (miRNAs) are short noncoding RNA molecules that act post-transcriptionally to negatively regulate gene expression. Here we validate expression of the KSHV-encoded miRNAs in Kaposi sarcoma lesions and demonstrate that these miRNAs contribute to viral-induced reprogramming by silencing the cellular transcription factor MAF (musculoaponeurotic fibrosarcoma oncogene homolog). MAF is expressed in LECs but not in BECs. We identify a novel role for MAF as a transcriptional repressor, preventing expression of BEC-specific genes, thereby maintaining the differentiation status of LECs. These findings demonstrate that viral miRNAs could influence the differentiation status of infected cells, and thereby contribute to KSHV-induced oncogenesis.</ab>
+<no>GR: Cancer Research UK/United Kingdom; GR: Medical Research Council/United Kingdom; JID: 8711660; 0 (MicroRNAs); 0 (Oncogene Protein v-maf); OID: NLM: PMC2807354 [Available on 07/15/10]; ppublish</no>
+<pp>United States</pp>
+<sn>1549-5477; 0890-9369</sn>
+<ad>Cancer Research UK Viral Oncology Group, University College London Cancer Institute, University College London, London WC1E 6BT, United Kingdom.</ad>
+<an>PMID: 20080955; 24/2/195 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<do>10.1101/gad.553410</do>
+<ol>Unknown(0)</ol>
+<pmid>20080955</pmid>
+<pmcid>PMC2807354</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>745</id>
+<a1>Herchenroder,O.</a1>
+<a1>Renne,R.</a1>
+<a1>Loncar,D.</a1>
+<a1>Cobb,E. K.</a1>
+<a1>Murthy,K. K.</a1>
+<a1>Schneider,J.</a1>
+<a1>Mergia,A.</a1>
+<a1>Luciw,P. A.</a1>
+<t1>Isolation, cloning, and sequencing of simian foamy viruses from chimpanzees (SFVcpz): high homology to human foamy virus (HFV)</t1>
+<jf>Virology</jf>
+<jo>Virology</jo>
+<yr>1994</yr>
+<fd>Jun</fd>
+<vo>201</vo>
+<is>2</is>
+<sp>187</sp>
+<op>199</op>
+<k1>Amino Acid Sequence</k1>
+<k1>Animals</k1>
+<k1>B-Lymphocytes/cytology/microbiology</k1>
+<k1>Base Sequence</k1>
+<k1>Cell Line</k1>
+<k1>Cercopithecus aethiops</k1>
+<k1>Cloning, Molecular</k1>
+<k1>DNA, Viral</k1>
+<k1>Dogs</k1>
+<k1>Genes, Viral</k1>
+<k1>Humans</k1>
+<k1>Molecular Sequence Data</k1>
+<k1>Pan troglodytes/microbiology</k1>
+<k1>Phylogeny</k1>
+<k1>Promoter Regions, Genetic</k1>
+<k1>Repetitive Sequences, Nucleic Acid</k1>
+<k1>Sequence Homology</k1>
+<k1>Spumavirus/classification/genetics/isolation &amp; purification</k1>
+<k1>Viral Proteins/genetics</k1>
+<ab>Several independent isolates of simian foamy viruses (SFV) were recovered from chimpanzee B-cell lines. One isolate, designated SFVcpz, was molecularly cloned and sequenced. In addition, the genome of SFV type 6 (SFV-6), an independent chimpanzee foamy virus isolate, was partially cloned. The SFVcpz provirus is 13,246 base pairs (bp) long. It is flanked by long terminal repeats (LTRs) and encodes the genes gag, pol, env, the transcriptional transactivator taf, and a second 3&amp;#39; open reading frame (orf-2). DNA sequences of molecular clones derived from the pol, env, and orf-2 genes of SFV-6 are almost identical to those of SFVcpz. DNA and deduced protein sequences of SFVcpz show high homologies to human foamy virus (HFV), whereas both SFV-1 from a rhesus macaque and SFV-3 from an African green monkey are phylogenetically further distant viruses. Amino acid homologies between corresponding genes of SFVcpz and HFV range between 86% for the taf gene and 95% for the pol gene. Comparisons of taf and pol of SFVcpz with SFV-1 and SFV-3 show 40 and 78% homology, respectively. The SFVcpz LTR consists of 1760 bp and is in the same size range as the LTRs of SFV-1 and -3, but significantly larger than the known HFV LTR. These comparisons reveal that a region approximately 500 bp long is missing in the HFV LTR. We also isolated and sequenced an LTR of a wild-type HFV provirus which aligns with high homology to the SFVcpz LTR without major gaps. Based on sequence comparisons in this report, primate foamy viruses may be arranged into different clusters with SFVcpz and HFV forming one cluster and SFV-1 and SFV-3 as prototypes for two unique clusters.</ab>
+<no>LR: 20081121; GENBANK/M33561; GENBANK/M55279; GENBANK/M74039; GENBANK/M74895; GENBANK/U04327; GENBANK/X05591; GENBANK/X05592; GENBANK/X58484; GR: AI27732/AI/NIAID NIH HHS/United States; GR: AI30525/AI/NIAID NIH HHS/United States; GR: RR00169/RR/NCRR NIH HHS/United States; JID: 0110674; 0 (DNA, Viral); 0 (Viral Proteins); ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0042-6822; 0042-6822</sn>
+<ad>Department of Medical Pathology, University of California, Davis 95616.</ad>
+<an>PMID: 8184531; S0042-6822(84)71285-2 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<do>10.1006/viro.1994.1285</do>
+<ol>Unknown(0)</ol>
+<pmid>8184531</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>726</id>
+<a1>Hu,J.</a1>
+<a1>Garber,A. C.</a1>
+<a1>Renne,R.</a1>
+<t1>The latency-associated nuclear antigen of Kaposi&amp;#39;s sarcoma-associated herpesvirus supports latent DNA replication in dividing cells</t1>
+<jf>Journal of virology</jf>
+<jo>J.Virol.</jo>
+<yr>2002</yr>
+<fd>Nov</fd>
+<vo>76</vo>
+<is>22</is>
+<sp>11677</sp>
+<op>11687</op>
+<k1>Antigens, Viral</k1>
+<k1>Base Sequence</k1>
+<k1>Cell Line</k1>
+<k1>DNA Replication</k1>
+<k1>DNA, Viral/metabolism</k1>
+<k1>Enhancer Elements, Genetic/genetics</k1>
+<k1>Herpesvirus 8, Human/genetics/physiology</k1>
+<k1>Humans</k1>
+<k1>Molecular Sequence Data</k1>
+<k1>Nuclear Proteins/chemistry/genetics/metabolism</k1>
+<k1>Plasmids/genetics</k1>
+<k1>Replication Origin/genetics</k1>
+<k1>Sarcoma, Kaposi/virology</k1>
+<k1>Terminal Repeat Sequences/genetics</k1>
+<k1>Virus Latency</k1>
+<ab>Kaposi&amp;#39;s sarcoma-associated herpesvirus (KSHV) is associated with Kaposi&amp;#39;s sarcoma, primary effusion lymphoma, and multicentric Castleman&amp;#39;s disease. The latency-associated nuclear antigen (LANA) is a multifunctional protein that is consistently expressed in all KSHV-associated malignancies. LANA interacts with a variety of cellular proteins, including the transcriptional cosuppressor complex mSin3 and the tumor suppressors p53 and Rb, thereby regulating viral and cellular gene expression. In addition, LANA is required for maintenance of the episomal viral DNA during latency in dividing cells. Colocalization studies suggest that LANA tethers the viral genome to chromosomes during mitosis. In support of this model, a specific LANA- binding site has recently been identified within the terminal repeat unit, and a chromatin interaction domain was mapped to a short amino acid stretch within the N-terminal domain of LANA. Epstein-Barr virus nuclear antigen 1 (EBNA-1), a functional homologue of LANA, is also required for genome segregation; in addition, EBNA-1 also supports efficient DNA replication of oriP-containing plasmids. By performing short-term replication assays, we demonstrate here for the first time that de novo synthesis of terminal-repeat (TR)-containing plasmids is highly dependent on the presence of LANA. We map the required cis-acting sequences within the TR to a 79-bp region and demonstrate that the DNA-binding domain of LANA is required for this DNA replication activity. Surprisingly, the 233-amino-acid C domain of LANA by itself partially supports replication. Our data show that LANA is a sequence-specific DNA-binding protein that, like EBNA-1, plays an important role in DNA replication and genome segregation. In addition, we show that all necessary cis elements for the origin of replication (ori) function are located within a single TR, suggesting that the putative ori of KSHV is different from those of other gammaherpesviruses, which all contain ori sequences within the unique long sequence outside of their TR. This notion is further strengthened by the unique modular structure of the KSHV TR element.</ab>
+<no>LR: 20091118; GR: CA 88763-2/CA/NCI NIH HHS/United States; GR: T32HL07147/HL/NHLBI NIH HHS/United States; JID: 0113724; 0 (Antigens, Viral); 0 (DNA, Viral); 0 (Nuclear Proteins); 0 (latency-associated nuclear antigen); OID: NLM: PMC136756; ppublish</no>
+<pp>United States</pp>
+<sn>0022-538X; 0022-538X</sn>
+<ad>Division of Hematology/Oncology and Department of Molecular Biology and Microbiology, Case Western Reserve University, Cleveland, Ohio 44106, USA.</ad>
+<an>PMID: 12388727</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>12388727</pmid>
+<pmcid>PMC136756</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>709</id>
+<a1>Hu,J.</a1>
+<a1>Liu,E.</a1>
+<a1>Renne,R.</a1>
+<t1>Involvement of SSRP1 in latent replication of Kaposi&amp;#39;s sarcoma-associated herpesvirus</t1>
+<jf>Journal of virology</jf>
+<jo>J.Virol.</jo>
+<yr>2009</yr>
+<fd>Nov</fd>
+<vo>83</vo>
+<is>21</is>
+<sp>11051</sp>
+<op>11063</op>
+<k1>Animals</k1>
+<k1>Antigens, Viral/genetics/metabolism</k1>
+<k1>Binding Sites</k1>
+<k1>Cell Line</k1>
+<k1>DNA Replication</k1>
+<k1>DNA, Viral/genetics/metabolism</k1>
+<k1>DNA-Binding Proteins/genetics/metabolism</k1>
+<k1>Genome, Viral</k1>
+<k1>Herpesviridae Infections/metabolism</k1>
+<k1>Herpesvirus 8, Human/genetics/physiology</k1>
+<k1>High Mobility Group Proteins/genetics/metabolism</k1>
+<k1>Humans</k1>
+<k1>Molecular Sequence Data</k1>
+<k1>Nuclear Proteins/genetics/metabolism</k1>
+<k1>RNA, Small Interfering/genetics/metabolism</k1>
+<k1>Terminal Repeat Sequences</k1>
+<k1>Transcriptional Elongation Factors/genetics/metabolism</k1>
+<k1>Virus Latency</k1>
+<k1>Virus Replication</k1>
+<ab>Kaposi&amp;#39;s sarcoma-associated herpesvirus (also named human herpesvirus 8) is a gamma-herpesvirus that undergoes both lytic and latent infection. During latent infection, two viral elements are required: latency-associated nuclear antigen (LANA), which functions as an origin binding protein, and the latent origin, which resides within the terminal repeats (TRs) of the viral genome. Previously, we identified two cis-elements within the TRs which are required for latent DNA replication: two LANA binding sites (LBS1 and LBS2 [LBS1/2]) and a GC-rich replication element (RE) upstream of LBS1/2. To further characterize the RE, we constructed a 71-bp minimal replicon (MR) and performed a detailed mutational analysis. Our data indicate that the first 8 nucleotides within the RE are critical for replication. Moreover, both the position and the distance between the RE and LBS1/2 can affect origin replication activity, suggesting that the RE may function as a loading pad for cellular proteins involved in replication. Using biotinylated DNA fragments of wild-type or mutant MRs as probes, we identified 30 proteins that preferentially bind to the origin. Among these proteins, structure-specific recognition protein 1 (SSRP1), a subunit of the FACT complex, and telomeric repeat binding factor 2 (TRF2) formed complexes with LANA at the MR region. Furthermore, the small interfering RNA-based knockdown of SSRP1, but not the dominant-negative-based knockdown of TRF2, significantly decreased the efficiency of LANA-dependent DNA replication. These results indicate that SSRP1 is a novel cellular protein involved in LANA-dependent DNA replication.</ab>
+<no>LR: 20100504; GR: CA88763/CA/NCI NIH HHS/United States; JID: 0113724; 0 (Antigens, Viral); 0 (DNA, Viral); 0 (DNA-Binding Proteins); 0 (High Mobility Group Proteins); 0 (Nuclear Proteins); 0 (RNA, Small Interfering); 0 (SSRP1 protein, human); 0 (Transcriptional Elongation Factors); 0 (latency-associated nuclear antigen); OID: NLM: PMC2772803; 2009/08/26 [aheadofprint]; ppublish</no>
+<pp>United States</pp>
+<sn>1098-5514; 0022-538X</sn>
+<ad>Department of Molecular Genetics and Microbiology and UF Shands Cancer Center, University of Florida, Gainesville, Florida 32610-0232, USA.</ad>
+<an>PMID: 19710137; JVI.00907-09 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, N.I.H., Extramural; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<do>10.1128/JVI.00907-09</do>
+<wp>20090826</wp>
+<ol>Unknown(0)</ol>
+<pmid>19710137</pmid>
+<pmcid>PMC2772803</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>720</id>
+<a1>Hu,J.</a1>
+<a1>Renne,R.</a1>
+<t1>Characterization of the minimal replicator of Kaposi&amp;#39;s sarcoma-associated herpesvirus latent origin</t1>
+<jf>Journal of virology</jf>
+<jo>J.Virol.</jo>
+<yr>2005</yr>
+<fd>Feb</fd>
+<vo>79</vo>
+<is>4</is>
+<sp>2637</sp>
+<op>2642</op>
+<k1>Antigens, Viral/physiology</k1>
+<k1>DNA Replication</k1>
+<k1>DNA, Viral/metabolism</k1>
+<k1>Enhancer Elements, Genetic/genetics</k1>
+<k1>Herpesvirus 8, Human/genetics/physiology</k1>
+<k1>Humans</k1>
+<k1>Nuclear Proteins/physiology</k1>
+<k1>Replication Origin/genetics/physiology</k1>
+<k1>Sarcoma, Kaposi/virology</k1>
+<k1>Terminal Repeat Sequences/genetics</k1>
+<k1>Virus Latency/physiology</k1>
+<ab>The latency-associated nuclear antigen (LANA) of Kaposi&amp;#39;s sarcoma-associated herpesvirus (KSHV) binds to two sites within the 801-bp-long terminal repeat (TR) and is the only viral protein required for episomal maintenance. While two or more copies of TR are required for long-term maintenance, a single TR confers LANA-dependent origin activity on plasmid DNA. Deletion mapping revealed a 71-bp-long minimal replicator containing two distinctive sequence elements: LANA binding sites (LBS1/2) and an adjacent 29- to 32-bp-long GC-rich sequence which we termed the replication element. Furthermore, the transcription factor Sp1 can bind to TR outside the minimal replicator and contributes to TR&amp;#39;s previously reported enhancer activity.</ab>
+<no>LR: 20091118; GR: R01 CA 88763/CA/NCI NIH HHS/United States; GR: R21 CA97939/CA/NCI NIH HHS/United States; JID: 0113724; 0 (Antigens, Viral); 0 (DNA, Viral); 0 (Nuclear Proteins); 0 (latency-associated nuclear antigen); OID: NLM: PMC546548; ppublish</no>
+<pp>United States</pp>
+<sn>0022-538X; 0022-538X</sn>
+<ad>Division of Hematology/Oncology and Department of Molecular Genetics and Microbiology, Case Western Reserve University, Cleveland, OH, USA.</ad>
+<an>PMID: 15681465; 79/4/2637 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, N.I.H., Extramural; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<do>10.1128/JVI.79.4.2637-2642.2005</do>
+<ol>Unknown(0)</ol>
+<pmid>15681465</pmid>
+<pmcid>PMC546548</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>725</id>
+<a1>Jeong,J. H.</a1>
+<a1>Orvis,J.</a1>
+<a1>Kim,J. W.</a1>
+<a1>McMurtrey,C. P.</a1>
+<a1>Renne,R.</a1>
+<a1>Dittmer,D. P.</a1>
+<t1>Regulation and autoregulation of the promoter for the latency-associated nuclear antigen of Kaposi&amp;#39;s sarcoma-associated herpesvirus</t1>
+<jf>The Journal of biological chemistry</jf>
+<jo>J.Biol.Chem.</jo>
+<yr>2004</yr>
+<fd>Apr 16</fd>
+<vo>279</vo>
+<is>16</is>
+<sp>16822</sp>
+<op>16831</op>
+<k1>Antigens, Viral/genetics</k1>
+<k1>Gene Expression Regulation, Viral</k1>
+<k1>Herpesvirus 8, Human/genetics</k1>
+<k1>Humans</k1>
+<k1>Nuclear Proteins</k1>
+<k1>Promoter Regions, Genetic/genetics</k1>
+<k1>Sarcoma, Kaposi/virology</k1>
+<k1>Virus Latency/genetics</k1>
+<ab>Kaposi&amp;#39;s sarcoma-associated herpesvirus (KSHV) or human herpesvirus 8 has been established as the etiological agent of Kaposi&amp;#39;s sarcoma and certain AIDS-associated lymphomas. KSHV establishes latent infection in these tumors, invariably expressing high levels of the viral latency-associated nuclear antigen (LANA) protein. LANA is necessary and sufficient to maintain the KSHV episome. It also modulates viral and cellular transcription and has been implicated directly in oncogenesis because of its ability to bind to the p53 and pRb tumor suppressor proteins. Previously, we identified the LANA promoter (LANAp) and showed that it was positively regulated by LANA itself. Here, we present a detailed mutational analysis and define cis-acting elements and trans-acting factors for the core LANAp. We found that a downstream promoter element, TATA box, and GC box/Sp1 site at -29 are all individually required for activity. This architecture places LANAp into the small and unusual group of eukaryotic promoters that contain both the downstream promoter element and TATA element but lack a defined initiation site. Furthermore, we demonstrate that LANA regulates its own promoter via its C-terminal domain and does bind to a defined site within the core promoter.</ab>
+<no>LR: 20081121; JID: 2985121R; 0 (Antigens, Viral); 0 (Nuclear Proteins); 0 (latency-associated nuclear antigen); 2004/01/24 [aheadofprint]; ppublish</no>
+<pp>United States</pp>
+<sn>0021-9258; 0021-9258</sn>
+<ad>University of Oklahoma Health Sciences Center, Department of Microbiology and Immunology, Oklahoma City, Oklahoma 73104, USA.</ad>
+<an>PMID: 14742422; M312801200 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; IM</sf>
+<do>10.1074/jbc.M312801200</do>
+<wp>20040124</wp>
+<ol>Unknown(0)</ol>
+<pmid>14742422</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>710</id>
+<a1>Kaufmann,W.</a1>
+<a1>Bader,R.</a1>
+<a1>Ernst,H.</a1>
+<a1>Harada,T.</a1>
+<a1>Hardisty,J.</a1>
+<a1>Kittel,B.</a1>
+<a1>Kolling,A.</a1>
+<a1>Pino,M.</a1>
+<a1>Renne,R.</a1>
+<a1>Rittinghausen,S.</a1>
+<a1>Schulte,A.</a1>
+<a1>Wohrmann,T.</a1>
+<a1>Rosenbruch,M.</a1>
+<t1>1st international ESTP expert workshop: &amp;quot;Larynx squamous metaplasia&amp;quot;. A re-consideration of morphology and diagnostic approaches in rodent studies and its relevance for human risk assessment</t1>
+<jf>Experimental and toxicologic pathology : official journal of the Gesellschaft fur Toxikologische Pathologie</jf>
+<jo>Exp.Toxicol.Pathol.</jo>
+<yr>2009</yr>
+<fd>Nov</fd>
+<vo>61</vo>
+<is>6</is>
+<sp>591</sp>
+<op>603</op>
+<k1>Animals</k1>
+<k1>Cricetinae</k1>
+<k1>Epithelium/pathology</k1>
+<k1>Humans</k1>
+<k1>Larynx/cytology/drug effects/pathology</k1>
+<k1>Mesocricetus</k1>
+<k1>Metaplasia</k1>
+<k1>Mice</k1>
+<k1>Rats</k1>
+<k1>Risk Assessment</k1>
+<ab>Invited international experts participated in a 2-day workshop organized by the European Society of Toxicologic Pathology (ESTP) to evaluate and discuss spontaneous and induced laryngeal lesions in rodents. The main purpose of the workshop was to agree upon the terminology and relevance of a range of laryngeal changes that varied from very subtle epithelial alterations up to severe metaplastic or neoplastic lesions. The workshop experts concluded that minimal, focal epithelial changes of the laryngeal epithelium, predominantly occurring at the base of the epiglottis, should be given the descriptive term of &amp;quot;epithelial alteration&amp;quot; and assessed as &amp;quot;non-adverse&amp;quot;. Although observed as induced effects they may also occur in non-treated animals and were not considered to have a potential for a laryngeal dysfunction. Also, cases of minimal to slight laryngeal squamous metaplasia that are not observed diffusely could occur spontaneously or as treatment-induced lesions and should be assessed as &amp;quot;non-adverse&amp;quot;. Cases of moderate to severe laryngeal squamous metaplasia observed diffusely in multiple levels should be regarded as &amp;quot;adverse&amp;quot;, as there is a potential for dysfunction of the larynx. The occurrence of dysplasia or cellular atypia linked to laryngeal squamous metaplasia should always be reported separately and described in detail. In the evaluation of treatment-related effects of the larynx in studies utilizing aged animals, it has to be considered that moderate or even severe cases of focal laryngeal squamous metaplasia may occasionally be found as age-related, spontaneous lesions. Although inhalation exposure of rodents to non-genotoxic compounds may cause laryngeal squamous metaplasia, none of the workshop experts were aware of any reported cases of tumor induction in the larynx with a non-genotoxic compound. Therefore, for non-genotoxic compounds, the workshop experts did not regard laryngeal squamous metaplasia by itself as a precancerous lesion.</ab>
+<no>JID: 9208920; 2009/01/07 [received]; 2009/01/07 [accepted]; 2009/03/13 [aheadofprint]; ppublish</no>
+<pp>Germany</pp>
+<sn>1618-1433; 0940-2993</sn>
+<ad>Experimental Toxicology and Ecology, BASF SE, GV/TD-Z 470, D-67056 Ludwigshafen, Germany. wolfgang.kaufmann@basf.com</ad>
+<an>PMID: 19285845; S0940-2993(09)00004-9 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; IM</sf>
+<do>10.1016/j.etp.2009.01.001</do>
+<wp>20090313</wp>
+<ol>Unknown(0)</ol>
+<pmid>19285845</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>739</id>
+<a1>Kedes,D. H.</a1>
+<a1>Lagunoff,M.</a1>
+<a1>Renne,R.</a1>
+<a1>Ganem,D.</a1>
+<t1>Identification of the gene encoding the major latency-associated nuclear antigen of the Kaposi&amp;#39;s sarcoma-associated herpesvirus</t1>
+<jf>The Journal of clinical investigation</jf>
+<jo>J.Clin.Invest.</jo>
+<yr>1997</yr>
+<fd>Nov 15</fd>
+<vo>100</vo>
+<is>10</is>
+<sp>2606</sp>
+<op>2610</op>
+<k1>Animals</k1>
+<k1>Antigens, Viral</k1>
+<k1>B-Lymphocytes/virology</k1>
+<k1>Blood Donors</k1>
+<k1>COS Cells</k1>
+<k1>Cell Line</k1>
+<k1>Cloning, Organism</k1>
+<k1>Female</k1>
+<k1>Genes, Viral</k1>
+<k1>Genome, Viral</k1>
+<k1>Herpesvirus 8, Human/genetics/metabolism</k1>
+<k1>Humans</k1>
+<k1>Nuclear Proteins/biosynthesis/genetics</k1>
+<k1>Open Reading Frames</k1>
+<k1>Recombinant Proteins/biosynthesis</k1>
+<k1>Reference Values</k1>
+<k1>Risk Factors</k1>
+<k1>Sarcoma, Kaposi/immunology/virology</k1>
+<k1>Transfection</k1>
+<k1>Viral Structural Proteins/genetics</k1>
+<ab>Over 85% of patients with Kaposi&amp;#39;s sarcoma (KS) are seropositive for antibodies to the latency-associated nuclear antigen (LANA) expressed in B cell lines infected with Kaposi&amp;#39;s sarcoma-associated herpesvirus (KSHV). The presence of antibodies to LANA strongly correlates with the risk of developing the disease. However, the identity of the protein(s) comprising LANA and the corresponding gene(s) has remained unclear. To identify potential latent gene candidates for LANA, we probed total RNA extracted from BCBL-1 cells (a B cell line latently infected with KSHV) using lambda clones that span the KSHV genome. One region encoding latent transcripts spanned KSHV open reading frames (orfs) 71 (K13), 72 (v-cyclin), and 73. Among these, however, only orf 73, when expressed in heterologous mammalian cell systems, reacted with KSHV antibody-positive human sera, resulting in a punctate nuclear staining pattern reminiscent of LANA in BCBL-1 cells. Furthermore, extracts from cells expressing the orf 73 protein product specifically blocked the binding of KS patient antibodies to LANA. Finally, seroreactivity with recombinant orf 73 protein exactly paralleled reactivity with classical LANA as expressed in BCBL-1 cells, both in KS patients and in other groups. Together, these data support the identification of KSHV orf 73 as the gene encoding the dominant immunogenic component of LANA.</ab>
+<no>LR: 20091118; JID: 7802877; 0 (Antigens, Viral); 0 (Nuclear Proteins); 0 (Recombinant Proteins); 0 (Viral Structural Proteins); 0 (latency-associated nuclear antigen); OID: NLM: PMC508462; ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0021-9738; 0021-9738</sn>
+<ad>Department of Microbiology and Immunology, University of California Medical Center, San Francisco 94143-0414, USA.</ad>
+<an>PMID: 9366576</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; AIM; IM; X</sf>
+<do>10.1172/JCI119804</do>
+<ol>Unknown(0)</ol>
+<pmid>9366576</pmid>
+<pmcid>PMC508462</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>707</id>
+<a1>Lu,F.</a1>
+<a1>Stedman,W.</a1>
+<a1>Yousef,M.</a1>
+<a1>Renne,R.</a1>
+<a1>Lieberman,P. M.</a1>
+<t1>Epigenetic regulation of Kaposi&amp;#39;s sarcoma-associated herpesvirus latency by virus-encoded microRNAs that target Rta and the cellular Rbl2-DNMT pathway</t1>
+<jf>Journal of virology</jf>
+<jo>J.Virol.</jo>
+<yr>2010</yr>
+<fd>Mar</fd>
+<vo>84</vo>
+<is>6</is>
+<sp>2697</sp>
+<op>2706</op>
+<k1>Base Sequence</k1>
+<k1>DNA (Cytosine-5-)-Methyltransferase/genetics/metabolism</k1>
+<k1>Epigenesis, Genetic</k1>
+<k1>Gene Deletion</k1>
+<k1>Gene Expression Regulation, Viral</k1>
+<k1>Genome, Viral</k1>
+<k1>Herpesvirus 8, Human/genetics/metabolism/physiology</k1>
+<k1>Humans</k1>
+<k1>Immediate-Early Proteins/genetics/metabolism</k1>
+<k1>MicroRNAs/genetics/metabolism</k1>
+<k1>Molecular Sequence Data</k1>
+<k1>Open Reading Frames</k1>
+<k1>RNA, Viral/genetics/metabolism</k1>
+<k1>Retinoblastoma-Like Protein p130/genetics/metabolism</k1>
+<k1>Sequence Alignment</k1>
+<k1>Signal Transduction/physiology</k1>
+<k1>Trans-Activators/genetics/metabolism</k1>
+<k1>Virus Latency/genetics</k1>
+<ab>Kaposi&amp;#39;s sarcoma-associated herpesvirus (KSHV) encodes a cluster of 12 microRNAs (miRNAs) that are processed from a transcript that is embedded within the major latency control region. We have generated a deletion mutation that eliminates 10 of the 12 viral miRNAs from the KSHV bacmid by using recombineering methods. The KSHV miRNA deletion mutant (BAC36 DeltamiR) behaved similarly to wild-type (wt) BAC36 in viral production, latency gene transcription, and viral DNA copy number in 293 and dermal microvascular endothelial cells (DMVECs). However, BAC36 DeltamiR consistently expressed elevated levels of viral lytic genes, including the immediate-early transcriptional activator Rta (ORF50). At least one KSHV microRNA (miRK12-5) was capable of suppressing ORF50 mRNA, but poor seed sequence alignments suggest that these targets may be indirect. Comparison of epigenetic marks in DeltamiR KSHV genomes revealed decreases in histone H3 K9 methylation, increases in histone H3 acetylation, and a striking loss of DNA methylation throughout the viral and cellular genome. One viral miRNA, K12-4-5p, was found to have a sequence targeting retinoblastoma (Rb)-like protein 2 (Rbl2), which is a known repressor of DNA methyl transferase 3a and 3b mRNA transcription. We show that ectopic expression of miR-K12-4-5p reduces Rbl2 protein expression and increases DNMT1, -3a, and -3b mRNA levels relative to the levels for control cells. We conclude that KSHV miRNA targets multiple pathways to maintain the latent state of the KSHV genome, including repression of the viral immediate-early protein Rta and a cellular factor, Rbl2, that regulates global epigenetic reprogramming.</ab>
+<no>GR: CA119917/CA/NCI NIH HHS/United States; GR: R01 CA117830/CA/NCI NIH HHS/United States; JID: 0113724; 0 (Immediate-Early Proteins); 0 (MicroRNAs); 0 (RBL2 protein, human); 0 (RNA, Viral); 0 (Retinoblastoma-Like Protein p130); 0 (Rta protein, Human herpesvirus 8); 0 (Trans-Activators); EC 2.1.1.37 (DNA (Cytosine-5-)-Methyltransferase); EC 2.1.1.37 (DNA (cytosine-5-)-methyltransferase 1); OID: NLM: PMC2826065 [Available on 09/01/10]; 2010/01/13 [aheadofprint]; ppublish</no>
+<pp>United States</pp>
+<sn>1098-5514; 0022-538X</sn>
+<ad>The Wistar Institute, Philadelphia, Pennsylvania 19104, USA.</ad>
+<an>PMID: 20071580; JVI.01997-09 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, N.I.H., Extramural; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<do>10.1128/JVI.01997-09</do>
+<wp>20100113</wp>
+<ol>Unknown(0)</ol>
+<pmid>20071580</pmid>
+<pmcid>PMC2826065</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>736</id>
+<a1>Lukac,D. M.</a1>
+<a1>Renne,R.</a1>
+<a1>Kirshner,J. R.</a1>
+<a1>Ganem,D.</a1>
+<t1>Reactivation of Kaposi&amp;#39;s sarcoma-associated herpesvirus infection from latency by expression of the ORF 50 transactivator, a homolog of the EBV R protein</t1>
+<jf>Virology</jf>
+<jo>Virology</jo>
+<yr>1998</yr>
+<fd>Dec 20</fd>
+<vo>252</vo>
+<is>2</is>
+<sp>304</sp>
+<op>312</op>
+<k1>B-Lymphocytes/virology</k1>
+<k1>Gene Expression Regulation, Viral</k1>
+<k1>Herpesvirus 4, Human/genetics</k1>
+<k1>Herpesvirus 8, Human/genetics/physiology</k1>
+<k1>Humans</k1>
+<k1>Immediate-Early Proteins/genetics</k1>
+<k1>Promoter Regions, Genetic</k1>
+<k1>Sarcoma, Kaposi/physiopathology/virology</k1>
+<k1>Trans-Activators/genetics</k1>
+<k1>Transcription Factors/genetics</k1>
+<k1>Transcription, Genetic</k1>
+<k1>Viral Proteins</k1>
+<k1>Virus Activation</k1>
+<k1>Virus Latency</k1>
+<ab>Kaposi&amp;#39;s sarcoma (KS)-associated herpesvirus (KSHV), or human herpesvirus 8, is a lymphotropic virus strongly linked to several AIDS-related neoplasms. The primary reservoir of infection consists of latently infected B lymphocytes and possibly other mononuclear cells. Viral reactivation from latency and spread from this lymphoid reservoir is presumably required for development of nonlymphoid tumors like KS. Here we show that deregulated expression of a single viral gene, ORF 50, which encodes a transactivator able to selectively upregulate delayed-early viral genes, suffices to disrupt latency and induce the lytic gene cascade in latently infected B cells. The identification of this gene opens the way to studies of the physiologic mechanisms controlling reactvation of KSHV from latency.</ab>
+<no>LR: 20081121; CI: Copyright 1998; JID: 0110674; 0 (BRLF1 protein, Human herpesvirus 4); 0 (Immediate-Early Proteins); 0 (ORF 50 transactivator); 0 (Trans-Activators); 0 (Transcription Factors); 0 (Viral Proteins); ppublish</no>
+<pb>Academic Press</pb>
+<pp>UNITED STATES</pp>
+<sn>0042-6822; 0042-6822</sn>
+<ad>Howard Hughes Medical Institute and Departments of Microbiology and Medicine, University of California, San Francisco, California, 94143, USA.</ad>
+<an>PMID: 9878608; S0042-6822(98)99486-7 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; IM; X</sf>
+<do>10.1006/viro.1998.9486</do>
+<ol>Unknown(0)</ol>
+<pmid>9878608</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>717</id>
+<a1>Marshall,V.</a1>
+<a1>Parks,T.</a1>
+<a1>Bagni,R.</a1>
+<a1>Wang,C. D.</a1>
+<a1>Samols,M. A.</a1>
+<a1>Hu,J.</a1>
+<a1>Wyvil,K. M.</a1>
+<a1>Aleman,K.</a1>
+<a1>Little,R. F.</a1>
+<a1>Yarchoan,R.</a1>
+<a1>Renne,R.</a1>
+<a1>Whitby,D.</a1>
+<t1>Conservation of virally encoded microRNAs in Kaposi sarcoma--associated herpesvirus in primary effusion lymphoma cell lines and in patients with Kaposi sarcoma or multicentric Castleman disease</t1>
+<jf>The Journal of infectious diseases</jf>
+<jo>J.Infect.Dis.</jo>
+<yr>2007</yr>
+<fd>Mar 1</fd>
+<vo>195</vo>
+<is>5</is>
+<sp>645</sp>
+<op>659</op>
+<k1>Acquired Immunodeficiency Syndrome/complications</k1>
+<k1>Base Sequence</k1>
+<k1>Cell Line, Tumor</k1>
+<k1>Conserved Sequence/genetics</k1>
+<k1>Genetic Variation</k1>
+<k1>Giant Lymph Node Hyperplasia/virology</k1>
+<k1>Herpesvirus 8, Human/genetics</k1>
+<k1>Humans</k1>
+<k1>Lymphoma/virology</k1>
+<k1>MicroRNAs/genetics/isolation &amp; purification/metabolism</k1>
+<k1>Molecular Sequence Data</k1>
+<k1>Nucleic Acid Conformation</k1>
+<k1>Phylogeny</k1>
+<k1>Sarcoma, Kaposi/virology</k1>
+<ab>BACKGROUND: MicroRNAs are small noncoding RNAs that posttranscriptionally regulate gene expression. Kaposi sarcoma (KS)-associated herpesvirus (KSHV) encodes 12 distinct microRNA genes, all of which are located within the latency-associated region that is highly expressed in all KSHV-associated malignancies. METHODS: We amplified, cloned, and sequenced a 2.8-kbp-long region containing a cluster of 10 microRNAs plus a 646-bp fragment of K12/T0.7 containing the remaining 2 microRNAs from 5 primary effusion lymphoma-derived cell lines and from 17 patient samples. The patients included 2 with classic KS, 12 with AIDS-KS (8 from the United States, 1 from Europe, 3 from Africa, and 4 from Central/South America), and 2 with multicentric Castleman disease (MCD). Additionally, we analyzed the K1, open reading frame 75, and K15 genes to determine KSHV subtypes, and we performed a phylogenetic analysis. RESULTS: Phylogenetic analysis of the 2.8-kbp microRNA region revealed 2 distinct clusters of sequences: a major (A/C) and a variant (B/Q) cluster. The variant cluster included sequences from 3 patients of African origin and both patients with MCD. Some microRNAs were highly conserved, whereas others had changes that could affect processing and, therefore, biological activity. CONCLUSIONS: These data demonstrate that KSHV microRNA genes are under tight selection in vivo and suggest that they contribute to the biological activity and possibly the pathogenesis of KSHV-associated malignancies.</ab>
+<no>LR: 20081121; GR: R01 CA88763/CA/NCI NIH HHS/United States; GR: R21 CA097939/CA/NCI NIH HHS/United States; JID: 0413675; 0 (MicroRNAs); CIN: J Infect Dis. 2007 Mar 1;195(5):618-20. PMID: 17262700; 2006/07/06 [received]; 2006/09/12 [accepted]; 2007/01/23 [aheadofprint]; ppublish</no>
+<pp>United States</pp>
+<sn>0022-1899; 0022-1899</sn>
+<ad>Viral Epidemiology Section, AIDS Vaccine Program, Science Applications International Corporation-Frederick, National Cancer Institute-Frederick, Frederick, MD 21701, USA.</ad>
+<an>PMID: 17262705; JID37098 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, N.I.H., Extramural; AIM; IM</sf>
+<do>10.1086/511434</do>
+<wp>20070123</wp>
+<ol>Unknown(0)</ol>
+<pmid>17262705</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>746</id>
+<a1>Mergia,A.</a1>
+<a1>Renshaw-Gegg,L. W.</a1>
+<a1>Stout,M. W.</a1>
+<a1>Renne,R.</a1>
+<a1>Herchenroeder,O.</a1>
+<t1>Functional domains of the simian foamy virus type 1 transcriptional transactivator (Taf)</t1>
+<jf>Journal of virology</jf>
+<jo>J.Virol.</jo>
+<yr>1993</yr>
+<fd>Aug</fd>
+<vo>67</vo>
+<is>8</is>
+<sp>4598</sp>
+<op>4604</op>
+<k1>Amino Acid Sequence</k1>
+<k1>Animals</k1>
+<k1>Cell Line</k1>
+<k1>Cercopithecus aethiops</k1>
+<k1>Chloramphenicol O-Acetyltransferase/genetics/metabolism</k1>
+<k1>Conserved Sequence</k1>
+<k1>DNA-Binding Proteins</k1>
+<k1>Fungal Proteins/biosynthesis/genetics</k1>
+<k1>Genes, Viral</k1>
+<k1>Humans</k1>
+<k1>Kidney</k1>
+<k1>L Cells (Cell Line)</k1>
+<k1>Mice</k1>
+<k1>Molecular Sequence Data</k1>
+<k1>Plasmids</k1>
+<k1>Recombinant Fusion Proteins/biosynthesis</k1>
+<k1>Saccharomyces cerevisiae/genetics</k1>
+<k1>Saccharomyces cerevisiae Proteins</k1>
+<k1>Sequence Deletion</k1>
+<k1>Sequence Homology, Amino Acid</k1>
+<k1>Spumavirus/genetics/metabolism</k1>
+<k1>Trans-Activators/biosynthesis/genetics</k1>
+<k1>Transcription Factors</k1>
+<k1>Transcriptional Activation</k1>
+<k1>Transfection</k1>
+<ab>The genome of simian foamy virus type 1 encodes a transcriptional transactivator (Taf) that dramatically elevates gene expression directed by the viral long terminal repeat. In this report, we describe the functional domains of simian foamy virus type 1 Taf. Several taf mutants and fusion proteins of Taf and the DNA-binding domain of the Saccharomyces cerevisiae transcriptional transactivator GAL4 were used in this study. Taf contains two potent activation domains. One of the activation domains is located at the amino terminus (positions 1 to 48, with position 1 representing the initiator amino acid methionine) and contains several acidic amino acids. The second activation domain was mapped to a region at the carboxy terminus (positions 277 to 300). These two domains activate gene expression directed by the viral long terminal repeat independently of each other. No significant amino acid sequence homology between the activation domains is noted. Thus, Taf belongs in part to the family of acidic transcriptional transactivators. The activation domain at the carboxy terminus is conserved among foamy virus transactivators but is not related to other known transcriptional activators. Therefore, the mechanism of gene activation by the carboxy terminus of Taf may be novel. In addition, a potential binding domain rich in basic amino acids (positions 179 to 222) and a highly conserved sequence among foamy virus transactivators (positions 93 to 109) were found to be critical for Taf activity.</ab>
+<no>LR: 20091119; GR: AI30525/AI/NIAID NIH HHS/United States; GR: RR00169/RR/NCRR NIH HHS/United States; JID: 0113724; 0 (DNA-Binding Proteins); 0 (Fungal Proteins); 0 (GAL4 protein, S cerevisiae); 0 (Recombinant Fusion Proteins); 0 (Saccharomyces cerevisiae Proteins); 0 (Trans-Activators); 0 (Transcription Factors); EC 2.3.1.28 (Chloramphenicol O-Acetyltransferase); OID: NLM: PMC237844; ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0022-538X; 0022-538X</sn>
+<ad>Department of Medical Pathology, University of California, Davis 95616.</ad>
+<an>PMID: 8392601</an>
+<la>eng</la>
+<sf>Comparative Study; Journal Article; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>8392601</pmid>
+<pmcid>PMC237844</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>751</id>
+<a1>Monticello,T. M.</a1>
+<a1>Renne,R.</a1>
+<a1>Morgan,K. T.</a1>
+<t1>Chemically induced cell proliferation in upper respiratory tract carcinogenesis</t1>
+<jf>Progress in clinical and biological research</jf>
+<jo>Prog.Clin.Biol.Res.</jo>
+<yr>1991</yr>
+<vo>369</vo>
+<sp>323</sp>
+<op>335</op>
+<k1>Animals</k1>
+<k1>Carcinogenicity Tests</k1>
+<k1>Carcinogens/toxicity</k1>
+<k1>Cell Division/drug effects</k1>
+<k1>Formaldehyde/toxicity</k1>
+<k1>Humans</k1>
+<k1>Mitotic Index/drug effects</k1>
+<k1>Respiratory System/cytology/drug effects</k1>
+<k1>Respiratory Tract Neoplasms/chemically induced</k1>
+<no>LR: 20051116; JID: 7605701; 0 (Carcinogens); 50-00-0 (Formaldehyde); RF: 92; ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0361-7742; 0361-7742</sn>
+<an>PMID: 1946528</an>
+<la>eng</la>
+<sf>Journal Article; Review; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>1946528</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>748</id>
+<a1>Neumann-Haefelin,D.</a1>
+<a1>Fleps,U.</a1>
+<a1>Renne,R.</a1>
+<a1>Schweizer,M.</a1>
+<t1>Foamy viruses</t1>
+<jf>Intervirology</jf>
+<jo>Intervirology</jo>
+<yr>1993</yr>
+<vo>35</vo>
+<is>1-4</is>
+<sp>196</sp>
+<op>207</op>
+<k1>Animals</k1>
+<k1>Humans</k1>
+<k1>Retroviridae Infections/microbiology</k1>
+<k1>Spumavirus/genetics/physiology</k1>
+<ab>Foamy viruses share complex genome organization with lentiviruses and certain oncoviruses. The open reading frame 3&amp;#39; of env encodes a transcriptional transactivator. Distinct responsive sequences were identified in the long terminal repeats (LTRs) of simian (SFV-1 and SFV-3) and human foamy viruses (HFV). Transactivation of heterologous LTRs was described including those of simian and human immunodeficiency viruses. Foamy viruses persist for the whole lifetime in infected hosts (primates, cats, hamsters, cattle, and probably other mammals). The virus may be orally shed and transmitted, while being latent in various internal organs. Selective viral gene expression in the brains of mice transgenic for HFV has suggested a particular relationship to neural tissue. In latently SFV-3-infected cultured cells, methylation of proviral DNA is apparently involved in the control of latency. Demethylation as well as transfection with the transactivator were shown to be instrumental in viral reactivation. Natural infections with foamy viruses are common, elicit strong immune responses, and seem to be asymptomatic in nonhuman primates. Detection of such infections, however, may not be a triviality in man. While accidental transmission of foamy viruses to man is well documented, reported seroprevalence in human populations and the association of HFV with specific pathology (e.g. thyroiditis de Quervain, amyotrophic lateral sclerosis, and Graves&amp;#39; disease) are controversial and remain to be proven.</ab>
+<no>LR: 20061115; JID: 0364265; RF: 48; ppublish</no>
+<pp>SWITZERLAND</pp>
+<sn>0300-5526; 0300-5526</sn>
+<ad>Abteilung Virologie, Universitat Freiburg, BRD.</ad>
+<an>PMID: 8407246</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; Review; IM; X</sf>
+<ol>Unknown(0)</ol>
+<pmid>8407246</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>712</id>
+<a1>North,D. W.</a1>
+<a1>Abdo,K. M.</a1>
+<a1>Benson,J. M.</a1>
+<a1>Dahl,A. R.</a1>
+<a1>Morris,J. B.</a1>
+<a1>Renne,R.</a1>
+<a1>Witschi,H.</a1>
+<t1>A review of whole animal bioassays of the carcinogenic potential of naphthalene</t1>
+<jf>Regulatory toxicology and pharmacology : RTP</jf>
+<jo>Regul.Toxicol.Pharmacol.</jo>
+<yr>2008</yr>
+<fd>Jul</fd>
+<vo>51</vo>
+<is>2 Suppl</is>
+<sp>S6</sp>
+<op>14</op>
+<k1>Adenoma/chemically induced/pathology</k1>
+<k1>Administration, Inhalation</k1>
+<k1>Animals</k1>
+<k1>Bronchi/drug effects/pathology</k1>
+<k1>Carcinogenicity Tests/methods</k1>
+<k1>Carcinogens, Environmental/administration &amp; dosage/classification/toxicity</k1>
+<k1>Esthesioneuroblastoma, Olfactory/chemically induced/pathology</k1>
+<k1>Female</k1>
+<k1>Inhalation Exposure</k1>
+<k1>Lung Neoplasms/chemically induced/pathology</k1>
+<k1>Male</k1>
+<k1>Mice</k1>
+<k1>Naphthalenes/administration &amp; dosage/classification/toxicity</k1>
+<k1>Nasal Cavity/drug effects/pathology</k1>
+<k1>Nose Neoplasms/chemically induced/pathology</k1>
+<k1>Olfactory Mucosa/drug effects/pathology</k1>
+<k1>Pulmonary Alveoli/drug effects/pathology</k1>
+<k1>Rats</k1>
+<ab>This report provides a summary of deliberations conducted under the charge for members of Module A participating in the Naphthalene State-of-the-Science Symposium (NS3), Monterey, CA, October 9-12, 2006. Whole animal bioassays have been performed by the National Toxicology Program in mice and rats to ascertain the carcinogenic potential of naphthalene by inhalation exposure. A statistically significant increased incidence of pulmonary alveolar/bronchiolar adenoma (a benign lesion), was observed among female mice; an observed increase among the males did not reach statistical significance. No nasal tumors were observed in either sex. A tumorigenic response was observed in both sexes of rats, in males an increased incidence of nasal respiratory epithelium adenoma (a benign rather than malignant lesion) and in females, olfactory epithelial neuroblastoma. Interpretations of these studies vary. On the one hand, evidence of extensive non-neoplastic response in both sexes of both species indicates cytotoxicity occurred at all doses, and strongly suggests that cytotoxicity played a significant role in the tumor responses observed in the target tissues. On the other hand, olfactory epithelial neuroblastoma has rarely been observed in NTP bioassays. This review seeks to develop a consensus understanding of the scientific evidence provided by these studies, taking into account that they have been used as the basis for quantitative human cancer risk assessment, and suggests scientific studies that, if performed, could resolve scientific uncertainties.</ab>
+<no>JID: 8214983; 0 (Carcinogens, Environmental); 0 (Naphthalenes); RF: 33; 2007/07/17 [received]; 2007/09/30 [accepted]; 2007/11/05 [aheadofprint]; ppublish</no>
+<pp>United States</pp>
+<sn>1096-0295; 0273-2300</sn>
+<ad>NorthWorks, Inc., 1002 Misty Lane, Belmont, CA 94002-3651, USA. northworks@mindspring.com</ad>
+<an>PMID: 18364246; S0273-2300(07)00147-X [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, Non-P.H.S.; Review; IM</sf>
+<do>10.1016/j.yrtph.2007.09.022</do>
+<wp>20071105</wp>
+<ol>Unknown(0)</ol>
+<pmid>18364246</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>723</id>
+<a1>Obot,C.</a1>
+<a1>Lee,K.</a1>
+<a1>Fuciarelli,A.</a1>
+<a1>Renne,R.</a1>
+<a1>McKinney,W.</a1>
+<t1>Characterization of mainstream cigarette smoke-induced biomarker responses in ICR and C57Bl/6 mice</t1>
+<jf>Inhalation toxicology</jf>
+<jo>Inhal.Toxicol.</jo>
+<yr>2004</yr>
+<fd>Sep</fd>
+<vo>16</vo>
+<is>10</is>
+<sp>701</sp>
+<op>719</op>
+<k1>Animals</k1>
+<k1>Apoptosis/drug effects</k1>
+<k1>Biological Markers/blood</k1>
+<k1>Bronchoalveolar Lavage Fluid/chemistry/cytology</k1>
+<k1>Chemokines/analysis/metabolism</k1>
+<k1>Dose-Response Relationship, Drug</k1>
+<k1>Emphysema/blood/chemically induced</k1>
+<k1>Epithelium/drug effects/pathology</k1>
+<k1>Inhalation Exposure</k1>
+<k1>Male</k1>
+<k1>Mice</k1>
+<k1>Mice, Inbred C57BL</k1>
+<k1>Mice, Inbred ICR</k1>
+<k1>Necrosis</k1>
+<k1>Neutrophils/drug effects/pathology</k1>
+<k1>Nose/drug effects/pathology</k1>
+<k1>Particle Size</k1>
+<k1>Smoke/adverse effects</k1>
+<k1>Species Specificity</k1>
+<k1>Tobacco</k1>
+<ab>Pulmonary emphysema is a major component of the morbidity and mortality of chronic obstructive pulmonary disease (COPD). Currently there are no predictive biomarkers for COPD. Initial steps toward identifying potentially predictive biomarkers involve utilizing well-characterized mainstream smoke (MS) exposure conditions (dose-response) to identify changes in biomarkers of effect (inflammation, tissue injury, oxidative stress) in emphysema-susceptible and -resistant mouse strains. C57Bl/6 mice have been reported to develop emphysema when exposed chronically to cigarette smoke, while similarly exposed ICR mice do not. Male C57Bl/6 and ICR mice were exposed 2 h/day for 7 consecutive days to MS from a standard reference cigarette (2R4F) at 75, 250, and 600 microg total particulate matter (TPM)/L or filtered air. To confirm exposure, blood samples were collected toward the end of the last exposure and analyzed for carboxyhemoglobin, nicotine, and cotinine. Bronchoalveolar lavage (BAL) fluid samples were collected 2 or 12 h postexposure and analyzed for biomarkers of effect. MS dose differed slightly between strains. More necrosis was observed in nasal epithelium of exposed C57Bl/6 mice. Exposure concentration-dependent increases in apoptosis, chemokines, and neutrophil counts were greater in ICR mice. Similar increases in thymus and activated-regulated chemokine were only observed in C57Bl/6 mice. BAL fluid cells of C57Bl/6 mice appear to undergo necrosis, while the BAL fluid cells of ICR mice appear to undergo apoptosis following MS exposure. Utilizing two strains of mice we identified MS-responsive biomarkers of effect that may be predictive of COPD pathology. Chronic MS exposures are needed to link these biomarkers with emphysema.</ab>
+<no>LR: 20061115; CI: Copyright Taylor &amp;amp; Francis Inc.; JID: 8910739; 0 (Biological Markers); 0 (Chemokines); 0 (Smoke); ppublish</no>
+<pp>United States</pp>
+<sn>0895-8378; 0895-8378</sn>
+<ad>Philip Morris USA Postgraduate Research Program, Richmond, Virginia 23261-6583, USA.</ad>
+<an>PMID: 15371058; C5EXPQE15DNT0DEJ [pii]</an>
+<la>eng</la>
+<sf>Journal Article; IM</sf>
+<do>10.1080/08958370490476604</do>
+<ol>Unknown(0)</ol>
+<pmid>15371058</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>728</id>
+<a1>Otieno,M. W.</a1>
+<a1>Banura,C.</a1>
+<a1>Katongole-Mbidde,E.</a1>
+<a1>Johnson,J. L.</a1>
+<a1>Ghannoum,M.</a1>
+<a1>Dowlati,A.</a1>
+<a1>Renne,R.</a1>
+<a1>Arts,E.</a1>
+<a1>Whalen,C.</a1>
+<a1>Lederman,M. M.</a1>
+<a1>Remick,S. C.</a1>
+<t1>Therapeutic challenges of AIDS-related non-Hodgkin&amp;#39;s lymphoma in the United States and East Africa</t1>
+<jf>Journal of the National Cancer Institute</jf>
+<jo>J.Natl.Cancer Inst.</jo>
+<yr>2002</yr>
+<fd>May 15</fd>
+<vo>94</vo>
+<is>10</is>
+<sp>718</sp>
+<op>732</op>
+<k1>Acquired Immunodeficiency Syndrome/complications/immunology/virology</k1>
+<k1>Africa, Eastern/epidemiology</k1>
+<k1>Anti-HIV Agents/therapeutic use</k1>
+<k1>Antiretroviral Therapy, Highly Active/adverse effects</k1>
+<k1>Humans</k1>
+<k1>Lymphoma, Non-Hodgkin/complications/drug therapy/epidemiology/therapy</k1>
+<k1>Survival Rate</k1>
+<k1>United States/epidemiology</k1>
+<ab>Non-Hodgkin&amp;#39;s lymphoma (NHL) remains the second most common malignant complication in patients with human immunodeficiency virus (HIV) infection. As we enter the third decade of the acquired immunodeficiency syndrome (AIDS) epidemic, it is apparent that the evolution of antiretroviral therapy and the emergence of combination antiviral strategies have greatly affected the natural history of HIV infection and its neoplastic complications. For example, there may be a trend for declining incidence of AIDS-related lymphoma in the United States for the first time. However, in regions of the world where the burden of HIV infection is greatest, such as in East Africa, AIDS-related lymphoma is an increasing cause of morbidity and mortality. Treatment of lymphoma has evolved coincident with improvements in antiretroviral therapy. Infusional chemotherapy regimens may offer advantages over other regimens and schedules, but comparative trials have not been done. Clinical trial data are available on which to develop therapeutic strategies to treat this disease in East Africa where pragmatic approaches are needed. Both the differences in manifestations of HIV infection and the inherent difficulties in administering cytotoxic chemotherapy in this part of the world must be taken into consideration in planning therapeutic strategies. Improved understanding of the pathogenesis of HIV infection and lymphoma will likely yield improved therapeutic interventions as well.</ab>
+<no>LR: 20071114; GR: AI36219/AI/NIAID NIH HHS/United States; GR: CA62502/CA/NCI NIH HHS/United States; GR: CA70081/CA/NCI NIH HHS/United States; GR: CA83528/CA/NCI NIH HHS/United States; GR: TW-00011/TW/FIC NIH HHS/United States; JID: 7503089; 0 (Anti-HIV Agents); RF: 203; ppublish</no>
+<pp>United States</pp>
+<sn>0027-8874; 0027-8874</sn>
+<ad>Department of Haematology and Blood Transfusion, College of Health Sciences, University of Nairobi and the Kenyatta National Hospital, Nairobi, Kenya.</ad>
+<an>PMID: 12011222</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; Review; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>12011222</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>705</id>
+<a1>Qin,Z.</a1>
+<a1>Freitas,E.</a1>
+<a1>Sullivan,R.</a1>
+<a1>Mohan,S.</a1>
+<a1>Bacelieri,R.</a1>
+<a1>Branch,D.</a1>
+<a1>Romano,M.</a1>
+<a1>Kearney,P.</a1>
+<a1>Oates,J.</a1>
+<a1>Plaisance,K.</a1>
+<a1>Renne,R.</a1>
+<a1>Kaleeba,J.</a1>
+<a1>Parsons,C.</a1>
+<t1>Upregulation of xCT by KSHV-encoded microRNAs facilitates KSHV dissemination and persistence in an environment of oxidative stress</t1>
+<jf>PLoS pathogens</jf>
+<jo>PLoS Pathog.</jo>
+<yr>2010</yr>
+<fd>Jan 29</fd>
+<vo>6</vo>
+<is>1</is>
+<sp>e1000742</sp>
+<k1>Amino Acid Transport System y+/biosynthesis</k1>
+<k1>Animals</k1>
+<k1>Basic-Leucine Zipper Transcription Factors/metabolism</k1>
+<k1>Cell Line</k1>
+<k1>Endothelial Cells/metabolism/virology</k1>
+<k1>Fluorescent Antibody Technique</k1>
+<k1>Gene Expression Regulation/physiology</k1>
+<k1>Herpesvirus 8, Human/genetics/metabolism/pathogenicity</k1>
+<k1>Humans</k1>
+<k1>Immunoblotting</k1>
+<k1>Immunohistochemistry</k1>
+<k1>Macrophages/metabolism/virology</k1>
+<k1>Mice</k1>
+<k1>MicroRNAs/genetics/metabolism</k1>
+<k1>Neoplasm Staging</k1>
+<k1>Oxidative Stress/physiology</k1>
+<k1>Polymerase Chain Reaction</k1>
+<k1>Reactive Nitrogen Species/metabolism</k1>
+<k1>Sarcoma, Kaposi/metabolism/pathology/virology</k1>
+<k1>Transfection</k1>
+<k1>Up-Regulation</k1>
+<ab>Upregulation of xCT, the inducible subunit of a membrane-bound amino acid transporter, replenishes intracellular glutathione stores to maintain cell viability in an environment of oxidative stress. xCT also serves as a fusion-entry receptor for the Kaposi&amp;#39;s sarcoma-associated herpesvirus (KSHV), the causative agent of Kaposi&amp;#39;s sarcoma (KS). Ongoing KSHV replication and infection of new cell targets is important for KS progression, but whether xCT regulation within the tumor microenvironment plays a role in KS pathogenesis has not been determined. Using gene transfer and whole virus infection experiments, we found that KSHV-encoded microRNAs (KSHV miRNAs) upregulate xCT expression by macrophages and endothelial cells, largely through miR-K12-11 suppression of BACH-1-a negative regulator of transcription recognizing antioxidant response elements within gene promoters. Correlative functional studies reveal that upregulation of xCT by KSHV miRNAs increases cell permissiveness for KSHV infection and protects infected cells from death induced by reactive nitrogen species (RNS). Interestingly, KSHV miRNAs simultaneously upregulate macrophage secretion of RNS, and biochemical inhibition of RNS secretion by macrophages significantly reduces their permissiveness for KSHV infection. The clinical relevance of these findings is supported by our demonstration of increased xCT expression within more advanced human KS tumors containing a larger number of KSHV-infected cells. Collectively, these data support a role for KSHV itself in promoting de novo KSHV infection and the survival of KSHV-infected, RNS-secreting cells in the tumor microenvironment through the induction of xCT.</ab>
+<no>GR: K08-1CA103858/CA/NCI NIH HHS/United States; GR: P20-RR-017696/RR/NCRR NIH HHS/United States; GR: P30-CA-138313/CA/NCI NIH HHS/United States; JID: 101238921; 0 (Amino Acid Transport System y+); 0 (Bach1 protein, mouse); 0 (Basic-Leucine Zipper Transcription Factors); 0 (MicroRNAs); 0 (Reactive Nitrogen Species); 0 (Slc7a11 protein, mouse); OID: NLM: PMC2813276; 2009/07/23 [received]; 2009/12/29 [accepted]; 2010/01/29 [epublish]; epublish</no>
+<pp>United States</pp>
+<sn>1553-7374; 1553-7366</sn>
+<ad>Department of Medicine, Hollings Cancer Center, Medical University of South Carolina, Charleston, South Carolina, United States of America.</ad>
+<an>PMID: 20126446</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, N.I.H., Extramural; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<do>10.1371/journal.ppat.1000742</do>
+<wp>20100129</wp>
+<ol>Unknown(0)</ol>
+<pmid>20126446</pmid>
+<pmcid>PMC2813276</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>731</id>
+<a1>Renne,R.</a1>
+<a1>Barry,C.</a1>
+<a1>Dittmer,D.</a1>
+<a1>Compitello,N.</a1>
+<a1>Brown,P. O.</a1>
+<a1>Ganem,D.</a1>
+<t1>Modulation of cellular and viral gene expression by the latency-associated nuclear antigen of Kaposi&amp;#39;s sarcoma-associated herpesvirus</t1>
+<jf>Journal of virology</jf>
+<jo>J.Virol.</jo>
+<yr>2001</yr>
+<fd>Jan</fd>
+<vo>75</vo>
+<is>1</is>
+<sp>458</sp>
+<op>468</op>
+<k1>Animals</k1>
+<k1>Antigens, Viral/physiology</k1>
+<k1>Blotting, Northern</k1>
+<k1>COS Cells</k1>
+<k1>DNA-Binding Proteins/genetics</k1>
+<k1>Gene Expression Regulation</k1>
+<k1>Herpesvirus 8, Human/physiology</k1>
+<k1>Humans</k1>
+<k1>Nuclear Proteins/physiology</k1>
+<k1>Promoter Regions, Genetic</k1>
+<k1>RNA, Messenger/analysis</k1>
+<k1>Repressor Proteins/genetics</k1>
+<k1>STAT1 Transcription Factor</k1>
+<k1>Terminal Repeat Sequences</k1>
+<k1>Trans-Activators/genetics</k1>
+<k1>Transcription Factors/genetics</k1>
+<ab>Kaposi&amp;#39;s sarcoma-associated herpesvirus (KSHV), also called human herpesvirus 8 (HHV-8), is the likely etiological agent of Kaposi&amp;#39;s sarcoma and primary effusion lymphoma. Common to these malignancies is that tumor cells are latently infected with KSHV. Viral gene expression is limited to a few genes, one of which is the latency-associated nuclear antigen (LANA), the product of ORF73. Examination of the primary sequence of LANA reveals some structural features reminiscent of transcription factors, leading us to hypothesize that LANA may regulate viral and cellular transcription during latency. In reporter gene-based transient transfection assays, we found that LANA can have either positive or negative effects on gene expression. While expression of a reporter gene from several synthetic promoters was increased in the presence of LANA, expression from the human immunodeficiency virus (HIV) long terminal repeat (LTR)-and from NF-kappaB-dependent reporter genes-was reduced by LANA expression. In addition, the promoter of KSHV ORF73 itself is activated up to 5.5-fold by LANA. This autoregulation may be important in tumorigenesis, because two other genes (v-cyclin and v-FLIP) with likely roles in cell growth and survival are also controlled by this element. To identify cellular genes influenced by LANA, we employed cDNA array-based expression profiling. Six known genes (and nine expressed sequence tags) were found to be upregulated in LANA-expressing cell lines. One of these, Staf-50, is known to inhibit expression from the HIV LTR; most of the other known genes are interferon inducible, although the interferon genes themselves were not induced by LANA. These data demonstrate that LANA expression has effects on cellular and viral gene expression. We suggest that, whether direct or indirect in origin, these effects may play important roles in the pathobiology of KSHV infection.</ab>
+<no>LR: 20091118; GR: CA73506-04/CA/NCI NIH HHS/United States; GR: CA88763-01/CA/NCI NIH HHS/United States; JID: 0113724; 0 (Antigens, Viral); 0 (DNA-Binding Proteins); 0 (Nuclear Proteins); 0 (RNA, Messenger); 0 (Repressor Proteins); 0 (STAT1 Transcription Factor); 0 (STAT1 protein, human); 0 (TRIM22 protein, human); 0 (Trans-Activators); 0 (Transcription Factors); 0 (latency-associated nuclear antigen); OID: NLM: PMC113938; ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0022-538X; 0022-538X</sn>
+<ad>Division of Hematology/Oncology, Case Western Reserve University, Cleveland, Ohio 44106, USA. rfr3@po.cwru.edu</ad>
+<an>PMID: 11119614</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<do>10.1128/JVI.75.1.458-468.2001</do>
+<ol>Unknown(0)</ol>
+<pmid>11119614</pmid>
+<pmcid>PMC113938</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>738</id>
+<a1>Renne,R.</a1>
+<a1>Blackbourn,D.</a1>
+<a1>Whitby,D.</a1>
+<a1>Levy,J.</a1>
+<a1>Ganem,D.</a1>
+<t1>Limited transmission of Kaposi&amp;#39;s sarcoma-associated herpesvirus in cultured cells</t1>
+<jf>Journal of virology</jf>
+<jo>J.Virol.</jo>
+<yr>1998</yr>
+<fd>Jun</fd>
+<vo>72</vo>
+<is>6</is>
+<sp>5182</sp>
+<op>5188</op>
+<k1>Gene Expression Regulation, Viral</k1>
+<k1>Herpesviridae Infections/virology</k1>
+<k1>Herpesvirus 8, Human/pathogenicity/physiology</k1>
+<k1>Humans</k1>
+<k1>RNA, Messenger/analysis</k1>
+<k1>RNA, Viral/analysis</k1>
+<k1>Tumor Cells, Cultured</k1>
+<k1>Virulence</k1>
+<k1>Virus Replication</k1>
+<ab>Kaposi&amp;#39;s sarcoma-associated herpesvirus (KSHV) (also called human herpesvirus 8) is a novel gammaherpesvirus strongly implicated in the pathogenesis of Kaposi&amp;#39;s sarcoma. Although virions can be produced in high yield from latently infected B-cell lines treated with phorbol esters, little is known about the infectivity of such virus, and efficient serial propagation of KSHV has been problematic. Here we report on the infectivity of KSHV produced from phorbol-induced BCBL-1 cells, employing an assay based on the detection of a spliced late mRNA by a sensitive reverse transcriptase PCR (RT-PCR) method. The results of this study confirm previous observations that 293 cells are susceptible to viral infection; however, infection with BCBL-1-derived virus is inefficient and the pattern of viral gene expression in infected cells may not fully reproduce that of authentic lytic infection. In keeping with this finding, serial propagation of BCBL-1-derived virus could not be demonstrated on 293 cells. Eleven of 38 other cell lines tested also supported KSHV infection, as judged by this RT-PCR assay, including cells of B-cell, endothelial, epithelial, and fibroblastic origin; however, in all cases, infection proceeded at or below the levels observed in 293 cells.</ab>
+<no>LR: 20091118; JID: 0113724; 0 (RNA, Messenger); 0 (RNA, Viral); OID: NLM: PMC110093; ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0022-538X; 0022-538X</sn>
+<ad>Howard Hughes Medical Institute and Department of Microbiology and Immunology, University of California, San Francisco, San Francisco, California 94143-0414, USA.</ad>
+<an>PMID: 9573290</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; IM; X</sf>
+<ol>Unknown(0)</ol>
+<pmid>9573290</pmid>
+<pmcid>PMC110093</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>704</id>
+<a1>Renne,R.</a1>
+<a1>Brix,A.</a1>
+<a1>Harkema,J.</a1>
+<a1>Herbert,R.</a1>
+<a1>Kittel,B.</a1>
+<a1>Lewis,D.</a1>
+<a1>March,T.</a1>
+<a1>Nagano,K.</a1>
+<a1>Pino,M.</a1>
+<a1>Rittinghausen,S.</a1>
+<a1>Rosenbruch,M.</a1>
+<a1>Tellier,P.</a1>
+<a1>Wohrmann,T.</a1>
+<t1>Proliferative and nonproliferative lesions of the rat and mouse respiratory tract</t1>
+<jf>Toxicologic pathology</jf>
+<jo>Toxicol.Pathol.</jo>
+<yr>2009</yr>
+<vo>37</vo>
+<is>7 Suppl</is>
+<sp>5S</sp>
+<op>73S</op>
+<k1>Animals</k1>
+<k1>Animals, Laboratory</k1>
+<k1>Inhalation Exposure</k1>
+<k1>International Agencies</k1>
+<k1>Internationality</k1>
+<k1>Mice</k1>
+<k1>Rats</k1>
+<k1>Respiratory System/pathology</k1>
+<k1>Respiratory Tract Diseases/diagnosis/pathology/veterinary</k1>
+<k1>Respiratory Tract Neoplasms/diagnosis/pathology/veterinary</k1>
+<k1>Rodent Diseases/pathology</k1>
+<k1>Terminology as Topic</k1>
+<k1>Toxicity Tests</k1>
+<ab>The INHAND Project (International Harmonization of Nomenclature and Diagnostic Criteria for Lesions in Rats and Mice) is a joint initiative of the Societies of Toxicologic Pathology from Europe (ESTP), Great Britain (BSTP), Japan (JSTP) and North America (STP) to develop an internationally-accepted nomenclature for proliferative and non-proliferative lesions in laboratory animals. The purpose of this publication is to provide a standardized nomenclature for classifying microscopic lesions observed in the respiratory tract of laboratory rats and mice, with color photomicrographs illustrating examples of some lesions. The standardized nomenclature presented in this document is also available electronically on the internet (http://www.goreni.org/). Sources of material included histopathology databases from government, academia, and industrial laboratories throughout the world. Content includes spontaneous developmental and aging lesions as well as lesions induced by exposure to test materials. A widely accepted and utilized international harmonization of nomenclature for respiratory tract lesions in laboratory animals will decrease confusion among regulatory and scientific research organizations in different countries and provide a common language to increase and enrich international exchanges of information among toxicologists and pathologists.</ab>
+<no>JID: 7905907; ppublish</no>
+<pp>United States</pp>
+<sn>1533-1601; 0192-6233</sn>
+<ad>Roger Renne ToxPath Consulting, Sumner, Washington, USA.</ad>
+<an>PMID: 20032296; 37/7_suppl/5S [pii]</an>
+<la>eng</la>
+<sf>Journal Article; IM</sf>
+<do>10.1177/0192623309353423</do>
+<ol>Unknown(0)</ol>
+<pmid>20032296</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>724</id>
+<a1>Renne,R.</a1>
+<a1>Dittmer,D.</a1>
+<a1>Kedes,D.</a1>
+<a1>Schmidt,K.</a1>
+<a1>Desrosiers,R. C.</a1>
+<a1>Luciw,P. A.</a1>
+<a1>Ganem,D.</a1>
+<t1>Experimental transmission of Kaposi&amp;#39;s sarcoma-associated herpesvirus (KSHV/HHV-8) to SIV-positive and SIV-negative rhesus macaques</t1>
+<jf>Journal of medical primatology</jf>
+<jo>J.Med.Primatol.</jo>
+<yr>2004</yr>
+<fd>Feb</fd>
+<vo>33</vo>
+<is>1</is>
+<sp>1</sp>
+<op>9</op>
+<k1>Animals</k1>
+<k1>Antibodies, Viral/blood</k1>
+<k1>DNA Primers</k1>
+<k1>DNA, Viral/blood</k1>
+<k1>Disease Models, Animal</k1>
+<k1>Enzyme-Linked Immunosorbent Assay</k1>
+<k1>Herpesviridae Infections/transmission</k1>
+<k1>Herpesvirus 8, Human/genetics/growth &amp; development</k1>
+<k1>Macaca mulatta/virology</k1>
+<k1>Reverse Transcriptase Polymerase Chain Reaction</k1>
+<k1>Simian immunodeficiency virus/immunology</k1>
+<ab>Kaposi&amp;#39;s sarcoma-associated herpesvirus (KSHV) is a gamma-herpesvirus associated with Kaposi&amp;#39;s sarcoma (KS) and two lymphoproliferative diseases, primary effusion lymphoma (PEL) and multicentric Castleman&amp;#39;s disease. Studies on the biology and pathogenesis of KSHV have been limited by lack of efficient cell culture systems and lack of a suitable animal model for KS. Here we report on the experimental inoculation of SIV-positive and SIV-negative rhesus macaques with KSHV-infected PEL cells or KSHV preparations derived from PEL cells. Low levels of viral DNA could be detected in cultivated peripheral blood mononuclear cell of all animals, as well as in the bone marrow of one monkey that died from SAIDS. However, we were not able to detect KSHV-specific antibodies or transcripts, nor did we observe any symptoms clearly related to KSHV infection (e.g. KS or lympho-proliferative disease). Hence, although KSHV replicates in rhesus macaques at very low levels, this non-human primate host is unlikely to provide a useful animal model for disease.</ab>
+<no>LR: 20071114; GR: CA 73506-04/CA/NCI NIH HHS/United States; GR: RR 00169-35/RR/NCRR NIH HHS/United States; JID: 0320626; 0 (Antibodies, Viral); 0 (DNA Primers); 0 (DNA, Viral); ppublish</no>
+<pp>Denmark</pp>
+<sn>0047-2565; 0047-2565</sn>
+<ad>Departments of Medicine and Microbiology, Division of Hematology and Oncology, Case Western Reserve University, 10900 Euclid Avenue, BRB3 West, Cleveland, OH 44106-4937, USA. rfr3@po.cwru.edu</ad>
+<an>PMID: 15061726; JMP043 [pii]</an>
+<la>eng</la>
+<sf>Comparative Study; Journal Article; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<do>10.1046/j.1600-0684.2003.00043.x</do>
+<ol>Unknown(0)</ol>
+<pmid>15061726</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>742</id>
+<a1>Renne,R.</a1>
+<a1>Fleps,U.</a1>
+<a1>Luciw,P. A.</a1>
+<a1>Neumann-Haefelin,D.</a1>
+<t1>Transactivation of the two promoters of SFV-3 by different mechanisms</t1>
+<jf>Virology</jf>
+<jo>Virology</jo>
+<yr>1996</yr>
+<fd>Jul 15</fd>
+<vo>221</vo>
+<is>2</is>
+<sp>362</sp>
+<op>367</op>
+<k1>Animals</k1>
+<k1>Base Sequence</k1>
+<k1>Binding Sites</k1>
+<k1>Cercopithecus aethiops</k1>
+<k1>Chromosome Mapping</k1>
+<k1>DNA, Viral</k1>
+<k1>Gene Expression Regulation, Viral</k1>
+<k1>Haplorhini/virology</k1>
+<k1>Humans</k1>
+<k1>Molecular Sequence Data</k1>
+<k1>Peptide Chain Initiation, Translational</k1>
+<k1>Promoter Regions, Genetic</k1>
+<k1>Repetitive Sequences, Nucleic Acid</k1>
+<k1>Spumavirus/genetics</k1>
+<k1>Trans-Activators/metabolism</k1>
+<k1>Transcriptional Activation</k1>
+<k1>Vero Cells</k1>
+<ab>Simian foamy virus type 3 (SFV-3), a member of the spumavirus genus of retroviruses, has a complex genome organization and encodes two open reading frames (ORFs), in addition to the structural genes gag, pol, and env. ORF-1 encodes a viral transcriptional transactivator designated Taf (transactivator of foamy viruses) which augments transcription from the viral long terminal repeat (LTR). It was recently shown that human foamy virus, as well as the simian viruses SFV-1 and SFV-3, contains a second internal transcriptional promoter in the transmembrane domain of the env gene; this promoter also is transactivated by Taf. Here we report the characterization of the internal promoter of SFV-3. The transcriptional start site of this promoter has been mapped in two different SFV-3-infected cell lines to nt position 9761 in the proviral genome of SFV-3. All cis-regulatory elements required for transactivation by Taf are located between -202 and -32 (+1 representing the transcription initiation site in the internal promoter). Analysis of hybrid promoter constructs and deletion mutants in transient expression assays revealed that this region contains two elements which are independently responsive to Taf. In addition, we employed an in vivo DNA competition assay to determine whether the transactivation mechanisms of both SFV-3 promoters are similar or different. The differences observed utilizing this competition assay suggest that Taf transactivates the internal promoter and the LTR through different cellular transcription factors.</ab>
+<no>LR: 20081121; GENBANK/M74895; JID: 0110674; 0 (DNA, Viral); 0 (Trans-Activators); ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0042-6822; 0042-6822</sn>
+<ad>Abteilung Virologie, Institut fur Medizinische Mikrobiologie und Hygiene, Universitat Freiburg, Germany.</ad>
+<an>PMID: 8661448; S0042-6822(96)90387-6 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<do>10.1006/viro.1996.0387</do>
+<ol>Unknown(0)</ol>
+<pmid>8661448</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>729</id>
+<a1>Renne,R.</a1>
+<a1>Fouillet,X.</a1>
+<a1>Maurer,J.</a1>
+<a1>Assaad,A.</a1>
+<a1>Morgan,K.</a1>
+<a1>Ha,F.</a1>
+<a1>Nikula,K.</a1>
+<a1>Gillet,N.</a1>
+<a1>Copley,M.</a1>
+<t1>Recommendation of optimal method for formalin fixation of rodent lungs in routine toxicology studies</t1>
+<jf>Toxicologic pathology</jf>
+<jo>Toxicol.Pathol.</jo>
+<yr>2001</yr>
+<fd>Sep-Oct</fd>
+<vo>29</vo>
+<is>5</is>
+<sp>587</sp>
+<op>589</op>
+<k1>Animals</k1>
+<k1>Animals, Laboratory</k1>
+<k1>Artifacts</k1>
+<k1>Cricetinae</k1>
+<k1>Formaldehyde</k1>
+<k1>Lung/pathology</k1>
+<k1>Mice</k1>
+<k1>Questionnaires</k1>
+<k1>Rats</k1>
+<k1>Societies, Scientific</k1>
+<k1>Tissue Fixation/methods/standards</k1>
+<k1>Toxicity Tests/methods/standards</k1>
+<no>LR: 20090701; JID: 7905907; 50-00-0 (Formaldehyde); ppublish</no>
+<pp>United States</pp>
+<sn>0192-6233; 0192-6233</sn>
+<ad>Battelle Toxicology Northwest, Richland, Washington 99352, USA. renne@battelle.orq</ad>
+<an>PMID: 11695577</an>
+<la>eng</la>
+<sf>Journal Article; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>11695577</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>750</id>
+<a1>Renne,R.</a1>
+<a1>Friedl,E.</a1>
+<a1>Schweizer,M.</a1>
+<a1>Fleps,U.</a1>
+<a1>Turek,R.</a1>
+<a1>Neumann-Haefelin,D.</a1>
+<t1>Genomic organization and expression of simian foamy virus type 3 (SFV-3)</t1>
+<jf>Virology</jf>
+<jo>Virology</jo>
+<yr>1992</yr>
+<fd>Feb</fd>
+<vo>186</vo>
+<is>2</is>
+<sp>597</sp>
+<op>608</op>
+<k1>Amino Acid Sequence</k1>
+<k1>Animals</k1>
+<k1>Base Sequence</k1>
+<k1>Blotting, Northern</k1>
+<k1>Cercopithecus aethiops/microbiology</k1>
+<k1>DNA, Viral</k1>
+<k1>Gene Expression Regulation, Viral</k1>
+<k1>Genes, env</k1>
+<k1>Genes, gag</k1>
+<k1>Genes, pol</k1>
+<k1>Genome, Viral</k1>
+<k1>Molecular Sequence Data</k1>
+<k1>Open Reading Frames</k1>
+<k1>Phylogeny</k1>
+<k1>Repetitive Sequences, Nucleic Acid</k1>
+<k1>Spumavirus/classification/genetics/isolation &amp; purification</k1>
+<k1>Transcription, Genetic</k1>
+<ab>The complete nucleotide sequence of simian foamy virus type 3 (SFV-3) strain LK-3, isolated from an African green monkey, was determined. In addition to translation frames representing the gag, pol, and env genes, two open reading frames are located in the region between the env gene and the 3&amp;#39; long terminal repeat (LTR). Both SFV-3 and SFV-1 encode two open reading frames between env and the 3&amp;#39; LTR, whereas HFV encodes three open reading frames in this region. Northern blot analysis of cell cultures infected with SFV-3 revealed subgenomic RNAs for these open reading frames. The protease of SFV-3 is encoded by the pol gene in contrast to HFV which encodes the protease in the gag gene. Notably, the pol gene of SFV-3 in the +1 translational frame relative to the gag gene; this observation is in agreement with SFV-1, but differs for HFV and all other retrovirus genomes reported. Thus, gag-pol precursors of the SFVs appear to be expressed by a +1 frameshift. Nucleotide and deduced amino acid alignments of SFV-3, SFV-1, and HFV revealed an unexpected homology pattern; highest homologies are observed in the pol and env genes but low homologies are noted in the gag genes and the additional open reading frames. Analysis of phylogenetic trees confirms the classification of foamy viruses as a subfamily of retroviruses, distinct from the lentiviruses and oncoviruses.</ab>
+<no>LR: 20061115; GENBANK/M74895; JID: 0110674; 0 (DNA, Viral); ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0042-6822; 0042-6822</sn>
+<ad>Abteilung Virologie, Universitat Freiburg, Germany.</ad>
+<an>PMID: 1310187</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; IM; X</sf>
+<ol>Unknown(0)</ol>
+<pmid>1310187</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>741</id>
+<a1>Renne,R.</a1>
+<a1>Lagunoff,M.</a1>
+<a1>Zhong,W.</a1>
+<a1>Ganem,D.</a1>
+<t1>The size and conformation of Kaposi&amp;#39;s sarcoma-associated herpesvirus (human herpesvirus 8) DNA in infected cells and virions</t1>
+<jf>Journal of virology</jf>
+<jo>J.Virol.</jo>
+<yr>1996</yr>
+<fd>Nov</fd>
+<vo>70</vo>
+<is>11</is>
+<sp>8151</sp>
+<op>8154</op>
+<k1>Cell Line</k1>
+<k1>DNA, Viral/chemistry</k1>
+<k1>Electrophoresis, Gel, Pulsed-Field</k1>
+<k1>Herpesvirus 8, Human/genetics</k1>
+<k1>Humans</k1>
+<k1>Molecular Weight</k1>
+<k1>Nucleic Acid Conformation</k1>
+<k1>Sarcoma, Kaposi/pathology/virology</k1>
+<k1>Virion</k1>
+<ab>The genome of a novel human herpesvirus has been detected in specimens of Kaposi&amp;#39;s sarcoma (KS) and in several AIDS-related lymphoproliferative disorders. Here we examine the size and genomic conformation of the DNA of this virus (known as KS-associated herpesvirus or human herpesvirus 8) in latently and lytically infected cells and in virions. Pulsed-field gel electrophoresis of viral DNA shows that the viral genome is similar in size to those of other gammaherpesviruses (160 to 170 kb). As with Epstein-Barr virus, KS-associated herpesvirus DNA is stably maintained in latently infected B cells as episomal monomer circles and induction from latency is associated with the selective accumulation of linear genomic forms.</ab>
+<no>LR: 20091118; JID: 0113724; 0 (DNA, Viral); OID: NLM: PMC190893; ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0022-538X; 0022-538X</sn>
+<ad>Howard Hughes Medical Institute and Department of Microbiology, University of California, San Francisco 94143, USA.</ad>
+<an>PMID: 8892944</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; IM; X</sf>
+<ol>Unknown(0)</ol>
+<pmid>8892944</pmid>
+<pmcid>PMC190893</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>749</id>
+<a1>Renne,R.</a1>
+<a1>Mergia,A.</a1>
+<a1>Renshaw-Gegg,L. W.</a1>
+<a1>Neumann-Haefelin,D.</a1>
+<a1>Luciw,P. A.</a1>
+<t1>Regulatory elements in the long terminal repeat (LTR) of simian foamy virus type 3 (SFV-3)</t1>
+<jf>Virology</jf>
+<jo>Virology</jo>
+<yr>1993</yr>
+<fd>Jan</fd>
+<vo>192</vo>
+<is>1</is>
+<sp>365</sp>
+<op>369</op>
+<k1>Cell Line</k1>
+<k1>DNA Mutational Analysis</k1>
+<k1>Gene Expression Regulation, Viral</k1>
+<k1>RNA, Messenger/genetics</k1>
+<k1>Repetitive Sequences, Nucleic Acid</k1>
+<k1>Sequence Deletion</k1>
+<k1>Spumavirus/genetics</k1>
+<k1>Trans-Activators/genetics</k1>
+<k1>Transcription, Genetic</k1>
+<k1>Transcriptional Activation</k1>
+<ab>Simian foamy virus type 3 (SFV-3) is a retrovirus that has a complex genome organization and encodes two open reading frames (ORF-1 and ORF-2) in addition to the genes coding for gag, pol, and env. In this report, we demonstrate that ORF-1 of SFV-3 encodes a transcriptional transactivator designated taf (transactivator of foamy virus) which augments gene expression directed by the viral long terminal repeat (LTR). The taf responsive elements have been mapped to the U3 region of the LTR, between positions -637 and -180 (+1 represents the transcription initiation site). Two regions between -637 and -180 in the LTR are targets for taf transactivation. These target sequences for taf confer responsiveness to a heterologous promoter independent of orientation; thus, they function like conditional enhancers. The R-U5 region of the viral LTR is shown to have an inhibitory effect on gene expression. SFV-1 is a related spumavirus and encodes a taf gene that augments expression directed by the SFV-3 LTR as well as the SFV-1 LTR; however, the taf gene of SFV-3 transactivates the SFV-3 LTR but not the SFV-1 LTR. These data on regulatory elements in the SFV-3 LTR show that the mechanism of foamy virus transactivation is significantly different from lentiviruses as well as from the HTLV group of viruses.</ab>
+<no>LR: 20081121; GR: AI27732/AI/NIAID NIH HHS/United States; GR: AI30525/AI/NIAID NIH HHS/United States; JID: 0110674; 0 (RNA, Messenger); 0 (Trans-Activators); ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0042-6822; 0042-6822</sn>
+<ad>Department of Medical Pathology, University of California, Davis 95616.</ad>
+<an>PMID: 8390763; S0042-6822(83)71045-7 [pii]</an>
+<la>eng</la>
+<sf>In Vitro; Journal Article; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<do>10.1006/viro.1993.1045</do>
+<ol>Unknown(0)</ol>
+<pmid>8390763</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>743</id>
+<a1>Renne,R.</a1>
+<a1>Zhong,W.</a1>
+<a1>Herndier,B.</a1>
+<a1>McGrath,M.</a1>
+<a1>Abbey,N.</a1>
+<a1>Kedes,D.</a1>
+<a1>Ganem,D.</a1>
+<t1>Lytic growth of Kaposi&amp;#39;s sarcoma-associated herpesvirus (human herpesvirus 8) in culture</t1>
+<jf>Nature medicine</jf>
+<jo>Nat.Med.</jo>
+<yr>1996</yr>
+<fd>Mar</fd>
+<vo>2</vo>
+<is>3</is>
+<sp>342</sp>
+<op>346</op>
+<k1>Acquired Immunodeficiency Syndrome/complications</k1>
+<k1>Adult</k1>
+<k1>B-Lymphocytes</k1>
+<k1>Cell Line</k1>
+<k1>Child</k1>
+<k1>DNA Replication</k1>
+<k1>DNA, Viral/biosynthesis/genetics</k1>
+<k1>Genome, Viral</k1>
+<k1>Herpesviridae/genetics/growth &amp; development/ultrastructure</k1>
+<k1>Humans</k1>
+<k1>Male</k1>
+<k1>Microscopy, Electron</k1>
+<k1>Sarcoma, Kaposi/virology</k1>
+<k1>Virus Cultivation/methods</k1>
+<ab>Kaposi&amp;#39;s sarcoma (KS) is the leading neoplasm of AIDS patients, and HIV infection is known to be a major risk factor for its development. However, KS can occur in the absence of HIV infection and the risk of KS development varies widely even among HIV-infected patients, with homosexual men with AIDS being 20 times more likely to develop KS than AIDS-afflicted children or hemophiliacs. These and other data strongly suggest that a sexually transmitted agent or co-factor may be involved in KS pathogenesis. Recently, DNA sequences corresponding to the genome of a novel member of the herpesvirus family have been identified within AIDS-KS biopsies, and several reports indicate that these sequences are also present in all forms of HIV-negative KS. These and other findings suggest this new agent, referred to as KS-associated herpesvirus (KSHV) or human herpesvirus 8 (HHV8), as a candidate for the putative etiologic cofactor. However, the role of this agent in KS remains hotly debated. Further progress in understanding its biology has been severely hampered by the lack of a cell culture system for virus growth. Here we report the development of a system for the lytic growth of this virus in a latently infected B cell line and present the first ultrastructural visualization of the virus. This system will facilitate the detailed study of the molecular biology of viral replication, the testing of antiviral drugs and the development of diagnostic tests for viral infection.</ab>
+<no>LR: 20071114; GR: AI 27763/AI/NIAID NIH HHS/United States; GR: CA 67381/CA/NCI NIH HHS/United States; JID: 9502015; 0 (DNA, Viral); ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>1078-8956; 1078-8956</sn>
+<ad>Howard Hughes Medical Institute, San Francisco, California 94143, USA.</ad>
+<an>PMID: 8612236</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, Non-P.H.S.; Research Support, U.S. Gov&#39;t, P.H.S.; IM; X</sf>
+<ol>Unknown(0)</ol>
+<pmid>8612236</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>735</id>
+<a1>Sadler,R.</a1>
+<a1>Wu,L.</a1>
+<a1>Forghani,B.</a1>
+<a1>Renne,R.</a1>
+<a1>Zhong,W.</a1>
+<a1>Herndier,B.</a1>
+<a1>Ganem,D.</a1>
+<t1>A complex translational program generates multiple novel proteins from the latently expressed kaposin (K12) locus of Kaposi&amp;#39;s sarcoma-associated herpesvirus</t1>
+<jf>Journal of virology</jf>
+<jo>J.Virol.</jo>
+<yr>1999</yr>
+<fd>Jul</fd>
+<vo>73</vo>
+<is>7</is>
+<sp>5722</sp>
+<op>5730</op>
+<k1>3T3 Cells</k1>
+<k1>5&#39; Untranslated Regions</k1>
+<k1>Amino Acid Sequence</k1>
+<k1>Animals</k1>
+<k1>Base Sequence</k1>
+<k1>Chromosome Mapping</k1>
+<k1>DNA, Viral</k1>
+<k1>Gene Expression</k1>
+<k1>Herpesvirus 8, Human/genetics</k1>
+<k1>Humans</k1>
+<k1>Mice</k1>
+<k1>Molecular Sequence Data</k1>
+<k1>Protein Biosynthesis</k1>
+<k1>RNA, Messenger</k1>
+<k1>Transcription, Genetic</k1>
+<k1>Tumor Cells, Cultured</k1>
+<k1>Viral Proteins/genetics</k1>
+<ab>The most abundantly expressed latent transcripts encoded by the Kaposi&amp;#39;s sarcoma (KS)-associated herpesvirus derive from the genomic region surrounding open reading frame (ORF) K12 (kaposin A). Here we show that these transcripts, initially described as limited to ORF K12 itself, more frequently encompass upstream sequences spanning two sets of 23-nucleotide GC-rich direct repeats (DRs) (DR1 and DR2). Although the DRs lack AUG codons and were previously presumed to be noncoding, a monoclonal antibody raised to infected cells detected multiple polypeptides encoded by this region. These proteins are expressed during latency and upon induction of lytic viral replication in both primary effusion lymphoma (PEL) cell lines and KS tumors. Biochemical and genetic analyses reveal that these proteins are derived from variant translational initiation at CUG codons. The predominant translation product in the PEL cell line BCBL-1 derives from the 5&amp;#39;-most CUG codon in the transcript, resulting in a protein (termed kaposin B) which is encoded largely by the repeats themselves and which does not include K12 sequences. Other non-AUG codons in alternate reading frames are also used at lower efficiency, including one that initiates translation of a DR-K12 fusion protein (kaposin C) that is predicted to sort to a different subcellular locale than kaposin B. Thus, the products of the K12 region, which is the most abundantly transcribed region in latency, are surprisingly complex and may encompass multiple biological functions.</ab>
+<no>LR: 20091118; JID: 0113724; 0 (5&amp;#39; Untranslated Regions); 0 (DNA, Viral); 0 (RNA, Messenger); 0 (Viral Proteins); 0 (kaposin B protein, Human herpesvirus 8); OID: NLM: PMC112632; ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0022-538X; 0022-538X</sn>
+<ad>Howard Hughes Medical Institute, University of California, San Francisco, California 94143, USA.</ad>
+<an>PMID: 10364323</an>
+<la>eng</la>
+<sf>Journal Article; IM; X</sf>
+<ol>Unknown(0)</ol>
+<pmid>10364323</pmid>
+<pmcid>PMC112632</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>719</id>
+<a1>Samols,M. A.</a1>
+<a1>Hu,J.</a1>
+<a1>Skalsky,R. L.</a1>
+<a1>Renne,R.</a1>
+<t1>Cloning and identification of a microRNA cluster within the latency-associated region of Kaposi&amp;#39;s sarcoma-associated herpesvirus</t1>
+<jf>Journal of virology</jf>
+<jo>J.Virol.</jo>
+<yr>2005</yr>
+<fd>Jul</fd>
+<vo>79</vo>
+<is>14</is>
+<sp>9301</sp>
+<op>9305</op>
+<k1>Cloning, Molecular</k1>
+<k1>Herpesvirus 8, Human/genetics</k1>
+<k1>Humans</k1>
+<k1>MicroRNAs/analysis/chemistry/genetics</k1>
+<k1>Virus Latency</k1>
+<ab>MicroRNAs (miRNAs) are small, noncoding regulatory RNA molecules that bind to 3&amp;#39; untranslated regions (UTRs) of mRNAs to either prevent their translation or induce their degradation. Previously identified in a variety of organisms ranging from plants to mammals, miRNAs are also now known to be produced by viruses. The human gammaherpesvirus Epstein-Barr virus has been shown to encode miRNAs, which potentially regulate both viral and cellular genes. To determine whether Kaposi&amp;#39;s sarcoma-associated herpesvirus (KSHV) encodes miRNAs, we cloned small RNAs from KSHV-positive primary effusion lymphoma-derived cells and endothelial cells. Sequence analysis revealed 11 isolated RNAs of 19 to 23 bases in length that perfectly align with KSHV. Surprisingly, all candidate miRNAs mapped to a single genomic locale within the latency-associated region of KSHV. These data suggest that viral and host cellular gene expression may be regulated by miRNAs during both latent and lytic KSHV replication.</ab>
+<no>LR: 20091118; GR: R01 CA 88763/CA/NCI NIH HHS/United States; GR: R21 CA97939/CA/NCI NIH HHS/United States; JID: 0113724; 0 (MicroRNAs); OID: NLM: PMC1168752; ppublish</no>
+<pp>United States</pp>
+<sn>0022-538X; 0022-538X</sn>
+<ad>Department of Molecular Genetics and Microbiology, University of Florida, Gainesville, FL 32610, USA.</ad>
+<an>PMID: 15994824; 79/14/9301 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, N.I.H., Extramural; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<do>10.1128/JVI.79.14.9301-9305.2005</do>
+<ol>Unknown(0)</ol>
+<pmid>15994824</pmid>
+<pmcid>PMC1168752</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>716</id>
+<a1>Samols,M. A.</a1>
+<a1>Skalsky,R. L.</a1>
+<a1>Maldonado,A. M.</a1>
+<a1>Riva,A.</a1>
+<a1>Lopez,M. C.</a1>
+<a1>Baker,H. V.</a1>
+<a1>Renne,R.</a1>
+<t1>Identification of cellular genes targeted by KSHV-encoded microRNAs</t1>
+<jf>PLoS pathogens</jf>
+<jo>PLoS Pathog.</jo>
+<yr>2007</yr>
+<fd>May 11</fd>
+<vo>3</vo>
+<is>5</is>
+<sp>e65</sp>
+<k1>Cells, Cultured</k1>
+<k1>Gene Expression Profiling</k1>
+<k1>Gene Expression Regulation, Viral</k1>
+<k1>Genes, Viral</k1>
+<k1>Herpesvirus 8, Human/genetics</k1>
+<k1>Humans</k1>
+<k1>Kidney/metabolism</k1>
+<k1>MicroRNAs/chemistry/genetics/metabolism</k1>
+<k1>Molecular Sequence Data</k1>
+<k1>RNA, Messenger/genetics/metabolism</k1>
+<k1>RNA, Viral/chemistry/genetics/metabolism</k1>
+<k1>Reverse Transcriptase Polymerase Chain Reaction</k1>
+<k1>Sarcoma, Kaposi/genetics/virology</k1>
+<k1>Thrombospondin 1/antagonists &amp; inhibitors/genetics/metabolism</k1>
+<k1>Transforming Growth Factor beta/antagonists &amp; inhibitors/genetics/metabolism</k1>
+<ab>MicroRNAs (miRNAs) are 19 to 23 nucleotide-long RNAs that post-transcriptionally regulate gene expression. Human cells express several hundred miRNAs which regulate important biological pathways such as development, proliferation, and apoptosis. Recently, 12 miRNA genes have been identified within the genome of Kaposi sarcoma-associated herpesvirus; however, their functions are still unknown. To identify host cellular genes that may be targeted by these novel viral regulators, we performed gene expression profiling in cells stably expressing KSHV-encoded miRNAs. Data analysis revealed a set of 81 genes whose expression was significantly changed in the presence of miRNAs. While the majority of changes were below 2-fold, eight genes were down-regulated between 4- and 20-fold. We confirmed miRNA-dependent regulation for three of these genes and found that protein levels of thrombospondin 1 (THBS1) were decreased &amp;gt;10-fold. THBS1 has previously been reported to be down-regulated in Kaposi sarcoma lesions and has known activity as a strong tumor suppressor and anti-angiogenic factor, exerting its anti-angiogenic effect in part by activating the latent form of TGF-beta. We show that reduced THBS1 expression in the presence of viral miRNAs translates into decreased TGF-beta activity. These data suggest that KSHV-encoded miRNAs may contribute directly to pathogenesis by down-regulation of THBS1, a major regulator of cell adhesion, migration, and angiogenesis.</ab>
+<no>LR: 20100429; GENBANK/AY973824; GEO/GSE7554; GR: 5T32CA009126-30/CA/NCI NIH HHS/United States; GR: T32 GM07250/GM/NIGMS NIH HHS/United States; JID: 101238921; 0 (MicroRNAs); 0 (RNA, Messenger); 0 (RNA, Viral); 0 (Thrombospondin 1); 0 (Transforming Growth Factor beta); OID: NLM: PMC1876501; 2006/12/14 [received]; 2007/03/20 [accepted]; ppublish</no>
+<pp>United States</pp>
+<sn>1553-7374; 1553-7366</sn>
+<ad>Department of Molecular Genetics and Microbiology, University of Florida College of Medicine, Gainesville, Florida, United States of America.</ad>
+<an>PMID: 17500590; 06-PLPA-RA-0547R2 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, N.I.H., Extramural; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<do>10.1371/journal.ppat.0030065</do>
+<ol>Unknown(0)</ol>
+<pmid>17500590</pmid>
+<pmcid>PMC1876501</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>747</id>
+<a1>Schweizer,M.</a1>
+<a1>Fleps,U.</a1>
+<a1>Jackle,A.</a1>
+<a1>Renne,R.</a1>
+<a1>Turek,R.</a1>
+<a1>Neumann-Haefelin,D.</a1>
+<t1>Simian foamy virus type 3 (SFV-3) in latently infected Vero cells: reactivation by demethylation of proviral DNA</t1>
+<jf>Virology</jf>
+<jo>Virology</jo>
+<yr>1993</yr>
+<fd>Feb</fd>
+<vo>192</vo>
+<is>2</is>
+<sp>663</sp>
+<op>666</op>
+<k1>Animals</k1>
+<k1>DNA, Viral/genetics/isolation &amp; purification/metabolism</k1>
+<k1>Methylation</k1>
+<k1>Molecular Weight</k1>
+<k1>Proviruses/genetics/physiology</k1>
+<k1>Restriction Mapping</k1>
+<k1>Spumavirus/genetics/growth &amp; development</k1>
+<k1>Transcription, Genetic</k1>
+<k1>Vero Cells</k1>
+<k1>Virus Activation</k1>
+<k1>Virus Integration</k1>
+<ab>Cell cultures latently infected with simian foamy virus type 3 (SFV-3) were established by suppressing lytic infection in Vero cells with 3&amp;#39;-azido-3&amp;#39;-deoxythymidine (AZT) and homologous antibodies (African green monkey serum immune to SFV-3). The resulting cell line, designated Vero-L, was shown to contain at least one copy per cell of SFV-3 DNA stably integrated at a defined site of the host cell genome. Sequencing of 669 bp at the integration site did not identify a coding region and revealed a 4-bp imperfect repeat in host cell DNA due to SFV-3 integration. Over 2 years of subcultivation, no spontaneous expression of proviral genes could be detected. However, the demethylating agent 5&amp;#39;-azacytidine reactivated lytic infection, proving conservation of the complete viral genome. Comparison of proviral DNA from latently and lytically infected cells supports the notion that methylation is instrumental in keeping SFV-3 infection in latency.</ab>
+<no>LR: 20061115; JID: 0110674; 0 (DNA, Viral); ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0042-6822; 0042-6822</sn>
+<ad>Abteilung Virologie, Universitat Freiburg, Germany.</ad>
+<an>PMID: 8380669; S0042-6822(83)71084-6 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<do>10.1006/viro.1993.1084</do>
+<ol>Unknown(0)</ol>
+<pmid>8380669</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>753</id>
+<a1>Schweizer,M.</a1>
+<a1>Renne,R.</a1>
+<a1>Neumann-Haefelin,D.</a1>
+<t1>Structural analysis of proviral DNA in simian foamy virus (LK-3)-infected cells</t1>
+<jf>Archives of Virology</jf>
+<jo>Arch.Virol.</jo>
+<yr>1989</yr>
+<vo>109</vo>
+<is>1-2</is>
+<sp>103</sp>
+<op>114</op>
+<k1>Animals</k1>
+<k1>Base Sequence</k1>
+<k1>Blotting, Southern</k1>
+<k1>Cercopithecus aethiops</k1>
+<k1>Cloning, Molecular</k1>
+<k1>DNA, Viral/analysis</k1>
+<k1>Molecular Sequence Data</k1>
+<k1>Repetitive Sequences, Nucleic Acid</k1>
+<k1>Restriction Mapping</k1>
+<k1>Retroviridae/genetics</k1>
+<k1>Single-Strand Specific DNA and RNA Endonucleases/pharmacology</k1>
+<k1>Spumavirus/genetics</k1>
+<k1>T-Lymphocytes/microbiology</k1>
+<ab>Proviral DNA of the T-cell lymphotropic simian foamy virus strain LK-3 was characterized. In infected cells, multiple copies of unintegrated linear duplex viral DNA of about 13 kbp length are present. Nuclease S1 treatment of the DNA generated two fragments of 6.5 and 6.0 kbp length that were cloned in phage and plasmid vectors. The proviral DNA contains a single-stranded gap of 109 nucleotides. A DNA fragment spanning the gap was cloned after completing the double strand by DNA synthesis in vitro. At the 3&amp;#39; end, the gap contains a polypurine tract (PPT) similar to the putative initiation site of retroviral plus strand DNA synthesis, suggesting discontinuous DNA synthesis. Further analysis of the genome architecture revealed LTRs of 1.7 kbp length. An additional 1.7 kbp DNA fragment was detected after nuclease S1 digestion of proviral DNA and probably represents trimmed intermediates of &amp;quot;strong-stop&amp;quot; DNA.</ab>
+<no>LR: 20081121; JID: 7506870; 0 (DNA, Viral); EC 3.1.30.1 (Single-Strand Specific DNA and RNA Endonucleases); ppublish</no>
+<pp>AUSTRIA</pp>
+<sn>0304-8608; 0304-8608</sn>
+<ad>Abteilung Virologie, Universitat Freiburg, Federal Republic of Germany.</ad>
+<an>PMID: 2558626</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>2558626</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>715</id>
+<a1>Skalsky,R. L.</a1>
+<a1>Hu,J.</a1>
+<a1>Renne,R.</a1>
+<t1>Analysis of viral cis elements conferring Kaposi&amp;#39;s sarcoma-associated herpesvirus episome partitioning and maintenance</t1>
+<jf>Journal of virology</jf>
+<jo>J.Virol.</jo>
+<yr>2007</yr>
+<fd>Sep</fd>
+<vo>81</vo>
+<is>18</is>
+<sp>9825</sp>
+<op>9837</op>
+<k1>Antigens, Viral/genetics/metabolism</k1>
+<k1>Binding Sites</k1>
+<k1>Cell Line</k1>
+<k1>Genetic Complementation Test</k1>
+<k1>Genome, Viral/physiology</k1>
+<k1>Herpesviridae Infections/genetics/metabolism</k1>
+<k1>Herpesvirus 4, Human/genetics/metabolism</k1>
+<k1>Herpesvirus 8, Human/genetics/metabolism</k1>
+<k1>Histones/genetics/metabolism</k1>
+<k1>Humans</k1>
+<k1>Lymphocytes/metabolism/virology</k1>
+<k1>Nuclear Proteins/genetics/metabolism</k1>
+<k1>Plasmids/genetics/metabolism</k1>
+<k1>Replicon/genetics</k1>
+<k1>Terminal Repeat Sequences/genetics</k1>
+<k1>Viral Proteins/genetics/metabolism</k1>
+<k1>Virus Latency/physiology</k1>
+<k1>Virus Replication/physiology</k1>
+<ab>Maintenance of Kaposi&amp;#39;s sarcoma-associated herpesvirus (KSHV) episomes in latently infected cells is dependent on the latency-associated nuclear antigen (LANA). LANA binds to the viral terminal repeats (TR), leading to recruitment of cellular origin recognition complex proteins. Additionally, LANA tethers episomes to chromosomes via interactions with histones H2A and H2B (A. J. Barbera et al., Science 311:856-861, 2006). Despite these molecular details, less is known about how episomes are established after de novo infection. To address this, we measured short-term retention rates of green fluorescent protein-expressing replicons in proliferating lymphoid cells. In the absence of antibiotic selection, LANA significantly reduced the loss rate of TR-containing replicons. Additionally, we found that LANA can support long-term stability of KSHV replicons for more than 2 months under nonselective conditions. Analysis of cis elements within TR that confer episome replication and partitioning revealed that these activities can occur independently, and furthermore, both events contribute to episome stability. We found that replication-deficient plasmids containing LANA binding sites (LBS1/2) exhibited measurable retention rates in the presence of LANA. To confirm these observations, we uncoupled KSHV replication and partitioning by constructing hybrid origins containing the Epstein-Barr virus (EBV) dyad symmetry for plasmid replication and KSHV LBS1/2. We demonstrate that multiple LBS1/2 function in a manner analogous to that of the EBV family of repeats by forming an array of LANA binding sites for partitioning of KSHV genomes. Our data suggest that the efficiency with which KSHV establishes latency is dependent on multiple LANA activities, which stabilize viral genomes early after de novo infection.</ab>
+<no>LR: 20091118; GR: 5T32 CA 009126-30/CA/NCI NIH HHS/United States; GR: CA 097939/CA/NCI NIH HHS/United States; GR: CA 88763/CA/NCI NIH HHS/United States; JID: 0113724; 0 (Antigens, Viral); 0 (Histones); 0 (Nuclear Proteins); 0 (Viral Proteins); 0 (latency-associated nuclear antigen); OID: NLM: PMC2045406; 2007/07/11 [aheadofprint]; ppublish</no>
+<pp>United States</pp>
+<sn>0022-538X; 0022-538X</sn>
+<ad>Department of Molecular Genetics and Microbiology, and Shands Cancer Center, University of Florida, 1613 Mowry Road, Gainesville, FL 32610-3633, USA.</ad>
+<an>PMID: 17626102; JVI.00842-07 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, N.I.H., Extramural; IM</sf>
+<do>10.1128/JVI.00842-07</do>
+<wp>20070711</wp>
+<ol>Unknown(0)</ol>
+<pmid>17626102</pmid>
+<pmcid>PMC2045406</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>714</id>
+<a1>Skalsky,R. L.</a1>
+<a1>Samols,M. A.</a1>
+<a1>Plaisance,K. B.</a1>
+<a1>Boss,I. W.</a1>
+<a1>Riva,A.</a1>
+<a1>Lopez,M. C.</a1>
+<a1>Baker,H. V.</a1>
+<a1>Renne,R.</a1>
+<t1>Kaposi&amp;#39;s sarcoma-associated herpesvirus encodes an ortholog of miR-155</t1>
+<jf>Journal of virology</jf>
+<jo>J.Virol.</jo>
+<yr>2007</yr>
+<fd>Dec</fd>
+<vo>81</vo>
+<is>23</is>
+<sp>12836</sp>
+<op>12845</op>
+<k1>3&#39; Untranslated Regions/genetics</k1>
+<k1>Basic-Leucine Zipper Transcription Factors/biosynthesis/genetics</k1>
+<k1>Cell Line, Tumor/chemistry/virology</k1>
+<k1>Down-Regulation</k1>
+<k1>Fanconi Anemia Complementation Group Proteins/biosynthesis/genetics</k1>
+<k1>Gene Expression</k1>
+<k1>Gene Expression Profiling</k1>
+<k1>Genes, Reporter</k1>
+<k1>Herpesvirus 8, Human/genetics</k1>
+<k1>Humans</k1>
+<k1>Luciferases/biosynthesis/genetics</k1>
+<k1>MicroRNAs/genetics</k1>
+<k1>Oligonucleotide Array Sequence Analysis</k1>
+<k1>RNA, Viral/genetics</k1>
+<k1>Sequence Homology, Nucleic Acid</k1>
+<ab>MicroRNAs (miRNAs) are small noncoding RNAs that posttranscriptionally regulate gene expression by binding to 3&amp;#39;-untranslated regions (3&amp;#39;UTRs) of target mRNAs. Kaposi&amp;#39;s sarcoma-associated herpesvirus (KSHV), a virus linked to malignancies including primary effusion lymphoma (PEL), encodes 12 miRNA genes, but only a few regulatory targets are known. We found that KSHV-miR-K12-11 shares 100% seed sequence homology with hsa-miR-155, an miRNA frequently found to be up-regulated in lymphomas and critically important for B-cell development. Based on this seed sequence homology, we hypothesized that both miRNAs regulate a common set of target genes and, as a result, could have similar biological activities. Examination of five PEL lines showed that PELs do not express miR-155 but do express high levels of miR-K12-11. Bioinformatic tools predicted the transcriptional repressor BACH-1 to be targeted by both miRNAs, and ectopic expression of either miR-155 or miR-K12-11 inhibited a BACH-1 3&amp;#39;UTR-containing reporter. Furthermore, BACH-1 protein levels are low in cells expressing either miRNA. Gene expression profiling of miRNA-expressing stable cell lines revealed 66 genes that were commonly down-regulated. For select genes, miRNA targeting was confirmed by reporter assays. Thus, based on our in silico predictions, reporter assays, and expression profiling data, miR-K12-11 and miR-155 regulate a common set of cellular targets. Given the role of miR-155 during B-cell maturation, we speculate that miR-K12-11 may contribute to the distinct developmental phenotype of PEL cells, which are blocked in a late stage of B-cell development. Together, these findings indicate that KSHV miR-K12-11 is an ortholog of miR-155.</ab>
+<no>LR: 20091118; GR: 5T32CA009126-30/CA/NCI NIH HHS/United States; GR: T32 GM07250/GM/NIGMS NIH HHS/United States; JID: 0113724; 0 (3&amp;#39; Untranslated Regions); 0 (BACH1 protein, human); 0 (Basic-Leucine Zipper Transcription Factors); 0 (Fanconi Anemia Complementation Group Proteins); 0 (MIRN155 microRNA, human); 0 (MicroRNAs); 0 (RNA, Viral); EC 1.13.12.- (Luciferases); OID: NLM: PMC2169101; 2007/09/19 [aheadofprint]; ppublish</no>
+<pp>United States</pp>
+<sn>1098-5514; 0022-538X</sn>
+<ad>Department of Molecular Genetics and Microbiology, and Shands Cancer Center, 1376 Mowry Road, Gainesville, FL 32610-3633, USA.</ad>
+<an>PMID: 17881434; JVI.01804-07 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, N.I.H., Extramural; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<do>10.1128/JVI.01804-07</do>
+<wp>20070919</wp>
+<ol>Unknown(0)</ol>
+<pmid>17881434</pmid>
+<pmcid>PMC2169101</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>740</id>
+<a1>Staskus,K. A.</a1>
+<a1>Zhong,W.</a1>
+<a1>Gebhard,K.</a1>
+<a1>Herndier,B.</a1>
+<a1>Wang,H.</a1>
+<a1>Renne,R.</a1>
+<a1>Beneke,J.</a1>
+<a1>Pudney,J.</a1>
+<a1>Anderson,D. J.</a1>
+<a1>Ganem,D.</a1>
+<a1>Haase,A. T.</a1>
+<t1>Kaposi&amp;#39;s sarcoma-associated herpesvirus gene expression in endothelial (spindle) tumor cells</t1>
+<jf>Journal of virology</jf>
+<jo>J.Virol.</jo>
+<yr>1997</yr>
+<fd>Jan</fd>
+<vo>71</vo>
+<is>1</is>
+<sp>715</sp>
+<op>719</op>
+<k1>AIDS-Related Opportunistic Infections/pathology/virology</k1>
+<k1>Gene Expression</k1>
+<k1>Herpesvirus 8, Human/genetics/isolation &amp; purification</k1>
+<k1>Humans</k1>
+<k1>RNA, Viral/analysis</k1>
+<k1>Sarcoma, Kaposi/pathology/virology</k1>
+<k1>Tongue/pathology</k1>
+<ab>The recent discovery of DNA sequences of a new human herpesvirus in Kaposi&amp;#39;s sarcoma (KS) has fueled speculation that this virus might cause KS. The mere presence, however, of a virus in a complex multicellular tumor like KS could just as well be construed as evidence of a passenger agent. We sought stronger evidence linking the KS-associated herpesvirus (KSHV) to tumor formation by using in situ hybridization to investigate the specificity, constancy, and timing of KSHV gene expression in KS tumor cells. Here we document expression of a 700-nucleotide viral RNA in every KS tumor examined, from the earliest histologically recognizable stage to advanced tumors in which the vast majority of identifiable spindle tumor cells contain this transcript. Two other KSHV RNAs were also detected in a smaller fraction of the tumor cells in all but the earliest lesion. These viral RNAs were expressed to relatively low levels in this subset; because one of these RNAs encodes a major viral capsid protein, these cells may be producing KSHV. We did not find these KSHV genes expressed in a variety of other tumors and proliferative processes, but we did detect viral gene expression in prostatic tissue, supporting a possible mechanism for sexual transmission of KSHV. The close relationship between KS and KSHV gene expression is consistent with the hypothesis that KSHV is directly involved in the etiology and pathogenesis of KS.</ab>
+<no>LR: 20091118; GR: AI27763/AI/NIAID NIH HHS/United States; JID: 0113724; 0 (RNA, Viral); OID: NLM: PMC191104; ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0022-538X; 0022-538X</sn>
+<ad>Department of Microbiology, University of Minnesota, Minneapolis 55455, USA.</ad>
+<an>PMID: 8985403</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM; X</sf>
+<ol>Unknown(0)</ol>
+<pmid>8985403</pmid>
+<pmcid>PMC191104</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>711</id>
+<a1>Verrier,J. D.</a1>
+<a1>Lau,P.</a1>
+<a1>Hudson,L.</a1>
+<a1>Murashov,A. K.</a1>
+<a1>Renne,R.</a1>
+<a1>Notterpek,L.</a1>
+<t1>Peripheral myelin protein 22 is regulated post-transcriptionally by miRNA-29a</t1>
+<jf>Glia</jf>
+<jo>Glia</jo>
+<yr>2009</yr>
+<fd>Sep</fd>
+<vo>57</vo>
+<is>12</is>
+<sp>1265</sp>
+<op>1279</op>
+<k1>Animals</k1>
+<k1>Blotting, Western</k1>
+<k1>Cell Proliferation</k1>
+<k1>Cells, Cultured</k1>
+<k1>Eukaryotic Initiation Factor-2/metabolism</k1>
+<k1>Gene Expression Regulation</k1>
+<k1>Immunoprecipitation</k1>
+<k1>Membrane Proteins/metabolism</k1>
+<k1>MicroRNAs/metabolism</k1>
+<k1>Myelin Proteins/genetics/metabolism</k1>
+<k1>Nerve Crush</k1>
+<k1>Oligonucleotide Array Sequence Analysis</k1>
+<k1>RNA, Small Interfering/metabolism</k1>
+<k1>Rats</k1>
+<k1>Ribonuclease III/antagonists &amp; inhibitors/genetics/metabolism</k1>
+<k1>Schwann Cells/physiology</k1>
+<k1>Sciatic Nerve/growth &amp; development/injuries/physiology</k1>
+<k1>Signal Transduction/physiology</k1>
+<k1>Time Factors</k1>
+<k1>Transfection</k1>
+<ab>Peripheral myelin protein 22 (PMP22) is a dose-sensitive, disease-associated protein primarily expressed in myelinating Schwann cells. Either reduction or overproduction of PMP22 can result in hereditary neuropathy, suggesting a requirement for correct protein expression for peripheral nerve biology. PMP22 is post-transcriptionally regulated and the 3&amp;#39;untranslated region (3&amp;#39;UTR) of the gene exerts a negative effect on translation. MicroRNAs (miRNAs) are small regulatory molecules that function at a post-transcriptional level by targeting the 3&amp;#39;UTR in a reverse complementary manner. We used cultured Schwann cells to demonstrate that alterations in the miRNA biogenesis pathway affect PMP22 levels, and endogenous PMP22 is subjected to miRNA regulation. GW-body formation, the proposed cytoplasmic site for miRNA-mediated repression, and Dicer expression, an RNase III family ribonuclease involved in miRNA biogenesis, are co-regulated with the differentiation state of Schwann cells. Furthermore, the levels of Dicer inversely correlate with PMP22, while the inhibition of Dicer leads to elevated PMP22. Microarray analysis of actively proliferating and differentiated Schwann cells, in conjunction with bioinformatics programs, identified several candidate PMP22-targeting miRNAs. Here we demonstrate that miR-29a binds and inhibits PMP22 reporter expression through a specific miRNA seed binding region. Over-expression of miR-29a enhances the association of PMP22 RNA with Argonaute 2, a protein involved in miRNA function, and reduces the steady-state levels of PMP22. In contrast, inhibition of endogenous miR-29a relieves the miRNA-mediated repression of PMP22. Correlation analyses of miR-29 and PMP22 in sciatic nerves reveal an inverse relationship, both developmentally and in post-crush injury. These results identify PMP22 as a target of miRNAs and suggest that myelin gene expression by Schwann cells is regulated by miRNAs.</ab>
+<no>GR: 1F31NS061465/NS/NINDS NIH HHS/United States; GR: NS041012/NS/NINDS NIH HHS/United States; JID: 8806785; 0 (Eukaryotic Initiation Factor-2); 0 (Gerp95 protein, rat); 0 (MIRN29 microRNA, rat); 0 (Membrane Proteins); 0 (MicroRNAs); 0 (Myelin Proteins); 0 (Pmp22 protein, rat); 0 (RNA, Small Interfering); EC 3.1.26.3 (Ribonuclease III); NIHMS94907; OID: NLM: NIHMS94907 [Available on 09/01/10]; OID: NLM: PMC2713384 [Available on 09/01/10]; ppublish</no>
+<pp>United States</pp>
+<sn>1098-1136; 0894-1491</sn>
+<ad>Department of Neuroscience, College of Medicine, McKnight Brain Institute, University of Florida, Gainesville, Florida 32610-0244, USA.</ad>
+<an>PMID: 19170179</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, N.I.H., Extramural; Research Support, N.I.H., Intramural; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<do>10.1002/glia.20846</do>
+<ol>Unknown(0)</ol>
+<pmid>19170179</pmid>
+<pmcid>PMC2713384</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>732</id>
+<a1>Wu,L.</a1>
+<a1>Renne,R.</a1>
+<a1>Ganem,D.</a1>
+<a1>Forghani,B.</a1>
+<t1>Human herpesvirus 8 glycoprotein K8.1: expression, post-translational modification and localization analyzed by monoclonal antibody</t1>
+<jf>Journal of clinical virology : the official publication of the Pan American Society for Clinical Virology</jf>
+<jo>J.Clin.Virol.</jo>
+<yr>2000</yr>
+<fd>Aug</fd>
+<vo>17</vo>
+<is>2</is>
+<sp>127</sp>
+<op>136</op>
+<k1>Alternative Splicing</k1>
+<k1>Animals</k1>
+<k1>Antibodies, Monoclonal/immunology</k1>
+<k1>Antibodies, Viral/immunology</k1>
+<k1>Baculoviridae/genetics</k1>
+<k1>Cell Line</k1>
+<k1>Cell Membrane/virology</k1>
+<k1>Cell Nucleus/virology</k1>
+<k1>Cytoplasm/virology</k1>
+<k1>Glycoproteins/genetics/immunology/metabolism</k1>
+<k1>Glycoside Hydrolases/chemistry</k1>
+<k1>Glycosylation</k1>
+<k1>Herpesvirus 8, Human/drug effects/genetics/immunology/metabolism</k1>
+<k1>Humans</k1>
+<k1>Mice</k1>
+<k1>Microscopy, Fluorescence</k1>
+<k1>Molecular Weight</k1>
+<k1>Open Reading Frames</k1>
+<k1>Protein Isoforms/genetics/immunology/metabolism</k1>
+<k1>Protein Processing, Post-Translational</k1>
+<k1>RNA, Viral/analysis</k1>
+<k1>Spodoptera/virology</k1>
+<k1>Tetradecanoylphorbol Acetate/pharmacology</k1>
+<k1>Viral Proteins/genetics/immunology/metabolism</k1>
+<k1>Virion/metabolism</k1>
+<ab>BACKGROUND: The genome of human herpesvirus 8 (HHV-8) contains at least 84 open reading frames, including the highly immunogenic K8.1. Other studies have determined that K8.1 gene generates at least two spliced transcripts in the HHV-8 infected BCBL-1 cells, termed as glycoprotein (gp)K8.1A and gpK8.1B. OBJECTIVE: To analyze the expression, post-translational modification and localization of HHV-8 gpK8.1 by monoclonal antibody (mAb). STUDY DESIGN: Mabs to HHV-8 produced by conventional hybridization and several clones identified. A mAb was used by various immunological assays to analyze HHV-8 K8.1 proteins in BCBL-1- and Sf9 insect cells. RESULTS: MAb clone 19B4 identified a 0.75-kb insert from the lambdaZAP cDNA expression library of 12-O-tetradecanoylphorbol-13-acetate (TPA)-induced BCBL-1 cells. Sequence analysis revealed that the cDNA insert corresponds to the published spliced ORF K8.1 mRNA of HHV-8. By immunofluorescence assay, the mAb stained the cell membrane, cytoplasm and perinuclear region of TPA induced BCBL-1 cells and showed no cross-reactivity with other herpesviruses. By immunoblotting assay, mAb 19B4 reacted with two species polypeptides giving a diffuse band with rMW from 42 to 64 kDa (gpK8.1A) and two closely migrating polypeptides of rMW 35/37 kDa (gpK8.1B). Both species were labeled by [14C]glucosamine, indicating that they are glycosylated and only gpK8.1A was detected in the virions. Expression of the full length K8.1 derived from cDNA in baculovirus system confirmed that these two glycoproteins are encoded by K8.1 gene. Enzymatic deglycosylation with endoF/peptide-N-glycosidase F, led to the reduction of rMW of both polypeptides whereas deglycosylation with O-glycosidase led only the reduction of rMW of K8.1A. CONCLUSION: The mAb 19B4 reacts specifically with BCBL-1 and Sf9 cells infected with recombinant baculovirus containing HHV-8 K8.1 gene. In several assays the mAb reacts with gpK8.1A and gpK8.1B. Only the mature spliced gpK8.1A is incorporated into virion. Enzymatic deglacosylation determined that gpK8.1A is N- and O-glycosylated, whereas gpK8.1B may lack O-glycosylation.</ab>
+<no>LR: 20061115; JID: 9815671; 0 (Antibodies, Monoclonal); 0 (Antibodies, Viral); 0 (Glycoproteins); 0 (K8.1 protein, Human herpesvirus 8); 0 (Protein Isoforms); 0 (RNA, Viral); 0 (Viral Proteins); 16561-29-8 (Tetradecanoylphorbol Acetate); EC 3.2.1.- (Glycoside Hydrolases); ppublish</no>
+<pp>NETHERLANDS</pp>
+<sn>1386-6532; 1386-6532</sn>
+<ad>Viral and Rickettsial Disease Laboratory Branch, Division of Communicable Disease Control, California State Department of Health Services, Berkeley 94704, USA.</ad>
+<an>PMID: 10942093; S1386-6532(00)00085-8 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>10942093</pmid></reference></refworks>

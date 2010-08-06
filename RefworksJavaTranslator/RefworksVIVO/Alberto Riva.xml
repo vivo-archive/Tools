@@ -1,0 +1,1529 @@
+
+<?xml version="1.0" encoding="utf-8"?>
+<refworks xmlns:refworks="www.refworks.com/xml/">
+
+
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>1446</id>
+<a1>Agresti,A.</a1>
+<a1>Scaffidi,P.</a1>
+<a1>Riva,A.</a1>
+<a1>Caiolfa,V. R.</a1>
+<a1>Bianchi,M. E.</a1>
+<t1>GR and HMGB1 interact only within chromatin and influence each other&amp;#39;s residence time </t1>
+<jf>Molecular cell</jf>
+<jo>Mol.Cell</jo>
+<yr>2005</yr>
+<fd>Apr 1</fd>
+<vo>18</vo>
+<is>1</is>
+<sp>109</sp>
+<op>121</op>
+<k1>Animals</k1>
+<k1>Cell Line</k1>
+<k1>Chromatin/metabolism</k1>
+<k1>DNA Primers</k1>
+<k1>HMGB1 Protein/genetics/metabolism</k1>
+<k1>Kinetics</k1>
+<k1>Mice</k1>
+<k1>Microscopy, Confocal</k1>
+<k1>Open Reading Frames</k1>
+<k1>Receptors, Glucocorticoid/metabolism</k1>
+<k1>Recombinant Fusion Proteins/metabolism</k1>
+<ab>Most nuclear proteins reside on a specific chromatin site only for seconds or less. The hit-and-run model of transcriptional control maintains that transcription complexes are assembled in a stochastic fashion from freely diffusible proteins; this contrasts to models involving stepwise assembly of stable holo complexes. However, the chances of forming a productive complex improve if the binding of one factor promotes the binding of its interactors. We prove here that in living cells, the glucocorticoid receptor and HMGB1 interact only within chromatin and not in the nucleoplasm and decrease each other&amp;#39;s mobility. Thus, the formation of a GR-HMGB1-chromatin complex is more likely than one would expect from independent binding to chromatin of GR and HMGB1. Remarkably, this complex is potentially stable, and its disassembly is effected by active, ATP-consuming processes. We propose that kinetic cooperativity among transcription factors in chromatin binding may be a common feature in transcription and DNA transactions. </ab>
+<no>id: 3; LR: 20061115; JID: 9802571; 0 (Chromatin); 0 (DNA Primers); 0 (HMGB1 Protein); 0 (Receptors, Glucocorticoid); 0 (Recombinant Fusion Proteins); 2004/09/28 [received]; 2005/01/14 [revised]; 2005/03/08 [accepted]; ppublish </no>
+<pp>United States</pp>
+<sn>1097-2765; 1097-2765</sn>
+<ad>San Raffaele Research Institute, Via Olgettina 58, 20132 Milan, Italy.</ad>
+<an>PMID: 15808513; S1097-2765(05)01156-1 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<do>10.1016/j.molcel.2005.03.005</do>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>15808513</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>1456</id>
+<a1>Bellazzi,R.</a1>
+<a1>Larizza,C.</a1>
+<a1>Montani,S.</a1>
+<a1>Riva,A.</a1>
+<a1>Stefanelli,M.</a1>
+<a1>d&#39;Annunzio,G.</a1>
+<a1>Lorini,R.</a1>
+<a1>Gomez,E. J.</a1>
+<a1>Hernando,E.</a1>
+<a1>Brugues,E.</a1>
+<a1>Cermeno,J.</a1>
+<a1>Corcoy,R.</a1>
+<a1>de Leiva,A.</a1>
+<a1>Cobelli,C.</a1>
+<a1>Nucci,G.</a1>
+<a1>Del Prato,S.</a1>
+<a1>Maran,A.</a1>
+<a1>Kilkki,E.</a1>
+<a1>Tuominen,J.</a1>
+<t1>A telemedicine support for diabetes management: the T-IDDM project </t1>
+<jf>Computer methods and programs in biomedicine</jf>
+<jo>Comput.Methods Programs Biomed.</jo>
+<yr>2002</yr>
+<fd>Aug</fd>
+<vo>69</vo>
+<is>2</is>
+<sp>147</sp>
+<op>161</op>
+<k1>Blood Glucose Self-Monitoring</k1>
+<k1>Diabetes Mellitus, Type 1/physiopathology/therapy</k1>
+<k1>Disease Management</k1>
+<k1>Humans</k1>
+<k1>Telemedicine/instrumentation/methods</k1>
+<k1>Therapy, Computer-Assisted</k1>
+<ab>In the context of the EU funded Telematic Management of Insulin-Dependent Diabetes Mellitus (T-IDDM) project, we have designed, developed and evaluated a telemedicine system for insulin dependent diabetic patients management. The system relies on the integration of two modules, a Patient Unit (PU) and a Medical Unit (MU), able to communicate over the Internet and the Public Switched Telephone Network. Using the PU, patients are allowed to automatically download their monitoring data from the blood glucose monitoring device, and to send them to the hospital data-base; moreover, they are supported in their every day self monitoring activity. The MU provides physicians with a set of tools for data visualization, data analysis and decision support, and allows them to send messages and/or therapeutic advice to the patients. The T-IDDM service has been evaluated through the application of a formal methodology, and has been used by European patients and physicians for about 18 months. The results obtained during the project demonstration, even if obtained on a pilot study of 12 subjects, show the feasibility of the T-IDDM telemedicine service, and seem to substantiate the hypothesis that the use of the system could present an advantage in the management of insulin dependent diabetic patients, by improving communications and, potentially, clinical outcomes. </ab>
+<no>id: 2; LR: 20041117; JID: 8506513; ppublish </no>
+<pp>Ireland</pp>
+<sn>0169-2607; 0169-2607</sn>
+<ad>Dipartimento di Informatica e Sistemistica, Universita di Pavia, via Ferrata 1, I-27100 Pavia, Italy. ric@aim.unipv.it</ad>
+<an>PMID: 12100794; S016926070200038X [pii]</an>
+<la>eng</la>
+<sf>Journal Article; IM</sf>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>12100794</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>1469</id>
+<a1>Bellazzi,R.</a1>
+<a1>Larizza,C.</a1>
+<a1>Riva,A.</a1>
+<a1>Mira,A.</a1>
+<a1>Fiocchi,S.</a1>
+<a1>Stefanelli,M.</a1>
+<t1>Distributed intelligent data analysis in diabetic patient management </t1>
+<jf>Proceedings : a conference of the American Medical Informatics Association / ...AMIA Annual Fall Symposium.AMIA Fall Symposium</jf>
+<jo>Proc.AMIA.Annu.Fall.Symp.</jo>
+<yr>1996</yr>
+<sp>194</sp>
+<op>198</op>
+<k1>Computer Communication Networks</k1>
+<k1>Decision Support Techniques</k1>
+<k1>Diabetes Mellitus, Type 1/therapy</k1>
+<k1>Humans</k1>
+<k1>Patient Education as Topic/methods</k1>
+<k1>Software</k1>
+<k1>Systems Integration</k1>
+<k1>Therapy, Computer-Assisted</k1>
+<k1>Time</k1>
+<ab>This paper outlines the methodologies that can be used to perform an intelligent analysis of diabetic patients&amp;#39; data, realized in a distributed management context. We present a decision-support system architecture based on two modules, a Patient Unit and a Medical Unit, connected by telecommunication services. We stress the necessity to resort to temporal abstraction techniques, combined with time series analysis, in order to provide useful advice to patients; finally, we outline how data analysis and interpretation can be cooperatively performed by the two modules. </ab>
+<no>id: 5; LR: 20091118; JID: 9617342; OID: NLM: PMC2233200; ppublish; SO: Proc AMIA Annu Fall Symp. 1996:194-8. </no>
+<pp>UNITED STATES</pp>
+<sn>1091-8280; 1091-8280</sn>
+<ad>Dipartimento di Informatica e Sistemistica, Universita di Pavia, Italy.</ad>
+<an>PMID: 8947655</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>8947655</pmid>
+<pmcid>PMC2233200</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>1463</id>
+<a1>Bellazzi,R.</a1>
+<a1>Magni,P.</a1>
+<a1>Larizza,C.</a1>
+<a1>De Nicolao,G.</a1>
+<a1>Riva,A.</a1>
+<a1>Stefanelli,M.</a1>
+<t1>Mining biomedical time series by combining structural analysis and temporal abstractions </t1>
+<jf>Proceedings / AMIA ...Annual Symposium.AMIA Symposium</jf>
+<jo>Proc.AMIA.Symp.</jo>
+<yr>1998</yr>
+<sp>160</sp>
+<op>164</op>
+<k1>Algorithms</k1>
+<k1>Bayes Theorem</k1>
+<k1>Blood Glucose Self-Monitoring</k1>
+<k1>Decision Support Techniques</k1>
+<k1>Diabetes Mellitus, Type 1/therapy</k1>
+<k1>Home Nursing</k1>
+<k1>Humans</k1>
+<k1>Information Storage and Retrieval</k1>
+<k1>Telemedicine</k1>
+<k1>Therapy, Computer-Assisted</k1>
+<k1>Time</k1>
+<ab>This paper describes the combination of Structural Time Series analysis and Temporal Abstractions for the interpretation of data coming from home monitoring of diabetic patients. Blood Glucose data are analyzed by a novel Bayesian technique for time series analysis. The results obtained are post-processed using Temporal Abstractions in order to extract knowledge that can be exploited &amp;quot;at the point of use&amp;quot; from physicians. The proposed data analysis procedure can be viewed as a Knowledge Discovery in Data Base process that is applied to time-varying data. The work here described is part of a Web-based telemedicine system for the management of Insulin Dependent Diabetes Mellitus patients, called T-IDDM. </ab>
+<no>id: 9; LR: 20091118; JID: 100883449; OID: NLM: PMC2232319; ppublish; SO: Proc AMIA Symp. 1998:160-4. </no>
+<pp>UNITED STATES</pp>
+<sn>1531-605X; 1531-605X</sn>
+<ad>Dipartimento di Informatica e Sistemistica, Universita di Pavia, Italy.</ad>
+<an>PMID: 9929202</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>9929202</pmid>
+<pmcid>PMC2232319</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>1459</id>
+<a1>Bellazzi,R.</a1>
+<a1>Montani,S.</a1>
+<a1>Riva,A.</a1>
+<a1>Stefanelli,M.</a1>
+<t1>Web-based telemedicine systems for home-care: technical issues and experiences </t1>
+<jf>Computer methods and programs in biomedicine</jf>
+<jo>Comput.Methods Programs Biomed.</jo>
+<yr>2001</yr>
+<fd>Mar</fd>
+<vo>64</vo>
+<is>3</is>
+<sp>175</sp>
+<op>187</op>
+<k1>Computer Security</k1>
+<k1>Computer Systems</k1>
+<k1>Confidentiality</k1>
+<k1>Diabetes Mellitus, Type 1/therapy</k1>
+<k1>Europe</k1>
+<k1>Home Care Services</k1>
+<k1>Humans</k1>
+<k1>Internet</k1>
+<k1>Telemedicine/methods</k1>
+<ab>The use of the Web for telemedicine applications seems nowadays a compulsory solution: the Web has become a standardized infrastructure for giving access to sophisticated telemedicine applications from virtually any machine and operating system. Such standardized communication platform guarantees accessibility and usability advantages to both customers and providers (patients and physicians). However, there are several issues that should be discussed in depth, with particular reference to all the applications related to the provision of care at distance, nowadays called telecare applications. In telecare applications the role of the patient becomes central, since he/she is actively involved in the process of managing care and treatments, and since he/she (or his/her families) is responsible for collecting some measurements and related information. In this paper we will discuss the general architectural and technical issues related to the development of Web-based systems for telecare applications, relying on the experience we gained within the telecare project T-IDDM (Telematic Management of Insulin Dependent Diabetes Mellitus), devoted to assist the management and home-monitoring of Type 1 Diabetes Mellitus patients. </ab>
+<no>id: 5; LR: 20061115; JID: 8506513; ppublish </no>
+<pp>Ireland</pp>
+<sn>0169-2607; 0169-2607</sn>
+<ad>Dipartimento di Informatica e Sistemistica, Universita di Pavia via Ferrata 1, 27100 Pavia, Italy. ric@aim.unipv.it</ad>
+<an>PMID: 11226615; S0169260700001371 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>11226615</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>1465</id>
+<a1>Bellazzi,R.</a1>
+<a1>Riva,A.</a1>
+<a1>Larizza,C.</a1>
+<a1>Fiocchi,S.</a1>
+<a1>Stefanelli,M.</a1>
+<t1>A distributed system for diabetic patient management </t1>
+<jf>Computer methods and programs in biomedicine</jf>
+<jo>Comput.Methods Programs Biomed.</jo>
+<yr>1998</yr>
+<fd>May</fd>
+<vo>56</vo>
+<is>2</is>
+<sp>93</sp>
+<op>107</op>
+<k1>Diabetes Mellitus, Type 1</k1>
+<k1>Humans</k1>
+<k1>Patient Care Management</k1>
+<k1>Telemedicine</k1>
+<ab>This paper describes a telemedicine system for diabetic patients management, presenting its architecture, the technical solutions adopted and the methodologies on which it is based. The system, designed to provide decision support in a distributed environment, is composed of two modules, a Patient Unit and a Medical Unit, connected by telecommunication services. We outline how the two modules can interact to perform an effective monitoring and a cooperative control of glucose metabolism. In particular, we detail the data analysis tasks performed by the two units and how the results are exploited to assist patients and physicians in revising and adjusting the therapeutic protocol. We will finally describe the current prototypical implementation of the system that uses HTTP as the communication protocol and HTML pages as the graphical user interface. </ab>
+<no>id: 2; LR: 20051116; JID: 8506513; RF: 27; ppublish </no>
+<pp>IRELAND</pp>
+<sn>0169-2607; 0169-2607</sn>
+<ad>Dipartimento di Informatica e Sistemistica, Universita di Pavia, Italy. ric@aim.unipv.it</ad>
+<an>PMID: 9700426; S0169-2607(98)00018-2 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Review; IM</sf>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>9700426</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>1461</id>
+<a1>Bellazzi,R.</a1>
+<a1>Riva,A.</a1>
+<a1>Montani,S.</a1>
+<a1>Larizza,C.</a1>
+<a1>Bestazza,M.</a1>
+<a1>Fiocchi,S.</a1>
+<a1>d&#39;Annunzio,G.</a1>
+<a1>Lorini,R.</a1>
+<a1>Stefanelli,M.</a1>
+<t1>Application report: preliminary evaluation of the T-IDDM project in Pavia </t1>
+<jf>Studies in health technology and informatics</jf>
+<jo>Stud.Health Technol.Inform.</jo>
+<yr>1999</yr>
+<vo>68</vo>
+<sp>99</sp>
+<op>101</op>
+<k1>Child</k1>
+<k1>Computer Communication Networks</k1>
+<k1>Computer Systems</k1>
+<k1>Diabetes Mellitus, Type 1/therapy</k1>
+<k1>Humans</k1>
+<k1>Italy</k1>
+<k1>Medical Informatics Applications</k1>
+<k1>Medical Records Systems, Computerized</k1>
+<k1>Patient Care Team</k1>
+<k1>Remote Consultation</k1>
+<no>id: 7; LR: 20041117; JID: 9214582; ppublish </no>
+<pp>NETHERLANDS</pp>
+<sn>0926-9630; 0926-9630</sn>
+<ad>Dipartimento di Informatica e Sistemistica, Universita di Pavia, Italy.</ad>
+<an>PMID: 10725043</an>
+<la>eng</la>
+<sf>Journal Article; T</sf>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>10725043</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>1443</id>
+<a1>Bismar,T. A.</a1>
+<a1>Demichelis,F.</a1>
+<a1>Riva,A.</a1>
+<a1>Kim,R.</a1>
+<a1>Varambally,S.</a1>
+<a1>He,L.</a1>
+<a1>Kutok,J.</a1>
+<a1>Aster,J. C.</a1>
+<a1>Tang,J.</a1>
+<a1>Kuefer,R.</a1>
+<a1>Hofer,M. D.</a1>
+<a1>Febbo,P. G.</a1>
+<a1>Chinnaiyan,A. M.</a1>
+<a1>Rubin,M. A.</a1>
+<t1>Defining aggressive prostate cancer using a 12-gene model </t1>
+<jf>Neoplasia (New York, N.Y.)</jf>
+<jo>Neoplasia</jo>
+<yr>2006</yr>
+<fd>Jan</fd>
+<vo>8</vo>
+<is>1</is>
+<sp>59</sp>
+<op>68</op>
+<k1>Cluster Analysis</k1>
+<k1>Cohort Studies</k1>
+<k1>Gene Expression Regulation, Neoplastic</k1>
+<k1>Genetic Predisposition to Disease</k1>
+<k1>Humans</k1>
+<k1>Immunohistochemistry</k1>
+<k1>Male</k1>
+<k1>Oligonucleotide Array Sequence Analysis</k1>
+<k1>Prostatic Neoplasms/diagnosis/genetics/surgery</k1>
+<k1>Proteomics/methods</k1>
+<k1>Time Factors</k1>
+<k1>Tumor Markers, Biological</k1>
+<ab>The critical clinical question in prostate cancer research is: How do we develop means of distinguishing aggressive disease from indolent disease? Using a combination of proteomic and expression array data, we identified a set of 36 genes with concordant dysregulation of protein products that could be evaluated in situ by quantitative immunohistochemistry. Another five prostate cancer biomarkers were included using linear discriminant analysis, we determined that the optimal model used to predict prostate cancer progression consisted of 12 proteins. Using a separate patient population, transcriptional levels of the 12 genes encoding for these proteins predicted prostate-specific antigen failure in 79 men following surgery for clinically localized prostate cancer (P = .0015). This study demonstrates that cross-platform models can lead to predictive models with the possible advantage of being more robust through this selection process. </ab>
+<no>id: 10; LR: 20091118; GR: 5P30 CA46592/CA/NCI NIH HHS/United States; GR: CA97063/CA/NCI NIH HHS/United States; GR: P50CA69568/CA/NCI NIH HHS/United States; GR: P50CA90381/CA/NCI NIH HHS/United States; GR: R01AG21404/AG/NIA NIH HHS/United States; GR: U01 CA111275-01/CA/NCI NIH HHS/United States; JID: 100886622; 0 (Tumor Markers, Biological); OID: NLM: PMC1584291; ppublish </no>
+<pp>Canada</pp>
+<sn>1476-5586; 1476-5586</sn>
+<ad>Department of Pathology, Brigham and Women&#39;s Hospital, Boston, MA, USA.</ad>
+<an>PMID: 16533427</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, N.I.H., Extramural; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, Non-P.H.S.; IM</sf>
+<do>10.1593/neo.05664</do>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>16533427</pmid>
+<pmcid>PMC1584291</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>1450</id>
+<a1>Cai,Z.</a1>
+<a1>Tsung,E. F.</a1>
+<a1>Marinescu,V. D.</a1>
+<a1>Ramoni,M. F.</a1>
+<a1>Riva,A.</a1>
+<a1>Kohane,I. S.</a1>
+<t1>Bayesian approach to discovering pathogenic SNPs in conserved protein domains </t1>
+<jf>Human mutation</jf>
+<jo>Hum.Mutat.</jo>
+<yr>2004</yr>
+<fd>Aug</fd>
+<vo>24</vo>
+<is>2</is>
+<sp>178</sp>
+<op>184</op>
+<k1>Algorithms</k1>
+<k1>Bayes Theorem</k1>
+<k1>Computational Biology/methods/statistics &amp; numerical data</k1>
+<k1>Conserved Sequence/genetics</k1>
+<k1>Databases, Genetic</k1>
+<k1>Humans</k1>
+<k1>Linkage Disequilibrium/genetics</k1>
+<k1>Models, Genetic</k1>
+<k1>Mutation, Missense/genetics</k1>
+<k1>Neural Networks (Computer)</k1>
+<k1>Peptides/genetics</k1>
+<k1>Polymorphism, Single Nucleotide/genetics</k1>
+<k1>Predictive Value of Tests</k1>
+<k1>Protein Structure, Tertiary/genetics</k1>
+<k1>Transcription Factors/genetics</k1>
+<ab>The success rate of association studies can be improved by selecting better genetic markers for genotyping or by providing better leads for identifying pathogenic single nucleotide polymorphisms (SNPs) in the regions of linkage disequilibrium with positive disease associations. We have developed a novel algorithm to predict pathogenic single amino acid changes, either nonsynonymous SNPs (nsSNPs) or missense mutations, in conserved protein domains. Using a Bayesian framework, we found that the probability of a microbial missense mutation causing a significant change in phenotype depended on how much difference it made in several phylogenetic, biochemical, and structural features related to the single amino acid substitution. We tested our model on pathogenic allelic variants (missense mutations or nsSNPs) included in OMIM, and on the other nsSNPs in the same genes (from dbSNP) as the nonpathogenic variants. As a result, our model predicted pathogenic variants with a 10% false-positive rate. The high specificity of our prediction algorithm should make it valuable in genetic association studies aimed at identifying pathogenic SNPs. </ab>
+<no>id: 7; LR: 20041117; CI: Copyright 2004; JID: 9215429; 0 (Peptides); 0 (Transcription Factors); ppublish </no>
+<pb>Wiley-Liss, Inc</pb>
+<pp>United States</pp>
+<sn>1098-1004; 1059-7794</sn>
+<ad>Children&#39;s Hospital Boston, Harvard Medical School, Boston, Massachusetts, USA.</ad>
+<an>PMID: 15241800</an>
+<la>eng</la>
+<sf>Journal Article; Validation Studies; IM</sf>
+<do>10.1002/humu.20063</do>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>15241800</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>1438</id>
+<a1>Castrignano,T.</a1>
+<a1>D&#39;Antonio,M.</a1>
+<a1>Anselmo,A.</a1>
+<a1>Carrabino,D.</a1>
+<a1>D&#39;Onorio De Meo,A.</a1>
+<a1>D&#39;Erchia,A. M.</a1>
+<a1>Licciulli,F.</a1>
+<a1>Mangiulli,M.</a1>
+<a1>Mignone,F.</a1>
+<a1>Pavesi,G.</a1>
+<a1>Picardi,E.</a1>
+<a1>Riva,A.</a1>
+<a1>Rizzi,R.</a1>
+<a1>Bonizzoni,P.</a1>
+<a1>Pesole,G.</a1>
+<t1>ASPicDB: a database resource for alternative splicing analysis </t1>
+<jf>Bioinformatics (Oxford, England)</jf>
+<jo>Bioinformatics</jo>
+<yr>2008</yr>
+<fd>May 15</fd>
+<vo>24</vo>
+<is>10</is>
+<sp>1300</sp>
+<op>1304</op>
+<k1>Base Sequence</k1>
+<k1>Chromosome Mapping/methods</k1>
+<k1>Computer Graphics</k1>
+<k1>Database Management Systems</k1>
+<k1>Databases, Genetic</k1>
+<k1>Information Storage and Retrieval/methods</k1>
+<k1>Molecular Sequence Data</k1>
+<k1>RNA Splice Sites/genetics</k1>
+<k1>Sequence Alignment/methods</k1>
+<k1>Sequence Analysis, DNA/methods</k1>
+<k1>User-Computer Interface</k1>
+<ab>MOTIVATION: Alternative splicing has recently emerged as a key mechanism responsible for the expansion of transcriptome and proteome complexity in human and other organisms. Although several online resources devoted to alternative splicing analysis are available they may suffer from limitations related both to the computational methodologies adopted and to the extent of the annotations they provide that prevent the full exploitation of the available data. Furthermore, current resources provide limited query and download facilities. RESULTS: ASPicDB is a database designed to provide access to reliable annotations of the alternative splicing pattern of human genes and to the functional annotation of predicted splicing isoforms. Splice-site detection and full-length transcript modeling have been carried out by a genome-wide application of the ASPic algorithm, based on the multiple alignments of gene-related transcripts (typically a Unigene cluster) to the genomic sequence, a strategy that greatly improves prediction accuracy compared to methods based on independent and progressive alignments. Enhanced query and download facilities for annotations and sequences allow users to select and extract specific sets of data related to genes, transcripts and introns fulfilling a combination of user-defined criteria. Several tabular and graphical views of the results are presented, providing a comprehensive assessment of the functional implication of alternative splicing in the gene set under investigation. ASPicDB, which is regularly updated on a monthly basis, also includes information on tissue-specific splicing patterns of normal and cancer cells, based on available EST sequences and their library source annotation. AVAILABILITY: www.caspur.it/ASPicDB </ab>
+<no>id: 5; LR: 20091104; JID: 9808944; 0 (RNA Splice Sites); 2008/04/03 [aheadofprint]; ppublish </no>
+<pp>England</pp>
+<sn>1367-4811; 1367-4803</sn>
+<ad>Consorzio Interuniversitario per le Applicazioni di Supercalcolo per Universita e Ricerca, CASPUR, Rome, Italy.</ad>
+<an>PMID: 18388144; btn113 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<do>10.1093/bioinformatics/btn113</do>
+<ds>refworks</ds>
+<wp>20080403</wp>
+<ol>Unknown(0)</ol>
+<pmid>18388144</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>1437</id>
+<a1>Fulthorpe,R. R.</a1>
+<a1>Roesch,L. F.</a1>
+<a1>Riva,A.</a1>
+<a1>Triplett,E. W.</a1>
+<t1>Distantly sampled soils carry few species in common </t1>
+<jf>The ISME journal</jf>
+<jo>ISME J.</jo>
+<yr>2008</yr>
+<fd>Sep</fd>
+<vo>2</vo>
+<is>9</is>
+<sp>901</sp>
+<op>910</op>
+<k1>Bacteria/classification/isolation &amp; purification</k1>
+<k1>Biodiversity</k1>
+<k1>Cluster Analysis</k1>
+<k1>DNA, Bacterial/genetics</k1>
+<k1>North America</k1>
+<k1>Phylogeny</k1>
+<k1>RNA, Ribosomal, 16S/genetics</k1>
+<k1>Sequence Homology, Nucleic Acid</k1>
+<k1>Soil Microbiology</k1>
+<k1>South America</k1>
+<ab>The bacterial phylogenetic structure of soils from four distinctly different sites in South and North America was analyzed. One hundred and thirty-nine thousand sequences of the V9 region of the small subunit of the bacterial ribosomal RNA gene generated for a previous study were used for this work. Whereas the previous work estimated levels of species richness, this study details the degree of bacterial community overlap between the four soils. Sequences from the four soils were classified and grouped into different phyla and then assigned to operational taxonomic units (OTUs) as defined by 97 or 100% sequence similarity. Pairwise Jaccard and theta similarity indices averaged over all phyla equalled 6 and 12% respectively at the 97% similarity level, and 15% for both at the 100% similarity level. At 100 and 97% sequence similarity, 1.5 and 4.1% of OTUs were found in all four soils respectively, and 87.9 and 74.4%, respectively were a unique particular soil. These analyses, based on the largest soil bacterial sequence retrieval to date, establish the high degree of community structure difference for randomly sampled dissimilar soils and support the idea that wide sampling is important for bioprospecting. The 10 most abundant cultured genera were determined in each soil. These 10 genera comprised a significant proportion of the reads obtained from each soil (31.3-37.4%). Chitinophaga was the most abundant or the second most abundant genus in all four soils with 7.5-13.8% of the total bacterial sequences in these soils. The striking result is that several culturable genera, whose roles in soil are virtually unknown, were found among these dominant sequences. </ab>
+<no>id: 4; JID: 101301086; 0 (DNA, Bacterial); 0 (RNA, Ribosomal, 16S); 2008/06/05 [aheadofprint]; ppublish </no>
+<pp>England</pp>
+<sn>1751-7370</sn>
+<ad>Department of Physical and Environmental Sciences, University of Toronto at Scarborough, Ontario, Canada. fulthorpe@utsc.utoronto.ca</ad>
+<an>PMID: 18528413; ismej200855 [pii]</an>
+<la>eng</la>
+<sf>Comparative Study; Journal Article; IM</sf>
+<do>10.1038/ismej.2008.55</do>
+<ds>refworks</ds>
+<wp>20080605</wp>
+<ol>Unknown(0)</ol>
+<pmid>18528413</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>1445</id>
+<a1>Kim,R.</a1>
+<a1>Demichelis,F.</a1>
+<a1>Tang,J.</a1>
+<a1>Riva,A.</a1>
+<a1>Shen,R.</a1>
+<a1>Gibbs,D. F.</a1>
+<a1>Mahavishno,V.</a1>
+<a1>Chinnaiyan,A. M.</a1>
+<a1>Rubin,M. A.</a1>
+<t1>Internet-based Profiler system as integrative framework to support translational research </t1>
+<jf>BMC bioinformatics</jf>
+<jo>BMC Bioinformatics</jo>
+<yr>2005</yr>
+<fd>Dec 19</fd>
+<vo>6</vo>
+<sp>304</sp>
+<k1>Automation</k1>
+<k1>Biological Markers</k1>
+<k1>Computational Biology/methods</k1>
+<k1>Database Management Systems</k1>
+<k1>Databases, Genetic</k1>
+<k1>Gene Expression Profiling</k1>
+<k1>Humans</k1>
+<k1>Image Processing, Computer-Assisted</k1>
+<k1>Internet</k1>
+<k1>Neoplasms/metabolism</k1>
+<k1>Oligonucleotide Array Sequence Analysis</k1>
+<k1>Programming Languages</k1>
+<k1>Software</k1>
+<k1>Software Design</k1>
+<k1>Tumor Markers, Biological</k1>
+<ab>BACKGROUND: Translational research requires taking basic science observations and developing them into clinically useful tests and therapeutics. We have developed a process to develop molecular biomarkers for diagnosis and prognosis by integrating tissue microarray (TMA) technology and an internet-database tool, Profiler. TMA technology allows investigators to study hundreds of patient samples on a single glass slide resulting in the conservation of tissue and the reduction in inter-experimental variability. The Profiler system allows investigator to reliably track, store, and evaluate TMA experiments. Here within we describe the process that has evolved through an empirical basis over the past 5 years at two academic institutions. RESULTS: The generic design of this system makes it compatible with multiple organ system (e.g., prostate, breast, lung, renal, and hematopoietic system,). Studies and folders are restricted to authorized users as required. Over the past 5 years, investigators at 2 academic institutions have scanned 656 TMA experiments and collected 63,311 digital images of these tissue samples. 68 pathologists from 12 major user groups have accessed the system. Two groups directly link clinical data from over 500 patients for immediate access and the remaining groups choose to maintain clinical and pathology data on separate systems. Profiler currently has 170 K data points such as staining intensity, tumor grade, and nuclear size. Due to the relational database structure, analysis can be easily performed on single or multiple TMA experimental results. The TMA module of Profiler can maintain images acquired from multiple systems. CONCLUSION: We have developed a robust process to develop molecular biomarkers using TMA technology and an internet-based database system to track all steps of this process. This system is extendable to other types of molecular data as separate modules and is freely available to academic institutions for licensing. </ab>
+<no>id: 2; LR: 20091118; GR: CA 97063/CA/NCI NIH HHS/United States; GR: P50CA69568/CA/NCI NIH HHS/United States; GR: R01AG21404/AG/NIA NIH HHS/United States; JID: 100965194; 0 (Biological Markers); 0 (Tumor Markers, Biological); OID: NLM: PMC1343596; 2005/07/21 [received]; 2005/12/19 [accepted]; 2005/12/19 [aheadofprint]; epublish </no>
+<pp>England</pp>
+<sn>1471-2105; 1471-2105</sn>
+<ad>Department of Pathology, Brigham and Women&#39;s Hospital, Boston, USA. rkim7@partners.org</ad>
+<an>PMID: 16364175; 1471-2105-6-304 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, N.I.H., Extramural; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<do>10.1186/1471-2105-6-304</do>
+<ds>refworks</ds>
+<wp>20051219</wp>
+<ol>Unknown(0)</ol>
+<pmid>16364175</pmid>
+<pmcid>PMC1343596</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>1452</id>
+<a1>Lazarus,R.</a1>
+<a1>Vercelli,D.</a1>
+<a1>Palmer,L. J.</a1>
+<a1>Klimecki,W. J.</a1>
+<a1>Silverman,E. K.</a1>
+<a1>Richter,B.</a1>
+<a1>Riva,A.</a1>
+<a1>Ramoni,M.</a1>
+<a1>Martinez,F. D.</a1>
+<a1>Weiss,S. T.</a1>
+<a1>Kwiatkowski,D. J.</a1>
+<t1>Single nucleotide polymorphisms in innate immunity genes: abundant variation and potential role in complex human disease </t1>
+<jf>Immunological reviews</jf>
+<jo>Immunol.Rev.</jo>
+<yr>2002</yr>
+<fd>Dec</fd>
+<vo>190</vo>
+<sp>9</sp>
+<op>25</op>
+<k1>Animals</k1>
+<k1>Asthma/genetics/immunology</k1>
+<k1>Computational Biology</k1>
+<k1>DNA-Binding Proteins/genetics/immunology</k1>
+<k1>Drosophila Proteins</k1>
+<k1>Ethnic Groups/genetics</k1>
+<k1>Genetic Variation</k1>
+<k1>Haplotypes</k1>
+<k1>Humans</k1>
+<k1>Immunity, Innate/genetics</k1>
+<k1>Linkage Disequilibrium</k1>
+<k1>Membrane Glycoproteins/genetics/immunology</k1>
+<k1>Models, Immunological</k1>
+<k1>Polymorphism, Single Nucleotide</k1>
+<k1>Receptors, Cell Surface/genetics/immunology</k1>
+<k1>Toll-Like Receptor 9</k1>
+<k1>Toll-Like Receptors</k1>
+<ab>Under selective pressure from infectious microorganisms, multicellular organisms have evolved immunological defense mechanisms, broadly categorized as innate or adaptive. Recent insights into the complex mechanisms of human innate immunity suggest that genetic variability in genes encoding its components may play a role in the development of asthma and related diseases. As part of a systematic assessment of genetic variability in innate immunity genes, we have thus far have examined 16 genes by resequencing 93 unrelated subjects from three ethnic samples (European American, African American and Hispanic American) and a sample of European American asthmatics. Approaches to discovering and understanding variation and the subsequent implementation of disease association studies are described and illustrated. Although highly conserved across a wide range of species, the innate immune genes we have sequenced demonstrate substantial interindividual variability predominantly in the form of single nucleotide polymorphisms (SNPs). Genetic variation in these genes may play a role in determining susceptibility to a range of common, chronic human diseases which have an inflammatory component. Differences in population history have produced distinctive patterns of SNP allele frequencies, linkage disequilibrium and haplotypes when ethnic groups are compared. These and other factors must be taken into account in the design and analysis of disease association studies. </ab>
+<no>id: 9; LR: 20081121; GR: U01 HL66795/HL/NHLBI NIH HHS/United States; JID: 7702118; 0 (DNA-Binding Proteins); 0 (Drosophila Proteins); 0 (Membrane Glycoproteins); 0 (Receptors, Cell Surface); 0 (TLR9 protein, human); 0 (Toll-Like Receptor 9); 0 (Toll-Like Receptors); RF: 92; ppublish </no>
+<pp>Denmark</pp>
+<sn>0105-2896; 0105-2896</sn>
+<ad>Channing Laboratory, Brigham and Women&#39;s Hospital and Harvard Medical School, Boston, MA 02115, USA. ross.lazarus@channing.harvard.edu</ad>
+<an>PMID: 12493003; imr19002 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; Review; IM</sf>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>12493003</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>1444</id>
+<a1>Marinescu,V. D.</a1>
+<a1>Kohane,I. S.</a1>
+<a1>Kim,T. K.</a1>
+<a1>Harmin,D. A.</a1>
+<a1>Greenberg,M. E.</a1>
+<a1>Riva,A.</a1>
+<t1>START: an automated tool for serial analysis of chromatin occupancy data </t1>
+<jf>Bioinformatics (Oxford, England)</jf>
+<jo>Bioinformatics</jo>
+<yr>2006</yr>
+<fd>Apr 15</fd>
+<vo>22</vo>
+<is>8</is>
+<sp>999</sp>
+<op>1001</op>
+<k1>Artificial Intelligence</k1>
+<k1>Chromatin/genetics</k1>
+<k1>Chromosome Mapping/methods</k1>
+<k1>Database Management Systems</k1>
+<k1>Databases, Genetic</k1>
+<k1>Information Storage and Retrieval/methods</k1>
+<k1>Internet</k1>
+<k1>Software</k1>
+<k1>Transcription Factors/genetics</k1>
+<k1>User-Computer Interface</k1>
+<ab>The serial analysis of chromatin occupancy technique (SACO) promises to become a widely used method for the unbiased genome-wide experimental identification of loci bound by a transcription factor of interest. We describe the first web-based automatic tool, termed sequence tag analysis and reporting tool (START), for processing SACO data generated by experiments performed for the yeast, fruit fly, mouse, rat or human genomes. The program uses as input sequences of inserts from a SACO library from which it extracts all SACO tags, maps them to genomic locations and annotates them. START returns detailed information about these tags including the genes, the genomic elements and the miRNA precursors found in their vicinity, and makes use of the MAPPER database to identify putative transcription factor binding sites located close to the tags. Availability: The program is available at http://bio.chip.org/start/. Supplementary information: Supplementary information is available at http://bio.chip.org/doc/start/START-supplementary.pdf </ab>
+<no>id: 1; JID: 9808944; 0 (Chromatin); 0 (Transcription Factors); 2006/02/24 [aheadofprint]; ppublish </no>
+<pp>England</pp>
+<sn>1367-4803; 1367-4803</sn>
+<ad>Children&#39;s Hospital Informatics Program at the Harvard-MIT Division of Health Sciences and Technology, Harvard Medical School, 300 Longwood Avenue, Boston, MA 02115, USA. vdmarinescu@chip.org</ad>
+<an>PMID: 16500934; btl062 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; IM</sf>
+<do>10.1093/bioinformatics/btl062</do>
+<ds>refworks</ds>
+<wp>20060224</wp>
+<ol>Unknown(0)</ol>
+<pmid>16500934</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>1448</id>
+<a1>Marinescu,V. D.</a1>
+<a1>Kohane,I. S.</a1>
+<a1>Riva,A.</a1>
+<t1>The MAPPER database: a multi-genome catalog of putative transcription factor binding sites </t1>
+<jf>Nucleic acids research</jf>
+<jo>Nucleic Acids Res.</jo>
+<yr>2005</yr>
+<fd>Jan 1</fd>
+<vo>33</vo>
+<is>Database issue</is>
+<sp>D91</sp>
+<op>7</op>
+<k1>Animals</k1>
+<k1>Base Sequence</k1>
+<k1>Binding Sites</k1>
+<k1>Databases, Nucleic Acid</k1>
+<k1>Drosophila melanogaster/genetics</k1>
+<k1>Genome</k1>
+<k1>Genomics</k1>
+<k1>Humans</k1>
+<k1>Internet</k1>
+<k1>Markov Chains</k1>
+<k1>Mice</k1>
+<k1>Promoter Regions, Genetic</k1>
+<k1>Transcription Factors/metabolism</k1>
+<k1>User-Computer Interface</k1>
+<ab>We describe a comprehensive map of putative transcription factor binding sites (TFBSs) across multiple genomes created using a search method that relies on hidden Markov models built from experimentally determined TFBSs. Using the information in the TRANSFAC and JASPAR databases, we built 1134 models for TFBSs and used them to scan regions 10 kb upstream of the start of the transcript for all known genes in the human, mouse and Drosophila melanogaster genomes. The results, together with homology information on clusters of ortholog genes across the three genomes, were used to create a multi-organism catalog of annotated TFBSs. The catalog can be queried through a web interface accessible at http://bio.chip.org/mapper that allows the identification, visualization and selection of TFBSs occurring in the promoter of a gene of interest and also the common factors predicted to bind across the cluster of orthologs that includes that gene. Alternatively, the interface allows the user to retrieve binding sites for a single transcription factor of interest in a single gene or in all genes of the human, mouse or fruit fly genomes. </ab>
+<no>id: 5; LR: 20091118; JID: 0411011; 0 (Transcription Factors); OID: NLM: PMC540057; ppublish </no>
+<pp>England</pp>
+<sn>1362-4962; 0305-1048</sn>
+<ad>Children&#39;s Hospital Informatics Program, Children&#39;s Hospital Boston, Harvard Medical School, Enders Research Building EN-150.9, 300 Longwood Avenue, Boston, MA 02115, USA.</ad>
+<an>PMID: 15608292; 33/suppl_1/D91 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; IM</sf>
+<do>10.1093/nar/gki103</do>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>15608292</pmid>
+<pmcid>PMC540057</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>1447</id>
+<a1>Marinescu,V. D.</a1>
+<a1>Kohane,I. S.</a1>
+<a1>Riva,A.</a1>
+<t1>MAPPER: a search engine for the computational identification of putative transcription factor binding sites in multiple genomes </t1>
+<jf>BMC bioinformatics</jf>
+<jo>BMC Bioinformatics</jo>
+<yr>2005</yr>
+<fd>Mar 30</fd>
+<vo>6</vo>
+<sp>79</sp>
+<k1>Algorithms</k1>
+<k1>Animals</k1>
+<k1>Base Sequence</k1>
+<k1>Binding Sites</k1>
+<k1>Cell Cycle Proteins/genetics</k1>
+<k1>Computational Biology/methods</k1>
+<k1>Computers</k1>
+<k1>Databases, Genetic</k1>
+<k1>Databases, Nucleic Acid</k1>
+<k1>Databases, Protein</k1>
+<k1>Evolution, Molecular</k1>
+<k1>Gene Expression Regulation</k1>
+<k1>Gene Library</k1>
+<k1>Genome</k1>
+<k1>Humans</k1>
+<k1>Internet</k1>
+<k1>Markov Chains</k1>
+<k1>Programming Languages</k1>
+<k1>Protein Binding</k1>
+<k1>Sequence Alignment</k1>
+<k1>Software</k1>
+<k1>Transcription Factors/chemistry/metabolism</k1>
+<k1>Transcription, Genetic</k1>
+<k1>User-Computer Interface</k1>
+<ab>BACKGROUND: Cis-regulatory modules are combinations of regulatory elements occurring in close proximity to each other that control the spatial and temporal expression of genes. The ability to identify them in a genome-wide manner depends on the availability of accurate models and of search methods able to detect putative regulatory elements with enhanced sensitivity and specificity. RESULTS: We describe the implementation of a search method for putative transcription factor binding sites (TFBSs) based on hidden Markov models built from alignments of known sites. We built 1,079 models of TFBSs using experimentally determined sequence alignments of sites provided by the TRANSFAC and JASPAR databases and used them to scan sequences of the human, mouse, fly, worm and yeast genomes. In several cases tested the method identified correctly experimentally characterized sites, with better specificity and sensitivity than other similar computational methods. Moreover, a large-scale comparison using synthetic data showed that in the majority of cases our method performed significantly better than a nucleotide weight matrix-based method. CONCLUSION: The search engine, available at http://mapper.chip.org, allows the identification, visualization and selection of putative TFBSs occurring in the promoter or other regions of a gene from the human, mouse, fly, worm and yeast genomes. In addition it allows the user to upload a sequence to query and to build a model by supplying a multiple sequence alignment of binding sites for a transcription factor of interest. Due to its extensive database of models, powerful search engine and flexible interface, MAPPER represents an effective resource for the large-scale computational analysis of transcriptional regulation. </ab>
+<no>id: 4; LR: 20091118; JID: 100965194; 0 (Cell Cycle Proteins); 0 (MCM5 protein, human); 0 (Transcription Factors); OID: NLM: PMC1131891; 2004/08/06 [received]; 2005/03/30 [accepted]; 2005/03/30 [aheadofprint]; epublish </no>
+<pp>England</pp>
+<sn>1471-2105; 1471-2105</sn>
+<ad>Children&#39;s Hospital Boston, Harvard Medical School, 300 Longwood Avenue, Boston, MA 02115, USA. vdmarinescu@chip.org</ad>
+<an>PMID: 15799782; 1471-2105-6-79 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; IM</sf>
+<do>10.1186/1471-2105-6-79</do>
+<ds>refworks</ds>
+<wp>20050330</wp>
+<ol>Unknown(0)</ol>
+<pmid>15799782</pmid>
+<pmcid>PMC1131891</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>1462</id>
+<a1>Montani,S.</a1>
+<a1>Bellazzi,R.</a1>
+<a1>Larizza,C.</a1>
+<a1>Riva,A.</a1>
+<a1>d&#39;Annunzio,G.</a1>
+<a1>Fiocchi,S.</a1>
+<a1>Lorini,R.</a1>
+<a1>Stefanelli,M.</a1>
+<t1>Protocol-based reasoning in diabetic patient management </t1>
+<jf>International journal of medical informatics</jf>
+<jo>Int.J.Med.Inform.</jo>
+<yr>1999</yr>
+<fd>Jan</fd>
+<vo>53</vo>
+<is>1</is>
+<sp>61</sp>
+<op>77</op>
+<k1>Adult</k1>
+<k1>Artificial Intelligence</k1>
+<k1>Blood Glucose/analysis</k1>
+<k1>Child</k1>
+<k1>Clinical Protocols</k1>
+<k1>Database Management Systems</k1>
+<k1>Decision Making</k1>
+<k1>Decision Support Techniques</k1>
+<k1>Diabetes Mellitus, Type 1/blood/therapy</k1>
+<k1>Exercise</k1>
+<k1>Food Habits</k1>
+<k1>Humans</k1>
+<k1>Hyperglycemia/metabolism</k1>
+<k1>Hypoglycemia/metabolism</k1>
+<k1>Insulin/therapeutic use</k1>
+<k1>Internet</k1>
+<k1>Monitoring, Ambulatory</k1>
+<k1>Remote Consultation</k1>
+<k1>Therapy, Computer-Assisted</k1>
+<ab>We propose a system for teleconsultation in Insulin Dependent Diabetes Mellitus (IDDM) management, accessible through the use of the net. The system is able to collect monitoring data, to analyze them through a set of tools, and to suggest a therapy adjustment in order to tackle the identified metabolic problems and to fit the patient&amp;#39;s needs. The therapy revision has been implemented through the Episodic Skeletal Planning Methodi, it generates an advice and employs it to modify the current therapeutic protocol, presenting to the physician a set of feasible solutions, among which she can choose the new one. </ab>
+<no>id: 8; LR: 20061115; JID: 9711057; 0 (Blood Glucose); 11061-68-0 (Insulin); ppublish </no>
+<pp>IRELAND</pp>
+<sn>1386-5056; 1386-5056</sn>
+<ad>U.P.I.T. Consorzio di Bioingegneria ed Informatica Medica, Pavia, Italy. stefania@aim.unipv.it</ad>
+<an>PMID: 10075131; S1386-5056(98)00103-8 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>10075131</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>1436</id>
+<a1>Nuzzo,A.</a1>
+<a1>Riva,A.</a1>
+<t1>Genephony: a knowledge management tool for genome-wide research </t1>
+<jf>BMC bioinformatics</jf>
+<jo>BMC Bioinformatics</jo>
+<yr>2009</yr>
+<fd>Sep 3</fd>
+<vo>10</vo>
+<sp>278</sp>
+<k1>Computational Biology/methods</k1>
+<k1>Database Management Systems</k1>
+<k1>Genome</k1>
+<k1>Genomics</k1>
+<k1>Information Storage and Retrieval/methods</k1>
+<k1>Software</k1>
+<k1>User-Computer Interface</k1>
+<ab>BACKGROUND: One of the consequences of the rapid and widespread adoption of high-throughput experimental technologies is an exponential increase of the amount of data produced by genome-wide experiments. Researchers increasingly need to handle very large volumes of heterogeneous data, including both the data generated by their own experiments and the data retrieved from publicly available repositories of genomic knowledge. Integration, exploration, manipulation and interpretation of data and information therefore need to become as automated as possible, since their scale and breadth are, in general, beyond the limits of what individual researchers and the basic data management tools in normal use can handle. This paper describes Genephony, a tool we are developing to address these challenges. RESULTS: We describe how Genephony can be used to manage large datesets of genomic information, integrating them with existing knowledge repositories. We illustrate its functionalities with an example of a complex annotation task, in which a set of SNPs coming from a genotyping experiment is annotated with genes known to be associated to a phenotype of interest. We show how, thanks to the modular architecture of Genephony and its user-friendly interface, this task can be performed in a few simple steps. CONCLUSION: Genephony is an online tool for the manipulation of large datasets of genomic information. It can be used as a browser for genomic data, as a high-throughput annotation tool, and as a knowledge discovery tool. It is designed to be easy to use, flexible and extensible. Its knowledge management engine provides fine-grained control over individual data elements, as well as efficient operations on large datasets. </ab>
+<no>id: 3; GR: 5U54LM008748-02/LM/NLM NIH HHS/United States; GR: R01 HL87681-01/HL/NHLBI NIH HHS/United States; JID: 100965194; OID: NLM: PMC2744709; 2009/03/04 [received]; 2009/09/03 [accepted]; 2009/09/03 [aheadofprint]; epublish </no>
+<pp>England</pp>
+<sn>1471-2105; 1471-2105</sn>
+<ad>Centre for Tissue Engineering, University of Pavia, Pavia, Italy. angelo.nuzzo@unipv.it</ad>
+<an>PMID: 19728881; 1471-2105-10-278 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, N.I.H., Extramural; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<do>10.1186/1471-2105-10-278</do>
+<ds>refworks</ds>
+<wp>20090903</wp>
+<ol>Unknown(0)</ol>
+<pmid>19728881</pmid>
+<pmcid>PMC2744709</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>1435</id>
+<a1>Nuzzo,A.</a1>
+<a1>Riva,A.</a1>
+<a1>Bellazzi,R.</a1>
+<t1>Phenotypic and genotypic data integration and exploration through a web-service architecture </t1>
+<jf>BMC bioinformatics</jf>
+<jo>BMC Bioinformatics</jo>
+<yr>2009</yr>
+<fd>Oct 15</fd>
+<vo>10 Suppl 12</vo>
+<sp>S5</sp>
+<k1>Database Management Systems</k1>
+<k1>Genotype</k1>
+<k1>Information Storage and Retrieval/methods</k1>
+<k1>Internet</k1>
+<k1>Phenotype</k1>
+<k1>Software</k1>
+<k1>Systems Integration</k1>
+<ab>BACKGROUND : Linking genotypic and phenotypic information is one of the greatest challenges of current genetics research. The definition of an Information Technology infrastructure to support this kind of studies, and in particular studies aimed at the analysis of complex traits, which require the definition of multifaceted phenotypes and the integration genotypic information to discover the most prevalent diseases, is a paradigmatic goal of Biomedical Informatics. This paper describes the use of Information Technology methods and tools to develop a system for the management, inspection and integration of phenotypic and genotypic data. RESULTS : We present the design and architecture of the Phenotype Miner, a software system able to flexibly manage phenotypic information, and its extended functionalities to retrieve genotype information from external repositories and to relate it to phenotypic data. For this purpose we developed a module to allow customized data upload by the user and a SOAP-based communications layer to retrieve data from existing biomedical knowledge management tools. In this paper we also demonstrate the system functionality by an example application of the system in which we analyze two related genomic datasets. CONCLUSION : In this paper we show how a comprehensive, integrated and automated workbench for genotype and phenotype integration can facilitate and improve the hypothesis generation process underlying modern genetic studies. </ab>
+<no>id: 2; GR: R01 HL87681-01/HL/NHLBI NIH HHS/United States; JID: 100965194; OID: NLM: PMC2762070; 2009/10/15 [aheadofprint]; epublish </no>
+<pp>England</pp>
+<sn>1471-2105; 1471-2105</sn>
+<ad>Department of Computer Engineering and Systems Science, University of Pavia, Via Ferrata 1, Pavia, Italy. angelo.nuzzo@unipv.it</ad>
+<an>PMID: 19828081; 1471-2105-10-S12-S5 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, N.I.H., Extramural; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<do>10.1186/1471-2105-10-S12-S5</do>
+<ds>refworks</ds>
+<wp>20091015</wp>
+<ol>Unknown(0)</ol>
+<pmid>19828081</pmid>
+<pmcid>PMC2762070</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>1455</id>
+<a1>Ramoni,M.</a1>
+<a1>Riva,A.</a1>
+<t1>Basic Science in Medical Reasoning: An Artificial Intelligence Approach </t1>
+<jf>Advances in health sciences education : theory and practice</jf>
+<jo>Adv.Health.Sci.Educ.Theory Pract.</jo>
+<yr>1997</yr>
+<vo>2</vo>
+<is>2</is>
+<sp>131</sp>
+<op>140</op>
+<ab>A new generation of intelligent systems is growing up in the community of Artificial Intelligence in Medicine. The main goal of these systems is the representation and use of real theory of diseases, as they are represented in medical textbooks or in scientific articles, rather than the heuristic shortcuts of human experts. In this paper, we will argue that the difficulties in the integration of basic science and clinical knowledge in intelligent systems arise from ontological differences between these kinds of knowledge and that the solution can be found in their dynamic integration during the reasoning process. In order to illustrate this point, we will first describe an epistemological analysis of the interplay between basic science knowledge and clinical knowledge, and then we will provide the example of a computational architecture implementing this view. </ab>
+<no>id: 10; JID: 9612021; ppublish </no>
+<sn>1573-1677; 1382-4996</sn>
+<ad>Knowledge Media Institute, The Open University, Milton Keynes, United Kingdom MK7 6AA, e-mail: m.ramoni@open.ac.uk</ad>
+<an>PMID: 12386404; 146629 [pii]</an>
+<la>ENG</la>
+<sf>JOURNAL ARTICLE</sf>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>12386404</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>1468</id>
+<a1>Ramoni,M.</a1>
+<a1>Riva,A.</a1>
+<a1>Stefanelli,M.</a1>
+<a1>Patel,V.</a1>
+<t1>An ignorant belief network to forecast glucose concentration from clinical databases </t1>
+<jf>Artificial Intelligence in Medicine</jf>
+<jo>Artif.Intell.Med.</jo>
+<yr>1995</yr>
+<fd>Dec</fd>
+<vo>7</vo>
+<is>6</is>
+<sp>541</sp>
+<op>559</op>
+<k1>Artificial Intelligence</k1>
+<k1>Blood Glucose/analysis</k1>
+<k1>Diabetes Mellitus, Type 1/blood</k1>
+<k1>Forecasting</k1>
+<k1>Humans</k1>
+<k1>Models, Statistical</k1>
+<k1>Osmolar Concentration</k1>
+<ab>Ignorant Belief Networks (IBNs) are a class of Bayesian Belief Networks (BBNs) able to reason on the basis of incomplete probabilistic information and to incrementally refine the precision of the inferred probabilities as more information becomes available. In this paper, we will describe how can be used to develop a system able to forecast blood glucose concentration in patients affected by insulin dependent diabetes mellitus (IDDM). The major difference between our approach and the traditional ones is that probability distributions over the IBN are not provided by some human expert or by the current literature but they are directly extracted from a clinical database of IDDM patients. This choice capitalizes on the large amount of information generated by the daily control of blood glucose and allows the system to improve the accuracy of predictions as more information becomes available. We will show how, even with a very small subset of the information needed to specify a BBN, the IBN is able to carry out predictions about the future blood glucose concentration in a patient by explicitly taking into consideration the level of ignorance embedded in the network. </ab>
+<no>id: 7; LR: 20061115; JID: 8915031; 0 (Blood Glucose); ppublish </no>
+<pp>NETHERLANDS</pp>
+<sn>0933-3657; 0933-3657</sn>
+<ad>Cognitive Studies in Medicine, McGill University, Montreal, Canada.</ad>
+<an>PMID: 8963375; 0933365795000261 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>8963375</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>1470</id>
+<a1>Riva,A.</a1>
+<t1>A Web-based architecture for the intelligent management of chronic patients </t1>
+<jf>Proceedings : a conference of the American Medical Informatics Association / ...AMIA Annual Fall Symposium.AMIA Fall Symposium</jf>
+<jo>Proc.AMIA.Annu.Fall.Symp.</jo>
+<yr>1996</yr>
+<sp>179</sp>
+<op>183</op>
+<k1>Chronic Disease</k1>
+<k1>Computer Communication Networks</k1>
+<k1>Computer Systems</k1>
+<k1>Diabetes Mellitus, Type 1/therapy</k1>
+<k1>Humans</k1>
+<k1>Hypermedia</k1>
+<k1>Multimedia</k1>
+<k1>Programming Languages</k1>
+<k1>Software</k1>
+<k1>Therapy, Computer-Assisted</k1>
+<ab>We describe a distributed architecture for medical informatics applications, based on the World-Wide Web (WWW) environment. After discussing previous experiences in the application of the WWW for medical purposes, we outline the features of a Common Lisp HTTP server designed to provide access to medical informatics applications using a standard Web browser. As an example of application, we describe a system for therapy planning and revision in the field of insulin-dependent diabetes. The system performs automatic data analysis and interpretation and provides advice on possible adjustments to the therapeutic protocol that the patients are following, taking advantage of the network and multimedia capabilities offered by the WWW for user interaction. </ab>
+<no>id: 6; LR: 20091118; JID: 9617342; OID: NLM: PMC2233199; ppublish; SO: Proc AMIA Annu Fall Symp. 1996:179-83. </no>
+<pp>UNITED STATES</pp>
+<sn>1091-8280; 1091-8280</sn>
+<ad>Dipartimento di Informatica e Sistemistica, Universita di Pavia, Italy.</ad>
+<an>PMID: 8947652</an>
+<la>eng</la>
+<sf>Journal Article; IM</sf>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>8947652</pmid>
+<pmcid>PMC2233199</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>1467</id>
+<a1>Riva,A.</a1>
+<a1>Bellazzi,R.</a1>
+<t1>Learning temporal probabilistic causal models from longitudinal data </t1>
+<jf>Artificial Intelligence in Medicine</jf>
+<jo>Artif.Intell.Med.</jo>
+<yr>1996</yr>
+<fd>Jul</fd>
+<vo>8</vo>
+<is>3</is>
+<sp>217</sp>
+<op>234</op>
+<k1>Algorithms</k1>
+<k1>Artificial Intelligence</k1>
+<k1>Bayes Theorem</k1>
+<k1>Blood Glucose/metabolism</k1>
+<k1>Diabetes Mellitus/blood/diagnosis</k1>
+<k1>Humans</k1>
+<k1>Insulin/blood/therapeutic use</k1>
+<k1>Longitudinal Studies</k1>
+<k1>Models, Statistical</k1>
+<k1>Monitoring, Physiologic</k1>
+<k1>Nonlinear Dynamics</k1>
+<k1>Periodicity</k1>
+<k1>Time</k1>
+<ab>Medical problems often require the analysis and interpretation of large collections of longitudinal data in terms of a structural model of the underlying physiological behavior. A suitable way to deal with this problem is to identify a temporal causal model that may effectively explain the patterns observed in the data. Here we will concentrate on probabilistic models, that provide a convenient framework to represent and manage underspecified information; in particular, we will consider the class of Causal Probabilistic Networks (CPN). We propose a method to perform structural learning of CPNs representing time-series through model selection. Starting from a set of plausible causal structures and a collection of possibly incomplete longitudinal data, we apply a learning algorithm to extract from the data the conditional probabilities describing each model. The models are then ranked according to their performance in reconstructing the original time-series, using several scoring functions, based on one-step ahead predictions. In this paper we describe the proposed methodology through an example taken from the diabetes monitoring domain. The selection process is applied to a set of input-output models that generalize the class of ARX models, where the inputs are the insulin and meal intakes and the outputs are the blood glucose levels. Although the physiological process underlying this particular application is characterized by strong non-linearities and low data reliability, we show that it is possible to obtain meaningful results, in terms of conditional probability learning and model ranking power. </ab>
+<no>id: 4; LR: 20041117; JID: 8915031; 0 (Blood Glucose); 11061-68-0 (Insulin); ppublish </no>
+<pp>NETHERLANDS</pp>
+<sn>0933-3657; 0933-3657</sn>
+<ad>Dipartimento di Informatica e Sistemistica, Universita di Pavia, Italy.</ad>
+<an>PMID: 8830923; 0933365795000348 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; IM</sf>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>8830923</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>1464</id>
+<a1>Riva,A.</a1>
+<a1>Bellazzi,R.</a1>
+<a1>Lanzola,G.</a1>
+<a1>Stefanelli,M.</a1>
+<t1>A development environment for knowledge-based medical applications on the World-Wide Web </t1>
+<jf>Artificial Intelligence in Medicine</jf>
+<jo>Artif.Intell.Med.</jo>
+<yr>1998</yr>
+<fd>Nov</fd>
+<vo>14</vo>
+<is>3</is>
+<sp>279</sp>
+<op>293</op>
+<k1>Artificial Intelligence</k1>
+<k1>Diabetes Mellitus, Type 1</k1>
+<k1>Humans</k1>
+<k1>Internet</k1>
+<k1>Medical Informatics</k1>
+<ab>The World-Wide Web (WWW) is increasingly being used as a platform to develop distributed applications, particularly in contexts, such as medical ones, where high usability and availability are required. In this paper we propose a methodology for the development of knowledge-based medical applications on the web, based on the use of an explicit domain ontology to automatically generate parts of the system. We describe a development environment, centred on the LISPWEB Common Lisp HTTP server, that supports this methodology, and we show how it facilitates the creation of complex web-based applications, by overcoming the limitations that normally affect the adequacy of the web for this purpose. Finally, we present an outline of a system for the management of diabetic patients built using the LISPWEB environment. </ab>
+<no>id: 1; LR: 20061115; JID: 8915031; ppublish </no>
+<pp>NETHERLANDS</pp>
+<sn>0933-3657; 0933-3657</sn>
+<ad>Laboratorio di Informatica Medica, IRCCS Policlinico S. Matteo, Pavia, Italy.</ad>
+<an>PMID: 9821518; S0933365798000384 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>9821518</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>1466</id>
+<a1>Riva,A.</a1>
+<a1>Bellazzi,R.</a1>
+<a1>Stefanelli,M.</a1>
+<t1>A Web-based system for the intelligent management of diabetic patients </t1>
+<jf>M.D.computing : computers in medical practice</jf>
+<jo>MD Comput.</jo>
+<yr>1997</yr>
+<fd>Sep-Oct</fd>
+<vo>14</vo>
+<is>5</is>
+<sp>360</sp>
+<op>364</op>
+<k1>Blood Glucose Self-Monitoring/instrumentation</k1>
+<k1>Computer Communication Networks</k1>
+<k1>Computer Graphics</k1>
+<k1>Decision Support Techniques</k1>
+<k1>Diabetes Mellitus, Type 1/therapy</k1>
+<k1>Humans</k1>
+<k1>Patient Care Planning</k1>
+<k1>Patient Education as Topic</k1>
+<k1>Remote Consultation/instrumentation</k1>
+<k1>Therapy, Computer-Assisted</k1>
+<k1>User-Computer Interface</k1>
+<ab>We describe the design and implementation of a distributed computer-based system for the management of insulin-dependent diabetes mellitus. The goal of the system is to support the normal activities of the physicians and patients involved in the care of diabetes by providing them with a set of automated services ranging from data collection and transmission to data analysis and decision support. The system is highly integrated with current practices in the management of diabetes, and it uses Internet technology to achieve high availability and ease of use. In particular, the user interaction takes place through dynamically generated World Wide Web pages, so that all the system&amp;#39;s functions share an intuitive graphic user interface. </ab>
+<no>id: 3; LR: 20071115; JID: 8408946; ppublish </no>
+<pp>UNITED STATES</pp>
+<sn>0724-6811; 0724-6811</sn>
+<ad>Medical Informatics Laboratory, IRCCS Policlinico San Matteo, Italy. ariva@aim.unipv.it</ad>
+<an>PMID: 9308344</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>9308344</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>1451</id>
+<a1>Riva,A.</a1>
+<a1>Kohane,I. S.</a1>
+<t1>A SNP-centric database for the investigation of the human genome </t1>
+<jf>BMC bioinformatics</jf>
+<jo>BMC Bioinformatics</jo>
+<yr>2004</yr>
+<fd>Mar 26</fd>
+<vo>5</vo>
+<sp>33</sp>
+<k1>Databases, Genetic/trends</k1>
+<k1>Genome, Human</k1>
+<k1>Genomics/trends</k1>
+<k1>Humans</k1>
+<k1>Internet/trends</k1>
+<k1>Polymorphism, Single Nucleotide/genetics</k1>
+<ab>BACKGROUND: Single Nucleotide Polymorphisms (SNPs) are an increasingly important tool for genetic and biomedical research. Although current genomic databases contain information on several million SNPs and are growing at a very fast rate, the true value of a SNP in this context is a function of the quality of the annotations that characterize it. Retrieving and analyzing such data for a large number of SNPs often represents a major bottleneck in the design of large-scale association studies. DESCRIPTION: SNPper is a web-based application designed to facilitate the retrieval and use of human SNPs for high-throughput research purposes. It provides a rich local database generated by combining SNP data with the Human Genome sequence and with several other data sources, and offers the user a variety of querying, visualization and data export tools. In this paper we describe the structure and organization of the SNPper database, we review the available data export and visualization options, and we describe how the architecture of SNPper and its specialized data structures support high-volume SNP analysis. CONCLUSIONS: The rich annotation database and the powerful data manipulation and presentation facilities it offers make SNPper a very useful online resource for SNP research. Its success proves the great need for integrated and interoperable resources in the field of computational biology, and shows how such systems may play a critical role in supporting the large-scale computational analysis of our genome. </ab>
+<no>id: 8; LR: 20091118; GR: U01-HL66795/HL/NHLBI NIH HHS/United States; JID: 100965194; RF: 24; OID: NLM: PMC395999; 2003/10/30 [received]; 2004/03/26 [accepted]; 2004/03/26 [aheadofprint]; epublish </no>
+<pp>England</pp>
+<sn>1471-2105; 1471-2105</sn>
+<ad>Children&#39;s Hospital Informatics Program, Children&#39;s Hospital Boston, 320 Longwood, Avenue, Boston, MA 02115, USA. alberto.riva@tch.harvard.edu</ad>
+<an>PMID: 15046636; 1471-2105-5-33 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; Review; IM</sf>
+<do>10.1186/1471-2105-5-33</do>
+<ds>refworks</ds>
+<wp>20040326</wp>
+<ol>Unknown(0)</ol>
+<pmid>15046636</pmid>
+<pmcid>PMC395999</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>1454</id>
+<a1>Riva,A.</a1>
+<a1>Kohane,I. S.</a1>
+<t1>Accessing genomic data through XML-based remote procedure calls </t1>
+<jf>Proceedings / AMIA ...Annual Symposium.AMIA Symposium</jf>
+<jo>Proc.AMIA.Symp.</jo>
+<yr>2002</yr>
+<sp>662</sp>
+<op>666</op>
+<k1>Databases, Genetic</k1>
+<k1>Information Storage and Retrieval/methods</k1>
+<k1>Polymorphism, Single Nucleotide</k1>
+<k1>Programming Languages</k1>
+<k1>Software</k1>
+<ab>As the amount of data in public genomic databases grows, interoperability among them is becoming an increasingly critical feature. The ability for automated systems to mine and integrate data will be crucial to extracting knowledge from sources of data whose volume far exceeds the capabilities of human researchers. The currently dominant paradigm of presenting information as Web pages and using hyperlinks to describe relationships between pieces of information favors usability, but makes interoperability and automated data exchange more difficult. In this paper we describe how SNPper, a web-based system for the retrieval and analysis of Single Nucleotide Polymorphisms (SNPs), was augmented with a Remote Procedure Call interface, allowing client applications to query our program for SNP data and to receive the response as an XML document. Data represented in this form can be easily parsed by the requesting program, and thus reused for other applications. In this paper we describe the implementation of the interface and we show examples of its usage in a number of existing applications. </ab>
+<no>id: 1; LR: 20091118; GR: U01-HL66795/HL/NHLBI NIH HHS/United States; JID: 100883449; OID: NLM: PMC2244329; ppublish; SO: Proc AMIA Symp. 2002:662-6. </no>
+<pp>United States</pp>
+<sn>1531-605X; 1531-605X</sn>
+<ad>Children&#39;s Hospital, Informatics Program, Boston, MA 02115, USA.</ad>
+<an>PMID: 12463907; D020002379 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>12463907</pmid>
+<pmcid>PMC2244329</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>1453</id>
+<a1>Riva,A.</a1>
+<a1>Kohane,I. S.</a1>
+<t1>SNPper: retrieval and analysis of human SNPs </t1>
+<jf>Bioinformatics (Oxford, England)</jf>
+<jo>Bioinformatics</jo>
+<yr>2002</yr>
+<fd>Dec</fd>
+<vo>18</vo>
+<is>12</is>
+<sp>1681</sp>
+<op>1685</op>
+<k1>Database Management Systems</k1>
+<k1>Databases, Nucleic Acid</k1>
+<k1>Genetic Variation</k1>
+<k1>Genetics, Population</k1>
+<k1>Genome, Human</k1>
+<k1>Humans</k1>
+<k1>Information Storage and Retrieval/methods</k1>
+<k1>Internet</k1>
+<k1>Polymorphism, Single Nucleotide</k1>
+<k1>Sequence Alignment/methods</k1>
+<k1>Sequence Analysis, DNA/methods</k1>
+<k1>Software</k1>
+<k1>User-Computer Interface</k1>
+<ab>MOTIVATION: Single Nucleotide Polymorphisms (SNPs) are an increasingly important tool for the study of the human genome. SNPs can be used as markers to create high-density genetic maps, as causal candidates for diseases, or to reconstruct the history of our genome. SNP-based studies rely on the availability of large numbers of validated, high-frequency SNPs whose position on the chromosomes is known with precision. Although large collections of SNPs exist in public databases, researchers need tools to effectively retrieve and manipulate them. RESULTS: We describe the implementation and usage of SNPper, a web-based application to automate the tasks of extracting SNPs from public databases, analyzing them and exporting them in formats suitable for subsequent use. Our application is oriented toward the needs of candidate-gene, whole-genome and fine-mapping studies, and provides several flexible ways to present and export the data. The application has been publicly available for over a year, and has received positive user feedback and high usage levels. </ab>
+<no>id: 10; LR: 20081121; GR: U01-HL66795/HL/NHLBI NIH HHS/United States; JID: 9808944; ppublish </no>
+<pp>England</pp>
+<sn>1367-4803; 1367-4803</sn>
+<ad>Children&#39;s Hospital Informatics Program, Children&#39;s Hospital, Harvard Medical School, 300 Longwood Ave, Boston, MA 02115, USA. Alberto.Riva@TCH.Harvard.edu</ad>
+<an>PMID: 12490454</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>12490454</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>1457</id>
+<a1>Riva,A.</a1>
+<a1>Kohane,I. S.</a1>
+<t1>A web-based tool to retrieve human genome polymorphisms from public databases </t1>
+<jf>Proceedings / AMIA ...Annual Symposium.AMIA Symposium</jf>
+<jo>Proc.AMIA.Symp.</jo>
+<yr>2001</yr>
+<sp>558</sp>
+<op>562</op>
+<k1>Databases, Genetic</k1>
+<k1>Genome, Human</k1>
+<k1>Humans</k1>
+<k1>Information Storage and Retrieval/methods</k1>
+<k1>Internet</k1>
+<k1>Polymorphism, Single Nucleotide</k1>
+<ab>Single Nucleotide Polymorphisms (SNPs) are the most important source of variation in our genome, and an invaluable tool in the hands of researchers who investigate genetic diseases. Databases of SNPs are growing at a very fast rate, and the ability to perform large-scale, high-resolution association studies is quickly becoming a reality. In this paper we describe SNPper, a web-based tool to search for SNPs in public databases. The system allows searching for all SNPs in a given set of genes (for candidate gene studies) or in a specified region of a chromosome. The information displayed for each gene or each SNP is fully annotated and linked to the leading bioinformatics web sites. The first release of SNPper is available on the web, and has received positive feedback from the genetic and bioinformatics community. </ab>
+<no>id: 3; LR: 20091118; GR: U01-HL66795/HL/NHLBI NIH HHS/United States; JID: 100883449; OID: NLM: PMC2243317; ppublish; SO: Proc AMIA Symp. 2001:558-62. </no>
+<pp>United States</pp>
+<sn>1531-605X; 1531-605X</sn>
+<ad>Children&#39;s Hospital Informatics Program, Boston, MA, USA. Alberto.Riva@TCH.Harvard.edu</ad>
+<an>PMID: 11825250; D010001440 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>11825250</pmid>
+<pmcid>PMC2243317</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>1458</id>
+<a1>Riva,A.</a1>
+<a1>Mandl,K. D.</a1>
+<a1>Oh,D. H.</a1>
+<a1>Nigrin,D. J.</a1>
+<a1>Butte,A.</a1>
+<a1>Szolovits,P.</a1>
+<a1>Kohane,I. S.</a1>
+<t1>The personal internetworked notary and guardian </t1>
+<jf>International journal of medical informatics</jf>
+<jo>Int.J.Med.Inform.</jo>
+<yr>2001</yr>
+<fd>Jun</fd>
+<vo>62</vo>
+<is>1</is>
+<sp>27</sp>
+<op>40</op>
+<k1>Computer Security</k1>
+<k1>Humans</k1>
+<k1>Internet</k1>
+<k1>Medical Records Systems, Computerized/organization &amp; administration</k1>
+<k1>Privacy</k1>
+<k1>Public Health</k1>
+<k1>Research</k1>
+<ab>In this paper, we propose a secure, distributed and scaleable infrastructure for a lifelong personal medical record system. We leverage on existing and widely available technologies, like the Web and public-key cryptography, to define an architecture that allows patients to exercise full control over their medical data. This is done without compromising patients&amp;#39; privacy and the ability of other interested parties (e.g. physicians, health-care institutions, public-health researchers) to access the data when appropriately authorized. The system organizes the information as a tree of encrypted plain-text XML files, in order to ensure platform independence and durability, and uses a role-based authorization scheme to assign access privileges. In addition to the basic architecture, we describe tools to populate the patient&amp;#39;s record with data from hospital databases and the first testbed applications we are deploying. </ab>
+<no>id: 4; LR: 20071114; GR: N01LM-9-3536/LM/NLM NIH HHS/United States; JID: 9711057; ppublish </no>
+<pp>Ireland</pp>
+<sn>1386-5056; 1386-5056</sn>
+<ad>Children&#39;s Hospital Informatics Program, Division of Endocrinology, Children&#39;s Hospital, 300 Longwood Avenue, Boston, MA 02115, USA.</ad>
+<an>PMID: 11340004; S1386-5056(00)00136-2 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>11340004</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>1434</id>
+<a1>Riva,A.</a1>
+<a1>Pesole,G.</a1>
+<t1>A unique, consistent identifier for alternatively spliced transcript variants </t1>
+<jf>PloS one</jf>
+<jo>PLoS One</jo>
+<yr>2009</yr>
+<fd>Oct 28</fd>
+<vo>4</vo>
+<is>10</is>
+<sp>e7631</sp>
+<k1>Algorithms</k1>
+<k1>Alternative Splicing</k1>
+<k1>Computational Biology/methods/standards</k1>
+<k1>Computers</k1>
+<k1>Databases, Genetic</k1>
+<k1>Databases, Protein</k1>
+<k1>Exons</k1>
+<k1>Genetic Variation</k1>
+<k1>Genomics</k1>
+<k1>Humans</k1>
+<k1>Internet</k1>
+<k1>Introns</k1>
+<k1>Protein Isoforms</k1>
+<k1>Transcription, Genetic</k1>
+<ab>BACKGROUND: As research into alternative splicing reveals the fundamental importance of this phenomenon in the genome expression of higher organisms, there is an increasing need for a standardized, consistent and unique identifier for alternatively spliced isoforms. Such an identifier would be useful to eliminate ambiguities in references to gene isoforms, and would allow for the reliable comparison of isoforms from different sources (e.g., known genes vs. computational predictions). Commonly used identifiers for gene transcripts prove to be unsuitable for this purpose. METHODOLOGY: We propose an algorithm to compute an isoform signature based on the arrangement of exons and introns in a primary transcript. The isoform signature uniquely identifies a transcript structure, and can therefore be used as a key in databases of alternatively spliced isoforms, or to compare alternative splicing predictions produced by different methods. In this paper we present the algorithm to generate isoform signatures, we provide some examples of its application, and we describe a web-based resource to generate isoform signatures and use them in database searches. CONCLUSIONS: Isoform signatures are simple, so that they can be easily generated and included in publications and databases, but flexible enough to unambiguously represent all possible isoform structures, including information about coding sequence position and variable transcription start and end sites. We believe that the adoption of isoform signatures can help establish a consistent, unambiguous nomenclature for alternative splicing isoforms. The system described in this paper is freely available at http://genome.ufl.edu/genesig/, and supplementary materials can be found at http://genome.ufl.edu/genesig-files/. </ab>
+<no>id: 1; JID: 101285081; 0 (Protein Isoforms); OID: NLM: PMC2765725; 2009/06/30 [received]; 2009/10/04 [accepted]; 2009/10/28 [epublish]; epublish </no>
+<pp>United States</pp>
+<sn>1932-6203; 1932-6203</sn>
+<ad>Department of Molecular Genetics and Microbiology and University of Florida Genetics Institute, University of Florida, Gainesville, Florida, USA. ariva@ufl.edu</ad>
+<an>PMID: 19865484</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<do>10.1371/journal.pone.0007631</do>
+<ds>refworks</ds>
+<wp>20091028</wp>
+<ol>Unknown(0)</ol>
+<pmid>19865484</pmid>
+<pmcid>PMC2765725</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>1460</id>
+<a1>Riva,A.</a1>
+<a1>Smigelski,C.</a1>
+<a1>Friedman,R.</a1>
+<t1>WebDietAID: an interactive Web-based nutritional counselor </t1>
+<jf>Proceedings / AMIA ...Annual Symposium.AMIA Symposium</jf>
+<jo>Proc.AMIA.Symp.</jo>
+<yr>2000</yr>
+<sp>709</sp>
+<op>713</op>
+<k1>Computer-Assisted Instruction</k1>
+<k1>Counseling/methods</k1>
+<k1>Dietary Services/methods</k1>
+<k1>Humans</k1>
+<k1>Hypercholesterolemia/diet therapy</k1>
+<k1>Internet</k1>
+<k1>Nutritional Physiological Phenomena</k1>
+<k1>Patient Education as Topic/methods</k1>
+<k1>Programming Languages</k1>
+<k1>Software</k1>
+<ab>WebDietAID is a Web-based system aimed at assisting individuals affected by high serum cholesterol. The system tries to reproduce the types of intervention performed by a nutritional counselor. It is structured as a set of advisors, each of which handles a different side of the counseling process. The tasks of the advisors range from monitoring weight, to teaching about healthy nutrition, to assessing motivation and psychological obstacles to behavior change. WebDietAID is based on a development environment for Web-based applications that includes a dynamical Web server, a knowledge base management system, and an interface to a relational database. We describe the architecture of the system, and several of the implemented advisors. Finally, we discuss how the architecture could be generalized to other counseling domains. </ab>
+<no>id: 6; LR: 20091118; JID: 100883449; OID: NLM: PMC2243985; ppublish; SO: Proc AMIA Symp. 2000:709-13. </no>
+<pp>United States</pp>
+<sn>1531-605X; 1531-605X</sn>
+<ad>Medical Information Systems Unit, Boston University Medical Center, Boston, MA, USA.</ad>
+<an>PMID: 11079976; D200777 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; IM</sf>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>11079976</pmid>
+<pmcid>PMC2243985</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>1440</id>
+<a1>Roesch,L. F.</a1>
+<a1>Fulthorpe,R. R.</a1>
+<a1>Riva,A.</a1>
+<a1>Casella,G.</a1>
+<a1>Hadwin,A. K.</a1>
+<a1>Kent,A. D.</a1>
+<a1>Daroub,S. H.</a1>
+<a1>Camargo,F. A.</a1>
+<a1>Farmerie,W. G.</a1>
+<a1>Triplett,E. W.</a1>
+<t1>Pyrosequencing enumerates and contrasts soil microbial diversity </t1>
+<jf>The ISME journal</jf>
+<jo>ISME J.</jo>
+<yr>2007</yr>
+<fd>Aug</fd>
+<vo>1</vo>
+<is>4</is>
+<sp>283</sp>
+<op>290</op>
+<k1>Americas</k1>
+<k1>Archaea/genetics/isolation &amp; purification</k1>
+<k1>Biodiversity</k1>
+<k1>Colony Count, Microbial/methods</k1>
+<k1>Proteobacteria/genetics/isolation &amp; purification</k1>
+<k1>RNA, Archaeal</k1>
+<k1>RNA, Bacterial/genetics</k1>
+<k1>RNA, Ribosomal, 16S/genetics</k1>
+<k1>Soil Microbiology</k1>
+<ab>Estimates of the number of species of bacteria per gram of soil vary between 2000 and 8.3 million (Gans et al., 2005; Schloss and Handelsman, 2006). The highest estimate suggests that the number may be so large as to be impractical to test by amplification and sequencing of the highly conserved 16S rRNA gene from soil DNA (Gans et al., 2005). Here we present the use of high throughput DNA pyrosequencing and statistical inference to assess bacterial diversity in four soils across a large transect of the western hemisphere. The number of bacterial 16S rRNA sequences obtained from each site varied from 26,140 to 53,533. The most abundant bacterial groups in all four soils were the Bacteroidetes, Betaproteobacteria and Alphaproteobacteria. Using three estimators of diversity, the maximum number of unique sequences (operational taxonomic units roughly corresponding to the species level) never exceeded 52,000 in these soils at the lowest level of dissimilarity. Furthermore, the bacterial diversity of the forest soil was phylum rich compared to the agricultural soils, which are species rich but phylum poor. The forest site also showed far less diversity of the Archaea with only 0.009% of all sequences from that site being from this group as opposed to 4%-12% of the sequences from the three agricultural sites. This work is the most comprehensive examination to date of bacterial diversity in soil and suggests that agricultural management of soil may significantly influence the diversity of bacteria and archaea. </ab>
+<no>id: 7; JID: 101301086; 0 (RNA, Archaeal); 0 (RNA, Bacterial); 0 (RNA, Ribosomal, 16S); 2007/07/05 [aheadofprint]; ppublish </no>
+<pp>Unknown</pp>
+<sn>1751-7362</sn>
+<ad>Department of Microbiology and Cell Science, University of Florida, Gainesville, FL 32611-0700, USA.</ad>
+<an>PMID: 18043639; ismej200753 [pii]</an>
+<la>eng</la>
+<sf>Comparative Study; Journal Article; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, Non-P.H.S.; IM</sf>
+<do>10.1038/ismej.2007.53</do>
+<ds>refworks</ds>
+<wp>20070705</wp>
+<ol>Unknown(0)</ol>
+<pmid>18043639</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>1442</id>
+<a1>Samols,M. A.</a1>
+<a1>Skalsky,R. L.</a1>
+<a1>Maldonado,A. M.</a1>
+<a1>Riva,A.</a1>
+<a1>Lopez,M. C.</a1>
+<a1>Baker,H. V.</a1>
+<a1>Renne,R.</a1>
+<t1>Identification of cellular genes targeted by KSHV-encoded microRNAs </t1>
+<jf>PLoS pathogens</jf>
+<jo>PLoS Pathog.</jo>
+<yr>2007</yr>
+<fd>May 11</fd>
+<vo>3</vo>
+<is>5</is>
+<sp>e65</sp>
+<k1>Cells, Cultured</k1>
+<k1>Gene Expression Profiling</k1>
+<k1>Gene Expression Regulation, Viral</k1>
+<k1>Genes, Viral</k1>
+<k1>Herpesvirus 8, Human/genetics</k1>
+<k1>Humans</k1>
+<k1>Kidney/metabolism</k1>
+<k1>MicroRNAs/chemistry/genetics/metabolism</k1>
+<k1>Molecular Sequence Data</k1>
+<k1>RNA, Messenger/genetics/metabolism</k1>
+<k1>RNA, Viral/chemistry/genetics/metabolism</k1>
+<k1>Reverse Transcriptase Polymerase Chain Reaction</k1>
+<k1>Sarcoma, Kaposi/genetics/virology</k1>
+<k1>Thrombospondin 1/antagonists &amp; inhibitors/genetics/metabolism</k1>
+<k1>Transforming Growth Factor beta/antagonists &amp; inhibitors/genetics/metabolism</k1>
+<ab>MicroRNAs (miRNAs) are 19 to 23 nucleotide-long RNAs that post-transcriptionally regulate gene expression. Human cells express several hundred miRNAs which regulate important biological pathways such as development, proliferation, and apoptosis. Recently, 12 miRNA genes have been identified within the genome of Kaposi sarcoma-associated herpesvirus; however, their functions are still unknown. To identify host cellular genes that may be targeted by these novel viral regulators, we performed gene expression profiling in cells stably expressing KSHV-encoded miRNAs. Data analysis revealed a set of 81 genes whose expression was significantly changed in the presence of miRNAs. While the majority of changes were below 2-fold, eight genes were down-regulated between 4- and 20-fold. We confirmed miRNA-dependent regulation for three of these genes and found that protein levels of thrombospondin 1 (THBS1) were decreased &amp;gt;10-fold. THBS1 has previously been reported to be down-regulated in Kaposi sarcoma lesions and has known activity as a strong tumor suppressor and anti-angiogenic factor, exerting its anti-angiogenic effect in part by activating the latent form of TGF-beta. We show that reduced THBS1 expression in the presence of viral miRNAs translates into decreased TGF-beta activity. These data suggest that KSHV-encoded miRNAs may contribute directly to pathogenesis by down-regulation of THBS1, a major regulator of cell adhesion, migration, and angiogenesis. </ab>
+<no>id: 9; LR: 20100429; GENBANK/AY973824; GEO/GSE7554; GR: 5T32CA009126-30/CA/NCI NIH HHS/United States; GR: T32 GM07250/GM/NIGMS NIH HHS/United States; JID: 101238921; 0 (MicroRNAs); 0 (RNA, Messenger); 0 (RNA, Viral); 0 (Thrombospondin 1); 0 (Transforming Growth Factor beta); OID: NLM: PMC1876501; 2006/12/14 [received]; 2007/03/20 [accepted]; ppublish </no>
+<pp>United States</pp>
+<sn>1553-7374; 1553-7366</sn>
+<ad>Department of Molecular Genetics and Microbiology, University of Florida College of Medicine, Gainesville, Florida, United States of America.</ad>
+<an>PMID: 17500590; 06-PLPA-RA-0547R2 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, N.I.H., Extramural; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<do>10.1371/journal.ppat.0030065</do>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>17500590</pmid>
+<pmcid>PMC1876501</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>1449</id>
+<a1>Santagata,S.</a1>
+<a1>Demichelis,F.</a1>
+<a1>Riva,A.</a1>
+<a1>Varambally,S.</a1>
+<a1>Hofer,M. D.</a1>
+<a1>Kutok,J. L.</a1>
+<a1>Kim,R.</a1>
+<a1>Tang,J.</a1>
+<a1>Montie,J. E.</a1>
+<a1>Chinnaiyan,A. M.</a1>
+<a1>Rubin,M. A.</a1>
+<a1>Aster,J. C.</a1>
+<t1>JAGGED1 expression is associated with prostate cancer metastasis and recurrence </t1>
+<jf>Cancer research</jf>
+<jo>Cancer Res.</jo>
+<yr>2004</yr>
+<fd>Oct 1</fd>
+<vo>64</vo>
+<is>19</is>
+<sp>6854</sp>
+<op>6857</op>
+<k1>Adult</k1>
+<k1>Aged</k1>
+<k1>Aged, 80 and over</k1>
+<k1>Antibodies/immunology</k1>
+<k1>Antibody Specificity</k1>
+<k1>Calcium-Binding Proteins</k1>
+<k1>Cell Line, Tumor</k1>
+<k1>Disease Progression</k1>
+<k1>Humans</k1>
+<k1>Immunohistochemistry</k1>
+<k1>Intercellular Signaling Peptides and Proteins</k1>
+<k1>Male</k1>
+<k1>Membrane Proteins</k1>
+<k1>Middle Aged</k1>
+<k1>Neoplasm Metastasis</k1>
+<k1>Neoplasm Recurrence, Local/metabolism/pathology</k1>
+<k1>Prostatectomy</k1>
+<k1>Prostatic Intraepithelial Neoplasia/metabolism/pathology</k1>
+<k1>Prostatic Neoplasms/metabolism/pathology/surgery</k1>
+<k1>Protein Biosynthesis</k1>
+<k1>Proteins/immunology</k1>
+<ab>Recent studies suggest that NOTCH signaling can promote epithelial-mesenchymal transitions and augment signaling through AKT, an important growth and survival pathway in epithelial cells and prostate cancer in particular. Here we show that JAGGED1, a NOTCH receptor ligand, is significantly more highly expressed in metastatic prostate cancer as compared with localized prostate cancer or benign prostatic tissues, based on immunohistochemical analysis of JAGGED1 expression in human tumor samples from 154 men. Furthermore, high JAGGED1 expression in a subset of clinically localized tumors was significantly associated with recurrence, independent of other clinical parameters. These findings support a model in which dysregulation of JAGGED1 protein levels plays a role in prostate cancer progression and metastasis and suggest that JAGGED1 may be a useful marker in distinguishing indolent and aggressive prostate cancers. </ab>
+<no>id: 6; LR: 20061115; JID: 2984705R; 0 (Antibodies); 0 (Calcium-Binding Proteins); 0 (Intercellular Signaling Peptides and Proteins); 0 (Membrane Proteins); 0 (Proteins); 134324-36-0 (Serrate proteins); ppublish </no>
+<pp>United States</pp>
+<sn>0008-5472; 0008-5472</sn>
+<ad>Department of Pathology, Brigham and Women&#39;s Hospital, Harvard Medical School, Boston, Massachusetts 02115, USA.</ad>
+<an>PMID: 15466172; 64/19/6854 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; IM</sf>
+<do>10.1158/0008-5472.CAN-04-2500</do>
+<ds>refworks</ds>
+<ol>Unknown(0)</ol>
+<pmid>15466172</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>1439</id>
+<a1>Sebastiani,P.</a1>
+<a1>Zhao,Z.</a1>
+<a1>Abad-Grau,M. M.</a1>
+<a1>Riva,A.</a1>
+<a1>Hartley,S. W.</a1>
+<a1>Sedgewick,A. E.</a1>
+<a1>Doria,A.</a1>
+<a1>Montano,M.</a1>
+<a1>Melista,E.</a1>
+<a1>Terry,D.</a1>
+<a1>Perls,T. T.</a1>
+<a1>Steinberg,M. H.</a1>
+<a1>Baldwin,C. T.</a1>
+<t1>A hierarchical and modular approach to the discovery of robust associations in genome-wide association studies from pooled DNA samples </t1>
+<jf>BMC genetics</jf>
+<jo>BMC Genet.</jo>
+<yr>2008</yr>
+<fd>Jan 14</fd>
+<vo>9</vo>
+<sp>6</sp>
+<k1>Bayes Theorem</k1>
+<k1>Computational Biology</k1>
+<k1>DNA/genetics</k1>
+<k1>Fetal Hemoglobin/genetics</k1>
+<k1>Gene Frequency</k1>
+<k1>Genetic Markers</k1>
+<k1>Genome, Human</k1>
+<k1>Genotype</k1>
+<k1>Humans</k1>
+<k1>Linkage Disequilibrium</k1>
+<k1>Oligonucleotide Array Sequence Analysis</k1>
+<k1>Polymorphism, Single Nucleotide</k1>
+<k1>Reproducibility of Results</k1>
+<k1>Sensitivity and Specificity</k1>
+<ab>BACKGROUND: One of the challenges of the analysis of pooling-based genome wide association studies is to identify authentic associations among potentially thousands of false positive associations. RESULTS: We present a hierarchical and modular approach to the analysis of genome wide genotype data that incorporates quality control, linkage disequilibrium, physical distance and gene ontology to identify authentic associations among those found by statistical association tests. The method is developed for the allelic association analysis of pooled DNA samples, but it can be easily generalized to the analysis of individually genotyped samples. We evaluate the approach using data sets from diverse genome wide association studies including fetal hemoglobin levels in sickle cell anemia and a sample of centenarians and show that the approach is highly reproducible and allows for discovery at different levels of synthesis. CONCLUSION: Results from the integration of Bayesian tests and other machine learning techniques with linkage disequilibrium data suggest that we do not need to use too stringent thresholds to reduce the number of false positive associations. This method yields increased power even with relatively small samples. In fact, our evaluation shows that the method can reach almost 70% sensitivity with samples of only 100 subjects. </ab>
+<no>id: 6; LR: 20091118; GR: K23 AG026754/AG/NIA NIH HHS/United States; GR: K24 AG025727/AG/NIA NIH HHS/United States; GR: R01 HL68970/HL/NHLBI NIH HHS/United States; GR: R21 HL080463/HL/NHLBI NIH HHS/United States; JID: 100966978; 0 (Genetic Markers); 9007-49-2 (DNA); 9034-63-3 (Fetal Hemoglobin); OID: NLM: PMC2248205; 2007/09/06 [received]; 2008/01/14 [accepted]; 2008/01/14 [aheadofprint]; epublish </no>
+<pp>England</pp>
+<sn>1471-2156; 1471-2156</sn>
+<ad>Department of Biostatistics, Boston University School of Public Health, Boston 02118 MA, USA. sebas@bu.edu</ad>
+<an>PMID: 18194558; 1471-2156-9-6 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, N.I.H., Extramural; IM</sf>
+<do>10.1186/1471-2156-9-6</do>
+<ds>refworks</ds>
+<wp>20080114</wp>
+<ol>Unknown(0)</ol>
+<pmid>18194558</pmid>
+<pmcid>PMC2248205</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>1441</id>
+<a1>Skalsky,R. L.</a1>
+<a1>Samols,M. A.</a1>
+<a1>Plaisance,K. B.</a1>
+<a1>Boss,I. W.</a1>
+<a1>Riva,A.</a1>
+<a1>Lopez,M. C.</a1>
+<a1>Baker,H. V.</a1>
+<a1>Renne,R.</a1>
+<t1>Kaposi&amp;#39;s sarcoma-associated herpesvirus encodes an ortholog of miR-155 </t1>
+<jf>Journal of virology</jf>
+<jo>J.Virol.</jo>
+<yr>2007</yr>
+<fd>Dec</fd>
+<vo>81</vo>
+<is>23</is>
+<sp>12836</sp>
+<op>12845</op>
+<k1>3&#39; Untranslated Regions/genetics</k1>
+<k1>Basic-Leucine Zipper Transcription Factors/biosynthesis/genetics</k1>
+<k1>Cell Line, Tumor/chemistry/virology</k1>
+<k1>Down-Regulation</k1>
+<k1>Fanconi Anemia Complementation Group Proteins/biosynthesis/genetics</k1>
+<k1>Gene Expression</k1>
+<k1>Gene Expression Profiling</k1>
+<k1>Genes, Reporter</k1>
+<k1>Herpesvirus 8, Human/genetics</k1>
+<k1>Humans</k1>
+<k1>Luciferases/biosynthesis/genetics</k1>
+<k1>MicroRNAs/genetics</k1>
+<k1>Oligonucleotide Array Sequence Analysis</k1>
+<k1>RNA, Viral/genetics</k1>
+<k1>Sequence Homology, Nucleic Acid</k1>
+<ab>MicroRNAs (miRNAs) are small noncoding RNAs that posttranscriptionally regulate gene expression by binding to 3&amp;#39;-untranslated regions (3&amp;#39;UTRs) of target mRNAs. Kaposi&amp;#39;s sarcoma-associated herpesvirus (KSHV), a virus linked to malignancies including primary effusion lymphoma (PEL), encodes 12 miRNA genes, but only a few regulatory targets are known. We found that KSHV-miR-K12-11 shares 100% seed sequence homology with hsa-miR-155, an miRNA frequently found to be up-regulated in lymphomas and critically important for B-cell development. Based on this seed sequence homology, we hypothesized that both miRNAs regulate a common set of target genes and, as a result, could have similar biological activities. Examination of five PEL lines showed that PELs do not express miR-155 but do express high levels of miR-K12-11. Bioinformatic tools predicted the transcriptional repressor BACH-1 to be targeted by both miRNAs, and ectopic expression of either miR-155 or miR-K12-11 inhibited a BACH-1 3&amp;#39;UTR-containing reporter. Furthermore, BACH-1 protein levels are low in cells expressing either miRNA. Gene expression profiling of miRNA-expressing stable cell lines revealed 66 genes that were commonly down-regulated. For select genes, miRNA targeting was confirmed by reporter assays. Thus, based on our in silico predictions, reporter assays, and expression profiling data, miR-K12-11 and miR-155 regulate a common set of cellular targets. Given the role of miR-155 during B-cell maturation, we speculate that miR-K12-11 may contribute to the distinct developmental phenotype of PEL cells, which are blocked in a late stage of B-cell development. Together, these findings indicate that KSHV miR-K12-11 is an ortholog of miR-155. </ab>
+<no>id: 8; LR: 20091118; GR: 5T32CA009126-30/CA/NCI NIH HHS/United States; GR: T32 GM07250/GM/NIGMS NIH HHS/United States; JID: 0113724; 0 (3&amp;#39; Untranslated Regions); 0 (BACH1 protein, human); 0 (Basic-Leucine Zipper Transcription Factors); 0 (Fanconi Anemia Complementation Group Proteins); 0 (MIRN155 microRNA, human); 0 (MicroRNAs); 0 (RNA, Viral); EC 1.13.12.- (Luciferases); OID: NLM: PMC2169101; 2007/09/19 [aheadofprint]; ppublish </no>
+<pp>United States</pp>
+<sn>1098-5514; 0022-538X</sn>
+<ad>Department of Molecular Genetics and Microbiology, and Shands Cancer Center, 1376 Mowry Road, Gainesville, FL 32610-3633, USA.</ad>
+<an>PMID: 17881434; JVI.01804-07 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, N.I.H., Extramural; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<do>10.1128/JVI.01804-07</do>
+<ds>refworks</ds>
+<wp>20070919</wp>
+<ol>Unknown(0)</ol>
+<pmid>17881434</pmid>
+<pmcid>PMC2169101</pmcid></reference></refworks>

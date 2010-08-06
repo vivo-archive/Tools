@@ -1,0 +1,2850 @@
+
+<?xml version="1.0" encoding="utf-8"?>
+<refworks xmlns:refworks="www.refworks.com/xml/">
+
+
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>795</id>
+<a1>Bayliss,C. D.</a1>
+<a1>Condit,R. C.</a1>
+<t1>The vaccinia virus A18R gene product is a DNA-dependent ATPase</t1>
+<jf>The Journal of biological chemistry</jf>
+<jo>J.Biol.Chem.</jo>
+<yr>1995</yr>
+<fd>Jan 27</fd>
+<vo>270</vo>
+<is>4</is>
+<sp>1550</sp>
+<op>1556</op>
+<k1>Adenosine Triphosphatases/biosynthesis/genetics/metabolism</k1>
+<k1>Animals</k1>
+<k1>Cell Line</k1>
+<k1>Cloning, Molecular</k1>
+<k1>DNA Helicases</k1>
+<k1>DNA-Binding Proteins/biosynthesis/genetics</k1>
+<k1>Drosophila Proteins</k1>
+<k1>Genes, Viral</k1>
+<k1>Humans</k1>
+<k1>Kinetics</k1>
+<k1>Mutagenesis, Site-Directed</k1>
+<k1>Recombinant Proteins/biosynthesis/metabolism</k1>
+<k1>Restriction Mapping</k1>
+<k1>Vaccinia virus/enzymology/genetics</k1>
+<ab>The predicted amino acid sequence of the vaccinia virus gene A18R shows significant homology to the human ERCC3 gene product, which is a member of the DEXH subfamily of the DNA and RNA helicase superfamily II and which plays a role in both RNA polymerase II transcription and nucleotide excision repair of DNA. The vaccinia virus A18R gene product is expressed throughout infection and is encapsidated in virions. Vaccinia virions containing mutant A18R gene product are defective in early viral transcription in vitro, and infection with A18R mutant virus results in aberrant viral transcription late during infection. Thus we hypothesize that the vaccinia virus A18R gene product is a helicase that plays a role in viral transcription and possibly DNA repair. As a first test of this hypothesis, we have affinity purified an amino-terminal polyhistidine-tagged A18R protein and shown that it has DNA-dependent ATPase activity. The A18R ATPase activity is stimulated by both single-stranded and double-stranded DNA and by RNA.DNA hybrids, but not by either single-stranded or double-stranded RNA.</ab>
+<no>LR: 20071114; GR: AI18094/AI/NIAID NIH HHS/United States; JID: 2985121R; 0 (DNA-Binding Proteins); 0 (Drosophila Proteins); 0 (Recombinant Proteins); 148998-67-8 (haywire protein, Drosophila); EC 3.6.1.- (Adenosine Triphosphatases); EC 3.6.1.- (DNA Helicases); ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0021-9258; 0021-9258</sn>
+<ad>Department of Molecular Genetics and Microbiology, University of Florida, Gainesville 32610.</ad>
+<an>PMID: 7829483</an>
+<la>eng</la>
+<sf>Comparative Study; Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>7829483</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>798</id>
+<a1>Bayliss,C. D.</a1>
+<a1>Condit,R. C.</a1>
+<t1>Temperature-sensitive mutants in the vaccinia virus A18R gene increase double-stranded RNA synthesis as a result of aberrant viral transcription</t1>
+<jf>Virology</jf>
+<jo>Virology</jo>
+<yr>1993</yr>
+<fd>May</fd>
+<vo>194</vo>
+<is>1</is>
+<sp>254</sp>
+<op>262</op>
+<k1>2&#39;,5&#39;-Oligoadenylate Synthetase/drug effects/metabolism</k1>
+<k1>Dactinomycin/pharmacology</k1>
+<k1>Endoribonucleases/metabolism</k1>
+<k1>Enzyme Activation</k1>
+<k1>Gene Expression Regulation, Viral</k1>
+<k1>Genes, Viral/genetics</k1>
+<k1>Isatin/analogs &amp; derivatives/pharmacology</k1>
+<k1>Mutation</k1>
+<k1>RNA, Double-Stranded/biosynthesis/drug effects</k1>
+<k1>RNA, Ribosomal/metabolism</k1>
+<k1>RNA, Viral/biosynthesis/drug effects</k1>
+<k1>Transcription, Genetic</k1>
+<k1>Vaccinia virus/drug effects/genetics/growth &amp; development</k1>
+<ab>Mutations in the vaccinia gene A18R cause activation of the cellular ribonucleolytic 2-5A pathway. To determine the mechanism of 2-5A pathway activation, mutant infections were analyzed for synthesis of double-stranded RNA and for transcription of individual virus genes. At late times postinfection, A18R mutant-infected cells contained an increased amount of complementary RNA and a higher steady state level of RNA from regions of the genome transcribed normally only early in the infection. The phenotype of A18R ts mutants is indistinguishable from that of wild-type infections done in the presence of isatin-beta-thiosemicarbazone (IBT). Actinomycin D is a potent inhibitor of activation of the 2-5A pathway in IBT-treated wt infections. Based on these observations, we conclude that the phenotype induced by A18R mutants or by IBT treatment of wt infections is caused by a loss of control of late viral transcription.</ab>
+<no>LR: 20071114; GR: R01 AI18094/AI/NIAID NIH HHS/United States; JID: 0110674; 0 (RNA, Double-Stranded); 0 (RNA, Ribosomal); 0 (RNA, Viral); 487-16-1 (isatin beta-thiosemicarbazone); 50-76-0 (Dactinomycin); 91-56-5 (Isatin); EC 2.7.7.- (2&amp;#39;,5&amp;#39;-Oligoadenylate Synthetase); EC 3.1.- (Endoribonucleases); EC 3.1.26.- (pppA(2&amp;#39;p5&amp;#39;A)n-dependent ribonuclease); ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0042-6822; 0042-6822</sn>
+<ad>Department of Immunology and Medical Microbiology, University of Florida, Gainesville 32610.</ad>
+<an>PMID: 8480421; S0042-6822(83)71256-0 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<do>10.1006/viro.1993.1256</do>
+<ol>Unknown(0)</ol>
+<pmid>8480421</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>791</id>
+<a1>Black,E. P.</a1>
+<a1>Condit,R. C.</a1>
+<t1>Phenotypic characterization of mutants in vaccinia virus gene G2R, a putative transcription elongation factor</t1>
+<jf>Journal of virology</jf>
+<jo>J.Virol.</jo>
+<yr>1996</yr>
+<fd>Jan</fd>
+<vo>70</vo>
+<is>1</is>
+<sp>47</sp>
+<op>54</op>
+<k1>Animals</k1>
+<k1>Base Sequence</k1>
+<k1>Cell Line</k1>
+<k1>DNA, Viral/metabolism</k1>
+<k1>Gene Expression Regulation, Viral</k1>
+<k1>Genes, Viral</k1>
+<k1>Molecular Sequence Data</k1>
+<k1>Mutation</k1>
+<k1>Phenotype</k1>
+<k1>RNA, Messenger/metabolism</k1>
+<k1>Transcription Factors/genetics/metabolism</k1>
+<k1>Vaccinia virus/genetics/isolation &amp; purification/metabolism</k1>
+<k1>Viral Proteins/genetics/metabolism</k1>
+<ab>The phenotypic defects of two mutants of vaccinia virus, the lesions of which map to gene G2R, were characterized in vivo, and the results suggest a role for the G2R protein in viral transcription elongation. Both a temperature-sensitive mutant, Cts56, and an isatin-beta-thiosemicarbazone-dependent deletion mutant, G2A, in gene G2R have a characteristic and unique defect in late viral gene expression. The G2R mutants synthesize early viral RNA, early viral proteins, and viral DNA normally under nonpermissive conditions. In G2R mutants, late viral protein synthesis begins at the normal time, low-molecular-weight viral proteins are synthesized in normal quantities, but synthesis of high-molecular-weight viral proteins is reduced in amount. Intermediate and late promoter utilization is normal in G2R mutants, but intermediate and late RNAs are reduced in size. The reduction in length of the intermediate and late mRNAs represents a truncation of mRNA 3&amp;#39; ends. Thus, intermediate and late RNAs are too short to encode large proteins but long enough to encode small proteins, therefore accounting for the protein synthesis phenotype. These results suggest that the G2R protein acts to regulate the elongation potential of the viral RNA polymerase late during a vaccinia virus infection.</ab>
+<no>LR: 20091118; GR: AI18094/AI/NIAID NIH HHS/United States; JID: 0113724; 0 (DNA, Viral); 0 (G2R protein, Vaccinia virus); 0 (RNA, Messenger); 0 (Transcription Factors); 0 (Viral Proteins); OID: NLM: PMC189786; ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0022-538X; 0022-538X</sn>
+<ad>Department of Molecular Genetics and Microbiology, University of Florida, Gainesville 32610-0266, USA.</ad>
+<an>PMID: 8523560</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>8523560</pmid>
+<pmcid>PMC189786</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>787</id>
+<a1>Black,E. P.</a1>
+<a1>Moussatche,N.</a1>
+<a1>Condit,R. C.</a1>
+<t1>Characterization of the interactions among vaccinia virus transcription factors G2R, A18R, and H5R</t1>
+<jf>Virology</jf>
+<jo>Virology</jo>
+<yr>1998</yr>
+<fd>Jun 5</fd>
+<vo>245</vo>
+<is>2</is>
+<sp>313</sp>
+<op>322</op>
+<k1>Adenosine Triphosphatases/genetics/metabolism</k1>
+<k1>Animals</k1>
+<k1>DNA Helicases</k1>
+<k1>DNA-Binding Proteins/genetics/metabolism</k1>
+<k1>Gene Expression Regulation, Viral</k1>
+<k1>Protein Binding</k1>
+<k1>Rabbits</k1>
+<k1>Transcription Factors/genetics/metabolism</k1>
+<k1>Transcription, Genetic</k1>
+<k1>Vaccinia virus/genetics/metabolism</k1>
+<k1>Viral Proteins/genetics/metabolism</k1>
+<ab>Prior genetic analysis suggests that there may exist an interaction between the products of the vaccinia virus genes A18R, a putative negative transcription elongation factor, and G2R, a putative positive transcription elongation factor. In addition, affinity purification of polyhistidine-tagged G2R protein overexpressed in vaccinia virus-infected cells, reported here, results in copurification of the vaccinia H5R protein, previously characterized as a late viral transcription factor. We have therefore used several methods to screen further for interactions among the G2R, A18R, and H5R proteins. Methods include copurification or co-immunoprecipitation of proteins overexpressed during vaccinia virus infection, activation of the gal 4 promoter by gal 4 fusions in the yeast two-hybrid system, and co-immunoprecipitation of proteins synthesized in vitro in a rabbit reticulocyte lysate. The results reveal interactions which include all possible pairwise combinations of the three proteins G2R, A18R, and H5R; however, not all possible permutations of the interactions are observed and the interactions are not observed in all environments tested. The results suggest that the vaccinia virus proteins G2R, A18R, and H5R interact as part of a higher order transcription complex.</ab>
+<no>LR: 20071114; GR: AI 10894/AI/NIAID NIH HHS/United States; JID: 0110674; 0 (DNA-Binding Proteins); 0 (G2R protein, Vaccinia virus); 0 (H5R protein, Vaccinia virus); 0 (Transcription Factors); 0 (Viral Proteins); EC 3.6.1.- (Adenosine Triphosphatases); EC 3.6.1.- (DNA Helicases); ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0042-6822; 0042-6822</sn>
+<ad>Department of Molecular Genetics and Microbiology, University of Florida, Gainesville 32610, USA.</ad>
+<an>PMID: 9636370; S0042-6822(98)99166-8 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<do>10.1006/viro.1998.9166</do>
+<ol>Unknown(0)</ol>
+<pmid>9636370</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>756</id>
+<a1>Boyd,O.</a1>
+<a1>Strahl,A. L.</a1>
+<a1>Rodeffer,C.</a1>
+<a1>Condit,R. C.</a1>
+<a1>Moussatche,N.</a1>
+<t1>Temperature-sensitive mutant in the vaccinia virus E6 protein produce virions that are transcriptionally inactive</t1>
+<jf>Virology</jf>
+<jo>Virology</jo>
+<yr>2010</yr>
+<fd>Apr 10</fd>
+<vo>399</vo>
+<is>2</is>
+<sp>221</sp>
+<op>230</op>
+<k1>Animals</k1>
+<k1>Cell Line</k1>
+<k1>Cercopithecus aethiops</k1>
+<k1>DNA, Viral/biosynthesis/genetics</k1>
+<k1>Hot Temperature</k1>
+<k1>Mutation</k1>
+<k1>Plaque Assay</k1>
+<k1>Transcription, Genetic</k1>
+<k1>Vaccinia virus/genetics/metabolism/physiology</k1>
+<k1>Viral Core Proteins/genetics/metabolism</k1>
+<k1>Virion/genetics/metabolism/physiology</k1>
+<k1>Virus Attachment</k1>
+<k1>Virus Internalization</k1>
+<k1>Virus Replication</k1>
+<ab>The vaccinia virus E6R gene encodes a late protein that is packaged into virion cores. A temperature-sensitive mutant was used to study the role of this protein in viral replicative cycle. Cts52 has a P226L missense mutation in the E6R gene, shows a two-log reduction in plaque formation, but displays normal patterns of gene expression, late protein processing and DNA replication during infection. Mutant virions produced at 40 degrees C were similar in their morphology to wt virions grown at 40 degrees C. The particle to infectivity ratio was 50 times higher in purified Cts52 grown at 40 degrees C when compared to the mutant grown at permissive temperature. In vitro characterization of Cts-52 particles grown at 40 degrees C revealed no differences in protein composition or in DNA content and the mutant virions could bind and enter cells. However, core particles prepared from Cts52 grown at 40 degrees C failed to transcribe in vitro. Our results show that E6 in the virion has either a direct or an indirect role in viral transcription.</ab>
+<no>CI: Published by Elsevier Inc.; GR: R01 AI055560/AI/NIAID NIH HHS/United States; JID: 0110674; 0 (DNA, Viral); 0 (Viral Core Proteins); NIHMS171035; OID: NLM: NIHMS171035 [Available on 04/10/11]; OID: NLM: PMC2830351 [Available on 04/10/11]; 2009/10/02 [received]; 2010/01/04 [revised]; 2010/01/07 [accepted]; 2010/02/08 [aheadofprint]; ppublish</no>
+<pp>United States</pp>
+<sn>1096-0341; 0042-6822</sn>
+<ad>Department of Molecular Genetics and Microbiology, University of Florida, Gainesville, FL 32610, USA.</ad>
+<an>PMID: 20116822; S0042-6822(10)00027-9 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, N.I.H., Extramural; IM</sf>
+<do>10.1016/j.virol.2010.01.010</do>
+<wp>20100208</wp>
+<ol>Unknown(0)</ol>
+<pmid>20116822</pmid>
+<pmcid>PMC2830351</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>777</id>
+<a1>Coberley,S. S.</a1>
+<a1>Condit,R. C.</a1>
+<a1>Herbst,L. H.</a1>
+<a1>Klein,P. A.</a1>
+<t1>Identification and expression of immunogenic proteins of a disease-associated marine turtle herpesvirus</t1>
+<jf>Journal of virology</jf>
+<jo>J.Virol.</jo>
+<yr>2002</yr>
+<fd>Oct</fd>
+<vo>76</vo>
+<is>20</is>
+<sp>10553</sp>
+<op>10558</op>
+<k1>Alphaherpesvirinae/chemistry/classification/genetics</k1>
+<k1>Animals</k1>
+<k1>Base Sequence</k1>
+<k1>Capsid/genetics</k1>
+<k1>DNA, Viral</k1>
+<k1>Herpesviridae/chemistry/classification/genetics</k1>
+<k1>Herpesviridae Infections/veterinary/virology</k1>
+<k1>Humans</k1>
+<k1>Molecular Sequence Data</k1>
+<k1>Serine Endopeptidases/genetics</k1>
+<k1>Turtles/virology</k1>
+<k1>Viral Envelope Proteins/genetics</k1>
+<k1>Viral Proteins/analysis/genetics</k1>
+<ab>Herpesviruses are associated with several diseases of marine turtles, including lung-eye-trachea disease (LETD) and fibropapillomatosis. Two approaches were used to identify immunodominant antigens of LETV, the LETD-associated herpesvirus. The first approach targeted glycoprotein B, which is known to be immunogenic and neutralizing in other species. The second strategy identified LETV proteins recognized on Western blots by antibodies in immune green turtle plasma. A 38-kDa protein was resolved by two-dimensional gel electrophoresis, sequenced, and identified as a scaffolding protein encoded by the overlapping open reading frames of UL26 and UL26.5. Glycoprotein B and the scaffolding protein were cloned and expressed in Escherichia coli. The expressed proteins were recognized on Western blots by antibodies in immune green turtle plasma. Phylogenetic studies based on UL26, DNA polymerase, and glycoprotein B revealed that LETV clusters with the alphaherpesviruses.</ab>
+<no>LR: 20091118; GENBANK/AY124577; GENBANK/AY124578; JID: 0113724; 0 (DNA, Viral); 0 (ICP35 protein, Human herpesvirus 1); 0 (Viral Envelope Proteins); 0 (Viral Proteins); 0 (glycoprotein B, Simplexvirus); 0 (scaffold protein, Herpes simplex virus-1); 139381-88-7 (DNA cleavage and packaging proteins, Herpesvirus); EC 3.4.21.- (Serine Endopeptidases); OID: NLM: PMC136575; ppublish</no>
+<pp>United States</pp>
+<sn>0022-538X; 0022-538X</sn>
+<ad>Interdisciplinary Program in Biomedical Science, College of Medicine, University of Florida, Gainesville, FL 32610, USA.</ad>
+<an>PMID: 12239336</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, Non-P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>12239336</pmid>
+<pmcid>PMC136575</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>808</id>
+<a1>Cohrs,R. J.</a1>
+<a1>Condit,R. C.</a1>
+<a1>Pacha,R. F.</a1>
+<a1>Thompson,C. L.</a1>
+<a1>Sharma,O. K.</a1>
+<t1>Modulation of ppp(A2&amp;#39;p)nA-dependent RNase by a temperature-sensitive mutant of vaccinia virus</t1>
+<jf>Journal of virology</jf>
+<jo>J.Virol.</jo>
+<yr>1989</yr>
+<fd>Feb</fd>
+<vo>63</vo>
+<is>2</is>
+<sp>948</sp>
+<op>951</op>
+<k1>Adenine Nucleotides/analysis</k1>
+<k1>Cell Line</k1>
+<k1>Endoribonucleases/metabolism</k1>
+<k1>Enzyme Activation/drug effects</k1>
+<k1>Isatin/analogs &amp; derivatives/pharmacology</k1>
+<k1>Oligoribonucleotides/analysis</k1>
+<k1>Phenotype</k1>
+<k1>RNA, Ribosomal/metabolism</k1>
+<k1>Temperature</k1>
+<k1>Vaccinia virus/genetics/physiology</k1>
+<k1>Virus Replication</k1>
+<ab>Activation of the ppp(A2&amp;#39;p)nA (2-5A)-dependent RNase was investigated during the abortive infection of BSC40 cells by a temperature-sensitive mutant of vaccinia virus, ts22. At the nonpermissive temperature, ts22 has an abortive late phenotype. At the onset of late-viral-gene expression, viral mRNA is degraded and rRNA is cleaved into discrete fragments in the absence of prior interferon treatment (R. F. Pacha and R. C. Condit, J. Virol. 56:395-403, 1985). Concomitant with rRNA cleavage, an increase in 2-5A occurred late during infection. Discrete 18S- and 28S-rRNA degradation products from BSC40 cells infected with ts22 at the nonpermissive temperature comigrated in denaturing agarose gels with rRNA cleaved fragments produced by the activation of 2-5A-dependent RNase in uninfected cells transfected with exogenous 2-5A. An increase in 2-5A levels and a similar discrete and characteristic degradation of rRNA were observed in BSC40 cells infected with wild-type vaccinia virus in the presence of isatin-beta-thiosemicarbazone. The results show that the ts22 lesion and the action of isatin-beta-thiosemicarbazone may affect the same pathway, leading to the activation of latent 2-5A-dependent RNase and resulting in indiscriminate RNA degradation and inhibition of viral replication.</ab>
+<no>LR: 20091118; GR: AI18094/AI/NIAID NIH HHS/United States; GR: HD20612/HD/NICHD NIH HHS/United States; JID: 0113724; 0 (Adenine Nucleotides); 0 (Oligoribonucleotides); 0 (RNA, Ribosomal); 487-16-1 (isatin beta-thiosemicarbazone); 61172-40-5 (2&amp;#39;,5&amp;#39;-oligoadenylate); 91-56-5 (Isatin); EC 3.1.- (Endoribonucleases); EC 3.1.26.- (pppA(2&amp;#39;p5&amp;#39;A)n-dependent ribonuclease); OID: NLM: PMC247771; ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0022-538X; 0022-538X</sn>
+<ad>Laboratory of Molecular Biology, AMC Cancer Research Center, Denver, Colorado 80214.</ad>
+<an>PMID: 2911126</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>2911126</pmid>
+<pmcid>PMC247771</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>804</id>
+<a1>Colinas,R. J.</a1>
+<a1>Condit,R. C.</a1>
+<a1>Paoletti,E.</a1>
+<t1>Extrachromosomal recombination in vaccinia-infected cells requires a functional DNA polymerase participating at a level other than DNA replication</t1>
+<jf>Virus research</jf>
+<jo>Virus Res.</jo>
+<yr>1990</yr>
+<fd>Dec</fd>
+<vo>18</vo>
+<is>1</is>
+<sp>49</sp>
+<op>70</op>
+<k1>Animals</k1>
+<k1>Cells, Cultured/microbiology</k1>
+<k1>Cytarabine/pharmacology</k1>
+<k1>DNA Replication/drug effects</k1>
+<k1>DNA, Viral/biosynthesis</k1>
+<k1>DNA-Directed DNA Polymerase/genetics</k1>
+<k1>Genetic Markers</k1>
+<k1>Hot Temperature</k1>
+<k1>Hydroxyurea/pharmacology</k1>
+<k1>Lac Operon</k1>
+<k1>Mutation</k1>
+<k1>Phosphonoacetic Acid/pharmacology</k1>
+<k1>Plasmids</k1>
+<k1>Recombination, Genetic</k1>
+<k1>Sequence Homology, Nucleic Acid</k1>
+<k1>Vaccinia virus/drug effects/enzymology/genetics/growth &amp; development</k1>
+<k1>Virus Replication/drug effects</k1>
+<k1>beta-Galactosidase/biosynthesis/genetics</k1>
+<ab>Homologous recombination was measured in vaccinia-infected cells cotransfected with two plasmid recombination substrates. One plasmid contains a vaccinia protein lacZ coding region bearing a 1.1 kb 3&amp;#39; terminal deletion while the other plasmid contains a non-promoted lacZ coding region bearing a 1.1 kb 5&amp;#39; terminal deletion. Homologous recombination occurring between the 825 bp of lacZ common to both plasmids regenerates a functional lacZ gene from which B-galactosidase expression was measured. The entire 3 kb lacZ gene was used as a positive control. A panel of thermosensitive mutants was screened in cells either transfected with the positive control plasmid or cotransfected with the recombination substrates. A DNA - mutant, ts42, known to map to the viral DNA polymerase gene was found to be defective in recombination. Significantly, other DNA - mutants, ts17 or ts25, or other DNA polymerase mutants did not exhibit a defect in recombination similar to ts42. Inhibitors of viral DNA synthesis did not uniformly affect recombination. Cytosine arabinoside and aphidicolin inhibited B-galactosidase expression from the recombination substrates but not from the positive control plasmid, whereas hydroxyurea enhanced expression from both. Marker rescue with the cloned wildtype DNA polymerase gene repaired the defect in ts42. Southern and western analyses demonstrated that B-galactosidase activity was consistent with a recombined lacZ gene and unit size 116 kDa protein. Measurement of plasmid and viral DNA replication in cells infected with the different DNA - mutants indicated that recombination was independent of plasmid and viral DNA replication. Together these results suggest that the vaccinia DNA polymerase participates in homologous recombination at a level other than that of DNA replication.</ab>
+<no>LR: 20081121; JID: 8410979; 0 (DNA, Viral); 0 (Genetic Markers); 127-07-1 (Hydroxyurea); 147-94-4 (Cytarabine); 4408-78-0 (Phosphonoacetic Acid); EC 2.7.7.7 (DNA-Directed DNA Polymerase); EC 3.2.1.23 (beta-Galactosidase); ppublish</no>
+<pp>NETHERLANDS</pp>
+<sn>0168-1702; 0168-1702</sn>
+<ad>Department of Microbiology and Immunology, Albany Medical College, New York 12208.</ad>
+<an>PMID: 2127968; 0168-1702(90)90089-T [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, Non-P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>2127968</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>754</id>
+<a1>Condit,R. C.</a1>
+<t1>Whence feral vaccinia?</t1>
+<jf>Emerging infectious diseases</jf>
+<jo>Emerg.Infect.Dis.</jo>
+<yr>2010</yr>
+<fd>Jun</fd>
+<vo>16</vo>
+<is>6</is>
+<sp>1022</sp>
+<no>JID: 9508155; CON: Emerg Infect Dis. 2010 Jun;16(6):976-9. PMID: 20507750; ppublish</no>
+<pp>United States</pp>
+<sn>1080-6059; 1080-6040</sn>
+<ad>Department of Molecular Genetics and Microbiology, University of Florida, Gainesville, Florida 32610, USA. condit@mgm.ufl .edu</ad>
+<an>PMID: 20507763</an>
+<la>eng</la>
+<sf>Comment; Journal Article; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>20507763</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>762</id>
+<a1>Condit,R. C.</a1>
+<t1>Vaccinia, Inc.--probing the functional substructure of poxviral replication factories</t1>
+<jf>Cell host &amp; microbe</jf>
+<jo>Cell.Host Microbe</jo>
+<yr>2007</yr>
+<fd>Oct 11</fd>
+<vo>2</vo>
+<is>4</is>
+<sp>205</sp>
+<op>207</op>
+<k1>Animals</k1>
+<k1>Cytoplasm/metabolism/virology</k1>
+<k1>Humans</k1>
+<k1>Poxviridae/physiology</k1>
+<k1>Viral Proteins/metabolism</k1>
+<k1>Virus Replication</k1>
+<ab>Poxviruses replicate in viral factories in the host cell cytoplasm. In this issue of Cell Host &amp;amp; Microbe, Katsafanas and Moss identify discrete poxviral factory subdomains that contain locally synthesized virus proteins and specifically imported host proteins, and within which viral transcription and translation take place simultaneously. These factories thus comprise a highly structured virus organelle that isolates and coordinates late viral replication events, facilitating competition for cellular resources.</ab>
+<no>JID: 101302316; 0 (Viral Proteins); CON: Cell Host Microbe. 2007 Oct 11;2(4):221-8. PMID: 18005740; RF: 10; ppublish</no>
+<pp>United States</pp>
+<sn>1934-6069</sn>
+<ad>Department of Molecular Genetics and Microbiology, University of Florida, P.O. Box 100266, Gainesville, FL 31610, USA. condit@mgm.ufl.edu</ad>
+<an>PMID: 18005735; S1931-3128(07)00225-9 [pii]</an>
+<la>eng</la>
+<sf>Comment; Journal Article; Review; IM</sf>
+<do>10.1016/j.chom.2007.09.009</do>
+<ol>Unknown(0)</ol>
+<pmid>18005735</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>825</id>
+<a1>Condit,R. C.</a1>
+<t1>F factor-mediated inhibition of bacteriophage T7 growth: increased membrane permeability and decreased ATP levels following T7 infection of male Escherichia coli</t1>
+<jf>Journal of Molecular Biology</jf>
+<jo>J.Mol.Biol.</jo>
+<yr>1975</yr>
+<fd>Oct 15</fd>
+<vo>98</vo>
+<is>1</is>
+<sp>45</sp>
+<op>59</op>
+<k1>Adenosine Triphosphate/metabolism</k1>
+<k1>Bacterial Proteins/pharmacology/physiology</k1>
+<k1>Cell Membrane Permeability</k1>
+<k1>Coliphages/metabolism</k1>
+<k1>Escherichia coli/metabolism/physiology/radiation effects</k1>
+<k1>Extrachromosomal Inheritance</k1>
+<k1>Genotype</k1>
+<k1>Mutation</k1>
+<k1>Plasmids</k1>
+<k1>Radiation Effects</k1>
+<k1>Species Specificity</k1>
+<k1>Ultraviolet Rays</k1>
+<k1>Virus Replication/drug effects</k1>
+<no>LR: 20061115; JID: 2985088R; 0 (Bacterial Proteins); 56-65-5 (Adenosine Triphosphate); ppublish</no>
+<pp>ENGLAND</pp>
+<sn>0022-2836; 0022-2836</sn>
+<an>PMID: 1104868</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>1104868</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>823</id>
+<a1>Condit,R. C.</a1>
+<a1>Cowie,A.</a1>
+<a1>Kamen,R.</a1>
+<a1>Birg,F.</a1>
+<t1>Polyoma virus transcription in vitro</t1>
+<jf>Journal of Molecular Biology</jf>
+<jo>J.Mol.Biol.</jo>
+<yr>1977</yr>
+<fd>Sep 15</fd>
+<vo>115</vo>
+<is>2</is>
+<sp>215</sp>
+<op>235</op>
+<k1>DNA, Viral/analysis/genetics</k1>
+<k1>DNA-Directed RNA Polymerases/metabolism</k1>
+<k1>Nucleic Acid Hybridization</k1>
+<k1>Nucleoproteins/analysis</k1>
+<k1>Polyomavirus/enzymology/genetics</k1>
+<k1>RNA, Viral/biosynthesis/genetics</k1>
+<k1>Transcription, Genetic</k1>
+<no>LR: 20061115; JID: 2985088R; 0 (DNA, Viral); 0 (Nucleoproteins); 0 (RNA, Viral); EC 2.7.7.6 (DNA-Directed RNA Polymerases); ppublish</no>
+<pp>ENGLAND</pp>
+<sn>0022-2836; 0022-2836</sn>
+<an>PMID: 201759; 0022-2836(77)90098-5 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>201759</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>799</id>
+<a1>Condit,R. C.</a1>
+<a1>Easterly,R.</a1>
+<a1>Pacha,R. F.</a1>
+<a1>Fathi,Z.</a1>
+<a1>Meis,R. J.</a1>
+<t1>A vaccinia virus isatin-beta-thiosemicarbazone resistance mutation maps in the viral gene encoding the 132-kDa subunit of RNA polymerase</t1>
+<jf>Virology</jf>
+<jo>Virology</jo>
+<yr>1991</yr>
+<fd>Dec</fd>
+<vo>185</vo>
+<is>2</is>
+<sp>857</sp>
+<op>861</op>
+<k1>Blotting, Southern</k1>
+<k1>Cloning, Molecular</k1>
+<k1>Cosmids/genetics</k1>
+<k1>DNA Probes/genetics</k1>
+<k1>DNA-Directed RNA Polymerases/genetics</k1>
+<k1>Drug Resistance/genetics</k1>
+<k1>Genes, Viral/genetics</k1>
+<k1>Isatin/analogs &amp; derivatives/pharmacology</k1>
+<k1>Mutation/genetics</k1>
+<k1>Plasmids/genetics</k1>
+<k1>Vaccinia virus/drug effects/genetics</k1>
+<ab>The mutation in a vaccinia virus mutant resistant to inhibition by isatin-beta-thiosemicarbazone was mapped by marker rescue. DNA from the resistant mutant was cloned into cosmid and plasmid vectors and tested for its ability to convert wild-type vaccinia virus to IBT resistant virus in a helper-mediated marker rescue protocol. Resistance was mapped in this way to a 0.9-kb DNA fragment derived from the HindIII A fragment of vaccinia genome. Southern blot hybridization using this DNA as a probe demonstrated that the 0.9-kb fragment is contained within the DNA sequence encoding the second largest subunit of vaccinia RNA polymerase, rpo132. Thus, mutation of rpo132 can cause resistance to IBT in vaccinia virus.</ab>
+<no>LR: 20071114; GR: R01 AI18094/AI/NIAID NIH HHS/United States; JID: 0110674; 0 (DNA Probes); 487-16-1 (isatin beta-thiosemicarbazone); 91-56-5 (Isatin); EC 2.7.7.6 (DNA-Directed RNA Polymerases); ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0042-6822; 0042-6822</sn>
+<ad>Department of Immunology and Medical Microbiology, University of Florida, Gainesville 32610-0266.</ad>
+<an>PMID: 1962456; 0042-6822(91)90559-T [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>1962456</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>827</id>
+<a1>Condit,R. C.</a1>
+<a1>Glodberg,M. L.</a1>
+<a1>Steitz,J. A.</a1>
+<t1>Genome independent specificity of DNA-directed fMet-dipeptide synthesis</t1>
+<jf>Journal of Molecular Biology</jf>
+<jo>J.Mol.Biol.</jo>
+<yr>1973</yr>
+<fd>Apr 5</fd>
+<vo>75</vo>
+<is>2</is>
+<sp>449</sp>
+<op>454</op>
+<k1>Binding Sites</k1>
+<k1>Chromatography, Paper</k1>
+<k1>DNA, Bacterial/metabolism</k1>
+<k1>DNA, Single-Stranded/metabolism</k1>
+<k1>Dipeptides/analysis/biosynthesis</k1>
+<k1>Electrophoresis, Paper</k1>
+<k1>Escherichia coli/cytology/metabolism</k1>
+<k1>Formic Acids/metabolism</k1>
+<k1>Methionine/metabolism</k1>
+<k1>Nucleic Acid Denaturation</k1>
+<k1>Protein Binding</k1>
+<k1>Ribosomes/metabolism</k1>
+<k1>Sulfur Isotopes</k1>
+<no>LR: 20001218; JID: 2985088R; 0 (DNA, Bacterial); 0 (DNA, Single-Stranded); 0 (Dipeptides); 0 (Formic Acids); 0 (Sulfur Isotopes); 63-68-3 (Methionine); ppublish</no>
+<pp>ENGLAND</pp>
+<sn>0022-2836; 0022-2836</sn>
+<an>PMID: 4580686</an>
+<la>eng</la>
+<sf>Journal Article; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>4580686</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>790</id>
+<a1>Condit,R. C.</a1>
+<a1>Lewis,J. I.</a1>
+<a1>Quinn,M.</a1>
+<a1>Christen,L. M.</a1>
+<a1>Niles,E. G.</a1>
+<t1>Use of lysolecithin-permeabilized infected-cell extracts to investigate the in vitro biochemical phenotypes of poxvirus ts mutations altered in viral transcription activity</t1>
+<jf>Virology</jf>
+<jo>Virology</jo>
+<yr>1996</yr>
+<fd>Apr 1</fd>
+<vo>218</vo>
+<is>1</is>
+<sp>169</sp>
+<op>180</op>
+<k1>Base Sequence</k1>
+<k1>Cell Membrane Permeability/drug effects</k1>
+<k1>Gene Expression Regulation, Viral</k1>
+<k1>Humans</k1>
+<k1>Lysophosphatidylcholines/pharmacology</k1>
+<k1>Molecular Sequence Data</k1>
+<k1>Mutation</k1>
+<k1>Nucleotidyltransferases/metabolism</k1>
+<k1>Phenotype</k1>
+<k1>Promoter Regions, Genetic</k1>
+<k1>Transcription, Genetic</k1>
+<k1>Vaccinia virus/enzymology/genetics</k1>
+<ab>Lysolecithin permeabilization of vaccinia virus-infected cells was employed to prepare extracts that support faithful transcription initiation in vitro on plasmids possessing early, intermediate, and late viral gene promoters. Conditions which optimize transcription from each promoter were defined. The in vitro system was used to investigate the multifunctional viral mRNA capping enzyme, which also functions as the viral early gene transcription termination factor (VTF) and a viral intermediate gene transcription initiation factor. A low level of signal-dependent termination of early gene transcription was observed in vitro which could be elevated by the addition of pure mRNA capping enzyme. VTF-dependent transcription termination was found to be restricted to templates that possessed an early promoter. This restriction mimics that observed in vivo and demonstrates that transcription termination is limited to RNA polymerase molecules that recognize early rather than intermediate or late gene promoters. Extracts prepared from cells infected at the nonpermissive temperature with a virus containing a ts mutation in gene D12L, which encodes the small subunit of VTF, are incapable of supporting both early gene transcription termination and intermediate gene transcription initiation. Both activities are restored upon addition of the purified wild-type mRNA capping enzyme.</ab>
+<no>LR: 20081121; GR: AI18094/AI/NIAID NIH HHS/United States; GR: AI28824/AI/NIAID NIH HHS/United States; JID: 0110674; 0 (Lysophosphatidylcholines); EC 2.7.7.- (Nucleotidyltransferases); EC 2.7.7.50 (mRNA guanylyltransferase); ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0042-6822; 0042-6822</sn>
+<ad>Department of Molecular Genetics and Microbiology, University of Florida, Gainesville, 32610, USA.</ad>
+<an>PMID: 8615020; S0042-6822(96)90177-4 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<do>10.1006/viro.1996.0177</do>
+<ol>Unknown(0)</ol>
+<pmid>8615020</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>821</id>
+<a1>Condit,R. C.</a1>
+<a1>Motyczka,A.</a1>
+<t1>Isolation and preliminary characterization of temperature-sensitive mutants of vaccinia virus</t1>
+<jf>Virology</jf>
+<jo>Virology</jo>
+<yr>1981</yr>
+<fd>Aug</fd>
+<vo>113</vo>
+<is>1</is>
+<sp>224</sp>
+<op>241</op>
+<k1>Bromodeoxyuridine/pharmacology</k1>
+<k1>DNA, Viral/biosynthesis</k1>
+<k1>Genetic Complementation Test</k1>
+<k1>Hydroxylamine</k1>
+<k1>Hydroxylamines/pharmacology</k1>
+<k1>Mutation</k1>
+<k1>Nitrosoguanidines/pharmacology</k1>
+<k1>Phosphonoacetic Acid/pharmacology</k1>
+<k1>Recombination, Genetic</k1>
+<k1>Temperature</k1>
+<k1>Vaccinia virus/genetics/isolation &amp; purification</k1>
+<k1>Viral Proteins/biosynthesis</k1>
+<no>LR: 20071114; GR: 2S07RR05400-19/RR/NCRR NIH HHS/United States; JID: 0110674; 0 (DNA, Viral); 0 (Hydroxylamines); 0 (Nitrosoguanidines); 0 (Viral Proteins); 4408-78-0 (Phosphonoacetic Acid); 59-14-3 (Bromodeoxyuridine); 7803-49-8 (Hydroxylamine); ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0042-6822; 0042-6822</sn>
+<an>PMID: 7269240</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, Non-P.H.S.; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>7269240</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>819</id>
+<a1>Condit,R. C.</a1>
+<a1>Motyczka,A.</a1>
+<a1>Spizz,G.</a1>
+<t1>Isolation, characterization, and physical mapping of temperature-sensitive mutants of vaccinia virus</t1>
+<jf>Virology</jf>
+<jo>Virology</jo>
+<yr>1983</yr>
+<fd>Jul 30</fd>
+<vo>128</vo>
+<is>2</is>
+<sp>429</sp>
+<op>443</op>
+<k1>DNA, Viral/biosynthesis</k1>
+<k1>Genes, Viral</k1>
+<k1>Genetic Complementation Test</k1>
+<k1>Genetic Markers</k1>
+<k1>Mutation</k1>
+<k1>Temperature</k1>
+<k1>Vaccinia virus/genetics/isolation &amp; purification/metabolism</k1>
+<k1>Viral Proteins/biosynthesis</k1>
+<ab>Thirty-nine new temperature-sensitive mutants of vaccinia virus have been isolated, expanding a previously reported collection of mutants (R. C. Condit and A. Motyczka, Virology 113, 224-241, 1981) to a total of 65. The 65 mutants have been assigned to 32 complementation groups, based primarily on a qualitative spot test described previously (Condit and Motyczka, 1981). Representatives of each complementation group have been assayed for DNA and protein synthesis at the nonpermissive temperature, revealing one new DNA-negative complementation group, three new groups which contain mutants defective in late protein synthesis, and ten new groups containing mutants which synthesize DNA and protein in a normal fashion. Marker rescue has been achieved with 29 of the 65 mutants using cloned DNA fragments from wild-type virus. These 29 mutants together represent 20 of the 32 complementation groups. A preliminary physical map of the mutants is presented.</ab>
+<no>LR: 20071114; GR: 5 RO1 AI 18094/AI/NIAID NIH HHS/United States; JID: 0110674; 0 (DNA, Viral); 0 (Genetic Markers); 0 (Viral Proteins); ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0042-6822; 0042-6822</sn>
+<an>PMID: 6577746</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, Non-P.H.S.; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>6577746</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>767</id>
+<a1>Condit,R. C.</a1>
+<a1>Moussatche,N.</a1>
+<a1>Traktman,P.</a1>
+<t1>In a nutshell: structure and assembly of the vaccinia virion</t1>
+<jf>Advances in Virus Research</jf>
+<jo>Adv.Virus Res.</jo>
+<yr>2006</yr>
+<vo>66</vo>
+<sp>31</sp>
+<op>124</op>
+<k1>Vaccinia virus/genetics/metabolism/ultrastructure</k1>
+<k1>Viral Proteins/genetics/metabolism</k1>
+<k1>Virion/genetics/metabolism/ultrastructure</k1>
+<k1>Virus Assembly</k1>
+<ab>Poxviruses comprise a large family of viruses characterized by a large, linear dsDNA genome, a cytoplasmic site of replication and a complex virion morphology. The most notorious member of the poxvirus family is variola, the causative agent of smallpox. The laboratory prototype virus used for the study of poxviruses is vaccinia, the virus that was used as a live, naturally attenuated vaccine for the eradication of smallpox. Both the morphogenesis and structure of poxvirus virions are unique among viruses. Poxvirus virions apparently lack any of the symmetry features common to other viruses such as helical or icosahedral capsids or nucleocapsids. Instead poxvirus virions appear as &amp;quot;brick shaped&amp;quot; or &amp;quot;ovoid&amp;quot; membrane-bound particles with a complex internal structure featuring a walled, biconcave core flanked by &amp;quot;lateral bodies.&amp;quot; The virion assembly pathway involves a remarkable fabrication of membrane-containing crescents and immature virions, which evolve into mature virions in a process that is unparalleled in virology. As a result of significant advances in poxvirus genetics and molecular biology during the past 15 years, we can now positively identify over 70 specific gene products contained in poxvirus virions, and we can describe the effects of mutations in over 50 specific genes on poxvirus assembly. This review summarizes these advances and attempts to assemble them into a comprehensible and thoughtful picture of poxvirus structure and assembly.</ab>
+<no>LR: 20071114; GR: 1-U54-AI057153/AI/NIAID NIH HHS/United States; GR: 5R01-AI055560/AI/NIAID NIH HHS/United States; GR: 9R01 AI 063620-11/AI/NIAID NIH HHS/United States; JID: 0370441; 0 (Viral Proteins); RF: 240; ppublish</no>
+<pp>United States</pp>
+<sn>0065-3527; 0065-3527</sn>
+<ad>Department of Molecular Genetics and Microbiology, University of Florida, Gainesville, 32610, USA.</ad>
+<an>PMID: 16877059; S0065-3527(06)66002-8 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, N.I.H., Extramural; Review; IM</sf>
+<do>10.1016/S0065-3527(06)66002-8</do>
+<ol>Unknown(0)</ol>
+<pmid>16877059</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>778</id>
+<a1>Condit,R. C.</a1>
+<a1>Niles,E. G.</a1>
+<t1>Regulation of viral transcription elongation and termination during vaccinia virus infection</t1>
+<jf>Biochimica et biophysica acta</jf>
+<jo>Biochim.Biophys.Acta</jo>
+<yr>2002</yr>
+<fd>Sep 13</fd>
+<vo>1577</vo>
+<is>2</is>
+<sp>325</sp>
+<op>336</op>
+<k1>DNA-Directed RNA Polymerases/metabolism</k1>
+<k1>Gene Expression Regulation, Viral</k1>
+<k1>Genome, Viral</k1>
+<k1>Nucleotidyltransferases/metabolism</k1>
+<k1>Peptide Chain Elongation, Translational</k1>
+<k1>Peptide Chain Termination, Translational</k1>
+<k1>Transcription, Genetic</k1>
+<k1>Vaccinia/genetics</k1>
+<k1>Vaccinia virus/genetics/metabolism</k1>
+<ab>Vaccinia virus provides a useful genetic and biochemical tool for studies of the basic mechanisms of eukaryotic transcription. Vaccinia genes are transcribed in three successive gene classes during infection, early, intermediate, and late. Vaccinia transcription is regulated primarily by virus gene products not only during initiation, but also during elongation and termination. The factors and mechanisms regulating early elongation and termination differ from those regulating intermediate and late gene expression. Control of transcription elongation and termination in vaccinia virus bears some similarity to the same process in other prokaryotic and eukaryotic systems, yet features some novel mechanisms as well.</ab>
+<no>LR: 20061115; JID: 0217513; EC 2.7.7.- (Nucleotidyltransferases); EC 2.7.7.50 (mRNA guanylyltransferase); EC 2.7.7.6 (DNA-Directed RNA Polymerases); RF: 150; ppublish</no>
+<pp>Netherlands</pp>
+<sn>0006-3002; 0006-3002</sn>
+<ad>Department of Molecular Genetics and Microbiology, P.O. Box 100266, University of Florida, Gainesville, FL 32610, USA. condit@mgm.ufl.edu</ad>
+<an>PMID: 12213661; S016747810200461X [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Review; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>12213661</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>807</id>
+<a1>Condit,R. C.</a1>
+<a1>Niles,E. G.</a1>
+<t1>Orthopoxvirus genetics</t1>
+<jf>Current topics in microbiology and immunology</jf>
+<jo>Curr.Top.Microbiol.Immunol.</jo>
+<yr>1990</yr>
+<vo>163</vo>
+<sp>1</sp>
+<op>39</op>
+<k1>Poxviridae/genetics</k1>
+<ab>Genetic analysis of orthopoxviruses has contributed substantially to our understanding of the functional organization of the poxvirus genome, and individual mutants provide invaluable tools for future studies of poxvirus biology. Deletion and transposition mutants, localized primarily in the termini of the genome, may be particularly useful for studying virus host range and pathogenicity. Numerous drug resistant and dependent mutants provide keys to understanding a wide variety of virus genes. A large number of well-characterized ts mutants, clustered in the center of the virus genome, are taking on an increasingly important role in research on the function of essential poxvirus genes. Genetic characterization of orthopoxviruses has progressed rapidly during the past decade, and one can reasonably anticipate a time when mutants will be available for the study of any poxvirus gene. Considerable progress toward this goal can be achieved through organized attempts to integrate and further characterize existing mutant collections and through the continued isolation and characterization of deletion, drug resistant, and ts mutants using established techniques. The most exciting possibility is that soon techniques will be available for directed mutagenesis to conditional lethality of any essential poxvirus gene.</ab>
+<no>LR: 20041117; JID: 0110513; RF: 131; ppublish</no>
+<pp>GERMANY</pp>
+<sn>0070-217X; 0070-217X</sn>
+<ad>Department of Biochemistry, SUNY/Buffalo 14214.</ad>
+<an>PMID: 2242678</an>
+<la>eng</la>
+<sf>Journal Article; Review; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>2242678</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>826</id>
+<a1>Condit,R. C.</a1>
+<a1>Steitz,J. A.</a1>
+<t1>F factor-mediated inhibition of bacteriophage T7 growth: analysis of T7 RNA and protein synthesis in vivo and in vitro using male and female Escherichia coli</t1>
+<jf>Journal of Molecular Biology</jf>
+<jo>J.Mol.Biol.</jo>
+<yr>1975</yr>
+<fd>Oct 15</fd>
+<vo>98</vo>
+<is>1</is>
+<sp>31</sp>
+<op>43</op>
+<k1>Bacterial Proteins/pharmacology/physiology</k1>
+<k1>Coliphages/drug effects/metabolism</k1>
+<k1>Escherichia coli/metabolism/physiology</k1>
+<k1>Genotype</k1>
+<k1>Plasmids</k1>
+<k1>Protein Biosynthesis/drug effects</k1>
+<k1>RNA, Viral/biosynthesis</k1>
+<k1>Species Specificity</k1>
+<k1>Transcription, Genetic/drug effects</k1>
+<k1>Viral Proteins/biosynthesis</k1>
+<k1>Virus Replication/drug effects</k1>
+<no>LR: 20061115; JID: 2985088R; 0 (Bacterial Proteins); 0 (RNA, Viral); 0 (Viral Proteins); ppublish</no>
+<pp>ENGLAND</pp>
+<sn>0022-2836; 0022-2836</sn>
+<an>PMID: 1104867</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>1104867</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>789</id>
+<a1>Condit,R. C.</a1>
+<a1>Xiang,Y.</a1>
+<a1>Lewis,J. I.</a1>
+<t1>Mutation of vaccinia virus gene G2R causes suppression of gene A18R ts mutants: implications for control of transcription</t1>
+<jf>Virology</jf>
+<jo>Virology</jo>
+<yr>1996</yr>
+<fd>Jun 1</fd>
+<vo>220</vo>
+<is>1</is>
+<sp>10</sp>
+<op>19</op>
+<k1>Adenosine Triphosphatases/genetics</k1>
+<k1>Animals</k1>
+<k1>Cell Line</k1>
+<k1>Cercopithecus aethiops</k1>
+<k1>DNA Helicases</k1>
+<k1>DNA Mutational Analysis</k1>
+<k1>Gene Expression Regulation, Viral</k1>
+<k1>Repressor Proteins/genetics</k1>
+<k1>Suppression, Genetic</k1>
+<k1>Transcription, Genetic</k1>
+<k1>Vaccinia virus/genetics/isolation &amp; purification</k1>
+<k1>Viral Proteins/genetics</k1>
+<ab>This report provides genetic evidence that two vaccinia virus genes, A18R and G2R, both of which affect the fidelity of viral transcription in vivo, interact with each other or act on a common biochemical pathway. Previous experiments with the antipoxviral drug isatin-beta-thiosemicarbazone suggest that lethal mutation of gene G2R would compensate for mutations in gene A18R. We therefore tested the hypothesis that gene G2R is an extragenic suppressor of A18R mutations. First, we constructed a recombinant which contains both a G2R deletion mutation and an A18R temperature-sensitive mutation and found that this recombinant was viable. Second, we isolated both cold-sensitive and temperature-insensitive phenotypic revertants of A18R temperature-sensitive mutants and found in both cases that the revertants contained G2R mutations. In the case of the cold-sensitive revertants, we were able to prove that the cold-sensitive phenotype mapped to the G2R gene. Combined with the biochemical data on A18R and G2R, these results imply that the A18R and G2R genes interact with each other either directly or indirectly in a fashion which affects the fidelity of intermediate and late viral transcription.</ab>
+<no>LR: 20071114; GR: AI18094/AI/NIAID NIH HHS/United States; JID: 0110674; 0 (G2R protein, Vaccinia virus); 0 (Repressor Proteins); 0 (Viral Proteins); EC 3.6.1.- (Adenosine Triphosphatases); EC 3.6.1.- (DNA Helicases); ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0042-6822; 0042-6822</sn>
+<ad>Department of Molecular Genetics and Microbiology, University of Florida, Gainesville 32610, USA. condit@icbr.ifas.ufl.edu.</ad>
+<an>PMID: 8659101; S0042-6822(96)90280-9 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<do>10.1006/viro.1996.0280</do>
+<ol>Unknown(0)</ol>
+<pmid>8659101</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>765</id>
+<a1>Cresawn,S. G.</a1>
+<a1>Condit,R. C.</a1>
+<t1>A targeted approach to identification of vaccinia virus postreplicative transcription elongation factors: genetic evidence for a role of the H5R gene in vaccinia transcription</t1>
+<jf>Virology</jf>
+<jo>Virology</jo>
+<yr>2007</yr>
+<fd>Jul 5</fd>
+<vo>363</vo>
+<is>2</is>
+<sp>333</sp>
+<op>341</op>
+<k1>Alleles</k1>
+<k1>Animals</k1>
+<k1>DNA-Binding Proteins/physiology</k1>
+<k1>DNA-Directed RNA Polymerases/chemistry/genetics</k1>
+<k1>Drug Resistance, Viral</k1>
+<k1>Gene Expression Regulation, Viral</k1>
+<k1>Genes, Viral</k1>
+<k1>Humans</k1>
+<k1>Isatin/analogs &amp; derivatives/pharmacology</k1>
+<k1>Point Mutation</k1>
+<k1>Protein Subunits/genetics</k1>
+<k1>Transcription, Genetic</k1>
+<k1>Transcriptional Elongation Factors/genetics</k1>
+<k1>Vaccinia virus/drug effects/genetics</k1>
+<k1>Viral Proteins/genetics/physiology</k1>
+<ab>Treatment of wild-type vaccinia virus infected cells with the anti-poxviral drug isatin-beta-thiosemicarbazone (IBT) induces the viral postreplicative transcription apparatus to synthesize longer-than-normal mRNAs through an unknown mechanism. Prior studies have shown that virus mutants resistant to or dependent on IBT affect proteins involved in control of viral postreplicative transcription elongation, including G2, J3, and the viral RNA polymerase. Prior studies also suggest that there exist additional unidentified vaccinia genes that influence transcription elongation. The present study was undertaken to target candidate transcription elongation factor genes in an error-prone mutagenesis protocol to determine whether IBT-resistant or -dependent alleles could be isolated in those candidate genes. Mutagenesis of genes in which IBT resistance alleles have previously been isolated, namely A24R (encoding the second largest RNA polymerase subunit, rpo132) and G2R (encoding a positive transcription elongation factor), resulted in isolation of novel IBT resistance and dependence alleles therefore providing proof of principle of the targeted mutagenesis technique. The vaccinia H5 protein has been implicated previously in transcription elongation by virtue of its association with the positive elongation factor G2. Mutagenesis of the vaccinia H5R gene resulted in a novel H5R IBT resistance allele, strongly suggesting that H5 is a positive transcription elongation factor.</ab>
+<no>LR: 20091118; GR: R01 AI018094-22/AI/NIAID NIH HHS/United States; GR: R01 AI018094-23/AI/NIAID NIH HHS/United States; GR: R01 AI018094-24/AI/NIAID NIH HHS/United States; GR: R01 AI018094-25/AI/NIAID NIH HHS/United States; GR: R01 AI018094-26/AI/NIAID NIH HHS/United States; GR: R01 AI18094/AI/NIAID NIH HHS/United States; JID: 0110674; 0 (DNA-Binding Proteins); 0 (H5R protein, Vaccinia virus); 0 (Protein Subunits); 0 (Transcriptional Elongation Factors); 0 (Viral Proteins); 487-16-1 (isatin beta-thiosemicarbazone); 91-56-5 (Isatin); EC 2.7.7.6 (DNA-Directed RNA Polymerases); NIHMS25247; OID: NLM: NIHMS25247; OID: NLM: PMC1950266; 2006/11/09 [received]; 2006/11/18 [revised]; 2007/02/05 [accepted]; 2007/03/21 [aheadofprint]; ppublish</no>
+<pp>United States</pp>
+<sn>0042-6822; 0042-6822</sn>
+<ad>Department of Molecular Genetics and Microbiology, University of Florida, Gainesville, FL 32610, USA.</ad>
+<an>PMID: 17376501; S0042-6822(07)00092-X [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, N.I.H., Extramural; IM</sf>
+<do>10.1016/j.virol.2007.02.016</do>
+<wp>20070321</wp>
+<ol>Unknown(0)</ol>
+<pmid>17376501</pmid>
+<pmcid>PMC1950266</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>766</id>
+<a1>Cresawn,S. G.</a1>
+<a1>Prins,C.</a1>
+<a1>Latner,D. R.</a1>
+<a1>Condit,R. C.</a1>
+<t1>Mapping and phenotypic analysis of spontaneous isatin-beta-thiosemicarbazone resistant mutants of vaccinia virus</t1>
+<jf>Virology</jf>
+<jo>Virology</jo>
+<yr>2007</yr>
+<fd>Jul 5</fd>
+<vo>363</vo>
+<is>2</is>
+<sp>319</sp>
+<op>332</op>
+<k1>Animals</k1>
+<k1>Catalytic Domain/genetics</k1>
+<k1>Cell Line</k1>
+<k1>DNA-Directed RNA Polymerases/chemistry/genetics</k1>
+<k1>Drug Resistance, Viral</k1>
+<k1>Gene Expression Profiling</k1>
+<k1>Gene Expression Regulation, Viral</k1>
+<k1>Humans</k1>
+<k1>Isatin/analogs &amp; derivatives/pharmacology</k1>
+<k1>Models, Chemical</k1>
+<k1>Mutation</k1>
+<k1>Peptide Elongation Factors</k1>
+<k1>Phenotype</k1>
+<k1>RNA, Messenger/metabolism</k1>
+<k1>RNA, Viral/metabolism</k1>
+<k1>Transcriptional Elongation Factors/genetics</k1>
+<k1>Vaccinia virus/drug effects/genetics</k1>
+<k1>Viral Proteins/chemistry/genetics</k1>
+<ab>Treatment of wild type vaccinia virus infected cells with the anti-poxviral drug isatin-beta-thiosemicarbazone (IBT) induces the viral postreplicative transcription apparatus to synthesize longer-than-normal mRNAs through an unknown mechanism. Previous studies have shown that virus mutants resistant to or dependent on IBT affect genes involved in control of viral postreplicative transcription elongation. This study was initiated in order to identify additional viral genes involved in control of vaccinia postreplicative transcription elongation. Eight independent, spontaneous IBT resistant mutants of vaccinia virus were isolated. Marker rescue experiments mapped two mutants to gene G2R, which encodes a previously characterized postreplicative gene positive transcription elongation factor. Three mutants mapped to the largest subunit of the viral RNA polymerase, rpo147, the product of gene J6R. One mutant contained missense mutations in both G2R and A24R (rpo132, the second largest subunit of the RNA polymerase). Two mutants could not be mapped, however sequence analysis demonstrated that neither of these mutants contained mutations in previously identified IBT resistance or dependence genes. Phenotypic and biochemical analysis of the mutants suggests that they possess defects in transcription elongation that compensate for the elongation enhancing effects of IBT. The results implicate the largest subunit of the RNA polymerase (rpo147) in the control of elongation, and suggest that there exist additional gene products which mediate intermediate and late transcription elongation in vaccinia virus.</ab>
+<no>LR: 20091118; GR: R01 AI018094-22/AI/NIAID NIH HHS/United States; GR: R01 AI018094-23/AI/NIAID NIH HHS/United States; GR: R01 AI018094-24/AI/NIAID NIH HHS/United States; GR: R01 AI018094-25/AI/NIAID NIH HHS/United States; GR: R01 AI018094-26/AI/NIAID NIH HHS/United States; GR: R01 AI18094/AI/NIAID NIH HHS/United States; JID: 0110674; 0 (Peptide Elongation Factors); 0 (RNA, Messenger); 0 (RNA, Viral); 0 (Transcriptional Elongation Factors); 0 (Viral Proteins); 487-16-1 (isatin beta-thiosemicarbazone); 91-56-5 (Isatin); EC 2.7.7.6 (DNA-Directed RNA Polymerases); NIHMS25234; OID: NLM: NIHMS25234; OID: NLM: PMC1950264; 2006/11/09 [received]; 2007/02/05 [revised]; 2007/02/05 [accepted]; 2007/03/01 [aheadofprint]; ppublish</no>
+<pp>United States</pp>
+<sn>0042-6822; 0042-6822</sn>
+<ad>Department of Molecular Genetics and Microbiology, University of Florida, Gainesville, FL 32610, USA.</ad>
+<an>PMID: 17336362; S0042-6822(07)00091-8 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, N.I.H., Extramural; IM</sf>
+<do>10.1016/j.virol.2007.02.005</do>
+<wp>20070301</wp>
+<ol>Unknown(0)</ol>
+<pmid>17336362</pmid>
+<pmcid>PMC1950264</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>773</id>
+<a1>D&#39;Costa,S. M.</a1>
+<a1>Antczak,J. B.</a1>
+<a1>Pickup,D. J.</a1>
+<a1>Condit,R. C.</a1>
+<t1>Post-transcription cleavage generates the 3&amp;#39; end of F17R transcripts in vaccinia virus</t1>
+<jf>Virology</jf>
+<jo>Virology</jo>
+<yr>2004</yr>
+<fd>Feb 5</fd>
+<vo>319</vo>
+<is>1</is>
+<sp>1</sp>
+<op>11</op>
+<k1>Animals</k1>
+<k1>Base Sequence</k1>
+<k1>Cell Line</k1>
+<k1>Gene Expression Regulation, Viral</k1>
+<k1>RNA Processing, Post-Transcriptional</k1>
+<k1>RNA Splice Sites</k1>
+<k1>RNA, Messenger/chemistry/metabolism</k1>
+<k1>RNA, Viral/chemistry/metabolism</k1>
+<k1>Single-Strand Specific DNA and RNA Endonucleases/metabolism</k1>
+<k1>Vaccinia virus/genetics/metabolism</k1>
+<k1>Viral Proteins/genetics/metabolism</k1>
+<ab>Most vaccinia virus intermediate and late mRNAs possess 3&amp;#39; ends that are extremely heterogeneous in sequence. However, late mRNAs encoding the cowpox A-type inclusion protein (ATI), the second largest subunit of the RNA polymerase, and the late telomeric transcripts possess homogeneous 3&amp;#39; ends. In the case of the ATI mRNA, it has been shown that the homogeneous 3&amp;#39; end is generated by a post-transcriptional endoribonucleolytic cleavage event. We have determined that the F17R gene also produces homogeneous transcripts generated by a post-transcriptional cleavage event. Mapping of in vivo mRNA shows that the major 3&amp;#39; end of the F17R transcript maps 1262 nt downstream of the F17R translational start site. In vitro transcripts spanning the in vivo 3&amp;#39; end are cleaved in an in vitro reaction using extracts from virus infected cells, and the site of cleavage is the same both in vivo and in vitro. Cleavage is not observed using extract from cells infected in the presence of hydroxyurea; therefore, the cleavage factor is either virus-coded or virus-induced during the post-replicative phase of virus replication. The cis-acting sequence responsible for cleavage is orientation specific and the factor responsible for cleavage activity has biochemical properties similar to the factor required for cleavage of ATI transcripts. Partially purified cleavage factor generates cleavage products of expected size when either the ATI or F17R substrates are used in vitro, strongly suggesting that cleavage of both transcripts is mediated by the same factor.</ab>
+<no>LR: 20081121; GR: R01 AI18094/AI/NIAID NIH HHS/United States; JID: 0110674; 0 (ATI protein, Vaccinia virus); 0 (RNA Splice Sites); 0 (RNA, Messenger); 0 (RNA, Viral); 0 (Viral Proteins); EC 3.1.30.1 (Single-Strand Specific DNA and RNA Endonucleases); 2003/07/28 [received]; 2003/09/16 [revised]; 2003/09/25 [accepted]; ppublish</no>
+<pp>United States</pp>
+<sn>0042-6822; 0042-6822</sn>
+<ad>Department of Molecular Genetics and Microbiology, University of Florida, Gainesville, FL 32610-0266, USA. condit@mgm.ufl.edu</ad>
+<an>PMID: 14967483; S0042682203007451 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<do>10.1016/j.virol.2003.09.041</do>
+<ol>Unknown(0)</ol>
+<pmid>14967483</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>761</id>
+<a1>D&#39;Costa,S. M.</a1>
+<a1>Bainbridge,T. W.</a1>
+<a1>Condit,R. C.</a1>
+<t1>Purification and properties of the vaccinia virus mRNA processing factor</t1>
+<jf>The Journal of biological chemistry</jf>
+<jo>J.Biol.Chem.</jo>
+<yr>2008</yr>
+<fd>Feb 29</fd>
+<vo>283</vo>
+<is>9</is>
+<sp>5267</sp>
+<op>5275</op>
+<k1>Hela Cells</k1>
+<k1>Humans</k1>
+<k1>Inclusion Bodies, Viral/genetics/metabolism</k1>
+<k1>Phosphorylation</k1>
+<k1>Protein Processing, Post-Translational/physiology</k1>
+<k1>RNA Processing, Post-Transcriptional/physiology</k1>
+<k1>RNA, Messenger/genetics/metabolism</k1>
+<k1>RNA, Viral/genetics/metabolism</k1>
+<k1>RNA-Binding Proteins/genetics/isolation &amp; purification/metabolism</k1>
+<k1>Transcription, Genetic/physiology</k1>
+<k1>Vaccinia virus/genetics/metabolism</k1>
+<k1>Viral Proteins/genetics/isolation &amp; purification/metabolism</k1>
+<k1>Virus Replication/physiology</k1>
+<ab>The mRNAs encoding the vaccinia virus F17 protein and the cowpox A-type inclusion protein are known to possess sequence-homogeneous 3&amp;#39; ends, generated by a post-transcriptional cleavage event. By using partially purified extracts, we have previously shown that the same factor probably cleaves both the F17 and A-type inclusion protein transcripts and that the cleavage factor is either virus-coded or virus-induced during the post-replicative phase of virus replication. In this study, we have purified the cleavage factor from vaccinia-infected HeLa cells using column chromatography and gel filtration. The factor eluted from the gel filtration column with an apparent molecular mass of approximately 440 kDa. Mass spectrometric analyses of the proteins present in the peak active fractions revealed the presence of at least one vaccinia protein with a high degree of certainty, the H5R gene product. To extend this finding, extracts were prepared from HeLa cells infected with vaccinia virus overexpressing His-tagged H5, chromatographed on a nickel affinity column, and eluted using an imidazole gradient. Cleavage activity eluted with the peak of His-tagged H5. Gel filtration of the affinity-purified material further demonstrated that cleavage activity and His-tagged H5 co-chromatographed with an apparent molecular mass of 463 kDa. We therefore conclude that H5 is specifically associated with post-transcriptional cleavage of F17R transcripts. In addition, we show that dephosphorylation of a cleavage competent extract with a nonspecific phosphatase abolishes cleavage activity implying a role for phosphorylation in cleavage activity.</ab>
+<no>GR: R01 AI18094/AI/NIAID NIH HHS/United States; JID: 2985121R; 0 (RNA, Messenger); 0 (RNA, Viral); 0 (RNA-Binding Proteins); 0 (Viral Proteins); 2007/12/18 [aheadofprint]; ppublish</no>
+<pp>United States</pp>
+<sn>0021-9258; 0021-9258</sn>
+<ad>Department of Molecular Genetics and Microbiology, University of Florida, Gainesville, Florida 32610-0266, USA. ihssd@ufl.edu</ad>
+<an>PMID: 18089571; M709258200 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, N.I.H., Extramural; IM</sf>
+<do>10.1074/jbc.M709258200</do>
+<wp>20071218</wp>
+<ol>Unknown(0)</ol>
+<pmid>18089571</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>755</id>
+<a1>D&#39;Costa,S. M.</a1>
+<a1>Bainbridge,T. W.</a1>
+<a1>Kato,S. E.</a1>
+<a1>Prins,C.</a1>
+<a1>Kelley,K.</a1>
+<a1>Condit,R. C.</a1>
+<t1>Vaccinia H5 is a multifunctional protein involved in viral DNA replication, postreplicative gene transcription, and virion morphogenesis</t1>
+<jf>Virology</jf>
+<jo>Virology</jo>
+<yr>2010</yr>
+<fd>May 25</fd>
+<vo>401</vo>
+<is>1</is>
+<sp>49</sp>
+<op>60</op>
+<k1>DNA Replication</k1>
+<k1>DNA, Viral/biosynthesis</k1>
+<k1>DNA-Binding Proteins/physiology</k1>
+<k1>Humans</k1>
+<k1>Transcription, Genetic</k1>
+<k1>Vaccinia virus/physiology</k1>
+<k1>Viral Proteins/physiology</k1>
+<k1>Virion/physiology</k1>
+<k1>Virus Replication</k1>
+<ab>The vaccinia H5 protein has been implicated in several steps of virus replication including DNA synthesis, postreplicative gene transcription, and virion morphogenesis. Our recent mapping of mutants in the consolidated Condit-Dales collection identified a temperature-sensitive vaccinia mutant in the H5R gene (Dts57). We demonstrate here that Dts57 has a DNA negative phenotype, strongly suggesting a direct role for H5 in DNA replication. We used a temperature shift protocol to determine the impact of H5 temperature sensitivity on postreplicative gene expression and observed changes in the pattern of postreplicative viral mRNA metabolism consistent with a role of H5 in postreplicative transcription. Finally, using a rifampicin release temperature shift protocol, we show that H5 is involved in multiple steps of virion morphogenesis. These data demonstrate directly that H5 plays roles in DNA replication, transcription and morphogenesis in vivo.</ab>
+<no>GR: R01 18094/PHS HHS/United States; JID: 0110674; 0 (DNA, Viral); 0 (DNA-Binding Proteins); 0 (H5R protein, Vaccinia virus); 0 (Viral Proteins); NIHMS178688; OID: NLM: NIHMS178688 [Available on 05/25/11]; OID: NLM: PMC2849846 [Available on 05/25/11]; 2009/11/09 [received]; 2009/12/20 [revised]; 2010/01/15 [accepted]; 2010/03/05 [aheadofprint]; ppublish</no>
+<pp>United States</pp>
+<sn>1096-0341; 0042-6822</sn>
+<ad>Department of Molecular Genetics and Microbiology, University of Florida, Gainesville, FL, 32610-0266, USA.</ad>
+<an>PMID: 20206959; S0042-6822(10)00037-1 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, N.I.H., Extramural; IM</sf>
+<do>10.1016/j.virol.2010.01.020</do>
+<wp>20100305</wp>
+<ol>Unknown(0)</ol>
+<pmid>20206959</pmid>
+<pmcid>PMC2849846</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>792</id>
+<a1>Ericsson,M.</a1>
+<a1>Cudmore,S.</a1>
+<a1>Shuman,S.</a1>
+<a1>Condit,R. C.</a1>
+<a1>Griffiths,G.</a1>
+<a1>Locker,J. K.</a1>
+<t1>Characterization of ts 16, a temperature-sensitive mutant of vaccinia virus</t1>
+<jf>Journal of virology</jf>
+<jo>J.Virol.</jo>
+<yr>1995</yr>
+<fd>Nov</fd>
+<vo>69</vo>
+<is>11</is>
+<sp>7072</sp>
+<op>7086</op>
+<k1>Animals</k1>
+<k1>Cell Line</k1>
+<k1>DNA Topoisomerases, Type II/biosynthesis/genetics</k1>
+<k1>DNA, Viral/analysis/biosynthesis</k1>
+<k1>Defective Viruses/genetics/physiology/ultrastructure</k1>
+<k1>Epoxy Resins</k1>
+<k1>Genes, Viral</k1>
+<k1>Hela Cells</k1>
+<k1>Humans</k1>
+<k1>Microscopy, Electron</k1>
+<k1>Mutation</k1>
+<k1>Saccharomyces cerevisiae/enzymology/genetics</k1>
+<k1>Temperature</k1>
+<k1>Vaccinia virus/genetics/physiology/ultrastructure</k1>
+<k1>Viral Proteins/analysis/biosynthesis</k1>
+<ab>We have characterized a temperature-sensitive mutant of vaccinia virus, ts16, originally isolated by Condit et al. (Virology 128:429-443, 1983), at the permissive and nonpermissive temperatures. In a previous study by Kane and Shuman (J. Virol 67:2689-2698, 1993), the mutation of ts16 was mapped to the I7 gene, encoding a 47-kDa protein that shows partial homology to the type II topoisomerase of Saccharomyces cerevisiae. The present study extends previous electron microscopy analysis, showing that in BSC40 cells infected with ts16 at the restrictive temperature (40 degrees C), the assembly was arrested at a stage between the spherical immature virus and the intracellular mature virus (IMV). In thawed cryosections, a number of the major proteins normally found in the IMV were subsequently localized to these mutant particles. By using sucrose density gradients, the ts16 particles were purified from cells infected at the permissive and nonpermissive temperatures. These were analyzed by immunogold labelling and negative-staining electron microscopy, and their protein composition was determined by sodium dodecyl sulfate-polyacrylamide gel electrophoresis. While the ts16 virus particles made at the permissive temperature appeared to have a protein pattern identical to that of wild-type IMV, in the mutant particles the three core proteins, p4a, p4b, and 28K, were not proteolytically processed. Consistent with previous data the sucrose-purified particles could be labelled with [3H]thymidine. In addition, anti-DNA labelling on thawed cryosections suggested that most of the mutant particles had taken up DNA. On thawed cryosections of cells infected at the permissive temperature, antibodies to I7 labelled the virus factories, the immature viruses, and the IMVs, while under restrictive conditions these structures were labelled much less, if at all. Surprisingly, however, by Western blotting (immunoblotting) the I7 protein was present in similar amounts in the defective particles and in the IMVs isolated at the permissive temperature. Finally, our data suggest that at the nonpermissive temperature the assembly of ts16 is irreversibly arrested in a stage at which the DNA is in the process of entering but before the particle has completely sealed, as monitored by protease experiments.</ab>
+<no>LR: 20091118; JID: 0113724; 0 (DNA, Viral); 0 (Epoxy Resins); 0 (Viral Proteins); 67076-53-3 (EPON); EC 5.99.1.3 (DNA Topoisomerases, Type II); OID: NLM: PMC189627; ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0022-538X; 0022-538X</sn>
+<ad>Cell Biology Programme, European Molecular Biology Laboratory, Heidelberg, Germany.</ad>
+<an>PMID: 7474127</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>7474127</pmid>
+<pmcid>PMC189627</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>803</id>
+<a1>Fathi,Z.</a1>
+<a1>Condit,R. C.</a1>
+<t1>Genetic and molecular biological characterization of a vaccinia virus temperature-sensitive complementation group affecting a virion component</t1>
+<jf>Virology</jf>
+<jo>Virology</jo>
+<yr>1991</yr>
+<fd>Mar</fd>
+<vo>181</vo>
+<is>1</is>
+<sp>258</sp>
+<op>272</op>
+<k1>Amino Acid Sequence</k1>
+<k1>Animals</k1>
+<k1>Base Sequence</k1>
+<k1>Cell Line</k1>
+<k1>Chromosome Deletion</k1>
+<k1>Cloning, Molecular/methods</k1>
+<k1>DNA, Viral/genetics</k1>
+<k1>Escherichia coli/genetics</k1>
+<k1>Genes, Viral</k1>
+<k1>Genetic Complementation Test</k1>
+<k1>Molecular Sequence Data</k1>
+<k1>RNA, Viral/genetics</k1>
+<k1>Restriction Mapping</k1>
+<k1>Temperature</k1>
+<k1>Transcription, Genetic</k1>
+<k1>Vaccinia virus/genetics</k1>
+<k1>Virion/genetics</k1>
+<ab>The gene affected by five previously isolated temperature-sensitive (ts) mutants (ts 10, ts 18, ts 38, ts 39, ts 44) of vaccinia virus strain WR constituting a single &amp;quot;normal&amp;quot; complementation group has been characterized. Marker rescue and DNA sequence analysis show that the five members of the complementation group map in an open reading frame, ORF 18R, which spans the HindIII I-G junction and has the capacity to encode a 77.6-kDa protein. The nucleotide sequence change responsible for temperature sensitivity in each of the five mutants was determined. Two of the mutants, ts 38 and ts 44, have the identical nucleotide change and may therefore be sisters. Northern blot analysis demonstrates that ORF 18R is transcribed at both early and late times during infection. Two distinct early transcripts have been observed which are 5&amp;#39; coterminal and which contain a 518 nucleotide 5&amp;#39; untranslated region. The long early transcript spans the entire 18R gene while the 3&amp;#39; end of the shorter early transcript maps to an early transcription termination signal contained within the 18R coding sequence. The 5&amp;#39; ends of the late transcripts have been mapped to a family of AUG proximal sites using both S1 nuclease and primer extension analysis. Primer extension analysis also identifies additional late 5&amp;#39; ends which map between nucleotides -500 and -1000 relative to the ORF 18R AUG.</ab>
+<no>LR: 20071114; GENBANK/J03399; GENBANK/M29901; GENBANK/M59045; GENBANK/M59046; GENBANK/M59047; GENBANK/M59048; GENBANK/M59049; GENBANK/M59050; GENBANK/M63908; GENBANK/M63909; GENBANK/M63910; GR: AI18094/AI/NIAID NIH HHS/United States; JID: 0110674; 0 (DNA, Viral); 0 (RNA, Viral); ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0042-6822; 0042-6822</sn>
+<ad>Department of Biochemistry, State University of New York, Buffalo 14214.</ad>
+<an>PMID: 1994576</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>1994576</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>802</id>
+<a1>Fathi,Z.</a1>
+<a1>Condit,R. C.</a1>
+<t1>Phenotypic characterization of a vaccinia virus temperature-sensitive complementation group affecting a virion component</t1>
+<jf>Virology</jf>
+<jo>Virology</jo>
+<yr>1991</yr>
+<fd>Mar</fd>
+<vo>181</vo>
+<is>1</is>
+<sp>273</sp>
+<op>276</op>
+<k1>Animals</k1>
+<k1>Cell Line</k1>
+<k1>Genes, Viral</k1>
+<k1>Genetic Complementation Test</k1>
+<k1>Phenotype</k1>
+<k1>Temperature</k1>
+<k1>Vaccinia virus/genetics/growth &amp; development</k1>
+<k1>Virion/genetics/growth &amp; development</k1>
+<ab>Genetic and biochemical evidence is presented which shows that the product of the vaccinia virus gene 18R is a virion protein. Western blot analysis of virion proteins using anti-18R serum detects a 78,000-Da protein, localized in the virus core. Of five ts mutants which map to gene 18R, two mutants, ts 10 and ts 44, possess thermolabile virions. Temperature shifts performed during single-step growth of ts 44 suggest that precursors required for virion maturation accumulate during nonpermissive infections with ORF 18R mutants and that protein synthesis is required for recovery from nonpermissive condition.</ab>
+<no>LR: 20071114; GR: AI18094/AI/NIAID NIH HHS/United States; JID: 0110674; ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0042-6822; 0042-6822</sn>
+<ad>Department of Biochemistry, State University of New York, Buffalo 14214.</ad>
+<an>PMID: 1994577</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>1994577</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>800</id>
+<a1>Fathi,Z.</a1>
+<a1>Dyster,L. M.</a1>
+<a1>Seto,J.</a1>
+<a1>Condit,R. C.</a1>
+<a1>Niles,E. G.</a1>
+<t1>Intragenic and intergenic recombination between temperature-sensitive mutants of vaccinia virus</t1>
+<jf>The Journal of general virology</jf>
+<jo>J.Gen.Virol.</jo>
+<yr>1991</yr>
+<fd>Nov</fd>
+<vo>72 ( Pt 11)</vo>
+<is>Pt 11</is>
+<sp>2733</sp>
+<op>2737</op>
+<k1>Cell Line</k1>
+<k1>DNA, Viral</k1>
+<k1>Genome, Viral</k1>
+<k1>Mutation</k1>
+<k1>Recombination, Genetic</k1>
+<k1>Temperature</k1>
+<k1>Vaccinia virus/genetics</k1>
+<ab>The frequency of recombination for a complete set of two-factor crosses between vaccinia virus mutations separated by distances of between 54 and 10692 bp was determined. The results show that in intragenic crosses there is a linear relationship between the recombination frequency observed and distances between the mutations of up to 700 bp. However, no length dependence of the recombination frequency in intergenic crosses with a distance between mutations of 328 to greater than 10000 bp is observed. We attribute this lack of dependence to the high rate of viral DNA interchange, which makes some step other than the cross-over event rate-limiting. Furthermore, we believe that the observed difference in recombination frequency between inter- and intragenic recombination is due to complementation between temperature-sensitive mutants at the permissive temperature.</ab>
+<no>LR: 20071114; GR: AI18094/AI/NIAID NIH HHS/United States; JID: 0077340; 0 (DNA, Viral); ppublish</no>
+<pp>ENGLAND</pp>
+<sn>0022-1317; 0022-1317</sn>
+<ad>Department of Biochemistry, State University of New York, Buffalo 14214.</ad>
+<an>PMID: 1940868</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, Non-P.H.S.; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>1940868</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>813</id>
+<a1>Fathi,Z.</a1>
+<a1>Sridhar,P.</a1>
+<a1>Pacha,R. F.</a1>
+<a1>Condit,R. C.</a1>
+<t1>Efficient targeted insertion of an unselected marker into the vaccinia virus genome</t1>
+<jf>Virology</jf>
+<jo>Virology</jo>
+<yr>1986</yr>
+<fd>Nov</fd>
+<vo>155</vo>
+<is>1</is>
+<sp>97</sp>
+<op>105</op>
+<k1>DNA, Viral/genetics</k1>
+<k1>DNA-Directed DNA Polymerase/genetics</k1>
+<k1>Defective Viruses/genetics</k1>
+<k1>Drug Resistance</k1>
+<k1>Genetic Engineering/methods</k1>
+<k1>Mutation</k1>
+<k1>Phosphonoacetic Acid/pharmacology</k1>
+<k1>Temperature</k1>
+<k1>Vaccinia virus/genetics</k1>
+<ab>A method is described by which an unselected marker can be inserted into the vaccinia virus genome. Cells were infected with defective virus (either isatin-beta-thiosemicarbazone dependent or temperature sensitive) and then cotransformed with a mixture of full-length wild-type genomic vaccinia virus DNA and a cloned vaccinia DNA molecule containing an allele for phosphonoacetic acid resistance. After incubation under conditions which are nonpermissive for the defective virus but which do not select for incorporation of phosphonoacetic acid resistance, the virus yields were assayed for the presence of all markers involved. Phosphonoacetic acid resistance was inserted into an otherwise wild-type genome with an efficiency of 25-33%. This represents an increase in efficiency of 150-to 3000-fold relative to controls. The procedure should be extremely useful for engineering the vaccinia virus genome.</ab>
+<no>LR: 20071114; GR: AI18094/AI/NIAID NIH HHS/United States; JID: 0110674; 0 (DNA, Viral); 4408-78-0 (Phosphonoacetic Acid); EC 2.7.7.7 (DNA-Directed DNA Polymerase); ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0042-6822; 0042-6822</sn>
+<an>PMID: 3465088</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>3465088</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>797</id>
+<a1>Hassett,D. E.</a1>
+<a1>Condit,R. C.</a1>
+<t1>Targeted construction of temperature-sensitive mutations in vaccinia virus by replacing clustered charged residues with alanine</t1>
+<jf>Proceedings of the National Academy of Sciences of the United States of America</jf>
+<jo>Proc.Natl.Acad.Sci.U.S.A.</jo>
+<yr>1994</yr>
+<fd>May 10</fd>
+<vo>91</vo>
+<is>10</is>
+<sp>4554</sp>
+<op>4558</op>
+<k1>Alanine</k1>
+<k1>Amino Acid Sequence</k1>
+<k1>Animals</k1>
+<k1>Cell Line</k1>
+<k1>Genes, Dominant</k1>
+<k1>Genes, Viral</k1>
+<k1>Isatin/analogs &amp; derivatives/toxicity</k1>
+<k1>Kinetics</k1>
+<k1>Molecular Sequence Data</k1>
+<k1>Mutagenesis</k1>
+<k1>Mutation</k1>
+<k1>Phenotype</k1>
+<k1>Plaque Assay</k1>
+<k1>Temperature</k1>
+<k1>Time Factors</k1>
+<k1>Vaccinia virus/drug effects/genetics/growth &amp; development</k1>
+<k1>Viral Proteins/biosynthesis/genetics</k1>
+<ab>The feasibility of using &amp;quot;clustered charge-to-alanine&amp;quot; mutagenesis (replacement by alanine of two or more charged residues clustered in a five- or six-amino acid sequence) to create temperature-sensitive, conditionally lethal mutations in vaccinia virus was examined by creating nine mutations in the vaccinia virus gene G2R. G2R was chosen for this analysis because mutations in this gene confer selectable phenotypes. Specifically, vaccinia viruses that contain a wild-type copy of G2R nare sensitive the effects of the anti-poxvirus drug isatin-beta-thiosemicarbazone (IBT), while mutations in G2R that completely abolish the function of the G2R protein product confer dependence upon IBT for growth. A previously isolated mutant carrying a temperature-sensitive mutation that maps to G2R (Cts56) is resistant to IBT at the permissive temperature and dependent upon IBT at the restrictive temperature. Nine clustered charge-to-alanine mutants were examined. Four of the these mutants (AS1, AS4, AS6, and AS9) display some degree of temperature sensitivity in the function of the G2R gene product. AS1 is temperature sensitive for growth in both a plaque assay and in a one-step growth experiment. AS6 and AS9 form small plaques at the nonpermissive temperature and are temperature sensitive for growth in a one-step growth experiment. AS4 manifests its temperature sensitivity as temperature-dependent IBT resistance. Five of the mutations (AS2, AS3, AS5, AS7, and AS8) appeared to confer phenotypes indistinguishable from that of wild-type vaccinia. These results demonstrate that temperature-sensitive conditionally lethal mutants can be created in vaccinia virus by altering the charge characteristics of essential viral proteins.</ab>
+<no>LR: 20091118; GR: AI18094/AI/NIAID NIH HHS/United States; JID: 7505876; 0 (G2R protein, Vaccinia virus); 0 (Viral Proteins); 487-16-1 (isatin beta-thiosemicarbazone); 56-41-7 (Alanine); 91-56-5 (Isatin); OID: NLM: PMC43824; ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0027-8424; 0027-8424</sn>
+<ad>Department of Immunology and Medical Microbiology, University of Florida, Gainesville 32610-0266.</ad>
+<an>PMID: 8183946</an>
+<la>eng</la>
+<sf>Comparative Study; Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>8183946</pmid>
+<pmcid>PMC43824</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>788</id>
+<a1>Hassett,D. E.</a1>
+<a1>Lewis,J. I.</a1>
+<a1>Xing,X.</a1>
+<a1>DeLange,L.</a1>
+<a1>Condit,R. C.</a1>
+<t1>Analysis of a temperature-sensitive vaccinia virus mutant in the viral mRNA capping enzyme isolated by clustered charge-to-alanine mutagenesis and transient dominant selection</t1>
+<jf>Virology</jf>
+<jo>Virology</jo>
+<yr>1997</yr>
+<fd>Nov 24</fd>
+<vo>238</vo>
+<is>2</is>
+<sp>391</sp>
+<op>409</op>
+<k1>Alanine</k1>
+<k1>Amino Acid Sequence</k1>
+<k1>Cell Line</k1>
+<k1>Methyltransferases/genetics/metabolism</k1>
+<k1>Molecular Sequence Data</k1>
+<k1>Morphogenesis</k1>
+<k1>Multienzyme Complexes/genetics/metabolism</k1>
+<k1>Mutagenesis, Site-Directed</k1>
+<k1>Nucleotidyltransferases/genetics/metabolism</k1>
+<k1>Phenotype</k1>
+<k1>Phosphoric Monoester Hydrolases/genetics/metabolism</k1>
+<k1>Plaque Assay</k1>
+<k1>Protein Processing, Post-Translational</k1>
+<k1>RNA, Messenger/biosynthesis</k1>
+<k1>RNA, Viral/biosynthesis</k1>
+<k1>Telomere</k1>
+<k1>Temperature</k1>
+<k1>Vaccinia virus/enzymology/genetics/ultrastructure</k1>
+<k1>Viral Proteins/biosynthesis/metabolism</k1>
+<k1>Virion</k1>
+<ab>We have previously reported the successful development of a targeted genetic method for the creation of temperature-sensitive vaccinia virus mutants [D. E. Hassett and R. C. Condit (1994) Proc. Natl. Acad. Sci. USA 91, 4554-4558]. This method has now been applied to the large subunit of the multifunctional vaccinia virus capping enzyme, encoded by gene D1R. Ten clustered charge-to-alanine mutations were created in a cloned copy of D1R. Four of these mutations were successfully transferred into the viral genome using transient dominant selection, and each of these four mutations yielded viruses with plaque phenotypes different from that of wild-type virus. Two of the mutant viruses, 516 and 793, were temperature sensitive in a plaque assay. Mutant 793 was also temperature sensitive in a one-step growth experiment. Phenotypic characterization of the 793 virus under both permissive and nonpermissive conditions revealed nearly normal patterns of viral protein and mRNA synthesis. Under nonpermissive conditions the 793 virus was defective in telomere resolution and blocked at an intermediate stage of viral morphogenesis. In vitro assays of various capping enzyme activities revealed that in permeabilized virions, enzyme guanylylate intermediate formation was reduced and methyltransferase activity was thermolabile, while in solubilized virion extracts enzyme guanylylate activity was reduced and both guanylyltransferase and methyltransferase activities were absent. Thus, the 793 mutation affects at least two separate enzymatic activities of the capping enzyme, guanylyltransferase and methyltransferase, and when incorporated into the virus genome, the mutation yields a virus that is temperature sensitive for growth, telomere resolution, and virion morphogenesis.</ab>
+<no>LR: 20071114; GR: AI18094/AI/NIAID NIH HHS/United States; JID: 0110674; 0 (Multienzyme Complexes); 0 (RNA, Messenger); 0 (RNA, Viral); 0 (Viral Proteins); 56-41-7 (Alanine); EC 2.- (capping enzyme, vaccinia virus); EC 2.1.1.- (Methyltransferases); EC 2.7.7.- (Nucleotidyltransferases); EC 3.1.3.- (Phosphoric Monoester Hydrolases); ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0042-6822; 0042-6822</sn>
+<ad>Department of Molecular Genetics and Microbiology, University of Florida, Gainesville 32610, USA.</ad>
+<an>PMID: 9400612; S0042-6822(97)98820-6 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<do>10.1006/viro.1997.8820</do>
+<ol>Unknown(0)</ol>
+<pmid>9400612</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>806</id>
+<a1>Hooda-Dhingra,U.</a1>
+<a1>Patel,D. D.</a1>
+<a1>Pickup,D. J.</a1>
+<a1>Condit,R. C.</a1>
+<t1>Fine structure mapping and phenotypic analysis of five temperature-sensitive mutations in the second largest subunit of vaccinia virus DNA-dependent RNA polymerase</t1>
+<jf>Virology</jf>
+<jo>Virology</jo>
+<yr>1990</yr>
+<fd>Jan</fd>
+<vo>174</vo>
+<is>1</is>
+<sp>60</sp>
+<op>69</op>
+<k1>Animals</k1>
+<k1>Autoradiography</k1>
+<k1>Cell Line</k1>
+<k1>Cowpox virus/enzymology/genetics</k1>
+<k1>DNA-Directed RNA Polymerases/genetics</k1>
+<k1>Electrophoresis, Polyacrylamide Gel</k1>
+<k1>Genes, Viral</k1>
+<k1>Genetic Complementation Test</k1>
+<k1>Mutation</k1>
+<k1>Phenotype</k1>
+<k1>Restriction Mapping</k1>
+<k1>Vaccinia virus/enzymology/genetics</k1>
+<k1>Viral Proteins/biosynthesis</k1>
+<k1>Viral Structural Proteins/genetics</k1>
+<ab>We have used plasmid clones spanning the region encoding the 132-kDa subunit of the cowpox virus RNA polymerase (CPV rpo 132) to marker rescue each of five vaccinia virus (VV) temperature sensitive (ts) mutants, ts 27, ts 29, ts 32, ts 47, and ts 62, which together constitute a single complementation group. The experiments fine-map the vaccinia mutations to a 1.3-kb region containing the 3&amp;#39; end of the CPV rpo 132 gene. Phenotypic characterization shows that all five mutants are affected to varying extents in their ability to synthesize late viral proteins at the nonpermissive temperature, similar to other ts mutants with lesions in the 22- and the 147-kDa subunits of the VV RNA polymerase. Two mutants, ts 27 and ts 32, exhibit a delay in the synthesis of late viral proteins at both the permissive and the nonpermissive temperatures. We conclude that the five VV mutants affect the 132-kDa subunit of the VV RNA polymerase. Additional genetic experiments demonstrate intragenic complementation between ts 62 and three other members of this complementation group, ts 27, ts 29, and ts 32.</ab>
+<no>LR: 20071114; GR: AI18094/AI/NIAID NIH HHS/United States; JID: 0110674; 0 (Viral Proteins); 0 (Viral Structural Proteins); EC 2.7.7.6 (DNA-Directed RNA Polymerases); ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0042-6822; 0042-6822</sn>
+<ad>Department of Biochemistry, State University of New York, Buffalo 14214.</ad>
+<an>PMID: 2294648</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>2294648</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>809</id>
+<a1>Hooda-Dhingra,U.</a1>
+<a1>Thompson,C. L.</a1>
+<a1>Condit,R. C.</a1>
+<t1>Detailed phenotypic characterization of five temperature-sensitive mutants in the 22- and 147-kilodalton subunits of vaccinia virus DNA-dependent RNA polymerase</t1>
+<jf>Journal of virology</jf>
+<jo>J.Virol.</jo>
+<yr>1989</yr>
+<fd>Feb</fd>
+<vo>63</vo>
+<is>2</is>
+<sp>714</sp>
+<op>729</op>
+<k1>Blotting, Northern</k1>
+<k1>DNA, Viral/biosynthesis</k1>
+<k1>DNA-Directed RNA Polymerases/genetics</k1>
+<k1>Molecular Structure</k1>
+<k1>Mutation</k1>
+<k1>Phenotype</k1>
+<k1>RNA, Messenger/biosynthesis</k1>
+<k1>RNA, Viral/biosynthesis</k1>
+<k1>Temperature</k1>
+<k1>Vaccinia virus/enzymology/genetics/growth &amp; development/ultrastructure</k1>
+<k1>Viral Proteins/biosynthesis/genetics</k1>
+<ab>We have carried out detailed phenotypic characterization of five temperature-sensitive (ts) mutants of vaccinia virus, the ts lesions of which have previously been mapped to two different subunits of the viral RNA polymerase. We have also attempted to determine the mechanism of temperature sensitivity in these mutants. Phenotypic characterization of each of the mutants showed that at the nonpermissive temperature, all five mutants exhibited normal levels of early viral mRNA and protein synthesis, but for an extended period of time, all mutants accumulated normal levels of DNA in abnormally large pools in the cell cytoplasm; all mutants were defective in the synthesis of late viral mRNA and proteins and in viral morphogenesis. In an attempt to address the mechanism of temperature sensitivity in these mutants, we measured the effect of a temperature shift on the ability of the mutants to direct late viral protein synthesis. If infected cells were shifted down from a nonpermissive temperature late during infection, late protein synthesis was initiated after a lag period of 1 to 2 h. If infected cells were shifted up from a permissive temperature early during infection, late protein synthesis continued to be defective. If infected cells were shifted up to the nonpermissive temperature after late protein synthesis had commenced, late protein synthesis was maintained at the nonpermissive temperature at the level observed when the temperature was shifted up. We interpret these results to mean that once a functional RNA polymerase has been assembled at the permissive temperature during a mutant infection, it remains functional at the nonpermissive temperature, but that the ts mutants are defective in the assembly of a newly synthesized RNA polymerase at the nonpermissive temperature. This interpretation implies that the virion RNA polymerase is responsible for early viral transcription and that a newly synthesized RNA polymerase transcribes late viral genes.</ab>
+<no>LR: 20091118; GR: AI18094/AI/NIAID NIH HHS/United States; JID: 0113724; 0 (DNA, Viral); 0 (RNA, Messenger); 0 (RNA, Viral); 0 (Viral Proteins); EC 2.7.7.6 (DNA-Directed RNA Polymerases); OID: NLM: PMC247743; ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0022-538X; 0022-538X</sn>
+<ad>Department of Biochemistry, State University of New York, Buffalo 14214.</ad>
+<an>PMID: 2911121</an>
+<la>eng</la>
+<sf>Comparative Study; Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>2911121</pmid>
+<pmcid>PMC247743</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>822</id>
+<a1>Hruby,D. E.</a1>
+<a1>Lynn,D. L.</a1>
+<a1>Condit,R. C.</a1>
+<a1>Kates,J. R.</a1>
+<t1>Cellular differences in the molecular mechanisms of vaccinia virus host range restriction</t1>
+<jf>The Journal of general virology</jf>
+<jo>J.Gen.Virol.</jo>
+<yr>1980</yr>
+<fd>Apr</fd>
+<vo>47</vo>
+<is>2</is>
+<sp>485</sp>
+<op>488</op>
+<k1>Animals</k1>
+<k1>Cattle</k1>
+<k1>Cell Line</k1>
+<k1>Cricetinae</k1>
+<k1>DNA, Viral/biosynthesis</k1>
+<k1>Female</k1>
+<k1>Haplorhini</k1>
+<k1>Kidney</k1>
+<k1>L Cells (Cell Line)</k1>
+<k1>Mice</k1>
+<k1>Ovary</k1>
+<k1>Vaccinia virus/growth &amp; development/metabolism</k1>
+<k1>Viral Proteins/biosynthesis</k1>
+<k1>Virus Cultivation</k1>
+<ab>The biochemistry of vaccinia virus replication in two permissive (BSC-40, L-929), and two non-permissive (CHO, MDBK) cell lines has been compared. While CHO and MDBK cells differentially allowed expression of the various stages in the vaccinia developmental programme, neither cell supported production of any infectious progeny virions.</ab>
+<no>LR: 20061115; JID: 0077340; 0 (DNA, Viral); 0 (Viral Proteins); ppublish</no>
+<pp>ENGLAND</pp>
+<sn>0022-1317; 0022-1317</sn>
+<an>PMID: 6767809</an>
+<la>eng</la>
+<sf>Comparative Study; Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>6767809</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>763</id>
+<a1>Kato,S. E.</a1>
+<a1>Condit,R. C.</a1>
+<a1>Moussatche,N.</a1>
+<t1>The vaccinia virus E8R gene product is required for formation of transcriptionally active virions</t1>
+<jf>Virology</jf>
+<jo>Virology</jo>
+<yr>2007</yr>
+<fd>Oct 25</fd>
+<vo>367</vo>
+<is>2</is>
+<sp>398</sp>
+<op>412</op>
+<k1>Gene Expression Regulation, Viral</k1>
+<k1>Membrane Proteins/physiology</k1>
+<k1>Mutation</k1>
+<k1>Temperature</k1>
+<k1>Transcription, Genetic/physiology</k1>
+<k1>Tumor Cells, Cultured</k1>
+<k1>Vaccinia virus/chemistry/genetics</k1>
+<k1>Viral Proteins/analysis/physiology</k1>
+<k1>Virion/genetics/physiology</k1>
+<ab>Two vaccinia virus temperature-sensitive mutants were mapped to the E8R gene and subjected to phenotypic characterization. Dts23 contains a missense mutation in the coding region of E8R (L81F), and in Cts19 the initiating methionine codon is changed from ATG to ATA (M1I). The two ts mutants display normal patterns of gene expression and DNA replication during infection. The E8 protein is synthesized exclusively late during infection and packaged into virion cores Western blot analysis revealed that E8 synthesis is reduced in Dts23 infected cells at permissive (31 degrees C) and non-permissive temperature (39.7 degrees C) and absent in Cts19 infection under both conditions. Dts23 virions produced at 39.7 degrees C were indistinguishable in appearance from wt virions. Cts19 fails to produce identifiable viral structures when incubated at 39.7 degrees C. Purified Dts23 virions produced at 39.7 degrees C contain reduced amounts of E8 and have a high particle to infectivity ratio; purified Cts19 virions grown at 31 degrees C also show reduced infectivity and do not contain detectable E8. Dts23 grown at 39.7 degrees C could enter cells but failed to synthesize early mRNA or produce CPE. Soluble extracts from mutant virions were active in a promoter dependent in vitro transcription assay, however intact mutant cores were defective in transcription. We suggest that E8 plays a subtle role in virion core structure that impacts directly or indirectly on core transcription.</ab>
+<no>LR: 20091118; GR: R01 AI055560/AI/NIAID NIH HHS/United States; GR: R01 AI055560-01A1/AI/NIAID NIH HHS/United States; GR: R01 AI055560-02/AI/NIAID NIH HHS/United States; GR: R01 AI055560-03/AI/NIAID NIH HHS/United States; GR: R01 AI055560-04/AI/NIAID NIH HHS/United States; GR: R21 AI055560-01/AI/NIAID NIH HHS/United States; JID: 0110674; 0 (E8R protein, Vaccinia virus); 0 (Membrane Proteins); 0 (Viral Proteins); NIHMS32490; OID: NLM: NIHMS32490; OID: NLM: PMC2185540; 2007/04/03 [received]; 2007/04/13 [revised]; 2007/05/01 [accepted]; 2007/07/09 [aheadofprint]; ppublish</no>
+<pp>United States</pp>
+<sn>0042-6822; 0042-6822</sn>
+<ad>Department of Molecular Genetics and Microbiology, University of Florida, Gainesville, FL 32610, USA.</ad>
+<an>PMID: 17619043; S0042-6822(07)00327-3 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, N.I.H., Extramural; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<do>10.1016/j.virol.2007.05.002</do>
+<wp>20070709</wp>
+<ol>Unknown(0)</ol>
+<pmid>17619043</pmid>
+<pmcid>PMC2185540</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>774</id>
+<a1>Kato,S. E.</a1>
+<a1>Greco,F. A.</a1>
+<a1>Damaso,C. R.</a1>
+<a1>Condit,R. C.</a1>
+<a1>Moussatche,N.</a1>
+<t1>An alternative genetic method to test essential vaccinia virus early genes</t1>
+<jf>Journal of virological methods</jf>
+<jo>J.Virol.Methods</jo>
+<yr>2004</yr>
+<fd>Jan</fd>
+<vo>115</vo>
+<is>1</is>
+<sp>31</sp>
+<op>40</op>
+<k1>Blotting, Western</k1>
+<k1>Culture Media</k1>
+<k1>Escherichia coli</k1>
+<k1>Genes, Essential</k1>
+<k1>Genetic Techniques</k1>
+<k1>Hypoxanthine Phosphoribosyltransferase/genetics</k1>
+<k1>Immediate-Early Proteins/genetics/metabolism</k1>
+<k1>Mutagenesis, Insertional</k1>
+<k1>Recombination, Genetic</k1>
+<k1>Selection, Genetic</k1>
+<k1>Vaccinia virus/genetics/growth &amp; development</k1>
+<ab>The vaccinia virus F11L gene product was identified during search for additional factors involved in the control of post-replicative viral gene transcription elongation. F11L is a 1065 base pairs (354 aminoacids) gene expressed early during infection with no attributed function. The F11L gene is conserved in many but not all poxviruses. The essential presence of the F11L gene was tested using two different genetic methods. F11L gene disruption by insertion of a selectable cassette containing the Escherichia coli guanine phosphoribosyl transferase gene driven by the viral early-late 7.5K transcriptional promoter resulted exclusively in recombinant viruses containing both the wild type and disrupted alleles, indicating that the F11L gene was essential. However, an alternative test, using transient dominant selection to insert nonsense mutations into the F11L gene, proved that the F11L gene was non-essential for growth in culture. These experiments suggest that misleading results can be obtained using gene insertional mutagenesis as a test of essential presence of the gene. The experiments also provide genetic data on the probability of co-insertion of linked mutations in vaccinia virus genome using transient dominant selection.</ab>
+<no>LR: 20091119; GR: R01-AI10894/AI/NIAID NIH HHS/United States; JID: 8005839; 0 (Culture Media); 0 (Immediate-Early Proteins); EC 2.4.2.8 (Hypoxanthine Phosphoribosyltransferase); ppublish</no>
+<pp>Netherlands</pp>
+<sn>0166-0934; 0166-0934</sn>
+<ad>Laboratorio de Biologia Molecular de Virus, Instituto de Biofisica Carlos Chagas Filho, CCS, UFRJ, Rio de Janeiro, RJ 21941-590, Brazil.</ad>
+<an>PMID: 14656458; S0166093403002817 [pii]</an>
+<la>eng</la>
+<sf>Evaluation Studies; Journal Article; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>14656458</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>759</id>
+<a1>Kato,S. E.</a1>
+<a1>Moussatche,N.</a1>
+<a1>D&#39;Costa,S. M.</a1>
+<a1>Bainbridge,T. W.</a1>
+<a1>Prins,C.</a1>
+<a1>Strahl,A. L.</a1>
+<a1>Shatzer,A. N.</a1>
+<a1>Brinker,A. J.</a1>
+<a1>Kay,N. E.</a1>
+<a1>Condit,R. C.</a1>
+<t1>Marker rescue mapping of the combined Condit/Dales collection of temperature-sensitive vaccinia virus mutants</t1>
+<jf>Virology</jf>
+<jo>Virology</jo>
+<yr>2008</yr>
+<fd>May 25</fd>
+<vo>375</vo>
+<is>1</is>
+<sp>213</sp>
+<op>222</op>
+<k1>Animals</k1>
+<k1>Cell Line</k1>
+<k1>Cercopithecus aethiops</k1>
+<k1>Chromosome Mapping</k1>
+<k1>Genes, Viral</k1>
+<k1>Genetic Complementation Test</k1>
+<k1>Hot Temperature</k1>
+<k1>Mutation</k1>
+<k1>Plaque Assay</k1>
+<k1>Sequence Analysis, DNA</k1>
+<k1>Vaccinia virus/genetics</k1>
+<ab>Complementation analysis of the combined Condit/Dales collection of vaccinia virus temperature-sensitive mutants has been reported (Lackner, C.A., D&amp;#39;Costa, S.M., Buck, C., Condit, R.C., 2003. Complementation analysis of the Dales collection of vaccinia virus temperature-sensitive mutants. Virology 305, 240-259), however not all complementation groups have previously been assigned to single genes on the viral genome. We have used marker rescue to map at least one representative of each complementation group to a unique viral gene. The final combined collection contains 124 temperature-sensitive mutants affecting 38 viral genes, plus five double mutants.</ab>
+<no>LR: 20091118; GR: R01 AI055560/AI/NIAID NIH HHS/United States; GR: R01 AI055560-01A1/AI/NIAID NIH HHS/United States; GR: R01 AI055560-02/AI/NIAID NIH HHS/United States; GR: R01 AI055560-03/AI/NIAID NIH HHS/United States; GR: R01 AI055560-04/AI/NIAID NIH HHS/United States; GR: R01 AI055560-05/AI/NIAID NIH HHS/United States; GR: R21 AI055560-01/AI/NIAID NIH HHS/United States; JID: 0110674; NIHMS50829; OID: NLM: NIHMS50829; OID: NLM: PMC2397545; 2007/12/04 [received]; 2007/12/22 [revised]; 2008/01/15 [accepted]; 2008/03/07 [aheadofprint]; ppublish</no>
+<pp>United States</pp>
+<sn>0042-6822; 0042-6822</sn>
+<ad>Department of Molecular Genetics and Microbiology, University of Florida College of Medicine, Gainesville, FL, USA.</ad>
+<an>PMID: 18314155; S0042-6822(08)00045-7 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, N.I.H., Extramural; IM</sf>
+<do>10.1016/j.virol.2008.01.027</do>
+<wp>20080307</wp>
+<ol>Unknown(0)</ol>
+<pmid>18314155</pmid>
+<pmcid>PMC2397545</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>771</id>
+<a1>Kato,S. E.</a1>
+<a1>Strahl,A. L.</a1>
+<a1>Moussatche,N.</a1>
+<a1>Condit,R. C.</a1>
+<t1>Temperature-sensitive mutants in the vaccinia virus 4b virion structural protein assemble malformed, transcriptionally inactive intracellular mature virions</t1>
+<jf>Virology</jf>
+<jo>Virology</jo>
+<yr>2004</yr>
+<fd>Dec 5</fd>
+<vo>330</vo>
+<is>1</is>
+<sp>127</sp>
+<op>146</op>
+<k1>Animals</k1>
+<k1>Cell Line</k1>
+<k1>Cercopithecus aethiops</k1>
+<k1>DNA, Viral/chemistry/genetics/isolation &amp; purification</k1>
+<k1>Electrophoresis, Gel, Pulsed-Field</k1>
+<k1>Gene Expression Regulation, Viral</k1>
+<k1>Genetic Markers</k1>
+<k1>Kidney</k1>
+<k1>Mutation</k1>
+<k1>Plasmids/genetics</k1>
+<k1>Temperature</k1>
+<k1>Thermodynamics</k1>
+<k1>Transcription, Genetic</k1>
+<k1>Vaccinia virus/genetics</k1>
+<k1>Viral Structural Proteins/genetics</k1>
+<k1>Virion/genetics/physiology</k1>
+<ab>Two noncomplementing vaccinia virus temperature-sensitive mutants, Cts8 and Cts26, were mapped to the A3L gene, which encodes the major virion structural protein, 4b. The two ts mutants display normal patterns of gene expression, DNA replication, telomere resolution, and protein processing during infection. Morphogenesis during mutant infections is normal through formation of immature virions with nucleoids (IVN) but appears to be defective in the transition from IVN to intracellular mature virus (IMV). In mutant infections, aberrant particles that have the appearance of malformed IMV accumulate. The mutant particles are wrapped in Golgi-derived membranes and exported from cells. Purified mutant particles are indistinguishable from wt particles in protein and DNA composition; however, they are defective in a permeabilized-virion-directed transcription reaction despite containing significant (Cts8) or even normal (Cts26) levels of specific transcription enzymes. These results indicate that the 4b protein is required for proper metamorphosis of IMV from IVN and that proper organization of the IMV structure is required to produce a transcriptionally active virion particle.</ab>
+<no>LR: 20071114; GR: R01AI055560/AI/NIAID NIH HHS/United States; GR: R01AI18094/AI/NIAID NIH HHS/United States; JID: 0110674; 0 (DNA, Viral); 0 (Genetic Markers); 0 (Viral Structural Proteins); 2004/06/23 [received]; 2004/07/30 [revised]; 2004/08/20 [accepted]; ppublish</no>
+<pp>United States</pp>
+<sn>0042-6822; 0042-6822</sn>
+<ad>Department of Molecular Genetics and Microbiology, University of Florida, Gainesville, FL 32610, USA.</ad>
+<an>PMID: 15527840; S0042-6822(04)00571-9 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<do>10.1016/j.virol.2004.08.038</do>
+<ol>Unknown(0)</ol>
+<pmid>15527840</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>784</id>
+<a1>Lackner,C. A.</a1>
+<a1>Condit,R. C.</a1>
+<t1>Vaccinia virus gene A18R DNA helicase is a transcript release factor</t1>
+<jf>The Journal of biological chemistry</jf>
+<jo>J.Biol.Chem.</jo>
+<yr>2000</yr>
+<fd>Jan 14</fd>
+<vo>275</vo>
+<is>2</is>
+<sp>1485</sp>
+<op>1494</op>
+<k1>Adenosine Triphosphatases/genetics/isolation &amp; purification/metabolism</k1>
+<k1>Chromatography, Ion Exchange</k1>
+<k1>Cloning, Molecular</k1>
+<k1>DNA Helicases/metabolism</k1>
+<k1>Escherichia coli</k1>
+<k1>Humans</k1>
+<k1>Kinetics</k1>
+<k1>Phenotype</k1>
+<k1>Promoter Regions, Genetic</k1>
+<k1>Recombinant Proteins/isolation &amp; purification/metabolism</k1>
+<k1>Templates, Genetic</k1>
+<k1>Transcription, Genetic</k1>
+<k1>Tumor Cells, Cultured</k1>
+<k1>Vaccinia virus/enzymology/genetics</k1>
+<ab>Prior phenotypic analysis of a vaccinia virus gene A18R mutant, Cts23, showed the synthesis of longer than wild type (Wt) length viral transcripts during the intermediate stage of infection, indicating that the A18R protein may act as a negative transcription elongation factor. The purpose of the work described here was to determine a biochemical activity for the A18R protein. Pulse-labeled transcription complexes established from intermediate virus promoters on bead-bound DNA templates were assayed for transcript release during an elongation step that contained nucleotides and various proteins. Pulse-labeled transcription complexes elongated in the presence of only nucleotides were unable to release nascent RNA. The addition of Wt extract during the elongation phase resulted in release of the nascent transcript, indicating that additional factors present in the Wt extract are capable of inducing transcript release. Extract from Cts23 or mock-infected cells was unable to induce release. The lack of release upon addition of Cts23 extract suggests that A18R is involved in release of nascent RNA. By itself, purified polyhistidine-tagged A18R protein (His-A18R) was unable to induce release; however, release did occur in the presence of purified His-A18R protein plus extract from either Cts23 or mock-infected cells. These data taken together indicate that A18R is necessary but not sufficient for release of nascent transcripts. We have also demonstrated that the combination of A18R protein and mock extract induces transcript release in an ATP-dependent manner, consistent with the fact that the A18R protein is an ATP-dependent helicase. Further analysis revealed that the release activity is not restricted to a vaccinia intermediate promoter but is observed using pulse-labeled transcription complexes initiated from all three viral gene class promoters. Therefore, we conclude that A18R and an as yet unidentified cellular factor(s) are required for the in vitro release of nascent RNA from a vaccinia virus transcription elongation complex.</ab>
+<no>LR: 20081121; GR: AI18094/AI/NIAID NIH HHS/United States; JID: 2985121R; 0 (Recombinant Proteins); EC 3.6.1.- (Adenosine Triphosphatases); EC 3.6.1.- (DNA Helicases); ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0021-9258; 0021-9258</sn>
+<ad>Department of Molecular Genetics and Microbiology, University of Florida, Gainesville, Florida 32610-0266, USA.</ad>
+<an>PMID: 10625702</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>10625702</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>775</id>
+<a1>Lackner,C. A.</a1>
+<a1>D&#39;Costa,S. M.</a1>
+<a1>Buck,C.</a1>
+<a1>Condit,R. C.</a1>
+<t1>Complementation analysis of the dales collection of vaccinia virus temperature-sensitive mutants</t1>
+<jf>Virology</jf>
+<jo>Virology</jo>
+<yr>2003</yr>
+<fd>Jan 20</fd>
+<vo>305</vo>
+<is>2</is>
+<sp>240</sp>
+<op>259</op>
+<k1>Animals</k1>
+<k1>Cell Line</k1>
+<k1>Cercopithecus aethiops</k1>
+<k1>DNA Glycosylases</k1>
+<k1>DNA Replication</k1>
+<k1>DNA-Directed RNA Polymerases/genetics</k1>
+<k1>Genetic Complementation Test</k1>
+<k1>Mutation</k1>
+<k1>N-Glycosyl Hydrolases/genetics</k1>
+<k1>Protein Subunits</k1>
+<k1>Protein-Serine-Threonine Kinases/genetics</k1>
+<k1>Temperature</k1>
+<k1>Uracil-DNA Glycosidase</k1>
+<k1>Vaccinia virus/genetics</k1>
+<ab>A collection of randomly generated temperature-sensitive (ts) vaccinia virus (strain IHD-W) mutants were reported by S. Dales et al., (1978, Virology, 84, 403-428) in 1978 and characterized by electron microscopy. We have performed further genetic analysis on the Dales collection of mutants to make the mutants more useful to the scientific community. We obtained the entire Dales collection, 97 mutants, from the American Type Culture Center (ATCC). All 97 mutants were grown and reassessed for temperature sensitivity. Of these, 16 mutants were either very leaky or showed unacceptably high reversion indices even after plaque purification and therefore were not used for further analysis. The remaining 81 ts mutants were used to perform a complete complementation analysis with each other and the existing Condit collection of ts vaccinia virus (strain WR) mutants. Twenty-two of these 81 Dales mutants were dropped during complementation analysis due to erratic or weak behavior in the complementation test. Of the 59 mutants that were fit for further investigation, 30 fall into 13 of Condit&amp;#39;s existing complementation groups, 5 comprise 3 previously identified complementation groups independent of the Condit collection, and 24 comprise 18 new complementation groups. The 59 mutants which were successfully characterized by complementation will be accessioned by and made available to the scientific community through the ATCC.</ab>
+<no>LR: 20071115; GR: N01-RR-4-2137/RR/NCRR NIH HHS/United States; GR: R01-AI18094/AI/NIAID NIH HHS/United States; JID: 0110674; 0 (Protein Subunits); EC 2.7.11.1 (Protein-Serine-Threonine Kinases); EC 2.7.7.6 (DNA-Directed RNA Polymerases); EC 3.2.2.- (DNA Glycosylases); EC 3.2.2.- (N-Glycosyl Hydrolases); EC 3.2.2.- (Uracil-DNA Glycosidase); ppublish</no>
+<pp>United States</pp>
+<sn>0042-6822; 0042-6822</sn>
+<ad>Department of Molecular Genetics and Microbiology, University of Florida, Gainesville 32610, USA.</ad>
+<an>PMID: 12573570; S0042682202917459 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>12573570</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>776</id>
+<a1>Latner,D. R.</a1>
+<a1>Thompson,J. M.</a1>
+<a1>Gershon,P. D.</a1>
+<a1>Storrs,C.</a1>
+<a1>Condit,R. C.</a1>
+<t1>The positive transcription elongation factor activity of the vaccinia virus J3 protein is independent from its (nucleoside-2&amp;#39;-O-) methyltransferase and poly(A) polymerase stimulatory functions</t1>
+<jf>Virology</jf>
+<jo>Virology</jo>
+<yr>2002</yr>
+<fd>Sep 15</fd>
+<vo>301</vo>
+<is>1</is>
+<sp>64</sp>
+<op>80</op>
+<k1>Methyltransferases/physiology</k1>
+<k1>Mutagenesis, Site-Directed</k1>
+<k1>Polynucleotide Adenylyltransferase/chemistry/physiology</k1>
+<k1>RNA, Messenger/biosynthesis</k1>
+<k1>RNA, Viral/biosynthesis</k1>
+<k1>Structure-Activity Relationship</k1>
+<k1>Transcription Factors/physiology</k1>
+<k1>Transcription, Genetic</k1>
+<k1>Vaccinia virus/growth &amp; development</k1>
+<ab>Previous genetic and biochemical experiments have shown that the vaccinia virus J3 protein has three different roles in mRNA synthesis and modification. First, J3 is a (nucleoside-2&amp;#39;-O-)methyltransferase which methylates the 2&amp;#39; position of the first transcribed nucleotide, thus converting a cap-0 to a cap-1 structure at the 5&amp;#39; ends of mRNAs. Second, J3 is a processivity factor for the virus coded poly(A) polymerase. Third, J3 has recently been shown to have intermediate and late gene positive transcription elongation factor activity in vivo. Previous experiments have shown that the poly(A) polymerase stimulatory activity and the (nucleoside-2&amp;#39;-O-)methyltransferase activity are two independent functions of the protein that can be genetically separated through site-directed mutagenesis. In this article, the relationship between the J3-mediated transcription elongation activity and the two other functions of the protein was investigated by constructing several site-directed mutant viruses that contain specific defects in either methyltransferase or poly(A) polymerase processivity functions. The results demonstrate that the J3 positive transcription elongation factor activity is a third independent function of the protein that is genetically separable from its two other functions in mRNA modification. The results also show that neither the poly(A) polymerase stimulatory nor the methyltransferase activities of the J3 protein is essential for virus growth in cell culture.</ab>
+<no>LR: 20071114; GR: AI18094/AI/NIAID NIH HHS/United States; GR: GM51953/GM/NIGMS NIH HHS/United States; JID: 0110674; 0 (J3 protein, Vaccinia virus); 0 (RNA, Messenger); 0 (RNA, Viral); 0 (Transcription Factors); EC 2.1.1.- (Methyltransferases); EC 2.7.7.19 (Polynucleotide Adenylyltransferase); ppublish</no>
+<pp>United States</pp>
+<sn>0042-6822; 0042-6822</sn>
+<ad>Department of molecular Genetics and microbiology and Center for Mammalian Genetics, University of Florida, Gainesville, Florida 32610, USA.</ad>
+<an>PMID: 12359447; S0042682202915382 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, Non-P.H.S.; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>12359447</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>782</id>
+<a1>Latner,D. R.</a1>
+<a1>Xiang,Y.</a1>
+<a1>Lewis,J. I.</a1>
+<a1>Condit,J.</a1>
+<a1>Condit,R. C.</a1>
+<t1>The vaccinia virus bifunctional gene J3 (nucleoside-2&amp;#39;-O-)-methyltransferase and poly(A) polymerase stimulatory factor is implicated as a positive transcription elongation factor by two genetic approaches</t1>
+<jf>Virology</jf>
+<jo>Virology</jo>
+<yr>2000</yr>
+<fd>Apr 10</fd>
+<vo>269</vo>
+<is>2</is>
+<sp>345</sp>
+<op>355</op>
+<k1>Animals</k1>
+<k1>Blotting, Western</k1>
+<k1>Cercopithecus aethiops</k1>
+<k1>Genes, Viral</k1>
+<k1>Genetic Markers</k1>
+<k1>Mutagenesis</k1>
+<k1>Peptide Elongation Factors/genetics</k1>
+<k1>Point Mutation</k1>
+<k1>Polynucleotide Adenylyltransferase/metabolism</k1>
+<k1>Sequence Analysis, DNA</k1>
+<k1>Suppression, Genetic</k1>
+<k1>Vaccinia virus/genetics</k1>
+<k1>Vero Cells</k1>
+<ab>Vaccinia virus genes A18 and G2 affect the elongation and termination of postreplicative viral gene transcription in opposite ways. Viruses with mutations in gene A18 produce abnormally long transcripts, indicating that A18 is a negative transcription elongation factor. Viruses containing mutations in gene G2 produce transcripts that are abnormally short, truncated specifically from their 3&amp;#39; ends, indicating that G2 is a positive transcription elongation factor. Despite the fact that both A18 and G2 are essential genes, A18-G2 double-mutant viruses are viable, presumably because the effects of the mutations are mutually compensatory. In addition, the anti-poxviral drug isatin-beta-thiosemicarbazone (IBT) seems to enhance elongation during a vaccinia infection: IBT treatment of a wildtype vaccinia infection induces a phenotype identical to an A18 mutant infection, and G2 mutant viruses are dependent on IBT for growth, presumably because IBT restores the G2 mutant truncated transcripts to a normal length. These observations inspire two independent genetic selections that have now been used to identify an additional vaccinia gene, J3, that regulates postreplicative transcription elongation. In the first selection, a single virus that contains an extragenic suppressor of the A18 temperature-sensitive mutant, Cts23, was isolated. In the second selection, several spontaneous IBT-dependent (IBT(d)) mutant viruses were isolated and characterized genetically. Marker rescue mapping and DNA sequence analysis show that the extragenic suppressor of Cts23 contains a point mutation in the J3 gene, while each of seven new IBT(d) mutants contains null mutations in the J3 gene. The J3 protein has previously been identified as a (nucleoside-2&amp;#39;-O-)-methyltransferase and as a processivity subunit for the heterodimeric viral poly(A) polymerase. The nature of the two independent selections used to isolate the J3 mutants strongly suggests that the J3 protein serves as a positive postreplicative transcription elongation factor during a normal virus infection.</ab>
+<no>LR: 20071114; CI: Copyright 2000; GR: AI 18094/AI/NIAID NIH HHS/United States; JID: 0110674; 0 (Genetic Markers); 0 (Peptide Elongation Factors); EC 2.7.7.19 (Polynucleotide Adenylyltransferase); ppublish</no>
+<pb>Academic Press</pb>
+<pp>UNITED STATES</pp>
+<sn>0042-6822; 0042-6822</sn>
+<ad>Department of Molecular Genetics, Center for Mammalian Genetics, University of Florida, Gainesville, Florida, 32610-0266, USA.</ad>
+<an>PMID: 10753713; S0042-6822(00)90243-5 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<do>10.1006/viro.2000.0243</do>
+<ol>Unknown(0)</ol>
+<pmid>10753713</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>811</id>
+<a1>Lee-Chen,G. J.</a1>
+<a1>Bourgeois,N.</a1>
+<a1>Davidson,K.</a1>
+<a1>Condit,R. C.</a1>
+<a1>Niles,E. G.</a1>
+<t1>Structure of the transcription initiation and termination sequences of seven early genes in the vaccinia virus HindIII D fragment</t1>
+<jf>Virology</jf>
+<jo>Virology</jo>
+<yr>1988</yr>
+<fd>Mar</fd>
+<vo>163</vo>
+<is>1</is>
+<sp>64</sp>
+<op>79</op>
+<k1>Base Sequence</k1>
+<k1>DNA Restriction Enzymes</k1>
+<k1>Deoxyribonuclease HindIII</k1>
+<k1>Endonucleases</k1>
+<k1>Genes, Regulator</k1>
+<k1>Genes, Viral</k1>
+<k1>Molecular Sequence Data</k1>
+<k1>RNA, Messenger/genetics</k1>
+<k1>RNA, Viral/genetics</k1>
+<k1>Single-Strand Specific DNA and RNA Endonucleases</k1>
+<k1>Terminator Regions, Genetic</k1>
+<k1>Transcription, Genetic</k1>
+<k1>Vaccinia virus/genetics</k1>
+<ab>The vaccinia virus HindIII D fragment is 16,060 bp in length and encodes 13 complete genes [E.G. Niles et al. (1986). Virology 153, 96-112; S. L. Weinrich and D. E. Hruby (1986). Nucleic Acids Res. 14, 3003-3016]. Six of these genes are expressed only at early times after infection and one gene is expressed at both early and late times [G. -J. Lee-Chen and E. G. Niles (1988). Virology 163, 52-63]. Transcript mapping by S1 nuclease protection studies was carried out and compared to the results of primer extension analyses, in order to locate map positions of the 5&amp;#39; termini of each early mRNA. The lengths of the products of in vitro transcription, from DNA templates which possess the transcription start regions of each of the early genes, were determined and compared to the lengths of DNA products generated by S1 nuclease protection and primer extension, in order to demonstrate that the 5&amp;#39; termini identified by S1 mapping and primer extension are due to transcription initiation and not to mRNA processing. For each of the early genes in the HindIII D fragment, transcription starts within 25 nucleotides of the translation initiation codon. The precise location of the 3&amp;#39; termini of each early transcript was identified by S1 nuclease mapping. In all but one case, the 3&amp;#39; ends map within 75 nucleotides of the putative transcription termination signal TTTTTNT [G. Rohrmann, L. Yuen, and B. Moss (1986).</ab>
+<no>LR: 20081121; JID: 0110674; 0 (RNA, Messenger); 0 (RNA, Viral); EC 3.1.- (Endonucleases); EC 3.1.21.- (DNA Restriction Enzymes); EC 3.1.21.- (Deoxyribonuclease HindIII); EC 3.1.30.1 (Single-Strand Specific DNA and RNA Endonucleases); ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0042-6822; 0042-6822</sn>
+<ad>Biochemistry Department, State University of New York, Buffalo 14214.</ad>
+<an>PMID: 2831666</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, Non-P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>2831666</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>801</id>
+<a1>Meis,R. J.</a1>
+<a1>Condit,R. C.</a1>
+<t1>Genetic and molecular biological characterization of a vaccinia virus gene which renders the virus dependent on isatin-beta-thiosemicarbazone (IBT)</t1>
+<jf>Virology</jf>
+<jo>Virology</jo>
+<yr>1991</yr>
+<fd>Jun</fd>
+<vo>182</vo>
+<is>2</is>
+<sp>442</sp>
+<op>454</op>
+<k1>Adenine Nucleotides/metabolism</k1>
+<k1>Amino Acid Sequence</k1>
+<k1>Animals</k1>
+<k1>Base Sequence</k1>
+<k1>Blotting, Northern</k1>
+<k1>Cell Line</k1>
+<k1>Chromosome Deletion</k1>
+<k1>Chromosome Mapping</k1>
+<k1>Cloning, Molecular</k1>
+<k1>Genes, Viral</k1>
+<k1>Genetic Complementation Test</k1>
+<k1>Isatin/analogs &amp; derivatives/pharmacology</k1>
+<k1>Molecular Sequence Data</k1>
+<k1>Mutation</k1>
+<k1>Oligoribonucleotides/metabolism</k1>
+<k1>RNA, Messenger/genetics</k1>
+<k1>RNA, Viral/genetics</k1>
+<k1>Restriction Mapping</k1>
+<k1>Transcription, Genetic</k1>
+<k1>Vaccinia virus/genetics</k1>
+<k1>Viral Proteins/genetics</k1>
+<k1>Viral Structural Proteins/genetics</k1>
+<k1>Virus Replication</k1>
+<ab>We have sequenced and analyzed the transcription of a gene capable of rendering vaccinia virus (VV) dependent upon isatin-beta-thiosemicarbazone (IBT) for growth. Marker rescue analysis of an IBT-dependent mutant of VV, IBTd-1, and a temperature-sensitive mutant of VV, ts56, both of which require IBT to grow at 40 degrees, showed that both lesions mapped to gene G2R. VV mutants with G2R deletions were constructed and shown to also be dependent upon IBT for growth. The nucleotide sequence changes responsible for IBTd-1, ts56, and the gene G2R deletion mutants were determined, and taken together show that IBT dependence results from inactivation of the orf G2R gene product. Gene G2R, which has the capacity to encode a 26-kDa protein, is transcribed solely early during infection. The 1.3-kb mRNA contains a 5&amp;#39; untranslated region of almost 600 nucleotides, and terminates about 20 nucleotides downstream from an early transcription termination signal. Transcription analyses of three flanking genes, as well as the map positions of the VV mutants ts11 and ts60 are also presented.</ab>
+<no>LR: 20071114; GENBANK/J03399; GENBANK/M59847; GENBANK/M61049; GENBANK/M61050; GENBANK/M61051; GENBANK/M61052; GENBANK/M61053; GENBANK/M61054; GENBANK/M61055; GENBANK/M61056; GENBANK/M61057; GR: AI18094/AI/NIAID NIH HHS/United States; JID: 0110674; 0 (Adenine Nucleotides); 0 (Oligoribonucleotides); 0 (RNA, Messenger); 0 (RNA, Viral); 0 (Viral Proteins); 0 (Viral Structural Proteins); 487-16-1 (isatin beta-thiosemicarbazone); 61172-40-5 (2&amp;#39;,5&amp;#39;-oligoadenylate); 91-56-5 (Isatin); ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0042-6822; 0042-6822</sn>
+<ad>Department of Biochemistry, State University of New York, Buffalo 14214.</ad>
+<an>PMID: 2024483</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>2024483</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>780</id>
+<a1>Mohamed,M. R.</a1>
+<a1>Latner,D. R.</a1>
+<a1>Condit,R. C.</a1>
+<a1>Niles,E. G.</a1>
+<t1>Interaction between the J3R subunit of vaccinia virus poly(A) polymerase and the H4L subunit of the viral RNA polymerase</t1>
+<jf>Virology</jf>
+<jo>Virology</jo>
+<yr>2001</yr>
+<fd>Feb 1</fd>
+<vo>280</vo>
+<is>1</is>
+<sp>143</sp>
+<op>152</op>
+<k1>Animals</k1>
+<k1>Cell Line</k1>
+<k1>Cercopithecus aethiops</k1>
+<k1>DNA-Directed RNA Polymerases/metabolism</k1>
+<k1>Polynucleotide Adenylyltransferase/metabolism</k1>
+<k1>Transcription Factors/metabolism</k1>
+<k1>Vaccinia virus/enzymology</k1>
+<k1>Viral Proteins/metabolism</k1>
+<ab>J3R, the 39-kDa subunit of vaccinia virus poly(A) polymerase, is a multifunctional protein that catalyzes (nucleoside-2&amp;#39;-O-)-methyltransferase activity, serves as a poly(A) polymerase stimulatory factor, and acts as a postreplicative positive transcription elongation factor. Prior results support an association between poly(A) polymerase and the virion RNA polymerase. A possible direct interaction between J3R and H4L subunit of virion RNA polymerase was evaluated. J3R was shown to specifically bind to H4L amino acids 235-256, C terminal to NPH I binding site on H4L. H4L binds to the C-terminal region of J3R between amino acids 169 and 333. The presence of a J3R binding site near to the NPH I binding region on H4L led us to evaluate a physical interaction between NPH I and J3R. The NPH I binding site was located on J3R between amino acids 169 and 249, and J3R was shown to bind to NPH I between amino acids 457 and 524. To evaluate a role for J3R in early gene mRNA synthesis, transcription termination, and/or release, a transcription-competent extract prepared from cells infected with mutant virus lacking J3R, J3-7. Analysis of transcription activity demonstrated that J3R is not required for early mRNA synthesis and is not an essential factor in early gene transcription termination or transcript release in vitro. J3R interaction with NPH I and H4L may serve as a docking site for J3R on the virion RNA polymerase, linking transcription to mRNA cap formation and poly(A) addition.</ab>
+<no>LR: 20071114; CI: Copyright 2001; GR: AI-43933/AI/NIAID NIH HHS/United States; GR: GM-54816/GM/NIGMS NIH HHS/United States; JID: 0110674; 0 (J3 protein, Vaccinia virus); 0 (Transcription Factors); 0 (Viral Proteins); EC 2.7.7.19 (Polynucleotide Adenylyltransferase); EC 2.7.7.6 (DNA-Directed RNA Polymerases); ppublish</no>
+<pb>Academic Press</pb>
+<pp>United States</pp>
+<sn>0042-6822; 0042-6822</sn>
+<ad>Department of Biochemistry, SUNY School of Medicine and Biomedical Science at Buffalo, Buffalo, New York 14214, USA.</ad>
+<an>PMID: 11162828; S0042-6822(00)90749-9 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<do>10.1006/viro.2000.0749</do>
+<ol>Unknown(0)</ol>
+<pmid>11162828</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>824</id>
+<a1>Niles,E. G.</a1>
+<a1>Condit,R. C.</a1>
+<t1>Translational Mapping of Bacteriophage T7 RNAs synthesized in vitro by purified T7 RNA polymerase</t1>
+<jf>Journal of Molecular Biology</jf>
+<jo>J.Mol.Biol.</jo>
+<yr>1975</yr>
+<fd>Oct 15</fd>
+<vo>98</vo>
+<is>1</is>
+<sp>57</sp>
+<op>67</op>
+<k1>Chromosome Mapping</k1>
+<k1>Coliphages/metabolism</k1>
+<k1>DNA-Directed RNA Polymerases/isolation &amp; purification/metabolism</k1>
+<k1>Escherichia coli/metabolism</k1>
+<k1>Genetic Code</k1>
+<k1>Genotype</k1>
+<k1>Mutation</k1>
+<k1>Protein Biosynthesis</k1>
+<k1>RNA, Viral/metabolism</k1>
+<k1>Species Specificity</k1>
+<no>LR: 20061115; JID: 2985088R; 0 (RNA, Viral); EC 2.7.7.6 (DNA-Directed RNA Polymerases); ppublish</no>
+<pp>ENGLAND</pp>
+<sn>0022-2836; 0022-2836</sn>
+<an>PMID: 1104869</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>1104869</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>814</id>
+<a1>Niles,E. G.</a1>
+<a1>Condit,R. C.</a1>
+<a1>Caro,P.</a1>
+<a1>Davidson,K.</a1>
+<a1>Matusick,L.</a1>
+<a1>Seto,J.</a1>
+<t1>Nucleotide sequence and genetic map of the 16-kb vaccinia virus HindIII D fragment</t1>
+<jf>Virology</jf>
+<jo>Virology</jo>
+<yr>1986</yr>
+<fd>Aug</fd>
+<vo>153</vo>
+<is>1</is>
+<sp>96</sp>
+<op>112</op>
+<k1>Amino Acid Sequence</k1>
+<k1>Base Sequence</k1>
+<k1>Chromosome Mapping</k1>
+<k1>DNA, Viral/analysis</k1>
+<k1>Genetic Complementation Test</k1>
+<k1>Mutation</k1>
+<k1>Transcription, Genetic</k1>
+<k1>Vaccinia virus/genetics</k1>
+<ab>We have determined the nucleotide sequence of the 16,059-bp HindIII D fragment from vaccinia virus strain WR. Translation in all 6 reading frames reveals a set of 22 open reading frames (ORFs), which are capable of encoding proteins ranging from 61 to 844 amino acids in length. With one exception, ORF 12, we have divided them into two primary sets according to their size. The minor group contains eight members ranging in length from 61 to 84 amino acids. The major group has thirteen members varying from 146 to 844 amino acids in length, and, in addition, due to its location on the DNA, one small ORF, 61 amino acids long. The neighboring major ORFs are closely packed along the DNA, being separated by 42 or fewer base pairs. In several instances the ends of adjoining ORFs overlap for up to 11 triplet codons. In three cases, 1 or 2 bases are shared between translation start and stop signals in adjacent ORFs. Regions of both strands of the DNA are transcribed. Two sets of temperature-sensitive mutations, totaling 17, which map to the HindIII D fragment, have been combined into eight complementation groups. The results of marker rescue analysis map one or more member of each group to a site in the HindIII D fragment within a defined open reading frame.</ab>
+<no>LR: 20061115; GENBANK/M15058; JID: 0110674; 0 (DNA, Viral); ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0042-6822; 0042-6822</sn>
+<an>PMID: 3739227</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, Non-P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>3739227</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>768</id>
+<a1>Nollens,H. H.</a1>
+<a1>Gulland,F. M.</a1>
+<a1>Hernandez,J. A.</a1>
+<a1>Condit,R. C.</a1>
+<a1>Klein,P. A.</a1>
+<a1>Walsh,M. T.</a1>
+<a1>Jacobson,E. R.</a1>
+<t1>Seroepidemiology of parapoxvirus infections in captive and free-ranging California sea lions Zalophus californianus</t1>
+<jf>Diseases of aquatic organisms</jf>
+<jo>Dis.Aquat.Organ.</jo>
+<yr>2006</yr>
+<fd>Apr 6</fd>
+<vo>69</vo>
+<is>2-3</is>
+<sp>153</sp>
+<op>161</op>
+<k1>Age Factors</k1>
+<k1>Animals</k1>
+<k1>Animals, Wild/virology</k1>
+<k1>Antibodies, Viral/blood</k1>
+<k1>Enzyme-Linked Immunosorbent Assay/methods/veterinary</k1>
+<k1>Female</k1>
+<k1>Logistic Models</k1>
+<k1>Male</k1>
+<k1>Odds Ratio</k1>
+<k1>Parapoxvirus/immunology/isolation &amp; purification</k1>
+<k1>Poxviridae Infections/epidemiology/veterinary/virology</k1>
+<k1>Sea Lions/classification/virology</k1>
+<k1>Seroepidemiologic Studies</k1>
+<k1>Sex Factors</k1>
+<ab>Cutaneous nodular lesions caused by parapoxvirus infections are commonly observed in stranded pinnipeds following their arrival at rehabilitation facilities. An indirect enzyme-linked immunosorbent assay (ELISA) was developed and validated to determine exposure to parapoxviruses in California sea lions Zalophus californianus in captivity and in the wild. The diagnostic performance of this assay was evaluated using receiver-operating characteristic analysis. At a selected cut-off value, the calculated sensitivity was 100% (95% CI = 86 to 100%) and the specificity was 100% (95% CI = 87 to 100%). Analysis of sera collected from 26 affected sea lions during various stages of the disease revealed anti-parapoxvirus antibodies in all affected sea lions prior to the development of cutaneous pox lesions. This indicated that previous exposure to a parapoxvirus does not confer protection against clinical disease. In at least 7 cases, exposure to the virus occurred during hospitalization. Analysis of paired sera from 74 unaffected sea lions indicated subclinical infections in at least 3 animals. Finally, the prevalence of anti-parapoxviral antibodies in 761 free-ranging California sea lions captured and tested was 91% (95% CI = 89 to 93%). This indicated that infection with a parapoxvirus is a common occurrence in the wild and that the release of captive sea lions infected with parapoxvirus into the wild should not increase the risk of a parapoxvirus outbreak in free-ranging sea lions.</ab>
+<no>JID: 8807037; 0 (Antibodies, Viral); ppublish</no>
+<pp>Germany</pp>
+<sn>0177-5103; 0177-5103</sn>
+<ad>Marine Mammal Health Program and Department of Small Animal Clinical Sciences, College of Veterinary Medicine, University of Florida, Gainesville 32610, USA. nollensh@mail.vetmed.ufl.edu</ad>
+<an>PMID: 16724559</an>
+<la>eng</la>
+<sf>Comparative Study; Journal Article; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>16724559</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>758</id>
+<a1>Nollens,H. H.</a1>
+<a1>Gulland,F. M.</a1>
+<a1>Jacobson,E. R.</a1>
+<a1>Hernandez,J. A.</a1>
+<a1>Klein,P. A.</a1>
+<a1>Walsh,M. T.</a1>
+<a1>Condit,R. C.</a1>
+<t1>In vitro susceptibility of sea lion poxvirus to cidofovir</t1>
+<jf>Antiviral Research</jf>
+<jo>Antiviral Res.</jo>
+<yr>2008</yr>
+<fd>Oct</fd>
+<vo>80</vo>
+<is>1</is>
+<sp>77</sp>
+<op>80</op>
+<k1>Animals</k1>
+<k1>Antiviral Agents/pharmacology</k1>
+<k1>Cells, Cultured</k1>
+<k1>Cytopathogenic Effect, Viral/drug effects</k1>
+<k1>Cytosine/analogs &amp; derivatives/pharmacology</k1>
+<k1>Kidney/cytology/virology</k1>
+<k1>Microbial Sensitivity Tests</k1>
+<k1>Parapoxvirus/classification/drug effects/physiology</k1>
+<k1>Phosphonic Acids/pharmacology</k1>
+<k1>Poxviridae Infections/veterinary/virology</k1>
+<k1>Sea Lions/virology</k1>
+<ab>Parapoxviruses of seals and sea lions are commonly encountered pathogens with zoonotic potential. The antiviral activity of the antiviral compounds isatin-beta-thiosemicarbazone, rifampicin, acyclovir, cidofovir and phosphonoacetic acid against a parapoxvirus (SLPV-1) isolated from a Californian sea lions (Zalophus californianus) was evaluated. Cidofovir was able to reduce virus-induced cytopathic effect of SLPV-1 in confluent monolayers when used in concentrations greater than 2microg/ml. A decreasing virus yield was observed in the presence of increasing concentrations of cidofovir, which confirmed the ability of cidofovir to inhibit SLPV-1 replication. The in vitro efficacy of cidofovir against SLPV-1 indicates the therapeutic potential of cidofovir for the treatment of infections of humans and pinnipeds with parapoxviruses of seals and sea lions. This study confirms the previously proposed therapeutic potential of cidofovir for the treatment of parapoxvirus infections.</ab>
+<no>JID: 8109699; 0 (Antiviral Agents); 0 (Phosphonic Acids); 113852-37-2 (cidofovir); 71-30-7 (Cytosine); 2007/10/26 [received]; 2008/03/14 [revised]; 2008/03/19 [accepted]; 2008/04/28 [aheadofprint]; ppublish</no>
+<pp>Netherlands</pp>
+<sn>0166-3542; 0166-3542</sn>
+<ad>Marine Mammal Health Program and Department of Small Animal Clinical Sciences, College of Veterinary Medicine, University of Florida, Gainesville, FL 32610, USA. NollensH@vetmed.ufl.edu</ad>
+<an>PMID: 18485494; S0166-3542(08)00268-4 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<do>10.1016/j.antiviral.2008.03.007</do>
+<wp>20080428</wp>
+<ol>Unknown(0)</ol>
+<pmid>18485494</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>770</id>
+<a1>Nollens,H. H.</a1>
+<a1>Gulland,F. M.</a1>
+<a1>Jacobson,E. R.</a1>
+<a1>Hernandez,J. A.</a1>
+<a1>Klein,P. A.</a1>
+<a1>Walsh,M. T.</a1>
+<a1>Condit,R. C.</a1>
+<t1>Parapoxviruses of seals and sea lions make up a distinct subclade within the genus Parapoxvirus</t1>
+<jf>Virology</jf>
+<jo>Virology</jo>
+<yr>2006</yr>
+<fd>Jun 5</fd>
+<vo>349</vo>
+<is>2</is>
+<sp>316</sp>
+<op>324</op>
+<k1>Animals</k1>
+<k1>Base Sequence</k1>
+<k1>DNA, Viral/chemistry/genetics</k1>
+<k1>Genetic Variation</k1>
+<k1>Genome, Viral</k1>
+<k1>Molecular Sequence Data</k1>
+<k1>Parapoxvirus/classification/genetics/isolation &amp; purification</k1>
+<k1>Phylogeny</k1>
+<k1>Poxviridae Infections/veterinary/virology</k1>
+<k1>Sea Lions/virology</k1>
+<k1>Seals, Earless/virology</k1>
+<k1>Sequence Alignment</k1>
+<k1>Sequence Analysis, DNA</k1>
+<ab>Poxviruses of seals and sea lions have been tentatively identified as both orthopoxviruses and parapoxviruses, but their exact identity remained unconfirmed. Here, poxviral DNA sequences were generated from 39 clinical cases and compared to sequences from earlier poxvirus isolates from seals (Phocidae) and sea lions (Otariidae). Six genetically distinct poxvirus strains were detected, of which three were previously unrecognized. All detected strains were closely related to the parapoxviruses, confirming their classification as members of the genus Parapoxvirus. A phylogenetic analysis showed that pinniped parapoxviruses form a monophyletic group within the genus Parapoxvirus. Parapoxviruses from Atlantic pinnipeds were phylogenetically distant from those of Pacific pinnipeds. Parapoxviruses from phocids and otariids that inhabit the same geographical region were also phylogenetically distant, suggesting that parapoxviruses are not commonly transmitted between free-ranging phocids and otariids. However, one strain was detected in two otariid species, suggesting that pinniped parapoxviruses are capable of infecting multiple species within a phylogenetic family.</ab>
+<no>LR: 20081121; GENBANK/DQ273134; GENBANK/DQ273135; GENBANK/DQ273136; GENBANK/DQ273137; GENBANK/DQ273138; JID: 0110674; 0 (DNA, Viral); 2005/11/04 [received]; 2006/01/05 [revised]; 2006/01/16 [accepted]; 2006/02/21 [aheadofprint]; ppublish</no>
+<pp>United States</pp>
+<sn>0042-6822; 0042-6822</sn>
+<ad>Marine Mammal Health Program and Department of Small Animal Clinical Sciences, College of Veterinary Medicine, University of Florida, PO Box 100126, Gainesville, FL 32610, USA. NollensH@mail.vetmed.ufl.edu</ad>
+<an>PMID: 16490227; S0042-6822(06)00034-1 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<do>10.1016/j.virol.2006.01.020</do>
+<wp>20060221</wp>
+<ol>Unknown(0)</ol>
+<pmid>16490227</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>769</id>
+<a1>Nollens,H. H.</a1>
+<a1>Jacobson,E. R.</a1>
+<a1>Gulland,F. M.</a1>
+<a1>Beusse,D. O.</a1>
+<a1>Bossart,G. D.</a1>
+<a1>Hernandez,J. A.</a1>
+<a1>Klein,P. A.</a1>
+<a1>Condit,R. C.</a1>
+<t1>Pathology and preliminary characterization of a parapoxvirus isolated from a California sea lion (Zalophus californianus)</t1>
+<jf>Journal of wildlife diseases</jf>
+<jo>J.Wildl.Dis.</jo>
+<yr>2006</yr>
+<fd>Jan</fd>
+<vo>42</vo>
+<is>1</is>
+<sp>23</sp>
+<op>32</op>
+<k1>Amino Acid Sequence</k1>
+<k1>Animals</k1>
+<k1>Base Sequence</k1>
+<k1>California/epidemiology</k1>
+<k1>DNA, Viral/analysis</k1>
+<k1>Disease Outbreaks/veterinary</k1>
+<k1>Fatal Outcome</k1>
+<k1>Female</k1>
+<k1>Microscopy, Electron/veterinary</k1>
+<k1>Molecular Sequence Data</k1>
+<k1>Parapoxvirus/classification/genetics/isolation &amp; purification</k1>
+<k1>Phylogeny</k1>
+<k1>Polymerase Chain Reaction/veterinary</k1>
+<k1>Poxviridae Infections/epidemiology/pathology/veterinary/virology</k1>
+<k1>Sea Lions/virology</k1>
+<k1>Sequence Alignment/veterinary</k1>
+<k1>Skin/pathology/virology</k1>
+<ab>Cutaneous pox-like lesions are a common complication in the rehabilitation of pinnipeds. However, the exact identity, taxonomy, and host range of pinniped parapoxviruses remain unknown. During a poxvirus outbreak in May 2003 in California sea lions (Zalophus californianus) at a marine mammal rehabilitation facility, multiple raised, firm, 1-3-cm skin nodules from the head, neck, and thorax of one sea lion weanling pup that spontaneously died were collected. Histologically, the nodules were characterized by inflammation and necrosis of the dermis and epidermis, acanthosis, and ballooning degeneration of the stratum spinosum. Large, coalescing eosinophilic cytoplasmic inclusions were observed in the ballooned cells. A parapoxvirus (sea lion poxvirus 1, SLPV-1) was isolated on early passage California sea lion kidney cells inoculated with a tissue homogenate of a skin nodule. The morphology of the virions on electron microscopy was consistent with that of parapoxviruses. Partial sequencing of the genomic region encoding the putative major virion envelope antigen p42K confirmed the assignment of the sea lion poxvirus to the genus Parapoxvirus. Although SLPV-1 is most closely related to the poxvirus of harbor seals of the European North Sea, it is significantly different from orf virus, bovine papular stomatitis virus, pseudocowpox virus and the parapoxvirus of New Zealand red deer.</ab>
+<no>LR: 20061115; JID: 0244160; 0 (DNA, Viral); ppublish</no>
+<pp>United States</pp>
+<sn>0090-3558; 0090-3558</sn>
+<ad>Marine Mammal Health Program and Department of Small Animal Clinical Sciences, College of Veterinary Medicine, University of Florida, PO Box 100126, Gainesville, Florida 32610, USA. NollensH@mail.vetmed.ufl.edu</ad>
+<an>PMID: 16699145; 42/1/23 [pii]</an>
+<la>eng</la>
+<sf>Case Reports; Journal Article; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>16699145</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>816</id>
+<a1>Pacha,R. F.</a1>
+<a1>Condit,R. C.</a1>
+<t1>Characterization of a temperature-sensitive mutant of vaccinia virus reveals a novel function that prevents virus-induced breakdown of RNA</t1>
+<jf>Journal of virology</jf>
+<jo>J.Virol.</jo>
+<yr>1985</yr>
+<fd>Nov</fd>
+<vo>56</vo>
+<is>2</is>
+<sp>395</sp>
+<op>403</op>
+<k1>DNA, Viral/biosynthesis</k1>
+<k1>Gene Expression Regulation</k1>
+<k1>Indoles/pharmacology</k1>
+<k1>Isatin/analogs &amp; derivatives/pharmacology</k1>
+<k1>Molecular Weight</k1>
+<k1>Mutation</k1>
+<k1>RNA, Ribosomal/metabolism</k1>
+<k1>RNA, Viral/metabolism</k1>
+<k1>Temperature</k1>
+<k1>Vaccinia virus/genetics/metabolism</k1>
+<k1>Viral Interference</k1>
+<k1>Viral Proteins/biosynthesis</k1>
+<ab>We have attempted to characterize the molecular defect in a temperature-sensitive mutant of vaccinia virus, ts22, which has an abortive late phenotype. At the nonpermissive temperature, ts22 displays normal viral protein synthesis until 8 h postinfection. Between 8 and 10 h after infection all viral protein synthesis ceases abruptly. Characterization of ts22 revealed that (i) primary transcription of late viral genes was not grossly impaired, (ii) late viral mRNA was biologically inactive since it could not stimulate in vitro protein synthesis, and (iii) extensive cleavage of rRNA and late viral mRNA occurred at the time that viral protein synthesis aborted in vivo. These data suggest that ts22 is defective in a function which prevents host rRNA and viral mRNA from being degraded. Inhibitor studies with cytosine arabinoside and cycloheximide showed that induction of and protection from rRNA breakdown occurred at approximately the same time during infection and required late viral gene expression. The viral protein synthesis pattern observed in vaccinia virus-infected cells treated with the drug isatin-beta-thiosemicarbazone was strikingly similar to that observed in ts22-infected cells at the nonpermissive temperature (J. Cooper, B. Moss, and E. Katz, Virology 96:381-392, 1979). Analysis of rRNA integrity in isatin-beta-thiosemicarbazone-treated, vaccinia virus-infected cells revealed extensive cleavage of rRNA, suggesting that the ts22 and drug inhibitor may function in the same pathway.</ab>
+<no>LR: 20091118; GR: 2RO1-AI1809404/AI/NIAID NIH HHS/United States; JID: 0113724; 0 (DNA, Viral); 0 (Indoles); 0 (RNA, Ribosomal); 0 (RNA, Viral); 0 (Viral Proteins); 487-16-1 (isatin beta-thiosemicarbazone); 91-56-5 (Isatin); OID: NLM: PMC252592; ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0022-538X; 0022-538X</sn>
+<an>PMID: 4057355</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>4057355</pmid>
+<pmcid>PMC252592</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>805</id>
+<a1>Pacha,R. F.</a1>
+<a1>Meis,R. J.</a1>
+<a1>Condit,R. C.</a1>
+<t1>Structure and expression of the vaccinia virus gene which prevents virus-induced breakdown of RNA</t1>
+<jf>Journal of virology</jf>
+<jo>J.Virol.</jo>
+<yr>1990</yr>
+<fd>Aug</fd>
+<vo>64</vo>
+<is>8</is>
+<sp>3853</sp>
+<op>3863</op>
+<k1>Amino Acid Sequence</k1>
+<k1>Animals</k1>
+<k1>Base Sequence</k1>
+<k1>Blotting, Northern</k1>
+<k1>Cell Line</k1>
+<k1>Cell Transformation, Viral</k1>
+<k1>Cloning, Molecular</k1>
+<k1>Gene Expression</k1>
+<k1>Genes, Viral</k1>
+<k1>Molecular Sequence Data</k1>
+<k1>Mutation</k1>
+<k1>Nucleic Acid Conformation</k1>
+<k1>Oligonucleotide Probes</k1>
+<k1>Phenotype</k1>
+<k1>Protein Biosynthesis</k1>
+<k1>RNA, Messenger/genetics/metabolism</k1>
+<k1>RNA, Ribosomal/genetics/metabolism</k1>
+<k1>RNA, Viral/genetics/metabolism</k1>
+<k1>Restriction Mapping</k1>
+<k1>Vaccinia virus/genetics</k1>
+<ab>Three noncomplementing vaccinia virus temperature-sensitive mutants, ts4, ts22, and ts23, exhibit an abortive late phenotype characterized by the simultaneous cessation of protein synthesis, the breakdown of rRNA and viral mRNA, and an increase in intracellular concentrations of 2&amp;#39;-5&amp;#39;-linked oligoadenylates late during infection at the nonpermissive temperature (R.F. Pacha and R.C. Condit, J. Virol. 56:395-403, 1985; R.J. Cohrs, R.C. Condit, R.F. Pacha, C.L. Thompson, and O.K. Sharma, J. Virol. 63:948-951, 1989). We have identified the virus gene affected by the abortive late mutants, determined its DNA sequence, and analyzed its transcription. The gene resides in the HindIII A DNA fragment, it has a predicted coding capacity of 57 kilodaltons, and it is transcribed both early and late during infection. The early transcript of the abortive late gene is unusual; it contains a 426-nucleotide 5&amp;#39; untranslated region, and it must be synthesized by transcription through an early transcription termination signal which is located in the middle of the gene in a hairpin loop structure. DNA sequence and transcription analysis of two flanking genes is also presented.</ab>
+<no>LR: 20091118; GENBANK/M32064; GR: AI18094/AI/NIAID NIH HHS/United States; JID: 0113724; 0 (Oligonucleotide Probes); 0 (RNA, Messenger); 0 (RNA, Ribosomal); 0 (RNA, Viral); OID: NLM: PMC249681; ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0022-538X; 0022-538X</sn>
+<ad>Department of Biochemistry, State University of New York, Buffalo 14214.</ad>
+<an>PMID: 2370683</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>2370683</pmid>
+<pmcid>PMC249681</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>772</id>
+<a1>Prins,C.</a1>
+<a1>Cresawn,S. G.</a1>
+<a1>Condit,R. C.</a1>
+<t1>An isatin-beta-thiosemicarbazone-resistant vaccinia virus containing a mutation in the second largest subunit of the viral RNA polymerase is defective in transcription elongation</t1>
+<jf>The Journal of biological chemistry</jf>
+<jo>J.Biol.Chem.</jo>
+<yr>2004</yr>
+<fd>Oct 22</fd>
+<vo>279</vo>
+<is>43</is>
+<sp>44858</sp>
+<op>44871</op>
+<k1>Biotinylation</k1>
+<k1>Cell Line, Tumor</k1>
+<k1>Cytoplasm/metabolism</k1>
+<k1>DNA/metabolism</k1>
+<k1>DNA-Directed RNA Polymerases/genetics/metabolism</k1>
+<k1>Dose-Response Relationship, Drug</k1>
+<k1>Drug Resistance, Viral</k1>
+<k1>Hela Cells</k1>
+<k1>Humans</k1>
+<k1>Isatin/analogs &amp; derivatives/pharmacology</k1>
+<k1>Models, Genetic</k1>
+<k1>Models, Molecular</k1>
+<k1>Mutation</k1>
+<k1>Plasmids/metabolism</k1>
+<k1>Polymerase Chain Reaction</k1>
+<k1>RNA, Viral</k1>
+<k1>Salts/pharmacology</k1>
+<k1>Sarcosine/analogs &amp; derivatives/pharmacology</k1>
+<k1>Software</k1>
+<k1>Time Factors</k1>
+<k1>Transcription, Genetic</k1>
+<k1>Uridine Triphosphate/chemistry</k1>
+<k1>Vaccinia virus/metabolism</k1>
+<ab>The vaccinia virus RNA polymerase is a multi-subunit enzyme that contains eight subunits in the postreplicative form. A prior study of a virus called IBT(r90), which contains a mutation in the A24 gene encoding the RPO132 subunit of the RNA polymerase, demonstrated that the mutation results in resistance to the anti-poxvirus drug isatin-beta-thiosemicarbazone (IBT). In this study, we utilized an in vitro transcription elongation assay to determine the effect of this mutation on transcription elongation. Both wild type and IBT(r90) polymerase complexes were studied with regard to their ability to pause during elongation, their stability in a paused state, their ability to release transcripts, and their elongation rate. We have determined that the IBT(r90) complex is specifically defective in elongation compared with the WT complex, pausing longer and more frequently than the WT complex. We have built a homology model of the RPO132 subunit with the yeast pol II rpb2 subunit to propose a structural mechanism for this elongation defect.</ab>
+<no>LR: 20060501; JID: 2985121R; 0 (RNA, Viral); 0 (Salts); 107-97-1 (Sarcosine); 487-16-1 (isatin beta-thiosemicarbazone); 63-39-8 (Uridine Triphosphate); 9007-49-2 (DNA); 91-56-5 (Isatin); 97-78-9 (sarkosyl); EC 2.7.7.6 (DNA-Directed RNA Polymerases); 2004/08/03 [aheadofprint]; ppublish</no>
+<pp>United States</pp>
+<sn>0021-9258; 0021-9258</sn>
+<ad>Department of Molecular Genetics and Microbiology, University of Florida, Gainesville, Florida 32610-0266, USA.</ad>
+<an>PMID: 15294890; M408167200 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; IM</sf>
+<do>10.1074/jbc.M408167200</do>
+<wp>20040803</wp>
+<ol>Unknown(0)</ol>
+<pmid>15294890</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>820</id>
+<a1>Raczynski,P.</a1>
+<a1>Condit,R. C.</a1>
+<t1>Specific inhibition of vaccinia virus growth by 2&amp;#39;-O-methyladenosine: isolation of a drug-resistant virus mutant</t1>
+<jf>Virology</jf>
+<jo>Virology</jo>
+<yr>1983</yr>
+<fd>Jul 30</fd>
+<vo>128</vo>
+<is>2</is>
+<sp>458</sp>
+<op>462</op>
+<k1>Adenosine/analogs &amp; derivatives/pharmacology</k1>
+<k1>Animals</k1>
+<k1>Cell Line</k1>
+<k1>Drug Resistance, Microbial</k1>
+<k1>Genes, Viral</k1>
+<k1>Haplorhini</k1>
+<k1>Mutation</k1>
+<k1>Plaque Assay</k1>
+<k1>Vaccinia virus/drug effects/genetics/isolation &amp; purification</k1>
+<k1>Viral Proteins/biosynthesis</k1>
+<k1>Virus Replication/drug effects</k1>
+<ab>2&amp;#39;-O-methyladenosine (Am) specifically inhibits growth of vaccinia virus on cultured monkey kidney (BSC40) cells. Specificity has been demonstrated by the isolation of an Am-resistant mutant of vaccinia which forms plaques on Am-treated monolayers of BSC40 cells under conditions where wild type (wt) plaque formation is inhibited. Am inhibits virus growth at an early stage of infection; host shut off and early virus protein synthesis are inhibited by the drug.</ab>
+<no>LR: 20071114; GR: 5 RO1 AI 18094/AI/NIAID NIH HHS/United States; JID: 0110674; 0 (Viral Proteins); 2140-79-6 (2&amp;#39;-O-methyladenosine); 58-61-7 (Adenosine); ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0042-6822; 0042-6822</sn>
+<an>PMID: 6412452</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>6412452</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>812</id>
+<a1>Seto,J.</a1>
+<a1>Celenza,L. M.</a1>
+<a1>Condit,R. C.</a1>
+<a1>Niles,E. G.</a1>
+<t1>Genetic map of the vaccinia virus HindIII D Fragment</t1>
+<jf>Virology</jf>
+<jo>Virology</jo>
+<yr>1987</yr>
+<fd>Sep</fd>
+<vo>160</vo>
+<is>1</is>
+<sp>110</sp>
+<op>119</op>
+<k1>DNA Restriction Enzymes</k1>
+<k1>DNA, Recombinant</k1>
+<k1>DNA, Viral/genetics</k1>
+<k1>Deoxyribonuclease HindIII</k1>
+<k1>Genes, Viral</k1>
+<k1>Genetic Complementation Test</k1>
+<k1>Vaccinia virus/genetics</k1>
+<ab>Seventeen ts mutants of vaccinia virus known to map to the viral HindIII D fragment (R. C. Condit and A. Motyczka, 1981, Virology 113, 224-241; R. C. Condit, A. Motyczka, and G. Spizz, 1983, Virology 128, 429-443; M. J. Ensinger and M. Rovinsky, 1983, J. Virol. 48, 419-428) have been sorted into seven complementation groups. The precise location of each mutant on the HindIII D DNA fragment has been identified by either one-step or two-step marker rescue. By a comparison of this genetic map and the known sequence of this DNA fragment (E. G. Niles et al., 1986, Virology 153, 96-112; S. L. Weinrich and D. E. Hruby, 1986, Nucleic Acids Res. 14, 3003-3016), each mutant has been assigned to a single gene in the HindIII D fragment. In several cases, the map position of a mutant has been localized to a region of fewer than 300 bp in length. The complementation groups are evenly distributed along the DNA. However, within a single gene, the mutants are often clustered.</ab>
+<no>LR: 20061115; JID: 0110674; 0 (DNA, Recombinant); 0 (DNA, Viral); EC 3.1.21.- (DNA Restriction Enzymes); EC 3.1.21.- (Deoxyribonuclease HindIII); ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0042-6822; 0042-6822</sn>
+<an>PMID: 2820124</an>
+<la>eng</la>
+<sf>Journal Article; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>2820124</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>760</id>
+<a1>Shatzer,A. N.</a1>
+<a1>Kato,S. E.</a1>
+<a1>Condit,R. C.</a1>
+<t1>Phenotypic analysis of a temperature sensitive mutant in the large subunit of the vaccinia virus mRNA capping enzyme</t1>
+<jf>Virology</jf>
+<jo>Virology</jo>
+<yr>2008</yr>
+<fd>May 25</fd>
+<vo>375</vo>
+<is>1</is>
+<sp>236</sp>
+<op>252</op>
+<k1>Amino Acid Substitution/genetics</k1>
+<k1>Animals</k1>
+<k1>Cell Line</k1>
+<k1>Cercopithecus aethiops</k1>
+<k1>Genes, Essential</k1>
+<k1>Genes, Viral</k1>
+<k1>Hot Temperature</k1>
+<k1>Mutation, Missense</k1>
+<k1>Nucleotidyltransferases/genetics/metabolism</k1>
+<k1>Plaque Assay</k1>
+<k1>Protein Subunits/genetics/metabolism</k1>
+<k1>RNA, Messenger/biosynthesis</k1>
+<k1>RNA, Viral/biosynthesis</k1>
+<k1>Vaccinia virus/genetics</k1>
+<k1>Viral Proteins/biosynthesis</k1>
+<ab>The heterodimeric vaccinia virus mRNA capping enzyme is a multifunctional enzyme, encoded by genes D1R and D12L. Published biochemical experiments demonstrate that, in addition to mRNA capping, the enzyme is involved in early viral gene transcription termination and intermediate viral gene transcription initiation. This paper presents the phenotypic characterization of Dts36, a temperature sensitive mutant in the large subunit of the mRNA capping enzyme (G705D), encoded by gene D1R. At the non-permissive temperature, Dts36 displays decreased steady state levels of some early RNAs, suggesting a defect in mRNA capping. Mutant infections also show decreased steady state levels of some early proteins, while DNA replication and post-replicative gene expression are absent. Under non-permissive conditions, the mutant directs synthesis of longer-than-normal early mRNAs from some genes, demonstrating that early gene transcription termination is defective. If mutant infections are initiated at the permissive temperature and shifted to the non-permissive temperature late during infection, steady state levels of intermediate gene transcripts decrease while the levels of late gene transcripts remain constant, consistent with a defect in intermediate gene transcription initiation. In addition to its previously described role in mRNA capping, the results presented in this study provide the first in vivo evidence that the vaccinia virus mRNA capping enzyme plays a role in early gene transcription termination and intermediate gene transcription.</ab>
+<no>LR: 20091118; GR: R01 AI018094-22/AI/NIAID NIH HHS/United States; GR: R01 AI018094-23/AI/NIAID NIH HHS/United States; GR: R01 AI018094-24/AI/NIAID NIH HHS/United States; GR: R01 AI018094-25/AI/NIAID NIH HHS/United States; GR: R01 AI018094-26/AI/NIAID NIH HHS/United States; GR: R01 AI18094/AI/NIAID NIH HHS/United States; GR: T32 AI060527/AI/NIAID NIH HHS/United States; JID: 0110674; 0 (Protein Subunits); 0 (RNA, Messenger); 0 (RNA, Viral); 0 (Viral Proteins); EC 2.7.7.- (Nucleotidyltransferases); EC 2.7.7.50 (mRNA guanylyltransferase); NIHMS50821; OID: NLM: NIHMS50821; OID: NLM: PMC2397547; 2007/12/05 [received]; 2007/12/17 [revised]; 2008/01/21 [accepted]; 2008/03/04 [aheadofprint]; ppublish</no>
+<pp>United States</pp>
+<sn>0042-6822; 0042-6822</sn>
+<ad>Department of Molecular Genetics and Microbiology, University of Florida, Gainesville, FL 32610, USA.</ad>
+<an>PMID: 18295814; S0042-6822(08)00064-0 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, N.I.H., Extramural; IM</sf>
+<do>10.1016/j.virol.2008.01.028</do>
+<wp>20080304</wp>
+<ol>Unknown(0)</ol>
+<pmid>18295814</pmid>
+<pmcid>PMC2397547</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>793</id>
+<a1>Simpson,D. A.</a1>
+<a1>Condit,R. C.</a1>
+<t1>Vaccinia virus gene A18R encodes an essential DNA helicase</t1>
+<jf>Journal of virology</jf>
+<jo>J.Virol.</jo>
+<yr>1995</yr>
+<fd>Oct</fd>
+<vo>69</vo>
+<is>10</is>
+<sp>6131</sp>
+<op>6139</op>
+<k1>Adenosine Triphosphatases/biosynthesis/genetics/metabolism</k1>
+<k1>Animals</k1>
+<k1>Bacteriophage T4/genetics</k1>
+<k1>Base Sequence</k1>
+<k1>Cell Line</k1>
+<k1>DNA Helicases/biosynthesis/genetics/metabolism</k1>
+<k1>DNA, Single-Stranded/metabolism</k1>
+<k1>DNA-Binding Proteins/metabolism</k1>
+<k1>Escherichia coli/metabolism</k1>
+<k1>Genes, Viral</k1>
+<k1>Kinetics</k1>
+<k1>Molecular Sequence Data</k1>
+<k1>Oligodeoxyribonucleotides</k1>
+<k1>RNA/metabolism</k1>
+<k1>Recombinant Fusion Proteins/biosynthesis/isolation &amp; purification</k1>
+<k1>Substrate Specificity</k1>
+<k1>Vaccinia virus/enzymology/genetics</k1>
+<ab>The vaccinia virus A18R protein is a DNA-dependent ATPase that contains the canonical sequence motifs associated with the DEXH group of DNA and RNA helicases. Investigation of A18R protein function during infection indicated it functions in the early and late phases of vaccinia virus transcription. The A18R protein shares sequence similarity with the mammalian DNA helicase ERCC3. The ERCC3 protein has a dual function: it is a component of the transcription factor TFIIH and is an essential participant in the cellular nucleotide excision repair pathway. Here we present evidence that the A18R protein is a DNA helicase that unwinds duplex DNA in a 3&amp;#39;-to-5&amp;#39; direction. The A18R helicase was inactive on RNA-DNA and RNA-RNA hybrids. The A18R unwinding activity was most efficient on DNA substrates with lengths of 20 nucleotides or less, and its unwinding activity was not stimulated by the addition of Escherichia coli single-strand-binding protein (SSB), the bacteriophage T4 gene 32 SSB, or the vaccinia virus I3L protein, a putative SSB. We have used an electrophoretic gel mobility shift assay to show that the A18R protein forms a stable complex with single-stranded DNA, and to a lesser extent RNA, in a reaction that does not require ATP.</ab>
+<no>LR: 20091118; GR: AI18094/AI/NIAID NIH HHS/United States; GR: T32AI07110/AI/NIAID NIH HHS/United States; JID: 0113724; 0 (DNA, Single-Stranded); 0 (DNA-Binding Proteins); 0 (Oligodeoxyribonucleotides); 0 (Recombinant Fusion Proteins); 63231-63-0 (RNA); EC 3.6.1.- (Adenosine Triphosphatases); EC 3.6.1.- (DNA Helicases); OID: NLM: PMC189510; ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0022-538X; 0022-538X</sn>
+<ad>Department of Molecular Genetics and Microbiology, University of Florida, Gainesville 32610-0266, USA.</ad>
+<an>PMID: 7545242</an>
+<la>eng</la>
+<sf>Comparative Study; Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>7545242</pmid>
+<pmcid>PMC189510</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>796</id>
+<a1>Simpson,D. A.</a1>
+<a1>Condit,R. C.</a1>
+<t1>The vaccinia virus A18R protein plays a role in viral transcription during both the early and the late phases of infection</t1>
+<jf>Journal of virology</jf>
+<jo>J.Virol.</jo>
+<yr>1994</yr>
+<fd>Jun</fd>
+<vo>68</vo>
+<is>6</is>
+<sp>3642</sp>
+<op>3649</op>
+<k1>Cell Line</k1>
+<k1>Genes, Viral</k1>
+<k1>Humans</k1>
+<k1>Mutation</k1>
+<k1>Temperature</k1>
+<k1>Transcription, Genetic</k1>
+<k1>Vaccinia/etiology/genetics/microbiology</k1>
+<k1>Vaccinia virus/genetics/pathogenicity</k1>
+<k1>Viral Proteins/genetics/metabolism</k1>
+<ab>The vaccinia virus gene A18R is essential for virus infection. The loss of A18R protein function results in unregulated transcription late during virus infection from regions of the viral genome which are normally transcriptionally quiescent. We have characterized A18R protein expression in cells infected with wild-type virus and the A18R temperature-sensitive mutant Cts23. The A18R protein is expressed during early and late phases of infection. The A18R protein expressed by Cts23 virus at permissive and nonpermissive temperatures is significantly less stable than the wild-type A18R protein. The A18R protein was identified as a virion component and localized by detergent extraction to the virion core. Virions purified from cells infected with the A18R temperature-sensitive mutants Cts4, Cts22, and Cts23 are defective in early viral transcription in vitro. The mutant transcription defect is not attributable to gross defects in virion structure or virion DNA-dependent RNA polymerase activity. We conclude that the A18R protein plays a role in viral transcription during the early phase of infection as well as during the late phase.</ab>
+<no>LR: 20091118; GR: AI18094/AI/NIAID NIH HHS/United States; GR: T32AI07110/AI/NIAID NIH HHS/United States; JID: 0113724; 0 (Viral Proteins); OID: NLM: PMC236868; ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0022-538X; 0022-538X</sn>
+<ad>Department of Immunology and Medical Microbiology, University of Florida, Gainesville 32610-0266.</ad>
+<an>PMID: 8189502</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>8189502</pmid>
+<pmcid>PMC236868</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>818</id>
+<a1>Sridhar,P.</a1>
+<a1>Condit,R. C.</a1>
+<t1>Selection for temperature-sensitive mutations in specific vaccinia virus genes: isolation and characterization of a virus mutant which encodes a phosphonoacetic acid-resistant, temperature-sensitive DNA polymerase</t1>
+<jf>Virology</jf>
+<jo>Virology</jo>
+<yr>1983</yr>
+<fd>Jul 30</fd>
+<vo>128</vo>
+<is>2</is>
+<sp>444</sp>
+<op>457</op>
+<k1>DNA, Viral/biosynthesis</k1>
+<k1>DNA-Directed DNA Polymerase/genetics/isolation &amp; purification/metabolism</k1>
+<k1>Drug Resistance, Microbial</k1>
+<k1>Genes, Viral</k1>
+<k1>Genetic Complementation Test</k1>
+<k1>Mutation</k1>
+<k1>Organophosphorus Compounds/pharmacology</k1>
+<k1>Phosphonoacetic Acid/pharmacology</k1>
+<k1>Recombination, Genetic</k1>
+<k1>Temperature</k1>
+<k1>Vaccinia virus/enzymology/genetics</k1>
+<k1>Viral Proteins/biosynthesis</k1>
+<ab>Seven temperature-sensitive mutants of vaccinia virus have been isolated after preselection for virus resistant to phosphonoacetic acid (PAA). In all seven mutants, the PAA-resistant (PAAr) and ts lesions represent separate mutations. In one mutant, NG26, the PAAr (NG26-PAAr) and ts (NG26-ts) mutations are very closely linked. Both NG26-ts and NG26-PAAr map in the HindIII E DNA fragment. NG26 has a DNA-negative phenotype at 40 degrees. NG26-ts is in the same complementation group as ts42, another DNA-negative mutant which maps in the HindIII E DNA fragment (R. C. Condit, A. Motyczka, and G. Spizz, Virology 128, 000-000, 1983). The order of the mutations is (NG26-ts)-(NG26-PAAr)-ts42. The virus-coded DNA polymerase has been partially purified from wt- and NG26-infected cells. The DNA polymerase encoded by NG26 is temperature sensitive and PAA resistant in vitro as compared to the wt enzyme.</ab>
+<no>LR: 20071114; GR: 5 RO1 AI 18094/AI/NIAID NIH HHS/United States; JID: 0110674; 0 (DNA, Viral); 0 (Organophosphorus Compounds); 0 (Viral Proteins); 4408-78-0 (Phosphonoacetic Acid); EC 2.7.7.7 (DNA-Directed DNA Polymerase); ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0042-6822; 0042-6822</sn>
+<an>PMID: 6612992</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, Non-P.H.S.; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>6612992</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>815</id>
+<a1>Thompson,C. L.</a1>
+<a1>Condit,R. C.</a1>
+<t1>Marker rescue mapping of vaccinia virus temperature-sensitive mutants using overlapping cosmid clones representing the entire virus genome</t1>
+<jf>Virology</jf>
+<jo>Virology</jo>
+<yr>1986</yr>
+<fd>Apr 15</fd>
+<vo>150</vo>
+<is>1</is>
+<sp>10</sp>
+<op>20</op>
+<k1>Chromosome Mapping</k1>
+<k1>Cloning, Molecular</k1>
+<k1>DNA, Viral/genetics</k1>
+<k1>Genes, Viral</k1>
+<k1>Genetic Complementation Test</k1>
+<k1>Mutation</k1>
+<k1>Plasmids</k1>
+<k1>Temperature</k1>
+<k1>Vaccinia virus/genetics</k1>
+<ab>A set of 11 overlapping cosmid clones of wild type (wt) vaccinia virus DNA was constructed. The clones together span almost the entire vaccinia virus genome. The clones were used to map temperature-sensitive (ts) mutants of vaccinia virus by marker rescue. Map positions were obtained for mutants representing 29 of 32 complementation groups tested.</ab>
+<no>LR: 20071114; GR: 2R01-AI 1809404/AI/NIAID NIH HHS/United States; JID: 0110674; 0 (DNA, Viral); ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0042-6822; 0042-6822</sn>
+<an>PMID: 3952982</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>3952982</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>810</id>
+<a1>Thompson,C. L.</a1>
+<a1>Hooda-Dhingra,U.</a1>
+<a1>Condit,R. C.</a1>
+<t1>Fine structure mapping of five temperature-sensitive mutants in the 22- and 147-kilodalton subunits of vaccinia virus DNA-dependent RNA polymerase</t1>
+<jf>Journal of virology</jf>
+<jo>J.Virol.</jo>
+<yr>1989</yr>
+<fd>Feb</fd>
+<vo>63</vo>
+<is>2</is>
+<sp>705</sp>
+<op>713</op>
+<k1>Amino Acid Sequence</k1>
+<k1>Base Sequence</k1>
+<k1>DNA-Directed RNA Polymerases/genetics</k1>
+<k1>Genes</k1>
+<k1>Genes, Viral</k1>
+<k1>Molecular Sequence Data</k1>
+<k1>Mutation</k1>
+<k1>Recombinant Proteins/genetics</k1>
+<k1>Temperature</k1>
+<k1>Vaccinia virus/enzymology/genetics</k1>
+<k1>Viral Proteins/genetics</k1>
+<ab>We have mapped the temperature-sensitive (ts) lesions of three mutants, ts51, ts53, and ts65, and two other mutants, ts7 and ts20, to regions on the vaccinia virus genome that encode the 147- and 22-kilodalton subunits of the viral DNA-dependent RNA polymerase, respectively. Plasmid and bacteriophage clones from the HindIII J region and the region spanning the HindIII J-H junction were used in marker rescue experiments to map the mutations. Sequence analysis of the region encoding the 22-kilodalton subunit in the wild-type, ts7, and ts20 viruses revealed a single base change in the mutants compared with that in the wild-type virus. The identification of these RNA polymerase mutants provides us with tools to understand transcription and its regulation in vaccinia virus.</ab>
+<no>LR: 20091118; GENBANK/M24216; GR: AI18094/AI/NIAID NIH HHS/United States; JID: 0113724; 0 (Recombinant Proteins); 0 (Viral Proteins); EC 2.7.7.6 (DNA-Directed RNA Polymerases); OID: NLM: PMC247742; ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0022-538X; 0022-538X</sn>
+<ad>Department of Biochemistry, State University of New York, Buffalo 14214.</ad>
+<an>PMID: 2911120</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>2911120</pmid>
+<pmcid>PMC247742</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>817</id>
+<a1>Traktman,P.</a1>
+<a1>Sridhar,P.</a1>
+<a1>Condit,R. C.</a1>
+<a1>Roberts,B. E.</a1>
+<t1>Transcriptional mapping of the DNA polymerase gene of vaccinia virus</t1>
+<jf>Journal of virology</jf>
+<jo>J.Virol.</jo>
+<yr>1984</yr>
+<fd>Jan</fd>
+<vo>49</vo>
+<is>1</is>
+<sp>125</sp>
+<op>131</op>
+<k1>Chromosome Mapping</k1>
+<k1>DNA Restriction Enzymes/diagnostic use</k1>
+<k1>DNA-Directed DNA Polymerase/genetics</k1>
+<k1>Endonucleases/diagnostic use</k1>
+<k1>Genes, Viral</k1>
+<k1>Molecular Weight</k1>
+<k1>RNA, Messenger/genetics</k1>
+<k1>RNA, Viral/genetics</k1>
+<k1>Single-Strand Specific DNA and RNA Endonucleases</k1>
+<k1>Transcription, Genetic</k1>
+<k1>Vaccinia virus/genetics</k1>
+<ab>Vaccinia virus DNA polymerase, a single-subunit enzyme of 110,000 molecular weight, is induced early after infection. Genetic analysis suggests that the gene encoding the enzyme maps within a 15-kilobase HindIII fragment located 45 kilobases from the left-hand end of the genome. We identified the in vitro translation product with these properties and mapped the transcript by hybrid selection, RNA filter hybridization, and S1 nuclease mapping. Two mRNAs from this region, 3.4 and 3.9 kilobases in size, could be translated in vitro to yield a 110K polypeptide. The two RNAs shared a common 5&amp;#39; terminus and had staggered 3&amp;#39; ends. Sequences mapping entirely within this gene were shown to be biologically active in rescuing mutants with temperature-sensitive or drug-resistant polymerase activity to the wild-type phenotype.</ab>
+<no>LR: 20091118; GR: 5R01AI18094/AI/NIAID NIH HHS/United States; JID: 0113724; 0 (RNA, Messenger); 0 (RNA, Viral); EC 2.7.7.7 (DNA-Directed DNA Polymerase); EC 3.1.- (Endonucleases); EC 3.1.21.- (DNA Restriction Enzymes); EC 3.1.30.1 (Single-Strand Specific DNA and RNA Endonucleases); OID: NLM: PMC255433; ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0022-538X; 0022-538X</sn>
+<an>PMID: 6317886</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; Research Support, U.S. Gov&#39;t, Non-P.H.S.; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>6317886</pmid>
+<pmcid>PMC255433</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>764</id>
+<a1>Turner,P. C.</a1>
+<a1>Dilling,B. P.</a1>
+<a1>Prins,C.</a1>
+<a1>Cresawn,S. G.</a1>
+<a1>Moyer,R. W.</a1>
+<a1>Condit,R. C.</a1>
+<t1>Vaccinia virus temperature-sensitive mutants in the A28 gene produce non-infectious virions that bind to cells but are defective in entry</t1>
+<jf>Virology</jf>
+<jo>Virology</jo>
+<yr>2007</yr>
+<fd>Sep 15</fd>
+<vo>366</vo>
+<is>1</is>
+<sp>62</sp>
+<op>72</op>
+<k1>3&#39; Untranslated Regions</k1>
+<k1>Animals</k1>
+<k1>Cell Fusion</k1>
+<k1>Cell Line</k1>
+<k1>Cercopithecus aethiops</k1>
+<k1>DNA Viruses/genetics/pathogenicity/physiology</k1>
+<k1>Genes, Viral</k1>
+<k1>Genome, Viral</k1>
+<k1>Haplorhini</k1>
+<k1>Mutation</k1>
+<k1>Recombination, Genetic</k1>
+<k1>Temperature</k1>
+<k1>Vaccinia virus/genetics/immunology/pathogenicity/physiology</k1>
+<k1>Viral Vaccines</k1>
+<k1>Virion/genetics/physiology</k1>
+<ab>The vaccinia virus temperature-sensitive mutations Cts6 and Cts9 were mapped by marker rescue and DNA sequencing to the A28 gene. Cts6 and Cts9 contain an identical 2-bp deletion truncating the A28 protein and removing the fourth conserved cysteine near the C-terminus. Cts9 mutant virions produced at 40 degrees C were non-infectious and unable to cause cytopathic effect. However, the mutant A28 protein localized to purified mature virions (MV) at 31 degrees C and 40 degrees C. MV of Cts9 produced at 40 degrees C bound to cells but did not enter cells. Low pH treatment of Cts9-infected cells at 18 h p.i. failed to produce fusion from within at 40 degrees C, but gave fusion at 31 degrees C. Adsorption of Cts9 mutant virions to cells followed by low pH treatment showed a defect in fusion from without. The Cts9 phenotype suggests that the A28 protein is involved in both virus entry and cell-cell fusion, and supports the linkage between the two processes.</ab>
+<no>LR: 20091118; GR: R01 AI015722-24/AI/NIAID NIH HHS/United States; GR: R01 AI055560-01A1/AI/NIAID NIH HHS/United States; GR: R01 AI055560-02/AI/NIAID NIH HHS/United States; GR: R01 AI055560-03/AI/NIAID NIH HHS/United States; GR: R01 AI055560-04/AI/NIAID NIH HHS/United States; GR: R01 AI055560-05/AI/NIAID NIH HHS/United States; GR: R21 AI055560-01/AI/NIAID NIH HHS/United States; JID: 0110674; 0 (3&amp;#39; Untranslated Regions); 0 (Viral Vaccines); NIHMS31037; OID: NLM: NIHMS31037; OID: NLM: PMC2062567; 2007/01/09 [received]; 2007/02/05 [revised]; 2007/03/12 [accepted]; 2007/05/17 [aheadofprint]; ppublish</no>
+<pp>United States</pp>
+<sn>0042-6822; 0042-6822</sn>
+<ad>Department of Molecular Genetics and Microbiology, College of Medicine, University of Florida, Gainesville, FL 32610-0266, USA. pturner@mgm.ufl.edu</ad>
+<an>PMID: 17499330; S0042-6822(07)00173-0 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, Non-U.S. Gov&#39;t; IM</sf>
+<do>10.1016/j.virol.2007.03.060</do>
+<wp>20070517</wp>
+<ol>Unknown(0)</ol>
+<pmid>17499330</pmid>
+<pmcid>PMC2062567</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>779</id>
+<a1>Xiang,Y.</a1>
+<a1>Condit,R. C.</a1>
+<a1>Vijaysri,S.</a1>
+<a1>Jacobs,B.</a1>
+<a1>Williams,B. R.</a1>
+<a1>Silverman,R. H.</a1>
+<t1>Blockade of interferon induction and action by the E3L double-stranded RNA binding proteins of vaccinia virus</t1>
+<jf>Journal of virology</jf>
+<jo>J.Virol.</jo>
+<yr>2002</yr>
+<fd>May</fd>
+<vo>76</vo>
+<is>10</is>
+<sp>5251</sp>
+<op>5259</op>
+<k1>Animals</k1>
+<k1>Cricetinae</k1>
+<k1>DNA-Binding Proteins/immunology</k1>
+<k1>Disease Models, Animal</k1>
+<k1>Endoribonucleases/deficiency/genetics</k1>
+<k1>Female</k1>
+<k1>GTP-Binding Proteins</k1>
+<k1>Gene Deletion</k1>
+<k1>Humans</k1>
+<k1>Interferon Regulatory Factor-3</k1>
+<k1>Interferon-beta/biosynthesis</k1>
+<k1>Male</k1>
+<k1>Mice</k1>
+<k1>Mice, Inbred C57BL</k1>
+<k1>Mice, Knockout</k1>
+<k1>Proteins/genetics</k1>
+<k1>RNA-Binding Proteins/immunology/pharmacology</k1>
+<k1>Transcription Factors/immunology</k1>
+<k1>Vaccinia/immunology/virology</k1>
+<k1>Vaccinia virus/metabolism/pathogenicity</k1>
+<k1>Viral Proteins/immunology/pharmacology</k1>
+<k1>eIF-2 Kinase/genetics</k1>
+<ab>The vaccinia virus E3L gene encodes two double-stranded RNA binding proteins that promote viral growth and pathogenesis through suppression of innate immunity. To explore how E3L enables vaccinia virus to evade the interferon system, cells and mice deficient in the principal interferon-regulated antiviral enzymes, PKR and RNase L, were infected with wild-type vaccinia virus and strains of vaccinia virus from which E3L had been deleted (E3L-deleted strains). While wild-type virus was unaffected by RNase L and PKR, virus lacking E3L replicated only in the deficient cells. Nevertheless, E3L-deleted virus failed to replicate to high titers or to cause significant morbidity or mortality in triply deficient mice lacking RNase L, PKR, and Mx1. To investigate the underlying cause, we determined the effect of E3L on interferon regulatory factor 3 (IRF3), a transcription factor required for viral induction of subtypes of type I interferons. Results showed that IRF3 activation and interferon-beta induction occurred after infections with E3L-deleted virus but not with wild-type virus. These findings demonstrate that E3L plays an essential role in the pathogenesis of vaccinia virus by blocking the interferon system at multiple levels. Furthermore, our results indicate the existence of an interferon-mediated antipoxvirus pathway that operates independently of PKR, Mx1, or the 2-5A/RNase L system.</ab>
+<no>LR: 20091119; GR: AI34039/AI/NIAID NIH HHS/United States; GR: CA44059/CA/NCI NIH HHS/United States; JID: 0113724; 0 (DNA-Binding Proteins); 0 (E3L protein, Vaccinia virus); 0 (IRF3 protein, human); 0 (Interferon Regulatory Factor-3); 0 (Irf3 protein, mouse); 0 (Proteins); 0 (RNA-Binding Proteins); 0 (Transcription Factors); 0 (Viral Proteins); 0 (myxovirus resistance proteins); 77238-31-4 (Interferon-beta); EC 2.7.11.1 (eIF-2 Kinase); EC 3.1.- (Endoribonucleases); EC 3.1.26.- (pppA(2&amp;#39;p5&amp;#39;A)n-dependent ribonuclease); EC 3.6.1.- (GTP-Binding Proteins); OID: NLM: PMC136119; ppublish</no>
+<pp>United States</pp>
+<sn>0022-538X; 0022-538X</sn>
+<ad>Department of Cancer Biology, Lerner Research Institute, Cleveland Clinic, Cleveland, Ohio 44195, USA.</ad>
+<an>PMID: 11967338</an>
+<la>eng</la>
+<sf>Comparative Study; Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>11967338</pmid>
+<pmcid>PMC136119</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>781</id>
+<a1>Xiang,Y.</a1>
+<a1>Latner,D. R.</a1>
+<a1>Niles,E. G.</a1>
+<a1>Condit,R. C.</a1>
+<t1>Transcription elongation activity of the vaccinia virus J3 protein in vivo is independent of poly(A) polymerase stimulation</t1>
+<jf>Virology</jf>
+<jo>Virology</jo>
+<yr>2000</yr>
+<fd>Apr 10</fd>
+<vo>269</vo>
+<is>2</is>
+<sp>356</sp>
+<op>369</op>
+<k1>Animals</k1>
+<k1>Cercopithecus aethiops</k1>
+<k1>Electrophoresis, Polyacrylamide Gel</k1>
+<k1>Histidine/metabolism</k1>
+<k1>Mutagenesis, Site-Directed</k1>
+<k1>Poly A/metabolism</k1>
+<k1>Polynucleotide Adenylyltransferase/metabolism</k1>
+<k1>Transcription Factors/genetics/physiology</k1>
+<k1>Transcription, Genetic</k1>
+<k1>Vaccinia virus/genetics/metabolism</k1>
+<k1>Vero Cells</k1>
+<ab>Prior genetic analysis suggests that the vaccinia virus J3 gene product, previously characterized as a bifunctional (nucleoside-2&amp;#39;-O-)-methyltransferase and poly(A) polymerase stimulatory factor, is a postreplicative positive transcription elongation factor. To test this hypothesis, viruses bearing mutations in the J3 gene were characterized with respect to viral protein and RNA synthesis in infected cells. The analysis reveals that compared to wt virus infections, J3 mutants synthesize reduced amounts of large late viral proteins and shorter-than-normal intermediate and late mRNAs. Structural analysis of one late mRNA shows that it is specifically truncated from the 3&amp;#39; end, thus accounting for its shorter than normal chain length. Thus J3 mutant viruses are defective in elongation of transcription of postreplicative viral genes, strongly suggesting that the J3 gene product normally acts as a positive transcription elongation factor. Biochemical analysis of one J3 missense mutant demonstrates that it retains poly(A) stimulatory activity but is defective in (nucleoside-2&amp;#39;-O-)-methyltransferase activity. Thus the elongation factor activity of the J3 gene product is independent of the poly(A) stimulatory activity. It remains to be determined whether the (nucleoside-2&amp;#39;-O-)-methyltransferase and elongation factor activities of the J3 protein are linked or can be uncoupled by mutation.</ab>
+<no>LR: 20071114; CI: Copyright 2000; GR: AI-18094/AI/NIAID NIH HHS/United States; JID: 0110674; 0 (J3 protein, Vaccinia virus); 0 (Transcription Factors); 24937-83-5 (Poly A); 71-00-1 (Histidine); EC 2.7.7.19 (Polynucleotide Adenylyltransferase); ppublish</no>
+<pb>Academic Press</pb>
+<pp>UNITED STATES</pp>
+<sn>0042-6822; 0042-6822</sn>
+<ad>Department of Molecular Genetics, Center for Mammalian Genetics, University of Florida, Gainesville, Florida, 32610-0266, USA.</ad>
+<an>PMID: 10753714; S0042-6822(00)90242-3 [pii]</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<do>10.1006/viro.2000.0242</do>
+<ol>Unknown(0)</ol>
+<pmid>10753714</pmid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>786</id>
+<a1>Xiang,Y.</a1>
+<a1>Simpson,D. A.</a1>
+<a1>Spiegel,J.</a1>
+<a1>Zhou,A.</a1>
+<a1>Silverman,R. H.</a1>
+<a1>Condit,R. C.</a1>
+<t1>The vaccinia virus A18R DNA helicase is a postreplicative negative transcription elongation factor</t1>
+<jf>Journal of virology</jf>
+<jo>J.Virol.</jo>
+<yr>1998</yr>
+<fd>Sep</fd>
+<vo>72</vo>
+<is>9</is>
+<sp>7012</sp>
+<op>7023</op>
+<k1>Adenosine Triphosphatases/genetics</k1>
+<k1>Animals</k1>
+<k1>Cell Line</k1>
+<k1>Cercopithecus aethiops</k1>
+<k1>DNA Helicases/genetics</k1>
+<k1>DNA Replication</k1>
+<k1>Endoribonucleases/genetics</k1>
+<k1>Gene Expression Regulation, Viral</k1>
+<k1>Genes, Viral</k1>
+<k1>Mice</k1>
+<k1>Mice, Knockout</k1>
+<k1>Mutagenesis</k1>
+<k1>Peptide Elongation Factors/genetics</k1>
+<k1>Phenotype</k1>
+<k1>Polymerase Chain Reaction/methods</k1>
+<k1>Vaccinia virus/genetics/physiology</k1>
+<k1>Virus Replication</k1>
+<ab>Loss of vaccinia virus A18R gene function results in an aberrant transcription profile termed promiscuous transcription, defined as transcription within regions of the genome which are normally transcriptionally silent late during infection. Promiscuous transcription results in an increase in the intracellular concentration of double-stranded RNA, which in turn results in activation of the cellular 2-5A pathway and subsequent RNase L-catalyzed degradation of viral and cellular RNAs. One of three hypotheses could account for promiscuous transcription: (i) reactivation of early promoters late during infection, (ii) random transcription initiation, (iii) readthrough transcription from upstream promoters. Transcriptional analysis of several viral genes, presented here, argues strongly against the first two hypotheses. We have tested the readthrough hypothesis by conducting a detailed transcriptional analysis of a region of the vaccinia virus genome which contains three early genes (M1L, M2L, and K1L) positioned directly downstream of the intermediate gene, K2L. The results show that mutation of the A18R gene results in increased readthrough transcription of the M1L gene originating from the K2L intermediate promoter. A18R mutant infection of RNase L knockout mouse fibroblast (KO3) cells does not result in 2-5A pathway activation, yet the virus mutant is defective in late viral gene expression and remains temperature sensitive. These results demonstrate that the A18R gene product is a negative transcription elongation factor for postreplicative viral genes.</ab>
+<no>LR: 20091118; GR: AI 10894/AI/NIAID NIH HHS/United States; GR: F32 AI 09252/AI/NIAID NIH HHS/United States; JID: 0113724; 0 (Peptide Elongation Factors); EC 3.1.- (Endoribonucleases); EC 3.1.26.- (pppA(2&amp;#39;p5&amp;#39;A)n-dependent ribonuclease); EC 3.6.1.- (Adenosine Triphosphatases); EC 3.6.1.- (DNA Helicases); OID: NLM: PMC109921; ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0022-538X; 0022-538X</sn>
+<ad>Department of Molecular Genetics and Microbiology, University of Florida, Gainesville, Florida 32610-0266, USA.</ad>
+<an>PMID: 9696793</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>9696793</pmid>
+<pmcid>PMC109921</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>785</id>
+<a1>Zeile,W. L.</a1>
+<a1>Condit,R. C.</a1>
+<a1>Lewis,J. I.</a1>
+<a1>Purich,D. L.</a1>
+<a1>Southwick,F. S.</a1>
+<t1>Vaccinia locomotion in host cells: evidence for the universal involvement of actin-based motility sequences ABM-1 and ABM-2</t1>
+<jf>Proceedings of the National Academy of Sciences of the United States of America</jf>
+<jo>Proc.Natl.Acad.Sci.U.S.A.</jo>
+<yr>1998</yr>
+<fd>Nov 10</fd>
+<vo>95</vo>
+<is>23</is>
+<sp>13917</sp>
+<op>13922</op>
+<k1>Actins/physiology</k1>
+<k1>Animals</k1>
+<k1>Biological Transport, Active</k1>
+<k1>Cytoskeleton/virology</k1>
+<k1>Hela Cells</k1>
+<k1>Humans</k1>
+<k1>Peptide Fragments</k1>
+<k1>Rabbits</k1>
+<k1>Vaccinia virus/physiology</k1>
+<k1>Virus Replication</k1>
+<ab>Vaccinia uses actin-based motility for virion movement in host cells, but the specific protein components have yet to be defined. A cardinal feature of Listeria and Shigella actin-based motility is the involvement of vasodilator-stimulated phosphoprotein (VASP). This essential adapter recognizes and binds to actin-based motility 1 (ABM-1) consensus sequences [(D/E)FPPPPX(D/E), X = P or T] contained in Listeria ActA and in the p90 host-cell vinculin fragment generated by Shigella infection. VASP, in turn, provides the ABM-2 sequences [XPPPPP, X = G, P, L, S, A] for binding profilin, an actin-regulatory protein that stimulates actin filament assembly. Immunolocalization using rabbit anti-VASP antibody revealed that VASP concentrates behind motile virions in HeLa cells. Profilin was also present in these actin-rich rocket tails, and microinjection of 10 microM (intracellular) ABM-2 peptide (GPPPPP)3 blocked vaccinia actin-based motility. Vinculin did not colocalize with VASP on motile virions and remained in focal adhesion contacts; however, another ABM-1-containing host protein, zyxin, was concentrated at the rear of motile virions. We also examined time-dependent changes in the location of these cytoskeletal proteins during vaccinia infection. VASP and zyxin were redistributed dramatically several hours before the formation of actin rocket tails, concentrating in the viral factories of the perinuclear cytoplasm. Our findings underscore the universal involvement of ABM-1 and ABM-2 docking sites in actin-based motility of Listeria, Shigella, and now vaccinia.</ab>
+<no>LR: 20091118; GR: AI18094/AI/NIAID NIH HHS/United States; GR: AI34276/AI/NIAID NIH HHS/United States; GR: R01 AI23262/AI/NIAID NIH HHS/United States; JID: 7505876; 0 (Actins); 0 (Peptide Fragments); OID: NLM: PMC24964; ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0027-8424; 0027-8424</sn>
+<ad>Department of Medicine, Division of Infectious Diseases, University of Florida College of Medicine, Gainesville, FL 32610, USA.</ad>
+<an>PMID: 9811901</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>9811901</pmid>
+<pmcid>PMC24964</pmcid></reference>
+<reference>
+<rt>Journal Article</rt>
+<sr> Print(0)</sr>
+<id>794</id>
+<a1>Zhang,P.</a1>
+<a1>Frugulhetti,I.</a1>
+<a1>Jiang,Y.</a1>
+<a1>Holt,G. L.</a1>
+<a1>Condit,R. C.</a1>
+<a1>Lee,M. Y.</a1>
+<t1>Expression of the catalytic subunit of human DNA polymerase delta in mammalian cells using a vaccinia virus vector system</t1>
+<jf>The Journal of biological chemistry</jf>
+<jo>J.Biol.Chem.</jo>
+<yr>1995</yr>
+<fd>Apr 7</fd>
+<vo>270</vo>
+<is>14</is>
+<sp>7993</sp>
+<op>7998</op>
+<k1>Animals</k1>
+<k1>Base Sequence</k1>
+<k1>Catalysis</k1>
+<k1>Cell Line</k1>
+<k1>Cercopithecus aethiops</k1>
+<k1>Cloning, Molecular</k1>
+<k1>DNA Polymerase III</k1>
+<k1>DNA Primers</k1>
+<k1>DNA-Directed DNA Polymerase/genetics/isolation &amp; purification</k1>
+<k1>Genetic Vectors</k1>
+<k1>Humans</k1>
+<k1>Molecular Sequence Data</k1>
+<k1>Mutation</k1>
+<k1>Recombinant Proteins/genetics/isolation &amp; purification</k1>
+<k1>Vaccinia virus/genetics</k1>
+<ab>The catalytic polypeptide of human DNA polymerase delta was overexpressed in BSC-40 cells (African green monkey kidney cell line) using the vaccinia virus/pTM1 system. The recombinant human DNA polymerase delta was purified to homogeneity in two steps using an immunoaffinity column and a single-stranded DNA-cellulose column. Levels of expression were about 1% of soluble cytosolic protein. The recombinant catalytic subunit was fully active and exhibited enzymatic properties similar to that of the native two-subunit enzyme including the possession of an associated 3&amp;#39; to 5&amp;#39; exonuclease activity. Recombinant pol delta was stimulated by proliferating cell nuclear antigen (PCNA); however, the degree of stimulation was lower than that of the native human enzyme. Analysis of a double mutant of the catalytic subunit, H142R/F144S, showed that it had a greatly reduced sensitivity to PCNA, suggesting that the PCNA binding site of pol delta may be located in this region of the N terminus.</ab>
+<no>LR: 20071114; GR: GM31973/GM/NIGMS NIH HHS/United States; JID: 2985121R; 0 (DNA Primers); 0 (Recombinant Proteins); EC 2.7.7.- (DNA Polymerase III); EC 2.7.7.7 (DNA-Directed DNA Polymerase); ppublish</no>
+<pp>UNITED STATES</pp>
+<sn>0021-9258; 0021-9258</sn>
+<ad>Department of Medicine, University of Miami School of Medicine, Florida 33101, USA.</ad>
+<an>PMID: 7713899</an>
+<la>eng</la>
+<sf>Journal Article; Research Support, U.S. Gov&#39;t, P.H.S.; IM</sf>
+<ol>Unknown(0)</ol>
+<pmid>7713899</pmid></reference></refworks>
