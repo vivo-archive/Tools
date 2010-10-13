@@ -1,0 +1,7 @@
+<site-description>
+	<name>Washington University in St. Louis</name>
+	<icon>http://www.vivoweb.org/files/logos/partner_institutions/wustl_med_logo_0.gif</icon>
+	<aggregate-query>
+		http://localhost/ctsa/fs.php?school=3&amp;return=xml&amp;querytext=
+	</aggregate-query>
+</site-description>

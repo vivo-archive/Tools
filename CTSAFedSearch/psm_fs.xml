@@ -1,0 +1,7 @@
+<site-description>
+	<name>Ponce School of Medicine</name>
+	<icon>http://www.vivoweb.org/files/logos/partner_institutions/psm_logo.gif</icon>
+	<aggregate-query>
+		http://localhost/ctsa/fs.php?school=4&amp;return=xml&amp;querytext=
+	</aggregate-query>
+</site-description>

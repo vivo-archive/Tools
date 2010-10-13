@@ -1,0 +1,7 @@
+<site-description>
+	<name>Weill Cornell Medical College</name>
+	<icon>http://www.vivoweb.org/files/logos/partner_institutions/weill_logo.gif</icon>
+	<aggregate-query>
+		http://vivotest.ctrip.ufl.edu/ctsa/fs.php?school=5&amp;return=xml&amp;querytext=
+	</aggregate-query>
+</site-description>

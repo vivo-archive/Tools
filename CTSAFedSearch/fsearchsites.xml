@@ -1,0 +1,12 @@
+<partnersites>
+<description-site-URL>http://localhost/ctsa/uf_fs.xml</description-site-URL>
+<description-site-URL>http://localhost/ctsa/cu_fs.xml</description-site-URL>
+<description-site-URL>http://localhost/ctsa/iu_fs.xml</description-site-URL>
+<description-site-URL>http://localhost/ctsa/wustl_fs.xml</description-site-URL>
+<description-site-URL>http://localhost/ctsa/psm_fs.xml</description-site-URL>
+<description-site-URL>http://localhost/ctsa/weill_fs.xml</description-site-URL>
+<description-site-URL>http://localhost/ctsa/scripps_fs.xml</description-site-URL>
+<description-site-URL>http://staging.connects.catalyst.harvard.edu/profileslabs/fs.xml</description-site-URL>
+<description-site-URL>http://research.icts.uiowa.edu/polyglot/FS.xml</description-site-URL>
+<description-site-URL>http://irt-dev.stanford.edu/profiles-federated-pilot/FS.xml</description-site-URL>
+</partnersites>

@@ -1,0 +1,7 @@
+<site-description>
+	<name>Indiana University</name>
+	<icon>http://www.vivoweb.org/files/logos/partner_institutions/iu_logo.jpg</icon>
+	<aggregate-query>
+		http://localhost/ctsa/fs.php?school=2&amp;return=xml&amp;querytext=
+	</aggregate-query>
+</site-description>

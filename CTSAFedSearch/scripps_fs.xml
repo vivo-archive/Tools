@@ -1,0 +1,7 @@
+<site-description>
+	<name>The Scripps Research Institute</name>
+	<icon>http://www.vivoweb.org/files/logos/partner_institutions/scripps_logo.gif</icon>
+	<aggregate-query>
+		http://localhost/ctsa/fs.php?school=6&amp;return=xml&amp;querytext=
+	</aggregate-query>
+</site-description>

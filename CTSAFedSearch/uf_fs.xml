@@ -1,0 +1,7 @@
+<site-description>
+	<name>University of Florida</name>
+	<icon>http://www.vivoweb.org/files/logos/partner_institutions/ufl_logo.gif</icon>
+	<aggregate-query>
+		http://localhost/ctsa/fs.php?school=0&amp;return=xml&amp;querytext=
+	</aggregate-query>
+</site-description>
