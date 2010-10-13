@@ -19,3 +19,9 @@ The versions of the fs.xml with the php files are set to work from "localhost".
 
 fs.php is geared to reurn the vivo site results in the desired xml.
 The ??_fs.xml sites point to the fs.php with the search data.
+
+the flow of information can be showen as :
+
+aggregatedsearch.php --calls-->fsearchsites.xml --to find--> ??_fs.xml --to call--> fs.php?(proper values) --to get--> search data --displayed--> aggregated search page.
+
+the other network sites will bet told where to find the ??_fs.xml which then calls fs.php to get them the xml they are looking for.
