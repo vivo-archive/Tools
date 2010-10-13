@@ -24,7 +24,7 @@ $filetype = $_GET["return"];//Getting the type for the search
 $term = $_GET["querytext"];//Getting the term for the search
 $num = $_GET["school"];
 $term = urlencode($term);
-$school = array('vivo.ufl.edu', 'vivo.cornell.edu', 'vivo.iu.edu', 'vivo.wustl.edu', 'vvo.psm.edu', 'vivo.med.cornell.edu', 'vivo.scripps.edu');//The list of school sites
+$school = array('vivo.ufl.edu', 'vivo.cornell.edu', 'vivo.iu.edu', 'vivo.wustl.edu', 'vivo.psm.edu', 'vivo.med.cornell.edu', 'vivo.scripps.edu');//The list of school sites
 if($num >= count($school) ){$num = 0;}
 $name = array('University of Florida', 'Cornell University', 'Indiana University', 'Washington University in St. Louis', 'Ponce School of Medicine', 'Weill Cornell Medical College', 'The Scripps Research Institute');
 
