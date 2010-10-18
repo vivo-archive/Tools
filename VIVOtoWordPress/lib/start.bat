@@ -1,0 +1,1 @@
+java -cp xmlrpc-1.1.1.jar;simple-xmlrpc-1.0.jar;simple-4.0.1.jar redstone.xmlrpc.simple.Main %1 %2 %3 %4 %5 %6 %7 %8 %9 %10
