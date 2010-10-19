@@ -11,17 +11,40 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 
 -------------
 
-The project hasn't been set up, so the buildpath etc. is probably wrong.
+The "singlefs.php" replaces the "fs.xml" with "singlefs.php?return=desc"
 
-The aggregatedsearch.php uses fsearchsites.xml to get the location of the ??_fs.xml.
+
+Lines that should be changed.
+
+In ??_fs.php:
+    lines 26,27,28 are the school identifiers
+    line 31 is the description of the population
+
+In aggregatedsearch.php:
+    lines 63-147 = Wrapper page before results
+    lines 245-305 = Wrapper page before results
+    line 27 location of fsearchsites.xml
+    
+aggsearch.php is geared towards being able to get its own wrapper.
+In aggsearch.php:
+    line 29 page to get the wrapper from
+    line 32 div to place the results into ('#contents' is id='contents' , '.contents' is class='contents')
+    line 35 location of fsearchsites.xml
+
+
+
+The aggregatedsearch.php uses fsearchsites.xml to get the location of the "??_fs.php" or the "fs.xml" file.
 The folder "fs" has the current fs.xml files as seen from another box.
 The versions of the fs.xml with the php files are set to work from "localhost".
+the ??_fs.php file finds itself and returns the description.
 
 fs.php is geared to reurn the vivo site results in the desired xml.
 The ??_fs.xml sites point to the fs.php with the search data.
 
-the flow of information can be showen as :
+the flow of information can be shown as :
 
-aggregatedsearch.php --calls-->fsearchsites.xml --to find--> ??_fs.xml --to call--> fs.php?(proper values) --to get--> search data --displayed--> aggregated search page.
+Old process:aggregatedsearch.php --calls-->fsearchsites.xml --to find--> ??_fs.xml --to call--> fs.php?(proper values) --to get--> search data --displayed--> aggregated search page.
+
+New process :aggregatedsearch.php --calls-->fsearchsites.xml --to find--> ??_fs.php?return=desc --to call-->??_fs.php?return=xml&querytext=TERM --to get-->search data --displayed-->
 
 the other network sites will bet told where to find the ??_fs.xml which then calls fs.php to get them the xml they are looking for.

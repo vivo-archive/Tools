@@ -23,7 +23,7 @@ set_error_handler("exception_error_handler");
 $filetype = $_GET["return"];//Getting the type for the search
 $term = $_GET["querytext"];//Getting the term for the search
 $term = urlencode(trim($term));
-//----------- location of fsearchsites
+
 $xmlDoc = simplexml_load_file("./fsearchsites.xml");
 $partsite = $xmlDoc->xpath('description-site-URL');
 for($i = 0; $i < count($partsite); $i++){
@@ -36,9 +36,6 @@ for($i = 0; $i < count($descriptsite); $i++){
 	if($xmlDoc !=null){
 	$name = $xmlDoc->xpath('name');
 	$Partner[$i] = trim( (string) ($name[0]) );
-	
-	$icon = $xmlDoc->xpath('icon');
-	$Logo[$i] = trim( (string) ($icon[0]) );
 	$site = $xmlDoc->xpath('aggregate-query');
 	$Page[$i] = trim( (string) ($site[0]) ) . $term;
 	//echo "page(" . $i . ") = \"" . $Page[$i] . "\" \n\n";
@@ -148,7 +145,6 @@ echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 
         <div id="content">
         <div id="contents">';
-
 echo '<style type="text/css">
     div#topBanner { text-align: center; padding-bottom: 10px; } 
 
@@ -162,16 +158,16 @@ echo '<style type="text/css">
 </style>';
 
     
-echo ' <form name="input" action= "' . $_SERVER["PHP_SELF"] . '" method="get">\n';
-echo ' Search Term: <input type="text" name="querytext" value="' . $_GET["querytext"] . '" />\n';
-echo ' <input type="submit" value="Search" /><br/>\n';
+echo ' <form name="input" action= "' . $_SERVER["PHP_SELF"] . '" method="get">';
+echo ' Search Term: <input type="text" name="querytext" value="' . $_GET["querytext"] . '" />';
+echo ' <input type="submit" value="Search" /><br/>';
 echo '</form>';
 
 	echo "<br />";
-	echo "Results for \"" . urldecode($term) . "\".";
+	echo "People for \"" . urldecode($term) . "\".";
 	echo "<br /> <br />\n";
-$get= (get_browser(null,true));
-$browser = strtolower($get['browser']);
+
+
 for($col = 2;$col > -1; $col--){
 	switch($col){
 		case 0 :
@@ -216,12 +212,7 @@ for($col = 2;$col > -1; $col--){
 				}
 			break;
 			case 2 :
-				if($Count[$inc] != 0 && $browser == 'safari')
-				{
-					if($Logo[$inc] != ""){
-						echo "<img src='" . $Logo[$inc] . "' />"; 
-					}
-				}else
+				if($Count[$inc] != 0)
 				{
 				 echo "<iframe src='" .
 					 trim($Previewsite[$inc]) . 

@@ -170,8 +170,8 @@ echo '</form>';
 	echo "<br />";
 	echo "Results for \"" . urldecode($term) . "\".";
 	echo "<br /> <br />\n";
-$get= (get_browser(null,true));
-$browser = strtolower($get['browser']);
+//$get= (get_browser(null,true));
+//$browser = strtolower($get['browser']);
 for($col = 2;$col > -1; $col--){
 	switch($col){
 		case 0 :
@@ -216,10 +216,14 @@ for($col = 2;$col > -1; $col--){
 				}
 			break;
 			case 2 :
-				if($Count[$inc] != 0 && $browser == 'safari')
+				if($Logo[$inc] != "")
 				{
-					if($Logo[$inc] != ""){
-						echo "<img src='" . $Logo[$inc] . "' />"; 
+					list($width, $height, $type, $attr) = getimagesize($Logo[$inc]);
+					if($width > $height)
+					{
+						echo "<a href='" .trim($Previewsite[$inc]) ."'><img src='" . $Logo[$inc] . "' width='200' /></a>";
+					}else{
+						echo "<a href='" .trim($Previewsite[$inc]) ."'><img src='" . $Logo[$inc] . "' height='150' /></a>";
 					}
 				}else
 				{
