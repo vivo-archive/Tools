@@ -9,10 +9,22 @@ Redistribution and use in source and binary forms, with or without modification,
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
 
+  Contributors: James Pence
 -------------
 
-The "singlefs.php" replaces the "fs.xml" with "singlefs.php?return=desc"
+The CTSAFederated search is a search ideally performed across several many servers simultaneously.
 
+The "aggregatedsearch.php" pulls displays the XML from the associated search sites. The "fs.php" code is designed to navigate the DOM of the VIVO searchsite and get the required data and provide it in the prescribed XML.
+
+For this script to work all the parts are expected to be in the same directory.
+the parts:
+??_fs.php              // ?? is the abbreviation of the instituion 
+at least one of (aggregatedsearch.php,aggregatedsearchVer2.php,aggsearch.php)
+fsearchsites.xml       //altered to point to each remote sites' ??_fs.php
+simple_html_dom.php    //library used to do the html DOM parsing.
+
+
+The "??_fs.php" replaces the "fs.xml" with "??_fs.php?return=desc"
 
 Lines that should be changed.
 
@@ -20,17 +32,17 @@ In ??_fs.php:
     lines 26,27,28 are the school identifiers
     line 31 is the description of the population
 
-In aggregatedsearch.php:
+In aggregatedsearch.php: (Ver2 is set to use the Icons in preference to the IFRAMES)
     lines 63-147 = Wrapper page before results
     lines 245-305 = Wrapper page before results
     line 27 location of fsearchsites.xml
     
 aggsearch.php is geared towards being able to get its own wrapper.
+Remember that any root reference (href="/blah.blah/stuff") will only work if they are on the same web server.
 In aggsearch.php:
     line 29 page to get the wrapper from
     line 32 div to place the results into ('#contents' is id='contents' , '.contents' is class='contents')
     line 35 location of fsearchsites.xml
-
 
 
 The aggregatedsearch.php uses fsearchsites.xml to get the location of the "??_fs.php" or the "fs.xml" file.
@@ -47,4 +59,5 @@ Old process:aggregatedsearch.php --calls-->fsearchsites.xml --to find--> ??_fs.x
 
 New process :aggregatedsearch.php --calls-->fsearchsites.xml --to find--> ??_fs.php?return=desc --to call-->??_fs.php?return=xml&querytext=TERM --to get-->search data --displayed-->
 
-the other network sites will bet told where to find the ??_fs.xml which then calls fs.php to get them the xml they are looking for.
+The other network sites will bet told where to find the ??_fs.php whichgives the description to call ??_fs.php to get the xml of the search results.
+

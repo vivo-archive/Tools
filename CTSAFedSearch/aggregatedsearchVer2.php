@@ -9,40 +9,41 @@ Redistribution and use in source and binary forms, with or without modification,
     * Neither the name of the University of Florida nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
+  Contributors: James Pence
+*
 */
 
 
 ini_set('memory_limit', '64M');//Memory is intensly used on large searches.
 //include_once('./simple_html_dom.php');//The DOM library is used to 
 
-function exception_error_handler($errno, $errstr, $errfile, $errline ) {
+function exception_error_handler($errno, $errstr, $errfile, $errline ) {//placed to silence errors (ie unresponsive pages)
     //echo "\nhad an error at line " . $errline . " - " . $errstr . "\n";
 	//throw new Exception("boom");
 }
 set_error_handler("exception_error_handler");
-$filetype = $_GET["return"];//Getting the type for the search
+
 $term = $_GET["querytext"];//Getting the term for the search
 $term = urlencode(trim($term));
 //----------- location of fsearchsites
-$xmlDoc = simplexml_load_file("./fsearchsites.xml");
-$partsite = $xmlDoc->xpath('description-site-URL');
+$xmlDoc = simplexml_load_file("./fsearchsites.xml");//opening the sites xml
+$partsite = $xmlDoc->xpath('description-site-URL');//getting the list of sites
 for($i = 0; $i < count($partsite); $i++){
-	$descriptsite[$i] = trim( (string) ($partsite[$i]) );
+	$descriptsite[$i] = trim( (string) ($partsite[$i]) );//stringing and trimming white spaces
 	//echo "descriptsite(" . $i . ") = \"" . $descriptsite[$i] . "\" \n";
 }
 //for each site getting Partner, Page, Count,Poptype, Previewsite, Searchresult
 for($i = 0; $i < count($descriptsite); $i++){
-	$xmlDoc = simplexml_load_file($descriptsite[$i]);
+	$xmlDoc = simplexml_load_file($descriptsite[$i]);//opening a single site description
 	if($xmlDoc !=null){
 	$name = $xmlDoc->xpath('name');
 	$Partner[$i] = trim( (string) ($name[0]) );
-	
 	$icon = $xmlDoc->xpath('icon');
 	$Logo[$i] = trim( (string) ($icon[0]) );
 	$site = $xmlDoc->xpath('aggregate-query');
 	$Page[$i] = trim( (string) ($site[0]) ) . $term;
 	//echo "page(" . $i . ") = \"" . $Page[$i] . "\" \n\n";
-	$pageDoc = simplexml_load_file($Page[$i]);
+	$pageDoc = simplexml_load_file($Page[$i]);//opening the search result page.
 	}
 	if($pageDoc != null){
 	$cnt = $pageDoc->xpath('count');
@@ -58,7 +59,6 @@ for($i = 0; $i < count($descriptsite); $i++){
 	$Previewsite[$i] = "";
 	$Searchresult[$i] = "";
 	}
-
 	//echo "\"" . $Partner[$i] . "\" \"" . $Page[$i] . "\" \"" . $Count[$i] . "\" \n \"" . $Previewsite[$i] . "\" \"" . $Searchresult[$i] . "\" \n";
 }
 
@@ -149,30 +149,29 @@ echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         <div id="content">
         <div id="contents">';
 
+//style sheet information for the 3 column with no tables
 echo '<style type="text/css">
     div#topBanner { text-align: center; padding-bottom: 10px; } 
 
     div#bodyLeft { width: 275px; } 
 
-    div#bodyCenter { margin-left: 300px; width: 100px; position: absolute; } 
+    div#bodyCenter { margin-left: 300px; width: 90px; position: absolute; } 
 
-    div#bodyRight { position: absolute;  margin-left: 400px; width: 300px; }
+    div#bodyRight { position: absolute;  margin-left: 390px; width: 200px; }
 
     div#singleResult{ height:150px; vertical-align:middle;}
 </style>';
 
-    
-echo ' <form name="input" action= "' . $_SERVER["PHP_SELF"] . '" method="get">\n';
-echo ' Search Term: <input type="text" name="querytext" value="' . $_GET["querytext"] . '" />\n';
-echo ' <input type="submit" value="Search" /><br/>\n';
+echo ' <form name="input" action= "' . $_SERVER["PHP_SELF"] . '" method="get">';
+echo ' Search Term: <input type="text" name="querytext" value="' . $_GET["querytext"] . '" />';
+echo ' <input type="submit" value="Search" /><br/>';
 echo '</form>';
 
 	echo "<br />";
 	echo "Results for \"" . urldecode($term) . "\".";
 	echo "<br /> <br />\n";
-//$get= (get_browser(null,true));
-//$browser = strtolower($get['browser']);
-for($col = 2;$col > -1; $col--){
+
+for($col = 2;$col > -1; $col--){// it goes through a column at a time.
 	switch($col){
 		case 0 :
 			echo "<div id='bodyLeft'>\n";
@@ -208,25 +207,25 @@ for($col = 2;$col > -1; $col--){
 			case 1 :
    				if($Count[$inc] == 0)
 				{
-				echo $Count[$inc] . " Pe" . (($Count[$inc] == 1)?"rson":"ople") . ".\n";
+				echo $Count[$inc] . " Pe" . (($Count[$inc] == 1)?"rson":"ople") . "\n";
 				}else
 				{
 				echo "<a  href='" . $Searchresult[$inc]. "'>" . 
-					$Count[$inc] . " Pe" . (($Count[$inc] == 1)?"rson":"ople") . ".</a>  \n";
+					$Count[$inc] . " Pe" . (($Count[$inc] == 1)?"rson":"ople") . "</a>  \n";
 				}
 			break;
 			case 2 :
 				if($Logo[$inc] != "")
 				{
 					list($width, $height, $type, $attr) = getimagesize($Logo[$inc]);
-					if($width > $height)
+					if( ($width * 0.75) > $height)
 					{
 						echo "<a href='" .trim($Previewsite[$inc]) ."'><img src='" . $Logo[$inc] . "' width='200' /></a>";
 					}else{
 						echo "<a href='" .trim($Previewsite[$inc]) ."'><img src='" . $Logo[$inc] . "' height='150' /></a>";
 					}
-				}else
-				{
+				}else if(true)//show IFRAMES?
+				{// if IFRAMES become a problem comment them out here.
 				 echo "<iframe src='" .
 					 trim($Previewsite[$inc]) . 
 					"' width='200' height='150'>\n iframes not supported\n</iframe>\n";
@@ -239,16 +238,8 @@ for($col = 2;$col > -1; $col--){
 
 
 	}
-
 	echo "</ul>\n";
-	if(false){
-		echo "<br><a href =\"./fs.xml\" > Site description XML </a>";
-		echo "<br><a href =\"http://". $_SERVER['SERVER_NAME'] . $_SERVER['PHP_SELF'] . "?return=xml&amp;querytext=" . $term . "\" > These results in XML </a>";
-		echo "<br><a href =\"http://". $_SERVER['SERVER_NAME'] . $_SERVER['PHP_SELF'] . "?return=prev&amp;querytext=" . $term . "\" > Preview page of these results </a>";
-	}
-	echo "</div>\n";//left right or center
-
-		
+	echo "</div>\n";//left right or center	
 }
 
 
