@@ -12,13 +12,39 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
  ******************************************************************************/
 
 
-This is extremely Alpha.
+Filename: getVIVOPersonData.php
+Purpose: Returns data from a person entity in VIVO that can then be formatted to fit a page style.
+Version: 1.0
 
-You're going to have to edit source to make it work for anything but the test site I wrote it for.
+Usage:
 
-Run it, it creates a wordpress export file. Import it into wordpress. It grabs all the people in a given department and gets info from their VIVO profiles.
+This one is pretty straightforward. Include the file and pass it a string however you want. The string should be the last part of a VIVO person entity. For example, if the URI you wish to grab is "https://vivo.ufl.edu/display/n25562", then you would pass a string of "n25562".
 
-TODO: Get this to run live
-TODO: Get this to read from a configuration file.
+Example code follows:
 
---Dale Scheppler
+
+<?php 
+include 'getVIVOPersonData.php';
+//Example of getting the data from the URL, such as http://www.yoursite.com/foo.php?search=n25562
+getVIVOPersonData($search = $_GET["search"]);
+//Example of getting the data from another page, say from a text field.
+getVIVOPersonData($search = $_POST["searchValue"]);
+//And you can just pass it a string of the URI.
+getVIVOPersonData("n25562");
+?>
+
+Example Output:
+
+<div id="vivoName">Conlon, Mike</div>
+<div id="vivoEmail">mconlon@ufl.edu</div>
+<div id="vivoPhone">3522738872</div>
+<div id="vivoFax">3522147882</div>
+<div id="vivoTitle">Associate Director and Chief Operating Officer, University of Florida Clinical and Translational Science Institute</div>
+<div id="vivoImage">https://vivo.ufl.edu/file/n34850/_main_image_491-NUCATS-STS-042310.jpg</div>
+<div id="vivoLink">http://vivo.ufl.edu/display/n25562</div>
+
+Known Issues:
+
+If you entry a nonexistent URI, it will fail.
+It currently only works with the UF VIVO implementation, however the code is not difficult to adjust for other installations.
+If the VIVO implementation is lagging, this can take a few seconds to complete.
