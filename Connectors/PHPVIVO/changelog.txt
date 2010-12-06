@@ -12,3 +12,5 @@ Changelog:
 1.2:
 	Changed ordering of echoed elements
 	Changed formatting of output
+1.3:
+	Added Department Name to output.

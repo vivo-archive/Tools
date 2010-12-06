@@ -110,11 +110,28 @@ if (!isset($prefTitle[0]))
 		if(!isset($prefTitle[0]))
 		{
 			$prefTitle = $positionxml->xpath("//rdfs_label");
-		}	
-		
+		}
+	
 	}
 
 }
+//Now that we have the title, we need to spider up to the department to get the department name.
+$positionDept = $xml->xpath("//personInPosition");
+$positionDeptURI = $positionDept[0]['rdf_resource'];
+$positionDeptURI = str_replace("http://".$site."/individual/", "", $positionDeptURI);
+$positionDeptURL = "http://".$site."/individual/".$positionDeptURI."/".$positionDeptURI.".rdf";
+$positionDeptContents = @file_get_contents($positionDeptURL);
+if (isset($positionDeptContents)) {
+	$positionDeptContents = cleanRDF($positionDeptContents);
+	$positionDeptXML = simplexml_load_string($positionDeptContents);
+	$positionDeptLink = $positionDeptXML->xpath("//positionInOrganization");
+	$deptURI = $positionDeptLink[0]['rdf_resource'];
+	$deptURI = str_replace("http://".$site."/individual/", "", $deptURI);
+	$deptURL = "http://".$site."/individual/".$deptURI."/".$deptURI.".rdf";
+	$deptXML = simplexml_load_string(cleanRDF(@file_get_contents($deptURL)));
+	$departmentName = $deptXML->xpath("//rdfs_label");
+}
+
 
 //First names need some special handling as well.
 //We want to check for an active directory name first, THEN fallback to rdfs:label.
@@ -179,6 +196,7 @@ $vivoEmail = strip_tags($email[0]);
 $vivoPhone = strip_tags($phone[0]);
 $vivoFax = strip_tags($fax[0]);
 $vivoTitle = strip_tags($prefTitle[0]);
+$vivoDepartment = strip_tags($departmentName[0]);
 $vivoImage = strip_tags($fullsizeURL);
 //$vivoImage = "<img src=\"".$vivoImage."\">";
 $vivoLink = strip_tags($personURI);
@@ -188,6 +206,7 @@ echo "<div id=\"vivoPerson\">\n";
 echoImageDiv("vivoImage", $vivoImage, $vivoName);
 echoDiv("vivoName", $vivoName);
 echoDiv("vivoTitle", $vivoTitle);
+echoDiv("vivoDepartment", $vivoDepartment);
 echoDiv("vivoPhone", $vivoPhone);
 echoDiv("vivoFax", $vivoFax);
 echoEmailDiv("vivoEmail", $vivoEmail);
