@@ -1,0 +1,11 @@
+Changelog:
+
+1.0:
+	Initial Release
+1.1:
+	Fixed bug where library would crash if the site didn't have an image
+	Changed to fail silently.
+	Now works on all VIVO installations. Call library with getVIVOPersonData("FULL VIVO ADDRESS");, example: getVIVOPersonData("http://vivo.cornell.edu/individual/vivo/individual22972");
+	Now checks for HR Job Titles in position entries and uses that before the rdfs:label for the position.
+	Several bits of handling to allow checking other sites.
+	Added changelog.txt
