@@ -14,11 +14,11 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 
 Filename: getVIVOPersonData.php
 Purpose: Returns data from a person entity in VIVO that can then be formatted to fit a page style.
-Version: 1.0
+Version: 1.1
 
 Usage:
 
-This one is pretty straightforward. Include the file and pass it a string however you want. The string should be the last part of a VIVO person entity. For example, if the URI you wish to grab is "https://vivo.ufl.edu/display/n25562", then you would pass a string of "n25562".
+This one is pretty straightforward. Include the file and pass it a string however you want. The string should be the link to a VIVO person entity. For example, if the URI you wish to grab is "https://vivo.ufl.edu/display/n25562", then you would pass a string of "https://vivo.ufl.edu/display/n25562".
 
 Example code follows:
 
@@ -30,7 +30,7 @@ getVIVOPersonData($search = $_GET["search"]);
 //Example of getting the data from another page, say from a text field.
 getVIVOPersonData($search = $_POST["searchValue"]);
 //And you can just pass it a string of the URI.
-getVIVOPersonData("n25562");
+getVIVOPersonData("https://vivo.ufl.edu/display/n25562");
 ?>
 
 Example Output:
@@ -45,6 +45,5 @@ Example Output:
 
 Known Issues:
 
-If you entry a nonexistent URI, it will fail.
-It currently only works with the UF VIVO implementation, however the code is not difficult to adjust for other installations.
 If the VIVO implementation is lagging, this can take a few seconds to complete.
+Differences in ontology can cause results to vary.
