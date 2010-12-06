@@ -34,8 +34,30 @@ function echoDiv($id, $string)
 {
 	if (isset($string))
 	{
-	echo "<div id=\"".$id."\">".$string."</div>\n";
+	echo "<p class=\"".$id."\">".$string."</p>\n";
 	}
+}
+function echoImageDiv($id, $string, $name)
+{
+	if (isset($string))
+	{
+	echo "<img class=\"vivoImage\" src=\"".$string."\" alt=\"".$name."\">\n";	
+	}
+}
+function echoLinkDiv($id, $string)
+{
+	if (isset($string))
+	{
+	echo "<a class=\"".$id."\" href=\"".$string."\">".$string."</a>\n";
+	}
+}
+function echoEmailDiv($id, $string)
+{
+	if (isset($string))
+	{
+	echo "<a class=\"".$id."\" href=\"mailto:".$string."\">".$string."</a>\n";
+	}
+	
 }
 ?>
 <?php 
@@ -125,6 +147,7 @@ if(strlen($imagedata) > 1){
 }
 
 //And now let's get the thumbnail
+//Before we uncomment this we need to add all sorts of error handling!
 //Commented out, we don't need this right now.
 //$thumbURI = $imagexml->xpath("//thumbnailImage");
 //$thumbURI = $thumbURI[0]['rdf_resource'];
@@ -161,13 +184,15 @@ $vivoImage = strip_tags($fullsizeURL);
 $vivoLink = strip_tags($personURI);
 
 //Now let's output the data.
+echo "<div id=\"vivoPerson\">\n";
+echoImageDiv("vivoImage", $vivoImage, $vivoName);
 echoDiv("vivoName", $vivoName);
-echoDiv("vivoEmail", $vivoEmail);
+echoDiv("vivoTitle", $vivoTitle);
 echoDiv("vivoPhone", $vivoPhone);
 echoDiv("vivoFax", $vivoFax);
-echoDiv("vivoTitle", $vivoTitle);
-echoDiv("vivoImage", $vivoImage);
-echoDiv("vivoLink", $vivoLink);
+echoEmailDiv("vivoEmail", $vivoEmail);
+echoLinkDiv("vivoLink", $vivoLink);
+echo "</div>";
 
 
 }

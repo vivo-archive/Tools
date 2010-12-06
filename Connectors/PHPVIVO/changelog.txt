@@ -9,3 +9,6 @@ Changelog:
 	Now checks for HR Job Titles in position entries and uses that before the rdfs:label for the position.
 	Several bits of handling to allow checking other sites.
 	Added changelog.txt
+1.2:
+	Changed ordering of echoedd elements
+	Changed formatting of output
