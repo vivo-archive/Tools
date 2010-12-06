@@ -35,13 +35,16 @@ getVIVOPersonData("https://vivo.ufl.edu/display/n25562");
 
 Example Output:
 
-<div id="vivoName">Conlon, Mike</div>
-<div id="vivoEmail">mconlon@ufl.edu</div>
-<div id="vivoPhone">3522738872</div>
-<div id="vivoFax">3522147882</div>
-<div id="vivoTitle">Associate Director and Chief Operating Officer, University of Florida Clinical and Translational Science Institute</div>
-<div id="vivoImage">https://vivo.ufl.edu/file/n34850/_main_image_491-NUCATS-STS-042310.jpg</div>
-<div id="vivoLink">http://vivo.ufl.edu/display/n25562</div>
+<div id="vivoPerson">
+<img class="vivoImage" src="http://vivo.ufl.edu/file/n34850/_main_image_491-NUCATS-STS-042310.jpg" alt="Conlon, Mike">
+<p class="vivoName">Conlon, Mike</p>
+<p class="vivoTitle">Associate Director and Chief Operating Officer</p>
+<p class="vivoDepartment">Health Outcomes and Policy</p>
+<p class="vivoPhone">3522738872</p>
+<p class="vivoFax">3522147882</p>
+<a class="vivoEmail" href="mailto:mconlon@ufl.edu">mconlon@ufl.edu</a>
+<a class="vivoLink" href="https://vivo.ufl.edu/display/n25562">https://vivo.ufl.edu/display/n25562</a>
+</div>
 
 Known Issues:
 
