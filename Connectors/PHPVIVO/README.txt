@@ -14,7 +14,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 
 Filename: getVIVOPersonData.php
 Purpose: Returns data from a person entity in VIVO that can then be formatted to fit a page style.
-Version: 1.3
+Version: 1.4
 
 Usage:
 

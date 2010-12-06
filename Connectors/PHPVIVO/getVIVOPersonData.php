@@ -32,28 +32,28 @@ return $pageContents;
 <?php 
 function echoDiv($id, $string)
 {
-	if (isset($string))
+	if (strlen($string) > 0)
 	{
 	echo "<p class=\"".$id."\">".$string."</p>\n";
 	}
 }
 function echoImageDiv($id, $string, $name)
 {
-	if (isset($string))
+	if (strlen($string) > 0)
 	{
 	echo "<img class=\"vivoImage\" src=\"".$string."\" alt=\"".$name."\">\n";	
 	}
 }
 function echoLinkDiv($id, $string)
 {
-	if (isset($string))
+	if (strlen($string) > 0)
 	{
 	echo "<a class=\"".$id."\" href=\"".$string."\">".$string."</a>\n";
 	}
 }
 function echoEmailDiv($id, $string)
 {
-	if (isset($string))
+	if (strlen($string) > 0)
 	{
 	echo "<a class=\"".$id."\" href=\"mailto:".$string."\">".$string."</a>\n";
 	}
@@ -121,7 +121,7 @@ $positionDeptURI = $positionDept[0]['rdf_resource'];
 $positionDeptURI = str_replace("http://".$site."/individual/", "", $positionDeptURI);
 $positionDeptURL = "http://".$site."/individual/".$positionDeptURI."/".$positionDeptURI.".rdf";
 $positionDeptContents = @file_get_contents($positionDeptURL);
-if (isset($positionDeptContents)) {
+if (strlen($positionDeptContents) > 0) {
 	$positionDeptContents = cleanRDF($positionDeptContents);
 	$positionDeptXML = simplexml_load_string($positionDeptContents);
 	$positionDeptLink = $positionDeptXML->xpath("//positionInOrganization");
@@ -156,8 +156,8 @@ if(strlen($imagedata) > 1){
 	$fullsizeURI = $imagexml->xpath("//downloadLocation");
 	$fullsizeURI = $fullsizeURI[0]['rdf_resource'];
 	$filename = $imagexml->xpath("//filename");
-	$fullsizeURI = str_replace("http://vivo.ufl.edu/individual/", "", $fullsizeURI);
-	$fullsizeURL = "https://".$site."/file/".$fullsizeURI."/".$filename[0];
+	$fullsizeURI = str_replace("http://".$site."/individual/", "", $fullsizeURI);
+	$fullsizeURL = "http://".$site."/file/".$fullsizeURI."/".$filename[0];
 }
 
 	
@@ -188,7 +188,7 @@ $fax = $xml->xpath("//workFax");
 //and assign them to easier variables (so lazy)
 $vivoName = strip_tags($name[0]);
 //Uuugly hack.
-if (strlen($vivoName) > 50)
+if (strlen($vivoName) > 50 || strlen($vivoName) < 5)
 {
 	$vivoName = strip_tags($name[1]);
 }

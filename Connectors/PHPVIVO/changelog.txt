@@ -14,3 +14,7 @@ Changelog:
 	Changed formatting of output
 1.3:
 	Added Department Name to output.
+1.4:
+	Fixed bugs where some sites weren't returning images
+	Fixed bug where some sites weren't returning names
+	Fixed bug where empty div tags were being returned.
