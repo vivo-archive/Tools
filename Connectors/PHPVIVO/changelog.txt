@@ -18,3 +18,7 @@ Changelog:
 	Fixed bugs where some sites weren't returning images
 	Fixed bug where some sites weren't returning names
 	Fixed bug where empty div tags were being returned.
+2.0:
+	Rewrote entire library to use ARC2 instead of SimpleXML
+	This fixed several bugs related to data ambiguity
+	Functionality essentially unchanged

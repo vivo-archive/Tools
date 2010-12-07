@@ -1,4 +1,4 @@
-<?php
+<?php 
 /*******************************************************************************
 Copyright (c) 2010, Dale Scheppler
 All rights reserved.
@@ -11,25 +11,23 @@ Redistribution and use in source and binary forms, with or without modification,
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  ******************************************************************************/
-function cleanRDF($pageContents){
-$pageContents = str_replace("rdf:RDF", "rdf_RDF", $pageContents);
-$pageContents = str_replace("rdf:type", "rdf_type", $pageContents);
-$pageContents = str_replace("rdf:RDF", "rdf_RDF", $pageContents);
-$pageContents = str_replace("rdf:Description", "rdf_Description", $pageContents);
-$pageContents = str_replace("rdf:resource", "rdf_resource", $pageContents);
-$pageContents = str_replace("rdfs:label", "rdfs_label", $pageContents);
-$pageContents = str_replace("rdf:about", "rdf_about", $pageContents);
-$pageContents = str_replace("j.0:", "", $pageContents);
-$pageContents = str_replace("j.1:", "", $pageContents);
-$pageContents = str_replace("j.2:", "", $pageContents);
-$pageContents = str_replace("j.3:", "", $pageContents);
-$pageContents = str_replace("j.4:", "", $pageContents);
-$pageContents = str_replace("j.5:", "", $pageContents);
-$pageContents = str_replace("j.6:", "", $pageContents);
-return $pageContents;
-} 
-?>
-<?php 
+function getURI($URL)
+{
+	$URL = str_replace("http://", "", $URL);
+	$URL = str_replace("https://", "", $URL);
+	$URLData = explode("/", $URL);
+	$URLLength = sizeof($URLData);
+	$URLLength = $URLLength - 1;
+	return $URLData[$URLLength];
+	
+}
+function getSite($URL)
+{
+	$URL = str_replace("http://", "", $URL);
+	$URL = str_replace("https://", "", $URL);
+	$URLData = explode("/", $URL);
+	return $URLData[0];
+}
 function echoDiv($id, $string)
 {
 	if (strlen($string) > 0)
@@ -59,160 +57,153 @@ function echoEmailDiv($id, $string)
 	}
 	
 }
-?>
-<?php 
-function getURI($URL)
+function isURLValid($URL)
 {
-	$URL = str_replace("http://", "", $URL);
-	$URL = str_replace("https://", "", $URL);
-	$URLData = explode("/", $URL);
-	$URLLength = sizeof($URLData);
-	$URLLength = $URLLength - 1;
-	return $URLData[$URLLength];
-	
-}
-function getSite($URL)
-{
-	$URL = str_replace("http://", "", $URL);
-	$URL = str_replace("https://", "", $URL);
-	$URLData = explode("/", $URL);
-	return $URLData[0];
+	$pageContents = @file_get_contents($URL) or print_r("");
+	if(strlen($pageContents) < 1)
+	{
+		return False;
+	}
+	else
+	{
+		return True;
+	}
 }
 ?>
 <?php
-function getVIVOPersonData($search){
-//What URI did we search for
-$identifier = getURI($search);
-$personURI = $search; //What's the VIVO URI for this person?
-$site = getSite($search);
-//$site = "temp.edu";
-$personRDF = "http://".$site."/individual/".$identifier."/".$identifier.".rdf"; //Where is the raw RDF?
-//Get the RDF or DIE.
-$pageContents = @file_get_contents($personRDF) or die();
-//Clean it up so simpleXML will eat it
-$pageContents = cleanRDF($pageContents);
-//Now let's eat that XML
-$xml = simplexml_load_string($pageContents);
-//And get the values we want
-//Titles need some special handling, if we don't have a preferred title set, go to the position and get that title.
-$prefTitle = $xml->xpath("//preferredTitle");
-if (!isset($prefTitle[0]))
-{
-	$position = $xml->xpath("//personInPosition");
-	$positionURI = $position[0]['rdf_resource'];
-	$positionURI = str_replace("http://".$site."/individual/", "", $positionURI);
-	$positionURL = "http://".$site."/individual/".$positionURI."/".$positionURI.".rdf";
-	$positionContents = @file_get_contents($positionURL);
-	if(strlen($positionContents) > 1){
-		$positionContents = cleanRDF($positionContents);
-		$positionxml = simplexml_load_string($positionContents);
-		$prefTitle = $positionxml->xpath("//hrJobTitle");
-		if(!isset($prefTitle[0]))
-		{
-			$prefTitle = $positionxml->xpath("//rdfs_label");
-		}
-	
+function getVIVOPersonData2($search){
+	include("arc2/ARC2.php");
+	$identifier = getURI($search);
+	$personURI = $search; //What's the VIVO URI for this person?
+	$site = getSite($search);
+	$personRDF = "http://".$site."/individual/".$identifier."/".$identifier.".rdf"; //Where is the raw RDF?
+	$personSubject = "http://".$site."/individual/".$identifier;
+	$parser = ARC2::getRDFParser();
+	$parser->parse($personRDF);
+	$index = $parser->getSimpleIndex();
+
+	//Get the person's name, this should be checking for foaf:firstName, but it doesn't exist anywhere I've seen.
+	//First, let's try for an active directory name. This only exists on the UF VIVO ontology extension
+	$personName = $index[$personSubject]["http://vivo.ufl.edu/ontology/vivo-ufl/activeDirName"][0];
+	//If we don't find it..
+	if (strlen($personName) < 1)
+	{
+		//Fallback to rdfs:label
+		$personName = $index[$personSubject]["http://www.w3.org/2000/01/rdf-schema#label"][0];
 	}
-
-}
-//Now that we have the title, we need to spider up to the department to get the department name.
-$positionDept = $xml->xpath("//personInPosition");
-$positionDeptURI = $positionDept[0]['rdf_resource'];
-$positionDeptURI = str_replace("http://".$site."/individual/", "", $positionDeptURI);
-$positionDeptURL = "http://".$site."/individual/".$positionDeptURI."/".$positionDeptURI.".rdf";
-$positionDeptContents = @file_get_contents($positionDeptURL);
-if (strlen($positionDeptContents) > 0) {
-	$positionDeptContents = cleanRDF($positionDeptContents);
-	$positionDeptXML = simplexml_load_string($positionDeptContents);
-	$positionDeptLink = $positionDeptXML->xpath("//positionInOrganization");
-	$deptURI = $positionDeptLink[0]['rdf_resource'];
-	$deptURI = str_replace("http://".$site."/individual/", "", $deptURI);
-	$deptURL = "http://".$site."/individual/".$deptURI."/".$deptURI.".rdf";
-	$deptXML = simplexml_load_string(cleanRDF(@file_get_contents($deptURL)));
-	$departmentName = $deptXML->xpath("//rdfs_label");
-}
-
-
-//First names need some special handling as well.
-//We want to check for an active directory name first, THEN fallback to rdfs:label.
-$name = $xml->xpath("//activeDirName");
-if (!isset($name[0]))
-{
-	$name = $xml->xpath("//rdfs_label");
-}
-
-//Images require a bit of handling because they aren't direct links
-//First, let's get the full size image (We're doing some of the work for the thumbnail here too
-$image = $xml->xpath("//mainImage");
-//1.1: Make sure they have an image.
-if (isset($image[0])) {
-$imageURI = $image[0]['rdf_resource'];
-$imageURI = str_replace("http://".$site."/individual/", "", $imageURI);
-$imageURL = "http://".$site."/individual/".$imageURI."/".$imageURI.".rdf";
-$imagedata = @file_get_contents($imageURL);
-if(strlen($imagedata) > 1){
-	$imagedata = cleanRDF($imagedata);
-	$imagexml = simplexml_load_string($imagedata);
-	$fullsizeURI = $imagexml->xpath("//downloadLocation");
-	$fullsizeURI = $fullsizeURI[0]['rdf_resource'];
-	$filename = $imagexml->xpath("//filename");
-	$fullsizeURI = str_replace("http://".$site."/individual/", "", $fullsizeURI);
-	$fullsizeURL = "http://".$site."/file/".$fullsizeURI."/".$filename[0];
-}
-
+	//End getting person's name
 	
-}
+	//Get person's title
+	//Try the default location
+	$position = $index[$personSubject]["http://vivoweb.org/ontology/core#preferredTitle"][0];
+	//We're going to set the initial position URL here so we can use it later
+	$positionURL = $index[$personSubject]["http://vivoweb.org/ontology/core#personInPosition"][0];
+	$positionIdentifier = getURI($positionURL);
+	$positionRDF = "http://".$site."/individual/".$positionIdentifier."/".$positionIdentifier.".rdf";
+	$positionSubject = "http://".$site."/individual/".$positionIdentifier;
+	//If we don't find it there, try in the position
+	if(strlen($position) < 1)
+	{
+//		$positionURL = $index[$personSubject]["http://vivoweb.org/ontology/core#personInPosition"][0];
+		if(isURLValid($positionURL))
+		{
+			$positionParser = ARC2::getRDFParser();
+			$positionParser->parse($positionRDF);
+			$positionIndex = $positionParser->getSimpleIndex();
+			//Let's check for an HR job title first
+			$position = $positionIndex[$positionSubject]["http://vivoweb.org/ontology/core#hrJobTitle"][0];
+			//If we don't find one
+			if(strlen($position) < 1)
+			{
+				//Fallback to the label
+				$position = $positionIndex[$positionSubject]["http://www.w3.org/2000/01/rdf-schema#label"][0];
+			}
+		}
+		else
+		{
+			//If the first position link is bad, try the second one.
+			$positionURL = $index[$personSubject]["http://vivoweb.org/ontology/core#personInPosition"][1];
+			$positionIdentifier = getURI($positionURL);
+			$positionRDF = "http://".$site."/individual/".$positionIdentifier."/".$positionIdentifier.".rdf";
+			$positionSubject = "http://".$site."/individual/".$positionIdentifier;
+			$positionParser = ARC2::getRDFParser();
+			$positionParser->parse($positionRDF);
+			$positionIndex = $positionParser->getSimpleIndex();
+			//Let's check for an HR job title first
+			$position = $positionIndex[$positionSubject]["http://vivoweb.org/ontology/core#hrJobTitle"][0];
+			//If we don't find one
+			if(strlen($position) < 1)
+			{
+				//Fallback to the label
+				$position = $positionIndex[$positionSubject]["http://www.w3.org/2000/01/rdf-schema#label"][0];
+			}
+		}
+	}
+	//End getting title
+	
+	//Begin getting Email
+	$personEmail = $index[$personSubject]["http://vivoweb.org/ontology/core#workEmail"][0];
+	//End getting email
+	//Begin getting phone
+	$personPhone = $index[$personSubject]["http://vivoweb.org/ontology/core#workPhone"][0];
+	//End Getting phone
+	//Begin getting Fax
+	$personFax = $index[$personSubject]["http://vivoweb.org/ontology/core#workFax"][0];
+	//End Getting Fax
+	//Begin getting department
+	$positionParser = ARC2::getRDFParser();
+	$positionParser->parse($positionRDF);
+	$positionIndex = $positionParser->getSimpleIndex();
+	$departmentURL = $positionIndex[$positionSubject]["http://vivoweb.org/ontology/core#positionInOrganization"][0];
+	$departmentIdentifier = getURI($departmentURL);
+	$departmentRDF = "http://".$site."/individual/".$departmentIdentifier."/".$departmentIdentifier.".rdf";
+	$departmentSubject = "http://".$site."/individual/".$departmentIdentifier;
+	$departmentParser = ARC2::getRDFParser();
+	$departmentParser->parse($departmentRDF);
+	$departmentIndex = $departmentParser->getSimpleIndex();
+	$department = $departmentIndex[$departmentSubject]["http://www.w3.org/2000/01/rdf-schema#label"][0];
+	//End getting department
+	
+	//Begin getting image
+	
+	//End getting image
+	$imageURL = $index[$personSubject]["http://vitro.mannlib.cornell.edu/ns/vitro/public#mainImage"][0];
+	$imageIdentifier = getURI($imageURL);
+	$imageRDF = "http://".$site."/individual/".$imageIdentifier."/".$imageIdentifier.".rdf";
+	$imageSubject = "http://".$site."/individual/".$imageIdentifier;
+	$imageParser = ARC2::getRDFParser();
+	$imageParser->parse($imageRDF);
+	$imageIndex = $imageParser->getSimpleIndex();
+	$filename = $imageIndex[$imageSubject]["http://vitro.mannlib.cornell.edu/ns/vitro/public#filename"][0];
+	$downloadLocation = $imageIndex[$imageSubject]["http://vitro.mannlib.cornell.edu/ns/vitro/public#downloadLocation"][0];
+	$fullsizeURI = getURI($downloadLocation);
+	$fullsizeURL = "http://".$site."/file/".$fullsizeURI."/".$filename;
+	//End getting image
+	
+	
+	
 
-//And now let's get the thumbnail
-//Before we uncomment this we need to add all sorts of error handling!
-//Commented out, we don't need this right now.
-//$thumbURI = $imagexml->xpath("//thumbnailImage");
-//$thumbURI = $thumbURI[0]['rdf_resource'];
-//$thumbURI = str_replace("http://vivo.ufl.edu/individual/", "", $thumbURI);
-//$thumbURL = "https://vivo.ufl.edu/individual/".$thumbURI."/".$thumbURI.".rdf";
-//$thumbentdata = file_get_contents($thumbURL);
-//$thumbentdata = cleanRDF($thumbentdata);
-//$thumbentxml = simplexml_load_string($thumbentdata);
-//$thumbfilename = $thumbentxml->xpath("//filename");
-//$thumbdownload = $thumbentxml->xpath("//downloadLocation");
-//$thumbdownload = $thumbdownload[0]['rdf_resource'];
-//$thumbdownload = str_replace("http://vivo.ufl.edu/individual/", "", $thumbdownload);
-//$thumbdownloadURL = "https://vivo.ufl.edu/file/".$thumbdownload."/".$thumbfilename[0];
-
-//And now everything else
-$email = $xml->xpath("//workEmail");
-$phone = $xml->xpath("//workPhone");
-//We were never told to get overview, but I'm leaving code in place in case we want it in the future.
-//$overview = $xml->xpath("//overview");
-$fax = $xml->xpath("//workFax");
-//and assign them to easier variables (so lazy)
-$vivoName = strip_tags($name[0]);
-//Uuugly hack.
-if (strlen($vivoName) > 50 || strlen($vivoName) < 5)
-{
-	$vivoName = strip_tags($name[1]);
-}
-$vivoEmail = strip_tags($email[0]);
-$vivoPhone = strip_tags($phone[0]);
-$vivoFax = strip_tags($fax[0]);
-$vivoTitle = strip_tags($prefTitle[0]);
-$vivoDepartment = strip_tags($departmentName[0]);
-$vivoImage = strip_tags($fullsizeURL);
-//$vivoImage = "<img src=\"".$vivoImage."\">";
+$vivoName = strip_tags($personName);
+$vivoTitle = strip_tags($position);
+$vivoEmail = strip_tags($personEmail);
 $vivoLink = strip_tags($personURI);
+$vivoPhone = strip_tags($personPhone);
+$vivoFax = strip_tags($personFax);
+$vivoDepartment = strip_tags($department);
+$vivoImage = strip_tags($fullsizeURL);
 
 //Now let's output the data.
 echo "<div id=\"vivoPerson\">\n";
 echoImageDiv("vivoImage", $vivoImage, $vivoName);
-echoDiv("vivoName", $vivoName);
-echoDiv("vivoTitle", $vivoTitle);
+echoDiv("vivoName", $vivoName); //Done
+echoDiv("vivoTitle", $vivoTitle); //Done
 echoDiv("vivoDepartment", $vivoDepartment);
-echoDiv("vivoPhone", $vivoPhone);
-echoDiv("vivoFax", $vivoFax);
-echoEmailDiv("vivoEmail", $vivoEmail);
-echoLinkDiv("vivoLink", $vivoLink);
+echoDiv("vivoPhone", $vivoPhone); //Done
+echoDiv("vivoFax", $vivoFax); //Done
+echoEmailDiv("vivoEmail", $vivoEmail); //Done
+echoLinkDiv("vivoLink", $vivoLink); //Done
 echo "</div>";
 
-
+//TODO: Write a method to clear up some of that repetitive code
 }
 ?>
