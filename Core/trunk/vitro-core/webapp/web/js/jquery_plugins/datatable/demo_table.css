@@ -1,0 +1,40 @@
+@CHARSET "UTF-8";
+
+thead th, tr.even td{
+	background-color: white;
+}
+
+.searchbar{
+	margin-bottom: 15px;
+	text-align: center;
+}
+
+.paginatedtabs{
+	border-top: 1px #3D454E solid;
+	text-align: center;
+	margin-bottom: 10px;
+	padding-top: 10px;
+	font-size: 1.2em;
+}
+
+.paginatedtabs span{
+	padding-right: 5px;	
+	cursor: pointer;
+}
+
+.showentries {
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.datatablewrapper td{
+	border-bottom: 1px #3D454E solid;
+	border-right: 1px #3D454E solid;
+}
+
+.datatablewrapper th{
+	border-top: 1px #3D454E solid;
+	border-bottom: 1px #3D454E solid;
+	border-right: 1px #3D454E solid;
+	padding: 5px;
+}
