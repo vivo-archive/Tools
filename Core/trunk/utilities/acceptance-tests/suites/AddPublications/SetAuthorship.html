@@ -36,7 +36,7 @@
 </tr>
 <tr>
 	<td>comment</td>
-	<td class="comment">Specify that Frank Furter authored CNN article</td>
+	<td class="comment">Specify that Frank Furter authored CNN article (old way)</td>
 	<td></td>
 </tr>
 <tr>
@@ -71,17 +71,17 @@
 </tr>
 <tr>
 	<td>type</td>
-	<td>username</td>
+	<td>loginName</td>
 	<td>testAdmin</td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>password</td>
+	<td>loginPassword</td>
 	<td>Password</td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>loginSubmitMode</td>
+	<td>loginForm</td>
 	<td></td>
 </tr>
 <tr>
@@ -146,7 +146,22 @@
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>//div[@id='oprop-core-informationResourceInAuthorship']/a</td>
+	<td>//div[@id='informationResourceInAuthorship']/a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTitle</td>
+	<td>Edit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>This publication currently has no authors specified.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>showAddFormButton</td>
 	<td></td>
 </tr>
 <tr>
@@ -156,37 +171,12 @@
 </tr>
 <tr>
 	<td>type</td>
-	<td>name</td>
+	<td>lastName</td>
 	<td>Frank Furter</td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
 	<td>submit</td>
-	<td></td>
-</tr>
-<tr>
-	<td>assertTitle</td>
-	<td>Effect of Nintendo on Kids</td>
-	<td></td>
-</tr>
-<tr>
-	<td>comment</td>
-	<td class="comment">Link person Frank Furter to article author</td>
-	<td></td>
-</tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>link=Frank Furter</td>
-	<td></td>
-</tr>
-<tr>
-	<td>assertTitle</td>
-	<td>Frank Furter</td>
-	<td></td>
-</tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>//div[@id='oprop-core-linkedAuthor']/a</td>
 	<td></td>
 </tr>
 <tr>
@@ -195,9 +185,14 @@
 	<td></td>
 </tr>
 <tr>
-	<td>select</td>
-	<td>objectVar</td>
-	<td>label=Frank Furter</td>
+	<td>verifyTextPresent</td>
+	<td>Must specify the author's first name.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>firstName</td>
+	<td>Frank</td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
@@ -206,27 +201,17 @@
 </tr>
 <tr>
 	<td>assertTitle</td>
-	<td>Frank Furter</td>
-	<td></td>
-</tr>
-<tr>
-	<td>comment</td>
-	<td class="comment">Verify author link worked</td>
+	<td>Edit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>verifyTextPresent</td>
-	<td>Frank Furter</td>
-	<td></td>
-</tr>
-<tr>
-	<td>verifyTextPresent</td>
-	<td>Effect of Nintendo on Kids</td>
+	<td>Furter, Frank</td>
 	<td></td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>link=Effect of Nintendo on Kids</td>
+	<td>link=Return to Publication</td>
 	<td></td>
 </tr>
 <tr>
@@ -235,8 +220,63 @@
 	<td></td>
 </tr>
 <tr>
+	<td>verifyElementPresent</td>
+	<td>link=Furter, Frank</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Furter, Frank</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTitle</td>
+	<td>Furter, Frank</td>
+	<td></td>
+</tr>
+<tr>
 	<td>verifyTextPresent</td>
-	<td>Frank Furter</td>
+	<td>publication(s) within the last 10 years incomplete data</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='pub_count_short_sparkline_vis']/table/tbody/tr/td[3]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTitle</td>
+	<td>Furter, Frank</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Effect of Nintendo on Kids</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>showAddFormButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Return to Publication</td>
+	<td></td>
+</tr>
+<tr>
+	<td>comment</td>
+	<td class="comment">Verify author link worked</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTitle</td>
+	<td>Effect of Nintendo on Kids</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>link=Frank Furter</td>
 	<td></td>
 </tr>
 <tr>
@@ -251,7 +291,12 @@
 </tr>
 <tr>
 	<td>verifyTextPresent</td>
-	<td>Effect of Nintendo on Kids</td>
+	<td>publication(s) within the last 10 years incomplete data</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>link=Effect of Nintendo on Kids</td>
 	<td></td>
 </tr>
 <tr>

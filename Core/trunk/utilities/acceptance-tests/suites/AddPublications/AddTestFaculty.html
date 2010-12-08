@@ -35,6 +35,11 @@
 	<td></td>
 </tr>
 <tr>
+	<td>setTimeout</td>
+	<td>100000</td>
+	<td></td>
+</tr>
+<tr>
 	<td>comment</td>
 	<td class="comment">Add a faculty member for test purposes</td>
 	<td></td>
@@ -61,7 +66,7 @@
 </tr>
 <tr>
 	<td>assertTitle</td>
-	<td>VIVO Site Administration</td>
+	<td>VIVO</td>
 	<td></td>
 </tr>
 <tr>
@@ -71,17 +76,17 @@
 </tr>
 <tr>
 	<td>type</td>
-	<td>username</td>
+	<td>loginName</td>
 	<td>testAdmin</td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>password</td>
+	<td>loginPassword</td>
 	<td>Password</td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>loginSubmitMode</td>
+	<td>loginForm</td>
 	<td></td>
 </tr>
 <tr>
@@ -95,13 +100,18 @@
 	<td></td>
 </tr>
 <tr>
+	<td>select</td>
+	<td>VClassURI</td>
+	<td>label=Faculty Member (core)</td>
+</tr>
+<tr>
 	<td>clickAndWait</td>
 	<td>//input[@value='Add individual of this class']</td>
 	<td></td>
 </tr>
 <tr>
 	<td>assertTitle</td>
-	<td>Individual Editing Form</td>
+	<td>Edit</td>
 	<td></td>
 </tr>
 <tr>
@@ -111,8 +121,48 @@
 </tr>
 <tr>
 	<td>type</td>
-	<td>Name</td>
-	<td>Frank Furter</td>
+	<td>firstName</td>
+	<td>Frank</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>lastName</td>
+	<td>Furter</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTitle</td>
+	<td>Furter, Frank</td>
+	<td></td>
+</tr>
+<tr>
+	<td>comment</td>
+	<td class="comment">Edit Frank Furter to make him an Associate Professor</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=edit this individual</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTitle</td>
+	<td>Individual Control Panel</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//input[@value='Edit This Individual']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTitle</td>
+	<td>Individual Editing Form</td>
+	<td></td>
 </tr>
 <tr>
 	<td>type</td>
@@ -136,7 +186,7 @@
 </tr>
 <tr>
 	<td>verifyTextPresent</td>
-	<td>Frank Furter</td>
+	<td>Furter, Frank</td>
 	<td></td>
 </tr>
 <tr>
@@ -151,6 +201,11 @@
 </tr>
 <tr>
 	<td>clickAndWait</td>
+	<td>link=Home</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
 	<td>link=Log out</td>
 	<td></td>
 </tr>
@@ -159,7 +214,6 @@
 	<td>VIVO</td>
 	<td></td>
 </tr>
-
 </tbody></table>
 </body>
 </html>

@@ -40,6 +40,11 @@
 	<td></td>
 </tr>
 <tr>
+	<td>setTimeout</td>
+	<td>100000</td>
+	<td></td>
+</tr>
+<tr>
 	<td>open</td>
 	<td>/vivo/</td>
 	<td></td>
@@ -61,7 +66,7 @@
 </tr>
 <tr>
 	<td>assertTitle</td>
-	<td>VIVO Site Administration</td>
+	<td>VIVO</td>
 	<td></td>
 </tr>
 <tr>
@@ -71,17 +76,17 @@
 </tr>
 <tr>
 	<td>type</td>
-	<td>username</td>
+	<td>loginName</td>
 	<td>testAdmin</td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>password</td>
+	<td>loginPassword</td>
 	<td>Password</td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>loginSubmitMode</td>
+	<td>loginForm</td>
 	<td></td>
 </tr>
 <tr>
@@ -105,28 +110,23 @@
 	<td></td>
 </tr>
 <tr>
-	<td>assertTitle</td>
-	<td>Individual Editing Form</td>
-	<td></td>
-</tr>
-<tr>
 	<td>comment</td>
 	<td class="comment">Add Johnson Art Museum</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>Name</td>
+	<td>label</td>
 	<td>Johnson Art Museum</td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>primaryAction</td>
+	<td>submit</td>
 	<td></td>
 </tr>
 <tr>
 	<td>assertTitle</td>
-	<td>Individual Control Panel</td>
+	<td>Johnson Art Museum</td>
 	<td></td>
 </tr>
 <tr>
@@ -140,23 +140,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>verifyElementPresent</td>
-	<td>link=exact:core:Museum</td>
+	<td>comment</td>
+	<td class="comment">Log out</td>
 	<td></td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>//input[@value='Display This Individual (public)']</td>
-	<td></td>
-</tr>
-<tr>
-	<td>assertTitle</td>
-	<td>Johnson Art Museum</td>
-	<td></td>
-</tr>
-<tr>
-	<td>comment</td>
-	<td class="comment">Log out</td>
+	<td>link=Home</td>
 	<td></td>
 </tr>
 <tr>
@@ -169,7 +159,6 @@
 	<td>VIVO</td>
 	<td></td>
 </tr>
-
 </tbody></table>
 </body>
 </html>
