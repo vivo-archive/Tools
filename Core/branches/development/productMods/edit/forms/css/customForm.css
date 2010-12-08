@@ -1,0 +1,117 @@
+/* $This file is distributed under the terms of the license in /doc/license.txt$ */
+
+form.customForm div {
+    clear: left;
+}
+
+form.customForm h6 {
+    font-size: 110%;
+}
+
+form.customForm div.addNewLink {
+    float: left;
+    clear: none;
+    margin-left: 5em;
+    margin-top: .9em;
+    width: 200px;
+    padding: 0.8em;
+    border: 1px solid #9c9c9c;
+    display: none; /* Hide if Javascript disabled. Javascript will show. */
+}
+
+form.customForm .existing span.requiredHint, 
+form.customForm .new span.requiredHint {
+    display: none; /* Hide if Javascript disabled. Javascript will show. */
+}
+
+form.customForm .existing {
+    float: left;
+    clear: none;
+}
+
+.existingOrNew {
+    font-style: italic;
+    margin-left: 1em;
+}
+
+.new {
+    padding: .6em 0 .6em 1.5em;
+    border: 1px solid #9c9c9c;
+    width: 300px;
+}
+
+
+
+form.customForm p.inline input,
+form.customForm p.inline label {
+    float: left;
+    clear: left;
+}
+
+form.customForm p.inline.year input {
+    margin-top: -1.75em;
+}
+
+/*
+#form.customForm p.inline.year span.hint {
+    margin-right: 38.5em;
+    margin-top: -2.4em;
+}
+*/
+
+input,
+select, 
+form.customForm p {
+    margin-bottom: 1em;
+}
+
+option {
+    padding: 0 2px;
+}
+
+form.customForm .hint {
+    color: #9c9c9c;
+    font-weight: normal;
+}
+
+form.customForm .requiredHint {
+    color: #f00;
+    font-weight: normal;
+}
+
+form.customForm #requiredLegend {
+    font-style: italic;
+}
+
+form.customForm p.validationError {
+    clear: both;
+    margin-bottom: 1.25em;
+}
+
+form.customForm a.close {
+    float: right;
+    margin-right: 1em;
+    font-size: 90%;    
+}
+
+form.customForm a.close:link, 
+form.customForm a.close:visited {
+    border-color: #FF7700;
+    color: #FF7700;
+}
+
+form.customForm textarea {
+    width: 30%;
+}
+
+/* fix bad alignment in IE 6 and 7 */
+.or, .cancel{
+vertical-align:top;
+}
+
+/* Message displayed for an unsupported browser. Hide on page load; JavaScript
+ * shows if needed.
+ */
+#ie67DisableWrapper {
+    display: none;
+}
