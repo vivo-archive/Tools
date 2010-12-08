@@ -1,30 +1,4 @@
-/*
-Copyright (c) 2010, Cornell University
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-    * Redistributions of source code must retain the above copyright notice,
-      this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright notice,
-      this list of conditions and the following disclaimer in the documentation
-      and/or other materials provided with the distribution.
-    * Neither the name of Cornell University nor the names of its contributors
-      may be used to endorse or promote products derived from this software
-      without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-*/
+/* $This file is distributed under the terms of the license in /doc/license.txt$ */
 
 package edu.cornell.mannlib.vitro.webapp.dao.jena;
 
@@ -34,10 +8,18 @@ import java.util.List;
 import java.util.Map;
 
 import com.hp.hpl.jena.ontology.OntModel;
+import com.hp.hpl.jena.query.Query;
+import com.hp.hpl.jena.query.QueryExecution;
+import com.hp.hpl.jena.query.QueryExecutionFactory;
+import com.hp.hpl.jena.query.QueryFactory;
+import com.hp.hpl.jena.query.QuerySolution;
+import com.hp.hpl.jena.query.QuerySolutionMap;
+import com.hp.hpl.jena.query.ResultSet;
 import com.hp.hpl.jena.rdf.model.Property;
 import com.hp.hpl.jena.rdf.model.Resource;
 import com.hp.hpl.jena.rdf.model.ResourceFactory;
 import com.hp.hpl.jena.rdf.model.Statement;
+import com.hp.hpl.jena.rdf.model.StmtIterator;
 import com.hp.hpl.jena.shared.Lock;
 import com.hp.hpl.jena.util.iterator.ClosableIterator;
 
@@ -54,6 +36,7 @@ public class ObjectPropertyStatementDaoJena extends JenaBaseDao implements Objec
         super(wadf);
     }
 
+    @Override
     public void deleteObjectPropertyStatement(ObjectPropertyStatement objPropertyStmt) {
     	deleteObjectPropertyStatement(objPropertyStmt, getOntModelSelector().getABoxModel());
     }
@@ -76,6 +59,7 @@ public class ObjectPropertyStatementDaoJena extends JenaBaseDao implements Objec
         }
     }
 
+    @Override
     public Individual fillExistingObjectPropertyStatements(Individual entity) {
         if (entity.getURI() == null)
             return entity;
@@ -83,76 +67,86 @@ public class ObjectPropertyStatementDaoJena extends JenaBaseDao implements Objec
         	Map<String, ObjectProperty> uriToObjectProperty = new HashMap<String,ObjectProperty>();
         	
         	ObjectPropertyDaoJena opDaoJena = new ObjectPropertyDaoJena(getWebappDaoFactory());
-            Resource ind = getOntModel().getResource(entity.getURI());
-            List<ObjectPropertyStatement> objPropertyStmtList = new ArrayList<ObjectPropertyStatement>();
-            ClosableIterator propIt = ind.listProperties();
-            try {
-                while (propIt.hasNext()) {
-                    Statement st = (Statement) propIt.next();
-                    if (st.getObject().isResource() && !(NONUSER_NAMESPACES.contains(st.getPredicate().getNameSpace()))) {
-                        try {
-                            ObjectPropertyStatement objPropertyStmt = new ObjectPropertyStatementImpl();
-                            objPropertyStmt.setSubjectURI(entity.getURI());
-                            objPropertyStmt.setSubject(entity);
-                            try {
-                                objPropertyStmt.setObjectURI(((Resource)st.getObject()).getURI());
-                            } catch (Throwable t) {
-                                t.printStackTrace();
-                            }
-                            objPropertyStmt.setPropertyURI(st.getPredicate().getURI());
-                            try {
-                                Property prop = st.getPredicate();
-                                if( uriToObjectProperty.containsKey(prop.getURI())){
-                                	objPropertyStmt.setProperty(uriToObjectProperty.get(prop.getURI()));
-                                }else{
-                                	ObjectProperty p = opDaoJena.propertyFromOntProperty(getOntModel().getObjectProperty(prop.getURI()));
-                                	if( p != null ){
-                                		uriToObjectProperty.put(prop.getURI(), p);
-                                		objPropertyStmt.setProperty(uriToObjectProperty.get(prop.getURI()));
-                                	}else{
-                                		//if ObjectProperty not found in ontology, skip it
-                                		continue;
-                                	}
-                                }                                
-                            } catch (Throwable g) {
-                                //do not add statement to list
-                            	log.debug("exception while trying to get object property for statement list, statement skipped.", g);
-                            	continue;                                                                
-                            }
-                            if (objPropertyStmt.getObjectURI() != null) {
-                                Individual objInd = getWebappDaoFactory().getIndividualDao().getIndividualByURI(objPropertyStmt.getObjectURI());
-                                objPropertyStmt.setObject(objInd);
-                            }
-
-                            //add object property statement to list for Individual
-                            if ((objPropertyStmt.getSubjectURI() != null) && (objPropertyStmt.getPropertyURI() != null) && (objPropertyStmt.getObject() != null)){
-                                objPropertyStmtList.add(objPropertyStmt);                           
-                            } 
-                        } catch (Throwable t) {
-                            t.printStackTrace();
-                        }
-                    }
-                }
-            } finally {
-                propIt.close();
-            }
-            entity.setObjectPropertyStatements(objPropertyStmtList);
+        	
+        	OntModel ontModel = getOntModelSelector().getABoxModel();
+        	ontModel.enterCriticalSection(Lock.READ);
+        	try {
+	            Resource ind = ontModel.getResource(entity.getURI());
+	            List<ObjectPropertyStatement> objPropertyStmtList = new ArrayList<ObjectPropertyStatement>();
+	            ClosableIterator<Statement> propIt = ind.listProperties();
+	            try {
+	                while (propIt.hasNext()) {
+	                    Statement st = (Statement) propIt.next();
+	                    
+	                    if (st.getObject().isResource() && !(NONUSER_NAMESPACES.contains(st.getPredicate().getNameSpace()))) {
+	                        try {
+	                            ObjectPropertyStatement objPropertyStmt = new ObjectPropertyStatementImpl();
+	                            objPropertyStmt.setSubjectURI(entity.getURI());
+	                            objPropertyStmt.setSubject(entity);
+	                            try {
+	                                objPropertyStmt.setObjectURI(((Resource)st.getObject()).getURI());
+	                            } catch (Throwable t) {
+	                                t.printStackTrace();
+	                            }
+	                            objPropertyStmt.setPropertyURI(st.getPredicate().getURI());
+	                            try {
+	                                Property prop = st.getPredicate();
+	                                if( uriToObjectProperty.containsKey(prop.getURI())){
+	                                	objPropertyStmt.setProperty(uriToObjectProperty.get(prop.getURI()));
+	                                }else{
+	                                	ObjectProperty p = opDaoJena.propertyFromOntProperty(getOntModel().getObjectProperty(prop.getURI()));
+	                                	if( p != null ){
+	                                		uriToObjectProperty.put(prop.getURI(), p);
+	                                		objPropertyStmt.setProperty(uriToObjectProperty.get(prop.getURI()));
+	                                	}else{
+	                                		//if ObjectProperty not found in ontology, skip it
+	                                		continue;
+	                                	}
+	                                }                                
+	                            } catch (Throwable g) {
+	                                //do not add statement to list
+	                            	log.debug("exception while trying to get object property for statement list, statement skipped.", g);
+	                            	continue;                                                                
+	                            }
+	                            if (objPropertyStmt.getObjectURI() != null) {
+	                                Individual objInd = getWebappDaoFactory().getIndividualDao().getIndividualByURI(objPropertyStmt.getObjectURI());
+	                                objPropertyStmt.setObject(objInd);
+	                            }
+	
+	                            //add object property statement to list for Individual
+	                            if ((objPropertyStmt.getSubjectURI() != null) && (objPropertyStmt.getPropertyURI() != null) && (objPropertyStmt.getObject() != null)){
+	                                objPropertyStmtList.add(objPropertyStmt);                           
+	                            } 
+	                        } catch (Throwable t) {
+	                            t.printStackTrace();
+	                        }
+	                    }
+	                }
+	            } finally {
+	                propIt.close();
+	            }
+	            entity.setObjectPropertyStatements(objPropertyStmtList);
+        	} finally {
+        		ontModel.leaveCriticalSection();
+        	}
             return entity;
         }
     }
     
     private int NO_LIMIT = -1;
     
+    @Override
     public List<ObjectPropertyStatement> getObjectPropertyStatements (ObjectProperty objectProperty) {
     	return getObjectPropertyStatements(objectProperty, NO_LIMIT, NO_LIMIT);
     }
     
+    @Override
     public List<ObjectPropertyStatement> getObjectPropertyStatements (ObjectProperty objectProperty, int startIndex, int endIndex) {
     	getOntModel().enterCriticalSection(Lock.READ);
     	List<ObjectPropertyStatement> opss = new ArrayList<ObjectPropertyStatement>();
     	try {
     		Property prop = ResourceFactory.createProperty(objectProperty.getURI());
-    		ClosableIterator opsIt = getOntModel().listStatements(null,prop,(Resource)null);
+    		ClosableIterator<Statement> opsIt = getOntModel().listStatements(null,prop,(Resource)null);
     		try {
     			int count = 0;
     			while ( (opsIt.hasNext()) && ((endIndex<0) || (count<endIndex)) ) {
@@ -175,12 +169,52 @@ public class ObjectPropertyStatementDaoJena extends JenaBaseDao implements Objec
     			opsIt.close();
     		}
     	} finally {
-    		getOntModel().leaveCriticalSection()
-;    	}
+    		getOntModel().leaveCriticalSection();
+    	}
     	return opss;
     }
 
-    public int insertNewObjectPropertyStatement(ObjectPropertyStatement objPropertyStmt) {
+	@Override
+	public List<ObjectPropertyStatement> getObjectPropertyStatements(
+			ObjectPropertyStatement objPropertyStmt) {
+		List<ObjectPropertyStatement> opss = new ArrayList<ObjectPropertyStatement>();
+
+		getOntModel().enterCriticalSection(Lock.READ);
+		try {
+			String subjectUri = objPropertyStmt.getSubjectURI();
+			String propertyUri = objPropertyStmt.getPropertyURI();
+			String objectUri = objPropertyStmt.getObjectURI();
+
+			Resource subject = (subjectUri == null) ? null : ResourceFactory.createResource(subjectUri);
+			Property property = (propertyUri == null) ? null : ResourceFactory
+					.createProperty(propertyUri);
+			Resource object = (objectUri == null) ? null : ResourceFactory.createResource(objectUri);
+			StmtIterator opsIt = getOntModel().listStatements(subject, property, object);
+			try {
+				while (opsIt.hasNext()) {
+					Statement stmt = opsIt.next();
+					if (stmt.getObject().isResource()) {
+						Resource objRes = (Resource) stmt.getObject();
+						if (!objRes.isAnon()) {
+							ObjectPropertyStatement ops = new ObjectPropertyStatementImpl();
+							ops.setSubjectURI(stmt.getSubject().getURI());
+							ops.setPropertyURI(stmt.getPredicate().getURI());
+							ops.setObjectURI(objRes.getURI());
+							opss.add(ops);
+						}
+					}
+				}
+			} finally {
+				opsIt.close();
+			}
+		} finally {
+			getOntModel().leaveCriticalSection();
+		}
+		return opss;
+	}
+
+    @Override
+	public int insertNewObjectPropertyStatement(ObjectPropertyStatement objPropertyStmt) {
     	return insertNewObjectPropertyStatement(objPropertyStmt, getOntModelSelector().getABoxModel());
     }
 
@@ -201,4 +235,40 @@ public class ObjectPropertyStatementDaoJena extends JenaBaseDao implements Objec
         return 0;
     }
 
+    @Override
+    /*
+     * SPARQL-based method for getting the individual's values for a single data property.
+     */
+    public List<ObjectPropertyStatement> getObjectPropertyStatementsForIndividualByProperty(Individual subject, ObjectProperty property, String queryString) {  
+        
+        log.debug("Object property query string: " + queryString);
+        
+        Query query = null;
+        try {
+            query = QueryFactory.create(queryString);
+        } catch(Throwable th){
+            log.error("could not create SPARQL query for query string " + th.getMessage());
+            log.error(queryString);
+        } 
+        
+        String subjectUri = subject.getURI();
+        String propertyUri = property.getURI();
+
+        QuerySolutionMap bindings = new QuerySolutionMap();
+        bindings.add("subject", ResourceFactory.createResource(subjectUri));
+        bindings.add("property", ResourceFactory.createResource(propertyUri));
+
+        // Run the SPARQL query to get the properties        
+        QueryExecution qexec = QueryExecutionFactory.create(query, getOntModelSelector().getFullModel(), bindings);
+        ResultSet results = qexec.execSelect(); 
+
+        List<ObjectPropertyStatement> statements = new ArrayList<ObjectPropertyStatement>();
+        while (results.hasNext()) {
+            QuerySolution sol = results.next();
+            Resource resource = sol.getResource("object");
+            ObjectPropertyStatement ops = new ObjectPropertyStatementImpl(subjectUri, propertyUri, resource.getURI());
+            statements.add(ops);
+        }
+        return statements;  
+    }
 }

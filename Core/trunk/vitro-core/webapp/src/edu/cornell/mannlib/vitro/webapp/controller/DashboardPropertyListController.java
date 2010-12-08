@@ -1,30 +1,4 @@
-/*
-Copyright (c) 2010, Cornell University
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-    * Redistributions of source code must retain the above copyright notice,
-      this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright notice,
-      this list of conditions and the following disclaimer in the documentation
-      and/or other materials provided with the distribution.
-    * Neither the name of Cornell University nor the names of its contributors
-      may be used to endorse or promote products derived from this software
-      without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-*/
+/* $This file is distributed under the terms of the license in /doc/license.txt$ */
 
 package edu.cornell.mannlib.vitro.webapp.controller;
 
@@ -138,7 +112,7 @@ public class DashboardPropertyListController extends VitroHttpServlet {
                 // now first get the properties this entity actually has, presumably populated with statements 
                 List<ObjectProperty> objectPropertyList = subject.getObjectPropertyList();
                 for (ObjectProperty op : objectPropertyList) {
-                    op.setEditLabel(op.getDomainPublic());
+                    op.setLabel(op.getDomainPublic());
                     mergedPropertyList.add(op);
                 }
             } else {
@@ -148,7 +122,7 @@ public class DashboardPropertyListController extends VitroHttpServlet {
                     for (PropertyInstance pi : allPropInstColl) {
                         if (pi!=null) {
                             ObjectProperty op = opDao.getObjectPropertyByURI(pi.getPropertyURI());
-                            op.setEditLabel(op.getDomainPublic()); // no longer relevant: pi.getSubjectSide() ? op.getDomainPublic() : op.getRangePublic());
+                            op.setLabel(op.getDomainPublic()); // no longer relevant: pi.getSubjectSide() ? op.getDomainPublic() : op.getRangePublic());
                             mergedPropertyList.add(op);
                         } else {
                             log.error("a property instance in the Collection created by PropertyInstanceDao.getAllPossiblePropInstForIndividual() is unexpectedly null");
@@ -164,7 +138,7 @@ public class DashboardPropertyListController extends VitroHttpServlet {
                 // now do much the same with data properties: get the list of populated data properties, then add in placeholders for missing ones
                 List<DataProperty> dataPropertyList = subject.getDataPropertyList();
                 for (DataProperty dp : dataPropertyList) {
-                    dp.setEditLabel(dp.getPublicName());
+                    dp.setLabel(dp.getPublicName());
                     mergedPropertyList.add(dp);
                 }                
             } else {
@@ -173,7 +147,7 @@ public class DashboardPropertyListController extends VitroHttpServlet {
                 if (allDatapropColl != null) {
                     for (DataProperty dp : allDatapropColl ) {
                         if (dp!=null) {
-                            dp.setEditLabel(dp.getPublicName());
+                            dp.setLabel(dp.getPublicName());
                             mergedPropertyList.add(dp);
                         } else {
                             log.error("a data property in the Collection created in DataPropertyDao.getAllPossibleDatapropsForIndividual() is unexpectedly null)");
@@ -269,7 +243,7 @@ public class DashboardPropertyListController extends VitroHttpServlet {
         int count = groupsList.size();
         PropertyGroup tempGroup = null;
         if (unassignedGroupName!=null) {
-            tempGroup = pgDao.createTempPropertyGroup(unassignedGroupName,MAX_GROUP_DISPLAY_RANK);
+            tempGroup = pgDao.createDummyPropertyGroup(unassignedGroupName,MAX_GROUP_DISPLAY_RANK);
             log.debug("creating temp property group "+unassignedGroupName+" for any unassigned properties");
         }
         switch (count) {
@@ -296,7 +270,7 @@ public class DashboardPropertyListController extends VitroHttpServlet {
                      if (tempGroup!=null) { // not assigned any group yet and are creating a group for unassigned properties
                          if (!alreadyOnPropertyList(tempGroup.getPropertyList(),p)) {
                              tempGroup.getPropertyList().add(p);
-                             log.debug("adding property "+p.getEditLabel()+" to members of temp group "+unassignedGroupName);
+                             log.debug("adding property "+p.getLabel()+" to members of temp group "+unassignedGroupName);
                          }
                      } // otherwise don't put that property on the list
                  } else if (p.getGroupURI().equals(pg.getURI())) {
@@ -376,7 +350,7 @@ public class DashboardPropertyListController extends VitroHttpServlet {
             if (diff==0) {
                 diff = determineDisplayRank(p1) - determineDisplayRank(p2);
                 if (diff==0) {
-                    return p1.getEditLabel().compareTo(p2.getEditLabel());
+                    return p1.getLabel().compareTo(p2.getLabel());
                 } else {
                     return diff;
                 }

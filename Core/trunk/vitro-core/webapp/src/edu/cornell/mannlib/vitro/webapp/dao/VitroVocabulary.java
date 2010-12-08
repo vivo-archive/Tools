@@ -1,44 +1,14 @@
-/*
-Copyright (c) 2010, Cornell University
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-    * Redistributions of source code must retain the above copyright notice,
-      this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright notice,
-      this list of conditions and the following disclaimer in the documentation
-      and/or other materials provided with the distribution.
-    * Neither the name of Cornell University nor the names of its contributors
-      may be used to endorse or promote products derived from this software
-      without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-*/
+/* $This file is distributed under the terms of the license in /doc/license.txt$ */
 
 package edu.cornell.mannlib.vitro.webapp.dao;
 
-import java.util.Arrays;
-import java.util.List;
-
-import com.hp.hpl.jena.rdf.model.Resource;
-import com.hp.hpl.jena.vocabulary.XSD;
-import com.hp.hpl.jena.ontology.AnnotationProperty;
 
 public class VitroVocabulary {
 
 	
     public static final String vitroURI = "http://vitro.mannlib.cornell.edu/ns/vitro/0.7#";
+    
+    public static final String VITRO_PUBLIC = "http://vitro.mannlib.cornell.edu/ns/vitro/public#";
     
     
     /** BJL23 2008-02-25:
@@ -64,6 +34,8 @@ public class VitroVocabulary {
     
     // an OWL DL-compatible surrogate for rdf:value for use with boxing idiom
     public static final String value = vitroURI + "value";
+    
+    public static final String DISPLAY = "http://vitro.mannlib.cornell.edu/ontologies/display/1.1#";
 
     // properties found on the beans
 
@@ -117,8 +89,6 @@ public class VitroVocabulary {
     public static final String DISPLAY_LIMIT = vitroURI+"displayLimitAnnot";
 
     public static final String CITATION = vitroURI+"citation";
-    public static final String IMAGEFILE = vitroURI+"imageFile";
-    public static final String IMAGETHUMB = vitroURI+"imageThumb";
     
     // ================== property related =================================
 
@@ -132,6 +102,7 @@ public class VitroVocabulary {
     public static final String PROPERTY_CUSTOMENTRYFORMANNOT = vitroURI+"customEntryFormAnnot";
     public static final String PROPERTY_CUSTOMDISPLAYVIEWANNOT = vitroURI+"customDisplayViewAnnot";
     public static final String PROPERTY_CUSTOMSHORTVIEWANNOT = vitroURI+"customShortViewAnnot";
+    public static final String PROPERTY_CUSTOM_LIST_VIEW_ANNOT = vitroURI + "customListViewAnnot";
     public static final String PROPERTY_SELECTFROMEXISTINGANNOT = vitroURI+"selectFromExistingAnnot";
     public static final String PROPERTY_OFFERCREATENEWOPTIONANNOT = vitroURI+"offerCreateNewOptionAnnot";
     public static final String PROPERTY_INPROPERTYGROUPANNOT = vitroURI+"inPropertyGroupAnnot";
@@ -310,5 +281,19 @@ public class VitroVocabulary {
     
     public static final String ONTOLOGY_PREFIX_ANNOT = vitroURI + "ontologyPrefixAnnot";
   
+    // =============== file storage vocabulary ================================
+    
+    public static final String FS_FILE_CLASS = VITRO_PUBLIC + "File";
+    public static final String FS_BYTESTREAM_CLASS = VITRO_PUBLIC + "FileByteStream";
+    
+    public static final String FS_FILENAME = VITRO_PUBLIC + "filename";
+    public static final String FS_MIME_TYPE = VITRO_PUBLIC + "mimeType";
+    public static final String FS_ATTRIBUTION = VITRO_PUBLIC + "attribution";
+    public static final String FS_DOWNLOAD_LOCATION = VITRO_PUBLIC + "downloadLocation";
+    public static final String FS_THUMBNAIL_IMAGE = VITRO_PUBLIC + "thumbnailImage";
+    public static final String FS_ALIAS_URL = VITRO_PUBLIC + "directDownloadUrl";
+
+    public static final String IND_MAIN_IMAGE = VITRO_PUBLIC + "mainImage";
+    public static final String IND_IMAGE = VITRO_PUBLIC + "image";
 
 }

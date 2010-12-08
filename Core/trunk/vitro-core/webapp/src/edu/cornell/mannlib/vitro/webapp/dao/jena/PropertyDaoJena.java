@@ -1,43 +1,29 @@
-/*
-Copyright (c) 2010, Cornell University
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-    * Redistributions of source code must retain the above copyright notice,
-      this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright notice,
-      this list of conditions and the following disclaimer in the documentation
-      and/or other materials provided with the distribution.
-    * Neither the name of Cornell University nor the names of its contributors
-      may be used to endorse or promote products derived from this software
-      without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-*/
+/* $This file is distributed under the terms of the license in /doc/license.txt$ */
 
 package edu.cornell.mannlib.vitro.webapp.dao.jena;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 import com.hp.hpl.jena.ontology.OntClass;
 import com.hp.hpl.jena.ontology.OntModel;
 import com.hp.hpl.jena.ontology.OntProperty;
+import com.hp.hpl.jena.query.Query;
+import com.hp.hpl.jena.query.QueryExecution;
+import com.hp.hpl.jena.query.QueryExecutionFactory;
+import com.hp.hpl.jena.query.QuerySolution;
+import com.hp.hpl.jena.query.QuerySolutionMap;
+import com.hp.hpl.jena.query.ResultSet;
 import com.hp.hpl.jena.rdf.model.RDFNode;
 import com.hp.hpl.jena.rdf.model.Resource;
+import com.hp.hpl.jena.rdf.model.ResourceFactory;
 import com.hp.hpl.jena.rdf.model.Statement;
 import com.hp.hpl.jena.rdf.model.StmtIterator;
 import com.hp.hpl.jena.shared.Lock;
@@ -46,12 +32,43 @@ import com.hp.hpl.jena.vocabulary.RDFS;
 
 import edu.cornell.mannlib.vitro.webapp.beans.ObjectProperty;
 import edu.cornell.mannlib.vitro.webapp.beans.Property;
+import edu.cornell.mannlib.vitro.webapp.beans.VClass;
 import edu.cornell.mannlib.vitro.webapp.dao.PropertyDao;
-import edu.cornell.mannlib.vitro.webapp.dao.WebappDaoFactory;
+import edu.cornell.mannlib.vitro.webapp.dao.VClassDao;
 import edu.cornell.mannlib.vitro.webapp.dao.jena.event.EditEvent;
 
 public class PropertyDaoJena extends JenaBaseDao implements PropertyDao {
 	
+	protected static final Log log = LogFactory.getLog(PropertyDaoJena.class.getName());
+
+    protected static final String PREFIXES = 
+        "PREFIX rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> \n" +
+        "PREFIX vitro: <http://vitro.mannlib.cornell.edu/ns/vitro/0.7#> \n" + 
+        "PREFIX owl: <http://www.w3.org/2002/07/owl#> \n" +
+        "PREFIX afn: <http://jena.hpl.hp.com/ARQ/function#>";
+
+    /* This may be the intent behind JenaBaseDao.NONUSER_NAMESPACES, but that
+     * value does not contain all of these namespaces.
+     */
+    protected static final List<String> EXCLUDED_NAMESPACES = Arrays.asList(
+            "http://vitro.mannlib.cornell.edu/ns/vitro/0.7#",
+            "http://vitro.mannlib.cornell.edu/ns/vitro/public#",
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+            "http://www.w3.org/2000/01/rdf-schema#",
+            "http://www.w3.org/2002/07/owl#"            
+        ); 
+
+    /*
+     * This is a hack to throw out properties in the vitro, rdf, rdfs, and owl namespaces.
+     * It will be implemented in a better way in v1.3 (Editing and Display Configuration).
+     */
+    protected static String propertyFilters = "";
+    static {
+        for (String s : EXCLUDED_NAMESPACES) {
+            propertyFilters += "FILTER (afn:namespace(?property) != \"" + s + "\") \n";
+        }
+    }
+    
     public PropertyDaoJena(WebappDaoFactoryJena wadf) {
         super(wadf);
     }
@@ -146,11 +163,11 @@ public class PropertyDaoJena extends JenaBaseDao implements PropertyDao {
     	return outputList;
     }
     
-    public List <String> getSuperPropertyURIs(String propertyURI) {
+    public List <String> getSuperPropertyURIs(String propertyURI, boolean direct) {
        	List<String> supURIs = new LinkedList<String>();
     	getOntModel().enterCriticalSection(Lock.READ);
     	try {
-            Iterator supIt = getOntModel().getOntProperty(propertyURI).listSuperProperties(true);
+            Iterator supIt = getOntModel().getOntProperty(propertyURI).listSuperProperties(direct);
             while (supIt.hasNext()) {
                 try {
                     OntProperty prop = (OntProperty) supIt.next();
@@ -166,7 +183,7 @@ public class PropertyDaoJena extends JenaBaseDao implements PropertyDao {
     }
 
     private void getAllSuperPropertyURIs(String propertyURI, HashSet<String> subtree){
-        List<String> directSuperproperties = getSuperPropertyURIs(propertyURI);     
+        List<String> directSuperproperties = getSuperPropertyURIs(propertyURI,true);     
         Iterator<String> it=directSuperproperties.iterator();
         while(it.hasNext()){
             String uri = (String)it.next();
@@ -292,5 +309,111 @@ public class PropertyDaoJena extends JenaBaseDao implements PropertyDao {
         }
     		
 	}
-    
+	
+	/**
+	 * Finds the classes that have a definition involving a restriction
+	 * on the given property. 
+	 *
+	 * @param   propertyURI  identifier of a property
+	 * @return  a list of VClass objects representing the classes that have
+	 *          definitions involving a restriction on the given property.
+	 */
+
+    public List <VClass> getClassesWithRestrictionOnProperty(String propertyURI) {
+    	
+    	if (propertyURI == null) {
+    		log.info("getClassesWithRestrictionOnProperty: called with null propertyURI");
+    		return null;
+    	}
+    	    	
+		OntModel ontModel = getOntModel();	
+		ontModel.enterCriticalSection(Lock.READ);
+		
+		HashSet<String> classURISet = new HashSet<String>();
+		
+		try {
+			Resource targetProp = ontModel.getResource(propertyURI);
+			   
+			if (targetProp != null) {
+			
+			    StmtIterator stmtIter = ontModel.listStatements((Resource) null, OWL.onProperty, (RDFNode) targetProp);
+	
+			    while (stmtIter.hasNext()) {
+				   Statement statement = stmtIter.next();
+				   
+				   if ( statement.getSubject().canAs(OntClass.class) ) {
+					   classURISet.addAll(getRelatedClasses((OntClass) statement.getSubject().as(OntClass.class)));
+				   } else {
+					   log.warn("getClassesWithRestrictionOnProperty: Unexpected use of onProperty: it is not applied to a class");
+				   }
+			    }
+			} else {
+	    		log.error("getClassesWithRestrictionOnProperty: Error: didn't find a Property in the ontology model for the URI: " +  propertyURI);				
+			}
+		} finally {
+			ontModel.leaveCriticalSection();
+		}
+
+		List<VClass> classes = new ArrayList<VClass>();
+		Iterator<String> iter = classURISet.iterator();
+		
+		VClassDao vcd = getWebappDaoFactory().getVClassDao();
+		
+		while (iter.hasNext()) {
+		
+		   String curi = iter.next();
+		   VClass vc = vcd.getVClassByURI(curi);
+		  
+		   if (vc != null) {
+		       classes.add(vc);	  
+		   } else {
+			   log.error("getClassesWithRestrictionOnProperty: Error: no VClass found for URI: " + curi);
+		   }	
+		}
+       
+        return (classes.size()>0) ? classes : null;
+    }
+
+	/**
+	 * Finds all named superclasses, subclasses and equivalent classes of
+	 * the given class.
+	 *
+	 * @param   resourceURI  identifier of a class
+	 * @return  set of class URIs
+	 * 
+	 * Note: this method assumes that the caller holds a read lock on
+	 * the ontology model.
+	 */
+
+    public HashSet<String> getRelatedClasses(OntClass ontClass) {
+    	
+        HashSet<String> classSet = new HashSet<String>();
+  
+        List<OntClass> classList = ontClass.listEquivalentClasses().toList();
+        classList.addAll(ontClass.listSubClasses().toList());
+        classList.addAll(ontClass.listSuperClasses().toList());
+        
+        Iterator<OntClass> it = classList.iterator();
+		         
+        while (it.hasNext()) {
+        	OntClass oc = it.next();
+        	
+        	if (!oc.isAnon()) {
+        		classSet.add(oc.getURI());
+        	}
+        }
+        		
+        return classSet;
+    }
+     
+    protected ResultSet getPropertyQueryResults(String subjectUri, Query query) {        
+        log.debug("SPARQL query:\n" + query.toString());
+        // Bind the subject's uri to the ?subject query term
+        QuerySolutionMap subjectBinding = new QuerySolutionMap();
+        subjectBinding.add("subject", ResourceFactory.createResource(subjectUri));
+
+        // Run the SPARQL query to get the properties        
+        QueryExecution qexec = QueryExecutionFactory.create(query, getOntModelSelector().getFullModel(), subjectBinding);
+        return qexec.execSelect();        
+    }
 }

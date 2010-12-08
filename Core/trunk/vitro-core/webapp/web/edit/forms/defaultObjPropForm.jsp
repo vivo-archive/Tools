@@ -1,30 +1,4 @@
-<%--
-Copyright (c) 2010, Cornell University
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-    * Redistributions of source code must retain the above copyright notice,
-      this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright notice,
-      this list of conditions and the following disclaimer in the documentation
-      and/or other materials provided with the distribution.
-    * Neither the name of Cornell University nor the names of its contributors
-      may be used to endorse or promote products derived from this software
-      without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
---%>
+<%-- $This file is distributed under the terms of the license in /doc/license.txt$ --%>
 
 <%@ page import="com.hp.hpl.jena.rdf.model.Model" %>
 <%@ page import="edu.cornell.mannlib.vitro.webapp.beans.Individual" %>
@@ -50,7 +24,10 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 %>
 
 <%@page import="edu.cornell.mannlib.vitro.webapp.edit.n3editing.SelectListGenerator"%>
-<%@page import="java.util.Map"%><v:jsonset var="queryForInverse" >
+<%@page import="java.util.Map"%>
+<%@page import="com.hp.hpl.jena.ontology.OntModel"%>
+<%@page import="edu.cornell.mannlib.vitro.webapp.search.beans.ProhibitedFromSearch"%>
+<%@page import="edu.cornell.mannlib.vitro.webapp.web.DisplayVocabulary"%><v:jsonset var="queryForInverse" >
     PREFIX owl:  <http://www.w3.org/2002/07/owl#>
     SELECT ?inverse_property
     WHERE {
@@ -157,11 +134,24 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     }
     
     if( prop.getSelectFromExisting() ){
+    	// set ProhibitedFromSearch object so picklist doesn't show
+        // individuals from classes that should be hidden from list views
+        OntModel displayOntModel = 
+            (OntModel) pageContext.getServletContext()
+                .getAttribute("displayOntModel");
+        if (displayOntModel != null) {
+            ProhibitedFromSearch pfs = new ProhibitedFromSearch(
+                DisplayVocabulary.PRIMARY_LUCENE_INDEX_URI, displayOntModel);
+            if( editConfig != null )
+                editConfig.setProhibitedFromSearch(pfs);
+        }
     	Map<String,String> rangeOptions = SelectListGenerator.getOptions(editConfig, "objectVar" , wdf);    	
-    	if( rangeOptions != null && rangeOptions.size() > 0 )
+    	if( rangeOptions != null && rangeOptions.size() > 0 ) {
     		request.setAttribute("rangeOptionsExist", true);
-    	else 
+    	    request.setAttribute("rangeOptions.objectVar", rangeOptions);
+    	} else { 
     		request.setAttribute("rangeOptionsExist",false);
+    	}
     }
 %>
 <jsp:include page="${preForm}"/>
@@ -176,11 +166,13 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	    </c:if>
 	    <v:input type="select" id="objectVar" size="80" />
 	    <div style="margin-top: 1em">
-	        <v:input type="submit" id="submit" value="<%=submitLabel%>" cancel="${param.subjectUri}"/>
+ 	        <v:input type="submit" id="submit" value="<%=submitLabel%>" cancel="true"/>
 	    </div>    
     </form>
   </c:if>
+  <c:set var="offerCancel" value="false"/>
   <c:if test="${requestScope.rangeOptionsExist == false }">
+  	<c:set var="offerCancel" value="true"/>
     <p>There are no entries in the system to select from.</p>
   </c:if>
 </c:if>
@@ -199,9 +191,12 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <input type="hidden" value="${param.objectUri}" name="objectUri"/>        
 		<input type="hidden" value="create" name="cmd"/>        
 		<v:input type="typesForCreateNew" id="typeOfNew" />
-        <v:input type="submit" id="submit" value="add a new item to this list"/>
+        <v:input type="submit" id="submit" value="add a new item to this list" cancel="${offerCancel}"/>
 	</form>                            
 </c:if>
+
+
+  
 
 <c:if test="${(requestScope.predicate.offerCreateNewOption == false) && (requestScope.predicate.selectFromExisting == false)}">
  <p>This property is currently configured to prohibit editing. </p>

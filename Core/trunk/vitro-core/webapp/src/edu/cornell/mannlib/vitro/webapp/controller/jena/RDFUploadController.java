@@ -1,39 +1,10 @@
-/*
-Copyright (c) 2010, Cornell University
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-    * Redistributions of source code must retain the above copyright notice,
-      this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright notice,
-      this list of conditions and the following disclaimer in the documentation
-      and/or other materials provided with the distribution.
-    * Neither the name of Cornell University nor the names of its contributors
-      may be used to endorse or promote products derived from this software
-      without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-*/
+/* $This file is distributed under the terms of the license in /doc/license.txt$ */
 
 package edu.cornell.mannlib.vitro.webapp.controller.jena;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -44,96 +15,53 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.fileupload.FileItem;
-import org.apache.commons.fileupload.FileUploadException;
-import org.apache.commons.fileupload.disk.DiskFileItemFactory;
-import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import com.hp.hpl.jena.ontology.OntModel;
+import com.hp.hpl.jena.ontology.OntModelSpec;
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
+import com.hp.hpl.jena.rdf.model.ModelMaker;
 import com.hp.hpl.jena.shared.JenaException;
 import com.hp.hpl.jena.shared.Lock;
 
-import edu.cornell.mannlib.vedit.beans.LoginFormBean;
+import edu.cornell.mannlib.vedit.beans.LoginStatusBean;
 import edu.cornell.mannlib.vedit.controller.BaseEditController;
 import edu.cornell.mannlib.vitro.webapp.beans.Portal;
 import edu.cornell.mannlib.vitro.webapp.controller.Controllers;
 import edu.cornell.mannlib.vitro.webapp.controller.VitroRequest;
+import edu.cornell.mannlib.vitro.webapp.dao.WebappDaoFactory;
 import edu.cornell.mannlib.vitro.webapp.dao.jena.JenaModelUtils;
+import edu.cornell.mannlib.vitro.webapp.dao.jena.OntModelSelector;
+import edu.cornell.mannlib.vitro.webapp.dao.jena.VitroJenaSpecialModelMaker;
 import edu.cornell.mannlib.vitro.webapp.dao.jena.event.EditEvent;
+import edu.cornell.mannlib.vitro.webapp.filestorage.uploadrequest.FileUploadServletRequest;
 
 public class RDFUploadController extends BaseEditController {
 	
     private static int maxFileSizeInBytes = 1024 * 1024 * 2000; //2000mb 
+    private static FileItem fileStream=null; 
+    private static final String INGEST_MENU_JSP = "/jenaIngest/ingestMenu.jsp";
+    private static final String LOAD_RDF_DATA_JSP = "/jenaIngest/loadRDFData.jsp";
 	
-	public void doPost(HttpServletRequest req, HttpServletResponse response) throws ServletException {
-        boolean isMultipart = ServletFileUpload.isMultipartContent(req);        
-        if (!isMultipart) {
-            // TODO: forward to error message
-            throw new ServletException("Must POST a multipart encoded request");
-        }
-        
-        /* The post parameters seem to get consumed by the parsing so we have to make a copy. */
-        Map<String, List<String>> queryParameters = new HashMap<String, List<String>>();
-        Map<String, List<FileItem>> fileStreams = new HashMap<String, List<FileItem>>();
+	public void doPost(HttpServletRequest rawRequest,
+			HttpServletResponse response) throws ServletException, IOException {
+		FileUploadServletRequest req = FileUploadServletRequest.parseRequest(rawRequest,
+				maxFileSizeInBytes);
+		if (req.hasFileUploadException()) {
+			forwardToFileUploadError(req.getFileUploadException().getLocalizedMessage(), req, response);
+			return;
+		}
 
-        Iterator<FileItem> iter;
-        try {
-            iter = getFileItemIterator(req);
-        } catch (FileUploadException e) {             
-            forwardToFileUploadError(e.getLocalizedMessage(), req, response);
-            return;
-        }
-
-        // get files or parameter values
-        while (iter.hasNext()) {
-            FileItem item = (FileItem) iter.next();
-            String name = item.getFieldName();
-            if (item.isFormField()) {
-                if (queryParameters.containsKey(name)) {                    
-                    try {
-                        String value = item.getString("UTF-8");
-                        queryParameters.get(name).add(value);
-                    } catch (UnsupportedEncodingException e) {
-                        forwardToFileUploadError(e.getLocalizedMessage(), req, response);
-                        return;
-                    }                    
-                } else {
-                    List<String> valueList = new ArrayList<String>(1);                    
-                    try {
-                        String value = item.getString("UTF-8");
-                        valueList.add(value);
-                    } catch (UnsupportedEncodingException e) {
-                        forwardToFileUploadError(e.getLocalizedMessage(), req, response);
-                        return;
-                    }                    
-                    queryParameters.put(name, valueList);
-                }
-            } else {
-                if (fileStreams.containsKey(name)) {
-                    fileStreams.get(name).add(item);
-                } else {
-                    List<FileItem> itemList = new ArrayList<FileItem>();
-                    itemList.add(item);
-                    fileStreams.put(name, itemList);
-                }
-            }
-        }
+		Map<String, List<FileItem>> fileStreams = req.getFiles();
 	    
 		VitroRequest request = new VitroRequest(req);		
 		if (!checkLoginStatus(request,response) ){
-		    try {
-                response.sendRedirect(getDefaultLandingPage(request));
-            } catch (IOException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
 		    return;
 		}		
 		
-		LoginFormBean loginBean = (LoginFormBean) request.getSession().getAttribute("loginHandler");
+		LoginStatusBean loginBean = LoginStatusBean.getBean(request);
 		
 		try {
 			super.doGet(request,response);
@@ -141,25 +69,31 @@ public class RDFUploadController extends BaseEditController {
 		    forwardToFileUploadError(e.getLocalizedMessage(), req, response);
 			return;
 		}
-				
+		
+		String modelName = req.getParameter("modelName");
+		if(modelName!=null){
+			loadRDF(req,request,response);
+			return;
+		}	
+		
 		Portal currentPortal = request.getPortal();		
 	    			   
-		boolean remove = isRemoveRequest(queryParameters);
+		boolean remove = "remove".equals(request.getParameter("mode"));
 		String verb = remove?"Removed":"Added";
 		
-		String languageStr = getLanguage(queryParameters);
+		String languageStr = request.getParameter("language");
 		
-		boolean makeClassgroups = (queryParameters.get("makeClassgroups") != null) ? true : false;
+		boolean makeClassgroups = (request.getParameter("makeClassgroups") != null);
 		
 		int[] portalArray = null;
-		String individualCheckIn = getCheckIn(queryParameters); 
+		String individualCheckIn = request.getParameter("checkIndividualsIntoPortal"); 
 		if (individualCheckIn != null) {
 		    if (individualCheckIn.equals("current")) {
 		        portalArray = new int[1];
 		        portalArray[0] = currentPortal.getPortalId();
 		    } else if (individualCheckIn.equals("all")) {
 		        try {
-		            Collection<Portal> portalCollection = getWebappDaoFactory().getPortalDao().getAllPortals();
+		            Collection<Portal> portalCollection = request.getFullWebappDaoFactory().getPortalDao().getAllPortals();
 		            portalArray = new int[portalCollection.size()];
 		            int index = 0;
 		            for (Iterator<Portal> pit = portalCollection.iterator(); pit.hasNext(); ) { 
@@ -175,12 +109,11 @@ public class RDFUploadController extends BaseEditController {
           
 		String uploadDesc ="";		
 		
-		Model tempModel = null;
+		OntModel tempModel = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM);
 		
 		/* ********************* GET RDF by URL ********************** */
-		String RDFUrlStr =  getRdfUrl(queryParameters);
+		String RDFUrlStr =  request.getParameter("rdfUrl");
 		if (RDFUrlStr != null && RDFUrlStr.length() > 0) {
-			tempModel = ModelFactory.createDefaultModel();
 			try {
 				tempModel.read(RDFUrlStr, languageStr); // languageStr may be null and default would be RDF/XML
 				uploadDesc = verb + " RDF from " + RDFUrlStr;				
@@ -195,7 +128,6 @@ public class RDFUploadController extends BaseEditController {
 		    /* **************** upload RDF from POST ********************* */
 		    if( fileStreams.get("rdfStream") != null && fileStreams.get("rdfStream").size() > 0 ){
 		        FileItem rdfStream = fileStreams.get("rdfStream").get(0);
-		        tempModel = ModelFactory.createDefaultModel();
 		        try {
 		            tempModel.read( rdfStream.getInputStream(), null, languageStr);
 		            uploadDesc = verb + " RDF from file " + rdfStream.getName();                
@@ -214,21 +146,42 @@ public class RDFUploadController extends BaseEditController {
 		    }
 		}
 		/* ********** Do the model changes *********** */
-		long stmtCount = 0L;
+		long tboxstmtCount = 0L;
+		long aboxstmtCount = 0L;
 		if( tempModel != null ){
-		    OntModel memModel=null;
+			JenaModelUtils xutil = new JenaModelUtils();
+		    OntModel tboxModel=null;
+		    OntModel aboxModel=null;
+		    OntModel tboxChangeModel=null;
+		    Model aboxChangeModel=null;
+		    
 		    try {
-		        memModel = (OntModel) request.getSession().getAttribute("baseOntModel");
+		       tboxModel = ((OntModelSelector) request.getSession()
+            			.getAttribute("baseOntModelSelector")).getTBoxModel(); 
+		       aboxModel = ((OntModelSelector) request.getSession()
+           			.getAttribute("baseOntModelSelector")).getABoxModel(); 
+		       
 		    } catch (Exception e) {}
-		    if (memModel==null) {
-		        memModel = (OntModel) getServletContext().getAttribute("baseOntModel");
+		    if (tboxModel==null) {
+		        tboxModel = ((OntModelSelector) getServletContext()
+            			.getAttribute("baseOntModelSelector")).getTBoxModel();
 		    }
-		    if (memModel != null) {
-		        stmtCount = operateOnModel(memModel,tempModel,remove,makeClassgroups,portalArray,loginBean.getUserURI());
-		    }					
+		    if (aboxModel==null) {
+		        aboxModel = ((OntModelSelector) getServletContext()
+            			.getAttribute("baseOntModelSelector")).getABoxModel();
+		    }
+		    if (tboxModel != null) {
+		    	tboxChangeModel = xutil.extractTBox(tempModel);
+		        tboxstmtCount = operateOnModel(request.getFullWebappDaoFactory(), tboxModel,tboxChangeModel,remove,makeClassgroups,portalArray,loginBean.getUserURI());
+		    }
+		    if (aboxModel != null) {
+		    	aboxChangeModel = tempModel.remove(tboxChangeModel);
+		        aboxstmtCount = operateOnModel(request.getFullWebappDaoFactory(), aboxModel,aboxChangeModel,remove,makeClassgroups,portalArray,loginBean.getUserURI());
+		    }
+		    
 		}
 			
-		request.setAttribute("uploadDesc", uploadDesc + ". " + verb + " " + stmtCount + "  statements.");
+		request.setAttribute("uploadDesc", uploadDesc + ". " + verb + " " + (tboxstmtCount + aboxstmtCount) + "  statements.");
 	    
         RequestDispatcher rd = request.getRequestDispatcher(Controllers.BASIC_JSP);
         request.setAttribute("bodyJsp","/templates/edit/specific/upload_rdf_result.jsp");
@@ -243,53 +196,50 @@ public class RDFUploadController extends BaseEditController {
         }
     }
 
-    
-    private String getCheckIn(Map<String, List<String>> queryParameters) {
-        //request.getParameter("checkIndividualsIntoPortal");
-        
-        List<String> checkins = queryParameters.get("checkIndividualsIntoPortal");
-        if( checkins != null && checkins.size() > 0 )
-            return checkins.get(0);
-        else
-            return null;
-    }
+	public void loadRDF(FileUploadServletRequest req,
+			VitroRequest request,HttpServletResponse response) throws ServletException, IOException {
+		Map<String, List<FileItem>> fileStreams = req.getFiles();
+		String filePath = fileStreams.get("filePath").get(0).getName();
+		fileStream = fileStreams.get("filePath").get(0);
+		String modelName = req.getParameter("modelName");
+		String docLoc = req.getParameter("docLoc");
+		String languageStr = request.getParameter("language");
+		ModelMaker maker = getVitroJenaModelMaker(request);
+		
+		if (docLoc!=null && modelName != null) {
+			doLoadRDFData(modelName,docLoc,filePath,languageStr,maker);
+			request.setAttribute("title","Ingest Menu");
+			request.setAttribute("bodyJsp",INGEST_MENU_JSP);
+		} else {
+			request.setAttribute("title","Load RDF Data");
+			request.setAttribute("bodyJsp",LOAD_RDF_DATA_JSP);
+		}
+		Portal portal = request.getPortal();
+		RequestDispatcher rd = request.getRequestDispatcher(Controllers.BASIC_JSP);      
+        request.setAttribute("portalBean",portal);
+        request.setAttribute("css", "<link rel=\"stylesheet\" type=\"text/css\" href=\""+portal.getThemeDir()+"css/edit.css\"/>");
 
-
-    private boolean isRemoveRequest(Map<String, List<String>> queryParameters) {
-        List<String> modes = queryParameters.get("mode");
-        if( modes != null && modes.size() > 0 && "remove".equals(modes.get(0)))
-            return true;
-        else 
-            return false;
-    }
-
-    private String getLanguage(Map<String, List<String>> queryParameters) {
-        List<String> langs = queryParameters.get("language");
-        if( langs != null && langs.size() > 0 )
-            return langs.get(0);
-        else
-            return null;
-    }
-
-    private String getRdfUrl(Map<String, List<String>> queryParameters){
-        List<String> items = queryParameters.get("rdfUrl");
-        if( items != null && items.size() > 0)
-            return items.get(0);
-        else
-            return null;        
-    }
-    
-    private long operateOnModel(OntModel mainModel, Model changesModel, boolean remove, boolean makeClassgroups, int[] portal,  String userURI) {
+        try {
+            rd.forward(request, response);
+        } catch (Exception e) {
+            System.out.println(this.getClass().getName()+" could not forward to view.");
+            System.out.println(e.getMessage());
+            System.out.println(e.getStackTrace());
+        }
+		
+	}
+	
+    private long operateOnModel(WebappDaoFactory webappDaoFactory, OntModel mainModel, Model changesModel, boolean remove, boolean makeClassgroups, int[] portal,  String userURI) {
         mainModel.enterCriticalSection(Lock.WRITE);
         try {
             mainModel.getBaseModel().notifyEvent(new EditEvent(userURI,true));
             try {                
                 if (makeClassgroups) {
                     Model classgroupModel = 
-                        JenaModelUtils.makeClassGroupsFromRootClasses(getWebappDaoFactory(), changesModel, changesModel);
+                        JenaModelUtils.makeClassGroupsFromRootClasses(webappDaoFactory, changesModel, changesModel);
                     mainModel.add(classgroupModel);
                 }                
-                if (portal != null && portal.length>0) {
+                if (!remove && portal != null && portal.length>0) {
                     for (int i=0; i<portal.length; i++) {
                         JenaModelUtils.checkAllIndividualsInModelIntoPortal(changesModel, changesModel, portal[i]);
                     }
@@ -308,6 +258,38 @@ public class RDFUploadController extends BaseEditController {
         return changesModel.size();        
     }
     
+    private void doLoadRDFData(String modelName, String docLoc, String filePath, String language, ModelMaker modelMaker) {
+		Model m = modelMaker.getModel(modelName);
+		m.enterCriticalSection(Lock.WRITE);
+		try {
+			if ( (docLoc != null) && (docLoc.length()>0) ) {
+				m.read(docLoc, language);
+			} else if ( (filePath != null) && (filePath.length()>0) ) {
+				File file = new File(filePath);
+				File[] files;
+				if (file.isDirectory()) {
+					files = file.listFiles();
+				} else {
+					files = new File[1];
+					files[0] = file;
+				}
+				for (int i=0; i<files.length; i++) {
+					File currentFile = files[i];
+					log.info("Reading file "+currentFile.getName());
+					
+					try {
+					
+						m.read(fileStream.getInputStream(), null, language);
+						fileStream.delete();
+					} catch (IOException ioe) {
+						throw new RuntimeException(ioe);
+					}
+				}
+			}
+		} finally { 
+			m.leaveCriticalSection();
+		}
+	}
     
      private void forwardToFileUploadError( String errrorMsg , HttpServletRequest req, HttpServletResponse response) throws ServletException{
          req.setAttribute("errors", errrorMsg);
@@ -320,21 +302,11 @@ public class RDFUploadController extends BaseEditController {
          return;
      }
      
+     private ModelMaker getVitroJenaModelMaker(HttpServletRequest request) {
+  		ModelMaker myVjmm = (ModelMaker) request.getSession().getAttribute("vitroJenaModelMaker");
+  		myVjmm = (myVjmm == null) ? (ModelMaker) getServletContext().getAttribute("vitroJenaModelMaker") : myVjmm;
+  		return new VitroJenaSpecialModelMaker(myVjmm, request);
+  	}
      
-	@SuppressWarnings("unchecked")
-    private Iterator<FileItem> getFileItemIterator(HttpServletRequest request)
-	throws FileUploadException {	    	    	   	    
-	    // Create a factory for disk-based file items
-	    File tempDir = (File)getServletContext().getAttribute("javax.servlet.context.tempdir");
-	    DiskFileItemFactory factory = new DiskFileItemFactory();
-	    factory.setSizeThreshold(maxFileSizeInBytes);
-	    factory.setRepository(tempDir);
-
-	    // Create a new file upload handler
-	    ServletFileUpload upload = new ServletFileUpload(factory);
-	    upload.setSizeMax(maxFileSizeInBytes);
-	    return upload.parseRequest(request).iterator();
-    }
-
 	private static final Log log = LogFactory.getLog(RDFUploadController.class.getName());
 }

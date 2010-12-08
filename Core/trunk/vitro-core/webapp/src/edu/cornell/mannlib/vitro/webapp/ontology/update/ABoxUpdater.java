@@ -1,30 +1,4 @@
-/*
-Copyright (c) 2010, Cornell University
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-    * Redistributions of source code must retain the above copyright notice,
-      this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright notice,
-      this list of conditions and the following disclaimer in the documentation
-      and/or other materials provided with the distribution.
-    * Neither the name of Cornell University nor the names of its contributors
-      may be used to endorse or promote products derived from this software
-      without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-*/
+/* $This file is distributed under the terms of the license in /doc/license.txt$ */
 
 package edu.cornell.mannlib.vitro.webapp.ontology.update;
 
@@ -136,7 +110,7 @@ public class ABoxUpdater {
 
 	/**
 	 * 
-	 * Update a knowledge based on a class rename in the ontology. All references to the
+	 * Update the knowledge base for a class rename in the ontology. All references to the
 	 * old class URI in either the subject or the object position of a statement are
 	 * changed to use the new class URI. 
 	 *  
@@ -189,6 +163,7 @@ public class ABoxUpdater {
 				   renameCount++;
 				   Statement newStatement = ResourceFactory.createStatement(newClass, oldStatement.getPredicate(), oldStatement.getObject());
 				   additions.add(newStatement);
+				   retractions.add(oldStatement);
 			   } else {
 				   removeCount++;
 				   retractions.add(oldStatement);
@@ -238,7 +213,7 @@ public class ABoxUpdater {
 
 	/**
 	 * 
-	 * Examine a knowledge based on a class addition to the ontology and
+	 * Examine the knowledge base for a class addition to the ontology and
 	 * add messages to the change log indicating where manual review is 
 	 * recommended. If the added class has a direct parent in the new ontology
 	 * that is not OWL.Thing, and if the knowledge base contains individuals
@@ -292,7 +267,7 @@ public class ABoxUpdater {
 					
 					if (count > 0) {
 						//TODO - take out the detailed logging after our internal testing is completed.
-				        logger.log("There " + ((count > 1) ? "are" : "is") + " " + count + " individuals in the model that are of type " + parentOfAddedClass.getURI() + "," +
+				        logger.log("There " + ((count > 1) ? "are" : "is") + " " + count + " individual" + ((count > 1) ? "s" : "")  + " in the model that " + ((count > 1) ? "are" : "is") + " of type " + parentOfAddedClass.getURI() + "," +
 				        		    " and a new subclass of that class has been added: " + addedClass.getURI() + ". " +
 				        		    "Please review " + ((count > 1) ? "these" : "this") + " individual" + ((count > 1) ? "s" : "") + " to see whether " + ((count > 1) ? "they" : "it") + " should be of type: " +  addedClass.getURI() );
 					}
@@ -300,6 +275,7 @@ public class ABoxUpdater {
 			}			
 		}
 	}
+
 
 	/**
 	 * 
@@ -353,6 +329,7 @@ public class ABoxUpdater {
 		AtomicOntologyChange chg = new AtomicOntologyChange(deletedClass.getURI(), replacementClass.getURI(), AtomicChangeType.RENAME);
 		renameClass(chg);		
 	}
+	
 	
 	public void processPropertyChanges(List<AtomicOntologyChange> changes) throws IOException {
 		Iterator<AtomicOntologyChange> propItr = changes.iterator();
@@ -447,9 +424,13 @@ public class ABoxUpdater {
 		OntProperty oldProperty = oldTboxModel.getOntProperty(propObj.getSourceURI());
 		OntProperty newProperty = newTboxModel.getOntProperty(propObj.getDestinationURI());
 		
-		if (oldProperty == null || newProperty == null) {
-			logger.logError(" expects non-null old property and new property "
-					+ "URIs");
+		if (oldProperty == null) {
+			logger.logError("didn't find the " + propObj.getSourceURI() + " property in the old TBox");
+			return;
+		}
+		
+		if (newProperty == null) {
+			logger.logError("didn't find the " + propObj.getDestinationURI() + " property in the new TBox");
 			return;
 		}
 		
@@ -478,7 +459,7 @@ public class ABoxUpdater {
 		record.recordRetractions(renamePropRetractModel);
 		
 		if (renamePropRetractModel.size() > 0) {
-			logger.log(renamePropRetractModel.size() + " statment" + 
+			logger.log(renamePropRetractModel.size() + " statement" + 
 					((renamePropRetractModel.size() > 1) ? "s" : "") +
 					" with predicate " + propObj.getSourceURI() + " " + 
 					((renamePropRetractModel.size() > 1) ? "were" : "was") 

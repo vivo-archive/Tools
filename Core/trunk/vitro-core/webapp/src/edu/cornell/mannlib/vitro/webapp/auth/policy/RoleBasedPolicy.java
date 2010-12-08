@@ -1,30 +1,4 @@
-/*
-Copyright (c) 2010, Cornell University
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-    * Redistributions of source code must retain the above copyright notice,
-      this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright notice,
-      this list of conditions and the following disclaimer in the documentation
-      and/or other materials provided with the distribution.
-    * Neither the name of Cornell University nor the names of its contributors
-      may be used to endorse or promote products derived from this software
-      without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-*/
+/* $This file is distributed under the terms of the license in /doc/license.txt$ */
 
 package edu.cornell.mannlib.vitro.webapp.auth.policy;
 
@@ -34,20 +8,13 @@ import java.util.Map;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import edu.cornell.mannlib.vedit.beans.LoginFormBean;
+import edu.cornell.mannlib.vedit.beans.LoginStatusBean;
 import edu.cornell.mannlib.vitro.webapp.auth.identifier.Identifier;
 import edu.cornell.mannlib.vitro.webapp.auth.identifier.IdentifierBundle;
 import edu.cornell.mannlib.vitro.webapp.auth.policy.ifaces.Authorization;
 import edu.cornell.mannlib.vitro.webapp.auth.policy.ifaces.DefaultInconclusivePolicy;
 import edu.cornell.mannlib.vitro.webapp.auth.policy.ifaces.PolicyDecision;
 import edu.cornell.mannlib.vitro.webapp.auth.policy.ifaces.PolicyIface;
-import edu.cornell.mannlib.vitro.webapp.auth.policy.ifaces.VisitingPolicyIface;
-import edu.cornell.mannlib.vitro.webapp.auth.requestedAction.AddDataPropStmt;
-import edu.cornell.mannlib.vitro.webapp.auth.requestedAction.AddObjectPropStmt;
-import edu.cornell.mannlib.vitro.webapp.auth.requestedAction.AddResource;
-import edu.cornell.mannlib.vitro.webapp.auth.requestedAction.DropDataPropStmt;
-import edu.cornell.mannlib.vitro.webapp.auth.requestedAction.DropObjectPropStmt;
-import edu.cornell.mannlib.vitro.webapp.auth.requestedAction.DropResource;
 import edu.cornell.mannlib.vitro.webapp.auth.requestedAction.admin.AddNewUser;
 import edu.cornell.mannlib.vitro.webapp.auth.requestedAction.admin.LoadOntology;
 import edu.cornell.mannlib.vitro.webapp.auth.requestedAction.admin.RebuildTextIndex;
@@ -60,6 +27,12 @@ import edu.cornell.mannlib.vitro.webapp.auth.requestedAction.ontology.CreateOwlC
 import edu.cornell.mannlib.vitro.webapp.auth.requestedAction.ontology.DefineDataProperty;
 import edu.cornell.mannlib.vitro.webapp.auth.requestedAction.ontology.DefineObjectProperty;
 import edu.cornell.mannlib.vitro.webapp.auth.requestedAction.ontology.RemoveOwlClass;
+import edu.cornell.mannlib.vitro.webapp.auth.requestedAction.propstmt.AddDataPropStmt;
+import edu.cornell.mannlib.vitro.webapp.auth.requestedAction.propstmt.AddObjectPropStmt;
+import edu.cornell.mannlib.vitro.webapp.auth.requestedAction.propstmt.DropDataPropStmt;
+import edu.cornell.mannlib.vitro.webapp.auth.requestedAction.propstmt.DropObjectPropStmt;
+import edu.cornell.mannlib.vitro.webapp.auth.requestedAction.resource.AddResource;
+import edu.cornell.mannlib.vitro.webapp.auth.requestedAction.resource.DropResource;
 
 /**
  * Policy that mimics the authorization roles of the old system.  So each
@@ -84,7 +57,7 @@ public class RoleBasedPolicy extends DefaultInconclusivePolicy  implements Polic
     /**
      * What is the minimum AuthRole needed to perform a given action?
      */
-    private static Map<Class,AuthRole> actionToMinRole = new HashMap<Class,AuthRole>();
+    private static Map<Class<?>,AuthRole> actionToMinRole = new HashMap<Class<?>,AuthRole>();
     static{
         //anybody actions
         //view resources?
@@ -130,7 +103,7 @@ public class RoleBasedPolicy extends DefaultInconclusivePolicy  implements Polic
 
         //We need to find the class of the RequestedAction since that
         //encodes what type of action is being requested.
-        Class requesetClass = whatToAuth.getClass();
+        Class<?> requesetClass = whatToAuth.getClass();
         AuthRole minmumRoleForAction = actionToMinRole.get(requesetClass);
 
         if( minmumRoleForAction == null ){
@@ -145,38 +118,19 @@ public class RoleBasedPolicy extends DefaultInconclusivePolicy  implements Polic
             return new BasicPolicyDecision(Authorization.UNAUTHORIZED,"not authorized for role");
     }
 
-    /**
-     * Because it extends AbstractPolicySetup and implements this method, RoleBasedPolicy
-     * can be used as a ServletContextListener that puts its self on the ServletPolicyList
-     * at servlet context initialization.
-     *
-     * Notice that this method also setups the IdentifierBundleFactory that it needs.
-     */
-//    @Override
-//    public List<PolicyIface> createPolicies(ServletContextEvent sce) {
-//        List<PolicyIface> list = new ArrayList<PolicyIface>(1);
-//        list.add(new RoleBasedPolicy());
-//
-//        //notice that the idBundleFactory gets created here,
-//        JenaRoleIdentifierBundleFactory jibf = new JenaRoleIdentifierBundleFactory(userModelUri);
-//        ServletIdentifierBundleFactory.addIdentifierBundleFactory(sce.getServletContext(),jibf);
-//
-//        return list;
-//    }
+    @Override
+	public String toString() {
+    	return "RoleBasedPolicy";
+	}
 
-    /********************** Roles *****************************************/
+
+	/********************** Roles *****************************************/
     public static enum AuthRole implements Identifier {
-//        ANYBODY("http://vitro.mannlib.cornell.edu/authRole#anybody",0),
-//        USER("http://vitro.mannlib.cornell.edu/authRole#user",1),
-//        EDITOR("http://vitro.mannlib.cornell.edu/authRole#editor",2),
-//        CURATOR("http://vitro.mannlib.cornell.edu/authRole#curator",3),
-//        DBA("http://vitro.mannlib.cornell.edu/authRole#dba",50);
-
-        ANYBODY( "role:/0" ,LoginFormBean.ANYBODY),
-        USER(    "role:/1" ,LoginFormBean.NON_EDITOR),
-        EDITOR(  "role:/4" ,LoginFormBean.EDITOR),
-        CURATOR( "role:/5" ,LoginFormBean.CURATOR),
-        DBA(     "role:/50",LoginFormBean.DBA);
+        ANYBODY( "role:/0" ,LoginStatusBean.ANYBODY),
+        USER(    "role:/1" ,LoginStatusBean.NON_EDITOR),
+        EDITOR(  "role:/4" ,LoginStatusBean.EDITOR),
+        CURATOR( "role:/5" ,LoginStatusBean.CURATOR),
+        DBA(     "role:/50",LoginStatusBean.DBA);
 
         private final String roleUri;
         private final int level;
@@ -208,5 +162,10 @@ public class RoleBasedPolicy extends DefaultInconclusivePolicy  implements Polic
             }
             return false;
         }
+
+		@Override
+		public String toString() {
+			return "AuthRole: " + name();
+		}
     }/* end of enum AuthRole */
 }/* end of class RoleBasedPolicy */

@@ -1,30 +1,4 @@
-/*
-Copyright (c) 2010, Cornell University
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-    * Redistributions of source code must retain the above copyright notice,
-      this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright notice,
-      this list of conditions and the following disclaimer in the documentation
-      and/or other materials provided with the distribution.
-    * Neither the name of Cornell University nor the names of its contributors
-      may be used to endorse or promote products derived from this software
-      without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-*/
+/* $This file is distributed under the terms of the license in /doc/license.txt$ */
 
 package edu.cornell.mannlib.vitro.webapp.filters;
 
@@ -36,7 +10,6 @@ import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
 import javax.servlet.ServletContext;
-import javax.servlet.ServletContextListener;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
@@ -47,9 +20,17 @@ import javax.servlet.http.HttpSession;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+import com.hp.hpl.jena.query.DataSource;
+import com.hp.hpl.jena.query.Dataset;
+import com.hp.hpl.jena.query.DatasetFactory;
+
+import edu.cornell.mannlib.vitro.webapp.auth.identifier.IdentifierBundle;
+import edu.cornell.mannlib.vitro.webapp.auth.identifier.SelfEditingIdentifierFactory;
+import edu.cornell.mannlib.vitro.webapp.auth.identifier.SelfEditingIdentifierFactory.SelfEditing;
+import edu.cornell.mannlib.vitro.webapp.auth.identifier.ServletIdentifierBundleFactory;
 import edu.cornell.mannlib.vitro.webapp.beans.ApplicationBean;
-import edu.cornell.mannlib.vitro.webapp.beans.Portal;
 import edu.cornell.mannlib.vitro.webapp.beans.BaseResourceBean.RoleLevel;
+import edu.cornell.mannlib.vitro.webapp.beans.Portal;
 import edu.cornell.mannlib.vitro.webapp.controller.VitroRequest;
 import edu.cornell.mannlib.vitro.webapp.dao.PortalDao;
 import edu.cornell.mannlib.vitro.webapp.dao.WebappDaoFactory;
@@ -63,6 +44,7 @@ import edu.cornell.mannlib.vitro.webapp.flags.FlagException;
 import edu.cornell.mannlib.vitro.webapp.flags.PortalFlag;
 import edu.cornell.mannlib.vitro.webapp.flags.RequestToAuthFlag;
 import edu.cornell.mannlib.vitro.webapp.flags.SunsetFlag;
+import edu.cornell.mannlib.vitro.webapp.servlet.setup.JenaDataSourceSetupBase;
 
 /**
  * This sets up several objects in the Request scope for each
@@ -151,7 +133,7 @@ public class VitroRequestPrep implements Filter {
         vreq.setSunsetFlag(sunsetFlag);
 
         //-- setup DAO factory --//
-        WebappDaoFactory wdf = getWebappDaoFactory();
+        WebappDaoFactory wdf = getWebappDaoFactory(vreq);
         //TODO: get accept-language from request and set as preferred languages
         
         //-- setup portal and portalFlag --//
@@ -218,12 +200,23 @@ public class VitroRequestPrep implements Filter {
         if( log.isDebugEnabled() ) log.debug("setting role-based WebappDaoFactory filter for role " + role.toString());             
 
         vreq.setWebappDaoFactory(wdf);
+        
+        // support for Dataset interface if using Jena in-memory model
+        if (vreq.getDataset() == null) {
+        	DataSource dataset = DatasetFactory.create();
+        	dataset.addNamedModel(JenaDataSourceSetupBase.JENA_DB_MODEL, vreq.getAssertionsOntModel());
+        	dataset.addNamedModel(JenaDataSourceSetupBase.JENA_INF_MODEL, vreq.getInferenceOntModel());
+        	vreq.setDataset(dataset);
+        }
+        
         request.setAttribute("VitroRequestPrep.setup", new Integer(1));
         chain.doFilter(request, response);
     }
 
-    private WebappDaoFactory getWebappDaoFactory(){
-        return (WebappDaoFactory) _context.getAttribute("webappDaoFactory");
+    private WebappDaoFactory getWebappDaoFactory(VitroRequest vreq){
+    	WebappDaoFactory webappDaoFactory = vreq.getWebappDaoFactory();
+        return (webappDaoFactory != null) ? webappDaoFactory :
+        	(WebappDaoFactory) _context.getAttribute("webappDaoFactory");
     }
 
     public void init(FilterConfig filterConfig) throws ServletException {
@@ -426,18 +419,29 @@ public class VitroRequestPrep implements Filter {
         (new VitroRequest(request)).setPortalId( portalId.toString() );
     }
 
-    public static void forceToSelfEditing(HttpServletRequest request){
-        HttpSession sess = request.getSession(true);
-        sess.setAttribute("inSelfEditing","true");
-    }
-    public static void forceOutOfSelfEditing(HttpServletRequest request){
-        HttpSession sess = request.getSession(true);
-        sess.removeAttribute("inSelfEditing");
-    }
-    public static boolean isSelfEditing(HttpServletRequest request){
-        HttpSession sess = request.getSession(false);
-        return sess != null && "true".equalsIgnoreCase((String)sess.getAttribute("inSelfEditing")) ;
-    }
+	/**
+	 * Check to see whether any of the current identifiers is a SelfEditing
+	 * identifier.
+	 */
+	public static boolean isSelfEditing(HttpServletRequest request) {
+		HttpSession session = request.getSession(false);
+		if (session == null) {
+			return false;
+		}
+
+		ServletContext sc = session.getServletContext();
+		IdentifierBundle idBundle = ServletIdentifierBundleFactory.getIdBundleForRequest(request, session, sc);
+		if (idBundle == null) {
+			return false;
+		}
+		
+		SelfEditing selfId = SelfEditingIdentifierFactory.getSelfEditingIdentifier(idBundle);
+		if (selfId == null) {
+			return false;
+		}
+		
+		return true;
+	}
 
     public void destroy() {       
     }

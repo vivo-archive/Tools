@@ -1,38 +1,9 @@
-/*
-Copyright (c) 2010, Cornell University
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-    * Redistributions of source code must retain the above copyright notice,
-      this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright notice,
-      this list of conditions and the following disclaimer in the documentation
-      and/or other materials provided with the distribution.
-    * Neither the name of Cornell University nor the names of its contributors
-      may be used to endorse or promote products derived from this software
-      without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-*/
+/* $This file is distributed under the terms of the license in /doc/license.txt$ */
 
 package edu.cornell.mannlib.vitro.webapp.beans;
 
-import java.util.Date;
 import java.util.Comparator;
-
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import java.util.Date;
 
 /**
  * a class representing a particular instance of an object property
@@ -49,20 +20,7 @@ public class ObjectPropertyStatementImpl implements VitroTimeWindowedResource, O
     private ObjectProperty property = null;
     private String qualifier = null;
     private boolean subjectOriented = true; //is the range the item of interest?
-    private String description = null;  //generated desc based on subjectOriented during sql query.
-
-    /*
-     fields in db:
-id
-domainId
-rangeId
-relationId
-modTime
-propertyId
-sunrise
-sunset
-qualifier
-    */
+    private String description = null;  //generated desc based on subjectOriented during sql query.  
     
    public ObjectPropertyStatementImpl() { }
 
@@ -72,16 +30,16 @@ qualifier
         objectURI = objectUri;        
     }
 
-/* (non-Javadoc)
- * @see edu.cornell.mannlib.vitro.webapp.beans.ObjectPropertyStatement#toString()
- */
-public String toString(){
-       String prop = (getProperty()!=null)?getProperty().getDomainPublic():"by propURI"+getPropertyURI();
-       String ran = (getObject()!= null)?getObject().getName():"objectURI:"+getObjectURI();
-       String dom = (getSubject()!= null)?getSubject().getName():"subjectURI:"+getSubjectURI();
-       String orent = (isSubjectOriented() )?"subject oriented":"object oriented";
-       return "Object Property Statements: "+dom+" "+prop+" to "+ran+" "+orent;
-   }
+    /* (non-Javadoc)
+     * @see edu.cornell.mannlib.vitro.webapp.beans.ObjectPropertyStatement#toString()
+     */
+    public String toString(){
+           String prop = (getProperty()!=null)?getProperty().getDomainPublic():"by propURI"+getPropertyURI();
+           String ran = (getObject()!= null)?getObject().getName():"objectURI:"+getObjectURI();
+           String dom = (getSubject()!= null)?getSubject().getName():"subjectURI:"+getSubjectURI();
+           String orent = (isSubjectOriented() )?"subject oriented":"object oriented";
+           return "Object Property Statements: "+dom+" "+prop+" to "+ran+" "+orent;
+    }
 
     /* (non-Javadoc)
      * @see edu.cornell.mannlib.vitro.webapp.beans.ObjectPropertyStatement#getDescription()
@@ -226,33 +184,14 @@ public String toString(){
         this.propertyURI = URI;
     }
 
-
-    /**
-     * Change the values of this object property statement object
-     * so that it is from the other side of the relation.
-     * This must be associative.
-     * This does NOT modify this.property
-     *
-    public void reflect(){
-        Individual tmp = getSubject();
-        setSubject(getObject());
-        setObject(tmp);
-        setSubjectURI(getSubject().getURI());
-        setObjectURI(getObject().getURI());
-        setSubjectOriented( !isSubjectOriented() );
-    }*/
-
     /**
      * Sorts entity object for display presentation.
      * @author bdc34
      */
-    public static class DisplayComparator implements Comparator{
-    	private static final Log log = LogFactory.getLog(DisplayComparator.class.getName());
-    	
+    public static class DisplayComparator implements Comparator{    	    	
         public int compare(Object o1, Object o2) {
             Individual ent1 = ((ObjectPropertyStatement) o1).getSubject();
-            Individual ent2 = ((ObjectPropertyStatement) o2).getSubject();
-            log.debug("Comparing "+ent1.getName()+" to"+ent2.getName());
+            Individual ent2 = ((ObjectPropertyStatement) o2).getSubject();            
             return ent1.getName().compareTo(ent2.getName());
         }
     }

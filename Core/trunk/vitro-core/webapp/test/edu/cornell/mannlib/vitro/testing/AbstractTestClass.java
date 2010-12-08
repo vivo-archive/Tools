@@ -1,39 +1,13 @@
-/*
-Copyright (c) 2010, Cornell University
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-    * Redistributions of source code must retain the above copyright notice,
-      this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright notice,
-      this list of conditions and the following disclaimer in the documentation
-      and/or other materials provided with the distribution.
-    * Neither the name of Cornell University nor the names of its contributors
-      may be used to endorse or promote products derived from this software
-      without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-*/
+/* $This file is distributed under the terms of the license in /doc/license.txt$ */
 
 package edu.cornell.mannlib.vitro.testing;
 
-import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.fail;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileFilter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -44,12 +18,9 @@ import java.io.Reader;
 import java.io.StringReader;
 import java.io.StringWriter;
 import java.io.Writer;
-import java.lang.reflect.Method;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.HashSet;
 import java.util.Properties;
-import java.util.Set;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -67,7 +38,6 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.PatternLayout;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.w3c.dom.Document;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
@@ -179,9 +149,29 @@ public abstract class AbstractTestClass {
 	 */
 	protected static void deleteFile(File file) {
 		if (file.exists()) {
-			if (!file.delete()) {
-				fail("Unable to delete file '" + file.getPath() + "'");
-			}
+			file.delete();
+		}
+		if (!file.exists()) {
+			return;
+		}
+
+		/*
+		 * If we were unable to delete the file, is it because it's a non-empty
+		 * directory?
+		 */
+		if (!file.isDirectory()) {
+			final StringBuffer message = new StringBuffer(
+					"Unable to delete directory '" + file.getPath() + "'\n");
+			file.listFiles(new FileFilter() {
+				@Override
+				public boolean accept(File pathname) {
+					message.append("   contains file '" + pathname + "'\n");
+					return true;
+				}
+			});
+			fail(message.toString().trim());
+		} else {
+			fail("Unable to delete file '" + file.getPath() + "'");
 		}
 	}
 
@@ -256,12 +246,22 @@ public abstract class AbstractTestClass {
 		Writer writer = null;
 		try {
 			File file = new File(directory, filename);
+			if (file.exists()) {
+				throw new IOException("File '" + file.getPath()
+						+ "' already exists.");
+			}
 			file.createNewFile();
 			writer = new FileWriter(file);
 			writer.write(contents);
 			return file;
 		} finally {
-			writer.close();
+			if (writer != null) {
+				try {
+					writer.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
 		}
 	}
 
@@ -285,11 +285,17 @@ public abstract class AbstractTestClass {
 	protected static String readAll(Reader reader) throws IOException {
 		StringBuilder result = new StringBuilder();
 		BufferedReader buffered = new BufferedReader(reader);
-		String line;
-		while (null != (line = buffered.readLine())) {
-			result.append(line).append('\n');
+		char[] chunk = new char[4096];
+		int howMany;
+
+		try {
+			while (-1 != (howMany = buffered.read(chunk))) {
+				result.append(chunk, 0, howMany);
+			}
+		} finally {
+			reader.close();
 		}
-		reader.close();
+
 		return result.toString();
 	}
 

@@ -1,37 +1,10 @@
-<%--
-Copyright (c) 2010, Cornell University
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-    * Redistributions of source code must retain the above copyright notice,
-      this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright notice,
-      this list of conditions and the following disclaimer in the documentation
-      and/or other materials provided with the distribution.
-    * Neither the name of Cornell University nor the names of its contributors
-      may be used to endorse or promote products derived from this software
-      without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
---%>
+<%-- $This file is distributed under the terms of the license in /doc/license.txt$ --%>
 
 <%@ page import="com.hp.hpl.jena.rdf.model.*" %>
 <%@ page import="com.hp.hpl.jena.ontology.OntModel" %>
 <%@ page import="com.hp.hpl.jena.shared.Lock" %>
 <%@ page import="com.thoughtworks.xstream.XStream" %>
 <%@ page import="com.thoughtworks.xstream.io.xml.DomDriver" %>
-<%@ page import="edu.cornell.mannlib.vedit.beans.LoginFormBean" %>
 <%@ page import="edu.cornell.mannlib.vitro.webapp.beans.Individual" %>
 <%@ page import="edu.cornell.mannlib.vitro.webapp.controller.VitroRequest" %>
 <%@ page import="edu.cornell.mannlib.vitro.webapp.dao.WebappDaoFactory" %>
@@ -57,6 +30,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 <%@page import="edu.cornell.mannlib.vitro.webapp.dao.jena.event.EditEvent"%>
 <%@page import="edu.cornell.mannlib.vitro.webapp.edit.n3editing.EditN3Utils"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
+<%@ taglib prefix="vitro" uri="/WEB-INF/tlds/VitroUtils.tld" %>
 
 <%-- 2nd prototype of processing, adapted for data property editing
 
@@ -91,16 +65,11 @@ and set a flag in the request to indicate "back button confusion"
 
     final Log log = LogFactory.getLog("edu.cornell.mannlib.vitro.webapp.jsp.edit.processDatapropRdfForm.jsp");
 %>
+
+<vitro:confirmLoginStatus allowSelfEditing="true" />
+
 <%    
     log.debug("Starting processDatapropRdfForm.jsp");
-
-    if( session == null)
-        throw new Error("need to have session");
-
-    boolean selfEditing = VitroRequestPrep.isSelfEditing(request);
-    if (!selfEditing && !LoginFormBean.loggedIn(request, LoginFormBean.NON_EDITOR)) {
-        %><c:redirect url="<%= Controllers.LOGIN %>" /><%
-    }
 
     List<String> errorMessages = new ArrayList<String>();
     
@@ -318,15 +287,17 @@ and set a flag in the request to indicate "back button confusion"
      
     DataPropertyStatement dps = new DataPropertyStatementImpl();
     Literal submitted = submission.getLiteralsFromForm().get(copy.getVarNameForObject());
-    dps.setIndividualURI( copy.getSubjectUri() );
-    dps.setDatapropURI( copy.getPredicateUri() );
-    dps.setDatatypeURI( submitted.getDatatypeURI());
-    dps.setLanguage( submitted.getLanguage() );
-    dps.setData( submitted.getLexicalForm() );
+    if( submitted != null ){
+    	dps.setIndividualURI( copy.getSubjectUri() );
+    	dps.setDatapropURI( copy.getPredicateUri() );
+    	dps.setDatatypeURI( submitted.getDatatypeURI());
+    	dps.setLanguage( submitted.getLanguage() );
+    	dps.setData( submitted.getLexicalForm() );
        
-    copy.prepareForDataPropUpdate(writeModel, dps);
-    copy.setDatapropKey( Integer.toString(RdfLiteralHash.makeRdfLiteralHash(dps)) );
-    EditConfiguration.putConfigInSession(copy,session);
+    	copy.prepareForDataPropUpdate(writeModel, dps);
+    	copy.setDatapropKey( Integer.toString(RdfLiteralHash.makeRdfLiteralHash(dps)) );
+    	EditConfiguration.putConfigInSession(copy,session);
+    }
 %>
 
 <jsp:forward page="postEditCleanUp.jsp"/>
@@ -430,8 +401,11 @@ and set a flag in the request to indicate "back button confusion"
             String onlyField = editConfig.getFields().keySet().iterator()
                     .next();
             Literal value = submission.getLiteralsFromForm().get(onlyField);
-            if ("".equals(value.getLexicalForm())) {
-                log.debug("Submission was a single field with an empty string");
+            if( value == null ){
+            	log.debug("No parameters found in submission for field \"" + onlyField +"\"");
+            	return true;
+            }else if( "".equals(value.getLexicalForm())) {
+                log.debug("Submission was a single field named \"" + onlyField + "\" with an empty string");
                 return true;
             }
         }

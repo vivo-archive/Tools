@@ -1,30 +1,4 @@
-/*
-Copyright (c) 2010, Cornell University
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-    * Redistributions of source code must retain the above copyright notice,
-      this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright notice,
-      this list of conditions and the following disclaimer in the documentation
-      and/or other materials provided with the distribution.
-    * Neither the name of Cornell University nor the names of its contributors
-      may be used to endorse or promote products derived from this software
-      without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-*/
+/* $This file is distributed under the terms of the license in /doc/license.txt$ */
 
 package edu.cornell.mannlib.vitro.webapp.dao.jena;
 
@@ -55,6 +29,7 @@ import com.hp.hpl.jena.util.iterator.ClosableIterator;
 
 import edu.cornell.mannlib.vitro.webapp.beans.ApplicationBean;
 import edu.cornell.mannlib.vitro.webapp.beans.Tab;
+import edu.cornell.mannlib.vitro.webapp.beans.TabIndividualRelation;
 import edu.cornell.mannlib.vitro.webapp.dao.TabDao;
 import edu.cornell.mannlib.vitro.webapp.dao.TabEntityFactory;
 import edu.cornell.mannlib.vitro.webapp.dao.VitroVocabulary;
@@ -288,30 +263,16 @@ public class TabDaoJena extends JenaBaseDao implements TabDao {
     /**
      * returns a list of URI strings of Entities manually linked to tab (tabId)
      */
-    public List<String> getTabManuallyLinkedEntityURIs(int tabId) {
+    public List<String> getTabManuallyLinkedEntityURIs(int tab_id) {
         List<String> entityURIs = new LinkedList<String>();
-//        getOntModel().enterCriticalSection(Lock.READ);
-//        try {
-//            Resource tab = getOntModel().getResource(DEFAULT_NAMESPACE+"tab"+tabId);
-//            if (tab != null && TAB_LINKEDENTITY != null) {
-//                ClosableIterator entityIt = getOntModel().listStatements(tab, TAB_LINKEDENTITY, (Resource)null);
-//                try {
-//                    while (entityIt.hasNext()) {
-//                        Statement st = (Statement) entityIt.next();
-//                        Resource entity = (Resource) st.getObject();
-//                        if (entity != null) {
-//                            entityURIs.add(entity.getURI());
-//                        }
-//                    }
-//                } catch (Exception e) {
-//                    e.printStackTrace();
-//                } finally {
-//                    entityIt.close();
-//                }
-//            }
-//        } finally {
-//            getOntModel().leaveCriticalSection();
-//        }
+        TabIndividualRelationDaoJena tabToIndDao = new TabIndividualRelationDaoJena( getWebappDaoFactory() );
+        List<TabIndividualRelation> tabsToInd = tabToIndDao.getTabIndividualRelationsByTabURI( DEFAULT_NAMESPACE+"tab"+tab_id );
+        if( tabsToInd != null ){
+            for( TabIndividualRelation rel : tabsToInd){
+                if( rel != null && rel.getEntURI() != null)
+                    entityURIs.add( rel.getEntURI() );
+            }
+        }        
         return entityURIs;
     }
 
@@ -487,7 +448,7 @@ public class TabDaoJena extends JenaBaseDao implements TabDao {
      * @param rootTab if > 0 prepend as root
      * @return List of Integer objects
      */
-    public List getTabHierarcy(int tabId, int rootTab){
+    public List getTabHierarchy(int tabId, int rootTab){
         List hier = new LinkedList();
         hier.add(0,new Integer(tabId));
         int current = tabId;

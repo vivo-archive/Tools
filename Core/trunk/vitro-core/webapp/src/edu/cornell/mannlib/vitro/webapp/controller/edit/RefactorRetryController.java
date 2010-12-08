@@ -1,36 +1,15 @@
-/*
-Copyright (c) 2010, Cornell University
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-    * Redistributions of source code must retain the above copyright notice,
-      this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright notice,
-      this list of conditions and the following disclaimer in the documentation
-      and/or other materials provided with the distribution.
-    * Neither the name of Cornell University nor the names of its contributors
-      may be used to endorse or promote products derived from this software
-      without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-*/
+/* $This file is distributed under the terms of the license in /doc/license.txt$ */
 
 package edu.cornell.mannlib.vitro.webapp.controller.edit;
 
+import java.text.Collator;
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
@@ -75,21 +54,23 @@ public class RefactorRetryController extends BaseEditController {
 		epo.setFormObject(foo);
 		HashMap<String,List<Option>> optMap = new HashMap<String,List<Option>>();
 		foo.setOptionLists(optMap);
-		List<Option> subjectClassOpts = FormUtils.makeOptionListFromBeans(getWebappDaoFactory().getVClassDao().getAllVclasses(),"URI","Name", null, null);
+		List<Option> subjectClassOpts = FormUtils.makeOptionListFromBeans(request.getFullWebappDaoFactory().getVClassDao().getAllVclasses(),"URI","Name", null, null);
 		subjectClassOpts.add(0,new Option("","? wildcard",true));
 		optMap.put("SubjectClassURI", subjectClassOpts);
 		optMap.put("ObjectClassURI", subjectClassOpts);
 		
 		List newPropertyOpts;
 		if (epo.getAttribute("propertyType").equals("ObjectProperty"))  {
-			List<ObjectProperty> opList = getWebappDaoFactory().getObjectPropertyDao().getAllObjectProperties();
+			List<ObjectProperty> opList = request.getFullWebappDaoFactory().getObjectPropertyDao().getAllObjectProperties();
 			Collections.sort(opList);
 			newPropertyOpts = FormUtils.makeOptionListFromBeans(opList,"URI","LocalNameWithPrefix", null, null);
 		} else {
-			List<DataProperty> dpList = getWebappDaoFactory().getDataPropertyDao().getAllDataProperties();
+			List<DataProperty> dpList = request.getFullWebappDaoFactory().getDataPropertyDao().getAllDataProperties();
 			Collections.sort(dpList);
 			newPropertyOpts = FormUtils.makeOptionListFromBeans(dpList,"URI","Name", null, null);
 		}
+		HashMap<String,Option> hashMap = new HashMap<String,Option>();
+        newPropertyOpts = getSortedList(hashMap,newPropertyOpts);
 		newPropertyOpts.add(new Option("","(move to trash)"));
 		optMap.put("NewPropertyURI", newPropertyOpts);				
 		
@@ -109,7 +90,7 @@ public class RefactorRetryController extends BaseEditController {
 		epo.setFormObject(foo);
 		HashMap<String,List<Option>> optMap = new HashMap<String,List<Option>>();
 		foo.setOptionLists(optMap);
-		List<Option> newClassURIopts = FormUtils.makeOptionListFromBeans(getWebappDaoFactory().getVClassDao().getAllVclasses(),"URI","LocalNameWithPrefix", null, null);
+		List<Option> newClassURIopts = FormUtils.makeOptionListFromBeans(request.getFullWebappDaoFactory().getVClassDao().getAllVclasses(),"URI","LocalNameWithPrefix", null, null);
 		newClassURIopts.add(new Option ("","move to trash"));
 		optMap.put("NewVClassURI", newClassURIopts);
 		request.setAttribute("editAction","refactorOp");
@@ -161,5 +142,35 @@ public class RefactorRetryController extends BaseEditController {
 
 	    
 	}
+	
+	public List<Option> getSortedList(HashMap<String,Option> hashMap, List<Option> optionList){
+    	
+     	 class ListComparator implements Comparator<String>{
+  			@Override
+  			public int compare(String str1, String str2) {
+  				// TODO Auto-generated method stub
+  				Collator collator = Collator.getInstance();
+  				return collator.compare(str1, str2);
+  			}
+          	
+          }
+
+     	List<String> bodyVal = new ArrayList<String>();
+     	List<Option> options = new ArrayList<Option>();
+     	Iterator<Option> itr = optionList.iterator();
+     	 while(itr.hasNext()){
+          	Option option = itr.next();
+          	hashMap.put(option.getBody(),option);
+             bodyVal.add(option.getBody());
+          }
+          
+                  
+         Collections.sort(bodyVal, new ListComparator());
+         ListIterator<String> itrStr = bodyVal.listIterator();
+         while(itrStr.hasNext()){
+         	options.add(hashMap.get(itrStr.next()));
+         }
+         return options;
+     }
     
 }

@@ -1,30 +1,4 @@
-/*
-Copyright (c) 2010, Cornell University
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-    * Redistributions of source code must retain the above copyright notice,
-      this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright notice,
-      this list of conditions and the following disclaimer in the documentation
-      and/or other materials provided with the distribution.
-    * Neither the name of Cornell University nor the names of its contributors
-      may be used to endorse or promote products derived from this software
-      without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-*/
+/* $This file is distributed under the terms of the license in /doc/license.txt$ */
 
 package edu.cornell.mannlib.vitro.webapp.controller.edit;
 
@@ -44,17 +18,15 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.joda.time.DateTime;
 
-import edu.cornell.mannlib.vedit.beans.LoginFormBean;
+import edu.cornell.mannlib.vedit.beans.LoginStatusBean;
 import edu.cornell.mannlib.vedit.controller.BaseEditController;
 import edu.cornell.mannlib.vitro.webapp.beans.Individual;
-import edu.cornell.mannlib.vitro.webapp.beans.Property;
 import edu.cornell.mannlib.vitro.webapp.beans.PropertyInstance;
 import edu.cornell.mannlib.vitro.webapp.controller.VitroRequest;
 import edu.cornell.mannlib.vitro.webapp.dao.IndividualDao;
 import edu.cornell.mannlib.vitro.webapp.dao.PropertyInstanceDao;
 import edu.cornell.mannlib.vitro.webapp.dao.VitroVocabulary;
 import edu.cornell.mannlib.vitro.webapp.dao.WebappDaoFactory;
-import edu.cornell.mannlib.vitro.webapp.utils.EntityChangeListener;
 
 /**
  * NOTE:does not work yet under semweb-align - gets tricky here
@@ -107,8 +79,8 @@ public class CloneEntityServlet extends BaseEditController {
             return;
         }
         
-        LoginFormBean loginBean = (LoginFormBean) request.getSession().getAttribute("loginHandler");
-		WebappDaoFactory myWebappDaoFactory = getWebappDaoFactory().getUserAwareDaoFactory(loginBean.getUserURI());
+        LoginStatusBean loginBean = LoginStatusBean.getBean(request);
+		WebappDaoFactory myWebappDaoFactory = request.getFullWebappDaoFactory().getUserAwareDaoFactory(loginBean.getUserURI());
         IndividualDao individualDao = myWebappDaoFactory.getIndividualDao();
         PropertyInstanceDao propertyInstanceDao = myWebappDaoFactory.getPropertyInstanceDao();
 
@@ -140,10 +112,7 @@ public class CloneEntityServlet extends BaseEditController {
         ind.setSunrise(new DateTime().toDate());
         // cannot set these values to null because they will still be copies
         ind.setBlurb("");
-        ind.setDescription("");
-        ind.setCitation("");
-        ind.setImageFile("");
-        ind.setImageThumb("");
+        ind.setDescription("");        
  
         String cloneURI=individualDao.insertNewIndividual(ind);
         if (cloneURI == null){ log.error("Error inserting cloned individual"); return; }
@@ -195,19 +164,6 @@ public Date parseStringToDate(String str) {
 public void doGet(HttpServletRequest request, HttpServletResponse response)
 throws ServletException, IOException {
     doPost(request,response);
-}
-
-
-private void addIndividualToLuceneIndex( ServletContext context, String uri ){
-    try{
-        Object obj = context.getAttribute(EntityChangeListener.class.getName());
-        if(obj != null && obj instanceof EntityChangeListener ){
-            EntityChangeListener listener = (EntityChangeListener) obj;
-            listener.entityUpdated( uri );
-        }
-    }catch(Throwable t){
-        log.error("GenericDBUpdate.checkForEntityChange() error:" + t);
-    }
 }
 
 /**

@@ -1,35 +1,12 @@
-/*
-Copyright (c) 2010, Cornell University
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-    * Redistributions of source code must retain the above copyright notice,
-      this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright notice,
-      this list of conditions and the following disclaimer in the documentation
-      and/or other materials provided with the distribution.
-    * Neither the name of Cornell University nor the names of its contributors
-      may be used to endorse or promote products derived from this software
-      without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-*/
+/* $This file is distributed under the terms of the license in /doc/license.txt$ */
 
 package edu.cornell.mannlib.vitro.webapp.web;
 
 import java.util.Enumeration;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Properties;
+import java.util.Set;
 
 import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
@@ -41,6 +18,12 @@ import org.apache.commons.logging.LogFactory;
 
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.impl.ModelCom;
+
+import edu.cornell.mannlib.vitro.webapp.beans.Individual;
+import edu.cornell.mannlib.vitro.webapp.beans.ObjectPropertyStatement;
+import edu.cornell.mannlib.vitro.webapp.beans.VClass;
+import edu.cornell.mannlib.vitro.webapp.controller.VitroRequest;
+import edu.cornell.mannlib.vitro.webapp.dao.VClassDao;
 
 public class MiscWebUtils {
     /**
@@ -59,7 +42,7 @@ public class MiscWebUtils {
     //         try{
     //             current.store(System.out,"header from store");
     //         }catch( Exception ex){
-    //             System.out.println("exception in utilBean");
+    //             log.debug("exception in utilBean");
     //         }
 
             Enumeration names = req.getParameterNames();
@@ -67,17 +50,17 @@ public class MiscWebUtils {
             String name = null;
             while( names.hasMoreElements() ){
                 name = (String)names.nextElement();
-    //             System.out.println("parameter name: " + name);
+    //             log.debug("parameter name: " + name);
                 value = req.getParameter( name );
                 if( value != null ){
-    //                 System.out.println("*** current set " + name + " to " + value );
+    //                 log.debug("*** current set " + name + " to " + value );
                         current.setProperty(name,value);
                 }
 
             }
             return current;
         }
-
+        
     /**
      * Gets an attribute from the request, if it is not null, and of Class String
      * print it to req.out, otherwise throw an exception.
@@ -97,6 +80,64 @@ public class MiscWebUtils {
         return (String) contentObj;
     }
 
+	public static String getCustomShortView(HttpServletRequest request) {	
+		Individual object = ((ObjectPropertyStatement) request
+				.getAttribute("opStmt")).getObject();
+		return getCustomShortView(object, request);
+	}
+
+	// Get custom short view from either the object's class or one of its
+    // superclasses. This is needed because the inference update happens asynchronously, 
+    // so when a new property has been added and the page is reloaded, the custom short view
+    // from a superclass may not have been inferred yet.
+
+	public static String getCustomShortView(Individual individual, HttpServletRequest request) {
+	if( individual == null ) return null;
+
+        VitroRequest vreq = new VitroRequest(request);
+        VClassDao vcDao = vreq.getWebappDaoFactory().getVClassDao();	
+       log.debug("searching for custom short view for " + individual.getURI()); 
+
+	String customShortView = null;
+        List<VClass> vclasses = individual.getVClasses(true); // get directly
+        // asserted vclasses
+        Set<String> superClasses = new HashSet<String>();
+        
+        // First try directly asserted classes, there is no useful decision
+        // mechanism for the case where two directly asserted classes
+        // have a custom short view.
+        // RY If we're getting the custom short view with reference to an object property.
+        // should we use the property's getRangeVClass() method instead?
+        for (VClass vclass : vclasses) {
+	    log.debug( vclass.getURI() );
+            // Use this class's custom short view, if there is one
+            customShortView = vclass.getCustomShortView();
+            if (customShortView != null) {
+		log.debug( customShortView );
+                return customShortView;
+            }
+            // Otherwise, add superclass to list of vclasses to check for custom
+            // short views
+            String vclassUri = vclass.getURI();
+            superClasses.addAll(vcDao.getAllSuperClassURIs(vclassUri));
+        }
+        
+        // Next try super classes. There is no useful decision mechanism for
+        // the case where two super classes have a custom short view.
+	log.debug("checking superclasses for custom short view");
+        for (String superClassUri : superClasses) {
+            VClass vc = vcDao.getVClassByURI(superClassUri);
+            customShortView = vc.getCustomShortView();
+		log.debug(vc.getURI());
+            if (customShortView != null) {
+		log.debug(customShortView);
+                return customShortView;
+            }
+        }
+
+        return null;	    
+	}
+	
     /**
      * returns a table of the req attributes
      * @param req
@@ -200,17 +241,17 @@ public class MiscWebUtils {
 	    Enumeration hnames = req.getHeaderNames();
 	    while( hnames.hasMoreElements() ){
 	    	String name = (String) hnames.nextElement();
-	    	System.out.println("header " + name);
+	    	log.debug("header " + name);
 	    	String value = req.getHeader(name);
-	    	System.out.println("    " + value);
+	    	log.debug("    " + value);
 	    	Enumeration values = req.getHeaders(name);
 	    	if( values == null ){
-	    		System.out.println("    enumeration was null");            		
+	    		log.debug("    enumeration was null");            		
 	    	}else{
-	    		System.out.println("    enumeration values");
+	    		log.debug("    enumeration values");
 	    		while( values.hasMoreElements() ){
 	    			String val = (String) values.nextElement();
-	    			System.out.println("    " + value);
+	    			log.debug("    " + value);
 	    		}
 	    	}            
 	    }

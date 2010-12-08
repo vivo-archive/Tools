@@ -1,30 +1,4 @@
-/*
-Copyright (c) 2010, Cornell University
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-    * Redistributions of source code must retain the above copyright notice,
-      this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright notice,
-      this list of conditions and the following disclaimer in the documentation
-      and/or other materials provided with the distribution.
-    * Neither the name of Cornell University nor the names of its contributors
-      may be used to endorse or promote products derived from this software
-      without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-*/
+/* $This file is distributed under the terms of the license in /doc/license.txt$ */
 
 package edu.cornell.mannlib.vitro.webapp.dao.jena;
 
@@ -48,6 +22,13 @@ import com.hp.hpl.jena.ontology.OntResource;
 import com.hp.hpl.jena.ontology.ProfileException;
 import com.hp.hpl.jena.ontology.Restriction;
 import com.hp.hpl.jena.ontology.SomeValuesFromRestriction;
+import com.hp.hpl.jena.query.Query;
+import com.hp.hpl.jena.query.QueryExecution;
+import com.hp.hpl.jena.query.QueryExecutionFactory;
+import com.hp.hpl.jena.query.QueryFactory;
+import com.hp.hpl.jena.query.QuerySolution;
+import com.hp.hpl.jena.query.QuerySolutionMap;
+import com.hp.hpl.jena.query.ResultSet;
 import com.hp.hpl.jena.rdf.model.Property;
 import com.hp.hpl.jena.rdf.model.RDFNode;
 import com.hp.hpl.jena.rdf.model.Resource;
@@ -64,6 +45,7 @@ import edu.cornell.mannlib.vitro.webapp.beans.BaseResourceBean;
 import edu.cornell.mannlib.vitro.webapp.beans.DataProperty;
 import edu.cornell.mannlib.vitro.webapp.beans.DataPropertyStatement;
 import edu.cornell.mannlib.vitro.webapp.beans.Individual;
+import edu.cornell.mannlib.vitro.webapp.beans.ObjectProperty;
 import edu.cornell.mannlib.vitro.webapp.beans.Ontology;
 import edu.cornell.mannlib.vitro.webapp.beans.VClass;
 import edu.cornell.mannlib.vitro.webapp.dao.DataPropertyDao;
@@ -71,13 +53,34 @@ import edu.cornell.mannlib.vitro.webapp.dao.InsertException;
 import edu.cornell.mannlib.vitro.webapp.dao.OntologyDao;
 import edu.cornell.mannlib.vitro.webapp.dao.VClassDao;
 import edu.cornell.mannlib.vitro.webapp.dao.VitroVocabulary;
+import edu.cornell.mannlib.vitro.webapp.dao.jena.event.EditEvent;
 import edu.cornell.mannlib.vitro.webapp.dao.jena.pellet.PelletListener;
 
 public class DataPropertyDaoJena extends PropertyDaoJena implements
         DataPropertyDao {
     
     protected static final Log log = LogFactory.getLog(DataPropertyDaoJena.class.getName());
-
+    
+    protected static final String dataPropertyQueryString = 
+        PREFIXES + "\n" +
+        "SELECT DISTINCT ?property WHERE { \n" +
+        //"   GRAPH ?g {\n" + 
+        "       ?subject ?property ?object . \n" +        
+        "       ?property rdf:type owl:DatatypeProperty . \n" +
+        propertyFilters +
+        //"   }\n" +
+        "}";
+    
+    static protected Query dataPropertyQuery;
+    static {
+        try {
+            dataPropertyQuery = QueryFactory.create(dataPropertyQueryString);
+        } catch(Throwable th){
+            log.error("could not create SPARQL query for dataPropertyQueryString " + th.getMessage());
+            log.error(dataPropertyQueryString);
+        }             
+    }
+    
     private class DataPropertyRanker implements Comparator {
         public int compare (Object o1, Object o2) {
             DataProperty dp1 = (DataProperty) o1;
@@ -122,6 +125,7 @@ public class DataPropertyDaoJena extends PropertyDaoJena implements
     	// TODO check if used as onProperty of restriction
     	ontModel.enterCriticalSection(Lock.WRITE);
     	try {
+    		getOntModel().getBaseModel().notifyEvent(new EditEvent(getWebappDaoFactory().getUserURI(),true));
 	        DatatypeProperty dp = ontModel.getDatatypeProperty(URI);
 	        if (dp != null) {
 	           	Iterator<Resource> restIt = ontModel.listSubjectsWithProperty(OWL.onProperty, dp);
@@ -135,6 +139,7 @@ public class DataPropertyDaoJena extends PropertyDaoJena implements
             	removeRulesMentioningResource(dp, ontModel);
                 dp.remove();
 	        }
+	        getOntModel().getBaseModel().notifyEvent(new EditEvent(getWebappDaoFactory().getUserURI(),false));
     	} finally {
     		ontModel.leaveCriticalSection();
     	}
@@ -535,6 +540,7 @@ public class DataPropertyDaoJena extends PropertyDaoJena implements
     public String insertDataProperty(DataProperty dtp, OntModel ontModel) throws InsertException {
         ontModel.enterCriticalSection(Lock.WRITE);
         try {
+        	getOntModel().getBaseModel().notifyEvent(new EditEvent(getWebappDaoFactory().getUserURI(),true));
         	String errMsgStr = getWebappDaoFactory().checkURI(dtp.getURI());
         	if (errMsgStr != null) {
         		throw new InsertException(errMsgStr);
@@ -591,6 +597,7 @@ public class DataPropertyDaoJena extends PropertyDaoJena implements
                 log.error("error linking data property "+dtp.getURI()+" to property group");
             }
             addPropertyStringValue(jDataprop,PROPERTY_CUSTOMENTRYFORMANNOT,dtp.getCustomEntryForm(),ontModel);
+            getOntModel().getBaseModel().notifyEvent(new EditEvent(getWebappDaoFactory().getUserURI(),false));
         } finally {
             ontModel.leaveCriticalSection();
         }
@@ -604,6 +611,7 @@ public class DataPropertyDaoJena extends PropertyDaoJena implements
     public void updateDataProperty(DataProperty dtp, OntModel ontModel) {
         ontModel.enterCriticalSection(Lock.WRITE);
         try {
+        	getOntModel().getBaseModel().notifyEvent(new EditEvent(getWebappDaoFactory().getUserURI(),true));
             com.hp.hpl.jena.ontology.DatatypeProperty jDataprop = ontModel.getDatatypeProperty(dtp.getURI());
             
             updateRDFSLabel(jDataprop, dtp.getPublicName());
@@ -640,6 +648,7 @@ public class DataPropertyDaoJena extends PropertyDaoJena implements
             }                        
                         
             updatePropertyStringValue(jDataprop,PROPERTY_CUSTOMENTRYFORMANNOT,dtp.getCustomEntryForm(),ontModel);
+            getOntModel().getBaseModel().notifyEvent(new EditEvent(getWebappDaoFactory().getUserURI(),false));
         } finally {
             ontModel.leaveCriticalSection();
         }
@@ -699,4 +708,32 @@ public class DataPropertyDaoJena extends PropertyDaoJena implements
             return rootProperties;
     }
 
+    @Override
+    public List<DataProperty> getDataPropertyList(Individual subject) {
+        return getDataPropertyList(subject.getURI());
+    }
+    
+    @Override
+    /*
+     * SPARQL-based method for getting the individual's data properties.
+     * Ideally this implementation should replace the existing way of getting
+     * the data property list, but the consequences of this may be far-reaching,
+     * so we are implementing a new method now and will merge the old approach
+     * into the new one in a future release.
+     */
+    public List<DataProperty> getDataPropertyList(String subjectUri) {
+        log.debug("dataPropertyQueryString:\n" + dataPropertyQueryString);         
+        log.debug("dataPropertyQuery:\n" + dataPropertyQuery);        
+        ResultSet results = getPropertyQueryResults(subjectUri, dataPropertyQuery);
+        List<DataProperty> properties = new ArrayList<DataProperty>();
+        while (results.hasNext()) {
+            QuerySolution sol = results.next();
+            Resource resource = sol.getResource("property");
+            String uri = resource.getURI();
+            DataProperty property = getDataPropertyByURI(uri);
+            properties.add(property);
+        }
+        return properties; 
+    }
+    
 }

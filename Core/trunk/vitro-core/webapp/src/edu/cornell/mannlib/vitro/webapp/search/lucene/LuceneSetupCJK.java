@@ -1,30 +1,4 @@
-/*
-Copyright (c) 2010, Cornell University
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-    * Redistributions of source code must retain the above copyright notice,
-      this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright notice,
-      this list of conditions and the following disclaimer in the documentation
-      and/or other materials provided with the distribution.
-    * Neither the name of Cornell University nor the names of its contributors
-      may be used to endorse or promote products derived from this software
-      without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-*/
+/* $This file is distributed under the terms of the license in /doc/license.txt$ */
 
 package edu.cornell.mannlib.vitro.webapp.search.lucene;
 
@@ -43,12 +17,15 @@ import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.cjk.CJKAnalyzer;
 import org.apache.lucene.search.BooleanQuery;
 
+import com.hp.hpl.jena.ontology.OntModel;
+
 import edu.cornell.mannlib.vitro.webapp.ConfigurationProperties;
 import edu.cornell.mannlib.vitro.webapp.beans.BaseResourceBean.RoleLevel;
 import edu.cornell.mannlib.vitro.webapp.dao.WebappDaoFactory;
 import edu.cornell.mannlib.vitro.webapp.dao.filtering.WebappDaoFactoryFiltering;
 import edu.cornell.mannlib.vitro.webapp.dao.filtering.filters.VitroFilterUtils;
 import edu.cornell.mannlib.vitro.webapp.dao.filtering.filters.VitroFilters;
+import edu.cornell.mannlib.vitro.webapp.dao.jena.SearchReindexingListener;
 import edu.cornell.mannlib.vitro.webapp.search.beans.Searcher;
 import edu.cornell.mannlib.vitro.webapp.search.indexing.IndexBuilder;
 
@@ -97,23 +74,18 @@ public class LuceneSetupCJK implements javax.servlet.ServletContextListener {
             HashSet objectPropertyBlacklist = new HashSet<String>();
             objectPropertyBlacklist.add("http://www.w3.org/2002/07/owl#differentFrom");
             context.setAttribute(LuceneSetup.SEARCH_OBJECTPROPERTY_BLACKLIST, objectPropertyBlacklist);
-
-            //Here we want to put the LuceneSearcher in the application scope.
-            // the queries need to know the analyzer to use so that the same one can be used
-            // to analyze the fields in the incoming user query terms.
-            LuceneSearcher searcher = new LuceneSearcher(
-                    new LuceneQueryFactory(getAnalyzer(), indexDir),
-                    indexDir);
-            searcher.addObj2Doc(new Entity2LuceneDoc());
-            context.setAttribute(Searcher.class.getName(), searcher);
-
+            
             //here we want to put the LuceneIndex object into the application scope
-            LuceneIndexer indexer = new LuceneIndexer(indexDir, null, getAnalyzer());
-            indexer.addSearcher(searcher);
+            LuceneIndexer indexer = new LuceneIndexer(indexDir, null, getAnalyzer());            
             context.setAttribute(LuceneSetup.ANALYZER, getAnalyzer());
             context.setAttribute(LuceneSetup.INDEX_DIR, indexDir);
             indexer.addObj2Doc(new Entity2LuceneDoc());
 
+            //This is where to get a LucenIndex from.  The indexer will
+            //need to reference this to notify it of updates to the index           
+            LuceneIndexFactory lif = LuceneIndexFactory.getLuceneIndexFactoryFromContext(context);
+            indexer.setLuceneIndexFactory(lif);
+            
             //This is where the builder gets the list of places to try to 
             //get objects to index. It is filtered so that non-public text
             //does not get into the search index.            
@@ -131,6 +103,14 @@ public class LuceneSetupCJK implements javax.servlet.ServletContextListener {
             // here we add the IndexBuilder with the LuceneIndexer
             // to the servlet context so we can access it later in the webapp.
             context.setAttribute(IndexBuilder.class.getName(),builder);
+            
+            //set up listeners so search index builder is notified of changes to model            
+            OntModel baseOntModel = (OntModel)sce.getServletContext().getAttribute("baseOntModel");
+            OntModel jenaOntModel = (OntModel)sce.getServletContext().getAttribute("jenaOntModel");
+            SearchReindexingListener srl = new SearchReindexingListener( builder );
+            baseOntModel.getBaseModel().register(srl);
+        	jenaOntModel.getBaseModel().register(srl);
+        	
             }catch(Exception ex){
                 log.error("Could not setup lucene full text search." , ex);
             }
@@ -142,7 +122,10 @@ public class LuceneSetupCJK implements javax.servlet.ServletContextListener {
          * Gets run when the webApp Context gets destroyed.
          */
         public void contextDestroyed(ServletContextEvent sce) {
+        	
             log.info("**** Running "+this.getClass().getName()+".contextDestroyed()");
+            IndexBuilder builder = (IndexBuilder)sce.getServletContext().getAttribute(IndexBuilder.class.getName());
+        	builder.killIndexingThread();
         }
 
         /**

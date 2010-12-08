@@ -1,30 +1,4 @@
-/*
-Copyright (c) 2010, Cornell University
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-    * Redistributions of source code must retain the above copyright notice,
-      this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright notice,
-      this list of conditions and the following disclaimer in the documentation
-      and/or other materials provided with the distribution.
-    * Neither the name of Cornell University nor the names of its contributors
-      may be used to endorse or promote products derived from this software
-      without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-*/
+/* $This file is distributed under the terms of the license in /doc/license.txt$ */
 
 package edu.cornell.mannlib.vitro.webapp.dao.jena;
 
@@ -53,7 +27,14 @@ import com.hp.hpl.jena.ontology.ProfileException;
 import com.hp.hpl.jena.ontology.Restriction;
 import com.hp.hpl.jena.ontology.SomeValuesFromRestriction;
 import com.hp.hpl.jena.ontology.UnionClass;
+import com.hp.hpl.jena.query.Query;
+import com.hp.hpl.jena.query.QueryExecution;
+import com.hp.hpl.jena.query.QueryExecutionFactory;
+import com.hp.hpl.jena.query.QueryFactory;
+import com.hp.hpl.jena.query.ResultSet;
+import com.hp.hpl.jena.query.Syntax;
 import com.hp.hpl.jena.rdf.model.Literal;
+import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.RDFNode;
 import com.hp.hpl.jena.rdf.model.Resource;
 import com.hp.hpl.jena.rdf.model.ResourceFactory;
@@ -65,7 +46,6 @@ import com.hp.hpl.jena.vocabulary.OWL;
 import com.hp.hpl.jena.vocabulary.RDF;
 import com.hp.hpl.jena.vocabulary.RDFS;
 
-import edu.cornell.mannlib.vitro.webapp.beans.BaseResourceBean;
 import edu.cornell.mannlib.vitro.webapp.beans.Classes2Classes;
 import edu.cornell.mannlib.vitro.webapp.beans.Ontology;
 import edu.cornell.mannlib.vitro.webapp.beans.VClass;
@@ -90,8 +70,8 @@ public class VClassDaoJena extends JenaBaseDao implements VClassDao {
     
     /* ************************************************** */
     
-    private String getLabelForClass(OntClass cls,boolean withPrefix,boolean forPickList) {
-    	getOntModel().enterCriticalSection(Lock.READ);
+    public String getLabelForClass(OntClass cls,boolean withPrefix,boolean forPickList) {
+    	cls.getModel().enterCriticalSection(Lock.READ);
     	try {
 	    	if (cls.isAnon()) {
 		    	if (cls.isRestriction()) {	    		
@@ -197,7 +177,7 @@ public class VClassDaoJena extends JenaBaseDao implements VClassDao {
     	} catch (Exception e) {
     		return "???";
     	} finally {
-    		getOntModel().leaveCriticalSection();
+    		cls.getModel().leaveCriticalSection();
     	}
     }
 
@@ -420,7 +400,7 @@ public class VClassDaoJena extends JenaBaseDao implements VClassDao {
 		//if ("true".equalsIgnoreCase(infersTypes)) {
 		
 		PelletListener pl = getWebappDaoFactory().getPelletListener();
-		if (pl != null && pl.isConsistent() && !pl.isInErrorState()) {	
+		if (pl != null && pl.isConsistent() && !pl.isInErrorState() && !pl.isReasoning()) {	
 			superclassURIs = new ArrayList<String>();
 			OntClass cls = getOntClass(getOntModel(),classURI);
 			StmtIterator superClassIt = getOntModel().listStatements(cls,RDFS.subClassOf,(RDFNode)null);
@@ -443,7 +423,7 @@ public class VClassDaoJena extends JenaBaseDao implements VClassDao {
     }
     
     public void getAllSuperClassURIs(String classURI, HashSet<String> subtree){
-        List<String> directSuperclasses = getSuperClassURIs(classURI);     
+        List<String> directSuperclasses = getSuperClassURIs(classURI, true);     
         Iterator<String> it=directSuperclasses.iterator();
         while(it.hasNext()){
             String uri = (String)it.next();
@@ -464,7 +444,7 @@ public class VClassDaoJena extends JenaBaseDao implements VClassDao {
                     try {
                         OntClass cls = (OntClass) classIt.next();
                         if (!cls.isAnon() && !(NONUSER_NAMESPACES.contains(cls.getNameSpace()))) {
-                            classes.add(vClassWebappFromOntClass(cls));
+                            classes.add(new VClassJena(cls,getWebappDaoFactory()));
                         }
                     } catch (ClassCastException cce) {
                         cce.printStackTrace();
@@ -562,7 +542,7 @@ public class VClassDaoJena extends JenaBaseDao implements VClassDao {
                     try {
                         OntClass cls = (OntClass) rootIt.next();
                         if (!cls.isAnon() && cls.getNameSpace() != null && !(NONUSER_NAMESPACES.contains(cls.getNameSpace()))) {
-                            rootClasses.add(vClassWebappFromOntClass(cls));
+                            rootClasses.add(new VClassJena(cls,getWebappDaoFactory()));
                         }
                     } catch (ClassCastException e) {}
                 }
@@ -604,7 +584,7 @@ public class VClassDaoJena extends JenaBaseDao implements VClassDao {
     					superStmtIt.close();
     				}
     				if (root) {
-    					ontologyRootClasses.add(this.vClassWebappFromOntClass(ontClass));
+    					ontologyRootClasses.add(new VClassJena(ontClass,getWebappDaoFactory()));
     				}
     			}
     		}
@@ -633,16 +613,17 @@ public class VClassDaoJena extends JenaBaseDao implements VClassDao {
         return subURIs;
     }
     
-    public List <String> getSuperClassURIs(String classURI) {
+    public List <String> getSuperClassURIs(String classURI, boolean direct) {
         List supURIs = new ArrayList();
         OntClass subClass = getOntClass(getOntModel(), classURI);
         try {
-            Iterator supIt = subClass.listSuperClasses(true);
+            Iterator supIt = subClass.listSuperClasses(direct);
             while (supIt.hasNext()) {
                 OntClass cls = (OntClass) supIt.next();
                 supURIs.add(getClassURIStr(cls));
             }
         } catch (Exception e) {
+        	//TODO make this attempt respect the direct argument
         	// we'll try this again using a different method that doesn't try to convert to OntClass
         	List<Resource> supList = this.listDirectObjectPropertyValues(getOntModel().getResource(classURI), RDFS.subClassOf);
         	for (Resource res : supList) {
@@ -687,7 +668,7 @@ public class VClassDaoJena extends JenaBaseDao implements VClassDao {
         try {
         	OntClass cls = getOntClass(getOntModel(),URIStr);
             if (cls != null) {
-                return vClassWebappFromOntClass(cls);
+                return new VClassJena(cls,getWebappDaoFactory());
             } else {
             	return null;
             }
@@ -717,7 +698,7 @@ public class VClassDaoJena extends JenaBaseDao implements VClassDao {
             	OntResource superclass = null;
             	if (vclassURI != null) {
             		// TODO need a getAllSuperPropertyURIs method in ObjectPropertyDao
-            		List<String> superproperties = getWebappDaoFactory().getObjectPropertyDao().getSuperPropertyURIs(propertyURI);
+            		List<String> superproperties = getWebappDaoFactory().getObjectPropertyDao().getSuperPropertyURIs(propertyURI,false);
             		superproperties.add(propertyURI);
             		HashSet<String> subjSuperclasses = new HashSet<String>(getAllSuperClassURIs(vclassURI));
             		subjSuperclasses.add(vclassURI); 
@@ -765,7 +746,9 @@ public class VClassDaoJena extends JenaBaseDao implements VClassDao {
 						String isInferencing = getWebappDaoFactory().getProperties().get("infersTypes");
 						// if this model infers types based on the taxonomy, adding the subclasses will only
 						// waste time for no benefit
-						if (isInferencing == null || "false".equalsIgnoreCase(isInferencing)) {
+						PelletListener pl = getWebappDaoFactory().getPelletListener();
+						if (pl == null || !pl.isConsistent() || pl.isInErrorState() || pl.isReasoning() 
+								|| isInferencing == null || "false".equalsIgnoreCase(isInferencing)) {
                         	Iterator classURIs = getAllSubClassURIs(getClassURIStr(superclass)).iterator();
                         	while (classURIs.hasNext()) {
                             	String classURI = (String) classURIs.next();
@@ -773,8 +756,7 @@ public class VClassDaoJena extends JenaBaseDao implements VClassDao {
                             	if (vClass != null)
                             	    vClasses.add(vClass);
                         	}
-						} else {
-						}
+						} 
                     }
                 }
             }
@@ -792,7 +774,7 @@ public class VClassDaoJena extends JenaBaseDao implements VClassDao {
 
         @Deprecated
         public void addVClassesToGroup(VClassGroup group, boolean includeUninstantiatedClasses) {
-            addVClassesToGroup(group, includeUninstantiatedClasses, true);
+            addVClassesToGroup(group, includeUninstantiatedClasses, false);
         }
 
         @Deprecated
@@ -800,10 +782,10 @@ public class VClassDaoJena extends JenaBaseDao implements VClassDao {
             getOntModel().enterCriticalSection(Lock.READ);
             try {
                 if ((group != null) && (group.getURI() != null)) {
-                    Individual groupInd = getOntModel().getIndividual(group.getURI());
+                    Resource groupRes = ResourceFactory.createResource(group.getURI());
                     AnnotationProperty inClassGroup = getOntModel().getAnnotationProperty(VitroVocabulary.IN_CLASSGROUP);
                     if (inClassGroup != null) {
-                        ClosableIterator annotIt = getOntModel().listStatements((OntClass)null,inClassGroup,groupInd);
+                        ClosableIterator annotIt = getOntModel().listStatements((OntClass)null,inClassGroup,groupRes);
                         try {
                             while (annotIt.hasNext()) {
                                 try {
@@ -812,17 +794,42 @@ public class VClassDaoJena extends JenaBaseDao implements VClassDao {
                                     VClass vcw = (VClass) getVClassByURI(cls.getURI());
                                     if (vcw != null) {
                                         boolean classIsInstantiated = false;
-                                        // Note: to support SDB models, may want to do this with 
-                                        // SPARQL and LIMIT 1 if SDB can take advantage of it
-                                        ClosableIterator countIt = getOntModel().listStatements(null,RDF.type,cls);
-                                        try {
-                                            if (countIt.hasNext()) {
-                                            	classIsInstantiated = true;
-                                            }
-                                        } finally {
-                                            countIt.close();
+                                        if (getIndividualCount) {
+                                        	Model aboxModel = getOntModelSelector().getABoxModel();
+                                        	aboxModel.enterCriticalSection(Lock.READ);
+                                        	int count = 0;
+                                        	try {
+                                        		String countQueryStr = "SELECT COUNT(*) WHERE \n" +
+                                        		                       "{ ?s a <" + cls.getURI() + "> } \n";
+                                        		Query countQuery = QueryFactory.create(countQueryStr, Syntax.syntaxARQ);
+                                        		QueryExecution qe = QueryExecutionFactory.create(countQuery, aboxModel);
+                                        		ResultSet rs =qe.execSelect();
+                                        		count = Integer.parseInt(((Literal) rs.nextSolution().get(".1")).getLexicalForm());
+                                        		//count = aboxModel.listStatements(null,RDF.type,cls).toList().size();
+                                        	} finally {
+                                        		aboxModel.leaveCriticalSection();
+                                        	}
+                                        	vcw.setEntityCount(count);
+                                        	classIsInstantiated = (count > 0);
+                                        } else if (includeUninstantiatedClasses == false) {
+	                                        // Note: to support SDB models, may want to do this with 
+	                                        // SPARQL and LIMIT 1 if SDB can take advantage of it
+                                        	Model aboxModel = getOntModelSelector().getABoxModel();
+                                        	aboxModel.enterCriticalSection(Lock.READ);
+                                        	try {
+		                                        ClosableIterator countIt = aboxModel.listStatements(null,RDF.type,cls);
+		                                        try {
+		                                            if (countIt.hasNext()) {
+		                                            	classIsInstantiated = true;
+		                                            }
+		                                        } finally {
+		                                            countIt.close();
+		                                        }
+                                        	} finally {
+                                        		aboxModel.leaveCriticalSection();
+                                        	}
                                         }
-                                        //vcw.setEntityCount(count);
+                                        
                                         if (includeUninstantiatedClasses || classIsInstantiated) {
                                             group.add(vcw);
                                         }
@@ -962,102 +969,7 @@ public class VClassDaoJena extends JenaBaseDao implements VClassDao {
                 ontModel.leaveCriticalSection();
             }
         }
-
-
-        private VClass vClassWebappFromOntClass(OntClass cls) {
-            VClass vcw = new VClass();
-            getOntModel().enterCriticalSection(Lock.READ);
-    		vcw.setName(getLabelForClass(cls,false,false));
-    		vcw.setLocalNameWithPrefix(getLabelForClass(cls,true,false));
-    		vcw.setPickListName(getLabelForClass(cls,false,true));
-            try {
-            	if (cls.isAnon()) {
-            		vcw.setNamespace(PSEUDO_BNODE_NS);
-            		vcw.setLocalName(cls.getId().toString());
-            		log.debug("setting local name with prefix to: " + vcw.getLocalNameWithPrefix());
-            	} else {
-	                if (vcw.getName() == null)
-	                    vcw.setName("[null]");
-	                vcw.setURI(cls.getURI());
-	                vcw.setNamespace(cls.getNameSpace());
-	                vcw.setLocalName(cls.getLocalName());
-            	}
-                try {
-                    Resource groupRes = (Resource) cls.getPropertyValue(IN_CLASSGROUP);
-                    if (groupRes != null) {
-                        vcw.setGroupURI(groupRes.getURI());
-                    }
-                } catch (Exception e) {
-                    log.error("error retrieving vitro:inClassGroup property value for "+cls.getURI());
-                    log.trace(e);
-                }
-                vcw.setShortDef(getPropertyStringValue(cls,SHORTDEF));
-                vcw.setExample(getPropertyStringValue(cls,EXAMPLE_ANNOT));
-                vcw.setDescription(getPropertyStringValue(cls,DESCRIPTION_ANNOT));
-                vcw.setDisplayLimit(getPropertyNonNegativeIntValue(cls,DISPLAY_LIMIT));
-                vcw.setDisplayRank(getPropertyNonNegativeIntValue(cls,DISPLAY_RANK_ANNOT));
-                vcw.setCustomEntryForm(getPropertyStringValue(cls,PROPERTY_CUSTOMENTRYFORMANNOT));
-                vcw.setCustomDisplayView(getPropertyStringValue(cls,PROPERTY_CUSTOMDISPLAYVIEWANNOT));
-                vcw.setCustomShortView(getPropertyStringValue(cls,PROPERTY_CUSTOMSHORTVIEWANNOT));
-                vcw.setCustomSearchView(getPropertyStringValue(cls,PROPERTY_CUSTOMSEARCHVIEWANNOT));
-                vcw.setSearchBoost(getPropertyFloatValue(cls,SEARCH_BOOST_ANNOT));
-                
-                //There might be multiple HIDDEN_FROM_EDIT_DISPLAY_ANNOT properties, only use the highest
-                StmtIterator it = cls.listProperties(HIDDEN_FROM_DISPLAY_BELOW_ROLE_LEVEL_ANNOT);
-                BaseResourceBean.RoleLevel hiddenRoleLevel = null;
-                while( it.hasNext() ){
-                    Statement stmt = it.nextStatement();
-                    RDFNode obj;
-                    if( stmt != null && (obj = stmt.getObject()) != null && obj.isURIResource() ){
-                        Resource res = (Resource)obj.as(Resource.class);
-                        if( res != null && res.getURI() != null ){
-                            BaseResourceBean.RoleLevel roleFromModel = BaseResourceBean.RoleLevel.getRoleByUri(res.getURI());
-                            if( roleFromModel != null && 
-                                (hiddenRoleLevel == null || roleFromModel.compareTo(hiddenRoleLevel) > 0 )){
-                                hiddenRoleLevel = roleFromModel;                            
-                            }
-                        }
-                    }
-                }            
-                vcw.setHiddenFromDisplayBelowRoleLevel(hiddenRoleLevel);//this might get set to null
-
-                //There might be multiple PROHIBITED_FROM_UPDATE_DISPLAY_ANNOT properties, only use the highest
-                it = cls.listProperties(PROHIBITED_FROM_UPDATE_BELOW_ROLE_LEVEL_ANNOT);
-                BaseResourceBean.RoleLevel prohibitedRoleLevel = null;
-                while( it.hasNext() ){
-                    Statement stmt = it.nextStatement();
-                    RDFNode obj;
-                    if( stmt != null && (obj = stmt.getObject()) != null && obj.isURIResource() ){
-                        Resource res = (Resource)obj.as(Resource.class);
-                        if( res != null && res.getURI() != null ){
-                            BaseResourceBean.RoleLevel roleFromModel = BaseResourceBean.RoleLevel.getRoleByUri(res.getURI());
-                            if( roleFromModel != null && 
-                                (prohibitedRoleLevel == null || roleFromModel.compareTo(prohibitedRoleLevel) > 0 )){
-                                prohibitedRoleLevel = roleFromModel;                            
-                            }
-                        }
-                    }
-                }            
-                vcw.setProhibitedFromUpdateBelowRoleLevel(prohibitedRoleLevel);//this might get set to null
-
-                // We need a better way of caching the counts.  For now I'm only setting 0 for the empty classes, to hide them from the DWR editing
-                /*
-                ClosableIterator typeIt = getOntModel().listStatements(null,RDF.type,cls);
-                try {
-	                if (!typeIt.hasNext()) {
-	                	vcw.setEntityCount(0);
-	                }
-                } finally {
-                	typeIt.close();
-                }
-                */
-                
-            } finally {
-                getOntModel().leaveCriticalSection();
-            }
-            return vcw;
-        }
-
+ 
     public boolean isSubClassOf(VClass vc1, VClass vc2) {
     	if (vc1 == null || vc2 == null) {
     		return false;

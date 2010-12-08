@@ -1,32 +1,11 @@
-/*
-Copyright (c) 2010, Cornell University
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-    * Redistributions of source code must retain the above copyright notice,
-      this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright notice,
-      this list of conditions and the following disclaimer in the documentation
-      and/or other materials provided with the distribution.
-    * Neither the name of Cornell University nor the names of its contributors
-      may be used to endorse or promote products derived from this software
-      without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-*/
+/* $This file is distributed under the terms of the license in /doc/license.txt$ */
 
 package edu.cornell.mannlib.vitro.webapp.search.lucene;
+
+import static edu.cornell.mannlib.vitro.webapp.search.lucene.Entity2LuceneDoc.VitroLuceneTermNames.ALLTEXT;
+import static edu.cornell.mannlib.vitro.webapp.search.lucene.Entity2LuceneDoc.VitroLuceneTermNames.ALLTEXTUNSTEMMED;
+import static edu.cornell.mannlib.vitro.webapp.search.lucene.Entity2LuceneDoc.VitroLuceneTermNames.NAME;
+import static edu.cornell.mannlib.vitro.webapp.search.lucene.Entity2LuceneDoc.VitroLuceneTermNames.NAMEUNSTEMMED;
 
 import java.io.File;
 import java.io.IOException;
@@ -40,7 +19,11 @@ import javax.servlet.ServletContextEvent;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.lucene.analysis.Analyzer;
+import org.apache.lucene.analysis.KeywordAnalyzer;
+import org.apache.lucene.analysis.PerFieldAnalyzerWrapper;
 import org.apache.lucene.search.BooleanQuery;
+
+import com.hp.hpl.jena.ontology.OntModel;
 
 import edu.cornell.mannlib.vitro.webapp.ConfigurationProperties;
 import edu.cornell.mannlib.vitro.webapp.beans.BaseResourceBean.RoleLevel;
@@ -48,8 +31,14 @@ import edu.cornell.mannlib.vitro.webapp.dao.WebappDaoFactory;
 import edu.cornell.mannlib.vitro.webapp.dao.filtering.WebappDaoFactoryFiltering;
 import edu.cornell.mannlib.vitro.webapp.dao.filtering.filters.VitroFilterUtils;
 import edu.cornell.mannlib.vitro.webapp.dao.filtering.filters.VitroFilters;
+import edu.cornell.mannlib.vitro.webapp.dao.jena.ModelContext;
+import edu.cornell.mannlib.vitro.webapp.dao.jena.OntModelSelector;
+import edu.cornell.mannlib.vitro.webapp.dao.jena.SearchReindexingListener;
+import edu.cornell.mannlib.vitro.webapp.search.beans.ObjectSourceIface;
+import edu.cornell.mannlib.vitro.webapp.search.beans.ProhibitedFromSearch;
 import edu.cornell.mannlib.vitro.webapp.search.beans.Searcher;
 import edu.cornell.mannlib.vitro.webapp.search.indexing.IndexBuilder;
+import edu.cornell.mannlib.vitro.webapp.web.DisplayVocabulary;
 
 /**
  * Setup objects for lucene searching and indexing.
@@ -77,89 +66,109 @@ public class LuceneSetup implements javax.servlet.ServletContextListener {
         private static String indexDir = null;
         private static final Log log = LogFactory.getLog(LuceneSetup.class.getName());
         
-        /**
-         * Gets run to set up DataSource when the webapp servlet context gets created.
-         */
-        @SuppressWarnings("unchecked")
-        public void contextInitialized(ServletContextEvent sce) {
-        	try {
-	            ServletContext context = sce.getServletContext();
-	            log.info("**** Running "+this.getClass().getName()+".contextInitialized()");
-	
-	            indexDir = getIndexDirName();
-	            log.info("Directory of full text index: " + indexDir );
-	
-	            setBoolMax();
-	
-	            //these should really be set as annotation properties.
-	            HashSet dataPropertyBlacklist = new HashSet<String>();
-	            context.setAttribute(SEARCH_DATAPROPERTY_BLACKLIST, dataPropertyBlacklist);	            
-	            HashSet objectPropertyBlacklist = new HashSet<String>();
-	            objectPropertyBlacklist.add("http://www.w3.org/2002/07/owl#differentFrom");
-	            context.setAttribute(SEARCH_OBJECTPROPERTY_BLACKLIST, objectPropertyBlacklist);
-	            
-	            //Here we want to put the LuceneIndex object into the application scope.
-	            //This will attempt to create a new directory and empty index if there is none.
-                LuceneIndexer indexer = new LuceneIndexer(indexDir, null, getAnalyzer());
-                context.setAttribute(ANALYZER, getAnalyzer());
-                context.setAttribute(INDEX_DIR, indexDir);
-                indexer.addObj2Doc(new Entity2LuceneDoc());
-                context.setAttribute(LuceneIndexer.class.getName(),indexer);
-                
-	            //Here we want to put the LuceneSearcher in the application scope.
-	            // the queries need to know the analyzer to use so that the same one can be used
-	            // to analyze the fields in the incoming user query terms.
-	            LuceneSearcher searcher = new LuceneSearcher(
-	                    new LuceneQueryFactory(getAnalyzer(), indexDir),
-	                    indexDir);
-	            searcher.addObj2Doc(new Entity2LuceneDoc());
-	            context.setAttribute(Searcher.class.getName(), searcher);		           
-	            indexer.addSearcher(searcher);	            
-	            
-	            //This is where the builder gets the list of places to try to 
-	            //get objects to index. It is filtered so that non-public text
-	            //does not get into the search index.            
-	            WebappDaoFactory wadf = 
-	                (WebappDaoFactory) context.getAttribute("webappDaoFactory");
-	            VitroFilters vf = 
-	                VitroFilterUtils.getDisplayFilterByRoleLevel(RoleLevel.PUBLIC, wadf); 
-	            wadf = new WebappDaoFactoryFiltering(wadf,vf);
-	            
-	            List sources = new ArrayList();
-	            sources.add(wadf.getIndividualDao());
-	
-	            IndexBuilder builder = new IndexBuilder(context,indexer,sources);
-	
-	            // here we add the IndexBuilder with the LuceneIndexer
-	            // to the servlet context so we can access it later in the webapp.
-	            context.setAttribute(IndexBuilder.class.getName(),builder);
-	
-	            log.debug("**** End of "+this.getClass().getName()+".contextInitialized()");
-        	} catch (Throwable t) {
-        		log.error(t);
-        		System.out.println("***** Error setting up Lucene search *****");
-        		t.printStackTrace(); // because Tomcat doesn't display listener errors in catalina.out, at least by default
-        	}
-        }
+	/**
+	 * Gets run to set up DataSource when the webapp servlet context gets
+	 * created.
+	 */
+	public void contextInitialized(ServletContextEvent sce) {
+		try {
+			ServletContext context = sce.getServletContext();
+			log.debug("**** Running " + this.getClass().getName() + ".contextInitialized()");
 
-        /**
-         * Gets run when the webApp Context gets destroyed.
-         */
-        public void contextDestroyed(ServletContextEvent sce) {
-            log.info("**** Running "+this.getClass().getName()+".contextDestroyed()");
-        }
+			indexDir = getIndexDirName();
+			log.info("Directory of full text index: " + indexDir);
 
-        /**
-         * In wild card searches the query is first broken into many boolean searches
-         * OR'ed together.  So if there is a query that would match a lot of records
-         * we need a high max boolean limit for the lucene search.
-         *
-         * This sets some static method in the lucene library to achieve this.
-         */
-        public static void setBoolMax() {
-            BooleanQuery.setMaxClauseCount(16384);
-        }
-        
+			setBoolMax();
+
+			// these should really be set as annotation properties.
+			HashSet<String> dataPropertyBlacklist = new HashSet<String>();
+			context.setAttribute(SEARCH_DATAPROPERTY_BLACKLIST,	dataPropertyBlacklist);
+			HashSet<String> objectPropertyBlacklist = new HashSet<String>();
+			objectPropertyBlacklist.add("http://www.w3.org/2002/07/owl#differentFrom");
+			context.setAttribute(SEARCH_OBJECTPROPERTY_BLACKLIST, objectPropertyBlacklist);
+
+			// Here we want to put the LuceneIndex object into the application scope.
+			// This will attempt to create a new directory and empty index if there is none.
+			LuceneIndexer indexer = new LuceneIndexer(indexDir, null, getAnalyzer());
+			context.setAttribute(ANALYZER, getAnalyzer());
+			context.setAttribute(INDEX_DIR, indexDir);
+			indexer.addObj2Doc(new Entity2LuceneDoc());
+			context.setAttribute(LuceneIndexer.class.getName(), indexer);
+
+			//This is where to get a LucenIndex from.  The indexer will
+			//need to reference this to notify it of updates to the index 			
+			LuceneIndexFactory lif = LuceneIndexFactory.getLuceneIndexFactoryFromContext(context);
+			indexer.setLuceneIndexFactory(lif);
+			
+			// This is where the builder gets the list of places to try to
+			// get objects to index. It is filtered so that non-public text
+			// does not get into the search index.
+			WebappDaoFactory wadf = (WebappDaoFactory) context.getAttribute("webappDaoFactory");
+			VitroFilters vf = VitroFilterUtils.getDisplayFilterByRoleLevel(RoleLevel.PUBLIC, wadf);
+			wadf = new WebappDaoFactoryFiltering(wadf, vf);
+
+			List<ObjectSourceIface> sources = new ArrayList<ObjectSourceIface>();
+			sources.add(wadf.getIndividualDao());
+
+			IndexBuilder builder = new IndexBuilder(context, indexer, sources);
+
+			// here we add the IndexBuilder with the LuceneIndexer
+			// to the servlet context so we can access it later in the webapp.
+			context.setAttribute(IndexBuilder.class.getName(), builder);
+
+			// set up listeners so search index builder is notified of changes to model
+			ServletContext ctx = sce.getServletContext();
+			SearchReindexingListener srl = new SearchReindexingListener(builder);
+			ModelContext.getBaseOntModel(ctx).getBaseModel().register(srl);
+			ModelContext.getJenaOntModel(ctx).getBaseModel().register(srl);
+			ModelContext.getInferenceOntModel(ctx).register(srl);
+			ModelContext.getUnionOntModelSelector(ctx).getABoxModel()
+			        .getBaseModel().register(srl);
+
+			// set the classes that the indexBuilder ignores
+			OntModel displayOntModel = (OntModel) sce.getServletContext().getAttribute("displayOntModel");
+			builder.setClassesProhibitedFromSearch(
+				new ProhibitedFromSearch(DisplayVocabulary.PRIMARY_LUCENE_INDEX_URI, displayOntModel));
+						
+			if( (Boolean)sce.getServletContext().getAttribute(INDEX_REBUILD_REQUESTED_AT_STARTUP) instanceof Boolean &&
+				(Boolean)sce.getServletContext().getAttribute(INDEX_REBUILD_REQUESTED_AT_STARTUP) ){
+				builder.doIndexRebuild();
+				log.info("Rebuild of search index required before startup.");
+				int n = 0;
+				while( builder.isIndexing() ){
+					Thread.currentThread().sleep(500);
+					if( n % 20 == 0 ) //output message every 10 sec. 
+					    log.info("Still rebulding search index");
+				}
+				log.info("Search index rebuild completed.");				
+			}
+			
+			log.debug("**** End of " + this.getClass().getName() + ".contextInitialized()");			
+		} catch (Throwable t) {
+			log.error("***** Error setting up Lucene search *****", t);
+		}
+	}
+
+	/**
+	 * Gets run when the webApp Context gets destroyed.
+	 */
+	public void contextDestroyed(ServletContextEvent sce) {
+		log.debug("**** Running " + this.getClass().getName() + ".contextDestroyed()");
+		IndexBuilder builder = (IndexBuilder) sce.getServletContext().getAttribute(IndexBuilder.class.getName());
+		builder.killIndexingThread();
+	}
+
+	/**
+	 * In wild card searches the query is first broken into many boolean
+	 * searches OR'ed together. So if there is a query that would match a lot of
+	 * records we need a high max boolean limit for the lucene search.
+	 * 
+	 * This sets some static method in the lucene library to achieve this.
+	 */
+	public static void setBoolMax() {
+		BooleanQuery.setMaxClauseCount(16384);
+	}
+       
 	/**
 	 * Gets the name of the directory to store the lucene index in. The
 	 * {@link ConfigurationProperties} should have a property named
@@ -202,10 +211,15 @@ public class LuceneSetup implements javax.servlet.ServletContextListener {
      * @return
      */
     private Analyzer getAnalyzer() {
-        return new VitroAnalyzer();
+        PerFieldAnalyzerWrapper analyzer = new PerFieldAnalyzerWrapper( new KeywordAnalyzer());
+        analyzer.addAnalyzer(ALLTEXT, new HtmlLowerStopStemAnalyzer());
+        analyzer.addAnalyzer(NAME, new HtmlLowerStopStemAnalyzer());
+        analyzer.addAnalyzer(ALLTEXTUNSTEMMED, new HtmlLowerStopAnalyzer());
+        analyzer.addAnalyzer(NAMEUNSTEMMED, new HtmlLowerStopAnalyzer());        
+        return analyzer;
     }
-    
-
+        
+    public static final String INDEX_REBUILD_REQUESTED_AT_STARTUP = "LuceneSetup.indexRebuildRequestedAtStarup";
     public static final String ANALYZER= "lucene.analyzer";
     public static final String INDEX_DIR = "lucene.indexDir";
     public static final String SEARCH_DATAPROPERTY_BLACKLIST = 

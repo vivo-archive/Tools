@@ -1,37 +1,10 @@
-/*
-Copyright (c) 2010, Cornell University
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-    * Redistributions of source code must retain the above copyright notice,
-      this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright notice,
-      this list of conditions and the following disclaimer in the documentation
-      and/or other materials provided with the distribution.
-    * Neither the name of Cornell University nor the names of its contributors
-      may be used to endorse or promote products derived from this software
-      without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-*/
+/* $This file is distributed under the terms of the license in /doc/license.txt$ */
 
 package edu.cornell.mannlib.vitro.webapp.controller.edit.listing;
 
 import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -49,6 +22,7 @@ import edu.cornell.mannlib.vitro.webapp.beans.VClassGroup;
 import edu.cornell.mannlib.vitro.webapp.controller.Controllers;
 import edu.cornell.mannlib.vitro.webapp.controller.VitroRequest;
 import edu.cornell.mannlib.vitro.webapp.dao.OntologyDao;
+import edu.cornell.mannlib.vitro.webapp.dao.PropertyDao;
 import edu.cornell.mannlib.vitro.webapp.dao.VClassDao;
 import edu.cornell.mannlib.vitro.webapp.dao.VClassGroupDao;
 import edu.cornell.mannlib.vitro.webapp.dao.WebappDaoFactory;
@@ -69,20 +43,28 @@ public class VClassWebappsListingController extends BaseEditController {
         } catch (Throwable t) {
             t.printStackTrace();
         }
-
+       
         //need to figure out how to structure the results object to put the classes underneath
-
-        VClassDao dao = getWebappDaoFactory().getVClassDao();
-
-        List classes = (request.getParameter("iffRoot") != null)
-            ? dao.getRootClasses()
-            : dao.getAllVclasses();
+        
+        List<VClass> classes = null;
+        
+        if (request.getParameter("showPropertyRestrictions") != null) {
+        	PropertyDao pdao = vrequest.getFullWebappDaoFactory().getObjectPropertyDao();
+        	classes = pdao.getClassesWithRestrictionOnProperty(request.getParameter("propertyURI"));
+        } else {
+        	VClassDao vcdao = vrequest.getFullWebappDaoFactory().getVClassDao();
+        	
+        	if (request.getParameter("iffRoot") != null) {
+                classes = vcdao.getRootClasses();
+        	} else {
+        		classes = vcdao.getAllVclasses();
+        	}
+        	
+        }
 
         String ontologyURI = vrequest.getParameter("ontologyUri");
             
-        Collections.sort(classes);
-
-        ArrayList results = new ArrayList();
+        ArrayList<String> results = new ArrayList<String>();
         results.add("XX");
         results.add("Class");
         results.add("short definition");
@@ -94,7 +76,8 @@ public class VClassWebappsListingController extends BaseEditController {
         results.add("update level");        
 
         if (classes != null) {
-            Iterator classesIt = classes.iterator();
+            Collections.sort(classes);
+            Iterator<VClass> classesIt = classes.iterator();
             while (classesIt.hasNext()) {
                 VClass cls = (VClass) classesIt.next();
                 if ( (ontologyURI==null) || ( (ontologyURI != null) && (cls.getNamespace()!=null) && (ontologyURI.equals(cls.getNamespace())) ) ) {
@@ -111,12 +94,12 @@ public class VClassWebappsListingController extends BaseEditController {
 	                String shortDef = (cls.getShortDef()==null) ? "" : cls.getShortDef();
 	                String example = (cls.getExample()==null) ? "" : cls.getExample();
 	                StringBuffer commSb = new StringBuffer();
-	                for (Iterator<String> commIt = getWebappDaoFactory().getCommentsForResource(cls.getURI()).iterator(); commIt.hasNext();) { 
+	                for (Iterator<String> commIt = vrequest.getFullWebappDaoFactory().getCommentsForResource(cls.getURI()).iterator(); commIt.hasNext();) { 
 	                	commSb.append(commIt.next()).append(" ");
 	                }
 	                
 	                // get group name
-	                WebappDaoFactory wadf = getWebappDaoFactory();
+	                WebappDaoFactory wadf = vrequest.getFullWebappDaoFactory();
 	                VClassGroupDao groupDao= wadf.getVClassGroupDao();
 	                String groupURI = cls.getGroupURI();                
 	                String groupName = "";
@@ -183,7 +166,7 @@ public class VClassWebappsListingController extends BaseEditController {
         }
 
     }
-
+   	
     public void doPost(HttpServletRequest request, HttpServletResponse response) {
         doGet(request,response);
     }

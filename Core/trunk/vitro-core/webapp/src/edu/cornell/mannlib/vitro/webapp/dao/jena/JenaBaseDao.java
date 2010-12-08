@@ -1,30 +1,4 @@
-/*
-Copyright (c) 2010, Cornell University
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-    * Redistributions of source code must retain the above copyright notice,
-      this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright notice,
-      this list of conditions and the following disclaimer in the documentation
-      and/or other materials provided with the distribution.
-    * Neither the name of Cornell University nor the names of its contributors
-      may be used to endorse or promote products derived from this software
-      without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-*/
+/* $This file is distributed under the terms of the license in /doc/license.txt$ */
 
 package edu.cornell.mannlib.vitro.webapp.dao.jena;
 
@@ -32,6 +6,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
@@ -56,6 +31,8 @@ import com.hp.hpl.jena.query.Query;
 import com.hp.hpl.jena.query.QueryExecution;
 import com.hp.hpl.jena.query.QueryExecutionFactory;
 import com.hp.hpl.jena.query.QueryFactory;
+import com.hp.hpl.jena.query.QuerySolution;
+import com.hp.hpl.jena.query.ResultSet;
 import com.hp.hpl.jena.query.Syntax;
 import com.hp.hpl.jena.rdf.model.AnonId;
 import com.hp.hpl.jena.rdf.model.Literal;
@@ -528,6 +505,9 @@ public class JenaBaseDao extends JenaBaseDaoCon {
      * convenience method for use with functional properties
      */
     protected void updatePropertyResourceURIValue(Resource res, Property prop, String uri, Model model) {
+		log.debug("updatePropertyResourceURIValue(), resource="
+				+ (res == null ? "null" : res.getURI()) + ", property="
+				+ (prop == null ? "null" : prop.getURI()) + ", uri=" + uri);
 
         if (prop != null) {
             if (uri == null || uri.length() == 0) { 
@@ -967,5 +947,69 @@ public class JenaBaseDao extends JenaBaseDaoCon {
 		
 		return temp;
     }
+
+    /* ****************************************************************************** */
     
+    /**
+     * Converts a sparql query that returns a multiple rows to a list of maps.
+     * The maps will have column names as keys to the values.
+     */
+    protected List<Map<String, Object>> executeQueryToCollection(
+            QueryExecution qexec) {
+        List<Map<String, Object>> rv = new ArrayList<Map<String, Object>>();
+        ResultSet results = qexec.execSelect();
+        while (results.hasNext()) {
+            QuerySolution soln = results.nextSolution();
+            rv.add(querySolutionToMap(soln));
+        }
+        return rv;
+    }
+    
+    protected Map<String,Object> querySolutionToMap( QuerySolution soln ){
+        Map<String,Object> map = new HashMap<String,Object>();
+        Iterator<String> varNames = soln.varNames();
+        while(varNames.hasNext()){
+            String varName = varNames.next();
+            map.put(varName, nodeToObject( soln.get(varName)));
+        }
+        return map;
+    }
+    
+    static protected Object nodeToObject( RDFNode node ){
+        if( node == null ){
+            return "";
+        }else if( node.isLiteral() ){
+            Literal literal = node.asLiteral();
+            return literal.getValue();
+        }else if( node.isURIResource() ){
+            Resource resource = node.asResource();
+            return resource.getURI();
+        }else if( node.isAnon() ){  
+            Resource resource = node.asResource();
+            return resource.getId().getLabelString(); //get b-node id
+        }else{
+            return "";
+        }
+    }
+
+    static protected String nodeToString( RDFNode node ){
+        if( node == null ){
+            return "";
+        }else if( node.isLiteral() ){
+            Literal literal = node.asLiteral();
+            return literal.getLexicalForm();
+        }else if( node.isURIResource() ){
+            Resource resource = node.asResource();
+            return resource.getURI();
+        }else if( node.isAnon() ){  
+            Resource resource = node.asResource();
+            return resource.getId().getLabelString(); //get b-node id
+        }else{
+            return "";
+        }
+    }
+    protected Map<String,Object> resultsToMap(){
+        return null;
+    }
+
 }

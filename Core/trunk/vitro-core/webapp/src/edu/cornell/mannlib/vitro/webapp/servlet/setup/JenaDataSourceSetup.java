@@ -1,32 +1,11 @@
-/*
-Copyright (c) 2010, Cornell University
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-    * Redistributions of source code must retain the above copyright notice,
-      this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright notice,
-      this list of conditions and the following disclaimer in the documentation
-      and/or other materials provided with the distribution.
-    * Neither the name of Cornell University nor the names of its contributors
-      may be used to endorse or promote products derived from this software
-      without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-*/
+/* $This file is distributed under the terms of the license in /doc/license.txt$ */
 
 package edu.cornell.mannlib.vitro.webapp.servlet.setup;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
@@ -34,7 +13,6 @@ import javax.servlet.ServletContextEvent;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import com.hp.hpl.jena.datatypes.xsd.XSDDatatype;
 import com.hp.hpl.jena.ontology.Individual;
 import com.hp.hpl.jena.ontology.OntModel;
 import com.hp.hpl.jena.rdf.model.Literal;
@@ -43,16 +21,19 @@ import com.hp.hpl.jena.rdf.model.ModelFactory;
 import com.hp.hpl.jena.rdf.model.ResourceFactory;
 import com.hp.hpl.jena.shared.Lock;
 import com.hp.hpl.jena.util.iterator.ClosableIterator;
-import com.hp.hpl.jena.vocabulary.OWL;
 
+import edu.cornell.mannlib.vitro.webapp.ConfigurationProperties;
 import edu.cornell.mannlib.vitro.webapp.beans.ApplicationBean;
+import edu.cornell.mannlib.vitro.webapp.beans.Portal;
 import edu.cornell.mannlib.vitro.webapp.dao.VitroVocabulary;
 import edu.cornell.mannlib.vitro.webapp.dao.WebappDaoFactory;
 import edu.cornell.mannlib.vitro.webapp.dao.jena.JenaBaseDaoCon;
 import edu.cornell.mannlib.vitro.webapp.dao.jena.JenaModelUtils;
 import edu.cornell.mannlib.vitro.webapp.dao.jena.SearchReindexingListener;
 import edu.cornell.mannlib.vitro.webapp.dao.jena.SimpleOntModelSelector;
+import edu.cornell.mannlib.vitro.webapp.dao.jena.VitroJenaModelMaker;
 import edu.cornell.mannlib.vitro.webapp.dao.jena.WebappDaoFactoryJena;
+import edu.cornell.mannlib.vitro.webapp.servlet.setup.JenaDataSourceSetupBase.TripleStoreType;
 import edu.cornell.mannlib.vitro.webapp.utils.NamespaceMapper;
 import edu.cornell.mannlib.vitro.webapp.utils.jena.InitialJenaModelUtils;
 import edu.cornell.mannlib.vitro.webapp.utils.jena.NamespaceMapperJena;
@@ -87,19 +68,29 @@ public class JenaDataSourceSetup extends JenaDataSourceSetupBase implements java
         	inferenceOms.setUserAccountsModel(userAccountsModel);
         	unionOms.setUserAccountsModel(userAccountsModel);       
             
+        	OntModel displayModel = ontModelFromContextAttribute(sce.getServletContext(),"displayOntModel");
+        	baseOms.setDisplayModel(displayModel);
+        	inferenceOms.setDisplayModel(displayModel);
+        	unionOms.setDisplayModel(displayModel);
+        			
+        	checkForNamespaceMismatch( memModel, defaultNamespace );
+        	
             sce.getServletContext().setAttribute("baseOntModel", memModel);
             WebappDaoFactory baseWadf = new WebappDaoFactoryJena(baseOms, defaultNamespace, null, null);
             sce.getServletContext().setAttribute("assertionsWebappDaoFactory",baseWadf);
+            sce.getServletContext().setAttribute("baseOntModelSelector", baseOms);
             
             sce.getServletContext().setAttribute("inferenceOntModel", inferenceModel);
             WebappDaoFactory infWadf = new WebappDaoFactoryJena(inferenceOms, defaultNamespace, null, null);
             sce.getServletContext().setAttribute("deductionsWebappDaoFactory", infWadf);
+            sce.getServletContext().setAttribute("inferenceOntModelSelector", inferenceOms);
             
             sce.getServletContext().setAttribute("jenaOntModel", unionModel);  
             WebappDaoFactory wadf = new WebappDaoFactoryJena(unionOms, defaultNamespace, null, null);
             sce.getServletContext().setAttribute("webappDaoFactory",wadf);
+            sce.getServletContext().setAttribute("unionOntModelSelector", unionOms);
             
-            ApplicationBean appBean = getApplicationBeanFromOntModel(memModel);
+            ApplicationBean appBean = getApplicationBeanFromOntModel(memModel,wadf);
             if (appBean != null) {
             	sce.getServletContext().setAttribute("applicationBean", appBean);
             }
@@ -113,17 +104,17 @@ public class JenaDataSourceSetup extends JenaDataSourceSetupBase implements java
 	            if (userAccountsModel.size() == 0) {
 	            	createInitialAdminUser(userAccountsModel);
 	            }
-            }
+            }                        
             
-            ensureEssentialInterfaceData(memModel, sce, wadf);
-        
-            SearchReindexingListener srl = new SearchReindexingListener(memModel, sce.getServletContext());
-        	unionModel.getBaseModel().register(srl);
-        	memModel.getBaseModel().register(srl);
+            ensureEssentialInterfaceData(memModel, sce, wadf);        
             
         	NamespaceMapper namespaceMapper = new NamespaceMapperJena(unionModel, unionModel, defaultNamespace);
         	sce.getServletContext().setAttribute("NamespaceMapper", namespaceMapper);
         	memModel.getBaseModel().register(namespaceMapper);
+        	
+        	makeModelMakerFromConnectionProperties(TripleStoreType.RDB);
+        	VitroJenaModelMaker vjmm = getVitroJenaModelMaker();
+        	setVitroJenaModelMaker(vjmm,sce);
         	
         } catch (Throwable t) {
             log.error("Throwable in " + this.getClass().getName(), t);
@@ -135,13 +126,44 @@ public class JenaDataSourceSetup extends JenaDataSourceSetupBase implements java
     } 
 
     
+    private void checkForNamespaceMismatch(OntModel model, String defaultNamespace) {
+        String defaultNamespaceFromDeployProperites = ConfigurationProperties.getProperty("Vitro.defaultNamespace");
+        if( defaultNamespaceFromDeployProperites == null ){            
+            log.error("Could not get namespace from deploy.properties.");
+        }               
+        
+        List<String> portalURIs = new ArrayList<String>();
+        try {
+            model.enterCriticalSection(Lock.READ);
+            Iterator portalIt = model.listIndividuals(PORTAL);
+            while (portalIt.hasNext()) {
+                portalURIs.add( ((Individual)portalIt.next()).getURI() );                
+            }
+        } finally {
+            model.leaveCriticalSection();
+        }
+        if( portalURIs.size() > 0 ){
+            for( String portalUri : portalURIs){
+                if( portalUri != null && ! portalUri.startsWith(defaultNamespaceFromDeployProperites)){
+                    log.error("Namespace mismatch between db and deploy.properties.");
+                    log.error("Vivo will not start up correctly because the default namespace specified in deploy.properties does not match the namespace of " +
+                    		"a portal in the database. Namespace from deploy.properties: \"" + defaultNamespaceFromDeployProperites + 
+                            "\" Namespace from an existing portal: \"" + portalUri + "\" To get the application to start with this " +
+                            "database change the default namespace in deploy.properties " + portalUri.substring(0, portalUri.lastIndexOf("/")+1) + 
+                            "  Another possibility is that deploy.properties does not specify the intended database.");
+                }
+            }
+        }
+    }
+
+
     /* ====================================================================== */
     
     
     public void contextDestroyed(ServletContextEvent sce) {
     }
 
-    private ApplicationBean getApplicationBeanFromOntModel(OntModel ontModel) {
+    private ApplicationBean getApplicationBeanFromOntModel(OntModel ontModel,WebappDaoFactory wadf) {
        ClosableIterator appIt = ontModel.listIndividuals(ResourceFactory.createResource(VitroVocabulary.APPLICATION));
         try {
               if (appIt.hasNext()) {
@@ -156,6 +178,9 @@ public class JenaDataSourceSetup extends JenaDataSourceSetupBase implements java
                   try {
                      appBean.setMaxSharedPortalId(Integer.decode( ((Literal)appInd.getPropertyValue(ResourceFactory.createProperty(VitroVocabulary.APPLICATION_MAXSHAREDPORTALID))).getLexicalForm()));
                   } catch (Exception e) { /* ignore bad value */}
+                  if( ! wadf.getApplicationDao().isFlag1Active() ){
+                	  appBean.setMaxPortalId(1);
+                  }
                  return appBean;
              } else {
             	 return null;
@@ -246,3 +271,4 @@ public class JenaDataSourceSetup extends JenaDataSourceSetupBase implements java
     }
     
 }
+

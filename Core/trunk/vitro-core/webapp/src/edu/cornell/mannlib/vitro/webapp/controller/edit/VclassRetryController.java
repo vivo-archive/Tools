@@ -1,30 +1,4 @@
-/*
-Copyright (c) 2010, Cornell University
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-    * Redistributions of source code must retain the above copyright notice,
-      this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright notice,
-      this list of conditions and the following disclaimer in the documentation
-      and/or other materials provided with the distribution.
-    * Neither the name of Cornell University nor the names of its contributors
-      may be used to endorse or promote products derived from this software
-      without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-*/
+/* $This file is distributed under the terms of the license in /doc/license.txt$ */
 
 package edu.cornell.mannlib.vitro.webapp.controller.edit;
 
@@ -54,6 +28,7 @@ import edu.cornell.mannlib.vedit.validator.impl.XMLNameValidator;
 import edu.cornell.mannlib.vitro.webapp.auth.policy.JenaNetidPolicy.ContextSetup;
 import edu.cornell.mannlib.vitro.webapp.beans.BaseResourceBean;
 import edu.cornell.mannlib.vitro.webapp.beans.Classes2Classes;
+import edu.cornell.mannlib.vitro.webapp.beans.IndividualImpl;
 import edu.cornell.mannlib.vitro.webapp.beans.Portal;
 import edu.cornell.mannlib.vitro.webapp.beans.VClass;
 import edu.cornell.mannlib.vitro.webapp.controller.Controllers;
@@ -83,11 +58,12 @@ public class VclassRetryController extends BaseEditController {
 
         //create an EditProcessObject for this and put it in the session
         EditProcessObject epo = super.createEpo(request);
-        epo.setDataAccessObject(getWebappDaoFactory().getVClassDao());
+        epo.setDataAccessObject(request.getFullWebappDaoFactory().getVClassDao());
 
         /*for testing*/
         VClass testMask = new VClass();
         epo.setBeanClass(VClass.class);
+        epo.setImplementationClass(VClass.class);
         epo.setBeanMask(testMask);
 
         String action = null;
@@ -98,10 +74,10 @@ public class VclassRetryController extends BaseEditController {
             action = epo.getAction();
         }
 
-        VClassDao vcwDao = getWebappDaoFactory().getVClassDao();
+        VClassDao vcwDao = request.getFullWebappDaoFactory().getVClassDao();
         epo.setDataAccessObject(vcwDao);
-        VClassGroupDao cgDao = getWebappDaoFactory().getVClassGroupDao();
-        OntologyDao oDao = getWebappDaoFactory().getOntologyDao();
+        VClassGroupDao cgDao = request.getFullWebappDaoFactory().getVClassGroupDao();
+        OntologyDao oDao = request.getFullWebappDaoFactory().getOntologyDao();
 
         VClass vclassForEditing = null;
         if (!epo.getUseRecycledBean()){
@@ -144,7 +120,7 @@ public class VclassRetryController extends BaseEditController {
         //set up any listeners
         List changeListenerList = new LinkedList();
         if (request.getParameter("superclassUri") != null) {
-            changeListenerList.add(new SubclassListener(request.getParameter("superclassUri"),getWebappDaoFactory()));
+            changeListenerList.add(new SubclassListener(request.getParameter("superclassUri"), request.getFullWebappDaoFactory()));
         }
         epo.setChangeListenerList(changeListenerList);
 
@@ -170,7 +146,7 @@ public class VclassRetryController extends BaseEditController {
 
         HashMap<String,List> optionMap = new HashMap<String,List>();
         try {
-            VClassGroupDao vcgDao = getWebappDaoFactory().getVClassGroupDao();
+            VClassGroupDao vcgDao = request.getFullWebappDaoFactory().getVClassGroupDao();
             List classGroupOptionList = FormUtils.makeOptionListFromBeans(vcgDao.getPublicGroupsWithVClasses(),"URI","PublicName",vclassForEditing.getGroupURI(),null,(vclassForEditing.getGroupURI()!=null && !(vclassForEditing.getGroupURI().equals(""))));
             classGroupOptionList.add(new Option("", "none", ("update".equals(action) && (vclassForEditing.getGroupURI()==null || vclassForEditing.getGroupURI().equals("")))));
             optionMap.put("GroupURI", classGroupOptionList);
@@ -182,7 +158,7 @@ public class VclassRetryController extends BaseEditController {
             List namespaceIdList = (action.equals("insert"))
                     ? FormUtils.makeOptionListFromBeans(oDao.getAllOntologies(),"URI","Name", ((vclassForEditing.getNamespace()==null) ? "" : vclassForEditing.getNamespace()), null, false)
                     : FormUtils.makeOptionListFromBeans(oDao.getAllOntologies(),"URI","Name", ((vclassForEditing.getNamespace()==null) ? "" : vclassForEditing.getNamespace()), null, true);
-	        namespaceIdList.add(new Option(getWebappDaoFactory().getDefaultNamespace(),"default"));
+	        namespaceIdList.add(new Option(request.getFullWebappDaoFactory().getDefaultNamespace(),"default"));
             optionMap.put("Namespace", namespaceIdList);
         } catch (Exception e) {
             log.error(this.getClass().getName() + "unable to create Namespace option list");

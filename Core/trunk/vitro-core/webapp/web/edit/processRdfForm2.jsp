@@ -1,30 +1,4 @@
-<%--
-Copyright (c) 2010, Cornell University
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-    * Redistributions of source code must retain the above copyright notice,
-      this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright notice,
-      this list of conditions and the following disclaimer in the documentation
-      and/or other materials provided with the distribution.
-    * Neither the name of Cornell University nor the names of its contributors
-      may be used to endorse or promote products derived from this software
-      without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
---%>
+<%-- $This file is distributed under the terms of the license in /doc/license.txt$ --%>
 
 <%@ page import="com.hp.hpl.jena.ontology.OntModel" %>
 <%@ page import="com.hp.hpl.jena.rdf.model.Model" %>
@@ -35,7 +9,6 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 <%@ page import="com.hp.hpl.jena.shared.Lock" %>
 <%@ page import="com.thoughtworks.xstream.XStream" %>
 <%@ page import="com.thoughtworks.xstream.io.xml.DomDriver" %>
-<%@ page import="edu.cornell.mannlib.vedit.beans.LoginFormBean" %>
 <%@ page import="edu.cornell.mannlib.vitro.webapp.edit.n3editing.EditConfiguration" %>
 <%@ page import="edu.cornell.mannlib.vitro.webapp.edit.n3editing.EditN3Generator" %>
 <%@ page import="edu.cornell.mannlib.vitro.webapp.edit.n3editing.EditSubmission" %>
@@ -67,7 +40,15 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 <%@page import="edu.cornell.mannlib.vitro.webapp.filters.VitroRequestPrep"%>
 <%@page import="edu.cornell.mannlib.vitro.webapp.edit.n3editing.ModelChangePreprocessor"%>
 <%@ page import="edu.cornell.mannlib.vitro.webapp.controller.Controllers" %>
+<%@ page import="java.net.URLDecoder" %>
+<%@page import="edu.cornell.mannlib.vitro.webapp.dao.jena.DependentResourceDeleteJena"%>
+<%@page import="edu.cornell.mannlib.vitro.webapp.dao.WebappDaoFactory"%>
+<%@page import="edu.cornell.mannlib.vitro.webapp.beans.IndividualImpl"%>
+<%@page import="edu.cornell.mannlib.vitro.webapp.beans.Individual"%>
+<%@page import="edu.cornell.mannlib.vitro.webapp.dao.InsertException"%>
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
+<%@ taglib prefix="vitro" uri="/WEB-INF/tlds/VitroUtils.tld" %>
 
 <%-- 2nd prototype of processing.
 
@@ -77,21 +58,10 @@ be processed as n3 by Jena then it is an error in processing the form.
 The optional n3 blocks will proccessed if their variables are bound and
 are well formed.
 --%>
-<%    
-    if( session == null)
-        throw new Error("need to have session");
-    boolean selfEditing = VitroRequestPrep.isSelfEditing(request);
-    if (!selfEditing && !LoginFormBean.loggedIn(request, LoginFormBean.NON_EDITOR)) {
-%>
-        
-<%@page import="edu.cornell.mannlib.vitro.webapp.dao.jena.DependentResourceDeleteJena"%>
-<%@page import="edu.cornell.mannlib.vitro.webapp.dao.WebappDaoFactory"%>
-<%@page import="edu.cornell.mannlib.vitro.webapp.beans.IndividualImpl"%>
-<%@page import="edu.cornell.mannlib.vitro.webapp.beans.Individual"%>
-<%@page import="edu.cornell.mannlib.vitro.webapp.dao.InsertException"%><c:redirect url="<%= Controllers.LOGIN %>" />      
+
+<vitro:confirmLoginStatus allowSelfEditing="true" />
+
 <%
-    }
-    
     VitroRequest vreq = new VitroRequest(request);
     WebappDaoFactory wdf = vreq.getWebappDaoFactory();
     
@@ -99,15 +69,25 @@ are well formed.
      * we have to make a copy. */
     Map <String,String[]> queryParameters = null;        
     queryParameters = vreq.getParameterMap();        
-  
+ 
     List<String>  errorMessages = new ArrayList<String>();                   
     
-    EditConfiguration editConfig = EditConfiguration.getConfigFromSession(session,vreq,queryParameters);    
+    //this version has been removed from the updated code
+    //EditConfiguration editConfig = EditConfiguration.getConfigFromSession(session,vreq,queryParameters); 
+    EditConfiguration editConfig = EditConfiguration.getConfigFromSession(session, request);
     if( editConfig == null ){
         %><jsp:forward page="/edit/messages/noEditConfigFound.jsp"/><%
     }    
     EditN3Generator n3Subber = editConfig.getN3Generator();     
     EditSubmission submission = new EditSubmission(queryParameters,editConfig);
+    
+    // Preprocess the form submission
+    // RY clone() creates a shallow copy, not a deep copy. To do this, need to implement
+    // a custom clone() method for EditSubmission or a copy constructor.
+    //EditSubmission submission = submission.clone();
+    //for (EditSubmissionPreprocessor preprocessor : editConfig.getEditSubmissionPreprocessors()) {
+    //    preprocessor.preprocess(submission);
+    //}
            
     /* entity to return to may be a variable */
     List<String> entToReturnTo = new ArrayList<String>(1);
@@ -115,13 +95,16 @@ are well formed.
         entToReturnTo.add(" "+editConfig.getEntityToReturnTo()+" ");
     }    
     
-    Map<String,String> errors =  submission.getValidationErrors();
+    Map<String,String> errors = submission.getValidationErrors();
     EditSubmission.putEditSubmissionInSession(session,submission);
 
     if(  errors != null && ! errors.isEmpty() ){   
         String form = editConfig.getFormUrl();
         vreq.setAttribute("formUrl", form);
-        %><jsp:forward page="${formUrl}"/><%
+        vreq.setAttribute("view", vreq.getParameter("view"));
+        %>
+            <jsp:forward page="${formUrl}" />
+        <%
         return;
     }
 

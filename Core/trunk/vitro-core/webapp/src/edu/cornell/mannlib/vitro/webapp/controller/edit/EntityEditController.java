@@ -1,30 +1,4 @@
-/*
-Copyright (c) 2010, Cornell University
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-    * Redistributions of source code must retain the above copyright notice,
-      this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright notice,
-      this list of conditions and the following disclaimer in the documentation
-      and/or other materials provided with the distribution.
-    * Neither the name of Cornell University nor the names of its contributors
-      may be used to endorse or promote products derived from this software
-      without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-*/
+/* $This file is distributed under the terms of the license in /doc/license.txt$ */
 
 package edu.cornell.mannlib.vitro.webapp.controller.edit;
 
@@ -82,7 +56,7 @@ public class EntityEditController extends BaseEditController {
 
     public void doGet (HttpServletRequest request, HttpServletResponse response) {
 
-        if (!checkLoginStatus(request,response,(String)request.getAttribute("fetchURI")))
+        if (!checkLoginStatus(request,response))
             return;
 
         try {
@@ -96,12 +70,12 @@ public class EntityEditController extends BaseEditController {
         Portal portal = vreq.getPortal();
         ApplicationBean application = vreq.getAppBean();
 
-        Individual ent = getAssertionsWebappDaoFactory().getIndividualDao().getIndividualByURI(entURI);
+        Individual ent = vreq.getAssertionsWebappDaoFactory().getIndividualDao().getIndividualByURI(entURI);
         if (ent == null) {
         	ent = new IndividualImpl(entURI);
         }
         
-        Individual inferredEnt = getWebappDaoFactory().getIndividualDao().getIndividualByURI(entURI);
+        Individual inferredEnt = vreq.getFullWebappDaoFactory().getIndividualDao().getIndividualByURI(entURI);
         if (inferredEnt == null) {
         	inferredEnt = new IndividualImpl(entURI);
         }
@@ -122,7 +96,7 @@ public class EntityEditController extends BaseEditController {
             results.add("sunset");
             colCount = colCount + 3;
         }
-        if (getWebappDaoFactory().getApplicationDao().isFlag2Active()) {
+        if (vreq.getFullWebappDaoFactory().getApplicationDao().isFlag2Active()) {
         	results.add("Flag 2 values");
         	colCount++;
         }
@@ -178,7 +152,7 @@ public class EntityEditController extends BaseEditController {
 	        String rSunset = (ent.getSunset()==null) ? "" : publicDateFormat.format(ent.getSunset());
 	        results.add(rSunset);
         }
-        if (getWebappDaoFactory().getApplicationDao().isFlag2Active()) {
+        if (vreq.getFullWebappDaoFactory().getApplicationDao().isFlag2Active()) {
 	        String rFlag2Set = (ent.getFlag2Set()==null) ? "" : ent.getFlag2Set();
 	        results.add(rFlag2Set);
         }
@@ -195,7 +169,7 @@ public class EntityEditController extends BaseEditController {
         FormObject foo = new FormObject();
         HashMap OptionMap = new HashMap();
         
-        Collection<DataPropertyStatement> curationNotes = vreq.getWebappDaoFactory().getDataPropertyStatementDao().getDataPropertyStatementsForIndividualByDataPropertyURI(ent, VitroVocabulary.CURATOR_NOTE);
+        Collection<DataPropertyStatement> curationNotes = vreq.getFullWebappDaoFactory().getDataPropertyStatementDao().getDataPropertyStatementsForIndividualByDataPropertyURI(ent, VitroVocabulary.CURATOR_NOTE);
         List curationNoteStrs = new LinkedList();
         Iterator<DataPropertyStatement> cnIt = curationNotes.iterator();
         while (cnIt.hasNext()) {
@@ -222,20 +196,20 @@ public class EntityEditController extends BaseEditController {
             OptionMap.put("ExtraURL", FormUtils.makeOptionListFromBeans(ent.getLinksList(), "URI", "Anchor", null, null, false));
         } catch (Exception e) {e.printStackTrace();}
         
-        List classGroups = vreq.getWebappDaoFactory().getVClassGroupDao().getPublicGroupsWithVClasses(true,true,false); // order by displayRank, include uninstantiated classes, don't count the individuals
+        List classGroups = vreq.getFullWebappDaoFactory().getVClassGroupDao().getPublicGroupsWithVClasses(true,true,false); // order by displayRank, include uninstantiated classes, don't count the individuals
         Iterator classGroupIt = classGroups.iterator();
         ListOrderedMap optGroupMap = new ListOrderedMap();
         while (classGroupIt.hasNext()) {
             VClassGroup group = (VClassGroup)classGroupIt.next();
             List classes = group.getVitroClassList();
             optGroupMap.put(group.getPublicName(),FormUtils.makeOptionListFromBeans(classes,"URI","PickListName",ent.getVClassURI(),null,false));
-            //mixes group names with classes:optGroupMap.put(group.getPublicName(),FormUtils.makeVClassOptionList(getWebappDaoFactory(),ent.getVClassURI()));
+            //mixes group names with classes:optGroupMap.put(group.getPublicName(),FormUtils.makeVClassOptionList(getFullWebappDaoFactory(),ent.getVClassURI()));
         }
         try {
             OptionMap.put("VClassURI", optGroupMap);
         } catch (Exception e) {e.printStackTrace();}       
         
-        PropertyInstanceDao piDao = vreq.getWebappDaoFactory().getPropertyInstanceDao();
+        PropertyInstanceDao piDao = vreq.getFullWebappDaoFactory().getPropertyInstanceDao();
         // existing property statements
         try {
             List epiOptionList = new LinkedList();
@@ -263,17 +237,17 @@ public class EntityEditController extends BaseEditController {
         foo.setOptionLists(OptionMap);
 
         // make the flag checkbox lists
-        Boolean singlePortal = new Boolean(vreq.getWebappDaoFactory().getPortalDao().isSinglePortal());
+        Boolean singlePortal = new Boolean(vreq.getFullWebappDaoFactory().getPortalDao().isSinglePortal());
         request.setAttribute("singlePortal", singlePortal);
 
         EditProcessObject flagEpo = super.createEpo(request);
         flagEpo.setOriginalBean(ent);
-        flagEpo.setDataAccessObject(getWebappDaoFactory().getIndividualDao());
+        flagEpo.setDataAccessObject(vreq.getFullWebappDaoFactory().getIndividualDao());
         request.setAttribute("_flagEpoKey",flagEpo.getKey());
         
-        if (getWebappDaoFactory().getApplicationDao().isFlag1Active()) {
+        if (vreq.getFullWebappDaoFactory().getApplicationDao().isFlag1Active()) {
         	request.setAttribute("isFlag1Active",true);
-	        PortalDao pDao = getWebappDaoFactory().getPortalDao();
+	        PortalDao pDao = vreq.getFullWebappDaoFactory().getPortalDao();
 	        HashSet indPortalSet = new HashSet();
 	        if (ent.getFlag1Set() != null) {
 	            String[] indPortal = ent.getFlag1Set().split(",");
@@ -304,7 +278,7 @@ public class EntityEditController extends BaseEditController {
        		request.setAttribute("isFlag1Active",false);
        	}
 
-        if (getWebappDaoFactory().getApplicationDao().isFlag2Active()) {
+        if (vreq.getFullWebappDaoFactory().getApplicationDao().isFlag2Active()) {
         	try {
 	        	request.setAttribute("isFlag2Active",true);
 		        List<Checkbox> flag2CheckboxList = new ArrayList<Checkbox>();
@@ -314,7 +288,7 @@ public class EntityEditController extends BaseEditController {
 		            flag2ValueSet.add(flag2Values[ii]);
 		        }
 		        List<String> keyList = new ArrayList<String>();
-		        keyList.addAll(((WebappDaoFactoryJena)getWebappDaoFactory()).getFlag2ValueMap().keySet());
+		        keyList.addAll(((WebappDaoFactoryJena) vreq.getFullWebappDaoFactory()).getFlag2ValueMap().keySet());
 		        Collections.sort(keyList);
 		        for (Iterator<String> i = keyList.iterator(); i.hasNext(); ) {
 		            String value = i.next();
@@ -335,8 +309,8 @@ public class EntityEditController extends BaseEditController {
         }
         
         List<Option> existingKeywordRelations = new LinkedList();
-        KeywordIndividualRelationDao kirDao = getWebappDaoFactory().getKeys2EntsDao();
-        KeywordDao kDao = getWebappDaoFactory().getKeywordDao();
+        KeywordIndividualRelationDao kirDao = vreq.getFullWebappDaoFactory().getKeys2EntsDao();
+        KeywordDao kDao = vreq.getFullWebappDaoFactory().getKeywordDao();
         List kirs = kirDao.getKeywordIndividualRelationsByIndividualURI(ent.getURI());
         if (kirs != null) {
             Iterator kirIt = kirs.iterator();

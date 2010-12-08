@@ -1,30 +1,4 @@
-/*
-Copyright (c) 2010, Cornell University
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-    * Redistributions of source code must retain the above copyright notice,
-      this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright notice,
-      this list of conditions and the following disclaimer in the documentation
-      and/or other materials provided with the distribution.
-    * Neither the name of Cornell University nor the names of its contributors
-      may be used to endorse or promote products derived from this software
-      without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-*/
+/* $This file is distributed under the terms of the license in /doc/license.txt$ */
 
 package edu.cornell.mannlib.vedit.util;
 
@@ -80,9 +54,9 @@ public class OperationUtils{
         try {
             setterMethod.invoke(newObj,arglist);
         } catch (Exception e) {
-            System.out.println("Couldn't invoke method");
-            System.out.println(e.getMessage());
-            System.out.println(field+" "+arglist[0]);
+            log.error("Couldn't invoke method");
+            log.error(e.getMessage());
+            log.error(field+" "+arglist[0]);
         }
     }
 
@@ -123,18 +97,18 @@ public class OperationUtils{
                                 setArgs[0] = fieldVal;
                                 setterMethod.invoke(newBean,setArgs);
                             } catch (IllegalAccessException iae) {
-                                System.out.println("edu.cornell.mannlib.vitro.edit.utils.OperationUtils encountered IllegalAccessException invoking "+setterMethod.getName());
+                                log.error("edu.cornell.mannlib.vitro.edit.utils.OperationUtils encountered IllegalAccessException invoking "+setterMethod.getName());
                             } catch (InvocationTargetException ite) {
-                                System.out.println("edu.cornell.mannlib.vitro.edit.utils.OperationUtils encountered InvocationTargetException invoking "+setterMethod.getName());
-                                System.out.println(ite.getTargetException().getClass().toString());
+                                log.error("edu.cornell.mannlib.vitro.edit.utils.OperationUtils encountered InvocationTargetException invoking "+setterMethod.getName());
+                                log.error(ite.getTargetException().getClass().toString());
                             }
                         } catch (IllegalAccessException iae) {
-                            System.out.println(OperationUtils.class.getName()+" encountered IllegalAccessException invoking "+beanMeths[i].getName());
+                            log.error(OperationUtils.class.getName()+" encountered IllegalAccessException invoking "+beanMeths[i].getName());
                         } catch (InvocationTargetException ite) {
-                            System.out.println(OperationUtils.class.getName()+" encountered InvocationTargetException invoking "+beanMeths[i].getName());
-                            System.out.println(ite.getTargetException().getClass().toString());
+                            log.error(OperationUtils.class.getName()+" encountered InvocationTargetException invoking "+beanMeths[i].getName());
+                            log.error(ite.getTargetException().getClass().toString());
                         } catch (IllegalArgumentException iae) {
-                            // System.out.println(OperationUtils.class.getName()+" found that "+beanMeths[i].getName()+" requires one or more arguments. Skipping.");
+                            // log.error(OperationUtils.class.getName()+" found that "+beanMeths[i].getName()+" requires one or more arguments. Skipping.");
                         }
                     } catch (NoSuchMethodException nsme){
                         // ignore this field because there is no setter method
@@ -142,11 +116,11 @@ public class OperationUtils{
                 }
             }
         } catch (InstantiationException ie){
-            System.out.println("edu.cornell.mannlib.vitro.edit.utils.OperationUtils.cloneBean("+bean.getClass().toString()+") could not instantiate new instance of bean.");
-            System.out.println(ie.getStackTrace());
+            log.error("edu.cornell.mannlib.vitro.edit.utils.OperationUtils.cloneBean("+bean.getClass().toString()+") could not instantiate new instance of bean.");
+            log.error(ie.getStackTrace());
         } catch (IllegalAccessException iae){
-            System.out.println("edu.cornell.mannlib.vitro.edit.utils.OperationUtils.cloneBean("+bean.getClass().toString()+") encountered illegal access exception instantiating new bean.");
-            System.out.println(iae.getStackTrace());
+            log.error("edu.cornell.mannlib.vitro.edit.utils.OperationUtils.cloneBean("+bean.getClass().toString()+") encountered illegal access exception instantiating new bean.");
+            log.error(iae.getStackTrace());
         }
         return newBean;
     }

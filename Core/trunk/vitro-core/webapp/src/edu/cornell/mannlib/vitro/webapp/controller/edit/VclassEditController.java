@@ -1,30 +1,4 @@
-/*
-Copyright (c) 2010, Cornell University
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-    * Redistributions of source code must retain the above copyright notice,
-      this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright notice,
-      this list of conditions and the following disclaimer in the documentation
-      and/or other materials provided with the distribution.
-    * Neither the name of Cornell University nor the names of its contributors
-      may be used to endorse or promote products derived from this software
-      without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-*/
+/* $This file is distributed under the terms of the license in /doc/license.txt$ */
 
 package edu.cornell.mannlib.vitro.webapp.controller.edit;
 
@@ -45,9 +19,7 @@ import com.hp.hpl.jena.vocabulary.RDF;
 
 import edu.cornell.mannlib.vedit.beans.EditProcessObject;
 import edu.cornell.mannlib.vedit.beans.FormObject;
-import edu.cornell.mannlib.vedit.beans.LoginFormBean;
 import edu.cornell.mannlib.vedit.controller.BaseEditController;
-import edu.cornell.mannlib.vitro.webapp.auth.policy.JenaNetidPolicy.ContextSetup;
 import edu.cornell.mannlib.vitro.webapp.beans.Portal;
 import edu.cornell.mannlib.vitro.webapp.beans.VClass;
 import edu.cornell.mannlib.vitro.webapp.beans.VClassGroup;
@@ -67,7 +39,7 @@ public class VclassEditController extends BaseEditController {
     	
     	VitroRequest request = new VitroRequest(req);
 
-        if (!checkLoginStatus(request,response,(String)request.getAttribute("fetchURI")))
+        if (!checkLoginStatus(request,response))
             return;
 
         try {
@@ -79,11 +51,12 @@ public class VclassEditController extends BaseEditController {
         EditProcessObject epo = super.createEpo(request, FORCE_NEW);
         request.setAttribute("epoKey", epo.getKey());
 
-        VClassDao vcwDao = getWebappDaoFactory().getVClassDao();
+        VClassDao vcwDao = request.getFullWebappDaoFactory().getVClassDao();
         VClass vcl = (VClass)vcwDao.getVClassByURI(request.getParameter("uri"));
         
         if (vcl == null) {
-        	if (VitroModelProperties.isRDFS(getWebappDaoFactory().getLanguageProfile()) && ( (RDF.getURI()+"Resource").equals(request.getParameter("uri")))) {
+        	if (VitroModelProperties.isRDFS(request.getFullWebappDaoFactory().getLanguageProfile()) 
+        			&& ( (RDF.getURI()+"Resource").equals(request.getParameter("uri")))) {
         		vcl = new VClass(RDF.getURI()+"Resource");
         	}
         }
@@ -110,7 +83,7 @@ public class VclassEditController extends BaseEditController {
         String example = (vcl.getExample()==null) ? "" : vcl.getExample();
         String description = (vcl.getDescription()==null) ? "" : vcl.getDescription();
         
-        WebappDaoFactory wadf = getWebappDaoFactory();
+        WebappDaoFactory wadf = request.getFullWebappDaoFactory();
 
         String groupURI = vcl.getGroupURI();
         String groupName = "none";
@@ -124,7 +97,7 @@ public class VclassEditController extends BaseEditController {
 
         boolean foundComment = false;
         StringBuffer commSb = null;
-        for (Iterator<String> commIt = getWebappDaoFactory().getCommentsForResource(vcl.getURI()).iterator(); commIt.hasNext();) { 
+        for (Iterator<String> commIt = request.getFullWebappDaoFactory().getCommentsForResource(vcl.getURI()).iterator(); commIt.hasNext();) { 
             if (commSb==null) {
                 commSb = new StringBuffer();
                 foundComment=true;
@@ -171,12 +144,12 @@ public class VclassEditController extends BaseEditController {
 
         // if supported, we want to show only the asserted superclasses and subclasses.  Don't want to see anonymous classes, restrictions, etc.
         VClassDao vcDao;
-        if (getAssertionsWebappDaoFactory() != null) {
-        	vcDao = getAssertionsWebappDaoFactory().getVClassDao();
+        if (request.getAssertionsWebappDaoFactory() != null) {
+        	vcDao = request.getAssertionsWebappDaoFactory().getVClassDao();
         } else {
-        	vcDao = getWebappDaoFactory().getVClassDao();
+        	vcDao = request.getFullWebappDaoFactory().getVClassDao();
         }
-        List superURIs = vcDao.getSuperClassURIs(vcl.getURI());
+        List superURIs = vcDao.getSuperClassURIs(vcl.getURI(),false);
         List superVClasses = new ArrayList();
         Iterator superURIit = superURIs.iterator();
         while (superURIit.hasNext()) {

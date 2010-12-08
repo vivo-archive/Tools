@@ -1,30 +1,4 @@
-<%--
-Copyright (c) 2010, Cornell University
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-    * Redistributions of source code must retain the above copyright notice,
-      this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright notice,
-      this list of conditions and the following disclaimer in the documentation
-      and/or other materials provided with the distribution.
-    * Neither the name of Cornell University nor the names of its contributors
-      may be used to endorse or promote products derived from this software
-      without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
---%>
+<%-- $This file is distributed under the terms of the license in /doc/license.txt$ --%>
 
 <%@ page import="edu.cornell.mannlib.vitro.webapp.controller.VitroRequest" %>
 <%@ page import="edu.cornell.mannlib.vitro.webapp.dao.WebappDaoFactory" %>
@@ -240,8 +214,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     	request.setAttribute("title", "Edit \""+propDomainPublic+"\" entry for " + subject.getName());
         submitButtonLabel = "Save changes";
     } else {
-        request.setAttribute("title","Create a new \""+propDomainPublic+"\" entry for " + subject.getName());
-        submitButtonLabel = "Create new \""+propDomainPublic+"\" entry";
+        request.setAttribute("title","Create \""+propDomainPublic+"\" entry for " + subject.getName());
+        submitButtonLabel = "Create \""+propDomainPublic+"\" entry";
     }
 
 %>
@@ -290,7 +264,7 @@ $(document).ready(function() {
     <hr/>
     <v:input type="select" label="label (optional)" id="moniker"/> <em>start typing to see existing choices, or add a new label</em>
     <v:input type="text" label="associated web page (optional)" id="linkUrl" size="50"/>
-    <v:input type="submit" id="submit" value="<%=submitButtonLabel%>" cancel="${param.subjectUri}"/>
+    <v:input type="submit" id="submit" value="<%=submitButtonLabel%>" cancel="true"/>
 </form>
 
 <jsp:include page="${postForm}"/>

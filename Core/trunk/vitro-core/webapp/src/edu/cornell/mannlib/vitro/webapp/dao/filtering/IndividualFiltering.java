@@ -1,34 +1,9 @@
-/*
-Copyright (c) 2010, Cornell University
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-    * Redistributions of source code must retain the above copyright notice,
-      this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright notice,
-      this list of conditions and the following disclaimer in the documentation
-      and/or other materials provided with the distribution.
-    * Neither the name of Cornell University nor the names of its contributors
-      may be used to endorse or promote products derived from this software
-      without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-*/
+/* $This file is distributed under the terms of the license in /doc/license.txt$ */
 
 package edu.cornell.mannlib.vitro.webapp.dao.filtering;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -52,6 +27,7 @@ import edu.cornell.mannlib.vitro.webapp.beans.ObjectPropertyStatement;
 import edu.cornell.mannlib.vitro.webapp.beans.VClass;
 import edu.cornell.mannlib.vitro.webapp.beans.BaseResourceBean.RoleLevel;
 import edu.cornell.mannlib.vitro.webapp.dao.filtering.filters.VitroFilters;
+import edu.cornell.mannlib.vitro.webapp.search.beans.ProhibitedFromSearch;
 
 /**
  * A Individual object that will delegate to an inner Individual
@@ -94,13 +70,28 @@ public class IndividualFiltering implements Individual {
         return outdProps;
     }
 
-
+    public List<DataProperty> getPopulatedDataPropertyList() {
+        List<DataProperty> dprops =  _innerIndividual.getPopulatedDataPropertyList();
+        LinkedList<DataProperty> outdProps = new LinkedList<DataProperty>();
+        Filter.filter(dprops,_filters.getDataPropertyFilter(), outdProps);
+        return outdProps;
+    }
+    
     public List<DataPropertyStatement> getDataPropertyStatements() {
         List<DataPropertyStatement> dstmts = _innerIndividual.getDataPropertyStatements();
-        List<DataPropertyStatement> outDstmts = new LinkedList<DataPropertyStatement>();
-        Filter.filter(dstmts,_filters.getDataPropertyStatementFilter(), outDstmts);
-        return outDstmts;
+        return filterDataPropertyStatements(dstmts);      
     }
+    
+    public List<DataPropertyStatement> getDataPropertyStatements(String propertyUri) {
+        List<DataPropertyStatement> dstmts = _innerIndividual.getDataPropertyStatements(propertyUri);
+        return filterDataPropertyStatements(dstmts);        
+    }
+    
+    private List<DataPropertyStatement> filterDataPropertyStatements(List<DataPropertyStatement> dStmts) {
+        List<DataPropertyStatement> outDstmts = new LinkedList<DataPropertyStatement>();
+        Filter.filter(dStmts,_filters.getDataPropertyStatementFilter(), outDstmts);
+        return outDstmts;          
+    }    
       
     public Map<String, DataProperty> getDataPropertyMap() {
         Map<String,DataProperty> innerMap = _innerIndividual.getDataPropertyMap();
@@ -130,12 +121,19 @@ public class IndividualFiltering implements Individual {
 //        Filter.filter(oprops, _filters.getObjectPropertyFilter(), outOProps);
         return ObjectPropertyDaoFiltering.filterAndWrap(oprops, _filters);
     }
+    
+    public List<ObjectProperty> getPopulatedObjectPropertyList() {
+        List <ObjectProperty> oprops = _innerIndividual.getPopulatedObjectPropertyList();
+//        List<ObjectProperty> outOProps = new LinkedList<ObjectProperty>();
+//        Filter.filter(oprops, _filters.getObjectPropertyFilter(), outOProps);
+        return ObjectPropertyDaoFiltering.filterAndWrap(oprops, _filters);
+    }
 
     /* ********************* methods that need delegated filtering *************** */
     public List<ObjectPropertyStatement> getObjectPropertyStatements() {
 
         List<ObjectPropertyStatement> stmts = _innerIndividual.getObjectPropertyStatements();
-        return ObjectPropertyStatementDaoFiltering.filterAndWrapList(stmts, _filters);
+        return filterObjectPropertyStatements(stmts); 
 //
 //         //filter ObjectPropertyStatements from inner
 //        List<ObjectPropertyStatement> filteredStmts = new LinkedList<ObjectPropertyStatement>();
@@ -159,6 +157,17 @@ public class IndividualFiltering implements Individual {
 //        return stmts;
     }
 
+    public List<ObjectPropertyStatement> getObjectPropertyStatements(String propertyUri) {
+        List<ObjectPropertyStatement> stmts = _innerIndividual.getObjectPropertyStatements(propertyUri);
+        return filterObjectPropertyStatements(stmts);       
+    }
+    
+    private List<ObjectPropertyStatement> filterObjectPropertyStatements(List<ObjectPropertyStatement> opStmts) {
+        return ObjectPropertyStatementDaoFiltering.filterAndWrapList(opStmts, _filters); 
+    }
+
+
+    
     //TODO: may cause problems since one can get ObjectPropertyStatement list from
     // the ObjectProperty, and that won't be filtered.
     //might need to make a ObjectPropertyFiltering and a ObjectPropertyStatementFiltering    
@@ -197,12 +206,8 @@ public class IndividualFiltering implements Individual {
 
     public String getBlurb() {
         return _innerIndividual.getBlurb();
-    }
-
-    public String getCitation() {
-        return _innerIndividual.getCitation();
-    }
-
+    }  
+    
     public String getDescription() {
         return _innerIndividual.getDescription();
     }
@@ -247,18 +252,24 @@ public class IndividualFiltering implements Individual {
         return _innerIndividual.getFlag3Set();
     }
 
+	@Override
+	public String getMainImageUri() {
+		return _innerIndividual.getMainImageUri();
+	}
 
-    public String getImageFile() {
-        return _innerIndividual.getImageFile();
-    }
+    @Override
+	public String getImageUrl() {
+    	return _innerIndividual.getImageUrl();
+	}
 
 
-    public String getImageThumb() {
-        return _innerIndividual.getImageThumb();
-    }
+	@Override
+	public String getThumbUrl() {
+		return _innerIndividual.getThumbUrl();
+	}
 
 
-    public List<String> getKeywords() {
+	public List<String> getKeywords() {
         return _innerIndividual.getKeywords();
     }
 
@@ -295,6 +306,9 @@ public class IndividualFiltering implements Individual {
         return _innerIndividual.getName();
     }
 
+    public String getRdfsLabel(){
+    	return _innerIndividual.getRdfsLabel();
+    }
 
     public String getNamespace() {
         return _innerIndividual.getNamespace();
@@ -355,14 +369,14 @@ public class IndividualFiltering implements Individual {
         _innerIndividual.setBlurb(in);
     }
 
-    public void setCitation(String in) {
-        _innerIndividual.setCitation(in);
-    }
-
     public void setDatatypePropertyList(List<DataProperty> datatypePropertyList) {
         _innerIndividual.setDatatypePropertyList(datatypePropertyList);
     }
 
+    public void setPopulatedDataPropertyList(List<DataProperty> dataPropertyList) {
+        _innerIndividual.setPopulatedDataPropertyList(dataPropertyList);
+    }
+    
     public void setDescription(String in) {
         _innerIndividual.setDescription(in);
     }
@@ -410,15 +424,10 @@ public class IndividualFiltering implements Individual {
     }
 
 
-    public void setImageFile(String imageFile) {
-        _innerIndividual.setImageFile(imageFile);
-    }
-
-
-    public void setImageThumb(String imageThumb) {
-        _innerIndividual.setImageThumb(imageThumb);
-    }
-
+    @Override
+	public void setMainImageUri(String mainImageUri) {
+    	_innerIndividual.setMainImageUri(mainImageUri);
+	}
 
     public void setKeywords(List<String> keywords) {
         _innerIndividual.setKeywords(keywords);
@@ -460,6 +469,10 @@ public class IndividualFiltering implements Individual {
         _innerIndividual.setPropertyList(propertyList);
     }
 
+    public void setPopulatedObjectPropertyList(List<ObjectProperty> propertyList) {
+        _innerIndividual.setPopulatedObjectPropertyList(propertyList);
+    }
+    
     public void setStatus(String s) {
         _innerIndividual.setStatus(s);
     }
@@ -513,7 +526,6 @@ public class IndividualFiltering implements Individual {
         return _innerIndividual.getKeywordObjects();
     }
 
-
     public List<VClass> getVClasses() {
         return _innerIndividual.getVClasses();
     }
@@ -522,7 +534,17 @@ public class IndividualFiltering implements Individual {
         return _innerIndividual.getVClasses(direct);
     }
 
-    public void setDataPropertyMap(Map<String, DataProperty> propertyMap) {
+    @Override
+	public boolean isVClass(String uri) {
+    	return _innerIndividual.isVClass(uri);
+	}
+
+    @Override
+    public boolean isMemberOfClassProhibitedFromSearch(ProhibitedFromSearch pfs) {
+    	return _innerIndividual.isMemberOfClassProhibitedFromSearch(pfs);
+    }
+    
+	public void setDataPropertyMap(Map<String, DataProperty> propertyMap) {
         _innerIndividual.setDataPropertyMap(propertyMap);
     }
 
@@ -586,5 +608,42 @@ public class IndividualFiltering implements Individual {
 
     public void setSearchBoost(Float boost) { _innerIndividual.setSearchBoost( boost ); }
     public Float getSearchBoost() {return _innerIndividual.getSearchBoost(); }
-      
+
+    public List<String> getDataValues(String propertyUri) {
+        List<DataPropertyStatement> stmts = getDataPropertyStatements(propertyUri);
+        // Since the statements have been filtered, we can just take the data values without filtering.
+        List<String> dataValues = new ArrayList<String>(stmts.size());
+        for (DataPropertyStatement stmt : stmts) {
+            dataValues.add(stmt.getData());
+        }
+        return dataValues;      
+    }
+    
+    public String getDataValue(String propertyUri) {
+        List<DataPropertyStatement> stmts = getDataPropertyStatements(propertyUri);
+        // Since the statements have been filtered, we can just take the first data value without filtering.
+        return stmts.isEmpty() ? null : stmts.get(0).getData();
+    }
+    
+    public DataPropertyStatement getDataPropertyStatement(String propertyUri) {
+        List<DataPropertyStatement> stmts = getDataPropertyStatements(propertyUri);
+        // Since the statements have been filtered, we can just take the first data value without filtering.
+        return stmts.isEmpty() ? null : stmts.get(0);       
+    }
+    
+    public List<Individual> getRelatedIndividuals(String propertyUri) {
+        List<ObjectPropertyStatement> stmts = getObjectPropertyStatements(propertyUri);
+        // Since the statements have been filtered, we can just take the individuals without filtering.
+        List<Individual> relatedIndividuals = new ArrayList<Individual>(stmts.size());
+        for (ObjectPropertyStatement stmt : stmts) {
+            relatedIndividuals.add(stmt.getObject());
+        }
+        return relatedIndividuals; 
+    }
+    
+    public Individual getRelatedIndividual(String propertyUri) {
+        List<ObjectPropertyStatement> stmts = getObjectPropertyStatements(propertyUri); 
+        // Since the statements have been filtered, we can just take the first individual without filtering.
+        return stmts.isEmpty() ? null : stmts.get(0).getObject();
+    }
 }

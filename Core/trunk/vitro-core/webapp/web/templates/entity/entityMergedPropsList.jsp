@@ -1,30 +1,4 @@
-<%--
-Copyright (c) 2010, Cornell University
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-    * Redistributions of source code must retain the above copyright notice,
-      this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright notice,
-      this list of conditions and the following disclaimer in the documentation
-      and/or other materials provided with the distribution.
-    * Neither the name of Cornell University nor the names of its contributors
-      may be used to endorse or promote products derived from this software
-      without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
---%>
+<%-- $This file is distributed under the terms of the license in /doc/license.txt$ --%>
 
 <%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
@@ -57,8 +31,9 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 <%@ page import="org.apache.commons.logging.Log" %>
 <%@ page import="org.apache.commons.logging.LogFactory" %>
 <%@ page import="edu.cornell.mannlib.vitro.webapp.filters.VitroRequestPrep" %>
-<%@ page import="edu.cornell.mannlib.vedit.beans.LoginFormBean" %>
-<jsp:useBean id="loginHandler" class="edu.cornell.mannlib.vedit.beans.LoginFormBean" scope="session" />
+<%@ page import="edu.cornell.mannlib.vedit.beans.LoginStatusBean" %>
+
+<%@page import="edu.cornell.mannlib.vitro.webapp.web.MiscWebUtils"%>
 <%! 
 public static Log log = LogFactory.getLog("edu.cornell.mannlib.vitro.webapp.jsp.templates.entity.entityMergedPropsList.jsp");
 %>
@@ -66,7 +41,7 @@ public static Log log = LogFactory.getLog("edu.cornell.mannlib.vitro.webapp.jsp.
         log.debug("setting showSelfEdits true");%>
         <c:set var="showSelfEdits" value="${true}"/>     
 <%  }
-    if (loginHandler!=null && loginHandler.getLoginStatus()=="authenticated" && Integer.parseInt(loginHandler.getLoginRole())>=loginHandler.getNonEditor()) {
+    if (LoginStatusBean.getBean(request).isLoggedIn()) {
         log.debug("setting showCuratorEdits true");%>
         <c:set var="showCuratorEdits" value="${true}"/>
         <c:set var='themeDir'><c:out value='${portalBean.themeDir}' /></c:set>
@@ -85,6 +60,7 @@ public static Log log = LogFactory.getLog("edu.cornell.mannlib.vitro.webapp.jsp.
         throw new Error("Subject individual must be in request scope for entityMergedPropsList.jsp");
     }
 
+    
     // Nick wants not to use explicit parameters to trigger visibility of a div, but for now we don't just want to always show the 1st one
     String openingGroupLocalName = (String) request.getParameter("curgroup");
     VitroRequest vreq = new VitroRequest(request);
@@ -134,13 +110,13 @@ public static Log log = LogFactory.getLog("edu.cornell.mannlib.vitro.webapp.jsp.
             <c:if test="${group.statementCount==0}"><c:set var="groupStyle" value="display: block"/></c:if>
 
 
-            	<%-- Getting the count of properties in each group --%>
+        <%-- Getting the count of properties in each group --%>
 				<c:set var="counter" value="0"/>
-            	<c:set var="propTotal" value="0"/>
+        <c:set var="propTotal" value="0"/>
 				<% int propTotal = g.getPropertyList().size(); %>
 				<c:set var="propTotal" value="<%=propTotal%>" />
 				
-            
+    <c:if test="${propTotal>0}">  
 			<div class="propsCategory" id="<%=g.getLocalName()%>">
 				<h3><strong><%=g.getName()%></strong></h3>
 				<div class="propsWrap">
@@ -156,14 +132,62 @@ public static Log log = LogFactory.getLog("edu.cornell.mannlib.vitro.webapp.jsp.
 				    		</c:if>                                                       
 	        			</c:if>
 				    	<c:set var="objStyle" value="display: block;"/>
+				    	
+				    	<%-- rjy7 We have a logic problem here: if the custom short view dictates that the item NOT be rendered,
+                        and because of this there are NO items to render, we shouldn't show the label when not in edit mode. 
+                        Example: people ( = positionHistory) of an organization don't render if the position end date is in the past.
+                        So the organization might not have any current people, in which case we shouldn't show the "people" label.
+                        We need to compute objRows on the basis of the rendering, not the number of objectPropertyStatements.
+                        See NIHVIVO-512. --%>
+                        
 				    	<c:set var="objRows" value="${fn:length(objProp.objectPropertyStatements)}"/>
 				    	<c:if test="${objRows==0}"><c:set var="objStyle" value="display: block;"/></c:if>
-				    	<c:if test="${editableInSomeWay || objRows>0}">
+				    	<%-- nac26 Changing the test on objRows here to be GTE so that properties marked with an update level of "nobody" are still rendered --%>				    					    	
+				    	<c:if test="${editableInSomeWay || objRows>=0}">
 				    		<c:set var="first" value=""/><c:if test="${counter == 0}"><c:set var="first" value=" first"/></c:if>
             		        <c:set var="last" value=""/><c:if test="${(counter+1) == propTotal}"><c:set var="last" value=" last"/></c:if>
                             <div class="propsItem${first}${last}" id="${objProp.localName}">
-                                <h4>${objProp.editLabel}</h4>
+                                <h4>${objProp.label}</h4>
 					    		<c:if test="${showSelfEdits || showCuratorEdits}"><edLnk:editLinks item="${objProp}" icons="false" /></c:if>
+					    		<%-- Verbose property display additions for object properties, using context variable verbosePropertyListing --%>
+                          <c:if test="${showCuratorEdits && verbosePropertyListing}">
+                              <c:url var="propertyEditLink" value="/propertyEdit">
+                                  <c:param name="home" value="${portal.portalId}"/>
+                                  <c:param name="uri" value="${objProp.URI}"/>
+                              </c:url>
+                              <c:choose>
+                                  <c:when test="${!empty objProp.hiddenFromDisplayBelowRoleLevel.label}"><c:set var="displayCue" value="${objProp.hiddenFromDisplayBelowRoleLevel.label}"/></c:when>
+                                  <c:otherwise><c:set var="displayCue" value="unspecified"/></c:otherwise>
+                              </c:choose>
+                              <c:choose>
+                                  <c:when test="${!empty objProp.prohibitedFromUpdateBelowRoleLevel.label}"><c:set var="updateCue" value="${objProp.prohibitedFromUpdateBelowRoleLevel.label}"/></c:when>
+                                  <c:otherwise><c:set var="updateCue" value="unspecified"/></c:otherwise>
+                              </c:choose>
+                              <c:choose>
+                                  <c:when test="${!empty objProp.localNameWithPrefix}"><c:set var="localName" value="${objProp.localNameWithPrefix}"/></c:when>
+                                  <c:otherwise><c:set var="localName" value="no local name"/></c:otherwise>
+                              </c:choose>
+                              <c:choose>
+                                  <c:when test="${!empty objProp.domainDisplayTier}"><c:set var="displayTier" value="${objProp.domainDisplayTier}"/></c:when>
+                                  <c:otherwise><c:set var="displayTier" value="blank"/></c:otherwise>
+                              </c:choose>
+                              <c:choose>
+                                  <c:when test="${!empty objProp.groupURI}">
+      <%                              PropertyGroup pg = pgDao.getGroupByURI(op.getGroupURI());
+                                      if (pg!=null && pg.getName()!=null) {
+                                          request.setAttribute("groupName",pg.getName());%>
+                                          <span class="verbosePropertyListing"><a class="propertyLink" href="${propertyEditLink}"/>${localName}</a> (object property); display tier ${displayTier} within group ${groupName}; display level: ${displayCue}; update level: ${updateCue}</span>
+      <%                              } else {%>
+                                          <span class="verbosePropertyListing"><a class="propertyLink" href="${propertyEditLink}"/>${localName}</a> (object property); display tier ${displayTier}; display level: ${displayCue}; update level: ${updateCue}</span>
+      <%                              } %>
+                                  </c:when>
+                                  <c:otherwise>
+                                      <span class="verbosePropertyListing"><a class="propertyLink" href="${propertyEditLink}"/>${localName}</a> (object property); display tier ${displayTier}; display level: ${displayCue}; update level: ${updateCue}</span>
+                                  </c:otherwise>
+                              </c:choose>
+                          </c:if>
+        					<%-- end Verbose property display additions for object properties --%>
+					    		
 	    						<c:set var="displayLimit" value="${objProp.domainDisplayLimit}"/>
 
 								<c:if test="${displayLimit<0}">
@@ -173,30 +197,42 @@ public static Log log = LogFactory.getLog("edu.cornell.mannlib.vitro.webapp.jsp.
 								<c:if test="${objRows>0}">
 	        						<ul class='properties'>
 	    						</c:if>
-					            <c:forEach items="${objProp.objectPropertyStatements}" var="objPropertyStmt">
+	    						<c:set var="collateByClass" value="<%=op.getCollateBySubclass()%>"/>
+        					<c:if test="${collateByClass}" >
+        						<c:set var="collateClassesShownCount" value="0"/>
+        						<c:set var="collateCurrentClass" value="_firstOne"/>        						        										
+        					</c:if>
+					        <c:forEach items="${objProp.objectPropertyStatements}" var="objPropertyStmt">					        					        
+						        <c:set var="sameClass" value="false"/>
+						        <c:forEach items="${objPropertyStmt.object.VClasses}" var="vclass">
+						           <c:if test="${ vclass.URI == collateCurrentClass }">
+										<c:set var="sameClass" value="true"/>																			
+								   </c:if>					           
+					            </c:forEach>
+					        
+						        <c:if test="${ collateByClass && ( !sameClass || collateCurrentClass == '_firstOne') }">						   
+				            		<c:if test="${ collateClassesShownCount > 0 }">
+				            			</ul></li><!-- collateClasses -->
+				            		</c:if>
+				            		<c:set var="collateCurrentClass" value="${objPropertyStmt.object.VClassURI}" />				            			            
+				            		<c:set var="collateCurrentClassName" value="${objPropertyStmt.object.VClass.name}" />
+				            		<c:set var="collateClassesShownCount" value="${collateClassesShown + 1}"/>		            		
+				            		<li>
+				            		<h5 class="collate">${collateCurrentClassName}</h5>
+				            		<ul class='properties'><!-- collateClasses -->
+	      		                </c:if>
+	      		                
                                     <li><span class="statementWrap">
      								<c:set var="opStmt" value="${objPropertyStmt}" scope="request"/>
            							<c:url var="propertyLink" value="/entity">
                							<c:param name="home" value="${portal.portalId}"/>
                							<c:param name="uri" value="${objPropertyStmt.object.URI}"/>
-               							<%--
-<%										ObjectPropertyStatement oStmt = (ObjectPropertyStatement)request.getAttribute("opStmt");
-										if (oStmt!=null) {
-											Individual obj= (Individual)oStmt.getObject();
-											if (obj != null) {
-												if (!obj.doesFlag1Match(currentPortalId)) {%>
-													<c:param name="jump" value="true"/>
-<%												}
-											}
-										}%>
-										--%>
            							</c:url>
+           							
+           							<% String customShortView = MiscWebUtils.getCustomShortView(request); %>
+	         						<c:set var="altRenderJsp" value="<%= customShortView %>" />	         						
 									<c:remove var="opStmt" scope="request"/>
-                                    <c:forEach items="${objPropertyStmt.object.VClasses}" var="type">
-                                        <c:if test="${!empty type.customShortView}">
-                                            <c:set var="altRenderJsp" value="${type.customShortView}"/>
-                                        </c:if>
-                                    </c:forEach>
+									
                                     <c:choose>
                                         <c:when test="${!empty altRenderJsp}">
                                             <c:set scope="request" var="individual" value="${objPropertyStmt.object}"/>
@@ -217,8 +253,9 @@ public static Log log = LogFactory.getLog("edu.cornell.mannlib.vitro.webapp.jsp.
                            					  <c:if test="${empty editLinks}"><em class="nonEditable">(non-editable)</em></c:if>
           					                </c:if>
                                     </span></li>
-                                </c:forEach>
-                                <c:if test="${objRows > 0}"></ul></c:if>
+							</c:forEach>
+                            <c:if test="${ collateByClass && collateClassesShownCount > 0 }"></ul></li><!-- collate end --></c:if>
+                            <c:if test="${objRows > 0}"></ul></c:if>
                             </div><!-- ${objProp.localName} -->
                         </c:if>
 <%                  } else if (p instanceof DataProperty) {
@@ -235,7 +272,7 @@ public static Log log = LogFactory.getLog("edu.cornell.mannlib.vitro.webapp.jsp.
             			<c:set var="addable" value=""/><c:if test="${dataRows >= 1 && displayLimit > 1}"><c:set var="addable" value=" addable"/></c:if>
             			
 						<div id="${dataProp.localName}" class="propsItem dataItem${first}${last}${multiItem}${addable}" style="${dataStyle}">
-							<h4>${dataProp.editLabel}</h4>
+							<h4>${dataProp.label}</h4>
 					    	<c:if test="${showSelfEdits || showCuratorEdits}">
                                 <c:choose>
                                     <c:when test="${dataRows == 1 && displayLimit==1 }">
@@ -249,6 +286,46 @@ public static Log log = LogFactory.getLog("edu.cornell.mannlib.vitro.webapp.jsp.
                                     </c:otherwise>
                                 </c:choose>
                             </c:if>
+                            
+                            <%-- Verbose property display additions for data properties, using context variable verbosePropertyListing --%>
+                	                <c:if test="${showCuratorEdits && verbosePropertyListing}">
+                	                    <c:url var="propertyEditLink" value="/datapropEdit">
+                	                        <c:param name="home" value="${portal.portalId}"/>
+                	                        <c:param name="uri" value="${dataProp.URI}"/>
+                	                    </c:url>
+                	                    <c:choose>
+                	                        <c:when test="${!empty dataProp.hiddenFromDisplayBelowRoleLevel.label}"><c:set var="displayCue" value="${dataProp.hiddenFromDisplayBelowRoleLevel.label}"/></c:when>
+                	                        <c:otherwise><c:set var="displayCue" value="unspecified"/></c:otherwise>
+                	                    </c:choose>
+                	                    <c:choose>
+                	                        <c:when test="${!empty dataProp.prohibitedFromUpdateBelowRoleLevel.label}"><c:set var="updateCue" value="${dataProp.prohibitedFromUpdateBelowRoleLevel.label}"/></c:when>
+                	                        <c:otherwise><c:set var="updateCue" value="unspecified"/></c:otherwise>
+                	                    </c:choose>
+                	                    <c:choose>
+                	                        <c:when test="${!empty dataProp.localNameWithPrefix}"><c:set var="localName" value="${dataProp.localNameWithPrefix}"/></c:when>
+                	                        <c:otherwise><c:set var="localName" value="no local name"/></c:otherwise>
+                	                    </c:choose>
+                	                    <c:choose>
+                	                        <c:when test="${!empty dataProp.displayTier}"><c:set var="displayTier" value="${dataProp.displayTier}"/></c:when>
+                	                        <c:otherwise><c:set var="displayTier" value="blank"/></c:otherwise>
+                	                    </c:choose>
+                	                    <c:choose>
+                	                        <c:when test="${!empty dataProp.groupURI}">
+                	<%                          PropertyGroup pg = pgDao.getGroupByURI(dp.getGroupURI());
+                	                            if (pg!=null && pg.getName()!=null) {
+                	                                request.setAttribute("groupName",pg.getName());%>
+                	                                <span class="verbosePropertyListing"><a class="propertyLink" href="${propertyEditLink}"/>${localName}</a> (data property); display tier ${displayTier} within group ${groupName}; display level: ${displayCue}; update level: ${updateCue}</span>
+                	<%                          } else {%>
+                	                                <span class="verbosePropertyListing"><a class="propertyLink" href="${propertyEditLink}"/>${localName}</a> (data property); display tier ${displayTier}; display level: ${displayCue}; update level: ${updateCue}</span>
+                	<%                          } %>
+                	                        </c:when>
+                	                        <c:otherwise>
+                	                            <span class="verbosePropertyListing"><a class="propertyLink" href="${propertyEditLink}"/>${localName}</a> (data property); display tier ${displayTier}; display level: ${displayCue}; update level: ${updateCue}</span>
+                	                        </c:otherwise>
+                	                    </c:choose>
+                	                </c:if>
+                	                <%-- end Verbose property display additions for data properties --%>
+                            
                             <c:if test="${displayLimit<0}">
                             	<%-- set to an arbitrary but high positive limit if unset on property, i.e. -1 --%>
                                 <c:set var="displayLimit" value="32"/>
@@ -268,7 +345,7 @@ public static Log log = LogFactory.getLog("edu.cornell.mannlib.vitro.webapp.jsp.
                                             <c:when test='${dataRows==1}'>
                                               <span class="statementWrap">
                                               	${dataPropertyStmt.data}
-                                            	<c:if test='${displayLimit>1 && (showSelfEdits || showCuratorEdits)}'>
+                                            	<c:if test='${showSelfEdits || showCuratorEdits}'>
                                             	    <c:set var="editLinks"><edLnk:editLinks item="${dataPropertyStmt}" icons="false"/></c:set>
                                        					  <c:if test="${!empty editLinks}"><span class="editLinks">${editLinks}</span></c:if>
                                        					  <c:if test="${empty editLinks}"><em class="nonEditable">(non-editable)</em></c:if>
@@ -313,12 +390,12 @@ public static Log log = LogFactory.getLog("edu.cornell.mannlib.vitro.webapp.jsp.
 				%>
 				</div><!-- propsWrap -->
 			</div><!-- class="propsCategory" -->
+		</c:if>
 			<c:if test="${showSelfEdits || showCuratorEdits}">
-		    	<a class="backToTop" href="#wrap" title="jump to top of the page">back to top</a>
+		    	<a class="backToTop" href="#content" title="jump to top of the page">back to top</a>
 			</c:if>
 <%		} // end for (PropertyGroup g : groupsList)
     } else {
         log.debug("incoming groups list with merged properties not found as request attribute for subject "+subject.getName()+"\n");
     }
 %>
-

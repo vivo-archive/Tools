@@ -1,30 +1,4 @@
-<%--
-Copyright (c) 2010, Cornell University
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-    * Redistributions of source code must retain the above copyright notice,
-      this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright notice,
-      this list of conditions and the following disclaimer in the documentation
-      and/or other materials provided with the distribution.
-    * Neither the name of Cornell University nor the names of its contributors
-      may be used to endorse or promote products derived from this software
-      without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
---%>
+<%-- $This file is distributed under the terms of the license in /doc/license.txt$ --%>
 
 <%@ taglib uri="http://java.sun.com/jstl/core" prefix="c"%><%/* this odd thing points to something in web.xml */ %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
@@ -51,7 +25,6 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 <c:set var="searchViewPrefix" value="/templates/search/"/>
 <c:set var='entities' value='${requestScope.entities}' /><%/* just moving this into page scope for easy use */ %>
 <c:set var='portal' value='${requestScope.portal}' />
-<c:set var='IMG_DIR' value='images/' />
 <c:set var='IMG_WIDTH' value='75'/>
 <jsp:include page="/templates/alpha/alphaIndex.jsp"/>
 <ul class='tabEntities entityListForTab'>
@@ -102,13 +75,12 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             </c:if>
             <c:forEach items='${ent.linksList}' var="entLink"><span class="tab-extLink"> | <c:url var="entLinkUrl" value="${entLink.url}"/><a class="externalLink" href="<c:out value="${entLinkUrl}"/>">${entLink.anchor}</a></span></c:forEach>
             <c:choose>
-            <c:when test='${not empty ent.imageThumb }'>
+            <c:when test='${not empty ent.thumbUrl }'>
             	<c:url var="imageHref" value="entity">
     						<c:param name="home" value="${sessionScope.currentPortalId}"/>
     						<c:param name="uri" value="${ent.URI}"/>
     					</c:url>
-            	<c:url var="imageSrc" value="${IMG_DIR}${ent.imageThumb}"/>
-                  <div class="tab-image"><a class="image" href="<c:out value="${imageHref}"/>"><img width="${IMG_WIDTH}" src="<c:out value="${imageSrc}"/>" title="${ent.name}" alt="" /></a></div>
+                  <div class="tab-image"><a class="image" href="<c:out value="${imageHref}"/>"><img width="${IMG_WIDTH}" src="${pageContext.request.contextPath}${ent.thumbUrl}" title="${ent.name}" alt="" /></a></div>
                   <c:if test="${not empty ent.blurb}"><div class='blurb'>${ent.blurb}</div></c:if>
             </c:when>
             <c:otherwise>
@@ -119,4 +91,35 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </c:forEach>
 </ul>
 
+<%-- Show pages to select from --%>
+<%  
+if( request.getAttribute("alpha") != null && ! "all".equalsIgnoreCase((String)request.getAttribute("alpha"))) {  
+  request.setAttribute("pageAlpha",request.getAttribute("alpha"));
+}else{
+  request.setAttribute("pageAlpha",request.getAttribute("all"));
+}
+%>
+
+<c:if test="${ requestScope.showPages }">
+    <div class="searchpages minimumFontMain">
+    Pages:
+	<c:forEach items='${requestScope.pages }' var='page'>
+	   <c:url var='pageUrl' value=".${requestScope.servlet}">
+	     <c:param name ="primary">${requestScope.tabId}</c:param>
+	     <c:param name="page">${page.index}</c:param>	     
+	     <c:if test="${not empty requestScope.pageAlpha}">	     
+	       <c:param name="alpha">${requestScope.pageAlpha}</c:param>
+          </c:if>
+	   </c:url>
+	   <c:if test="${ page.selected }">
+	     ${page.text}
+	   </c:if>
+	   <c:if test="${ not page.selected }">
+	     <a class="minimumFontMain" href="${pageUrl}">${page.text} </a>    
+	   </c:if>   
+	</c:forEach>
+    </div>
+</c:if>
+
+<jsp:include page="/templates/entity/entityListPages.jsp"/>
 

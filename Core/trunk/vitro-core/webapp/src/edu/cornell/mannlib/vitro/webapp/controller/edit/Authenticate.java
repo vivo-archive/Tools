@@ -1,291 +1,444 @@
-/*
-Copyright (c) 2010, Cornell University
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-    * Redistributions of source code must retain the above copyright notice,
-      this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright notice,
-      this list of conditions and the following disclaimer in the documentation
-      and/or other materials provided with the distribution.
-    * Neither the name of Cornell University nor the names of its contributors
-      may be used to endorse or promote products derived from this software
-      without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-*/
+/* $This file is distributed under the terms of the license in /doc/license.txt$ */
 
 package edu.cornell.mannlib.vitro.webapp.controller.edit;
 
-import java.net.URLEncoder;
-import java.util.Calendar;
+import static edu.cornell.mannlib.vitro.webapp.controller.login.LoginProcessBean.State.FORCED_PASSWORD_CHANGE;
+import static edu.cornell.mannlib.vitro.webapp.controller.login.LoginProcessBean.State.LOGGED_IN;
+import static edu.cornell.mannlib.vitro.webapp.controller.login.LoginProcessBean.State.LOGGING_IN;
+import static edu.cornell.mannlib.vitro.webapp.controller.login.LoginProcessBean.State.NOWHERE;
+
+import java.io.IOException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.commons.codec.binary.Hex;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import com.hp.hpl.jena.ontology.OntModel;
 
-import edu.cornell.mannlib.vedit.beans.LoginFormBean;
-import edu.cornell.mannlib.vitro.webapp.auth.policy.RoleBasedPolicy.AuthRole;
+import edu.cornell.mannlib.vedit.beans.LoginStatusBean;
+import edu.cornell.mannlib.vedit.beans.LoginStatusBean.AuthenticationSource;
 import edu.cornell.mannlib.vitro.webapp.beans.User;
-import edu.cornell.mannlib.vitro.webapp.controller.Controllers;
 import edu.cornell.mannlib.vitro.webapp.controller.VitroHttpServlet;
-import edu.cornell.mannlib.vitro.webapp.dao.UserDao;
-import edu.cornell.mannlib.vitro.webapp.dao.WebappDaoFactory;
-import edu.cornell.mannlib.vitro.webapp.dao.jena.LoginEvent;
+import edu.cornell.mannlib.vitro.webapp.controller.VitroRequest;
+import edu.cornell.mannlib.vitro.webapp.controller.authenticate.Authenticator;
+import edu.cornell.mannlib.vitro.webapp.controller.authenticate.LoginRedirector;
+import edu.cornell.mannlib.vitro.webapp.controller.login.LoginProcessBean;
+import edu.cornell.mannlib.vitro.webapp.controller.login.LoginProcessBean.Message;
+import edu.cornell.mannlib.vitro.webapp.controller.login.LoginProcessBean.State;
 import edu.cornell.mannlib.vitro.webapp.dao.jena.LoginLogoutEvent;
 
-public class Authenticate extends VitroHttpServlet  {
-    private static final int DEFAULT_PORTAL_ID=1;
-    public static final String USER_SESSION_MAP_ATTR = "userURISessionMap";
-    private UserDao userDao = null;
-    private static final Log log = LogFactory.getLog(Authenticate.class.getName());
+public class Authenticate extends VitroHttpServlet {
+	private static final Log log = LogFactory.getLog(Authenticate.class
+			.getName());
 
-    public void doPost( HttpServletRequest request, HttpServletResponse response ) {
-        try {
-            HttpSession session = request.getSession();
-            if(session.isNew()){
-                session.setMaxInactiveInterval(300); // seconds, not milliseconds
-            }
-            userDao = ((WebappDaoFactory)session.getServletContext().getAttribute("webappDaoFactory")).getUserDao();
-            LoginFormBean f = (LoginFormBean) session.getAttribute( "loginHandler" );
+	/** The username field on the login form. */
+	private static final String PARAMETER_USERNAME = "loginName";
 
-            //obtain a db connection and perform a db query
-            //ensuring that the username exists
+	/** The password field on the login form. */
+	private static final String PARAMETER_PASSWORD = "loginPassword";
 
-            // JCR 20040905 passing on portal home parameter
-            String portalIdStr=(portalIdStr=request.getParameter("home"))==null?String.valueOf(DEFAULT_PORTAL_ID):portalIdStr;
-            //request.setAttribute("home",portalIdStr);
+	/** The new password field on the password change form. */
+	private static final String PARAMETER_NEW_PASSWORD = "newPassword";
 
-            // Build the redirect URLs
-            String contextPath = request.getContextPath();
-            String urlParams = "?home=" + portalIdStr + "&login=block";
-            String loginUrl = contextPath + Controllers.LOGIN + urlParams;
-            String siteAdminUrl = contextPath + Controllers.SITE_ADMIN + urlParams;
+	/** The confirm password field on the password change form. */
+	private static final String PARAMETER_CONFIRM_PASSWORD = "confirmPassword";
 
-            if (userDao==null) {
-                f.setErrorMsg("loginPassword","unable to get UserDao");
-                f.setLoginStatus("no UserDao");
-                response.sendRedirect(loginUrl);
-                return;
-            }
+	/** If this parameter is "true" (ignoring case), cancel the login. */
+	private static final String PARAMETER_CANCEL = "cancel";
 
-            /* used for encoding cleartext passwords sent via http before store in database
-            String loginPassword = "";
-            String passwordQuery = "SELECT PASSWORD('" + f.getLoginPassword() + "')";
-            ResultSet ps = stmt.executeQuery( passwordQuery );
-            while ( ps.next() ) {
-                loginPassword = ps.getString(1);
-            }
-            */
-            String userEnteredPasswordAfterMd5Conversion=f.getLoginPassword(); // won't be null
-            if ( userEnteredPasswordAfterMd5Conversion.equals("") ) { // shouldn't get through JS form verification
-                f.setErrorMsg( "loginPassword","Please enter a password" );
-                f.setLoginStatus("bad_password");
-                response.sendRedirect(loginUrl);
-                return;
-            }
+	/** Where do we find the User/Session map in the servlet context? */
+	public static final String USER_SESSION_MAP_ATTR = "userURISessionMap";
 
-            User user = userDao.getUserByUsername(f.getLoginName());
+	/**
+	 * Find out where they are in the login process, process any input, record
+	 * the new state, and show the next page.
+	 */
+	public void doPost(HttpServletRequest request, HttpServletResponse response) {
 
-            if (user==null) {
-                f.setErrorMsg( "loginName","No user found with username " + f.getLoginName() );
-                f.setLoginStatus("unknown_username");
-                response.sendRedirect(loginUrl);
-                return;
-            }
+		VitroRequest vreq = new VitroRequest(request);
 
-            // logic for authentication
-            // first check for new users (loginCount==0)
-            //   1) cold (have username but haven't received initial password)
-            //   2) initial password has been set but user mis-typed it
-            //   3) correctly typed initial password and oldpassword set to provided password; have to enter a different one
-            //   4) entered same password again
-            //   5) entered a new private password, and bypass this stage because logincount set to 1
-            // then check for users DBA has set to require changing password (md5password is null, oldpassword is not)
-            //
-            // check password; dbMd5Password is md5password from database
-            if (user.getLoginCount() == 0 ) { // new user
-                if ( user.getMd5password() == null ) { // user is known but has not been given initial password
-                    f.setErrorMsg( "loginPassword", "Please request a username and initial password via the link below" ); // store password in database but force immediate re-entry
-                    f.setLoginStatus("first_login_no_password");
-                } else if (!user.getMd5password().equals( userEnteredPasswordAfterMd5Conversion )) { // mis-typed CCRP-provided initial password
-                    if ( user.getOldPassword() == null ) { // did not make it through match of initially supplied password
-                        f.setErrorMsg( "loginPassword", "Please try entering provided password again" );
-                        f.setLoginStatus("first_login_mistyped");
-                    } else if (user.getOldPassword().equals( userEnteredPasswordAfterMd5Conversion ) ) {
-                        f.setErrorMsg( "loginPassword", "Please pick a different password from the one provided initially" );
-                        f.setLoginStatus("changing_password_repeated_old");
-                    } else { // successfully provided different, private password
-                        f.setErrorMsg( "loginPassword", "Please re-enter new private password for confirmation" );
-                        user.setMd5password(userEnteredPasswordAfterMd5Conversion);
-                        user.setLoginCount(1);
-                        userDao.updateUser(user);
-                        f.setLoginStatus("changing_password");
-                    }                    
-                } else if (f.getLoginStatus().equals("first_login_changing_password")) { // User has been prompted to change password, but has re-entered the original one
-                    f.setErrorMsg( "loginPassword", "Please pick a different password from the one provided initially" ); // store password in database but force immediate re-entry
-                    user.setOldPassword(user.getMd5password());
-                    userDao.updateUser(user);
-                    f.setLoginStatus("first_login_changing_password");                                       
-                } else { // entered a password that matches initial md5password in database; now force them to change it
-                    // oldpassword could be null or not null depending on number of mistries
-                    f.setErrorMsg( "loginPassword", "Please now choose a private password" ); // store password in database but force immediate re-entry
-                    user.setOldPassword(user.getMd5password());
-                    userDao.updateUser(user);
-                    f.setLoginStatus("first_login_changing_password");     
-                }
-                response.sendRedirect(loginUrl);
-                return;
-            } else if ( user.getMd5password()==null ) { // DBA has forced entry of a new password for user with a loginCount > 0
-                if ( user.getOldPassword() != null && user.getOldPassword().equals( userEnteredPasswordAfterMd5Conversion ) ) {
-                    f.setErrorMsg( "loginPassword", "Please pick a different password from your previous one" );
-                    f.setLoginStatus("changing_password_repeated_old");
-                } else if (f.getLoginStatus().equals("changing_password")){ // User has been prompted to change password, but has re-entered the original one
-                    f.setErrorMsg( "loginPassword", "Please pick a different password from the one provided initially" );
-                    user.setMd5password(userEnteredPasswordAfterMd5Conversion);
-                    userDao.updateUser(user);
-                    f.setLoginStatus("changing_password");                                           
-                } else { // User has entered provided password; now prompt to change password
-                    f.setErrorMsg( "loginPassword", "Please re-enter new password for confirmation" );
-                    user.setMd5password(userEnteredPasswordAfterMd5Conversion);
-                    userDao.updateUser(user);
-                    f.setLoginStatus("changing_password");
-                }
-                response.sendRedirect(loginUrl);
-                return;
-            } else if (!user.getMd5password().equals( userEnteredPasswordAfterMd5Conversion )) {
-                f.setErrorMsg( "loginPassword", "Incorrect password: try again");
-                f.setLoginStatus("bad_password");
-                f.setLoginPassword(""); // don't even reveal how many characters there were
-                response.sendRedirect(loginUrl);
-                return;
-            }
+		try {
+			// Where do we stand in the process?
+			State entryState = getCurrentLoginState(vreq);
+			dumpStateToLog("entry", entryState, vreq);
 
-            //set the login bean properties from the database
+			// Act on any input.
+			switch (entryState) {
+			case NOWHERE:
+				processInputNowhere(vreq);
+				break;
+			case LOGGING_IN:
+				processInputLoggingIn(vreq);
+				break;
+			case FORCED_PASSWORD_CHANGE:
+				processInputChangePassword(vreq);
+				break;
+			default: // LOGGED_IN:
+				processInputLoggedIn(vreq);
+				break;
+			}
 
-            //System.out.println("authenticated; setting login status in loginformbean");
+			// Now where do we stand?
+			State exitState = getCurrentLoginState(vreq);
+			dumpStateToLog("exit", exitState, vreq);
 
-            f.setUserURI(user.getURI());
-            f.setLoginStatus( "authenticated" );
-            f.setSessionId( session.getId());
-            f.setLoginRole( user.getRoleURI() );
-            try {
-            	int loginRoleInt = Integer.decode(f.getLoginRole());
-            	if( (loginRoleInt>1) && (session.isNew()) ) {
-                    session.setMaxInactiveInterval(32000); // set longer timeout for editors
-                }
-            } catch (Exception e) {}
-            // TODO : might be a problem in next line - no ID
-            f.setLoginUserId( -2 );
-            //f.setEmailAddress ( email );
-            f.setLoginPassword( "" );
-            f.setErrorMsg( "loginPassword", "" ); // remove any error messages
-            f.setErrorMsg( "loginUsername", "" );
+			// Send them on their way.
+			switch (exitState) {
+			case NOWHERE:
+				redirectCancellingUser(vreq, response);
+				break;
+			case LOGGING_IN:
+				showLoginScreen(vreq, response);
+				break;
+			case FORCED_PASSWORD_CHANGE:
+				showLoginScreen(vreq, response);
+				break;
+			default: // LOGGED_IN:
+				new LoginRedirector(vreq, response).redirectLoggedInUser();
+				break;
+			}
+		} catch (Exception e) {
+			showSystemError(e, response);
+		}
 
-            //System.out.println("updating loginCount and modTime");
-            
-            Map<String,HttpSession> userURISessionMap = getUserURISessionMapFromContext( getServletContext() );
-            userURISessionMap.put( user.getURI(), request.getSession() );
-            
-            sendLoginNotifyEvent(new LoginEvent( user.getURI() ), getServletContext(), session);                
-                
-            user.setLoginCount(user.getLoginCount()+1);
-            userDao.updateUser(user);
+	}
 
-            if ( user.getLoginCount() == 2 ) { // first login
-                Calendar cal = Calendar.getInstance();
-                user.setFirstTime(cal.getTime());
-                userDao.updateUser(user);
-            }
+	/**
+	 * Where are we in the process? Logged in? Not? Somewhere in between?
+	 */
+	private State getCurrentLoginState(HttpServletRequest request) {
+		HttpSession session = request.getSession(false);
+		if (session == null) {
+			log.debug("no session: current state is NOWHERE");
+			return NOWHERE;
+		}
 
-            /*
-             *If you set a postLoginRequest attribute in the session and forward to about
-             *then this will attempt to send the client back to the original page after the login.             
-             */
-            String forwardStr = (String) request.getSession().getAttribute("postLoginRequest");
-            request.getSession().removeAttribute("postLoginRequest");
-            if (forwardStr == null) {
-            	String contextPostLoginRequest = (String) getServletContext().getAttribute("postLoginRequest");
-            	if (contextPostLoginRequest != null) {
-            		forwardStr = (contextPostLoginRequest.indexOf(":") == -1) 
-            			? request.getContextPath() + contextPostLoginRequest 
-            			: contextPostLoginRequest;
-            	}
-            }
-            
-            if( AuthRole.USER.roleUri().equals( user.getRoleURI() ) ){
-            	/* if this is a self editor, redirect the to their page */
-	           	List<String> uris = userDao.getIndividualsUserMayEditAs(user.getURI());
-	           	if( uris != null && uris.size() > 0 ){
-	           		forwardStr = request.getContextPath() + "/individual?uri=" + URLEncoder.encode(uris.get(0), "UTF-8");
-	           	}
-            }
-           
-            
-            if (forwardStr != null) {
-                response.sendRedirect(forwardStr);
-            } else {
-                response.sendRedirect(siteAdminUrl);
-                //RequestDispatcher rd = getServletContext().getRequestDispatcher(url);
-                //rd.forward(request,response);
-            }
-        } catch (Throwable t) {
-            log.error( t.getMessage() );
-            t.printStackTrace();
-        }
-    }
+		if (LoginStatusBean.getBean(request).isLoggedIn()) {
+			log.debug("found a LoginStatusBean: current state is LOGGED IN");
+			return LOGGED_IN;
+		}
 
-    public static void sendLoginNotifyEvent(LoginLogoutEvent event, ServletContext context, HttpSession session){
-        Object sessionOntModel = null;
-        if( session != null )
-            sessionOntModel = session.getAttribute("jenaOntModel");
-        Object contextOntModel = null;
-        if( context != null )
-            contextOntModel = context.getAttribute("jenaOntModel");
-        
-        OntModel jenaOntModel = 
-           ( (sessionOntModel != null && sessionOntModel instanceof OntModel) 
-            ? (OntModel)sessionOntModel: (OntModel) context.getAttribute("jenaOntModel") );
-            
-        if( jenaOntModel == null ){
-            log.error( "Unable to notify audit model of login event because no model could be found");
-        } else {
-            if( event == null ){
-                log.warn("Unable to notify audit model of login because a null event was passed");
-            }else{
-                jenaOntModel.getBaseModel().notifyEvent( event );
-            }
-        }
-    }
-    
-    public static Map<String,HttpSession> getUserURISessionMapFromContext( ServletContext ctx ) {
-    	Map<String,HttpSession> m = (Map<String,HttpSession>) ctx.getAttribute( USER_SESSION_MAP_ATTR );
-        if ( m == null ) {
-        	m = new HashMap<String,HttpSession>();
-        	ctx.setAttribute( USER_SESSION_MAP_ATTR, m );
-        }
-        return m;
-    }
-     
+		if (LoginProcessBean.isBean(request)) {
+			State state = LoginProcessBean.getBean(request).getState();
+			log.debug("state from LoginProcessBean is " + state);
+			return state;
+		} else {
+			log.debug("no LoginSessionBean, no LoginProcessBean: "
+					+ "current state is NOWHERE");
+			return NOWHERE;
+		}
+	}
+
+	/**
+	 * They just got here. Start the process.
+	 */
+	private void processInputNowhere(HttpServletRequest request) {
+		transitionToLoggingIn(request);
+	}
+
+	/**
+	 * They are logging in. If they get it wrong, let them know. If they get it
+	 * right, record it.
+	 */
+	private void processInputLoggingIn(HttpServletRequest request) {
+		String username = request.getParameter(PARAMETER_USERNAME);
+		String password = request.getParameter(PARAMETER_PASSWORD);
+
+		LoginProcessBean bean = LoginProcessBean.getBean(request);
+		bean.clearMessage();
+		log.trace("username=" + username + ", password=" + password + ", bean="
+				+ bean);
+
+		if ((username == null) || username.isEmpty()) {
+			bean.setMessage(Message.NO_USERNAME);
+			return;
+		}
+
+		bean.setUsername(username);
+
+		User user = getAuthenticator(request).getUserByUsername(username);
+		log.trace("User is " + (user == null ? "null" : user.getURI()));
+
+		if (user == null) {
+			bean.setMessage(Message.UNKNOWN_USERNAME, username);
+			return;
+		}
+
+		if ((password == null) || password.isEmpty()) {
+			bean.setMessage(Message.NO_PASSWORD);
+			return;
+		}
+
+		if (!getAuthenticator(request).isCurrentPassword(username, password)) {
+			bean.setMessage(Message.INCORRECT_PASSWORD);
+			return;
+		}
+
+		// Username and password are correct. What next?
+		if (isFirstTimeLogin(user)) {
+			transitionToForcedPasswordChange(request);
+		} else {
+			transitionToLoggedIn(request, username);
+		}
+	}
+
+	/**
+	 * <pre>
+	 * They are changing passwords. 
+	 * - If they cancel, let them out without checking for problems. 
+	 * - Otherwise, 
+	 *   - If they get it wrong, let them know. 
+	 *   - If they get it right, record it.
+	 * </pre>
+	 */
+	private void processInputChangePassword(HttpServletRequest request) {
+		String newPassword = request.getParameter(PARAMETER_NEW_PASSWORD);
+		String confirm = request.getParameter(PARAMETER_CONFIRM_PASSWORD);
+		String cancel = request.getParameter(PARAMETER_CANCEL);
+
+		if (Boolean.valueOf(cancel)) {
+			// It's over, man. Let them go.
+			transitionToNowhere(request);
+			return;
+		}
+
+		LoginProcessBean bean = LoginProcessBean.getBean(request);
+		bean.clearMessage();
+		log.trace("newPassword=" + newPassword + ", confirm=" + confirm
+				+ ", bean=" + bean);
+
+		if ((newPassword == null) || newPassword.isEmpty()) {
+			bean.setMessage(Message.NO_NEW_PASSWORD);
+			return;
+		}
+
+		if (!newPassword.equals(confirm)) {
+			bean.setMessage(Message.MISMATCH_PASSWORD);
+			return;
+		}
+
+		if ((newPassword.length() < User.MIN_PASSWORD_LENGTH)
+				|| (newPassword.length() > User.MAX_PASSWORD_LENGTH)) {
+			bean.setMessage(Message.PASSWORD_LENGTH, User.MIN_PASSWORD_LENGTH,
+					User.MAX_PASSWORD_LENGTH);
+			return;
+		}
+
+		String username = bean.getUsername();
+
+		if (getAuthenticator(request).isCurrentPassword(username, newPassword)) {
+			bean.setMessage(Message.USING_OLD_PASSWORD);
+			return;
+		}
+
+		// New password is acceptable. Store it and go on.
+		transitionToLoggedIn(request, username, newPassword);
+	}
+
+	/**
+	 * They are already logged in. There's nothing to do; no transition.
+	 */
+	@SuppressWarnings("unused")
+	private void processInputLoggedIn(HttpServletRequest request) {
+	}
+
+	/**
+	 * Has this user ever logged in before?
+	 */
+	private boolean isFirstTimeLogin(User user) {
+		if (user.getLoginCount() == 0) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	/**
+	 * State change: they are starting the login process.
+	 */
+	private void transitionToLoggingIn(HttpServletRequest request) {
+		log.debug("Starting the login process.");
+		LoginProcessBean.getBean(request).setState(LOGGING_IN);
+	}
+
+	/**
+	 * State change: username and password were correct, but now we require a
+	 * new password.
+	 */
+	private void transitionToForcedPasswordChange(HttpServletRequest request) {
+		log.debug("Forcing first-time password change");
+		LoginProcessBean.getBean(request).setState(FORCED_PASSWORD_CHANGE);
+	}
+
+	/**
+	 * State change: all requirements are satisfied. Log them in.
+	 */
+	private void transitionToLoggedIn(HttpServletRequest request,
+			String username) {
+		log.debug("Completed login: " + username);
+		getAuthenticator(request).recordLoginAgainstUserAccount(username,
+				AuthenticationSource.INTERNAL);
+		LoginProcessBean.removeBean(request);
+	}
+
+	/**
+	 * State change: all requirements are satisfied. Change their password and
+	 * log them in.
+	 */
+	private void transitionToLoggedIn(HttpServletRequest request,
+			String username, String newPassword) {
+		log.debug("Completed login: " + username + ", password changed.");
+		getAuthenticator(request).recordNewPassword(username, newPassword);
+		getAuthenticator(request).recordLoginAgainstUserAccount(username,
+				AuthenticationSource.INTERNAL);
+		LoginProcessBean.removeBean(request);
+	}
+
+	/**
+	 * State change: they decided to cancel the login.
+	 */
+	private void transitionToNowhere(HttpServletRequest request) {
+		log.debug("Cancelling login.");
+		LoginProcessBean.removeBean(request);
+	}
+
+	/**
+	 * Exit: there has been an unexpected exception, so show it.
+	 */
+	private void showSystemError(Exception e, HttpServletResponse response) {
+		log.error("Unexpected error in login process", e);
+		try {
+			response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+		} catch (IOException e1) {
+			log.error(e1, e1);
+		}
+	}
+
+	/**
+	 * Exit: user is still logging in, so go back to the page they were on.
+	 */
+	private void showLoginScreen(VitroRequest vreq, HttpServletResponse response)
+			throws IOException {
+		log.debug("logging in.");
+
+		String referringPage = vreq.getHeader("referer");
+		if (referringPage == null) {
+			log.warn("No referring page on the request");
+			referringPage = getHomeUrl(vreq);
+		}
+		response.sendRedirect(referringPage);
+		return;
+	}
+
+	/**
+	 * Exit: user cancelled the login, so show them the home page.
+	 */
+	private void redirectCancellingUser(HttpServletRequest request,
+			HttpServletResponse response) throws IOException {
+		log.debug("User cancelled the login. Redirect to site admin page.");
+		LoginProcessBean.removeBean(request);
+		response.sendRedirect(getHomeUrl(request));
+	}
+
+	/** Get a reference to the Authenticator. */
+	private Authenticator getAuthenticator(HttpServletRequest request) {
+		return Authenticator.getInstance(request);
+	}
+
+	/** What's the URL for the home page? */
+	private String getHomeUrl(HttpServletRequest request) {
+		return request.getContextPath();
+	}
+
+	// ----------------------------------------------------------------------
+	// Public utility methods.
+	// ----------------------------------------------------------------------
+
+	/**
+	 * Encode this password for storage in the database. Apply an MD5 encoding,
+	 * and store the result as a string of hex digits.
+	 */
+	public static String applyMd5Encoding(String password) {
+		try {
+			MessageDigest md = MessageDigest.getInstance("MD5");
+			byte[] digest = md.digest(password.getBytes());
+			char[] hexChars = Hex.encodeHex(digest);
+			return new String(hexChars).toUpperCase();
+		} catch (NoSuchAlgorithmException e) {
+			// This can't happen with a normal Java runtime.
+			throw new RuntimeException(e);
+		}
+	}
+
+	/**
+	 * The servlet context should contain a map from User URIs to
+	 * {@link HttpSession}s. Get a reference to it, creating it if necessary.
+	 */
+	@SuppressWarnings("unchecked")
+	public static Map<String, HttpSession> getUserURISessionMapFromContext(
+			ServletContext ctx) {
+		Map<String, HttpSession> m = (Map<String, HttpSession>) ctx
+				.getAttribute(USER_SESSION_MAP_ATTR);
+		if (m == null) {
+			m = new HashMap<String, HttpSession>();
+			ctx.setAttribute(USER_SESSION_MAP_ATTR, m);
+		}
+		return m;
+	}
+
+	/**
+	 * Let everyone know that somebody has logged in or logged out.
+	 */
+	public static void sendLoginNotifyEvent(LoginLogoutEvent event,
+			ServletContext context, HttpSession session) {
+		if (event == null) {
+			log.warn("Unable to notify audit model of login "
+					+ "because a null event was passed");
+			return;
+		}
+
+		OntModel jenaOntModel = (OntModel) session.getAttribute("jenaOntModel");
+		if (jenaOntModel == null) {
+			jenaOntModel = (OntModel) context.getAttribute("jenaOntModel");
+		}
+		if (jenaOntModel == null) {
+			log.error("Unable to notify audit model of login event "
+					+ "because no model could be found");
+			return;
+		}
+
+		jenaOntModel.getBaseModel().notifyEvent(event);
+	}
+
+	private void dumpStateToLog(String label, State state, VitroRequest vreq) {
+		log.debug("State on " + label + ": " + state);
+		
+		if (log.isTraceEnabled()) {
+			log.trace("Status bean on " + label + ": "
+					+ LoginStatusBean.getBean(vreq));
+
+			LoginProcessBean processBean = null;
+			if (LoginProcessBean.isBean(vreq)) {
+				processBean = LoginProcessBean.getBean(vreq);
+			}
+			log.trace("Process bean on " + label + ": " + processBean);
+		}
+	}
+
+	@Override
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws IOException, ServletException {
+		doPost(request, response);
+	}
+
 }
-

@@ -1,30 +1,4 @@
-/*
-Copyright (c) 2010, Cornell University
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-    * Redistributions of source code must retain the above copyright notice,
-      this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright notice,
-      this list of conditions and the following disclaimer in the documentation
-      and/or other materials provided with the distribution.
-    * Neither the name of Cornell University nor the names of its contributors
-      may be used to endorse or promote products derived from this software
-      without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-*/
+/* $This file is distributed under the terms of the license in /doc/license.txt$ */
 
 package edu.cornell.mannlib.vitro.webapp.controller;
 
@@ -43,12 +17,14 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+import com.hp.hpl.jena.ontology.OntModel;
+import com.hp.hpl.jena.ontology.OntModelSpec;
 import com.hp.hpl.jena.query.DataSource;
+import com.hp.hpl.jena.query.Dataset;
 import com.hp.hpl.jena.query.DatasetFactory;
 import com.hp.hpl.jena.query.Query;
 import com.hp.hpl.jena.query.QueryExecution;
@@ -60,18 +36,15 @@ import com.hp.hpl.jena.query.ResultSetFormatter;
 import com.hp.hpl.jena.query.Syntax;
 import com.hp.hpl.jena.rdf.model.Literal;
 import com.hp.hpl.jena.rdf.model.Model;
+import com.hp.hpl.jena.rdf.model.ModelFactory;
 import com.hp.hpl.jena.rdf.model.ModelMaker;
 import com.hp.hpl.jena.rdf.model.Resource;
 import com.hp.hpl.jena.sparql.resultset.ResultSetFormat;
 import com.hp.hpl.jena.vocabulary.XSD;
 
-import edu.cornell.mannlib.vedit.beans.LoginFormBean;
 import edu.cornell.mannlib.vedit.controller.BaseEditController;
-import edu.cornell.mannlib.vitro.webapp.beans.Portal;
-
-/* @author ass92 */
-
 import edu.cornell.mannlib.vitro.webapp.beans.Ontology;
+import edu.cornell.mannlib.vitro.webapp.beans.Portal;
 import edu.cornell.mannlib.vitro.webapp.dao.OntologyDao;
 
 
@@ -85,8 +58,10 @@ import edu.cornell.mannlib.vitro.webapp.dao.OntologyDao;
 public class SparqlQueryServlet extends BaseEditController {
 
     private static final Log log = LogFactory.getLog(SparqlQueryServlet.class.getName());
+    private static final String kb2 = "http://vitro.mannlib.cornell.edu/default/vitro-kb-2";
 
     protected static final Syntax SYNTAX = Syntax.syntaxARQ;
+    
     
     protected static HashMap<String,ResultSetFormat>formatSymbols = new HashMap<String,ResultSetFormat>();
     static{
@@ -129,28 +104,18 @@ public class SparqlQueryServlet extends BaseEditController {
     throws ServletException, IOException
     {    	    	   	
         super.doGet(request, response);
-        if( !checkLoginStatus(request, response) )
+        // rjy7 Allows any editor (including self-editors) access to this servlet.
+        // This servlet is now requested via Ajax from some custom forms, so anyone
+        // using the custom form needs access rights.
+
+        // TODO Actually, this only allows someone who is logged in to use this servlet.
+        // If a self-editor is not logged in, they will not have access. -- jb
+        if( !checkLoginStatus(request, response) ) {
         	return;
+        }
         
         VitroRequest vreq = new VitroRequest(request);
 
-        Object obj = vreq.getSession().getAttribute("loginHandler");        
-        LoginFormBean loginHandler = null;
-        if( obj != null && obj instanceof LoginFormBean )
-            loginHandler = ((LoginFormBean)obj);
-        if( loginHandler == null ||
-            ! "authenticated".equalsIgnoreCase(loginHandler.getLoginStatus()) ||
-             Integer.parseInt(loginHandler.getLoginRole()) <= 5 ){       
-            HttpSession session = request.getSession(true);
-            
-            session.setAttribute("postLoginRequest",
-                    vreq.getRequestURI()+( vreq.getQueryString()!=null?('?' + vreq.getQueryString()):"" ));
-            String redirectURL=request.getContextPath() + Controllers.SITE_ADMIN + "?login=block";
-            response.sendRedirect(redirectURL);
-            return;
-        }
-        
-        
         Model model = vreq.getJenaOntModel(); // getModel()
         if( model == null ){
             doNoModelInContext(request,response);
@@ -179,29 +144,43 @@ public class SparqlQueryServlet extends BaseEditController {
         }
         
         DataSource dataSource = DatasetFactory.create() ;
+        Dataset dataset = null;
         ModelMaker maker = (ModelMaker) getServletContext().getAttribute("vitroJenaModelMaker");
 
         boolean someModelSet = false;        
         String models[] = request.getParameterValues("sourceModelName");        
         if( models != null && models.length > 0 ){
+        	OntModel ontModel = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM);
             for( String modelName : models ){
                 Model modelNamed = maker.getModel(modelName);
                 if( modelNamed != null ){
                     dataSource.addNamedModel(modelName, modelNamed) ;
+                	// For now, people expect to query these graphs without using 
+                	// FROM NAMED, so we'll also add to the background
+                	ontModel.addSubModel(modelNamed);
                     someModelSet = true;
                 }
-            }         
+            }     
+           
+            if (someModelSet) {
+            	
+            	dataSource.setDefaultModel(ontModel);
+            }
+           
         }
         
-        if( ! someModelSet )
-            dataSource.setDefaultModel(model) ;
-        
-        executeQuery(request, response, resultFormatParam, rdfResultFormatParam, queryParam, dataSource); 
+        if( ! someModelSet ){
+            dataset = vreq.getDataset();
+            if(dataset==null){
+            	dataSource.setDefaultModel(model) ;
+            }
+        }
+        executeQuery(request, response, resultFormatParam, rdfResultFormatParam, queryParam, (dataset != null) ? dataset : dataSource); 
         return;
     }
     
     private void executeQuery(HttpServletRequest req,
-            HttpServletResponse response, String resultFormatParam, String rdfResultFormatParam, String queryParam, DataSource dataSource ) throws IOException {
+            HttpServletResponse response, String resultFormatParam, String rdfResultFormatParam, String queryParam, Dataset dataset ) throws IOException {
         
     	ResultSetFormat rsf = null;
     	/* BJL23 2008-11-06
@@ -219,7 +198,7 @@ public class SparqlQueryServlet extends BaseEditController {
         QueryExecution qe = null;
         try{
             Query query = QueryFactory.create(queryParam, SYNTAX);
-            qe = QueryExecutionFactory.create(query, dataSource);
+            qe = QueryExecutionFactory.create(query, dataset);
             if( query.isSelectType() ){
                 ResultSet results = null;
                 results = qe.execSelect();
@@ -348,7 +327,7 @@ public class SparqlQueryServlet extends BaseEditController {
             /* @author ass92 */
                   
             
-            OntologyDao daoObj = getWebappDaoFactory().getOntologyDao();
+            OntologyDao daoObj = vreq.getFullWebappDaoFactory().getOntologyDao();
             List ontologiesObj = daoObj.getAllOntologies();
             ArrayList prefixList = new ArrayList();
             
@@ -443,7 +422,11 @@ public class SparqlQueryServlet extends BaseEditController {
         "PREFIX swrl:  <http://www.w3.org/2003/11/swrl#>\n" +
         "PREFIX swrlb: <http://www.w3.org/2003/11/swrlb#>\n" +
         "PREFIX vitro: <http://vitro.mannlib.cornell.edu/ns/vitro/0.7#>\n"+
-        "PREFIX vivo:  <http://vivo.library.cornell.edu/ns/0.1#>\n"+
+        "PREFIX vivo:  <http://vivo.library.cornell.edu/ns/0.1#>\n" +
+        "PREFIX bibo: <http://purl.org/ontology/bibo/>\n" +
+        "PREFIX foaf: <http://xmlns.com/foaf/0.1/>\n" +
+        "PREFIX core: <http://vivoweb.org/ontology/core#>\n" +
+        "PREFIX aktp:  <http://www.aktors.org/ontology/portal#>\n"+
         "#\n" +
         "# This query gets all range entities labels and types of a person\n"+
         "# A query like this could be used to get enough info to create a display\n"+

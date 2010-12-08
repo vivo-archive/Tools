@@ -1,30 +1,4 @@
-<%--
-Copyright (c) 2010, Cornell University
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-    * Redistributions of source code must retain the above copyright notice,
-      this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright notice,
-      this list of conditions and the following disclaimer in the documentation
-      and/or other materials provided with the distribution.
-    * Neither the name of Cornell University nor the names of its contributors
-      may be used to endorse or promote products derived from this software
-      without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
---%>
+<%-- $This file is distributed under the terms of the license in /doc/license.txt$ --%>
 
 <%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
@@ -51,7 +25,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 <%@ page import="edu.cornell.mannlib.vitro.webapp.dao.VClassDao" %>
 <%@ page import="edu.cornell.mannlib.vitro.webapp.beans.VClass" %>
 <%@ page import="edu.cornell.mannlib.vitro.webapp.filters.VitroRequestPrep" %>
-<%@ page import="edu.cornell.mannlib.vedit.beans.LoginFormBean" %>
+<%@ page import="edu.cornell.mannlib.vedit.beans.LoginStatusBean" %>
+<%@page import="edu.cornell.mannlib.vitro.webapp.web.MiscWebUtils"%>
 
 <%@ page import="java.util.Collection" %>
 <%@ page import="java.util.Collections" %>
@@ -60,11 +35,12 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.Iterator" %>
 <%@ page import="java.util.HashSet" %>
+<%@page import="java.util.LinkedList"%>
+<%@page import="java.util.Set"%>
 
 <%@ page import="org.apache.commons.logging.Log" %>
 <%@ page import="org.apache.commons.logging.LogFactory" %>
 
-<jsp:useBean id="loginHandler" class="edu.cornell.mannlib.vedit.beans.LoginFormBean" scope="session" />
 <%! 
 public static Log log = LogFactory.getLog("edu.cornell.mannlib.vitro.webapp.jsp.templates.entity.entityMergedPropsList.jsp");
 %>
@@ -73,7 +49,7 @@ public static Log log = LogFactory.getLog("edu.cornell.mannlib.vitro.webapp.jsp.
         log.debug("setting showSelfEdits true");%>
         <c:set var="showSelfEdits" value="${true}"/>
 <%  }
-    if (loginHandler!=null && loginHandler.getLoginStatus()=="authenticated" && Integer.parseInt(loginHandler.getLoginRole())>=loginHandler.getNonEditor()) {
+	if (LoginStatusBean.getBean(request).isLoggedIn()) {
 	    log.debug("setting showCuratorEdits true");%>
 	    <c:set var="showCuratorEdits" value="${true}"/>
 <%  }%>
@@ -84,7 +60,6 @@ public static Log log = LogFactory.getLog("edu.cornell.mannlib.vitro.webapp.jsp.
 	if (subject==null) {
     	throw new Error("Subject individual must be in request scope for dashboardPropsList.jsp");
 	}
-
 	// Nick wants not to use explicit parameters to trigger visibility of a div, but for now we don't just want to always show the 1st one
 	String openingGroupLocalName = (String) request.getParameter("curgroup");
     VitroRequest vreq = new VitroRequest(request);
@@ -121,7 +96,7 @@ public static Log log = LogFactory.getLog("edu.cornell.mannlib.vitro.webapp.jsp.
     		    <c:if test="${showSelfEdits || showCuratorEdits}"><c:set var="classForEditControls" value=" editing"/></c:if>
                 <c:set var="uniqueOpropDivName" value="${fn:replace(objProp.localNameWithPrefix,':','-')}"/>
 				<div class="propsItem ${classForEditControls}" id="${'oprop-'}${uniqueOpropDivName}">
-					<h3 class="propertyName">${objProp.editLabel}</h3>
+					<h3 class="propertyName">${objProp.label}</h3>
 		    		<c:if test="${showSelfEdits || showCuratorEdits}"><edLnk:editLinks item="${objProp}" icons="false" /></c:if>
 
   					<%-- Verbose property display additions for object properties, using context variable verbosePropertyListing --%>
@@ -176,8 +151,16 @@ public static Log log = LogFactory.getLog("edu.cornell.mannlib.vitro.webapp.jsp.
 						<c:set var="collateClassesShownCount" value="0"/>
 						<c:set var="collateCurrentClass" value="_none"/>				
 					</c:if>
-					<c:forEach items="${objProp.objectPropertyStatements}" var="objPropertyStmt">															
-						<c:if test="${ collateByClass && collateCurrentClass!=objPropertyStmt.object.VClassURI}">						   
+					<c:forEach items="${objProp.objectPropertyStatements}" var="objPropertyStmt">
+										
+					    <c:set var="sameClass" value="false"/>
+                        <c:forEach items="${objPropertyStmt.object.VClasses}" var="vclass">
+                            <c:if test="${ vclass.URI == collateCurrentClass }">
+                                <c:set var="sameClass" value="true"/>                                                                           
+                            </c:if>                             
+                        </c:forEach>
+																				
+						<c:if test="${ collateByClass && ( !sameClass || collateCurrentClass == '_firstOne') }">						   
 		            		<c:if test="${ collateClassesShownCount > 0 }">
 		            			</ul></li><!-- collateClasses -->
 		            		</c:if>
@@ -185,30 +168,10 @@ public static Log log = LogFactory.getLog("edu.cornell.mannlib.vitro.webapp.jsp.
 		            		<c:set var="collateCurrentClassName" value="${objPropertyStmt.object.VClass.name}" />
 		            		<c:set var="collateClassesShownCount" value="${collateClassesShown + 1}"/>		            		
 		            		<li>
-		            		${collateCurrentClassName }
+		            		<h5 class="collate">${collateCurrentClassName}</h5>
 		            		<ul class='properties'><!-- collateClasses -->
 		            	</c:if>
 
-						<c:if test="${stmtCounter == displayLimit}"><!-- set up toggle div and expandable continuation div -->
-							<c:if test="${ collateByClass }"> </ul></li></c:if>
-							<c:if test="${ ! collateByClass }"> </ul></c:if>  							
-  		                	<c:set var="hiddenDivCount" value="${hiddenDivCount+1}"/>
-							<c:url var="themePath" value="/${themeDir}site_icons" />
-									
-			               <div class="navlinkblock ">
-			                 <span class="entityMoreSpan">
-			                   <c:out value='${objRows - stmtCounter}' />
-			                   <c:choose>
-			                       <c:when test='${displayLimit==0}'> entries</c:when>
-			                       <c:otherwise> more</c:otherwise>
-			                   </c:choose>
-			                 </span>
-			               
-			                 <div class="extraEntities">
-			                 <c:if test="${ collateByClass }"> <li></c:if>
-							 <ul class="properties">
-			              		 
-						</c:if>
      					<li>
 	     					<span class="statementWrap">
 	     					<c:set var="opStmt" value="${objPropertyStmt}" scope="request"/>
@@ -217,7 +180,7 @@ public static Log log = LogFactory.getLog("edu.cornell.mannlib.vitro.webapp.jsp.
 	               				<c:param name="uri" value="${objPropertyStmt.object.URI}"/>               			
 	           				</c:url>
 							<%
-							   String customShortView = getCustomShortView(request, vcDao); 
+							   String customShortView = MiscWebUtils.getCustomShortView(request); 
 							%>
 	         				<c:set var="altRenderJsp" value="<%= customShortView %>" />
 	         				<c:remove var="opStmt" scope="request"/>
@@ -245,10 +208,8 @@ public static Log log = LogFactory.getLog("edu.cornell.mannlib.vitro.webapp.jsp.
 						<c:set var="stmtCounter" value="${stmtCounter+1}"/>
 					</c:forEach>
 					<c:if test="${objRows > 0}"></ul></c:if>
-					<c:if test="${ collateClassesShownCount > 0 }"></li><!-- collateClasses 2 --></c:if>										
-   					<c:if test="${ stmtCounter > displayLimit}">
-   					</div><%-- navlinkblock --%>
-   					</div><%-- extraEntities --%></c:if>
+					<c:if test="${ collateClassesShownCount > 0 }"></li><!-- collateClasses 2 --></c:if>
+					<c:if test="${ collateByClass && collateClassesShownCount > 0 }"></ul><!-- collate end --></c:if>										   					   					   				
  				</div><!-- ${objProp.localNameWithPrefix} -->
  			</c:if>
 <%		} else if (p instanceof DataProperty) {
@@ -266,7 +227,7 @@ public static Log log = LogFactory.getLog("edu.cornell.mannlib.vitro.webapp.jsp.
 			    <c:if test="${showSelfEdits || showCuratorEdits}"><c:set var="classForEditControls" value=" editing"/></c:if>
 	            <c:set var="uniqueDpropDivName" value="${fn:replace(dataProp.localNameWithPrefix,':','-')}"/>            
 	 			<div id="${'dprop-'}${uniqueDpropDivName}" class="propsItem ${classForEditControls}" style="${dataStyle}">
-					<h3 class="propertyName">${dataProp.editLabel}</h3>
+					<h3 class="propertyName">${dataProp.label}</h3>
 					<c:if test="${showSelfEdits || showCuratorEdits}"><edLnk:editLinks item="${dataProp}" icons="false"/></c:if> 					
 			    	<%-- Verbose property display additions for data properties, using context variable verbosePropertyListing --%>
 	                <c:if test="${showCuratorEdits && verbosePropertyListing}">
@@ -372,35 +333,4 @@ public static Log log = LogFactory.getLog("edu.cornell.mannlib.vitro.webapp.jsp.
 <%			}
 		} 
    } // end for (Property p : g.getPropertyList()
-%>
-
-<%!
-// Get custom short view from either the object's class or one of its superclasses.
-// This is needed because the inference update happens asynchronously, so when a new
-// property has been added and the page is reloaded, the custom short view from a
-// superclass may not have been inferred yet.
-private String getCustomShortView(HttpServletRequest request, VClassDao vcDao) {
-    String customShortView = null;
-    Individual object = ((ObjectPropertyStatement)request.getAttribute("opStmt")).getObject();
-    List<VClass> vclasses = object.getVClasses();
-
-    vclassLoop: for (VClass vclass : vclasses) {
-        // Use this class's custom short view, if there is one
-        customShortView = vclass.getCustomShortView();
-        if (customShortView != null) {
-            break;
-        }
-        // Otherwise, check for superclass custom short views
-        String vclassUri = vclass.getURI();
-        List<String> superClassUris = vcDao.getAllSuperClassURIs(vclassUri);
-        for (String superClassUri : superClassUris) {
-            VClass vc = vcDao.getVClassByURI(superClassUri);
-            customShortView = vc.getCustomShortView();
-            if (customShortView != null) { 
-                break vclassLoop; 
-            }
-        }
-    }  
-    return customShortView;
-}
 %>

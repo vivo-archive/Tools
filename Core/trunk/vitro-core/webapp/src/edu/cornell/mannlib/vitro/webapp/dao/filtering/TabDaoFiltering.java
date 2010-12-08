@@ -1,30 +1,4 @@
-/*
-Copyright (c) 2010, Cornell University
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-    * Redistributions of source code must retain the above copyright notice,
-      this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright notice,
-      this list of conditions and the following disclaimer in the documentation
-      and/or other materials provided with the distribution.
-    * Neither the name of Cornell University nor the names of its contributors
-      may be used to endorse or promote products derived from this software
-      without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-*/
+/* $This file is distributed under the terms of the license in /doc/license.txt$ */
 
 package edu.cornell.mannlib.vitro.webapp.dao.filtering;
 
@@ -36,6 +10,7 @@ import java.util.Set;
 
 import edu.cornell.mannlib.vitro.webapp.beans.ApplicationBean;
 import edu.cornell.mannlib.vitro.webapp.beans.Tab;
+import edu.cornell.mannlib.vitro.webapp.dao.ApplicationDao;
 import edu.cornell.mannlib.vitro.webapp.dao.PortalDao;
 import edu.cornell.mannlib.vitro.webapp.dao.TabDao;
 import edu.cornell.mannlib.vitro.webapp.dao.filtering.filters.FiltersForTabs;
@@ -48,10 +23,12 @@ public class TabDaoFiltering extends BaseFiltering implements TabDao{
     final TabDao innerDao;
     final VitroFilters filters;
     private PortalDao innerPortalDao;    
-
-    public TabDaoFiltering(TabDao tabDao, PortalDao portalDao, VitroFilters filters) {
+    private ApplicationDao applicationDao;
+    
+    public TabDaoFiltering(TabDao tabDao, PortalDao portalDao, ApplicationDao applicationDao, VitroFilters filters) {
         this.innerPortalDao = portalDao;
         this.innerDao = tabDao;        
+        this.applicationDao = applicationDao;
         this.filters = filters;
     }
 
@@ -165,8 +142,8 @@ public class TabDaoFiltering extends BaseFiltering implements TabDao{
 
 
     /** note not currently filtered */
-    public List getTabHierarcy(int tabId, int rootTab) {
-        return innerDao.getTabHierarcy(tabId, rootTab);
+    public List getTabHierarchy(int tabId, int rootTab) {
+        return innerDao.getTabHierarchy(tabId, rootTab);
     }
 
     /** note not currently filtered */
@@ -221,13 +198,15 @@ public class TabDaoFiltering extends BaseFiltering implements TabDao{
             if( in.grabEntityFactory() == null )
                 return in;
             else{
+            	boolean flag1Filtering = applicationDao.isFlag1Active(); //( !applicationDao.isFlag1Active() || innerPortalDao.getAllPortals().size() == 1 );
+            	
                 /* NOTICE: this does not use the individualFilter that was passed in the constructor
                    it uses one based on the parameters of the tab. */
                 boolean ascendingSort = !"desc".equalsIgnoreCase(in.getEntitySortDirection());
                 TabEntityFactoryFiltering filteringFact =
                         new TabEntityFactoryFiltering(
                                 in.grabEntityFactory(),
-                                 FiltersForTabs.getFilterForTab( in, innerPortalDao.getPortal(in.getPortalId())),
+                                 FiltersForTabs.getFilterForTab( in, innerPortalDao.getPortal(in.getPortalId()), flag1Filtering ),
                                 new VitroFilterUtils.EntitySortTransform( in.getEntitySortField(),ascendingSort));
                 in.placeEntityFactory(filteringFact);
             }

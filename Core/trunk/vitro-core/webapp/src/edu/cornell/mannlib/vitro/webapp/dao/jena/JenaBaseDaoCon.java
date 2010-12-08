@@ -1,30 +1,4 @@
-/*
-Copyright (c) 2010, Cornell University
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-    * Redistributions of source code must retain the above copyright notice,
-      this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright notice,
-      this list of conditions and the following disclaimer in the documentation
-      and/or other materials provided with the distribution.
-    * Neither the name of Cornell University nor the names of its contributors
-      may be used to endorse or promote products derived from this software
-      without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-*/
+/* $This file is distributed under the terms of the license in /doc/license.txt$ */
 
 package edu.cornell.mannlib.vitro.webapp.dao.jena;
 
@@ -86,8 +60,6 @@ public class JenaBaseDaoCon {
     protected DatatypeProperty   MODTIME = _constModel.createDatatypeProperty(VitroVocabulary.MODTIME);
     protected DatatypeProperty   TIMEKEY = _constModel.createDatatypeProperty(VitroVocabulary.TIMEKEY);
     protected DatatypeProperty   CITATION = _constModel.createDatatypeProperty(VitroVocabulary.CITATION);
-    protected DatatypeProperty   IMAGETHUMB = _constModel.createDatatypeProperty(VitroVocabulary.IMAGETHUMB);
-    protected DatatypeProperty   IMAGEFILE = _constModel.createDatatypeProperty(VitroVocabulary.IMAGEFILE);
 
     protected DatatypeProperty   DISPLAY_RANK = _constModel.createDatatypeProperty(VitroVocabulary.DISPLAY_RANK);
     protected AnnotationProperty DISPLAY_RANK_ANNOT = _constModel.createAnnotationProperty(VitroVocabulary.DISPLAY_RANK_ANNOT);
@@ -101,6 +73,7 @@ public class JenaBaseDaoCon {
     protected AnnotationProperty PROPERTY_CUSTOMENTRYFORMANNOT = _constModel.createAnnotationProperty(VitroVocabulary.PROPERTY_CUSTOMENTRYFORMANNOT);
     protected AnnotationProperty PROPERTY_CUSTOMDISPLAYVIEWANNOT = _constModel.createAnnotationProperty(VitroVocabulary.PROPERTY_CUSTOMDISPLAYVIEWANNOT);
     protected AnnotationProperty PROPERTY_CUSTOMSHORTVIEWANNOT = _constModel.createAnnotationProperty(VitroVocabulary.PROPERTY_CUSTOMSHORTVIEWANNOT);
+    protected AnnotationProperty PROPERTY_CUSTOM_LIST_VIEW_ANNOT = _constModel.createAnnotationProperty(VitroVocabulary.PROPERTY_CUSTOM_LIST_VIEW_ANNOT);
     protected AnnotationProperty PROPERTY_CUSTOMSEARCHVIEWANNOT = _constModel.createAnnotationProperty(VitroVocabulary.PROPERTY_CUSTOMSEARCHVIEWANNOT);
     //protected AnnotationProperty PROPERTY_FORCESTUBDELETIONANNOT = _constModel.createAnnotationProperty(VitroVocabulary.PROPERTY_FORCESTUBDELETIONANNOT);
     protected AnnotationProperty PROPERTY_SELECTFROMEXISTINGANNOT = _constModel.createAnnotationProperty(VitroVocabulary.PROPERTY_SELECTFROMEXISTINGANNOT);
@@ -209,6 +182,18 @@ public class JenaBaseDaoCon {
     
     protected AnnotationProperty  ONTOLOGY_PREFIX_ANNOT = _constModel.createAnnotationProperty(VitroVocabulary.ONTOLOGY_PREFIX_ANNOT);
     
+    protected  OntClass           FS_FILE = _constModel.createClass(VitroVocabulary.FS_FILE_CLASS);
+    protected  OntClass           FS_BYTESTREAM = _constModel.createClass(VitroVocabulary.FS_BYTESTREAM_CLASS);
+    protected  ObjectProperty     FS_DOWNLOAD_LOCATION = _constModel.createObjectProperty(VitroVocabulary.FS_DOWNLOAD_LOCATION);
+    protected  ObjectProperty     FS_THUMBNAIL_IMAGE = _constModel.createObjectProperty(VitroVocabulary.FS_THUMBNAIL_IMAGE);
+    protected  DatatypeProperty   FS_FILENAME = _constModel.createDatatypeProperty(VitroVocabulary.FS_FILENAME);
+    protected  DatatypeProperty   FS_MIME_TYPE = _constModel.createDatatypeProperty(VitroVocabulary.FS_MIME_TYPE);
+    protected  DatatypeProperty   FS_ATTRIBUTION = _constModel.createDatatypeProperty(VitroVocabulary.FS_ATTRIBUTION);
+    protected  DatatypeProperty   FS_ALIAS_URL = _constModel.createDatatypeProperty(VitroVocabulary.FS_ALIAS_URL);
+
+    protected  ObjectProperty     IND_MAIN_IMAGE = _constModel.createObjectProperty(VitroVocabulary.IND_MAIN_IMAGE);
+    protected  ObjectProperty     IND_IMAGE = _constModel.createObjectProperty(VitroVocabulary.IND_IMAGE);
+
     public OntModel getConstModel() {
         return _constModel;
     }

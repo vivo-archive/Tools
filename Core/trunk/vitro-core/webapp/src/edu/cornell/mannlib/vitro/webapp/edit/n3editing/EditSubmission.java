@@ -1,30 +1,4 @@
-/*
-Copyright (c) 2010, Cornell University
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-    * Redistributions of source code must retain the above copyright notice,
-      this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright notice,
-      this list of conditions and the following disclaimer in the documentation
-      and/or other materials provided with the distribution.
-    * Neither the name of Cornell University nor the names of its contributors
-      may be used to endorse or promote products derived from this software
-      without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-*/
+/* $This file is distributed under the terms of the license in /doc/license.txt$ */
 
 package edu.cornell.mannlib.vitro.webapp.edit.n3editing;
 
@@ -34,7 +8,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Calendar;
 
 import javax.servlet.http.HttpSession;
 
@@ -54,6 +27,7 @@ import com.hp.hpl.jena.rdf.model.ResourceFactory;
 import com.hp.hpl.jena.vocabulary.XSD;
 
 import edu.cornell.mannlib.vitro.webapp.edit.EditLiteral;
+import edu.cornell.mannlib.vitro.webapp.edit.elements.EditElement;
 
 public class EditSubmission {
     private String editKey;
@@ -84,16 +58,23 @@ public class EditSubmission {
         this.urisFromForm = new HashMap<String,String>();
         for( String var: editConfig.getUrisOnform() ){     
             String[] valuesArray = queryParameters.get( var );
+            String uri = null;
             List<String> values = (valuesArray != null) ? Arrays.asList(valuesArray) : null;
             if( values != null && values.size() > 0){
                 if(  values.size() == 1 ) {
-                    urisFromForm.put(var,values.get(0));
+                	uri = values.get(0);                    	
                 } else if( values.size() > 1 ){
-                    urisFromForm.put(var,values.get(0));
-                    log.error("Cannot yet handle multiple URIs for a single field, useing first URI on list");
+                	uri = values.get(0);
+                    log.error("Cannot yet handle multiple URIs for a single field, using first URI on list");
                 } 
+                urisFromForm.put(var,uri);
             } else {
                 log.debug("No value found for query parameter " + var);              
+            }
+            //check to see if a URI field from the form was blank but was intended to create a new URI
+            if( uri != null && uri.length() == 0 && editConfig.getNewResources().containsKey(var) ){
+            	log.debug("A new resource URI will be made for var " + var + " since it was blank on the form.");
+            	urisFromForm.remove(var);
             }
         }
         this.literalsFromForm =new HashMap<String,Literal>();        
@@ -127,7 +108,9 @@ public class EditSubmission {
             	} else {
             		log.debug("time fields for parameter " + var + " were not on form" );
             	}
-        	} else {
+        	} else if( field.getEditElement() != null ){        	    
+        	    log.debug("skipping field with edit element, it should not be in literals on form list");
+            }else{
             	String[] valuesArray = queryParameters.get(var); 
                 List<String> valueList = (valuesArray != null) ? Arrays.asList(valuesArray) : null;                
                 if( valueList != null && valueList.size() > 0 ) {
@@ -141,6 +124,15 @@ public class EditSubmission {
             }
         }
 
+        if( log.isDebugEnabled() ){        	
+        	for( String key : literalsFromForm.keySet() ){
+        		log.debug( key + " literal " + literalsFromForm.get(key) );
+        	}
+        	for( String key : urisFromForm.keySet() ){
+        		log.debug( key + " uri " + urisFromForm.get(key) );
+        	}
+        }
+        
         this.basicValidation = new BasicValidation(editConfig,this);
         Map<String,String> errors = basicValidation.validateUris( urisFromForm );
         if( errors != null ) {
@@ -162,8 +154,39 @@ public class EditSubmission {
         	}
         }
         
+        processEditElementFields(editConfig,queryParameters);
+        
+        if( log.isDebugEnabled() )
+            log.debug( this.toString() );
     }
 
+    protected void processEditElementFields(EditConfiguration editConfig, Map<String,String[]> queryParameters ){
+        for( String fieldName : editConfig.getFields().keySet()){
+            Field field = editConfig.getFields().get(fieldName);
+            if( field != null && field.getEditElement() != null ){
+                EditElement element = field.getEditElement();                
+                log.debug("Checking EditElement for field " + fieldName + " type: " + element.getClass().getName());
+                
+                //check for validation error messages
+                Map<String,String> errMsgs = 
+                    element.getValidationMessages(fieldName, editConfig, queryParameters);
+                validationErrors.putAll(errMsgs);
+                                
+                if( errMsgs == null || errMsgs.isEmpty()){                    
+                    //only check for uris and literals when element has no validation errors
+                    Map<String,String> urisFromElement = element.getURIs(fieldName, editConfig, queryParameters);
+                    if( urisFromElement != null )
+                        urisFromForm.putAll(urisFromElement);
+                    Map<String,Literal> literalsFromElement = element.getLiterals(fieldName, editConfig, queryParameters);
+                    if( literalsFromElement != null )
+                        literalsFromForm.putAll(literalsFromElement);
+                }else{
+                    log.debug("got validation errors for field " + fieldName + " not processing field for literals or URIs");
+                }
+            }            
+        }        
+    }
+    
     public EditSubmission(Map<String, String[]> queryParameters, EditConfiguration editConfig, 
     		Map<String, List<FileItem>> fileItems) {
     	this(queryParameters,editConfig);    	
@@ -171,7 +194,7 @@ public class EditSubmission {
     	validationErrors.putAll(this.basicValidation.validateFiles( fileItems ) );
 	}
 
-	private Literal createLiteral(String value, String datatypeUri, String lang){
+	protected Literal createLiteral(String value, String datatypeUri, String lang){
         if( datatypeUri != null ){            
             if( "http://www.w3.org/2001/XMLSchema:anyURI".equals(datatypeUri) ){
                 try {
@@ -349,24 +372,6 @@ public class EditSubmission {
         try{
             dt = dateFormater.parseDateTime(year.get(0) +'-'+ month.get(0) +'-'+ day.get(0));
             String dateStr = dateFormater.print(dt);
-            
-            /*if(compareCurrentDate) {
-            	Calendar c = Calendar.getInstance();
-            	//Set to last year
-            	int currentYear = c.get(Calendar.YEAR);
-            	//?Set to time starting at 00 this morning?
-            	Calendar inputC = Calendar.getInstance();
-            	inputC.set(Integer.parseInt(yearParamStr), Integer.parseInt(monthParamStr) - 1, Integer.parseInt(dayParamStr));
-            	//if input time is more than a year ago
-            	if(inputC.before(c)) {
-            		errors += "Please enter a future target date for publication (past dates are invalid).";
-            		validationErrors.put( fieldName, errors);
-            		//Returning null makes the error message "field is empty" display instead
-            		//return null;
-            	}
-            	
-            }*/
-            
             return new EditLiteral(dateStr,DATE_URI, null );
         }catch(IllegalFieldValueException ifve){
             validationErrors.put( fieldName, ifve.getLocalizedMessage() );
@@ -448,7 +453,6 @@ public class EditSubmission {
         sess.removeAttribute("editSubmission");
     }
 
-
     public static Map<String, String[]> convertParams(
             Map<String, List<String>> queryParameters) {
         HashMap<String,String[]> out = new HashMap<String,String[]>();
@@ -458,6 +462,6 @@ public class EditSubmission {
         }
         return out;
     }     
-    
+
     private Log log = LogFactory.getLog(EditSubmission.class);
 }

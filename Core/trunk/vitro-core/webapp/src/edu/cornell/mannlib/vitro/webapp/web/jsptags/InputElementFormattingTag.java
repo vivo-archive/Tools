@@ -1,30 +1,4 @@
-/*
-Copyright (c) 2010, Cornell University
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-    * Redistributions of source code must retain the above copyright notice,
-      this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright notice,
-      this list of conditions and the following disclaimer in the documentation
-      and/or other materials provided with the distribution.
-    * Neither the name of Cornell University nor the names of its contributors
-      may be used to endorse or promote products derived from this software
-      without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-*/
+/* $This file is distributed under the terms of the license in /doc/license.txt$ */
 
 package edu.cornell.mannlib.vitro.webapp.web.jsptags;
 
@@ -56,6 +30,7 @@ import org.joda.time.format.DateTimeFormatter;
 import org.joda.time.format.ISODateTimeFormat;
 
 import com.hp.hpl.jena.datatypes.xsd.XSDDateTime;
+import com.hp.hpl.jena.ontology.OntModel;
 import com.hp.hpl.jena.rdf.model.Literal;
 import com.hp.hpl.jena.vocabulary.XSD;
 
@@ -64,11 +39,16 @@ import edu.cornell.mannlib.vitro.webapp.beans.ObjectProperty;
 import edu.cornell.mannlib.vitro.webapp.beans.VClass;
 import edu.cornell.mannlib.vitro.webapp.controller.Controllers;
 import edu.cornell.mannlib.vitro.webapp.controller.VitroRequest;
+import edu.cornell.mannlib.vitro.webapp.controller.freemarker.FreemarkerConfigurationLoader;
 import edu.cornell.mannlib.vitro.webapp.dao.WebappDaoFactory;
 import edu.cornell.mannlib.vitro.webapp.edit.n3editing.EditConfiguration;
 import edu.cornell.mannlib.vitro.webapp.edit.n3editing.EditSubmission;
 import edu.cornell.mannlib.vitro.webapp.edit.n3editing.Field;
 import edu.cornell.mannlib.vitro.webapp.edit.n3editing.SelectListGenerator;
+import edu.cornell.mannlib.vitro.webapp.search.beans.ProhibitedFromSearch;
+import edu.cornell.mannlib.vitro.webapp.utils.StringUtils;
+import edu.cornell.mannlib.vitro.webapp.web.DisplayVocabulary;
+import freemarker.template.Configuration;
 
 /**
  * This tag will build an option list for individuals of a VClass.
@@ -79,10 +59,15 @@ import edu.cornell.mannlib.vitro.webapp.edit.n3editing.SelectListGenerator;
  */
 public class InputElementFormattingTag extends TagSupport {
     private String  id;
+    // NB name is optional. If not specified, the name comes from the id value.
+    private String  name; 
     private String  type;
     private String  label;
+    private String  cancelLabel;
+    private String  cancelUrl;
     private String  cssClass;
     private String  labelClass;
+    private String  disabled;
     private String  value;
     private String  error;
     private int     size = 0;
@@ -101,6 +86,13 @@ public class InputElementFormattingTag extends TagSupport {
         this.id = idStr;
     }
 
+    public String getName() {
+        return StringUtils.isEmpty(name) ? id : name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    
     public String getType() {
         return type;
     }
@@ -115,20 +107,36 @@ public class InputElementFormattingTag extends TagSupport {
         this.label = labelStr;
     }
 
+    public String getCancelLabel() {
+        return cancelLabel;
+    }
+    public void setCancelLabel(String cancelLabel) {
+        this.cancelLabel = cancelLabel;
+    }
+    public String getCancelUrl() {
+        return cancelUrl;
+    }
+    public void setCancelUrl(String cancelUrl) {
+        this.cancelUrl = cancelUrl;
+    }
     public String getCssClass() {
         return cssClass;
     }
     public void setCssClass(String classStr) {
         this.cssClass = classStr;
     }
-    
     public String getLabelClass() {
         return labelClass;
     }
     public void setLabelClass(String labelClassStr) {
         this.labelClass = labelClassStr;
     }
-
+    public String getDisabled() {
+        return disabled;
+    }
+    public void setDisabled(String disabled) {
+        this.disabled = disabled;
+    }
     public String getValue() {
         return value;
     }
@@ -207,6 +215,16 @@ public class InputElementFormattingTag extends TagSupport {
         }
         return "";
     }
+    
+    private String doDisabled() {
+        /* Only insert the disabled attribute if it has been populated. Support
+         * both "true" and "disabled" as values. */
+        String disabled = getDisabled();
+        if ("true".equals(disabled) || "disabled".equals(disabled)) {
+            return "disabled=\"disabled\"";
+        }
+        return "";
+    }
 
     private String doSize() {
         if (getSize()>0) {
@@ -248,28 +266,28 @@ public class InputElementFormattingTag extends TagSupport {
             Map<String, String> uris = null;
             if (editSub != null) { // are reloading a form after a validation error, look in editSub
                 literals = editSub.getLiteralsFromForm();
-                if( literals!= null && literals.containsKey(getId())){
-                    literal = literals.get(getId());
+                if( literals!= null && literals.containsKey(getName())){
+                    literal = literals.get(getName());
                     if( literal != null ) {
                         return literalToString(literal);
                     }
                 } else { //look for a uri
                     uris = editSub.getUrisFromForm();
                     if( uris != null )
-                        uri = uris.get(getId());
+                        uri = uris.get(getName());
                     if( uri != null ){
                         return uri;
                     }
                 }
             } else { // check in editConfig
                 literals = editConfig.getLiteralsInScope();
-                if( literals != null && literals.containsKey(getId()) ) { 
-                    literal = literals.get(getId());                    
+                if( literals != null && literals.containsKey(getName()) ) { 
+                    literal = literals.get(getName());                    
                     return literalToString(literal);                    
                 } else {
                     uris = editConfig.getUrisInScope();
-                    if( uris != null && uris.containsKey( getId() ) && uris.get( getId() ) != null  ) {
-                        return editConfig.getUrisInScope().get(getId());
+                    if( uris != null && uris.containsKey( getName() ) && uris.get( getName() ) != null  ) {
+                        return editConfig.getUrisInScope().get(getName());
                     }
                 }
             }
@@ -281,7 +299,6 @@ public class InputElementFormattingTag extends TagSupport {
                 +" or editSub");
         return "";
     }
-
 
     private String literalToString(Literal lit){
             if( lit == null || lit.getValue() == null) return "";
@@ -299,7 +316,10 @@ public class InputElementFormattingTag extends TagSupport {
 
     private String doCancel(String labelStr, EditConfiguration editConfig){
         if (labelStr==null || labelStr.equals("")) {
-            labelStr="Cancel";
+            labelStr = getCancelLabel();
+            if (labelStr==null || labelStr.equals("")) {
+                labelStr="Cancel";
+            }
         }
         VitroRequest vreq = new VitroRequest((HttpServletRequest)pageContext.getRequest());
         if( "about".equals( getCancel() )){
@@ -311,12 +331,19 @@ public class InputElementFormattingTag extends TagSupport {
         }else if( "dashboard".equals( getCancel() )){ //this case is Datastar-specific.
             	return " or <a class=\"cancel\" href=\"" + vreq.getContextPath() 
             	+ "/dashboard\" title=\"Cancel\">"+labelStr+"</a>";
-        }else if (getCancel()!=null && !getCancel().equals("")) {        	
+        }else if (getCancel()!=null && !getCancel().equals("") && !getCancel().equals("false")) {        	
             if( editConfig != null && editConfig.getEditKey() != null ){
                 try{
-                return "<span class=\"or\"> or </span><a class=\"cancel\" href=\"" + vreq.getContextPath()
-                        + "/edit/postEditCleanUp.jsp?editKey="+ URLEncoder.encode(editConfig.getEditKey(),"UTF-8")
-                        +"\" title=\"Cancel\">"+labelStr+"</a>";
+                    String url =  vreq.getContextPath() + 
+                                  "/edit/postEditCleanUp.jsp?editKey="+ 
+                                  URLEncoder.encode(editConfig.getEditKey(),"UTF-8") +
+                                  "&cancel=true";
+                    String cancelUrl = getCancelUrl();
+                    if (!StringUtils.isEmpty(cancelUrl)) {
+                        url += "&url=" + cancelUrl;
+                    }
+                    return "<span class=\"or\"> or </span><a class=\"cancel\" href=\"" +
+                        url + "\" title=\"Cancel\">"+labelStr+"</a>";
                 }catch(UnsupportedEncodingException ex){
                     log.error( "doCancel(): " , ex);
                 }
@@ -348,7 +375,7 @@ public class InputElementFormattingTag extends TagSupport {
         if( errors == null || errors.isEmpty())
             return "";
            
-        String val = errors.get(getId());
+        String val = errors.get(getName());
         if( val != null){
             return val;
         }
@@ -365,23 +392,29 @@ public class InputElementFormattingTag extends TagSupport {
             if (getId()==null || getId().equals("")){
                 log.error("Error in doStartTag: input element id is blank or not specified.");
             }
-
+            
             HttpSession session = pageContext.getSession();
             EditConfiguration editConfig = EditConfiguration.getConfigFromSession(session,(HttpServletRequest) pageContext.getRequest());
             EditSubmission editSub = EditSubmission.getEditSubmissionFromSession(session,editConfig);
             
+            VitroRequest vreq = new VitroRequest((HttpServletRequest)pageContext.getRequest());
             WebappDaoFactory wdf;
             if (editConfig != null) { 
             	wdf = editConfig.getWdfSelectorForOptons().getWdf(
                         (HttpServletRequest)pageContext.getRequest(),
                                             pageContext.getServletContext());
-            } else {
-                VitroRequest vreq = new VitroRequest((HttpServletRequest)pageContext.getRequest());
+            } else {                
                 wdf = vreq.getWebappDaoFactory();
             }
             
+            //get freemarker Configuration
+            FreemarkerConfigurationLoader fConfigLoader 
+                = FreemarkerConfigurationLoader.getFreemarkerConfigurationLoader(pageContext.getServletContext());            
+            Configuration fmConfig = fConfigLoader.getConfig(vreq);
+            
             /* populate the pieces */
             String classStr = doClass();
+            String disabledStr = doDisabled();
             String errorStr = getValidationErrors(editSub);
             JspWriter out = pageContext.getOut();
 
@@ -396,16 +429,37 @@ public class InputElementFormattingTag extends TagSupport {
                 if (definitionTags) { out.println("</dt>"); }
             }
             
+   
+            // bdc34 2010-11-08 field may be null
             Field field = editConfig == null ? null : editConfig.getField(getId());
+            
+              /* bdc34 2010-11-08 : this is odd, I'm having problems with the submit on this next line because
+               * it is not a field in the editConfig.  This wasn't happening before.  */
+//            if( field == null ){
+//                log.error("could not get field for id " + getId());
+//                return SKIP_BODY;
+//            }
+            
+            // set ProhibitedFromSearch object so picklist doesn't show
+            // individuals from classes that should be hidden from list views
+        	OntModel displayOntModel = 
+    		    (OntModel) pageContext.getServletContext()
+    		        .getAttribute("displayOntModel");
+        	if (displayOntModel != null) {
+    	     	ProhibitedFromSearch pfs = new ProhibitedFromSearch(
+    				DisplayVocabulary.PRIMARY_LUCENE_INDEX_URI, displayOntModel);
+    	     	if( editConfig != null )
+    	     		editConfig.setProhibitedFromSearch(pfs);
+        	}
            
-            if( getType().equalsIgnoreCase("date") || 
+        	if( field != null && field.getEditElement() != null ){
+        	    out.print( field.getEditElement().draw(getId(), editConfig, editSub, fmConfig));
+        	}else if( getType().equalsIgnoreCase("date") || 
                     (field != null && field.getRangeDatatypeUri() != null && field.getRangeDatatypeUri().equals(XSD.date.getURI())) ){
                 //if its a dataprop that should be a string override type and use date picker    
                 if (definitionTags) { out.print("<dg>"); }
                 out.print(  generateHtmlForDate(getId(),editConfig,editSub)  );
-                if (definitionTags) { out.print("</dg>"); }
-                
-                
+                if (definitionTags) { out.print("</dg>"); }                                
             } else if ( getType().equalsIgnoreCase("time") || 
             		(field != null && field.getRangeDatatypeUri() != null && field.getRangeDatatypeUri().equals(XSD.time.getURI()))  ) {
             	if (definitionTags) { out.print("<dd>"); }
@@ -420,7 +474,14 @@ public class InputElementFormattingTag extends TagSupport {
                 String valueStr = doValue(editConfig, editSub);
                 String sizeStr  = doSize();
                 if (definitionTags) { out.print("<dd>"); }
-                out.print("<input "+classStr+" "+sizeStr+" type=\"text\" id=\""+getId()+"\" name=\""+getId()+"\" value=\""+valueStr+"\" />");
+                out.print("<input "+classStr+" "+sizeStr+" " + disabledStr + " type=\"text\" id=\""+getId()+"\" name=\""+getName()+"\" value=\""+valueStr+"\" />");
+                if (definitionTags) { out.print("</dd>"); }
+                out.println();
+            // Handle hidden inputs where Javascript writes a value that needs to be returned with an invalid submission.
+            } else if( getType().equalsIgnoreCase("hidden")) {
+                String valueStr = doValue(editConfig, editSub);
+                if (definitionTags) { out.print("<dd>"); }
+                out.print("<input "+classStr+ "type=\"hidden\" id=\""+getId()+"\" name=\""+getName()+"\" value=\""+valueStr+"\" />");
                 if (definitionTags) { out.print("</dd>"); }
                 out.println();
             } else if (getType().equalsIgnoreCase("textarea")) {
@@ -428,24 +489,31 @@ public class InputElementFormattingTag extends TagSupport {
                 String rowStr = doRows();
                 String colStr = doCols();
                 if (definitionTags) { out.print("<dd>"); }
-                out.print("<textarea "+classStr+" id=\""+getId()+"\" name=\""+getId()+"\" "+rowStr+" "+colStr+" >"+valueStr+"</textarea>");
+                out.print("<textarea "+classStr+" id=\""+getId()+"\" name=\""+getName()+"\" "+rowStr+" "+colStr+" >"+valueStr+"</textarea>");
                 if (definitionTags) { out.print("</dd>"); }
                 out.println();
             } else if( getType().equalsIgnoreCase("select")) {
                 String valueStr = doValue(editConfig, editSub);
                 //String sizeStr = getSize(); //"style=\"width:"+getSize()+"%;\"";
-                Map <String,String> optionsMap = SelectListGenerator.getOptions(editConfig,getId(), wdf);
+                Map<String,String> optionsMap = (Map<String,String>) pageContext.getRequest().getAttribute("rangeOptions." + getId());
+                if (optionsMap == null) {
+                	optionsMap = SelectListGenerator.getOptions(editConfig,getName(), wdf);
+                }
                 if (optionsMap==null){
                     log.error("Error in InputElementFormattingTag.doStartTag(): null optionsMap returned from getOptions()");
                 }
                 if (optionsMap.size()>0) { // e.g., an Educational Background where may be no choices left after remove existing
                     if (definitionTags) { out.print("<dd>"); }
                     if (multiple!=null && !multiple.equals("")) {
-                        out.print("<select "+classStr+" id=\""+getId()+"\" name=\""+getId()+"\" multiple=\"multiple\" size=\""+(optionsMap.size() > 10? "10" : optionsMap.size())+"\">");
+                        out.print("<select "+ classStr+ " " + disabledStr + " id=\""+getId()+"\" name=\""+getName()+"\" multiple=\"multiple\" size=\""+(optionsMap.size() > 10? "10" : optionsMap.size())+"\">");
                     } else {
-                        out.print("<select "+classStr+" id=\""+getId()+"\" name=\""+getId()+"\">");
+                        out.print("<select "+classStr+ " " + disabledStr + " id=\""+getId()+"\" name=\""+getName()+"\">");
                     }
-                    optionsMap = getSortedMap(optionsMap);
+                    
+                    Field thisField = editConfig.getField(getName());
+                    if (! thisField.getOptionsType().equals(Field.OptionsType.HARDCODED_LITERALS)) {
+                        optionsMap = getSortedMap(optionsMap);
+                    }
                     Iterator iter = optionsMap.keySet().iterator();
                     while (iter.hasNext()) {
                         String key = (String) iter.next();
@@ -459,12 +527,15 @@ public class InputElementFormattingTag extends TagSupport {
                     out.print("</select>");
                     if (definitionTags) { out.print("</dd>"); }
                 } else {
-                    out.println("<p><input type=\"hidden\" id=\""+getId()+"\" name=\""+getId()+"\" value=\""+valueStr+"\"/>no appropriate choice available</p>");
+                    out.println("<p><input type=\"hidden\" id=\""+getId()+"\" name=\""+getName()+"\" value=\""+valueStr+"\"/>no appropriate choice available</p>");
                 }
             } else if( getType().equalsIgnoreCase("checkbox")) {
                 String valueStr = doValue(editConfig, editSub);
                 if (definitionTags) { out.print("<dd>"); }
-                Map <String,String> optionsMap = SelectListGenerator.getOptions(editConfig,getId(),wdf);
+                Map<String,String> optionsMap = (Map<String,String>) pageContext.getRequest().getAttribute("rangeOptions." + getId());
+                if (optionsMap == null) {
+                    optionsMap = SelectListGenerator.getOptions(editConfig,getName(),wdf);
+                }
                 if (optionsMap==null){
                     log.error("Error in InputElementFormattingTag.doStartTag(): null optionsMap returned from getOptions()");
                 }
@@ -473,7 +544,7 @@ public class InputElementFormattingTag extends TagSupport {
                 while (iter.hasNext()) {
                     String key = (String) iter.next();
                     String mapValue = optionsMap.get(key);
-                    out.print("<input "+classStr+" type=\"checkbox\" name=\""+getId()+"\" value=\""+StringEscapeUtils.escapeHtml(key)+"\"");
+                    out.print("<input "+classStr+" type=\"checkbox\" name=\""+getName()+"\" value=\""+StringEscapeUtils.escapeHtml(key)+"\"");
                     if( key.equals( valueStr )){
                         out.print(" checked=\"checked\"");
                     }
@@ -483,7 +554,10 @@ public class InputElementFormattingTag extends TagSupport {
             } else if( getType().equalsIgnoreCase("radio")) {
                 String valueStr = doValue(editConfig, editSub);
                 if (definitionTags) { out.print("<dd>"); }
-                Map <String,String> optionsMap = SelectListGenerator.getOptions(editConfig,getId(),wdf);
+                Map<String,String> optionsMap = (Map<String,String>) pageContext.getRequest().getAttribute("rangeOptions." + getId());
+                if (optionsMap == null) {
+                    optionsMap = SelectListGenerator.getOptions(editConfig,getName(),wdf);
+                }
                 if (optionsMap==null){
                     log.error("Error in InputElementFormattingTag.doStartTag(): null optionsMap returned from getOptions()");
                 }
@@ -492,7 +566,7 @@ public class InputElementFormattingTag extends TagSupport {
                 while (iter.hasNext()) {
                     String key = (String) iter.next();
                     String mapValue = optionsMap.get(key);
-                    out.print("<input "+classStr+" type=\"radio\" name=\""+getId()+"\" value=\""+StringEscapeUtils.escapeHtml(key)+"\"");
+                    out.print("<input "+classStr+" type=\"radio\" name=\""+getName()+"\" value=\""+StringEscapeUtils.escapeHtml(key)+"\"");
                     if( key.equals( valueStr )){
                         out.print(" checked=\"checked\"");
                     }
@@ -501,14 +575,14 @@ public class InputElementFormattingTag extends TagSupport {
                 if (definitionTags) { out.print("</dd>"); }
             } else if( getType().equalsIgnoreCase("file")) {
 
-                String fieldName = getId();
+                String fieldName = getName();
                 if( editConfig.getUrisInScope().containsKey(fieldName) ){
                     //if there is a link to a file Individual then this is 
                     //a update and we should just disable the control
                     out.println("<input type='file' disabled='true'/>");
                 } else {
                     if(definitionTags) {out.print("<dd>");}
-                    out.print("<input type=\"file\" id=\""+getId()+"\" name=\""+getId() +"\" />");
+                    out.print("<input type=\"file\" id=\""+getId()+"\" name=\""+getName() +"\" />");
                     if(definitionTags) {out.print("</dd>");}
                     out.print("\n");
                 }
@@ -530,7 +604,7 @@ public class InputElementFormattingTag extends TagSupport {
             	}
             	if (optionsMap.size()>0) {
             		if (definitionTags) { out.print("<dd>"); }
-            		out.print("<select "+classStr+" id=\""+getId()+"\" name=\""+getId()+"\">");                       
+            		out.print("<select "+classStr+" id=\""+getId()+"\" name=\""+getName()+"\">");                       
             		optionsMap = getSortedMap(optionsMap);
             		Iterator<String> iter = optionsMap.keySet().iterator();
             		while (iter.hasNext()) {
@@ -545,18 +619,27 @@ public class InputElementFormattingTag extends TagSupport {
                    
             } else if( getType().equalsIgnoreCase("editKey")) {
                 log.warn("Input element of type editKey was ignored, editKey fields are created by InputElementFormat submit and cancel.");
-            } else { // among other things, not supporting input type "reset"
+            } 
+            //added this for general form validation errors
+            else if(getType().equalsIgnoreCase("formerror")) {
+            	//print nothing since error string still printed below
+            }
+            else { // among other things, not supporting input type "reset"
                 log.error("Error in InputElementFormattingTag.doStartTag(): unknown input element type "+getType());
             }
 
             if( errorStr!=null && !errorStr.equals("")) {
-                out.println("<p class=\"validationError\">"+errorStr+"</p>");
+                out.println("<p id=\""+getId()+"_validationError\" class=\"validationError\">"+errorStr+"</p>");
             }
         } catch (IOException ex) {
             log.error("Error in doStartTag: " + ex.getMessage());
         }
         return SKIP_BODY;
     }
+    
+
+    
+  
     
     private Map<String, String> getTypesForCreateNew(
 			EditConfiguration editConfig, WebappDaoFactory wdf) {    	    
@@ -1023,7 +1106,7 @@ public class InputElementFormattingTag extends TagSupport {
         			log.debug("found existing literal of type Date for field " + fieldName);
         		}else if( valueFromLiteral instanceof String){
         			strFromLit = (String) valueFromLiteral;        			
-        			log.debug("found exisitng literal of type String for field " + fieldName);
+        			log.debug("found existing literal of type String for field " + fieldName);
         		} else if ( valueFromLiteral instanceof XSDDateTime) {
         			strFromLit = date.getLexicalForm();
         			log.debug("found existing literal of type XSDDateTime for field " + fieldName);
@@ -1146,6 +1229,6 @@ public class InputElementFormattingTag extends TagSupport {
 
         return sb;
     }
-
-     final String SELECTED = "selected=\"selected\"";
+    
+    final String SELECTED = "selected=\"selected\"";
 }

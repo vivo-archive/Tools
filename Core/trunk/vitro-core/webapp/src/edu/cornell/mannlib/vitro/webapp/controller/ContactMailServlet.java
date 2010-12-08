@@ -1,30 +1,4 @@
-/*
-Copyright (c) 2010, Cornell University
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-    * Redistributions of source code must retain the above copyright notice,
-      this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright notice,
-      this list of conditions and the following disclaimer in the documentation
-      and/or other materials provided with the distribution.
-    * Neither the name of Cornell University nor the names of its contributors
-      may be used to endorse or promote products derived from this software
-      without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-*/
+/* $This file is distributed under the terms of the license in /doc/license.txt$ */
 
 package edu.cornell.mannlib.vitro.webapp.controller;
 
@@ -48,16 +22,17 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.log4j.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 import edu.cornell.mannlib.vitro.webapp.ConfigurationProperties;
 import edu.cornell.mannlib.vitro.webapp.beans.Portal;
 
 public class ContactMailServlet extends VitroHttpServlet {
-	private static final Logger LOG = Logger.getLogger(ContactMailServlet.class);
+	private static final Log log = LogFactory.getLog(ContactMailServlet.class);
 	
-    private final static String CONFIRM_PAGE        = "/thankyou.jsp";
-    private final static String ERR_PAGE            = "/contact_err.jsp";
+    private final static String CONFIRM_PAGE        = "/templates/parts/thankyou.jsp";
+    private final static String ERR_PAGE            = "/templates/parts/contact_err.jsp";
     private final static String SPAM_MESSAGE        = "Your message was flagged as spam.";
     private final static String EMAIL_BACKUP_FILE_PATH = "/WEB-INF/LatestMessage.html";
     
@@ -82,9 +57,9 @@ public class ContactMailServlet extends VitroHttpServlet {
 	public static String getSmtpHostFromProperties() {
 		String host = ConfigurationProperties.getProperty("Vitro.smtpHost");
 		if (host != null && !host.equals("")) {
-			LOG.debug("Found Vitro.smtpHost value of " + host);
+			log.debug("Found Vitro.smtpHost value of " + host);
 		} else {
-			LOG.debug("No Vitro.smtpHost specified");
+			log.debug("No Vitro.smtpHost specified");
 		}
 		return (host != null && host.length() > 0) ? host : null;
 	}
@@ -151,7 +126,7 @@ public class ContactMailServlet extends VitroHttpServlet {
 
         if ("comment".equals(formType)) {
             if (portal.getContactMail() == null || portal.getContactMail().trim().length()==0) {
-                LOG.error("No contact mail address defined in current portal "+portal.getPortalId());
+            	log.error("No contact mail address defined in current portal "+portal.getPortalId());
                 throw new Error(
                         "To establish the Contact Us mail capability the system administrators must  "
                         + "specify an email address in the current portal.");
@@ -161,9 +136,9 @@ public class ContactMailServlet extends VitroHttpServlet {
             deliveryfrom   = "Message from the "+portal.getAppName()+" Contact Form";
         } else if ("correction".equals(formType)) {
             if (portal.getCorrectionMail() == null || portal.getCorrectionMail().trim().length()==0) {
-                LOG.error("Expecting one or more correction email addresses to be specified in current portal "+portal.getPortalId()+"; will attempt to use contact mail address");
+            	log.error("Expecting one or more correction email addresses to be specified in current portal "+portal.getPortalId()+"; will attempt to use contact mail address");
                 if (portal.getContactMail() == null || portal.getContactMail().trim().length()==0) {
-                    LOG.error("No contact mail address or correction mail address defined in current portal "+portal.getPortalId());
+                	log.error("No contact mail address or correction mail address defined in current portal "+portal.getPortalId());
                 } else {
                     deliverToArray = portal.getContactMail().split(",");
                 }
@@ -178,7 +153,7 @@ public class ContactMailServlet extends VitroHttpServlet {
         }
         recipientCount=(deliverToArray == null) ? 0 : deliverToArray.length;
         if (recipientCount == 0) {
-            LOG.error("recipientCount is 0 when DeliveryType specified as \""+formType+"\"");
+        	log.error("recipientCount is 0 when DeliveryType specified as \""+formType+"\"");
             throw new Error(
                     "To establish the Contact Us mail capability the system administrators must  "
                     + "specify at least one email address in the current portal.");

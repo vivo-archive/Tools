@@ -1,35 +1,12 @@
-/*
-Copyright (c) 2010, Cornell University
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-    * Redistributions of source code must retain the above copyright notice,
-      this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright notice,
-      this list of conditions and the following disclaimer in the documentation
-      and/or other materials provided with the distribution.
-    * Neither the name of Cornell University nor the names of its contributors
-      may be used to endorse or promote products derived from this software
-      without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-*/
+/* $This file is distributed under the terms of the license in /doc/license.txt$ */
 
 package edu.cornell.mannlib.vitro.webapp.beans;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import edu.cornell.mannlib.vitro.webapp.filestorage.model.ImageInfo;
+import edu.cornell.mannlib.vitro.webapp.search.beans.ProhibitedFromSearch;
 
 import java.lang.reflect.Method;
 import java.sql.Timestamp;
@@ -40,7 +17,16 @@ import java.util.*;
  * Represents a single entity record.
 */
 public class IndividualImpl extends BaseResourceBean implements Individual, Comparable<Individual> {
-    public String name = null;
+	/**
+	 * This can be used as a "not initialized" indicator for a property that
+	 * could validly be set to <code>null</code>. If <code>get()</code> is
+	 * called on such a property, and the property has this value, the correct
+	 * value can be fetched and cached.
+	 */
+	protected static final String NOT_INITIALIZED = "__%NOT_INITIALIZED%__";
+
+	public String name = null;
+	protected String rdfsLabel = null;
     public String vClassURI = null;
     protected VClass vClass = null;
     protected List<VClass> directVClasses = null;
@@ -50,8 +36,10 @@ public class IndividualImpl extends BaseResourceBean implements Individual, Comp
     protected Date timekey = null;
     protected Timestamp modTime = null;
     protected List <ObjectProperty>propertyList = null;
+    protected List<ObjectProperty> populatedObjectPropertyList = null;
     protected Map <String,ObjectProperty> objectPropertyMap = null;
     protected List <DataProperty>datatypePropertyList = null;
+    protected List<DataProperty> populatedDataPropertyList = null;
     protected Map <String,DataProperty> dataPropertyMap = null;
     protected List <DataPropertyStatement>dataPropertyStatements = null;
     protected List <ObjectPropertyStatement>objectPropertyStatements = null;
@@ -61,11 +49,10 @@ public class IndividualImpl extends BaseResourceBean implements Individual, Comp
     protected String moniker = null;
     protected String url = null;
     protected String description = null;
-    protected String imageFile = null;
     protected String anchor = null;
     protected String blurb = null;
-    protected String imageThumb = null;
-    protected String citation = null;
+    protected String mainImageUri = NOT_INITIALIZED;
+    protected ImageInfo imageInfo = null;
     protected int statusId = 0;
     protected String status = null;
     protected List <Link>linksList = null;
@@ -97,6 +84,9 @@ public class IndividualImpl extends BaseResourceBean implements Individual, Comp
     public String getName(){return name;}
     public void setName(String in){name=in;}
 
+    public String getRdfsLabel(){ return rdfsLabel; }
+    public void setRdfsLabel(String s){ rdfsLabel = s; }    	
+    
 //     private String modTime = null;
 //     public String getModtime(){return modTime;}
 //     public void setModtime(String in){modTime=in;}
@@ -130,6 +120,12 @@ public class IndividualImpl extends BaseResourceBean implements Individual, Comp
     public void setPropertyList(List <ObjectProperty>propertyList) {
         this.propertyList = propertyList;
     }
+    public List<ObjectProperty> getPopulatedObjectPropertyList() {
+        return populatedObjectPropertyList;
+    }
+    public void setPopulatedObjectPropertyList(List<ObjectProperty> propertyList) {
+        populatedObjectPropertyList = propertyList;
+    }
     public Map<String,ObjectProperty> getObjectPropertyMap() {
     	return this.objectPropertyMap;
     }
@@ -142,6 +138,12 @@ public class IndividualImpl extends BaseResourceBean implements Individual, Comp
     public void setDatatypePropertyList(List <DataProperty>datatypePropertyList) {
         this.datatypePropertyList = datatypePropertyList;
     }
+    public List<DataProperty> getPopulatedDataPropertyList() {
+        return populatedDataPropertyList;
+    }
+    public void setPopulatedDataPropertyList(List<DataProperty> propertyList) {
+        populatedDataPropertyList = propertyList;
+    }
     public Map<String,DataProperty> getDataPropertyMap() {
     	return this.dataPropertyMap;
     }
@@ -151,8 +153,38 @@ public class IndividualImpl extends BaseResourceBean implements Individual, Comp
     public void setDataPropertyStatements(List <DataPropertyStatement>list) {
          dataPropertyStatements = list;
     }
-    public List <DataPropertyStatement>getDataPropertyStatements(){
+    public List<DataPropertyStatement> getDataPropertyStatements(){
         return dataPropertyStatements;
+    }
+    
+    public List<DataPropertyStatement> getDataPropertyStatements(String propertyUri) {
+        List<DataPropertyStatement> stmts = getDataPropertyStatements();
+        List<DataPropertyStatement> stmtsForProp = new ArrayList<DataPropertyStatement>();
+        for (DataPropertyStatement stmt : stmts) {
+            if (stmt.getDatapropURI().equals(propertyUri)) {
+                stmtsForProp.add(stmt);
+            }
+        }
+        return stmtsForProp;        
+    }
+
+    public DataPropertyStatement getDataPropertyStatement(String propertyUri) {
+        List<DataPropertyStatement> stmts = getDataPropertyStatements(propertyUri);
+        return stmts.isEmpty() ? null : stmts.get(0);       
+    }
+    
+    public List<String> getDataValues(String propertyUri) {     
+        List<DataPropertyStatement> stmts = getDataPropertyStatements(propertyUri);
+        List<String> dataValues = new ArrayList<String>(stmts.size());
+        for (DataPropertyStatement stmt : stmts) {
+            dataValues.add(stmt.getData());
+        }
+        return dataValues;
+    }
+ 
+    public String getDataValue(String propertyUri) {
+        List<DataPropertyStatement> stmts = getDataPropertyStatements(propertyUri);
+        return stmts.isEmpty() ? null : stmts.get(0).getData();
     }
 
     public VClass getVClass() {
@@ -166,7 +198,25 @@ public class IndividualImpl extends BaseResourceBean implements Individual, Comp
     	return allVClasses;
     }
     
-    public List<VClass> getVClasses(boolean direct) {
+    @Override
+	public boolean isVClass(String uri) {
+    	if (uri == null) {
+    		return false;
+    	}
+		for (VClass vClass : getVClasses()) {
+			if (uri.equals(vClass.getURI())) {
+				return true;
+			}
+		}
+		return false;
+	}
+    
+    public boolean isMemberOfClassProhibitedFromSearch(ProhibitedFromSearch pfs) {
+    	throw new UnsupportedOperationException(this.getClass().getName() +
+    		".isMemberOfClassProhibitedFromSearch must be overriden by a subclass");
+    }
+
+	public List<VClass> getVClasses(boolean direct) {
     	if (direct) {
     		return directVClasses;
     	} else {
@@ -186,8 +236,33 @@ public class IndividualImpl extends BaseResourceBean implements Individual, Comp
          objectPropertyStatements = list;
     }
 
-    public List <ObjectPropertyStatement>getObjectPropertyStatements(){
+    public List <ObjectPropertyStatement> getObjectPropertyStatements(){
         return objectPropertyStatements;
+    }
+    
+    public List<ObjectPropertyStatement> getObjectPropertyStatements(String propertyUri) {
+        List<ObjectPropertyStatement> stmts = getObjectPropertyStatements();
+        List<ObjectPropertyStatement> stmtsForProp = new ArrayList<ObjectPropertyStatement>();
+        for (ObjectPropertyStatement stmt : stmts) {
+            if (stmt.getPropertyURI().equals(propertyUri)) {
+                stmtsForProp.add(stmt);
+            }
+        }
+        return stmtsForProp;
+    }
+    
+    public List<Individual> getRelatedIndividuals(String propertyUri) {
+        List<ObjectPropertyStatement> stmts = getObjectPropertyStatements(propertyUri);
+        List<Individual> relatedIndividuals = new ArrayList<Individual>(stmts.size());
+        for (ObjectPropertyStatement stmt : stmts) {
+            relatedIndividuals.add(stmt.getObject());
+        }
+        return relatedIndividuals;       
+    }
+    
+    public Individual getRelatedIndividual(String propertyUri) {
+        List<ObjectPropertyStatement> stmts = getObjectPropertyStatements(propertyUri);    
+        return stmts.isEmpty() ? null : stmts.get(0).getObject();
     }
 
     public List<DataPropertyStatement> getExternalIds(){
@@ -209,29 +284,36 @@ public class IndividualImpl extends BaseResourceBean implements Individual, Comp
 
     public String getBlurb(){return blurb;}
     public void setBlurb(String in){blurb=in;}
-
-    public String getCitation(){return citation;}
-    public void setCitation(String in){citation=in;}
-
+    
     public int getStatusId(){return statusId;}
     public void setStatusId(int in){statusId=in;}
 
     public String getStatus()         {return status;}
     public void   setStatus(String s) {status=s;     }
 
-    public String getImageFile() {
-        return imageFile;
-    }
-    public void setImageFile(String imageFile) {
-        this.imageFile = imageFile;
-    }
-    public String getImageThumb() {
-        return imageThumb;
-    }
-    public void setImageThumb(String imageThumb) {
-        this.imageThumb = imageThumb;
-    }
-    public String getUrl() {
+    
+	@Override
+	public String getMainImageUri() {
+		return (mainImageUri == NOT_INITIALIZED) ? null : mainImageUri;
+	}
+
+	@Override
+	public void setMainImageUri(String mainImageUri) {
+		this.mainImageUri = mainImageUri;
+		this.imageInfo = null;
+	}
+
+	@Override
+	public String getImageUrl() {
+		return "imageUrl";
+	}
+
+	@Override
+	public String getThumbUrl() {
+		return "thumbUrl";
+	}
+
+	public String getUrl() {
         return url;
     }
     public void setUrl(String url) {
@@ -412,4 +494,11 @@ public class IndividualImpl extends BaseResourceBean implements Individual, Comp
        }
    }
 
+   public String toString(){
+       if( getURI() == null ){
+           return "uninitialized, null URI";
+       }else{
+           return getURI() + " " + getName();
+       }
+   }
 }

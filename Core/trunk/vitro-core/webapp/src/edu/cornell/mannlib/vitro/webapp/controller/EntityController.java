@@ -1,30 +1,4 @@
-/*
-Copyright (c) 2010, Cornell University
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-    * Redistributions of source code must retain the above copyright notice,
-      this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright notice,
-      this list of conditions and the following disclaimer in the documentation
-      and/or other materials provided with the distribution.
-    * Neither the name of Cornell University nor the names of its contributors
-      may be used to endorse or promote products derived from this software
-      without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-*/
+/* $This file is distributed under the terms of the license in /doc/license.txt$ */
 
 package edu.cornell.mannlib.vitro.webapp.controller;
 
@@ -51,7 +25,6 @@ import com.hp.hpl.jena.ontology.OntModel;
 import com.hp.hpl.jena.rdf.model.Literal;
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
-import com.hp.hpl.jena.rdf.model.ModelMaker;
 import com.hp.hpl.jena.rdf.model.Property;
 import com.hp.hpl.jena.rdf.model.RDFNode;
 import com.hp.hpl.jena.rdf.model.Resource;
@@ -65,9 +38,11 @@ import edu.cornell.mannlib.vitro.webapp.beans.Individual;
 import edu.cornell.mannlib.vitro.webapp.beans.ObjectProperty;
 import edu.cornell.mannlib.vitro.webapp.beans.ObjectPropertyStatement;
 import edu.cornell.mannlib.vitro.webapp.beans.Portal;
+import edu.cornell.mannlib.vitro.webapp.beans.SelfEditingConfiguration;
 import edu.cornell.mannlib.vitro.webapp.beans.VClass;
 import edu.cornell.mannlib.vitro.webapp.dao.IndividualDao;
 import edu.cornell.mannlib.vitro.webapp.dao.ObjectPropertyDao;
+import edu.cornell.mannlib.vitro.webapp.filestorage.model.FileInfo;
 import edu.cornell.mannlib.vitro.webapp.search.beans.VitroQuery;
 import edu.cornell.mannlib.vitro.webapp.search.beans.VitroQueryWrapper;
 import edu.cornell.mannlib.vitro.webapp.utils.NamespaceMapper;
@@ -121,6 +96,13 @@ public class EntityController extends VitroHttpServlet {
             
             if( indiv == null || checkForHidden(vreq, indiv) || checkForSunset(vreq, indiv)){
             	doNotFound(vreq, res);
+            	return;
+            }
+
+            // If this is an uploaded file, redirect to its "alias URL".
+            String aliasUrl = getAliasUrlForBytestreamIndividual(req, indiv);
+            if (aliasUrl != null) {
+            	res.sendRedirect(req.getContextPath() + aliasUrl);
             	return;
             }
             
@@ -194,9 +176,9 @@ public class EntityController extends VitroHttpServlet {
                     }
                 }
             }
-        } else {
-            log.error("Entity " + indiv.getURI() + " with vclass URI " +
-                    indiv.getVClassURI() + ", no vclass with that URI exists");
+        } else if (indiv.getVClassURI() != null) {
+            log.debug("Individual " + indiv.getURI() + " with class URI " +
+                    indiv.getVClassURI() + ": no class found with that URI");
         }
         if (customView!=null) {
             // insert test for whether a css files of the same name exists, and populate the customCss string for use when construction the header
@@ -212,7 +194,7 @@ public class EntityController extends VitroHttpServlet {
         if( view == null){
             if (customView == null) {
                 view = default_jsp;
-                vreq.setAttribute("bodyJsp","/"+Controllers.ENTITY_JSP);
+                vreq.setAttribute("bodyJsp", Controllers.ENTITY_JSP);
                 log.debug("no custom view and no view parameter in request for rendering "+indiv.getName());
             } else {
                 view = default_jsp;
@@ -247,13 +229,6 @@ public class EntityController extends VitroHttpServlet {
         	vreq.setAttribute("entityLinkedDataURL", indiv.getURI() + "/" + indiv.getLocalName() + ".rdf");	
         }
         
-        
-		// generate link to RDF representation for semantic web clients like Piggy Bank
-		// BJL 2008-07-16: I'm temporarily commenting this out because I forgot we need to make sure it filters out the hidden properties
-        // generate url for this entity
-        // String individualToRDF = "http://"+vreq.getServerName()+":"+vreq.getServerPort()+vreq.getContextPath()+"/entity?home=1&uri="+forURL(entity.getURI())+"&view=rdf.rdf"; 
-        //css += "<link rel='alternate' type='application/rdf+xml' title='"+entity.getName()+"' href='"+individualToRDF+"' />";
-
         vreq.setAttribute("css",css);
         vreq.setAttribute("scripts", "/templates/entity/entity_inject_head.jsp");
 
@@ -292,14 +267,21 @@ public class EntityController extends VitroHttpServlet {
 		newModel.write( res.getOutputStream(), format );		
 	}
 
-	private void doRedirect(HttpServletRequest req, HttpServletResponse res,
-			String redirectURL) {	
-		// It seems like there must be a better way to do this
-		String hn = req.getHeader("Host");		
-    	res.setHeader("Location", res.encodeURL( "http://" + hn + req.getContextPath() + redirectURL ));
-    	res.setStatus(res.SC_SEE_OTHER);		
-	}
-
+    private void doRedirect(HttpServletRequest req, HttpServletResponse res,
+            String redirectURL) {
+        //It seems like there must be a more standard way to do a redirect in tomcat.
+        String hn = req.getHeader("Host");
+        if (req.isSecure()) {
+            res.setHeader("Location", res.encodeURL("https://" + hn
+                    + req.getContextPath() + redirectURL));
+            log.info("doRedirect by using HTTPS");
+        } else {
+            res.setHeader("Location", res.encodeURL("http://" + hn
+                    + req.getContextPath() + redirectURL));
+            log.info("doRedirect by using HTTP");
+        }
+        res.setStatus(res.SC_SEE_OTHER);
+    }
 
 	private static Pattern LINKED_DATA_URL = Pattern.compile("^/individual/([^/]*)$");		
 	private static Pattern NS_PREFIX_URL = Pattern.compile("^/individual/([^/]*)/([^/]*)$");
@@ -407,8 +389,9 @@ public class EntityController extends VitroHttpServlet {
         if (netIdStr==null || netIdStr.equals(""))
             netIdStr = vreq.getParameter("netid");
         if ( netIdStr != null ){
-            uri = iwDao.getIndividualURIFromNetId(netIdStr);
-            return iwDao.getIndividualByURI(uri);
+    		SelfEditingConfiguration sec = SelfEditingConfiguration.getBean(vreq);
+    		uri = sec.getIndividualUriFromUsername(iwDao, netIdStr);
+        	return iwDao.getIndividualByURI(uri);
         }
 
 		return null;		
@@ -449,7 +432,7 @@ public class EntityController extends VitroHttpServlet {
      * @return null if this is not a linked data request, returns content type if it is a 
      * linked data request.
      */
-	private ContentType checkForLinkedDataRequest(String url, String acceptHeader) {		
+	protected ContentType checkForLinkedDataRequest(String url, String acceptHeader) {		
 		try {
 			//check the accept header			
 			if (acceptHeader != null) {
@@ -502,6 +485,24 @@ public class EntityController extends VitroHttpServlet {
         // TODO Auto-generated method stub
         return false;
     }
+    
+	/**
+	 * If this entity represents a File Bytestream, get its alias URL so we can
+	 * properly serve the file contents.
+	 */
+	private String getAliasUrlForBytestreamIndividual(HttpServletRequest req, Individual entity)
+			throws IOException {
+		FileInfo fileInfo = FileInfo.instanceFromBytestreamUri(new VitroRequest(
+				req).getWebappDaoFactory(), entity.getURI());
+		if (fileInfo == null) {
+			log.trace("Entity '" + entity.getURI() + "' is not a bytestream.");
+			return null;
+		}
+
+		String url = fileInfo.getBytestreamAliasUrl();
+		log.debug("Alias URL for '" + entity.getURI() + "' is '" + url + "'");
+		return url;
+	}
  
     private Model getRDF(Individual entity, OntModel contextModel, Model newModel, int recurseDepth ) {
     	Resource subj = newModel.getResource(entity.getURI());
@@ -604,7 +605,7 @@ public class EntityController extends VitroHttpServlet {
         out.println("<p>id is the id of the entity to query for. netid also works.</p>");
         out.println("</body></html>");
     }
-
+    
     private void doNotFound(HttpServletRequest req, HttpServletResponse res)
     throws IOException, ServletException {
         VitroRequest vreq = new VitroRequest(req);

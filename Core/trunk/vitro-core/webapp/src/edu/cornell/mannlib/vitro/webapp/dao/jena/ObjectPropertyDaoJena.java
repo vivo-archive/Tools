@@ -1,30 +1,4 @@
-/*
-Copyright (c) 2010, Cornell University
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-    * Redistributions of source code must retain the above copyright notice,
-      this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright notice,
-      this list of conditions and the following disclaimer in the documentation
-      and/or other materials provided with the distribution.
-    * Neither the name of Cornell University nor the names of its contributors
-      may be used to endorse or promote products derived from this software
-      without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-*/
+/* $This file is distributed under the terms of the license in /doc/license.txt$ */
 
 package edu.cornell.mannlib.vitro.webapp.dao.jena;
 
@@ -43,6 +17,14 @@ import com.hp.hpl.jena.ontology.OntModel;
 import com.hp.hpl.jena.ontology.OntProperty;
 import com.hp.hpl.jena.ontology.OntResource;
 import com.hp.hpl.jena.ontology.ProfileException;
+import com.hp.hpl.jena.query.Query;
+import com.hp.hpl.jena.query.QueryExecution;
+import com.hp.hpl.jena.query.QueryExecutionFactory;
+import com.hp.hpl.jena.query.QueryFactory;
+import com.hp.hpl.jena.query.QuerySolution;
+import com.hp.hpl.jena.query.QuerySolutionMap;
+import com.hp.hpl.jena.query.ResultSet;
+import com.hp.hpl.jena.rdf.model.Literal;
 import com.hp.hpl.jena.rdf.model.Property;
 import com.hp.hpl.jena.rdf.model.RDFNode;
 import com.hp.hpl.jena.rdf.model.Resource;
@@ -56,6 +38,9 @@ import com.hp.hpl.jena.vocabulary.RDF;
 import com.hp.hpl.jena.vocabulary.RDFS;
 
 import edu.cornell.mannlib.vitro.webapp.beans.BaseResourceBean;
+import edu.cornell.mannlib.vitro.webapp.beans.DataProperty;
+import edu.cornell.mannlib.vitro.webapp.beans.DataPropertyStatement;
+import edu.cornell.mannlib.vitro.webapp.beans.DataPropertyStatementImpl;
 import edu.cornell.mannlib.vitro.webapp.beans.Individual;
 import edu.cornell.mannlib.vitro.webapp.beans.ObjectProperty;
 import edu.cornell.mannlib.vitro.webapp.beans.ObjectPropertyStatement;
@@ -69,6 +54,26 @@ import edu.cornell.mannlib.vitro.webapp.dao.jena.event.EditEvent;
 public class ObjectPropertyDaoJena extends PropertyDaoJena implements ObjectPropertyDao {
     private static final Log log = LogFactory.getLog(ObjectPropertyDaoJena.class.getName());
 
+    protected static final String objectPropertyQueryString = 
+        PREFIXES + "\n" +
+        "SELECT DISTINCT ?property WHERE { \n" +
+        //"   GRAPH ?g {\n" + 
+        "       ?subject ?property ?object . \n" +
+        "       ?property rdf:type owl:ObjectProperty . \n" +
+        propertyFilters +
+        //"   }\n" +
+        "}";
+
+    static protected Query objectPropertyQuery;
+    static {
+        try {
+            objectPropertyQuery = QueryFactory.create(objectPropertyQueryString);
+        } catch(Throwable th){
+            log.error("could not create SPARQL query for objectPropertyQueryString " + th.getMessage());
+            log.error(objectPropertyQueryString);
+        }           
+    }
+    
     public ObjectPropertyDaoJena(WebappDaoFactoryJena wadf) {
         super(wadf);
     }
@@ -405,6 +410,7 @@ public class ObjectPropertyDaoJena extends PropertyDaoJena implements ObjectProp
 	        doUpdate(prop,p,inv,ontModel);
 	        return 0;
         } finally {
+        	getOntModel().getBaseModel().notifyEvent(new EditEvent(getWebappDaoFactory().getUserURI(),false));
         	ontModel.leaveCriticalSection();
         }
     }
@@ -435,7 +441,7 @@ public class ObjectPropertyDaoJena extends PropertyDaoJena implements ObjectProp
 		            	  p.setInverseOf(inv);
 		            	}
 	            } catch (Exception e) {
-	                   System.out.println("Couldn't set "+prop.getURIInverse()+" as inverse");
+	                   log.debug("Couldn't set "+prop.getURIInverse()+" as inverse");
 				       // BJL: What we really want to do here is create a new property as inverse
 			    }      
 	        }
@@ -824,4 +830,38 @@ public class ObjectPropertyDaoJena extends PropertyDaoJena implements ObjectProp
     	return false;
     }
 
+    @Override
+    public List<ObjectProperty> getObjectPropertyList(Individual subject) {
+        return getObjectPropertyList(subject.getURI());
+    }
+    
+    @Override
+    /*
+     * SPARQL-based method for getting the individual's object properties.
+     * Ideally this implementation should replace the existing way of getting
+     * the object property list, but the consequences of this may be far-reaching,
+     * so we are implementing a new method now and will merge the old approach
+     * into the new one in a future release.
+     */
+    public List<ObjectProperty> getObjectPropertyList(String subjectUri) {
+        log.debug("objectPropertyQueryString:\n" + objectPropertyQueryString);
+        log.debug("objectPropertyQuery:\n" + objectPropertyQuery);
+        ResultSet results = getPropertyQueryResults(subjectUri, objectPropertyQuery);
+        List<ObjectProperty> properties = new ArrayList<ObjectProperty>();
+        while (results.hasNext()) {
+            QuerySolution sol = results.next();
+            Resource resource = sol.getResource("property");
+            String uri = resource.getURI();
+            ObjectProperty property = getObjectPropertyByURI(uri);
+            properties.add(property);
+        }
+        return properties; 
+    }
+    
+    @Override
+    public String getCustomShortView() {
+        //return getPropertyStringValue(, PROPERTY_CUSTOM_LIST_VIEW_ANNOT);  
+        return null;
+    }
+    
 }

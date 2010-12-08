@@ -1,30 +1,4 @@
-/*
-Copyright (c) 2010, Cornell University
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-    * Redistributions of source code must retain the above copyright notice,
-      this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright notice,
-      this list of conditions and the following disclaimer in the documentation
-      and/or other materials provided with the distribution.
-    * Neither the name of Cornell University nor the names of its contributors
-      may be used to endorse or promote products derived from this software
-      without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-*/
+/* $This file is distributed under the terms of the license in /doc/license.txt$ */
 
 package edu.cornell.mannlib.vitro.webapp.beans;
 
@@ -85,7 +59,7 @@ public class ObjectProperty extends Property implements Comparable<ObjectPropert
 
     private String domainEntitySortField = null;
     private String domainEntitySortDirection = null;
-    private String domainDisplayTier = null;
+    private String domainDisplayTier = "-1";
     private int domainDisplayLimit = 5;
     private String domainQuickEditJsp = null;
 
@@ -93,7 +67,7 @@ public class ObjectProperty extends Property implements Comparable<ObjectPropert
     
     private String rangeEntitySortField = null;
     private String rangeEntitySortDirection = null;
-    private String rangeDisplayTier = null;
+    private String rangeDisplayTier = "-1";
     private int rangeDisplayLimit = 5;
     private String rangeQuickEditJsp = null;
     
@@ -524,9 +498,20 @@ public class ObjectProperty extends Property implements Comparable<ObjectPropert
                     int rv = 0;
                     try {
                         if( val1 instanceof String ) {
-                            Collator collator = Collator.getInstance();
-                        	rv = collator.compare( ((String)val1) , ((String)val2) );
-                            //rv = ((String)val1).compareTo((String)val2);
+                        	
+                        	if (val1 == null && val2 == null) {
+                        		rv = 0;
+                        	} else if (val1 == null) {
+                        		rv = 1;
+                        	} else if (val2 == null) {
+                        		rv = -1;
+                        	} else {
+                               	
+                                Collator collator = Collator.getInstance();
+                            	rv = collator.compare( ((String)val1) , ((String)val2) );
+                                //rv = ((String)val1).compareTo((String)val2);                 		
+                        	}
+ 
                         } else if( val1 instanceof Date ) {
                             DateTime dt1 = new DateTime((Date)val1);
                             DateTime dt2 = new DateTime((Date)val2);
@@ -606,33 +591,31 @@ public class ObjectProperty extends Property implements Comparable<ObjectPropert
                         log.debug( "PropertyWebapp.sortObjectPropertyStatementsForDisplay passed object property statement with no range entity.");
                     }
                     int rv = 0;
-                    try {
-                        if (val1==null) {
-                            rv = 1;
+                    try {	
+                    	if (val1 == null && val2 == null) {
+                    		 rv = 0;
+                    	} else if (val1==null) {
+                             rv = 1;
+                        } else if (val2==null) {
+                             rv = -1;
+                        }  else {                        
+	                           if( val1 instanceof String ) {
+	                              Collator collator = Collator.getInstance();
+	                              rv = collator.compare( ((String)val1) , ((String)val2) ); //was rv = ((String)val1).compareTo((String)val2);
+	                           } else if( val1 instanceof Date ) {
+	                              DateTime dt1 = new DateTime((Date)val1);
+	                              DateTime dt2 = new DateTime((Date)val2);
+	                              rv = dt1.compareTo(dt2);
+	                           } else if( val1 instanceof Integer) {
+	                        	  rv = ((Integer) val1) - ((Integer) val2);
+	                           } else{
+	                            rv = 0;
+	                           }
                         }
-                        if (val2==null) {
-                            rv = -1;
-                        }
-                        if( val1 instanceof String ) {
-                            Collator collator = Collator.getInstance();
-                            rv = collator.compare( ((String)val1) , ((String)val2) ); //was rv = ((String)val1).compareTo((String)val2);
-                        } else if( val1 instanceof Date ) {
-                            DateTime dt1 = new DateTime((Date)val1);
-                            DateTime dt2 = new DateTime((Date)val2);
-                            rv = dt1.compareTo(dt2);
-                        } else if( val1 instanceof Integer) {
-                        	rv = ((Integer) val1) - ((Integer) val2);
-                        }
-                        else
-                            rv = 0;
                     } catch (NullPointerException e) {
                         e.printStackTrace();
                     }
-                    
-                    //if( cAscending )
-                    //    return rv;
-                    //else
-                    //    return rv * -1;
+ 
                     
                     if ( !cAscending ) {
                     	rv = rv * -1;

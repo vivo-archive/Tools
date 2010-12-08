@@ -1,30 +1,4 @@
-/*
-Copyright (c) 2010, Cornell University
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-    * Redistributions of source code must retain the above copyright notice,
-      this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright notice,
-      this list of conditions and the following disclaimer in the documentation
-      and/or other materials provided with the distribution.
-    * Neither the name of Cornell University nor the names of its contributors
-      may be used to endorse or promote products derived from this software
-      without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-*/
+/* $This file is distributed under the terms of the license in /doc/license.txt$ */
 
 package edu.cornell.mannlib.vitro.webapp.ontology.update;
 
@@ -38,14 +12,8 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Set;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
-import com.hp.hpl.jena.ontology.OntClass;
 import com.hp.hpl.jena.ontology.OntModel;
-import com.hp.hpl.jena.ontology.OntProperty;
 import com.hp.hpl.jena.query.Query;
 import com.hp.hpl.jena.query.QueryExecution;
 import com.hp.hpl.jena.query.QueryExecutionFactory;
@@ -53,9 +21,6 @@ import com.hp.hpl.jena.query.QueryFactory;
 import com.hp.hpl.jena.query.Syntax;
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
-import com.hp.hpl.jena.rdf.model.RDFNode;
-import com.hp.hpl.jena.rdf.model.Resource;
-import com.hp.hpl.jena.rdf.model.ResourceFactory;
 import com.hp.hpl.jena.rdf.model.Statement;
 import com.hp.hpl.jena.rdf.model.StmtIterator;
 import com.hp.hpl.jena.shared.Lock;
@@ -71,9 +36,7 @@ import edu.cornell.mannlib.vitro.webapp.utils.jena.JenaIngestUtils;
  */
 public class OntologyUpdater {
 
-	
-	
-	private final Log log = LogFactory.getLog(OntologyUpdater.class);
+	//private final Log log = LogFactory.getLog(OntologyUpdater.class);
 	
 	private OntologyUpdateSettings settings;
 	private OntologyChangeLogger logger;
@@ -81,10 +44,8 @@ public class OntologyUpdater {
 	
 	public OntologyUpdater(OntologyUpdateSettings settings) {
 		this.settings = settings;
-		this.logger = new SimpleOntologyChangeLogger(settings.getLogFile(),
-													settings.getErrorLogFile());
-		this.record = new SimpleOntologyChangeRecord(
-				settings.getAddedDataFile(), settings.getRemovedDataFile());
+		this.logger = new SimpleOntologyChangeLogger(settings.getLogFile(),	settings.getErrorLogFile());
+		this.record = new SimpleOntologyChangeRecord(settings.getAddedDataFile(), settings.getRemovedDataFile());
 	}
 	
 	public boolean update() throws IOException {	
@@ -93,8 +54,14 @@ public class OntologyUpdater {
 		
 		boolean updateRequired = updateRequired();
 		if (updateRequired) {
-			performUpdate();
 			
+			try {
+			     performUpdate();
+			} catch (Exception e) {
+				 logger.logError(e.getMessage());
+				 e.printStackTrace();
+			}
+
 			if (!logger.errorsWritten()) {
 				// add assertions to the knowledge base showing that the 
 				// update was successful, so we don't need to run it again.
@@ -104,6 +71,7 @@ public class OntologyUpdater {
 			
 			record.writeChanges();
 			logger.closeLogs();
+
 		}
 		
 		return updateRequired;
@@ -112,74 +80,31 @@ public class OntologyUpdater {
 	
 	private void performUpdate() throws IOException {
 		
-		performSparqlConstructs(settings.getSparqlConstructsDir(),
-				                settings.getOntModelSelector().getABoxModel());
+		DateTimeMigration dtMigration = new DateTimeMigration(settings.getOntModelSelector().getABoxModel(), logger, record);
+        dtMigration.updateABox();
+		
+		performSparqlConstructAdditions(settings.getSparqlConstructAdditionsDir(), settings.getOntModelSelector().getABoxModel());
+		performSparqlConstructRetractions(settings.getSparqlConstructDeletionsDir(), settings.getOntModelSelector().getABoxModel());
 		
 		List<AtomicOntologyChange> rawChanges = getAtomicOntologyChanges();
 		
-		AtomicOntologyChangeLists changes = 
-				new AtomicOntologyChangeLists(rawChanges, 
-						settings.getNewTBoxModel(), 
-						settings.getOldTBoxModel());
-		
-		//process the TBox before the ABox
-		updateTBoxAnnotations();
-		
-		updateABox(changes);
+		AtomicOntologyChangeLists changes = new AtomicOntologyChangeLists(rawChanges, 
+						                                                  settings.getNewTBoxModel(), 
+						                                                  settings.getOldTBoxModel());
+		   //process the TBox before the ABox
+	       updateTBoxAnnotations();
+
+    	   updateABox(changes);
 		
 	}
 	
-	/**
-	 * Performs a set of arbitrary SPARQL CONSTRUCT queries on the 
-	 * data, for changes that cannot be expressed as simple property
-	 * or class additions, deletions, or renamings.
-	 * Blank nodes created by the queries are given random URIs.
-	 * @param sparqlConstructDir
-	 * @param aboxModel
-	 */
-	private void performSparqlConstructs(String sparqlConstructDir, 
-			OntModel aboxModel) throws IOException {
-		Model anonModel = ModelFactory.createDefaultModel();
-		File sparqlConstructDirectory = new File(sparqlConstructDir);
-		if (!sparqlConstructDirectory.isDirectory()) {
-			logger.logError(this.getClass().getName() + 
-					"performSparqlConstructs() expected to find a directory " +
-					" at " + sparqlConstructDir + ". Unable to execute " +
-					" SPARQL CONSTRUCTS.");
+	
+	private void performSparqlConstructAdditions(String sparqlConstructDir, OntModel aboxModel) throws IOException {
+		
+		Model anonModel = performSparqlConstructs(sparqlConstructDir, aboxModel);
+		
+		if (anonModel == null) {
 			return;
-		}
-		File[] sparqlFiles = sparqlConstructDirectory.listFiles();
-		for (int i = 0; i < sparqlFiles.length; i ++) {
-			File sparqlFile = sparqlFiles[i];			
-			try {
-				BufferedReader reader = 
-					new BufferedReader(new FileReader(sparqlFile));
-				StringBuffer fileContents = new StringBuffer();
-				String ln;
-				while ( (ln = reader.readLine()) != null) {
-					fileContents.append(ln).append('\n');
-				}
-				try {
-					Query q = QueryFactory.create(fileContents.toString(), 
-							Syntax.syntaxARQ);
-					aboxModel.enterCriticalSection(Lock.WRITE);
-					try {
-						QueryExecution qe = QueryExecutionFactory.create(q,
-								aboxModel);
-						qe.execConstruct(anonModel);
-					} finally {
-						aboxModel.leaveCriticalSection();
-					}
-				} catch (Exception e) {
-					logger.logError(this.getClass().getName() + 
-							".performSparqlConstructs() unable to execute " +
-							"query at " + sparqlFile);
-				}
-			} catch (FileNotFoundException fnfe) {
-				logger.logError(this.getClass().getName() + 
-						".performSparqlConstructs() could not find " +
-						" SPARQL CONSTRUCT file " + sparqlFile + ". Skipping.");
-			}	
 		}
 		
 		aboxModel.enterCriticalSection(Lock.WRITE);
@@ -207,7 +132,95 @@ public class OntologyUpdater {
 			aboxModel.leaveCriticalSection();
 		}
 		
-
+	}
+	
+	private void performSparqlConstructRetractions(String sparqlConstructDir, OntModel aboxModel) throws IOException {
+		
+		Model retractions = performSparqlConstructs(sparqlConstructDir, aboxModel);
+		
+		if (retractions == null) {
+			return;
+		}
+		
+		aboxModel.enterCriticalSection(Lock.WRITE);
+		try {
+			Model actualRetractions = ModelFactory.createDefaultModel();
+			StmtIterator stmtIt = retractions.listStatements();
+			while (stmtIt.hasNext()) {
+				Statement stmt = stmtIt.nextStatement();
+				if (aboxModel.contains(stmt)) {
+					actualRetractions.add(stmt);
+				}
+			}
+			aboxModel.remove(actualRetractions);
+			if (actualRetractions.size() > 0) {
+				logger.log("Removed " + actualRetractions.size() + " statement" 
+						   + ((actualRetractions.size() > 1) ? "s" : "") + 
+						   " using SPARQL CONSTRUCT queries.");
+			}
+			record.recordRetractions(actualRetractions);
+		} finally {
+			aboxModel.leaveCriticalSection();
+		}
+		
+	}
+	
+	/**
+	 * Performs a set of arbitrary SPARQL CONSTRUCT queries on the 
+	 * data, for changes that cannot be expressed as simple property
+	 * or class additions, deletions, or renamings.
+	 * Blank nodes created by the queries are given random URIs.
+	 * @param sparqlConstructDir
+	 * @param aboxModel
+	 */
+	private Model performSparqlConstructs(String sparqlConstructDir, 
+			OntModel aboxModel) throws IOException {
+		
+		Model anonModel = ModelFactory.createDefaultModel();
+		File sparqlConstructDirectory = new File(sparqlConstructDir);
+		
+		if (!sparqlConstructDirectory.isDirectory()) {
+			logger.logError(this.getClass().getName() + 
+					"performSparqlConstructs() expected to find a directory " +
+					" at " + sparqlConstructDir + ". Unable to execute " +
+					" SPARQL CONSTRUCTS.");
+			return null;
+		}
+		File[] sparqlFiles = sparqlConstructDirectory.listFiles();
+		for (int i = 0; i < sparqlFiles.length; i ++) {
+			File sparqlFile = sparqlFiles[i];			
+			try {
+				BufferedReader reader = 
+					new BufferedReader(new FileReader(sparqlFile));
+				StringBuffer fileContents = new StringBuffer();
+				String ln;
+				while ( (ln = reader.readLine()) != null) {
+					fileContents.append(ln).append('\n');
+				}
+				try {
+					Query q = QueryFactory.create(fileContents.toString(), 
+							Syntax.syntaxARQ);
+					aboxModel.enterCriticalSection(Lock.WRITE);
+					try {
+						QueryExecution qe = QueryExecutionFactory.create(q,
+								aboxModel);
+						qe.execConstruct(anonModel);
+					} finally {
+						aboxModel.leaveCriticalSection();
+					}
+				} catch (Exception e) {
+					logger.logError(this.getClass().getName() + 
+							".performSparqlConstructs() unable to execute " +
+							"query at " + sparqlFile + ". Error message is: " + e.getMessage());
+				}
+			} catch (FileNotFoundException fnfe) {
+				logger.logError(this.getClass().getName() + 
+						".performSparqlConstructs() could not find " +
+						" SPARQL CONSTRUCT file " + sparqlFile + ". Skipping.");
+			}	
+		}
+		
+        return anonModel;
 	}
 	
 	
@@ -221,7 +234,8 @@ public class OntologyUpdater {
 	
 	private void updateABox(AtomicOntologyChangeLists changes) 
 			throws IOException {
-		// TODO get models from somewhere
+		
+
 		OntModel oldTBoxModel = settings.getOldTBoxModel();
 		OntModel newTBoxModel = settings.getNewTBoxModel();
 		OntModel ABoxModel = settings.getOntModelSelector().getABoxModel();
@@ -230,7 +244,7 @@ public class OntologyUpdater {
 				settings.getNewTBoxAnnotationsModel(), logger, record);
 		aboxUpdater.processPropertyChanges(changes.getAtomicPropertyChanges());
 		aboxUpdater.processClassChanges(changes.getAtomicClassChanges());
-		// run additional SPARQL CONSTRUCTS 
+ 
 	}
 	
 	private void updateTBoxAnnotations() throws IOException {
@@ -244,7 +258,7 @@ public class OntologyUpdater {
 	 * Executes a SPARQL ASK query to determine whether the knowledge base
 	 * needs to be updated to conform to a new ontology version
 	 */
-	private boolean updateRequired() throws IOException {
+	public boolean updateRequired() throws IOException {
 		String sparqlQueryStr = loadSparqlQuery(settings.getAskQueryFile());
 		if (sparqlQueryStr == null) {
 			return false;
@@ -281,6 +295,7 @@ public class OntologyUpdater {
 	
 	private void assertSuccess() throws FileNotFoundException, IOException {
 		try {
+			
 		    Model m = settings.getOntModelSelector().getApplicationMetadataModel();
 		    File successAssertionsFile = 
 		    	new File(settings.getSuccessAssertionsFile()); 
@@ -318,35 +333,33 @@ public class OntologyUpdater {
 				OntModel oldTboxModel) throws IOException {
 			
 			Iterator<AtomicOntologyChange> listItr = changeList.iterator();
-			while(listItr.hasNext()){
+			
+			while(listItr.hasNext()) {
 				AtomicOntologyChange changeObj = listItr.next();
-				if(changeObj.getSourceURI() != null){
-					if(oldTboxModel.getOntProperty(changeObj.
-							getSourceURI()) != null){
+				if (changeObj.getSourceURI() != null){
+			
+					if (oldTboxModel.getOntProperty(changeObj.getSourceURI()) != null){
 						atomicPropertyChanges.add(changeObj);
 					}
-					else if(oldTboxModel.getOntClass(changeObj.
-							getSourceURI()) != null) {
+					else if (oldTboxModel.getOntClass(changeObj.getSourceURI()) != null) {
 						atomicClassChanges.add(changeObj);
 					}
 					else{
 						logger.logError("Source URI is neither a Property" +
-								" nor a Class. " + "Change Object skipped");
+								" nor a Class. " + "Change Object skipped for sourceURI: " + changeObj.getSourceURI());
 					}
 					
 				}
 				else if(changeObj.getDestinationURI() != null){
-					if(newTboxModel.getOntProperty(changeObj.
-							getDestinationURI()) != null){
+					
+					if (newTboxModel.getOntProperty(changeObj.getDestinationURI()) != null) {
 						atomicPropertyChanges.add(changeObj);
-					}
-					else if(newTboxModel.getOntClass(changeObj.
-							getDestinationURI()) != null){
+					} else if(newTboxModel.getOntClass(changeObj.
+						getDestinationURI()) != null) {
 						atomicClassChanges.add(changeObj);
-					}
-					else{
+					} else{
 						logger.logError("Destination URI is neither a Property" +
-								" nor a Class. " + "Change Object skipped");
+								" nor a Class. " + "Change Object skipped for destinationURI: " + changeObj.getDestinationURI());
 					}
 				}
 				else{

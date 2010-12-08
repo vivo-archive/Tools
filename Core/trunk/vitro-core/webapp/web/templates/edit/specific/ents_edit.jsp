@@ -1,30 +1,4 @@
-<%--
-Copyright (c) 2010, Cornell University
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-    * Redistributions of source code must retain the above copyright notice,
-      this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright notice,
-      this list of conditions and the following disclaimer in the documentation
-      and/or other materials provided with the distribution.
-    * Neither the name of Cornell University nor the names of its contributors
-      may be used to endorse or promote products derived from this software
-      without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
---%>
+<%-- $This file is distributed under the terms of the license in /doc/license.txt$ --%>
 
 <% /* For now, not using XML syntax because the output XHTML is not indented */ %>
 <% /* <?xml version="1.0" encoding="UTF-8"?> */ %>
@@ -34,13 +8,20 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
           version="2.0"> */ %> 
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <%@ taglib prefix="form" uri="http://vitro.mannlib.cornell.edu/edit/tags" %>
+<%@ page import="edu.cornell.mannlib.vedit.beans.LoginStatusBean" %>
+
+<%
+	if (LoginStatusBean.getBean(request).isLoggedInAtLeast(LoginStatusBean.EDITOR)) {
+		request.setAttribute("isEditor", Boolean.TRUE);
+	}
+%>
 
 <c:set var="singlePortal" value="${requestScope.singlePortal}"/>
 <div name="anybody" class="editingForm">
 <jsp:include page="/templates/edit/fetch/vertical.jsp"/>
 <c:set var='individual' value='${requestScope.entityWebapp}'/>
-<jsp:useBean id="loginHandler" class="edu.cornell.mannlib.vedit.beans.LoginFormBean" scope="session" />
-<c:if test="${loginHandler.loginRole >= 4}">
+
+<c:if test="${isEditor}">
 	<div name="authorized" align="center">
 	<table class="form-background" border="0" cellpadding="2" cellspacing="2" width="100%">
     	<tr valign="top" align="center">
@@ -57,9 +38,9 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
                         SELECT   ?pred  ?predLabel ?obj ?objLabel
                         WHERE 
                         {
-                         {<${entity.URI}> ?pred ?obj} 
-                         OPTIONAL { ?obj rdfs:label ?objLabel }
-                         OPTIONAL { ?pred rdfs:label ?predLabel }
+                         { GRAPH ?g { <${entity.URI}> ?pred ?obj} } 
+                         OPTIONAL { GRAPH ?h { ?obj rdfs:label ?objLabel } }
+                         OPTIONAL { GRAPH ?i { ?pred rdfs:label ?predLabel } }
                         }
                         limit 10000"/>
           <form action="admin/sparqlquery" method="get">
@@ -74,9 +55,9 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
                         SELECT ?sub ?subL  ?pred  ?predLabel
                         WHERE 
                         {
-                         { ?sub ?pred <${entity.URI}> }
-                         OPTIONAL { ?sub rdfs:label ?subL }
-                         OPTIONAL { ?pred rdfs:label ?predLabel }
+                         { GRAPH ?g { ?sub ?pred <${entity.URI}> } }
+                         OPTIONAL { GRAPH ?h { ?sub rdfs:label ?subL } }
+                         OPTIONAL { GRAPH ?i { ?pred rdfs:label ?predLabel } }
                         }
                         limit 10000"/>
           <form action="admin/sparqlquery" method="get">
@@ -155,7 +136,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             	<input type="hidden" name="mode" value="renameResource"/>
             	<input type="hidden" name="controller" value="Refactor"/>
         	</form>
-        	<form action="uploadimages.jsp" method="get">
+        	<form action="uploadImages" method="get">
             	<input type="submit" class="form-button" value="Upload Image"/>
             	<input type="hidden" name="home" value="${portalBean.portalId}" />
             	<input type="hidden" name="entityUri" value="${individual.URI}"/>
