@@ -3,6 +3,8 @@
 package edu.cornell.mannlib.vitro.webapp.controller;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -21,7 +23,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import edu.cornell.mannlib.vedit.beans.LoginStatusBean;
-import edu.cornell.mannlib.vitro.webapp.controller.authenticate.LoginRedirector;
+import edu.cornell.mannlib.vitro.webapp.beans.DisplayMessage;
 import edu.cornell.mannlib.vitro.webapp.controller.authenticate.LogoutRedirector;
 
 public class VitroHttpServlet extends HttpServlet {
@@ -41,6 +43,15 @@ public class VitroHttpServlet extends HttpServlet {
 														// unregistered
 	public final static String TTL_MIMETYPE = "text/turtle"; // unofficial and
 																// unregistered
+
+	/**
+	 * Show this to the user if they are logged in, but still not authorized to
+	 * view the page.
+	 */
+	private static final String INSUFFICIENT_AUTHORIZATION_MESSAGE = "We're sorry, "
+			+ "but you are not authorized to view the page you requested. "
+			+ "If you think this is an error, "
+			+ "please contact us and we'll be happy to help.";
 
 	/**
 	 * Setup the auth flag, portal flag and portal bean objects. Put them in the
@@ -107,15 +118,15 @@ public class VitroHttpServlet extends HttpServlet {
 
 	/**
 	 * Logged in, but with insufficent authorization. Send them to the
-	 * corresponding page. They won't be coming back.
+	 * home page with a message. They won't be coming back.
 	 */
-	public static void redirectToInsufficientAuthorizationPage(
+	private static void redirectToInsufficientAuthorizationPage(
 			HttpServletRequest request, HttpServletResponse response) {
 		try {
-			response.sendRedirect(request.getContextPath()
-					+ Controllers.INSUFFICIENT_AUTHORIZATION);
+			DisplayMessage.setMessage(request, INSUFFICIENT_AUTHORIZATION_MESSAGE);
+			response.sendRedirect(request.getContextPath());
 		} catch (IOException e) {
-			log.error("Could not redirect to insufficient authorization page.");
+			log.error("Could not redirect to show insufficient authorization.");
 		}
 	}
 	
@@ -125,26 +136,37 @@ public class VitroHttpServlet extends HttpServlet {
 	 */
 	public static void redirectToLoginPage(HttpServletRequest request,
 			HttpServletResponse response)  {
-		String postLoginRequest;
-
-		String queryString = request.getQueryString();
-		if ((queryString == null) || queryString.isEmpty()) {
-			postLoginRequest = request.getRequestURI();
-		} else {
-			postLoginRequest = request.getRequestURI() + "?" + queryString;
-		}
-
-		LoginRedirector.setReturnUrlFromForcedLogin(request, postLoginRequest);
-		
-		String loginPage = request.getContextPath() + Controllers.LOGIN;
+		String returnUrl = assembleUrlToReturnHere(request);
+		String loginUrlWithReturn = assembleLoginUrlWithReturn(request, returnUrl);
 		
 		try {
-			response.sendRedirect(loginPage);
+			response.sendRedirect(loginUrlWithReturn);
 		} catch (IOException ioe) {
 			log.error("Could not redirect to login page");
 		}
 	}
 
+	private static String assembleUrlToReturnHere(HttpServletRequest request) {
+		String queryString = request.getQueryString();
+		if ((queryString == null) || queryString.isEmpty()) {
+			return request.getRequestURI();
+		} else {
+			return request.getRequestURI() + "?" + queryString;
+		}
+	}
+
+	private static String assembleLoginUrlWithReturn(HttpServletRequest request,
+			String afterLoginUrl) {
+		String encodedAfterLoginUrl = afterLoginUrl;
+		try {
+			encodedAfterLoginUrl = URLEncoder.encode(afterLoginUrl, "UTF-8");
+		} catch (UnsupportedEncodingException e) {
+			log.error("Really? No UTF-8 encoding?", e);
+		}
+		return request.getContextPath() + Controllers.AUTHENTICATE
+				+ "?afterLogin=" + encodedAfterLoginUrl;
+	}
+	
 	/**
 	 * If logging is set to the TRACE level, dump the HTTP headers on the request.
 	 */
