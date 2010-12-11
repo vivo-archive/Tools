@@ -44,7 +44,7 @@
     <option value="TURTLE">Turtle</option>
 </select>
 
-<input type="submit" name="submit" value="Export"/>
+<input id="submit" type="submit" name="submit" value="Export"/>
 
 </form>
 

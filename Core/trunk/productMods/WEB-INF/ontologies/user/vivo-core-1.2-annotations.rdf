@@ -15,10 +15,12 @@
   <rdf:Description rdf:about="http://vivoweb.org/ontology/core#pmcid">
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
+    <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGroupidentifiers"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://vivoweb.org/ontology/core#nihmsid">
     <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
+    <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGroupidentifiers"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/NET/c4dm/event.owl#produced_in">
     <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</vitro:displayLimitAnnot>
@@ -33,11 +35,11 @@
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://vivoweb.org/ontology/core#offeredBy">
-    <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</vitro:displayLimitAnnot>
-    <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#nobody"/>
     <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#nobody"/>
     <vitro:selectFromExistingAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</vitro:selectFromExistingAnnot>
     <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGroupoverview"/>
+    <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</vitro:displayLimitAnnot>
+    <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#nobody"/>
     <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</vitro:displayRankAnnot>
   </rdf:Description>
   <rdf:Description rdf:about="http://vivoweb.org/ontology/core#isCorrespondingAuthor">
@@ -57,15 +59,6 @@
     <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGrouptime"/>
     <vitro:offerCreateNewOptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</vitro:offerCreateNewOptionAnnot>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/NET/c4dm/event.owl#sub_event">
-    <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGroupmapping"/>
-    <vitro:fullPropertyNameAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sub_event</vitro:fullPropertyNameAnnot>
-    <vitro:publicDescriptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relates an event to an its sub-events.</vitro:publicDescriptionAnnot>
-    <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
-    <vitro:offerCreateNewOptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</vitro:offerCreateNewOptionAnnot>
-    <vitro:selectFromExistingAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</vitro:selectFromExistingAnnot>
-    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#nobody"/>
-  </rdf:Description>
   <rdf:Description rdf:about="http://vivoweb.org/ontology/core#AcademicTerm">
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">-1</vitro:displayLimitAnnot>
@@ -84,18 +77,18 @@
     <vitro:publicDescriptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This relates a subject term to the vocabulary that is the source of the term.</vitro:publicDescriptionAnnot>
     <vitro:fullPropertyNameAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sourceVocabularyReference</vitro:fullPropertyNameAnnot>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/ontology/bibo/section">
-    <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGroupoverview"/>
-    <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
-    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
-    <vitro:publicDescriptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A section number</vitro:publicDescriptionAnnot>
-  </rdf:Description>
   <rdf:Description rdf:about="http://vivoweb.org/ontology/core#CaseStudy">
     <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">-1</vitro:displayRankAnnot>
     <vitro:inClassGroup rdf:resource="http://vivoweb.org/ontology#vitroClassGrouppublications"/>
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">-1</vitro:displayLimitAnnot>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/section">
+    <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
+    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
+    <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGroupbibobscure"/>
+    <vitro:publicDescriptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A section number</vitro:publicDescriptionAnnot>
   </rdf:Description>
   <rdf:Description rdf:about="http://vivoweb.org/ontology/core#SeminarSeries">
     <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
@@ -113,8 +106,8 @@
     <vitro:publicDescriptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Allows for the entry of additional information, such as additional information describing educational background.</vitro:publicDescriptionAnnot>
   </rdf:Description>
   <rdf:Description rdf:about="http://aims.fao.org/aos/geopolitical.owl#populationYear">
-    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#nobody"/>
+    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/isReferencedBy">
     <vitro:fullPropertyNameAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">isReferencedBy</vitro:fullPropertyNameAnnot>
@@ -160,8 +153,8 @@
     <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://aims.fao.org/aos/geopolitical.owl#codeUNDP">
-    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#nobody"/>
+    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://aims.fao.org/aos/geopolitical.owl#non_self_governing">
     <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
@@ -184,8 +177,8 @@
     <vitro:ontologyPrefixAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">foaf</vitro:ontologyPrefixAnnot>
   </rdf:Description>
   <rdf:Description rdf:about="http://aims.fao.org/aos/geopolitical.owl#GDPTotalInCurrentPrices">
-    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#nobody"/>
+    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://aims.fao.org/aos/geopolitical.owl#hasMaxLatitude">
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
@@ -193,8 +186,8 @@
   </rdf:Description>
   <rdf:Description rdf:about="http://vivoweb.org/ontology/core#DateTimeInterval">
     <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</vitro:displayLimitAnnot>
-    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
+    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</vitro:displayRankAnnot>
   </rdf:Description>
   <rdf:Description rdf:about="http://vivoweb.org/ontology/core#NonAcademicPosition">
@@ -210,18 +203,18 @@
     <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/ontology/bibo/sici">
-    <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGroupbibobscure"/>
+    <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGroupidentifiers"/>
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:publicDescriptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Serial Item and Contribution Identifier (SICI) is a code (ANSI/NISO standard Z39.56) used to uniquely identify specific volumes, articles or other identifiable parts of a periodical.</vitro:publicDescriptionAnnot>
     <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://vivoweb.org/ontology/core#placeOfPublication">
-    <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGroupoverview"/>
+    <vitro:publicDescriptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">City in which the publication was done.</vitro:publicDescriptionAnnot>
     <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</vitro:displayLimitAnnot>
     <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">55</vitro:displayRankAnnot>
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
-    <vitro:publicDescriptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">City in which the publication was done.</vitro:publicDescriptionAnnot>
+    <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGroupbibobscure"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://vivoweb.org/ontology/core#hasCollaborator">
     <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</vitro:displayLimitAnnot>
@@ -404,8 +397,8 @@
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://aims.fao.org/aos/geopolitical.owl#countryAreaYear">
-    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#nobody"/>
+    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://vivoweb.org/ontology/core#SubjectArea">
     <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">-1</vitro:displayRankAnnot>
@@ -428,14 +421,6 @@
     <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGroupidentifiers"/>
     <vitro:publicDescriptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Unique identifier for a Report (a type of information resource).</vitro:publicDescriptionAnnot>
   </rdf:Description>
-  <rdf:Description rdf:about="http://vivoweb.org/ontology/core#reviewedDocumentTitle">
-    <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGroupoverview"/>
-    <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</vitro:displayLimitAnnot>
-    <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">31</vitro:displayRankAnnot>
-    <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
-    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
-    <vitro:publicDescriptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Title of a Review document (a type of information resource).</vitro:publicDescriptionAnnot>
-  </rdf:Description>
   <rdf:Description rdf:about="http://vivoweb.org/ontology/core#equipmentFor">
     <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGroupoverview"/>
     <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</vitro:displayLimitAnnot>
@@ -447,8 +432,8 @@
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://aims.fao.org/aos/geopolitical.owl#codeGAUL">
-    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#nobody"/>
+    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://vivoweb.org/ontology/core#geographicFocus">
     <vitro:offerCreateNewOptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</vitro:offerCreateNewOptionAnnot>
@@ -520,7 +505,6 @@
     <vitro:offerCreateNewOptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</vitro:offerCreateNewOptionAnnot>
     <vitro:fullPropertyNameAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has part</vitro:fullPropertyNameAnnot>
     <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</vitro:displayLimitAnnot>
-    <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGroupaffiliation"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://vivoweb.org/ontology/core#NonFacultyAcademic">
     <vitro:inClassGroup rdf:resource="http://vivoweb.org/ontology#vitroClassGrouppeople"/>
@@ -574,18 +558,18 @@
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">-1</vitro:displayLimitAnnot>
   </rdf:Description>
+  <rdf:Description rdf:about="http://vivoweb.org/ontology/core#Score">
+    <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">-1</vitro:displayLimitAnnot>
+    <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">-1</vitro:displayRankAnnot>
+    <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
+    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
+  </rdf:Description>
   <rdf:Description rdf:about="http://vivoweb.org/ontology/core#Grant">
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">-1</vitro:displayRankAnnot>
     <vitro:inClassGroup rdf:resource="http://vivoweb.org/ontology#vitroClassGroupactivities"/>
     <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">-1</vitro:displayLimitAnnot>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://vivoweb.org/ontology/core#Score">
-    <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">-1</vitro:displayLimitAnnot>
-    <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">-1</vitro:displayRankAnnot>
-    <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
-    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://aims.fao.org/aos/geopolitical.owl#nameOfficialZH">
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#nobody"/>
@@ -618,8 +602,8 @@
     <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://aims.fao.org/aos/geopolitical.owl#GDPNotes">
-    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#nobody"/>
+    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://aims.fao.org/aos/geopolitical.owl#nameOfficialES">
     <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
@@ -636,14 +620,14 @@
     <vitro:publicDescriptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This relates a subject area to a person which will help to identify people who have research areas on a particular topic. Typically, the subject will be represented using keywords, key phrases, or classification codes.</vitro:publicDescriptionAnnot>
   </rdf:Description>
   <rdf:Description rdf:about="http://aims.fao.org/aos/geopolitical.owl#populationTotal">
-    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#nobody"/>
+    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/ontology/bibo/upc">
     <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:publicDescriptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Universal Product Code (UPC) is a barcode symbology (i.e., a specific type of barcode), that is widely used in Canada and the United States for tracking trade items in stores.</vitro:publicDescriptionAnnot>
-    <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGroupbibobscure"/>
+    <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGroupidentifiers"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://vivoweb.org/ontology/core#webpage">
     <vitro:fullPropertyNameAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">webpage</vitro:fullPropertyNameAnnot>
@@ -671,14 +655,6 @@
     <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://vivoweb.org/ontology/core#count">
-    <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</vitro:displayLimitAnnot>
-    <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGroupoverview"/>
-    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
-    <vitro:publicDescriptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A generic field for integer count values.</vitro:publicDescriptionAnnot>
-    <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">10</vitro:displayRankAnnot>
-    <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
-  </rdf:Description>
   <rdf:Description rdf:about="http://aims.fao.org/aos/geopolitical.owl#nationalityFR">
     <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#nobody"/>
@@ -698,6 +674,7 @@
     <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</vitro:displayLimitAnnot>
     <vitro:selectFromExistingAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</vitro:selectFromExistingAnnot>
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
+    <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGroupbibobscure"/>
     <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">60</vitro:displayRankAnnot>
   </rdf:Description>
@@ -783,14 +760,6 @@
   <rdf:Description rdf:about="http://purl.org/NET/c4dm/event.owl">
     <vitro:ontologyPrefixAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">event</vitro:ontologyPrefixAnnot>
   </rdf:Description>
-  <rdf:Description rdf:about="http://vivoweb.org/ontology/core#conferenceName">
-    <vitro:publicDescriptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The name of the conference as indicated in conference materials.</vitro:publicDescriptionAnnot>
-    <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGroupoverview"/>
-    <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</vitro:displayLimitAnnot>
-    <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
-    <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">50</vitro:displayRankAnnot>
-    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
-  </rdf:Description>
   <rdf:Description rdf:about="http://aims.fao.org/aos/geopolitical.owl#codeISO3">
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#nobody"/>
     <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
@@ -867,8 +836,8 @@
     <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</vitro:displayLimitAnnot>
   </rdf:Description>
   <rdf:Description rdf:about="http://aims.fao.org/aos/geopolitical.owl#codeISO2">
-    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#nobody"/>
+    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://vivoweb.org/ontology/core#equipmentInFacility">
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
@@ -888,8 +857,8 @@
   <rdf:Description rdf:about="http://purl.org/ontology/bibo/lccn">
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:publicDescriptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Library of Congress Control Number or LCCN is a serially based system of numbering cataloging records in the Library of Congress in the United States.</vitro:publicDescriptionAnnot>
+    <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGroupidentifiers"/>
     <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
-    <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGroupbibobscure"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://vivoweb.org/ontology/core#Authorship">
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
@@ -921,15 +890,6 @@
     <vitro:forceStubDeletionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</vitro:forceStubDeletionAnnot>
     <vitro:offerCreateNewOptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</vitro:offerCreateNewOptionAnnot>
     <vitro:selectFromExistingAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</vitro:selectFromExistingAnnot>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/depiction">
-    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#nobody"/>
-    <vitro:selectFromExistingAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</vitro:selectFromExistingAnnot>
-    <vitro:offerCreateNewOptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</vitro:offerCreateNewOptionAnnot>
-    <vitro:publicDescriptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The depiction  property is a relationship between a thing and an Image that depicts it. As such it is an inverse of the foaf:depicts relationship. </vitro:publicDescriptionAnnot>
-    <vitro:fullPropertyNameAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">depiction</vitro:fullPropertyNameAnnot>
-    <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
-    <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGroupmapping"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/ontology/bibo/pmid">
     <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">10</vitro:displayRankAnnot>
@@ -1101,13 +1061,6 @@
     <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:selectFromExistingAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</vitro:selectFromExistingAnnot>
   </rdf:Description>
-  <rdf:Description rdf:about="http://vivoweb.org/ontology/core#SemesterClass">
-    <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">-1</vitro:displayRankAnnot>
-    <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">-1</vitro:displayLimitAnnot>
-    <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
-    <vitro:inClassGroup rdf:resource="http://vivoweb.org/ontology#vitroClassGroupcourses"/>
-    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
-  </rdf:Description>
   <rdf:Description rdf:about="http://vivoweb.org/ontology/core#features">
     <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</vitro:displayLimitAnnot>
     <vitro:selectFromExistingAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</vitro:selectFromExistingAnnot>
@@ -1169,12 +1122,12 @@
     <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">-1</vitro:displayRankAnnot>
   </rdf:Description>
   <rdf:Description rdf:about="http://vivoweb.org/ontology/core#departmentOrSchool">
-    <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGroupaffiliation"/>
     <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</vitro:displayLimitAnnot>
     <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">40</vitro:displayRankAnnot>
-    <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
+    <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGroupaffiliation"/>
     <vitro:publicDescriptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Name of department or school name used when describing educational background.</vitro:publicDescriptionAnnot>
+    <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://vivoweb.org/ontology/core#providesService">
     <vitro:publicDescriptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This relates something to the service it provides.</vitro:publicDescriptionAnnot>
@@ -1231,8 +1184,8 @@
     <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://aims.fao.org/aos/geopolitical.owl#countryAreaNotes">
-    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#nobody"/>
+    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/ontology/bibo/court">
     <vitro:offerCreateNewOptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</vitro:offerCreateNewOptionAnnot>
@@ -1349,21 +1302,21 @@
   </rdf:Description>
   <rdf:Description rdf:about="http://vivoweb.org/ontology/core#offers">
     <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</vitro:displayLimitAnnot>
-    <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#nobody"/>
     <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#nobody"/>
     <vitro:selectFromExistingAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</vitro:selectFromExistingAnnot>
     <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGroupoverview"/>
     <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</vitro:displayRankAnnot>
+    <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#nobody"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/ontology/bibo/translator">
     <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">30</vitro:displayRankAnnot>
     <vitro:fullPropertyNameAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">translator</vitro:fullPropertyNameAnnot>
     <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</vitro:displayLimitAnnot>
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
+    <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGroupbibobscure"/>
     <vitro:publicDescriptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This relates an information resource to the translator of the written document from one language to another.</vitro:publicDescriptionAnnot>
     <vitro:offerCreateNewOptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</vitro:offerCreateNewOptionAnnot>
     <vitro:selectFromExistingAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</vitro:selectFromExistingAnnot>
-    <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGroupoverview"/>
     <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#nobody"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://vivoweb.org/ontology/core#AwardOrHonor">
@@ -1549,8 +1502,8 @@
     <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">-1</vitro:displayRankAnnot>
   </rdf:Description>
   <rdf:Description rdf:about="http://aims.fao.org/aos/geopolitical.owl#GDPYear">
-    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#nobody"/>
+    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Image">
     <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">-1</vitro:displayRankAnnot>
@@ -1601,8 +1554,8 @@
     <vitro:publicDescriptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This relates the information resource for which a person has managerial and sometimes policy-making responsibility to the person.</vitro:publicDescriptionAnnot>
   </rdf:Description>
   <rdf:Description rdf:about="http://aims.fao.org/aos/geopolitical.owl#agriculturalAreaYear">
-    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#nobody"/>
+    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://vivoweb.org/ontology/core#hasServiceProviderRole">
     <vitro:stubObjectPropertyAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</vitro:stubObjectPropertyAnnot>
@@ -1656,6 +1609,15 @@
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#nobody"/>
     <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
   </rdf:Description>
+  <rdf:Description rdf:about="http://vivoweb.org/ontology/core#contributingAdvising">
+    <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</vitro:displayLimitAnnot>
+    <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">50</vitro:displayRankAnnot>
+    <vitro:selectFromExistingAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</vitro:selectFromExistingAnnot>
+    <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGroupoverview"/>
+    <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
+    <vitro:offerCreateNewOptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</vitro:offerCreateNewOptionAnnot>
+    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
+  </rdf:Description>
   <rdf:Description rdf:about="http://vivoweb.org/ontology/core#publisherOf">
     <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</vitro:displayLimitAnnot>
     <vitro:offerCreateNewOptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</vitro:offerCreateNewOptionAnnot>
@@ -1665,15 +1627,6 @@
     <vitro:fullPropertyNameAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">publisher of</vitro:fullPropertyNameAnnot>
     <vitro:selectFromExistingAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</vitro:selectFromExistingAnnot>
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
-    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://vivoweb.org/ontology/core#contributingAdvising">
-    <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</vitro:displayLimitAnnot>
-    <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">50</vitro:displayRankAnnot>
-    <vitro:selectFromExistingAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</vitro:selectFromExistingAnnot>
-    <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGroupoverview"/>
-    <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
-    <vitro:offerCreateNewOptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</vitro:offerCreateNewOptionAnnot>
     <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://vivoweb.org/ontology/core#vocabularyReferenceFor">
@@ -1690,11 +1643,11 @@
     <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://vivoweb.org/ontology/core#end">
+    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
+    <vitro:selectFromExistingAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</vitro:selectFromExistingAnnot>
     <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">99</vitro:displayRankAnnot>
     <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</vitro:displayLimitAnnot>
-    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
-    <vitro:selectFromExistingAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</vitro:selectFromExistingAnnot>
   </rdf:Description>
   <rdf:Description rdf:about="http://vivoweb.org/ontology/core#hasRole">
     <vitro:selectFromExistingAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</vitro:selectFromExistingAnnot>
@@ -1750,10 +1703,10 @@
     <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">-1</vitro:displayRankAnnot>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/ontology/bibo/transcriptOf">
+    <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGroupbibobscure"/>
     <vitro:offerCreateNewOptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</vitro:offerCreateNewOptionAnnot>
     <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#nobody"/>
     <vitro:selectFromExistingAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</vitro:selectFromExistingAnnot>
-    <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGroupbibliographiconline"/>
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:fullPropertyNameAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">transcriptOf</vitro:fullPropertyNameAnnot>
     <vitro:publicDescriptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relates a document to some transcribed original.</vitro:publicDescriptionAnnot>
@@ -1802,12 +1755,12 @@
     <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">-1</vitro:displayRankAnnot>
   </rdf:Description>
   <rdf:Description rdf:about="http://vivoweb.org/ontology/core#start">
+    <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</vitro:displayLimitAnnot>
     <vitro:publicDescriptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the start of a time interval.</vitro:publicDescriptionAnnot>
     <vitro:selectFromExistingAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</vitro:selectFromExistingAnnot>
     <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">80</vitro:displayRankAnnot>
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
-    <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</vitro:displayLimitAnnot>
   </rdf:Description>
   <rdf:Description rdf:about="http://vivoweb.org/ontology/core#educationalTraining">
     <vitro:individualSortDirectionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">desc</vitro:individualSortDirectionAnnot>
@@ -1824,12 +1777,6 @@
     <vitro:publicDescriptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This relates a person to the description of their educational training.</vitro:publicDescriptionAnnot>
     <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGroupbiography"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://aims.fao.org/aos/geopolitical.owl#group">
-    <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">-1</vitro:displayRankAnnot>
-    <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
-    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
-    <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">-1</vitro:displayLimitAnnot>
-  </rdf:Description>
   <rdf:Description rdf:about="http://vivoweb.org/ontology/core#informationResourceInAuthorship">
     <vitro:selectFromExistingAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</vitro:selectFromExistingAnnot>
     <vitro:fullPropertyNameAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has author entry</vitro:fullPropertyNameAnnot>
@@ -1844,19 +1791,26 @@
     <vitro:objectIndividualSortProperty rdf:resource="http://vivoweb.org/ontology/core#authorRank"/>
     <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/ontology/bibo/isbn10">
-    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
+  <rdf:Description rdf:about="http://aims.fao.org/aos/geopolitical.owl#group">
+    <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">-1</vitro:displayRankAnnot>
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
+    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
+    <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">-1</vitro:displayLimitAnnot>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/ontology/bibo/isbn10">
+    <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
+    <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGroupidentifiers"/>
+    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">10</vitro:displayRankAnnot>
     <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</vitro:displayLimitAnnot>
     <vitro:publicDescriptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The International Standard Book Number (ISBN) is a unique[1][2] numeric commercial book identifier based upon the 9-digit Standard Book Numbering (SBN) code created by Gordon Foster. The 10-digit ISBN format was developed by the International Organization for Standardization and was published in 1970 as international standard ISO 2108.</vitro:publicDescriptionAnnot>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/ontology/bibo/oclcnum">
+    <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGroupidentifiers"/>
     <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</vitro:displayLimitAnnot>
     <vitro:publicDescriptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An oclcnum is a sequential accession number assigned by OCLC as bibliographic records are entered into OCLC WorldCat (the OCLC Online Union Catalog).</vitro:publicDescriptionAnnot>
     <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</vitro:displayRankAnnot>
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
-    <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGroupbibobscure"/>
     <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/ontology/bibo/Hearing">
@@ -1877,9 +1831,9 @@
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#nobody"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://vivoweb.org/ontology/core#DateTimeValue">
-    <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
-    <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">-1</vitro:displayLimitAnnot>
     <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
+    <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">-1</vitro:displayLimitAnnot>
+    <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">-1</vitro:displayRankAnnot>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/ontology/bibo/reproducedIn">
@@ -1889,6 +1843,7 @@
     <vitro:offerCreateNewOptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</vitro:offerCreateNewOptionAnnot>
     <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
+    <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGroupbibobscure"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://aims.fao.org/aos/geopolitical.owl#nameCurrencyIT">
     <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
@@ -1908,9 +1863,9 @@
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/ontology/bibo/asin">
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
+    <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGroupidentifiers"/>
     <vitro:publicDescriptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Amazon Standard Identification Number (ASIN) is a unique identification number assigned by Amazon.com and its partners for product identification within the Amazon.com organization.</vitro:publicDescriptionAnnot>
     <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#nobody"/>
-    <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGroupbibobscure"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/ontology/bibo/suffixName">
     <vitro:publicDescriptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">If applicable, please enter the preferred name suffix.  Only one may be entered.</vitro:publicDescriptionAnnot>
@@ -1953,8 +1908,8 @@
     <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">-1</vitro:displayRankAnnot>
   </rdf:Description>
   <rdf:Description rdf:about="http://aims.fao.org/aos/geopolitical.owl#countryAreaUnit">
-    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#nobody"/>
+    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://vivoweb.org/ontology/core#hasSuccessorOrganization">
     <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
@@ -2007,6 +1962,7 @@
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/ontology/bibo/isbn13">
     <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">11</vitro:displayRankAnnot>
+    <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGroupidentifiers"/>
     <vitro:publicDescriptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The International Standard Book Number (ISBN) is a unique[1][2] numeric commercial book identifier based upon the 9-digit Standard Book Numbering (SBN) code created by Gordon Foster.Since 1 January 2007, ISBNs have contained 13 digits, a format that is compatible with Bookland EAN-13s.</vitro:publicDescriptionAnnot>
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
@@ -2084,8 +2040,8 @@
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#nobody"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://aims.fao.org/aos/geopolitical.owl#countryAreaTotal">
-    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#nobody"/>
+    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/ontology/bibo/ReferenceSource">
     <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">-1</vitro:displayLimitAnnot>
@@ -2124,7 +2080,7 @@
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/ontology/bibo/eanucc13">
     <vitro:publicDescriptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EAN International-Uniform Code Council (EAN-UCC) was a supply chain standards family name, formally the EAN.UCC System, that included product barcodes which are printed on the great majority of products available in stores worldwide and electronic commerce standards.</vitro:publicDescriptionAnnot>
-    <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGroupbibobscure"/>
+    <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGroupidentifiers"/>
     <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
   </rdf:Description>
@@ -2182,9 +2138,9 @@
   <rdf:Description rdf:about="http://purl.org/ontology/bibo/volume">
     <vitro:publicDescriptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A volume number.</vitro:publicDescriptionAnnot>
     <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</vitro:displayLimitAnnot>
+    <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGroupbibobscure"/>
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
-    <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGroupoverview"/>
     <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">20</vitro:displayRankAnnot>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/ontology/bibo/abstract">
@@ -2287,7 +2243,7 @@
     <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">30</vitro:displayRankAnnot>
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:publicDescriptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A generic item or document number. Not to be confused with issue number. A barcode, perhaps?</vitro:publicDescriptionAnnot>
-    <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGroupoverview"/>
+    <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGroupbibobscure"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://vivoweb.org/ontology/core#Location">
     <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">-1</vitro:displayLimitAnnot>
@@ -2323,8 +2279,8 @@
     <vitro:offerCreateNewOptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</vitro:offerCreateNewOptionAnnot>
   </rdf:Description>
   <rdf:Description rdf:about="http://aims.fao.org/aos/geopolitical.owl#hasStatistics">
-    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#nobody"/>
+    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://aims.fao.org/aos/geopolitical.owl#GDP">
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
@@ -2342,8 +2298,8 @@
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#nobody"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://aims.fao.org/aos/geopolitical.owl#populationUnit">
-    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#nobody"/>
+    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://vivoweb.org/ontology/core#teachingOverview">
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
@@ -2454,9 +2410,9 @@
     <vitro:publicDescriptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An account of the resource.</vitro:publicDescriptionAnnot>
   </rdf:Description>
   <rdf:Description rdf:about="http://vivoweb.org/ontology/core#primaryPhoneNumber">
+    <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGroupaddress"/>
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#nobody"/>
     <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
-    <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGroupaddress"/>
     <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">60</vitro:displayRankAnnot>
     <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</vitro:displayLimitAnnot>
   </rdf:Description>
@@ -2471,8 +2427,8 @@
     <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://aims.fao.org/aos/geopolitical.owl#hasCode">
-    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#nobody"/>
+    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://vivoweb.org/ontology/core#hasOutreachProviderRole">
     <vitro:selectFromExistingAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</vitro:selectFromExistingAnnot>
@@ -2540,8 +2496,8 @@
     <vitro:publicDescriptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A parent property for institutional and other identifiers. This data property is not seen or updated by anyone.</vitro:publicDescriptionAnnot>
   </rdf:Description>
   <rdf:Description rdf:about="http://aims.fao.org/aos/geopolitical.owl#populationNotes">
-    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#nobody"/>
+    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://vivoweb.org/ontology/core#currentMemberOf">
     <vitro:offerCreateNewOptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</vitro:offerCreateNewOptionAnnot>
@@ -2650,15 +2606,6 @@
     <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGrouplocation"/>
     <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/homepage">
-    <vitro:publicDescriptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">foaf:homepage is used in simple triples where the object is a resource with the URI of the homepage.</vitro:publicDescriptionAnnot>
-    <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#nobody"/>
-    <vitro:fullPropertyNameAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">homepage</vitro:fullPropertyNameAnnot>
-    <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGroupmapping"/>
-    <vitro:offerCreateNewOptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</vitro:offerCreateNewOptionAnnot>
-    <vitro:selectFromExistingAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</vitro:selectFromExistingAnnot>
-    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#nobody"/>
-  </rdf:Description>
   <rdf:Description rdf:about="http://vivoweb.org/ontology/core#freetextKeyword">
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">56</vitro:displayRankAnnot>
@@ -2765,8 +2712,8 @@
     <vitro:inClassGroup rdf:resource="http://vivoweb.org/ontology#vitroClassGrouppublications"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://aims.fao.org/aos/geopolitical.owl#landAreaYear">
-    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#nobody"/>
+    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/ontology/bibo/Website">
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
@@ -2780,12 +2727,12 @@
     <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://vivoweb.org/ontology/core#phoneNumber">
-    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
-    <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
-    <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">60</vitro:displayRankAnnot>
-    <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</vitro:displayLimitAnnot>
-    <vitro:publicDescriptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Please enter your complete phone number, with country code if outside the U.S. and Canada</vitro:publicDescriptionAnnot>
     <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGroupaddress"/>
+    <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</vitro:displayLimitAnnot>
+    <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">60</vitro:displayRankAnnot>
+    <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
+    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
+    <vitro:publicDescriptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Please enter your complete phone number, with country code if outside the U.S. and Canada</vitro:publicDescriptionAnnot>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix">
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
@@ -2833,14 +2780,6 @@
     <vitro:selectFromExistingAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</vitro:selectFromExistingAnnot>
     <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</vitro:displayLimitAnnot>
     <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
-    <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://vivoweb.org/ontology/core#sectionCredits">
-    <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGroupoverview"/>
-    <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</vitro:displayLimitAnnot>
-    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
-    <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">60</vitro:displayRankAnnot>
-    <vitro:publicDescriptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The academic credits awarded for a course section.</vitro:publicDescriptionAnnot>
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Agent">
@@ -2912,9 +2851,9 @@
     <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">-1</vitro:displayLimitAnnot>
   </rdf:Description>
   <rdf:Description rdf:about="http://vivoweb.org/ontology/provenance-support#PersonAsListed">
-    <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</vitro:displayLimitAnnot>
     <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">90</vitro:displayRankAnnot>
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#nobody"/>
+    <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</vitro:displayLimitAnnot>
     <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#nobody"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://vivoweb.org/ontology/core#Center">
@@ -2929,8 +2868,8 @@
     <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://vivoweb.org/ontology/core#DateTimeValuePrecision">
-    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
+    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">-1</vitro:displayLimitAnnot>
     <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">-1</vitro:displayRankAnnot>
   </rdf:Description>
@@ -2948,15 +2887,6 @@
     <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">-1</vitro:displayRankAnnot>
     <vitro:inClassGroup rdf:resource="http://vivoweb.org/ontology#vitroClassGrouppublications"/>
     <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">-1</vitro:displayLimitAnnot>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/ontology/bibo/owner">
-    <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
-    <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGroupoverview"/>
-    <vitro:offerCreateNewOptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</vitro:offerCreateNewOptionAnnot>
-    <vitro:fullPropertyNameAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">owner</vitro:fullPropertyNameAnnot>
-    <vitro:selectFromExistingAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</vitro:selectFromExistingAnnot>
-    <vitro:publicDescriptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Owner of a document or a collection of documents.</vitro:publicDescriptionAnnot>
-    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://vivoweb.org/ontology/core#proceedingsOf">
     <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">30</vitro:displayRankAnnot>
@@ -3019,8 +2949,8 @@
     <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">-1</vitro:displayLimitAnnot>
   </rdf:Description>
   <rdf:Description rdf:about="http://aims.fao.org/aos/geopolitical.owl#agriculturalAreaUnit">
-    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#nobody"/>
+    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://vivoweb.org/ontology/core#subOrganizationWithin">
     <vitro:fullPropertyNameAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">subOrganizationWithin</vitro:fullPropertyNameAnnot>
@@ -3034,11 +2964,11 @@
     <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://vivoweb.org/ontology/core#dateTimePrecision">
-    <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</vitro:displayLimitAnnot>
-    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
-    <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
-    <vitro:selectFromExistingAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</vitro:selectFromExistingAnnot>
     <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</vitro:displayRankAnnot>
+    <vitro:selectFromExistingAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</vitro:selectFromExistingAnnot>
+    <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
+    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
+    <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</vitro:displayLimitAnnot>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/NET/c4dm/event.owl#agent">
     <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</vitro:displayLimitAnnot>
@@ -3112,8 +3042,8 @@
     <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">9</vitro:displayRankAnnot>
   </rdf:Description>
   <rdf:Description rdf:about="http://aims.fao.org/aos/geopolitical.owl#landAreaTotal">
-    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#nobody"/>
+    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/ontology/bibo/Conference">
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
@@ -3167,8 +3097,8 @@
     <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">-1</vitro:displayRankAnnot>
   </rdf:Description>
   <rdf:Description rdf:about="http://aims.fao.org/aos/geopolitical.owl#agriculturalAreaNotes">
-    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#nobody"/>
+    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://aims.fao.org/aos/geopolitical.owl#nameListZH">
     <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
@@ -3387,10 +3317,11 @@
     <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://vivoweb.org/ontology/core#ConferenceSeries">
-    <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">-1</vitro:displayLimitAnnot>
-    <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">-1</vitro:displayRankAnnot>
-    <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
+    <vitro:inClassGroup rdf:resource="http://vivoweb.org/ontology#vitroClassGroupevents"/>
     <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
+    <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">-1</vitro:displayLimitAnnot>
+    <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
+    <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">-1</vitro:displayRankAnnot>
   </rdf:Description>
   <rdf:Description rdf:about="http://vivoweb.org/ontology/core#receipts">
     <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</vitro:displayLimitAnnot>
@@ -3448,15 +3379,6 @@
     <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#nobody"/>
     <vitro:fullPropertyNameAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">domesticGeographicFocus</vitro:fullPropertyNameAnnot>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/ontology/bibo/producer">
-    <vitro:publicDescriptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Producer of a document or a collection of documents.</vitro:publicDescriptionAnnot>
-    <vitro:selectFromExistingAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</vitro:selectFromExistingAnnot>
-    <vitro:fullPropertyNameAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">producer</vitro:fullPropertyNameAnnot>
-    <vitro:offerCreateNewOptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</vitro:offerCreateNewOptionAnnot>
-    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
-    <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGroupoverview"/>
-    <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
-  </rdf:Description>
   <rdf:Description rdf:about="http://aims.fao.org/aos/geopolitical.owl#hasBorderWith">
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:selectFromExistingAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</vitro:selectFromExistingAnnot>
@@ -3478,8 +3400,8 @@
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://aims.fao.org/aos/geopolitical.owl#landAreaUnit">
-    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#nobody"/>
+    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://vivoweb.org/ontology/core#researcherRoleOf">
     <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">30</vitro:displayRankAnnot>
@@ -3730,9 +3652,9 @@
   </rdf:Description>
   <rdf:Description rdf:about="http://vivoweb.org/ontology/core#publisher">
     <vitro:offerCreateNewOptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</vitro:offerCreateNewOptionAnnot>
+    <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGroupbibobscure"/>
     <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</vitro:displayLimitAnnot>
     <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">51</vitro:displayRankAnnot>
-    <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGroupoverview"/>
     <vitro:publicDescriptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relates published materials to an entity that is engaged in publishing.</vitro:publicDescriptionAnnot>
     <vitro:fullPropertyNameAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">publisher</vitro:fullPropertyNameAnnot>
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
@@ -3858,14 +3780,15 @@
   <rdf:Description rdf:about="http://purl.org/ontology/bibo/numPages">
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
+    <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGroupbibobscure"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/ontology/bibo/editor">
     <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:selectFromExistingAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</vitro:selectFromExistingAnnot>
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</vitro:displayLimitAnnot>
+    <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGroupbibobscure"/>
     <vitro:offerCreateNewOptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</vitro:offerCreateNewOptionAnnot>
-    <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGroupoverview"/>
     <vitro:publicDescriptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A person having managerial and sometimes policy-making responsibility for the editorial part of a publishing firm or of a newspaper, magazine, or other publication.</vitro:publicDescriptionAnnot>
     <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">20</vitro:displayRankAnnot>
     <vitro:fullPropertyNameAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">editor</vitro:fullPropertyNameAnnot>
@@ -3909,8 +3832,8 @@
     <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#nobody"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://aims.fao.org/aos/geopolitical.owl#agriculturalAreaTotal">
-    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#nobody"/>
+    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://vivoweb.org/ontology/core#advisee">
     <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGroupbiography"/>
@@ -3949,8 +3872,8 @@
     <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://aims.fao.org/aos/geopolitical.owl#landAreaNotes">
-    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#nobody"/>
+    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://vivoweb.org/ontology/core#organizationForTraining">
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#nobody"/>
@@ -3980,8 +3903,8 @@
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://aims.fao.org/aos/geopolitical.owl#codeDBPediaID">
-    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#nobody"/>
+    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://vivoweb.org/ontology/core#advisor">
     <vitro:selectFromExistingAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</vitro:selectFromExistingAnnot>
@@ -4022,8 +3945,8 @@
     <vitro:ontologyPrefixAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dcterms</vitro:ontologyPrefixAnnot>
   </rdf:Description>
   <rdf:Description rdf:about="http://aims.fao.org/aos/geopolitical.owl#GDPUnit">
-    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#nobody"/>
+    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/ontology/bibo/organizer">
     <vitro:offerCreateNewOptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</vitro:offerCreateNewOptionAnnot>
@@ -4090,17 +4013,17 @@
     <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">-1</vitro:displayLimitAnnot>
   </rdf:Description>
   <rdf:Description rdf:about="http://vivoweb.org/ontology/core#dateTime">
-    <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</vitro:displayRankAnnot>
-    <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</vitro:displayLimitAnnot>
-    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
-    <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:publicDescriptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Use when a single date and time is appropriate versus a start date and time and end date and time, or when multiple dates and times are relevant.</vitro:publicDescriptionAnnot>
+    <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
+    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
+    <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</vitro:displayLimitAnnot>
+    <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</vitro:displayRankAnnot>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/ontology/bibo/gtin14">
     <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">80</vitro:displayRankAnnot>
+    <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGroupidentifiers"/>
     <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:publicDescriptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Global Trade Item Number (GTIN) is an identifier for trade items developed by GS1 (comprising the former EAN International and Uniform Code Council). GTIN is an "umbrella" term used to describe the entire family of GS1 data structures for trade items (products and services) identification. GTINs may be 8, 12, 13 or 14 digits long.</vitro:publicDescriptionAnnot>
-    <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGroupbibobscure"/>
     <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</vitro:displayLimitAnnot>
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
   </rdf:Description>
@@ -4114,20 +4037,12 @@
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">-1</vitro:displayLimitAnnot>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/NET/c4dm/event.owl#place">
-    <vitro:offerCreateNewOptionAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</vitro:offerCreateNewOptionAnnot>
-    <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGroupmapping"/>
-    <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
-    <vitro:fullPropertyNameAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">place</vitro:fullPropertyNameAnnot>
-    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#nobody"/>
-    <vitro:selectFromExistingAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</vitro:selectFromExistingAnnot>
-  </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/ontology/bibo/status">
     <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</vitro:displayLimitAnnot>
-    <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGroupoverview"/>
     <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">250</vitro:displayRankAnnot>
+    <vitro:inPropertyGroupAnnot rdf:resource="http://vivoweb.org/ontology#vitroPropertyGroupbibobscure"/>
     <vitro:selectFromExistingAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</vitro:selectFromExistingAnnot>
   </rdf:Description>
   <rdf:Description rdf:about="http://vivoweb.org/ontology/core#Catalog">
