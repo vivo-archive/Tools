@@ -22,3 +22,5 @@ Changelog:
 	Rewrote entire library to use ARC2 instead of SimpleXML
 	This fixed several bugs related to data ambiguity
 	Functionality essentially unchanged
+2.0.1:
+	Was failing if library was called more than once per page, fixed.

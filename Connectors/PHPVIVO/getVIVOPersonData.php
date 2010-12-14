@@ -72,7 +72,7 @@ function isURLValid($URL)
 ?>
 <?php
 function getVIVOPersonData($search){
-	include("arc2/ARC2.php");
+	include_once("arc2/ARC2.php");
 	$identifier = getURI($search);
 	$personURI = $search; //What's the VIVO URI for this person?
 	$site = getSite($search);
