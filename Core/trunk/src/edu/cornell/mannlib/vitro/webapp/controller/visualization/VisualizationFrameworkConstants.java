@@ -11,11 +11,21 @@ public class VisualizationFrameworkConstants {
 	 */
 	public static final String RELATIVE_LOCATION_OF_VISUALIZATIONS_BEAN = 
 		"/WEB-INF/visualization/visualizations-beans-injection.xml";
+	
+	/*
+	 * Freemarker Version
+	 * */
+	public static final String RELATIVE_LOCATION_OF_FM_VISUALIZATIONS_BEAN = 
+		"/WEB-INF/visualization/visualizations-beans-injection-fm.xml";
+	
+	public static final String ERROR_TEMPLATE = "/visualization/visualizationError.ftl";
 
 	/*
 	 * Vis URL prefix that is seen by all the users
 	 */
 	public static final String VISUALIZATION_URL_PREFIX = "/visualization";
+	public static final String FREEMARKERIZED_VISUALIZATION_URL_PREFIX = "/visualizationfm";
+	
 	public static final String INDIVIDUAL_URL_PREFIX = "/individual";
 
 	/*

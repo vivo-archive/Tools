@@ -26,6 +26,7 @@ import edu.cornell.mannlib.vitro.webapp.controller.VitroHttpServlet;
 import edu.cornell.mannlib.vitro.webapp.controller.VitroRequest;
 import edu.cornell.mannlib.vitro.webapp.controller.freemarker.UrlBuilder.Route;
 import edu.cornell.mannlib.vitro.webapp.controller.freemarker.responsevalues.ExceptionResponseValues;
+import edu.cornell.mannlib.vitro.webapp.controller.freemarker.responsevalues.FileResponseValues;
 import edu.cornell.mannlib.vitro.webapp.controller.freemarker.responsevalues.ForwardResponseValues;
 import edu.cornell.mannlib.vitro.webapp.controller.freemarker.responsevalues.RdfResponseValues;
 import edu.cornell.mannlib.vitro.webapp.controller.freemarker.responsevalues.RedirectResponseValues;
@@ -153,6 +154,8 @@ public class FreemarkerHttpServlet extends VitroHttpServlet {
                 doForward(vreq, response, values);
             } else if (values instanceof RdfResponseValues) {
                 doRdf(vreq, response, values);
+            } else if (values instanceof FileResponseValues) {
+                doFile(vreq, response, values);
             }
         } catch (ServletException e) {
             log.error("ServletException in doResponse()", e);
@@ -204,11 +207,6 @@ public class FreemarkerHttpServlet extends VitroHttpServlet {
         writePage(root, config, vreq, response);       
     }
     
-    private void processSetupTemplate(Configuration config, HttpServletRequest request, Map<String, Object> map) {
-        TemplateProcessingHelper helper = new TemplateProcessingHelper(config, request, getServletContext());
-        helper.processTemplate(Template.SETUP.toString(), map);
-    }
-    
     protected void doRedirect(HttpServletRequest request, HttpServletResponse response, ResponseValues values) 
         throws ServletException, IOException { 
         String redirectUrl = values.getRedirectUrl();
@@ -243,6 +241,26 @@ public class FreemarkerHttpServlet extends VitroHttpServlet {
         }
         
         values.getModel().write( response.getOutputStream(), format );      
+    }
+    
+    protected void doFile(HttpServletRequest request, HttpServletResponse response, ResponseValues values) 
+        throws IOException {
+        
+        String mediaType = values.getContentType().getMediaType();
+        response.setContentType(mediaType);
+        
+        Map<String, String> headerKeyToValue = values.getHeader();
+        
+        for (Map.Entry<String, String> currentHeaderPair : headerKeyToValue.entrySet()) {
+        	response.setHeader(currentHeaderPair.getKey(), currentHeaderPair.getValue());
+        }
+        
+		PrintWriter responseWriter = response.getWriter();
+		
+		String rawFileContent = (String) values.getMap().get("fileContent");
+		responseWriter.append(rawFileContent);
+		responseWriter.close();
+			
     }
 
     protected void doException(VitroRequest vreq, HttpServletResponse response, ResponseValues values) {
@@ -331,12 +349,20 @@ public class FreemarkerHttpServlet extends VitroHttpServlet {
         return urls;
     }
     
+    protected BeansWrapper getNonDefaultBeansWrapper(int exposureLevel) {
+        BeansWrapper wrapper = new DefaultObjectWrapper();
+        // Too bad exposure levels are ints instead of enum values; what happens if 
+        // we send an int that's not a defined exposure level?
+        wrapper.setExposureLevel(exposureLevel);
+        return wrapper;
+    }
+    
     private TemplateModel getStylesheetList(String themeDir) {
         
         // For script and stylesheet lists, use an object wrapper that exposes write methods, 
         // instead of the configuration's object wrapper, which doesn't. The templates can
         // add stylesheets and scripts to the lists by calling their add() methods.
-        BeansWrapper wrapper = new DefaultObjectWrapper();
+        BeansWrapper wrapper = getNonDefaultBeansWrapper(BeansWrapper.EXPOSE_SAFE);
         try {
             // Here themeDir SHOULD NOT have the context path already added to it.
             return wrapper.wrap(new Stylesheets(themeDir));       
@@ -351,7 +377,7 @@ public class FreemarkerHttpServlet extends VitroHttpServlet {
         // For script and stylesheet lists, use an object wrapper that exposes write methods, 
         // instead of the configuration's object wrapper, which doesn't. The templates can
         // add stylesheets and scripts to the lists by calling their add() methods.
-        BeansWrapper wrapper = new DefaultObjectWrapper();
+        BeansWrapper wrapper = getNonDefaultBeansWrapper(BeansWrapper.EXPOSE_SAFE);
         try {
             return wrapper.wrap(new Scripts(themeDir));       
         } catch (TemplateModelException e) {

@@ -7,10 +7,12 @@ import java.io.OutputStream;
 import java.io.Writer;
 import java.net.URLDecoder;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -56,12 +58,9 @@ import edu.cornell.mannlib.vitro.webapp.dao.OntologyDao;
  *
  */
 public class SparqlQueryServlet extends BaseEditController {
-
     private static final Log log = LogFactory.getLog(SparqlQueryServlet.class.getName());
-    private static final String kb2 = "http://vitro.mannlib.cornell.edu/default/vitro-kb-2";
 
     protected static final Syntax SYNTAX = Syntax.syntaxARQ;
-    
     
     protected static HashMap<String,ResultSetFormat>formatSymbols = new HashMap<String,ResultSetFormat>();
     static{
@@ -107,18 +106,15 @@ public class SparqlQueryServlet extends BaseEditController {
         // rjy7 Allows any editor (including self-editors) access to this servlet.
         // This servlet is now requested via Ajax from some custom forms, so anyone
         // using the custom form needs access rights.
-
-        // TODO Actually, this only allows someone who is logged in to use this servlet.
-        // If a self-editor is not logged in, they will not have access. -- jb
         if( !checkLoginStatus(request, response) ) {
         	return;
         }
         
         VitroRequest vreq = new VitroRequest(request);
 
-        Model model = vreq.getJenaOntModel(); // getModel()
+        Model model = vreq.getJenaOntModel(); 
         if( model == null ){
-            doNoModelInContext(request,response);
+            doNoModelInContext(response);
             return;
         }
 
@@ -143,44 +139,70 @@ public class SparqlQueryServlet extends BaseEditController {
             return;
         }
         
-        DataSource dataSource = DatasetFactory.create() ;
-        Dataset dataset = null;
-        ModelMaker maker = (ModelMaker) getServletContext().getAttribute("vitroJenaModelMaker");
+        Dataset dataset = chooseDatasetForQuery(vreq);
 
-        boolean someModelSet = false;        
-        String models[] = request.getParameterValues("sourceModelName");        
-        if( models != null && models.length > 0 ){
-        	OntModel ontModel = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM);
-            for( String modelName : models ){
-                Model modelNamed = maker.getModel(modelName);
-                if( modelNamed != null ){
-                    dataSource.addNamedModel(modelName, modelNamed) ;
-                	// For now, people expect to query these graphs without using 
-                	// FROM NAMED, so we'll also add to the background
-                	ontModel.addSubModel(modelNamed);
-                    someModelSet = true;
-                }
-            }     
-           
-            if (someModelSet) {
-            	
-            	dataSource.setDefaultModel(ontModel);
-            }
-           
-        }
-        
-        if( ! someModelSet ){
-            dataset = vreq.getDataset();
-            if(dataset==null){
-            	dataSource.setDefaultModel(model) ;
-            }
-        }
-        executeQuery(request, response, resultFormatParam, rdfResultFormatParam, queryParam, (dataset != null) ? dataset : dataSource); 
+        executeQuery(response, resultFormatParam, rdfResultFormatParam, queryParam, dataset); 
         return;
     }
     
-    private void executeQuery(HttpServletRequest req,
-            HttpServletResponse response, String resultFormatParam, String rdfResultFormatParam, String queryParam, Dataset dataset ) throws IOException {
+	private Dataset chooseDatasetForQuery(VitroRequest vreq) {
+		Map<String, Model> modelMap = getModelsFromRequest(vreq);
+		if (!modelMap.isEmpty()) {
+			return buildDataSetFromNamedModels(modelMap);
+		}
+
+		Dataset dataset = vreq.getDataset();
+		if (dataset != null) {
+			return dataset;
+		}
+
+		DataSource dataSource = DatasetFactory.create();
+		dataSource.setDefaultModel(vreq.getJenaOntModel());
+		return dataSource;
+	}
+    
+	private Map<String, Model> getModelsFromRequest(HttpServletRequest request) {
+		String modelNames[] = request.getParameterValues("sourceModelName");
+		if ((modelNames != null) && (modelNames.length > 0)) {
+			return Collections.emptyMap();
+		}
+
+		ModelMaker maker = (ModelMaker) getServletContext().getAttribute(
+				"vitroJenaModelMaker");
+
+		Map<String, Model> map = new HashMap<String, Model>();
+		for (String modelName : modelNames) {
+			Model model = maker.getModel(modelName);
+			if (model != null) {
+				map.put(modelName, model);
+			}
+		}
+
+		return map;
+	}
+
+	private Dataset buildDataSetFromNamedModels(Map<String, Model> modelMap) {
+		DataSource dataSource = DatasetFactory.create();
+		for (String name : modelMap.keySet()) {
+			Model model = modelMap.get(name);
+			dataSource.addNamedModel(name, model);
+		}
+
+    	// For now, people expect to query these graphs without using 
+    	// FROM NAMED, so we'll also add to the background
+		OntModel ontModel = ModelFactory
+				.createOntologyModel(OntModelSpec.OWL_MEM);
+		for (String name : modelMap.keySet()) {
+			Model model = modelMap.get(name);
+			ontModel.addSubModel(model);
+		}
+
+		dataSource.setDefaultModel(ontModel);
+		return dataSource;
+	}
+
+    
+    private void executeQuery(HttpServletResponse response, String resultFormatParam, String rdfResultFormatParam, String queryParam, Dataset dataset ) throws IOException {
         
     	ResultSetFormat rsf = null;
     	/* BJL23 2008-11-06
@@ -227,19 +249,7 @@ public class SparqlQueryServlet extends BaseEditController {
         }        
     }
 
-    /*
-    private Model getModel(){
-        Model model = null;
-        try{
-        model = (Model)getServletContext().getAttribute("jenaOntModel");
-        }catch(Throwable thr){
-            log.error("could not cast getServletContext().getAttribute(\"jenaOntModel\") to Model");
-        }
-        return model;
-    }
-    */
-
-    private void doNoModelInContext(HttpServletRequest request, HttpServletResponse res){
+    private void doNoModelInContext(HttpServletResponse res){
         try {
             res.setStatus(HttpServletResponse.SC_NOT_IMPLEMENTED);
             ServletOutputStream sos = res.getOutputStream();
@@ -261,9 +271,9 @@ public class SparqlQueryServlet extends BaseEditController {
     	while (results.hasNext()) {
     		QuerySolution solution = (QuerySolution) results.next();
     		List<String> valueList = new LinkedList<String>();
-    		Iterator varNameIt = solution.varNames();
+    		Iterator<String> varNameIt = solution.varNames();
     		while (varNameIt.hasNext()) {
-    			String varName = (String) varNameIt.next();
+    			String varName = varNameIt.next();
     			String value = "";
     			try {
     				Literal lit = solution.getLiteral(varName);
@@ -328,18 +338,14 @@ public class SparqlQueryServlet extends BaseEditController {
                   
             
             OntologyDao daoObj = vreq.getFullWebappDaoFactory().getOntologyDao();
-            List ontologiesObj = daoObj.getAllOntologies();
-            ArrayList prefixList = new ArrayList();
+            List<Ontology> ontologiesObj = daoObj.getAllOntologies();
+            ArrayList<String> prefixList = new ArrayList<String>();
             
             if(ontologiesObj !=null && ontologiesObj.size()>0){
-            	
-            	Iterator ontItr = ontologiesObj.iterator();
-            	while(ontItr.hasNext()){
-            		Ontology ont = (Ontology) ontItr.next();
+            	for(Ontology ont: ontologiesObj) {
             		prefixList.add(ont.getPrefix() == null ? "(not yet specified)" : ont.getPrefix());
             		prefixList.add(ont.getURI() == null ? "" : ont.getURI());
             	}
-            	
             }
             else{
             	prefixList.add("<strong>" + "No Ontologies added" + "</strong>");
@@ -414,7 +420,8 @@ public class SparqlQueryServlet extends BaseEditController {
     "ORDER BY ASC( ?pred )\n";
     */
 
-    private String example =
+    @SuppressWarnings("unused")
+	private String example =
         "PREFIX rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"+
         "PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>\n"+
         "PREFIX xsd:   <http://www.w3.org/2001/XMLSchema#>\n"+

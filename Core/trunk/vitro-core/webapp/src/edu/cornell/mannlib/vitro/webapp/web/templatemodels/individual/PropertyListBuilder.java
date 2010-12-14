@@ -67,7 +67,7 @@ public class PropertyListBuilder {
         // don't need to set editLabel, can just do this:
         //propertyList.addAll(objectPropertyList); 
         for (ObjectProperty op : objectPropertyList) {
-            op.setLabel(op.getDomainPublic());
+            //op.setLabel(op.getDomainPublic());
             propertyList.add(op);
         }
                 
@@ -79,12 +79,14 @@ public class PropertyListBuilder {
         }
         
         // Now do much the same with data properties: get the list of populated data properties, then add in placeholders for missing ones 
-        // If we're going to create a new template model object property with a name,
-        // don't need to set editLabel, can just do this:
-        //propertyList.addAll(subject.getPopulatedDataPropertyList()); 
+        // rjy7 Currently we are getting the list of properties in one sparql query, then doing a separate query
+        // to get values for each property. This could be optimized by doing a single query to get a map of properties to 
+        // DataPropertyStatements. Note that this does not apply to object properties, because the queries
+        // can be customized and thus differ from property to property. So it's easier for now to keep the
+        // two working in parallel.
         List<DataProperty> dataPropertyList = subject.getPopulatedDataPropertyList();
         for (DataProperty dp : dataPropertyList) {
-            dp.setLabel(dp.getPublicName());
+            //dp.setLabel(dp.getPublicName());
             propertyList.add(dp);
         }
 
@@ -167,6 +169,7 @@ public class PropertyListBuilder {
                         } else if (op.getURI() == null) {
                             log.error("ObjectProperty op returned with null propertyURI from opDao.getObjectPropertyByURI()");
                         } else  if (! alreadyOnPropertyList(propertyList, op)) {
+                            //op.setLabel(op.getDomainPublic());
                             propertyList.add(op);
                         }
                     }
@@ -189,6 +192,7 @@ public class PropertyListBuilder {
                     if (dp.getURI() == null) {
                         log.error("DataProperty dp returned with null propertyURI from dpDao.getAllPossibleDatapropsForIndividual()");
                     } else if (! alreadyOnPropertyList(propertyList, dp)) {
+                        //dp.setLabel(dp.getPublicName());
                         propertyList.add(dp);
                     }
                 } else {

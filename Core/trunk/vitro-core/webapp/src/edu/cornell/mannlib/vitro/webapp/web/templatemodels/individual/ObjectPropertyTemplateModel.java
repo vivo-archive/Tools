@@ -26,31 +26,49 @@ public abstract class ObjectPropertyTemplateModel extends PropertyTemplateModel 
 
     ObjectPropertyTemplateModel(ObjectProperty op, Individual subject, WebappDaoFactory wdf) {
         super(op);
- 
+        setName(op.getDomainPublic());
+        
         // Get the config for this object property
-        config = new PropertyListConfig(op);
+        try {
+            config = new PropertyListConfig(op);
+        } catch (Exception e) {
+            log.error(e, e);
+        }
     }
     
     protected String getQueryString() {
         return config.queryString;
     }
+    
+    protected String getCollationTarget() {
+        return config.collationTarget;
+    }
        
     protected static ObjectPropertyTemplateModel getObjectPropertyTemplateModel(ObjectProperty op, Individual subject, WebappDaoFactory wdf) {
-        return op.getCollateBySubclass() ? new CollatedObjectPropertyTemplateModel(op, subject, wdf) 
-                                         : new UncollatedObjectPropertyTemplateModel(op, subject, wdf);
+        if (op.getCollateBySubclass()) {
+            try {
+                return new CollatedObjectPropertyTemplateModel(op, subject, wdf);
+            } catch (Exception e) {
+                return new UncollatedObjectPropertyTemplateModel(op, subject, wdf);
+            }
+        } else {
+            return new UncollatedObjectPropertyTemplateModel(op, subject, wdf);
+        }
     }
     
     private class PropertyListConfig {
 
         private static final String DEFAULT_CONFIG_FILE = "objectPropertyList-default.xml";
-        private static final String CONFIG_FILE_PATH = "/views/";
+        private static final String CONFIG_FILE_PATH = "/config/";
         private static final String NODE_NAME_QUERY = "query";
         private static final String NODE_NAME_TEMPLATE = "template";
+        private static final String NODE_NAME_COLLATION_TARGET = "collation-target";
         
         private String queryString;
         private String templateName;
+        private String collationTarget;
 
-        PropertyListConfig(ObjectProperty op) {
+        PropertyListConfig(ObjectProperty op) throws Exception {
             String filename = DEFAULT_CONFIG_FILE;;
             
             // Get the config filename from ObjectPropertyDaoJena by looking for the custom property list view annotation.
@@ -59,31 +77,44 @@ public abstract class ObjectPropertyTemplateModel extends PropertyTemplateModel 
             
             String configFilename = getConfigFilename(filename);
             try {
-            File config = new File(configFilename);            
-            if (configFilename != DEFAULT_CONFIG_FILE && ! config.exists()) {
-                log.warn("Can't find config file " + configFilename + " for object property " + op.getURI() + "\n" +
-                        ". Using default config file instead.");
-                configFilename = getConfigFilename(DEFAULT_CONFIG_FILE);
-                // Should we test for the existence of the default, and throw an error if it doesn't exist?
-            }   
+                File config = new File(configFilename);            
+                if (configFilename != DEFAULT_CONFIG_FILE && ! config.exists()) {
+                    log.warn("Can't find config file " + configFilename + " for object property " + op.getURI() + "\n" +
+                            ". Using default config file instead.");
+                    configFilename = getConfigFilename(DEFAULT_CONFIG_FILE);
+                    // Should we test for the existence of the default, and throw an error if it doesn't exist?
+                }   
             
-            DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+                DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
                 DocumentBuilder db = dbf.newDocumentBuilder();
                 Document doc = db.parse(configFilename);
                 queryString = getConfigValue(doc, NODE_NAME_QUERY);
                 templateName = getConfigValue(doc, NODE_NAME_TEMPLATE);
+                collationTarget = getConfigValue(doc, NODE_NAME_COLLATION_TARGET);
             } catch (Exception e) {
                 log.error("Error processing config file " + configFilename + " for object property " + op.getURI(), e);
                 // What should we do here?
+            }
+            
+            if (queryString == null) {
+                throw new Exception("Invalid custom view configuration: query string not defined.");                
+            }
+            if (templateName == null) {
+                throw new Exception("Invalid custom view configuration: template name not defined.");
             }
         }
  
         private String getConfigValue(Document doc, String nodeName) {
             NodeList nodes = doc.getElementsByTagName(nodeName);
             Element element = (Element) nodes.item(0); 
-            String value = element.getChildNodes().item(0).getNodeValue();   
-            log.debug("Value of config parameter " + nodeName + " = " + value);
-            return value;        
+            String value = null;
+            if (element != null) {
+                value = element.getChildNodes().item(0).getNodeValue();   
+                log.debug("Value of config parameter " + nodeName + " = " + value);
+            } else {
+                log.warn("No value for config parameter " + nodeName);
+            }
+            return value;           
         }
         
         private String getConfigFilename(String filename) {

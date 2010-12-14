@@ -2,7 +2,9 @@
 
 <#-- Template for property listing on individual profile page -->
 
-<#assign propertyGroups = individual.propertyList>
+<#-- RY Just a temporary fix to prevent classgroup heading from being pushed to the right edge of the page. 
+Feel free to redo/remove. -->
+<div style="clear: both;" />
 
 <#list propertyGroups as group>
 
@@ -42,8 +44,9 @@
                         </#list>
                         
                     <#else> <#-- object property -->      
-                        <p>Collated? ${property.collatedBySubclass?string("yes", "no")}</p>
-                        <#if ! property.collatedBySubclass> <#-- temporary, till we handle collated props -->
+                        <#if property.collatedBySubclass>                             
+                            <#include "objectPropertyList-collated.ftl">
+                        <#else>
                             <#include "${property.template}">
                         </#if>
                     </#if>                   
