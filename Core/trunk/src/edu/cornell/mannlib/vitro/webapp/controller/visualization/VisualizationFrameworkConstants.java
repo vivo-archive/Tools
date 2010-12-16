@@ -25,6 +25,8 @@ public class VisualizationFrameworkConstants {
 	 */
 	public static final String VISUALIZATION_URL_PREFIX = "/visualization";
 	public static final String FREEMARKERIZED_VISUALIZATION_URL_PREFIX = "/visualizationfm";
+	public static final String AJAX_VISUALIZATION_SERVICE_URL_PREFIX = "/visualizationAjax";
+	public static final String DATA_VISUALIZATION_SERVICE_URL_PREFIX = "/visualizationData";
 	
 	public static final String INDIVIDUAL_URL_PREFIX = "/individual";
 
@@ -65,6 +67,7 @@ public class VisualizationFrameworkConstants {
 	public static final String PROFILE_UTILS_VIS_MODE = "PROFILE_URL";
 	public static final String COAUTHOR_UTILS_VIS_MODE = "COAUTHORSHIP_URL";
 	public static final String PERSON_LEVEL_UTILS_VIS_MODE = "PERSON_LEVEL_URL";
+	public static final String COPI_UTILS_VIS_MODE = "COPI_URL";
 	public static final String IMAGE_UTILS_VIS_MODE = "IMAGE_URL";
 	public static final String UNIVERSITY_COMPARISON_VIS_MODE = "UNIVERSITY";
 	public static final String SCHOOL_COMPARISON_VIS_MODE = "SCHOOL";
@@ -75,6 +78,7 @@ public class VisualizationFrameworkConstants {
 	 * These values represent possible visualizations provided as values to the "vis" url key.
 	 * */
 	public static final String PERSON_PUBLICATION_COUNT_VIS = "person_pub_count";
+	public static final String PERSON_GRANT_COUNT_VIS = "person_grant_count";
 	public static final String PDF_REPORT_VIS = "pdf_report";
 	public static final String COLLEGE_PUBLICATION_COUNT_VIS = "college_pub_count";
 	public static final String COAUTHORSHIP_VIS = "coauthorship";

@@ -7,11 +7,13 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import com.hp.hpl.jena.datatypes.xsd.XSDDatatype;
+import com.hp.hpl.jena.graph.Node;
 import com.hp.hpl.jena.ontology.ConversionException;
 import com.hp.hpl.jena.ontology.OntModel;
 import com.hp.hpl.jena.ontology.OntProperty;
@@ -22,7 +24,6 @@ import com.hp.hpl.jena.query.QueryExecution;
 import com.hp.hpl.jena.query.QueryExecutionFactory;
 import com.hp.hpl.jena.query.QueryFactory;
 import com.hp.hpl.jena.query.QuerySolution;
-import com.hp.hpl.jena.query.QuerySolutionMap;
 import com.hp.hpl.jena.query.ResultSet;
 import com.hp.hpl.jena.rdf.model.Literal;
 import com.hp.hpl.jena.rdf.model.Property;
@@ -38,9 +39,6 @@ import com.hp.hpl.jena.vocabulary.RDF;
 import com.hp.hpl.jena.vocabulary.RDFS;
 
 import edu.cornell.mannlib.vitro.webapp.beans.BaseResourceBean;
-import edu.cornell.mannlib.vitro.webapp.beans.DataProperty;
-import edu.cornell.mannlib.vitro.webapp.beans.DataPropertyStatement;
-import edu.cornell.mannlib.vitro.webapp.beans.DataPropertyStatementImpl;
 import edu.cornell.mannlib.vitro.webapp.beans.Individual;
 import edu.cornell.mannlib.vitro.webapp.beans.ObjectProperty;
 import edu.cornell.mannlib.vitro.webapp.beans.ObjectPropertyStatement;
@@ -73,6 +71,23 @@ public class ObjectPropertyDaoJena extends PropertyDaoJena implements ObjectProp
             log.error(objectPropertyQueryString);
         }           
     }
+    
+    static protected String customListViewConfigFileQueryString =
+        "PREFIX display: <http://vitro.mannlib.cornell.edu/ontologies/display/1.1#>" +
+        "SELECT ?property ?filename WHERE { \n" +
+        "    ?property display:customListViewConfigurationFile ?filename . \n" +
+        "} LIMIT 1";
+    static protected Query customListViewConfigFileQuery;
+    static {
+        try {
+            customListViewConfigFileQuery = QueryFactory.create(customListViewConfigFileQueryString);
+        } catch(Throwable th){
+            log.error("could not create SPARQL query for customListViewConfigFileQueryString " + th.getMessage());
+            log.error(customListViewConfigFileQueryString);
+        }           
+    }
+    
+    Map<ObjectProperty, String> customListViewConfigFileMap = null;
     
     public ObjectPropertyDaoJena(WebappDaoFactoryJena wadf) {
         super(wadf);
@@ -849,8 +864,8 @@ public class ObjectPropertyDaoJena extends PropertyDaoJena implements ObjectProp
         ResultSet results = getPropertyQueryResults(subjectUri, objectPropertyQuery);
         List<ObjectProperty> properties = new ArrayList<ObjectProperty>();
         while (results.hasNext()) {
-            QuerySolution sol = results.next();
-            Resource resource = sol.getResource("property");
+            QuerySolution soln = results.next();
+            Resource resource = soln.getResource("property");
             String uri = resource.getURI();
             ObjectProperty property = getObjectPropertyByURI(uri);
             properties.add(property);
@@ -859,9 +874,38 @@ public class ObjectPropertyDaoJena extends PropertyDaoJena implements ObjectProp
     }
     
     @Override
-    public String getCustomListView() {
-        //return getPropertyStringValue(, PROPERTY_CUSTOM_LIST_VIEW_ANNOT);  
-        return null;
+    public String getCustomListConfigFilename(ObjectProperty op) {
+        if (customListViewConfigFileMap == null) {
+            customListViewConfigFileMap = new HashMap<ObjectProperty, String>();
+            OntModel displayModel = getOntModelSelector().getDisplayModel();
+            
+//            Property listViewConfigProp = displayModel.getProperty(VitroVocabulary.DISPLAY + "customListViewConfigurationFile");
+//            ResIterator resources = displayModel.listResourcesWithProperty(listViewConfigProp);
+//            while (resources.hasNext()) {
+//                Resource resource = resources.next();
+//                ObjectProperty prop = getObjectPropertyByURI(resource.getURI());
+//                NodeIterator nodes = displayModel.listObjectsOfProperty(resource, listViewConfigProp);
+//                if (nodes.hasNext()) {
+//                    RDFNode node = nodes.next(); // there should be at most one value; just get the first one
+//                    if (node.isLiteral()) {
+//                        String configFileName = ((Literal)node).getLexicalForm();
+//                        customListViewConfigFiles.put(prop, configFileName);
+//                    }
+//                }
+//            }
+            
+            QueryExecution qexec = QueryExecutionFactory.create(customListViewConfigFileQuery, displayModel); 
+            ResultSet results = qexec.execSelect();           
+            while (results.hasNext()) {
+                QuerySolution soln = results.next();
+                Resource resource = soln.getResource("property");
+                String uri = resource.getURI();
+                ObjectProperty prop = getObjectPropertyByURI(uri);
+                String filename = soln.getLiteral("filename").getLexicalForm();
+                customListViewConfigFileMap.put(prop, filename);                
+            }           
+        }        
+        return customListViewConfigFileMap.get(op);
     }
-    
+
 }

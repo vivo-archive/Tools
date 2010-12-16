@@ -2,8 +2,6 @@
 
 package edu.cornell.mannlib.vitro.webapp.visualization.freemarker.personpubcount;
 
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
@@ -17,7 +15,8 @@ import java.util.Map.Entry;
 
 import org.apache.commons.logging.Log;
 
-import edu.cornell.mannlib.vitro.webapp.controller.visualization.freemarker.VisualizationController;
+import edu.cornell.mannlib.vitro.webapp.controller.freemarker.UrlBuilder;
+import edu.cornell.mannlib.vitro.webapp.controller.freemarker.UrlBuilder.ParamMap;
 import edu.cornell.mannlib.vitro.webapp.controller.visualization.VisualizationFrameworkConstants;
 import edu.cornell.mannlib.vitro.webapp.visualization.constants.VOConstants;
 import edu.cornell.mannlib.vitro.webapp.visualization.constants.VisConstants;
@@ -55,19 +54,15 @@ public class PersonPublicationCountVisCodeGenerator {
 
 	private SparklineData sparklineData;
 
-	private String contextPath;
-
 	private String individualURI;
 
-	public PersonPublicationCountVisCodeGenerator(String contextPath, 
-									  String individualURIParam, 
+	public PersonPublicationCountVisCodeGenerator(String individualURIParam, 
 									  String visMode, 
 									  String visContainer, 
 									  Set<BiboDocument> authorDocuments, 
 									  Map<String, Integer> yearToPublicationCount, 
 									  Log log) {
 		
-		this.contextPath = contextPath;
 		this.individualURI = individualURIParam;
 		
 		this.yearToPublicationCount = yearToPublicationCount;
@@ -407,17 +402,12 @@ public class PersonPublicationCountVisCodeGenerator {
 		
 		String csvDownloadURLHref = ""; 
 		
-		try {
-			if (getCSVDownloadURL() != null) {
-				
-				csvDownloadURLHref = "<a href=\"" + getCSVDownloadURL() 
-											+ "\" class=\"inline_href\">(.CSV File)</a>";
-				
-			} else {
-				csvDownloadURLHref = "";
-			}
-
-		} catch (UnsupportedEncodingException e) {
+		if (getCSVDownloadURL() != null) {
+			
+			csvDownloadURLHref = "<a href=\"" + getCSVDownloadURL() 
+										+ "\" class=\"inline_href\">(.CSV File)</a>";
+			
+		} else {
 			csvDownloadURLHref = "";
 		}
 		
@@ -525,18 +515,13 @@ public class PersonPublicationCountVisCodeGenerator {
 		
 		if (yearToPublicationCount.size() > 0) {
 			
-			try {
-				if (getCSVDownloadURL() != null) {
-					
-					csvDownloadURLHref = "Download data as <a href='" 
-											+ getCSVDownloadURL() + "'>.csv</a> file.<br />";
-					sparklineData.setDownloadDataLink(getCSVDownloadURL());
-					
-				} else {
-					csvDownloadURLHref = "";
-				}
-
-			} catch (UnsupportedEncodingException e) {
+			if (getCSVDownloadURL() != null) {
+				
+				csvDownloadURLHref = "Download data as <a href='" 
+										+ getCSVDownloadURL() + "'>.csv</a> file.<br />";
+				sparklineData.setDownloadDataLink(getCSVDownloadURL());
+				
+			} else {
 				csvDownloadURLHref = "";
 			}
 		} else {
@@ -552,34 +537,18 @@ public class PersonPublicationCountVisCodeGenerator {
 		return divContextCode.toString();
 	}
 
-	private String getCSVDownloadURL()
-			throws UnsupportedEncodingException {
+	private String getCSVDownloadURL() {
 		
 		if (yearToPublicationCount.size() > 0) {
 			
-			String secondaryContextPath = "";
-			if (!contextPath.contains(VisualizationFrameworkConstants.VISUALIZATION_URL_PREFIX)) {
-				secondaryContextPath = VisualizationFrameworkConstants.VISUALIZATION_URL_PREFIX;
-			}
-			
-		String downloadURL = contextPath
-							 + secondaryContextPath
-							 + "?" + VisualizationFrameworkConstants.INDIVIDUAL_URI_KEY 
-							 + "=" + URLEncoder.encode(individualURI, 
-									 				   VisualizationController.URL_ENCODING_SCHEME)
-									 				   .toString() 
-							 + "&" + VisualizationFrameworkConstants.VIS_TYPE_KEY 
-							 + "=" + URLEncoder.encode(
-										 			VisualizationFrameworkConstants
-										 				.PERSON_PUBLICATION_COUNT_VIS,
-									 				VisualizationController.URL_ENCODING_SCHEME)
-								 				.toString() 
-							 + "&" + VisualizationFrameworkConstants.RENDER_MODE_KEY 
-							 + "=" + URLEncoder.encode(VisualizationFrameworkConstants
-									 						.DATA_RENDER_MODE, 
-					 				 				   VisualizationController.URL_ENCODING_SCHEME)
-			 				 				   .toString();
-			return downloadURL;
+			ParamMap CSVDownloadURLParams = new ParamMap(VisualizationFrameworkConstants.INDIVIDUAL_URI_KEY,
+														 individualURI,
+														 VisualizationFrameworkConstants.VIS_TYPE_KEY,
+														 VisualizationFrameworkConstants.PERSON_PUBLICATION_COUNT_VIS);
+
+			return UrlBuilder.getUrl(VisualizationFrameworkConstants.DATA_VISUALIZATION_SERVICE_URL_PREFIX,
+									 CSVDownloadURLParams);
+
 		} else {
 			return null;
 		}
@@ -589,31 +558,18 @@ public class PersonPublicationCountVisCodeGenerator {
 
 		StringBuilder divContextCode = new StringBuilder();
 		
-		try {
-		
 		String fullTimelineLink;
 		if (yearToPublicationCount.size() > 0) {
 			
-			String secondaryContextPath = "";
-			if (!contextPath.contains(VisualizationFrameworkConstants.VISUALIZATION_URL_PREFIX)) {
-				secondaryContextPath = VisualizationFrameworkConstants.VISUALIZATION_URL_PREFIX;
-			}
-			
-			String fullTimelineNetworkURL = contextPath
-							+ secondaryContextPath
-							+ "?" 
-							+ VisualizationFrameworkConstants.INDIVIDUAL_URI_KEY 
-							+ "=" + URLEncoder.encode(individualURI, 
-					 				 VisualizationController.URL_ENCODING_SCHEME).toString()
-					 	    + "&"
-		 				    + VisualizationFrameworkConstants.VIS_TYPE_KEY 
-							+ "=" + URLEncoder.encode("person_level", 
-					 				 VisualizationController.URL_ENCODING_SCHEME).toString()
-		 				    + "&"
-		 				    + VisualizationFrameworkConstants.RENDER_MODE_KEY
-							+ "=" + URLEncoder.encode(VisualizationFrameworkConstants
-															.STANDALONE_RENDER_MODE, 
-					 				 VisualizationController.URL_ENCODING_SCHEME).toString();
+			ParamMap fullTimelineNetworkURLParams = new ParamMap(VisualizationFrameworkConstants.INDIVIDUAL_URI_KEY,
+					 individualURI,
+					 VisualizationFrameworkConstants.VIS_TYPE_KEY,
+					 VisualizationFrameworkConstants.PERSON_LEVEL_VIS);
+
+			String fullTimelineNetworkURL = UrlBuilder.getUrl(
+											VisualizationFrameworkConstants.FREEMARKERIZED_VISUALIZATION_URL_PREFIX,
+											fullTimelineNetworkURLParams);
+
 			
 			fullTimelineLink = "<a href='" + fullTimelineNetworkURL + "'>View all VIVO " 
 									+ "publications and corresponding co-author network.</a>";
@@ -625,10 +581,6 @@ public class PersonPublicationCountVisCodeGenerator {
 		}
 		
 		divContextCode.append("<span class=\"vis_link\">" + fullTimelineLink + "</span>");
-		
-		} catch (UnsupportedEncodingException e) {
-			log.error(e);
-		}
 		return divContextCode.toString();
 	}
 	
@@ -636,13 +588,9 @@ public class PersonPublicationCountVisCodeGenerator {
 		
 		String csvDownloadURLHref = ""; 
 		
-		try {
-			if (getCSVDownloadURL() != null) {
-				csvDownloadURLHref = "<a href=\"" + getCSVDownloadURL() + "\">(.CSV File)</a>";
-			} else {
-				csvDownloadURLHref = "";
-			}
-		} catch (UnsupportedEncodingException e) {
+		if (getCSVDownloadURL() != null) {
+			csvDownloadURLHref = "<a href=\"" + getCSVDownloadURL() + "\">(.CSV File)</a>";
+		} else {
 			csvDownloadURLHref = "";
 		}
 		

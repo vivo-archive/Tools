@@ -51,7 +51,6 @@
         <font color="red"><form:error name="ShortHand"/></font>
     </td>
 </tr> -->
-    
 <tr class="editformcell">
     <td valign="bottom" colspan="2">
         <b>Contact Email Address</b> <i>contact form submissions will be sent to this address</i><br />
