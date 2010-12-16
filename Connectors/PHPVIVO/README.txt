@@ -16,6 +16,8 @@ Filename: getVIVOPersonData.php
 Purpose: Returns data from a person entity in VIVO that can then be formatted to fit a page style.
 Version: 2.0.1
 
+A change
+
 Dependencies: ARC2
 
 Usage:
