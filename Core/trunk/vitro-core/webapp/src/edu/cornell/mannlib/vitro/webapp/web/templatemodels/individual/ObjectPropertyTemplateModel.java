@@ -25,12 +25,6 @@ public abstract class ObjectPropertyTemplateModel extends PropertyTemplateModel 
     
     private static final Log log = LogFactory.getLog(ObjectPropertyTemplateModel.class);      
     private static final String TYPE = "object";
-    /* NB The default preprocessor is not the same as the preprocessor for the default view. The latter
-     * actually defines its own preprocessor, whereas the default preprocessor is used for custom views
-     * that don't define a preprocessor.
-     */
-    private static final String DEFAULT_PREPROCESSOR = 
-        "edu.cornell.mannlib.vitro.webapp.web.templatemodels.individual.BaseObjectPropertyDataPreprocessor";
 
     private PropertyListConfig config;
 
@@ -54,11 +48,6 @@ public abstract class ObjectPropertyTemplateModel extends PropertyTemplateModel 
         return config.collationTarget;
     }
     
-    protected String getLinkTarget() {
-        return config.linkTarget;
-    }
-    
-       
     protected static ObjectPropertyTemplateModel getObjectPropertyTemplateModel(ObjectProperty op, Individual subject, WebappDaoFactory wdf) {
         if (op.getCollateBySubclass()) {
             try {
@@ -76,7 +65,7 @@ public abstract class ObjectPropertyTemplateModel extends PropertyTemplateModel 
     protected void preprocess(List<Map<String, String>> data, WebappDaoFactory wdf) {
         String preprocessorName = config.preprocessor;
         if (preprocessorName == null) {
-            preprocessorName = DEFAULT_PREPROCESSOR;
+            return;
         }
 
         try {
@@ -91,18 +80,16 @@ public abstract class ObjectPropertyTemplateModel extends PropertyTemplateModel 
     
     private class PropertyListConfig {
 
-        private static final String DEFAULT_CONFIG_FILE = "objectPropertyList-default.xml";
+        private static final String DEFAULT_CONFIG_FILE = "listViewConfig-default.xml";
         private static final String CONFIG_FILE_PATH = "/config/";
         private static final String NODE_NAME_QUERY = "query";
         private static final String NODE_NAME_TEMPLATE = "template";
         private static final String NODE_NAME_COLLATION_TARGET = "collation-target";
-        private static final String NODE_NAME_LINK_TARGET = "link-target";
         private static final String NODE_NAME_PREPROCESSOR = "preprocessor";
         
         private String queryString;
         private String templateName;
         private String collationTarget;
-        private String linkTarget; // we could easily make this a list if we ever want multiple links
         private String preprocessor;
 
         PropertyListConfig(ObjectProperty op, WebappDaoFactory wdf) throws Exception {
@@ -133,7 +120,6 @@ public abstract class ObjectPropertyTemplateModel extends PropertyTemplateModel 
                 templateName = getConfigValue(doc, NODE_NAME_TEMPLATE);                
                 // Optional values
                 collationTarget = getConfigValue(doc, NODE_NAME_COLLATION_TARGET);
-                linkTarget = getConfigValue(doc, NODE_NAME_LINK_TARGET); // if this is null, no link will be generated
                 preprocessor = getConfigValue(doc, NODE_NAME_PREPROCESSOR);
             } catch (Exception e) {
                 log.error("Error processing config file " + configFilePath + " for object property " + op.getURI(), e);

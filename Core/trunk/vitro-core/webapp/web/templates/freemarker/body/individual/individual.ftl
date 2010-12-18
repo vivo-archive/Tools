@@ -2,7 +2,6 @@
 
 <#-- Template for individual profile page -->
 
-<#import "lib-property.ftl" as p>
 <#import "lib-list.ftl" as l>
 
 <#assign editingClass>
@@ -13,7 +12,6 @@
     <#include "individual-adminPanel.ftl">
 </#if>
 
-<#-- Manolo, please do not remove this line. Thanks! -->
 <#assign propertyGroups = individual.propertyList>
     
 <section id="individual-intro-person" class="vcard" role="region">
@@ -57,13 +55,13 @@
                 <p><a href="${relatedSubject.url}">&larr; return to ${relatedSubject.name}</a></p>                
             <#else>
                 <#-- Label -->
-                    <h1 class="fn">${individual.name}
+                <h1 class="fn">${individual.name}
                         
                 <#-- Moniker -->
                 <#if individual.moniker?has_content>
                         <span class="preferred-title">${individual.moniker}</span>                  
                 </#if>
-                    </h1>
+                </h1>
             </#if>
                
             <h2>Current Positions</h2>
@@ -115,19 +113,9 @@
     </section>
 </section>
 
-<nav id="property-group-menus" role="navigation">
-    <ul role="list">
-        <li role="listitem"><a href="#propertyGroup1">Affiliations</a></li>
-        <li role="listitem"><a href="#publications">Publications</a></li>
-        <li role="listitem"><a href="#research">Research</a></li>
-        <li role="listitem"><a href="#teaching">Teaching</a></li>
-        <li role="listitem"><a href="#service">Service</a></li>
-        <li role="listitem"><a href="#background">Background</a></li>
-        <li role="listitem"><a href="#contact">Contact</a></li>
-        <li role="listitem"><a href="#identity">Identity</a></li>
-        <li role="listitem"><a href="#other">Other</a></li>
-    </ul>
-</nav>
+<#-- Property group menu -->
+<#assign nameForOtherGroup = "other">
+<#include "individual-propertyGroupMenu.ftl">
 
 <#-- Ontology properties -->
 <#include "individual-properties.ftl">
@@ -150,3 +138,5 @@ ${headScripts.add("/js/jquery_plugins/getUrlParam.js",
                   "/js/toggle.js")}
                   
 ${scripts.add("/js/imageUpload/imageUploadUtils.js")}
+
+

@@ -56,6 +56,7 @@ import edu.cornell.mannlib.vitro.webapp.search.beans.VitroQueryWrapper;
 import edu.cornell.mannlib.vitro.webapp.utils.NamespaceMapper;
 import edu.cornell.mannlib.vitro.webapp.utils.NamespaceMapperFactory;
 import edu.cornell.mannlib.vitro.webapp.web.ContentType;
+import edu.cornell.mannlib.vitro.webapp.web.functions.IndividualProfileUrlMethod;
 import edu.cornell.mannlib.vitro.webapp.web.jsptags.StringProcessorTag;
 import edu.cornell.mannlib.vitro.webapp.web.templatemodels.individual.IndividualTemplateModel;
 import freemarker.ext.beans.BeansWrapper;
@@ -123,10 +124,11 @@ public class IndividualController extends FreemarkerHttpServlet {
     		/* We need to expose non-getters in displaying the individual's property list, 
     		 * since it requires calls to methods with parameters.
     		 * This is still safe, because we are only putting BaseTemplateModel objects
-    		 * into the data model. No real data can be modified. 
-    		 * RY Not sure this will be needed; postpone.
+    		 * into the data model: no real data can be modified. 
     		 */
-	        body.put("individual", ind); //getNonDefaultBeansWrapper(BeansWrapper.EXPOSE_SAFE).wrap(ind));
+	        body.put("individual", getNonDefaultBeansWrapper(BeansWrapper.EXPOSE_SAFE).wrap(ind));
+	        
+	        body.put("url", new IndividualProfileUrlMethod());
 	        
 	        String template = getIndividualTemplate(individual);
 	                

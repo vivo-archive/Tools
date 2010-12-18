@@ -4,24 +4,14 @@
 
 <#list propertyGroups as group>
 
-    <#-- Get the group name -->
-    <#if group.name??>        
-        <#if group.name?has_content>
-            <#assign groupName = group.name>
-        <#else>
-            <#-- This is the group for properties not assigned to any group. It has an empty name. -->
-            <#assign groupName = "other">
-        </#if>
-    <#else>
-        <#-- If there are no groups, a dummy group has been created with a null (as opposed to empty) name. -->
-        <#assign groupName = "">
-    </#if> 
+    <#assign groupname = group.name(nameForOtherGroup)>
     
     <section class="property-group" role="region">
+        <nav class="scroll-up" role="navigation"><a href="#property-nav"><img src="${urls.images}/individual/scroll-up.png" /></a></nav>
    
         <#-- Display the group heading --> 
-        <#if groupName?has_content>
-            <h2><a name="${groupName}"></a>${groupName}</h2>
+        <#if groupname?has_content>
+            <h2><a name="${groupname}"></a>${groupname}</h2>
         </#if>
         
         <#-- List the properties in the group -->        
