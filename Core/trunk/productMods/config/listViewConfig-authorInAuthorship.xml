@@ -22,5 +22,5 @@
     
     <edit-object>edTraining</edit-object>
     
-    <template>propStatement-educationalTraining.ftl</template>
+    <template>propStatement-authorInAuthorship.ftl</template>
 </list-view-config>

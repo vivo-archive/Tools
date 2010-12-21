@@ -283,7 +283,6 @@ ul#main-nav {
     width: 219px;
     height: 24px;
     margin-left: 38px;
-    margin-top: 7px;
     background: #fff;
     border: 1px solid #e0dfdf;
     border-radius: 5px;
@@ -355,8 +354,8 @@ p.password-note{
 #flash-message{
     border: 1px dotted #E2C822;
     background-color: #FFF9D7;
-    padding: 0.8em;  
-    margin-bottom: 20px;
+    padding: 0.5em;  
+    margin-bottom: 10px;
 }
 /* HOME SEARCH ------>  */
 #search-home {

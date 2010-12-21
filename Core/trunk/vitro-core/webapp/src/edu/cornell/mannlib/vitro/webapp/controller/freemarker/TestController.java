@@ -37,8 +37,7 @@ public class TestController extends FreemarkerHttpServlet {
         
         body.put("title", "Freemarker Test");
 
-        return new TemplateResponseValues(TEMPLATE_DEFAULT, body);
-        
+        return new TemplateResponseValues(TEMPLATE_DEFAULT, body);       
     }
     
     @Override

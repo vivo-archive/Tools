@@ -65,6 +65,8 @@ form.customForm p {
     /*margin-bottom: 1em;*/
     margin-top: 0;
     padding-top: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
 
 option {
@@ -89,9 +91,11 @@ form.customForm #requiredLegend {
 
 form.customForm p.validationError {
     clear: both;
-    /*margin-bottom: 1.25em;*/
-    margin-top: .3em;
+    margin-bottom: 1.8em;
+    margin-top: 0;
     padding-top: 0;
+    padding-left: 0.4em;
+    font-size: .8em;
 }
 
 form.customForm a.close {
@@ -120,4 +124,15 @@ vertical-align:top;
  */
 #ie67DisableWrapper {
     display: none;
+}
+
+/**********
+dateTime
+**********/
+fieldset#dateTime {
+    margin-top: 0.5em;
+}
+
+fieldset#dateTime label {
+    display: inline;
 }
