@@ -1,26 +1,40 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!-- $This file is distributed under the terms of the license in /doc/license.txt$ -->
+
+<!--
+    Required elements: 
+        - query: the sparql query used to retrieve the data
+        - template: the name of the template used to display a single property statement
+    
+    Optional elements: 
+        postprocessor: a Java class that postprocesses the data retrieved from the query before
+                       sending it to the template
+    
+    Query requirements:
+        - WHERE clause must contain a statement ?subject ?property ?object, with the variables
+          ?subject and ?property named as such. The object can be given any name, but it must be 
+          included in the SELECT terms retrieved by the query. This is the statement that will be edited 
+          from the edit links.
+        - If the linked individual may be missing, the query should select the object's localname using
+          the ARQ localname function, so that the template can display the local name in the absence of
+          the linked individual.          
+-->
+
 <list-view-config>
+    <!--
     <query>    
         PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;   
         PREFIX core: &lt;http://vivoweb.org/ontology/core#&gt;
         
-        SELECT DISTINCT ?edTraining ?org ?orgName ?degreeName ?degreeAbbr ?majorField ?deptOrSchool ?info ?dateTime WHERE {
-            ?subject ?property ?edTraining .
-            ?edTraining core:trainingAtOrganization ?org .                       
-            ?org rdfs:label ?orgName .
-            OPTIONAL { ?edTraining core:degreeEarned ?degree . }
-            OPTIONAL { ?degree rdfs:label ?degreeName . }
-            OPTIONAL { ?degree core:abbreviation ?degreeAbbr . }
-            OPTIONAL { ?edTraining core:majorField ?majorField . }
-            OPTIONAL { ?edTraining core:departmentOrSchool ?deptOrSchool . }
-            OPTIONAL { ?edTraining core:supplementalInformation ?info . }
-            OPTIONAL { ?edTraining core:hasDateTimeValue ?dateTimeValue . 
-                       ?dateTimeValue core:dateTime ?dateTime . }        
-        }  ORDER BY DESC(?dateTime)    
+        SELECT DISTINCT ?subClass ?authorship ?infoResource ?infoResourceName ?dateTime WHERE {
+            ?subject ?property ?authorship .
+            ?authorship core:linkedInformationResource ?infoResource .                       
+            ?infoResource rdfs:label ?infoResourceName .
+            ?subClass rdfs:subClassOf core:InformationResource .
+            OPTIONAL { ?infoResource core:hasDateTimeValue ?dateTimeValue . 
+                       ?dateTimeValue core:dateTime ?dateTime . }       
+        } ORDER BY ?subClass DESC(?dateTime) ?infoResourceName   
     </query>
-    
-    <edit-object>edTraining</edit-object>
-    
+    -->
     <template>propStatement-authorInAuthorship.ftl</template>
 </list-view-config>

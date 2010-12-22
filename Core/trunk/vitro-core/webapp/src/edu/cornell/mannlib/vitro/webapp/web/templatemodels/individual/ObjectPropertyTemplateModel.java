@@ -91,13 +91,11 @@ public abstract class ObjectPropertyTemplateModel extends PropertyTemplateModel 
         private static final String NODE_NAME_TEMPLATE = "template";
         private static final String NODE_NAME_COLLATION_TARGET = "collation-target";
         private static final String NODE_NAME_POSTPROCESSOR = "postprocessor";
-        private static final String NODE_NAME_EDIT_OBJECT = "edit-object";
         
         private String queryString;
         private String templateName;
         private String collationTarget;
         private String postprocessor;
-        private String editObject;
 
         PropertyListConfig(ObjectProperty op, VitroRequest vreq) throws Exception {
 
@@ -113,7 +111,7 @@ public abstract class ObjectPropertyTemplateModel extends PropertyTemplateModel 
             String configFilePath = getConfigFilePath(configFileName);
             try {
                 File config = new File(configFilePath);            
-                if (configFileName != DEFAULT_CONFIG_FILE && ! config.exists()) {
+                if ( ! isDefaultConfig(configFileName) && ! config.exists() ) {
                     log.warn("Can't find config file " + configFilePath + " for object property " + op.getURI() + "\n" +
                             ". Using default config file instead.");
                     configFilePath = getConfigFilePath(DEFAULT_CONFIG_FILE);
@@ -126,7 +124,7 @@ public abstract class ObjectPropertyTemplateModel extends PropertyTemplateModel 
                 // What should we do here?
             }
             
-            if ( ! configFileName.equals(DEFAULT_CONFIG_FILE) ) {
+            if ( ! isDefaultConfig(configFileName) ) {
                 String invalidConfigMessage = checkForInvalidConfig(vreq);
                 if ( StringUtils.isNotEmpty(invalidConfigMessage) ) {
                     log.warn("Invalid list view config for object property " + op.getURI() + 
@@ -136,6 +134,10 @@ public abstract class ObjectPropertyTemplateModel extends PropertyTemplateModel 
                     setValuesFromConfigFile(configFilePath);                    
                 }
             }
+        }
+        
+        private boolean isDefaultConfig(String configFileName) {
+            return configFileName.equals(DEFAULT_CONFIG_FILE);
         }
         
         private String checkForInvalidConfig(VitroRequest vreq) {
@@ -170,7 +172,6 @@ public abstract class ObjectPropertyTemplateModel extends PropertyTemplateModel 
                 // Required values
                 queryString = getConfigValue(doc, NODE_NAME_QUERY);
                 templateName = getConfigValue(doc, NODE_NAME_TEMPLATE); 
-                editObject = getConfigValue(doc, NODE_NAME_EDIT_OBJECT);
                 
                 // Optional values
                 collationTarget = getConfigValue(doc, NODE_NAME_COLLATION_TARGET);
