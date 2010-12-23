@@ -17,7 +17,7 @@ import edu.cornell.mannlib.vitro.webapp.beans.Portal;
 import edu.cornell.mannlib.vitro.webapp.controller.VitroRequest;
 import edu.cornell.mannlib.vitro.webapp.controller.freemarker.responsevalues.ResponseValues;
 import edu.cornell.mannlib.vitro.webapp.controller.freemarker.responsevalues.TemplateResponseValues;
-import edu.cornell.mannlib.vitro.webapp.controller.visualization.VisualizationFrameworkConstants;
+import edu.cornell.mannlib.vitro.webapp.controller.visualization.freemarker.VisualizationFrameworkConstants;
 import edu.cornell.mannlib.vitro.webapp.controller.visualization.freemarker.DataVisualizationController;
 import edu.cornell.mannlib.vitro.webapp.visualization.exceptions.MalformedQueryParametersException;
 import edu.cornell.mannlib.vitro.webapp.visualization.freemarker.valueobjects.Grant;
@@ -25,7 +25,7 @@ import edu.cornell.mannlib.vitro.webapp.visualization.freemarker.valueobjects.In
 import edu.cornell.mannlib.vitro.webapp.visualization.freemarker.valueobjects.SparklineData;
 import edu.cornell.mannlib.vitro.webapp.visualization.freemarker.visutils.UtilityFunctions;
 import edu.cornell.mannlib.vitro.webapp.visualization.freemarker.visutils.VisualizationRequestHandler;
-import edu.cornell.mannlib.vitro.webapp.visualization.visutils.QueryRunner;
+import edu.cornell.mannlib.vitro.webapp.visualization.freemarker.visutils.QueryRunner;
 
 
 /**
@@ -240,7 +240,7 @@ public class PersonGrantCountRequestHandler implements VisualizationRequestHandl
 
         Portal portal = vreq.getPortal();
         
-        String standaloneTemplate = "/visualization/grantCount.ftl";
+        String standaloneTemplate = "personGrantCountStandaloneActivator.ftl";
 
         Map<String, Object> body = new HashMap<String, Object>();
         body.put("portalBean", portal);
@@ -267,7 +267,7 @@ public class PersonGrantCountRequestHandler implements VisualizationRequestHandl
         Portal portal = vreq.getPortal();
 
 
-        String dynamicTemplate = "/visualization/sparklineAjaxVisContent.ftl";
+        String dynamicTemplate = "personGrantCountDynamicActivator.ftl";
 
         Map<String, Object> body = new HashMap<String, Object>();
         body.put("portalBean", portal);

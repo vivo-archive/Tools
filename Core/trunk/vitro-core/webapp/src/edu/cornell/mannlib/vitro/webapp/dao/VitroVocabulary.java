@@ -35,7 +35,7 @@ public class VitroVocabulary {
     // an OWL DL-compatible surrogate for rdf:value for use with boxing idiom
     public static final String value = vitroURI + "value";
     
-    public static final String DISPLAY = "http://vitro.mannlib.cornell.edu/ontologies/display/1.1#";
+    public static final String DISPLAY = DisplayVocabulary.DISPLAY_NS;
 
     // properties found on the beans
 
@@ -296,4 +296,31 @@ public class VitroVocabulary {
     public static final String IND_MAIN_IMAGE = VITRO_PUBLIC + "mainImage";
     public static final String IND_IMAGE = VITRO_PUBLIC + "image";
 
+    // =============== Date Time with Precision vocabulary ===============
+    private static final String DATETIME_NS = "http://vivoweb.org/ontology/core#";
+    
+    protected  static final String[] PRECISIONS = {
+        DATETIME_NS+"NoPrecision",
+        DATETIME_NS+"YearPrecision",
+        DATETIME_NS+"YearMonthPrecision",
+        DATETIME_NS+"YearMonthDayPrecision",
+        DATETIME_NS+"YearMonthDayHourPrecision",
+        DATETIME_NS+"YearMonthDayHourMinutePrecision",
+        DATETIME_NS+"YearMonthDayTimePrecision"};
+
+    public enum Precision {
+        NONE(PRECISIONS[0]),
+        YEAR(PRECISIONS[1]),
+        MONTH(PRECISIONS[2]),
+        DAY(PRECISIONS[3]),
+        HOUR(PRECISIONS[4]),
+        MINUTE(PRECISIONS[5]),
+        SECOND(PRECISIONS[6]);        
+        
+        private final String URI;
+        Precision(String uri){
+            URI=uri;
+        }
+        public String uri(){return URI;}
+    }
 }
