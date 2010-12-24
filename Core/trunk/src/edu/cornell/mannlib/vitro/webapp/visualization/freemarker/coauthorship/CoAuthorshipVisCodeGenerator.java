@@ -148,6 +148,8 @@ public class CoAuthorshipVisCodeGenerator {
 		
 		numOfYearsToBeRendered = currentYear - minPubYearConsidered + 1;
 		
+		sparklineData.setNumOfYearsToBeRendered(numOfYearsToBeRendered);
+		
 		visualizationCode.append("<style type='text/css'>" 
 									+ "." + VISUALIZATION_STYLE_CLASS + " table{" 
 									+ "		margin: 0;" 
@@ -513,6 +515,14 @@ public class CoAuthorshipVisCodeGenerator {
 		divContextCode.append("<p>" + tableCode + csvDownloadURLHref + "</p>");
 		
 		sparklineData.setTable(tableCode);
+		
+		
+		Map<String, Integer> yearToUniqueCoauthorsCount = new HashMap<String, Integer>();
+		for (Map.Entry<String, Set<Node>> currentYear : yearToUniqueCoauthors.entrySet()) {
+			yearToUniqueCoauthorsCount.put(currentYear.getKey(), currentYear.getValue().size());
+		}
+		
+		sparklineData.setYearToActivityCount(yearToUniqueCoauthorsCount);
 		
 		return divContextCode.toString();
 	}

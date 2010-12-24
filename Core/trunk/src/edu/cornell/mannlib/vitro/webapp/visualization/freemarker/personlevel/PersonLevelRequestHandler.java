@@ -78,14 +78,11 @@ public class PersonLevelRequestHandler implements VisualizationRequestHandler {
         String egoURI = vitroRequest.getParameter(
         							VisualizationFrameworkConstants.INDIVIDUAL_URI_KEY);
 
-        String renderMode = vitroRequest.getParameter(
-        							VisualizationFrameworkConstants.RENDER_MODE_KEY);
-        
         String visMode = vitroRequest.getParameter(
         							VisualizationFrameworkConstants.VIS_MODE_KEY);
         
         
-        if (VisualizationFrameworkConstants.CO_PI_VIS.equalsIgnoreCase(visMode)) { 
+        if (VisualizationFrameworkConstants.COPI_VIS_MODE.equalsIgnoreCase(visMode)) { 
         	
         	QueryRunner<CoPIData> coPIQueryManager = new CoPIGrantCountQueryRunner(egoURI, dataSource, log);
             

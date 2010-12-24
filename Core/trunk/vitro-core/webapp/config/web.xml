@@ -49,11 +49,6 @@
     <listener-class>edu.cornell.mannlib.vitro.webapp.servlet.setup.DefaultThemeSetup</listener-class>
   </listener>
 
-  <!-- experimental ModelMaker for ingest workflows - BJL 2008-06-01 -->
-  <listener>
-    <listener-class>edu.cornell.mannlib.vitro.webapp.servlet.setup.VitroJenaModelMakerSetup</listener-class>
-  </listener>
-
   <!-- Comment out this listener to run Vitro without a database -->
   <!-- If used, this listener must be run before JenaDataSourceSetup -->
   <listener>
@@ -1272,15 +1267,6 @@
   <servlet-mapping>
     <servlet-name>primitiveDelete</servlet-name>
     <url-pattern>/edit/primitiveDelete</url-pattern>    
-  </servlet-mapping>
-   
-  <servlet>
-    <servlet-name>ajaxSparqlQuery</servlet-name>
-    <servlet-class>edu.cornell.mannlib.vitro.webapp.controller.ajax.SparqlQueryAjaxController</servlet-class>    
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ajaxSparqlQuery</servlet-name>
-    <url-pattern>/ajax/sparqlQuery</url-pattern>    
   </servlet-mapping>
    
   <!-- ============================== servlet-mappings ======================== -->
