@@ -16,8 +16,8 @@ PREFIX core: <http://vivoweb.org/ontology/core#>
 Construct {
      _:dtv a core:DateTimeValue .
      _:dtv core:dateTime ?theDate .
-     _:dtv core:dateTimePrecision core:yearMonthPrecision .
-     ?thing core:dateTimeValue _:dtv .
+     _:dtv core:dateTimePrecision core:yearMonthDayPrecision .
+     ?thing core:dateFiled _:dtv .
 } where {
-     ?thing core:yearMonth ?theDate .
+     ?thing core:filingDate ?theDate .
 }
