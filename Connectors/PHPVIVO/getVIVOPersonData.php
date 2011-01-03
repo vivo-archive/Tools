@@ -96,6 +96,7 @@ function getVIVOPersonData($search){
 	//Get person's title
 	//Try the default location
 	$position = $index[$personSubject]["http://vivoweb.org/ontology/core#preferredTitle"][0];
+//	echo "Preferred Title of: ".$position."<br>";
 	//We're going to set the initial position URL here so we can use it later
 	$positionURL = $index[$personSubject]["http://vivoweb.org/ontology/core#personInPosition"][0];
 	$positionIdentifier = getURI($positionURL);
@@ -104,19 +105,48 @@ function getVIVOPersonData($search){
 	//If we don't find it there, try in the position
 	//First, we need to find out which is their current position
 	//To do that, we need to loop through all of their positions
-	//Code to do that goes here
-	//Then we need to grab the startYear attribute
-	//Then we need to save the startYear attributes in a way we can search through
-	//Then we need to return the position with the highest startyear
-	//And some handling in case their positions don't have a start year
-	//Then we need to change positionURL to the newest position
+	$round = 0;
+	$startYear = 0;
+	if (strlen($index[$personSubject]["http://vivoweb.org/ontology/core#personInPosition"])> 0)
+	{
+	foreach ($index[$personSubject]["http://vivoweb.org/ontology/core#personInPosition"] as $value)
+	{
+		$positionURL = $index[$personSubject]["http://vivoweb.org/ontology/core#personInPosition"][$round];
+//		echo "Current highest year is ".$startYear." For position ".$positionURL."<br>";
+		$positionIdentifier = getURI($positionURL);
+		$positionRDF = "http://".$site."/individual/".$positionIdentifier."/".$positionIdentifier.".rdf";
+		$positionSubject = "http://".$site."/individual/".$positionIdentifier;
+		
+		$startParser = ARC2::getRDFParser();
+		$startParser->parse($positionRDF);
+		$startIndex = $startParser->getSimpleIndex();
+//		print_r($startIndex);
+		$newYear = $startIndex[$positionSubject]["http://vivoweb.org/ontology/core#startYear"][0];
+//		echo "Start year for that position is:".$newYear."<br>";
+		if ($newYear > $startYear)
+		{
+			$startYear = $newYear;
+			$positionURLFinal = $positionURL;
+		}
+
+//		echo "Current final URL is ".$positionURLFinal."<br>";
+		$round = $round + 1;
+	}
+	}
+//	echo "Newest position is: ".$positionURLFinal.". With a start year of ".$startYear;
 	//Then let the next bit of code run
+	
 	if(strlen($position) < 1)
 	{
+//		echo "Trying to pull position data from ".$positionURLFinal."<br>";
 //		$positionURL = $index[$personSubject]["http://vivoweb.org/ontology/core#personInPosition"][0];
-		if(isURLValid($positionURL))
+		if(isURLValid($positionURLFinal))
 		{
+//			echo "URL was Valid<br>";
 			$positionParser = ARC2::getRDFParser();
+			$positionIdentifier = getURI($positionURLFinal);
+			$positionRDF = "http://".$site."/individual/".$positionIdentifier."/".$positionIdentifier.".rdf";
+			$positionSubject = "http://".$site."/individual/".$positionIdentifier;
 			$positionParser->parse($positionRDF);
 			$positionIndex = $positionParser->getSimpleIndex();
 			//Let's check for an HR job title first
@@ -161,8 +191,12 @@ function getVIVOPersonData($search){
 	//End Getting Fax
 	//Begin getting department
 	$positionParser = ARC2::getRDFParser();
+	$positionIdentifier = getURI($positionURLFinal);
+	
+	$positionRDF = "http://".$site."/individual/".$positionIdentifier."/".$positionIdentifier.".rdf";
 	$positionParser->parse($positionRDF);
 	$positionIndex = $positionParser->getSimpleIndex();
+	$positionSubject = "http://".$site."/individual/".$positionIdentifier;
 	$departmentURL = $positionIndex[$positionSubject]["http://vivoweb.org/ontology/core#positionInOrganization"][0];
 	$departmentIdentifier = getURI($departmentURL);
 	$departmentRDF = "http://".$site."/individual/".$departmentIdentifier."/".$departmentIdentifier.".rdf";
@@ -177,7 +211,6 @@ function getVIVOPersonData($search){
 	
 	//End getting image
 	$imageURL = $index[$personSubject]["http://vitro.mannlib.cornell.edu/ns/vitro/public#mainImage"][0];
-	print_r($imageURL);
 	$imageIdentifier = getURI($imageURL);
 	$imageRDF = "http://".$site."/individual/".$imageIdentifier."/".$imageIdentifier.".rdf";
 	$imageSubject = "http://".$site."/individual/".$imageIdentifier;

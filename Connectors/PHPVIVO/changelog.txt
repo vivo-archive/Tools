@@ -27,3 +27,5 @@ Changelog:
 2.0.2:
 	Was returning an empty image div if person had no image, fixed.
 	Beginnings of structure to fix the position order problem.
+2.0.3:
+	Should now choose position with newest start year. In situations where more than one position has the same start year, defaults to first one found.
