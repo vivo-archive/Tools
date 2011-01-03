@@ -24,3 +24,6 @@ Changelog:
 	Functionality essentially unchanged
 2.0.1:
 	Was failing if library was called more than once per page, fixed.
+2.0.2:
+	Was returning an empty image div if person had no image, fixed.
+	Beginnings of structure to fix the position order problem.

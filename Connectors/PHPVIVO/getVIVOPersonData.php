@@ -102,6 +102,15 @@ function getVIVOPersonData($search){
 	$positionRDF = "http://".$site."/individual/".$positionIdentifier."/".$positionIdentifier.".rdf";
 	$positionSubject = "http://".$site."/individual/".$positionIdentifier;
 	//If we don't find it there, try in the position
+	//First, we need to find out which is their current position
+	//To do that, we need to loop through all of their positions
+	//Code to do that goes here
+	//Then we need to grab the startYear attribute
+	//Then we need to save the startYear attributes in a way we can search through
+	//Then we need to return the position with the highest startyear
+	//And some handling in case their positions don't have a start year
+	//Then we need to change positionURL to the newest position
+	//Then let the next bit of code run
 	if(strlen($position) < 1)
 	{
 //		$positionURL = $index[$personSubject]["http://vivoweb.org/ontology/core#personInPosition"][0];
@@ -168,6 +177,7 @@ function getVIVOPersonData($search){
 	
 	//End getting image
 	$imageURL = $index[$personSubject]["http://vitro.mannlib.cornell.edu/ns/vitro/public#mainImage"][0];
+	print_r($imageURL);
 	$imageIdentifier = getURI($imageURL);
 	$imageRDF = "http://".$site."/individual/".$imageIdentifier."/".$imageIdentifier.".rdf";
 	$imageSubject = "http://".$site."/individual/".$imageIdentifier;
@@ -194,7 +204,14 @@ $vivoImage = strip_tags($fullsizeURL);
 
 //Now let's output the data.
 echo "<div id=\"vivoPerson\">\n";
-echoImageDiv("vivoImage", $vivoImage, $vivoName);
+if (strlen($imageURL) > 0)
+	{
+	echoImageDiv("vivoImage", $vivoImage, $vivoName);
+	}
+else
+	{
+	echoImageDiv("vivoImage", "noimage.jpg", $vivoName);
+	}
 echoDiv("vivoName", $vivoName); //Done
 echoDiv("vivoTitle", $vivoTitle); //Done
 echoDiv("vivoDepartment", $vivoDepartment);
