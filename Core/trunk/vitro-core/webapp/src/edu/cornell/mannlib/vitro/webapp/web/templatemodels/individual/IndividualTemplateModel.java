@@ -31,6 +31,7 @@ public class IndividualTemplateModel extends BaseTemplateModel {
     protected Individual individual;
     protected VitroRequest vreq;
     protected UrlBuilder urlBuilder;
+    protected GroupedPropertyList propertyList = null;
     
     public IndividualTemplateModel(Individual individual, VitroRequest vreq) {
         this.individual = individual;
@@ -78,6 +79,10 @@ public class IndividualTemplateModel extends BaseTemplateModel {
         return individual.isVClass("http://xmlns.com/foaf/0.1/Person");        
     }
     
+    public boolean isOrganization() {
+        return individual.isVClass("http://xmlns.com/foaf/0.1/Organization");        
+    }
+    
     public String getSearchView() {        
         return getView(ClassView.SEARCH);
     }
@@ -122,9 +127,11 @@ public class IndividualTemplateModel extends BaseTemplateModel {
         return models;
     }
 
-    public List<PropertyGroupTemplateModel> getPropertyList() {
-        PropertyListBuilder propListBuilder = new PropertyListBuilder(individual, vreq);
-        return propListBuilder.getPropertyList();
+    public GroupedPropertyList getPropertyList() {
+        if (propertyList == null) {
+            propertyList = new GroupedPropertyList(individual, vreq);
+        }
+        return propertyList;
     }
     
     /* These methods simply forward to the methods of the wrapped individual. It would be desirable to 

@@ -26,7 +26,9 @@
 	margin-top: 50px;
 	width: 25%;	
 	background-color: #f7f9f9;
-	height: 80%;
+/*	height: 80%; */
+	padding-left: 10px;
+	padding-bottom: 30px;
 }
 
 #dataPanel div {
@@ -49,7 +51,7 @@
 
 /* container override from liquid.css */
 .container {
- width: inherit; 
+ 	width: inherit; 
 }
 
 #incomplete-data{
@@ -57,9 +59,26 @@
 	margin : auto;
 	line-height: 150%;
 	color: #595b5b;
+	margin-left: 0px;
 }
 
 .fileDownloadPlaceHolder{
+	padding-top: 20px;
+	height: 20px;
+}
+
+#profileTitle{
 	
-	margin-left: 20px;
+	padding: 10px;
+	padding-left: 5%;
+	background-color: #2A2A2A;
+	color: white;
+	width: 50%;
+	margin-left: -10px;
+	margin-top: -10px;
+}
+
+#table_heading{
+/*	margin-bottom:20px; */
+	width: 80%;	
 }

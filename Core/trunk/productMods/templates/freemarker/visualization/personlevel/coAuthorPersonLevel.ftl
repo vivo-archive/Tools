@@ -15,7 +15,10 @@
 <#assign swfLink = '${urls.images}/visualization/coauthorship/EgoCentric.swf'>
 <#assign adobeFlashDetector = '${urls.base}/js/visualization/coauthorship/AC_OETags.js'>
 <#assign googleVisualizationAPI = 'http://www.google.com/jsapi?autoload=%7B%22modules%22%3A%5B%7B%22name%22%3A%22visualization%22%2C%22version%22%3A%221%22%2C%22packages%22%3A%5B%22areachart%22%2C%22imagesparkline%22%5D%7D%5D%7D'>
-<#assign coAuthorPersonLevelJavaScript = '${urls.base}/js/visualization/personlevel/person_level-fm.js'>
+<#assign coAuthorPersonLevelJavaScript = '${urls.base}/js/visualization/coauthorship/coauthorship-personlevel.js'>
+<#assign commonPersonLevelJavaScript = '${urls.base}/js/visualization/personlevel/person-level.js'>
+
+<#assign coInvestigatorIcon = '${urls.images}/visualization/co_investigator_icon.png'>
 
 
 <script type="text/javascript" src="${adobeFlashDetector}"></script>
@@ -40,12 +43,13 @@ var egoCoAuthorshipDataFeederURL = "${egoCoAuthorshipDataFeederURL}";
 var egoCoAuthorsListDataFileURL = "${egoCoAuthorsListDataFileURL}";
 var contextPath = "${urls.base}";
 
-var domainParam = "http://vivo-vis-test.slis.indiana.edu/vivo1/visualizationData";
+var visualizationDataRoot = "${dataVisualizationURLRoot}";
 
 // -->
 </script>
 
 <script type="text/javascript" src="${coAuthorPersonLevelJavaScript}"></script>
+<script type="text/javascript" src="${commonPersonLevelJavaScript}"></script>
 
 
 <#assign coAuthorStyle = "${urls.base}/css/visualization/personlevel/coauthor_style.css" />
@@ -58,13 +62,13 @@ var domainParam = "http://vivo-vis-test.slis.indiana.edu/vivo1/visualizationData
 
 <#assign loadingImageLink = "${urls.images}/visualization/ajax-loader.gif">
 
-<#assign egoVivoProfileURL = "/individual?uri=${egoURI}" />
+<#assign egoVivoProfileURL = "${urls.base}/individual?uri=${egoURI}" />
 
 <script language="JavaScript" type="text/javascript">
 
 $(document).ready(function(){
 
-	<#if (numOfCoAuthorShips > 0) >
+	<#if (numOfCoAuthorShips?? && numOfCoAuthorShips > 0) >
 		$("#coauth_table_container").empty().html('<img id="loadingData" width="auto" src="${loadingImageLink}" />');
 	</#if>
 		    	
@@ -86,27 +90,28 @@ $(document).ready(function(){
 
 <div id="body">
 	<div id="ego_profile">
-			
+	
 		<#-- Label -->
-			<h2 style="width:20%"><a href="${egoVivoProfileURL}"><span id="ego_label" class="author_name"></span></a></h2>
+			<h2 style="width:20%"><span id="ego_label" class="author_name"></span></h2>
 	
 		<#-- Moniker-->
 			<em id="ego_moniker" class="moniker"></em>
-		
+
 		<div class = "toggle_visualization">
-			<h2>Co-Investigator Network</h2>
-			<a style = "margin-top:0px;" class="view-all-style" href='${coprincipalinvestigatorURL}'>View</a>
-			<span class="pictos-arrow-10">4</span>
-		</div>
+			<div style="float:left;margin-top: 5%;margin-right: 10px; height:100%;"><img src="${coInvestigatorIcon}"/></div>
+    		<div><h3>Co-Investigator Network <br/><a class="view-all-style" href="${coprincipalinvestigatorURL}">View <span class= "pictos-arrow-10">4</span></a></h3></div>
+		</div>		
+		
+		<div style=" width: 20%; margin-top:25px;"><span class="pictos-arrow-14">4</span><a href="${egoVivoProfileURL}" style="color:#171717;text-decoration:none;">Back to Profile</a></div>	
 	
 		<div style="clear:both;"></div>
 	
-			<#if (numOfAuthors > 0) >
+			<#if (numOfAuthors?? && numOfAuthors > 0) >
 			
-				<h2 class="sub_headings">Co-Author Network </h2>
+				<div  class="sub_headings"><h2>Co-Author Network </h2></div>
 				
 				<#if (numOfCoAuthorShips?? && numOfCoAuthorShips > 0) || (numOfAuthors?? && numOfAuthors > 0) > 
-					   	<a class = "fileDownloadPlaceHolder" href="${egoCoAuthorshipNetworkDataFileURL}">(GraphML File)</a>
+					   	<div class = "fileDownloadPlaceHolder"><a href="${egoCoAuthorshipNetworkDataFileURL}">(GraphML File)</a></div>
 				<#else>
 
 				        <#if numOfAuthors?? && numOfAuthors <= 0 >
@@ -136,7 +141,7 @@ $(document).ready(function(){
 			<div id="visPanel" style="float: right; width: 600px;">
 				<script language="JavaScript" type="text/javascript">
 					<!--
-					renderCoAuthorshipVisualization();
+					renderCollaborationshipVisualization();
 					//-->
 				</script>
 			</div>
@@ -144,7 +149,7 @@ $(document).ready(function(){
 				<h4 id ="profileTitle"> <b>Profile</b></h4>	
 				<div id="profileImage" class="thumbnail"></div>
 			
-				<div class="bold"><strong><span id="authorName" class="neutral_author_name">&nbsp;</span></strong></div>
+				<div><h2><span id="authorName" class="neutral_author_name">&nbsp;</span></h2></div>
 				
 				<div class="italicize"><span id="profileMoniker" class="author_moniker"></span></div>
 				<div><a href="#" id="profileUrl">VIVO profile</a> | <a href="#" id="coAuthorshipVisUrl">Co-author network</a></div> 
@@ -165,7 +170,7 @@ $(document).ready(function(){
 	</#if>
 	
 	<#-- Sparkline -->
-	<div style="width: 60%; height: 100px; float:right;">
+	<div style="width: 67%; height: 175px; margin-left: 33%;">
 		
 		<#assign displayTable = false />
 		
@@ -176,11 +181,11 @@ $(document).ready(function(){
 		<#include "coAuthorshipSparklineContent.ftl">
 	</div>	
 	
-	<#if (numOfAuthors > 0) >
+	<#if (numOfAuthors?? && numOfAuthors > 0) >
 
 		<div class="vis_stats">
 		
-		<h3 class="sub_headings" id="table_heading">Tables</h3>
+		<div class="sub_headings" id="table_heading"><h3>Tables</h3></div>
 		
 			<div class="vis-tables">
 				
@@ -198,7 +203,7 @@ $(document).ready(function(){
 				
 			</div>
 			
-			<#if (numOfCoAuthorShips > 0) >
+			<#if (numOfCoAuthorShips?? && numOfCoAuthorShips > 0) >
 		
 				<div class="vis-tables">
 					<p id="coauth_table_container" class="datatable"></p>

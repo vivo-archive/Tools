@@ -20,14 +20,14 @@
             <#if individual.thumbUrl??>
                 <a href="${individual.imageUrl}"><img class="individual-photo2" src="${individual.thumbUrl}" title="click to view larger image" alt="${individual.name}" width="115" /></a>
             <#elseif individual.person>
-                <img class="individual-photo2" src="${urls.images}/dummyImages/person.thumbnail.jpg" title = "no image" alt="placeholder image" width="115" />                                                        
+                <img class="individual-photo2" src="${urls.images}/placeholders/person.thumbnail.jpg" title = "no image" alt="placeholder image" width="115" />                                                        
             </#if>
         
         <nav role="navigation">
             <ul id ="individual-tools-people" role="list">
-                <li role="listitem"><a class="picto-font  picto-uri" href="#">j</a></li>
-                <li role="listitem"><a class="picto-font  picto-pdf" href="#">F</a></li>
-                <li role="listitem"><a class="picto-font  picto-share" href="#">R</a></li>
+                <li role="listitem"><a class="picto-font picto-uri" href="#">j</a></li>
+                <li role="listitem"><a class="picto-font picto-pdf" href="#">F</a></li>
+                <li role="listitem"><a class="picto-font picto-share" href="#">R</a></li>
                 <li role="listitem"><a class="icon-rdf" href="#">RDF</a></li>
             </ul>
         </nav>
@@ -86,6 +86,14 @@
     <section id="sparklines-publications" role="region">
          <#include "individual-sparklineVisualization.ftl">
          
+         <#if individual.organization >
+	     	<div style="width: 100%;">
+				<div style="width: 30%;float:left;margin-top: 5%;margin-right: 10px;"><img src="${urls.images}/visualization/temporal_vis_icon.jpg"/></div>
+				<div><h3>Temporal Graph <br/><a class="view-all-style" href="${urls.base}/visualization?vis=entity_comparison&vis_mode=${individual.moniker}&render_mode=standalone&uri=${individual.uri}">View <span class= "pictos-arrow-10">4</span></a></h3></div>
+			</div>		
+			<#--<div>VISMODE: ${individual.moniker}</div>-->
+		</#if>
+         
          <#--<header><img src="${urls.home}/images/individual/sparkline.gif" alt="" />
             <h3><span class="grey">2</span> publications <span class="publication-year-range grey">within the last 10 years</span></h3>
         </header>
@@ -128,7 +136,6 @@ ${stylesheets.add("/css/individual/individual.css")}
 <#-- RY Figure out which of these scripts really need to go into the head, and which are needed at all (e.g., tinyMCE??) -->
 ${headScripts.add("/js/jquery_plugins/getUrlParam.js",                  
                   "/js/jquery_plugins/colorAnimations.js",
-                  "/js/propertyGroupSwitcher.js",
                   "/js/jquery_plugins/jquery.form.js",
                   "/js/tiny_mce/tiny_mce.js", 
                   "/js/controls.js",
