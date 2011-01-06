@@ -438,8 +438,8 @@ public class InputElementFormattingTag extends TagSupport {
 //            }
             
            
-            if ((getType()==null || getType().equals("")) && field.getEditElement() == null ){
-                log.error("Error in doStartTag: input element type is blank or not specified.");
+            if ((getType()==null || getType().equals("")) && (field != null && field.getEditElement() == null )){
+                log.error("Error in doStartTag: input element type not specified and editElement not specified.");
             }
             
             // set ProhibitedFromSearch object so picklist doesn't show
@@ -456,6 +456,8 @@ public class InputElementFormattingTag extends TagSupport {
            
         	if( field != null && field.getEditElement() != null ){
         	    out.print( field.getEditElement().draw(getId(), editConfig, editSub, fmConfig));
+        	}else if( getType() == null ){
+        	    log.error("type or editElement must be specified for input element " + getId() );
         	}else if( getType().equalsIgnoreCase("date") || 
                     (field != null && field.getRangeDatatypeUri() != null && field.getRangeDatatypeUri().equals(XSD.date.getURI())) ){
                 //if its a dataprop that should be a string override type and use date picker    

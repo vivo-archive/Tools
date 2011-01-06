@@ -8,7 +8,9 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.TimeZone;
 
+import com.hp.hpl.jena.datatypes.xsd.XSDDatatype;
 import com.hp.hpl.jena.datatypes.xsd.XSDDateTime;
 import com.hp.hpl.jena.ontology.DatatypeProperty;
 import com.hp.hpl.jena.ontology.ObjectProperty;
@@ -117,7 +119,7 @@ public class DateTimeMigration {
 		    
 			if (additions.size() > 0) {	
 			   long count = additions.size() / 2;	
-			   logger.log(count + "Academic Term and/or Year statement" + 	((count > 1) ? "s" : "") + " were updated to use dateTimeInterval instead");
+			   logger.log(count + " hasTimeInterval predicate" + ((count > 1) ? "s were" : " was") + " updated to use dateTimeInterval instead");
 			}
 		} finally {
 			aboxModel.leaveCriticalSection();
@@ -130,10 +132,10 @@ public class DateTimeMigration {
 	 */
 	public void updateLiterals() throws IOException {
 
-		// note: not handling timezones - they are not expected to be in the 1.1.1 data
+		//TODO: look into java locale note: not handling timezones - they are not expected to be in the 1.1.1 data
 		DateFormat yearFormat = new SimpleDateFormat("yyyy");
-		DateFormat yearMonthFormat = new SimpleDateFormat("yyyy-mm");
-		DateFormat yearMonthDayFormat = new SimpleDateFormat("yyyy-mm-dd");
+		DateFormat yearMonthFormat = new SimpleDateFormat("yyyy-MM");
+		DateFormat yearMonthDayFormat = new SimpleDateFormat("yyyy-MM-dd");
 	 	
 		aboxModel.enterCriticalSection(Lock.WRITE);
 		
@@ -196,7 +198,7 @@ public class DateTimeMigration {
 		    record.recordAdditions(additions);
 		    
 			if (additions.size() > 0) {
-					logger.log(additions.size() + " date/time assertions" + 
+					logger.log(additions.size() + " date/time assertion" + 
 							((additions.size() > 1) ? "s" : "") +
 							" were updated to the 1.2 representation.");
 			}		   
@@ -212,13 +214,11 @@ public class DateTimeMigration {
 		aboxModel.enterCriticalSection(Lock.WRITE);
 		
 		try {
-			
-	       
 		   StmtIterator iter = aboxModel.listStatements(stmt.getSubject(), dateTimePrecisionProp, (RDFNode) null);
 	       
 		   while (iter.hasNext()) {
-			   Statement statement = iter.next();
-			   precision = ((Resource)statement.getObject()).getURI();
+			  Statement statement = iter.next();
+			  precision = ((Resource)statement.getObject()).getURI();
 		   }
 		   
 		   return precision;
@@ -230,19 +230,21 @@ public class DateTimeMigration {
 
     public static Literal getDateTimeLiteral(Date date) {
 
-      // Note this loses time zone info, don't know how get parser to extract that
-      //Calendar cal  = Calendar.getInstance( TimeZone.getTimeZone("GMT") );
-    	
-      Calendar cal = Calendar.getInstance();
-      cal.setTime(date);
-      XSDDateTime dt = new XSDDateTime(cal);
-      return ResourceFactory.createTypedLiteral(dt);   
+	    Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+	    cal.setTime(date);
+		cal.set(Calendar.HOUR, 0);
+		cal.set(Calendar.HOUR_OF_DAY, 0);
+		cal.set(Calendar.MINUTE, 0);
+		cal.set(Calendar.SECOND,0);
+	    XSDDateTime dt = new XSDDateTime(cal);
+	    String dateString = dt.toString().substring(0, dt.toString().length()-1);
+	    return ResourceFactory.createTypedLiteral(dateString, XSDDatatype.XSDdateTime);
     }
     
     public static String stmtString(Statement statement) {
         return  " subject = " + statement.getSubject().getURI() +
         		" property = " + statement.getPredicate().getURI() +
                 " object = " + (statement.getObject().isLiteral() ? ((Literal)statement.getObject()).getLexicalForm() + " (Literal)"
-                    		                                          : ((Resource)statement.getObject()).getURI() + " (Resource)");	
+                    		                                      : ((Resource)statement.getObject()).getURI() + " (Resource)");	
     }    
 }

@@ -30,7 +30,14 @@ public abstract class ObjectPropertyTemplateModel extends PropertyTemplateModel 
     
     private static final Log log = LogFactory.getLog(ObjectPropertyTemplateModel.class);      
     private static final String TYPE = "object";
-
+    
+    /* NB The default postprocessor is not the same as the postprocessor for the default view. The latter
+     * actually defines its own postprocessor, whereas the default postprocessor is used for custom views
+     * that don't define a postprocessor, to ensure that the standard postprocessing applies.
+     */
+    private static final String DEFAULT_POSTPROCESSOR = 
+        "edu.cornell.mannlib.vitro.webapp.web.templatemodels.individual.DefaultObjectPropertyDataPostProcessor";
+    
     private PropertyListConfig config;
 
     ObjectPropertyTemplateModel(ObjectProperty op, Individual subject, VitroRequest vreq) {
@@ -48,13 +55,9 @@ public abstract class ObjectPropertyTemplateModel extends PropertyTemplateModel 
     protected String getQueryString() {
         return config.queryString;
     }
-    
-    protected String getCollationTarget() {
-        return config.collationTarget;
-    }
-    
-    protected boolean hasCustomListView() {
-        return !config.isDefaultConfig;
+
+    protected boolean hasDefaultListView() {
+        return config.isDefaultConfig;
     }
     
     protected static ObjectPropertyTemplateModel getObjectPropertyTemplateModel(ObjectProperty op, Individual subject, VitroRequest vreq) {
@@ -74,32 +77,32 @@ public abstract class ObjectPropertyTemplateModel extends PropertyTemplateModel 
     protected void postprocess(List<Map<String, String>> data, WebappDaoFactory wdf) {
         String postprocessorName = config.postprocessor;
         if (postprocessorName == null) {
-            return;
+            //return;
+            postprocessorName = DEFAULT_POSTPROCESSOR;
         }
 
         try {
             Class<?> postprocessorClass = Class.forName(postprocessorName);
             Constructor<?> constructor = postprocessorClass.getConstructor(ObjectPropertyTemplateModel.class, WebappDaoFactory.class);
-            ObjectPropertyDataPostprocessor postprocessor = (ObjectPropertyDataPostprocessor) constructor.newInstance(this, wdf);
+            ObjectPropertyDataPostProcessor postprocessor = (ObjectPropertyDataPostProcessor) constructor.newInstance(this, wdf);
             postprocessor.process(data);
         } catch (Exception e) {
             log.error(e, e);
         }
     }
     
+    protected abstract String getDefaultConfigFileName();
+    
     private class PropertyListConfig {
 
-        private static final String DEFAULT_CONFIG_FILE = "listViewConfig-default.xml";
         private static final String CONFIG_FILE_PATH = "/config/";
         private static final String NODE_NAME_QUERY = "query";
         private static final String NODE_NAME_TEMPLATE = "template";
-        private static final String NODE_NAME_COLLATION_TARGET = "collation-target";
         private static final String NODE_NAME_POSTPROCESSOR = "postprocessor";
         
         private boolean isDefaultConfig;
         private String queryString;
         private String templateName;
-        private String collationTarget;
         private String postprocessor;
 
         PropertyListConfig(ObjectProperty op, VitroRequest vreq) throws Exception {
@@ -109,7 +112,7 @@ public abstract class ObjectPropertyTemplateModel extends PropertyTemplateModel 
             ObjectPropertyDao opDao = wdf.getObjectPropertyDao();
             String configFileName = opDao.getCustomListConfigFileName(op);
             if (configFileName == null) { // no custom config; use default config
-                configFileName = DEFAULT_CONFIG_FILE;
+                configFileName = getDefaultConfigFileName();
             }
             log.debug("Using list view config file " + configFileName + " for object property " + op.getURI());
             
@@ -119,7 +122,7 @@ public abstract class ObjectPropertyTemplateModel extends PropertyTemplateModel 
                 if ( ! isDefaultConfig(configFileName) && ! config.exists() ) {
                     log.warn("Can't find config file " + configFilePath + " for object property " + op.getURI() + "\n" +
                             ". Using default config file instead.");
-                    configFilePath = getConfigFilePath(DEFAULT_CONFIG_FILE);
+                    configFilePath = getConfigFilePath(getDefaultConfigFileName());
                     // Should we test for the existence of the default, and throw an error if it doesn't exist?
                 }                   
                 setValuesFromConfigFile(configFilePath);           
@@ -135,7 +138,7 @@ public abstract class ObjectPropertyTemplateModel extends PropertyTemplateModel 
                     log.warn("Invalid list view config for object property " + op.getURI() + 
                             " in " + configFilePath + ":\n" +                            
                             invalidConfigMessage + " Using default config instead.");
-                    configFilePath = getConfigFilePath(DEFAULT_CONFIG_FILE);
+                    configFilePath = getConfigFilePath(getDefaultConfigFileName());
                     setValuesFromConfigFile(configFilePath);                    
                 }
             }
@@ -144,7 +147,7 @@ public abstract class ObjectPropertyTemplateModel extends PropertyTemplateModel 
         }
         
         private boolean isDefaultConfig(String configFileName) {
-            return configFileName.equals(DEFAULT_CONFIG_FILE);
+            return configFileName.equals(getDefaultConfigFileName());
         }
         
         private String checkForInvalidConfig(VitroRequest vreq) {
@@ -181,7 +184,6 @@ public abstract class ObjectPropertyTemplateModel extends PropertyTemplateModel 
                 templateName = getConfigValue(doc, NODE_NAME_TEMPLATE); 
                 
                 // Optional values
-                collationTarget = getConfigValue(doc, NODE_NAME_COLLATION_TARGET);
                 postprocessor = getConfigValue(doc, NODE_NAME_POSTPROCESSOR);
             } catch (Exception e) {
                 log.error("Error processing config file " + configFilePath, e);

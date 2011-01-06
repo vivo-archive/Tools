@@ -6,53 +6,77 @@ an example and I didn't really see any other way to get the jsp custom forms to 
 this at the moment. Needless to say, we need to be able to call the macro and pass
 parameters from within the original custom form -->
 
-<@dateTime specificity="${precision}" required="${requiredMinimumPrecision}" />
+<#-- 
+Available variables:
 
-<#macro dateTime specificity="full" required=specificity>
-    <#assign specLevel = 10 />
+fieldName -- name of field
+minimumPrecision -- minimum precision accepted by validator
+requiredLevel -- maximum precision to display as required
+
+existingPrecision -- precision on an existing value, may be ""
+year -- year on an existing value, may be ""
+month -- month on an existing value, may be ""
+day  -- day on an existing value, may be ""
+hour -- hour on an existing value, may be ""
+minute -- minute on an existing value, may be ""
+second -- second on an existing value, may be ""
+
+precisionConstants.none -- URI for precision
+precisionConstants.year -- URI for precision
+precisionConstants.month -- URI for precision
+precisionConstants.day -- URI for precision
+precisionConstants.hour -- URI for precision
+precisionConstants.minute -- URI for precision
+precisionConstants.second -- URI for precision
+-->
+
+<@dateTime precision="${minimumPrecision}" required="${requiredLevel}" />
+
+<#macro dateTime precision="full" required=specificity>
+    <#assign precLevel = 10 />
     <#assign reqLevel = 10 />
-    <#if specificity == "${precisions.year}">
-        <#assign specLevel = 1 />
-    <#elseif specificity == "${precisions.month}">
-        <#assign specLevel = 2 />
+    <#if precision == "${precisionConstants.year}">
+        <#assign precLevel = 1 />
+    <#elseif precision == "${precisionConstants.month}">
+        <#assign precLevel = 2 />
     <#-- allow to specify year, month and day using "date" -->
-    <#elseif specificity == "${precisions.day}" || specificity == "date">
-        <#assign specLevel = 3 />
-    <#elseif specificity == "${precisions.hour}">
-        <#assign specLevel = 4 />
+    <#elseif precision == "${precisionConstants.day}" || precision == "date">
+        <#assign precLevel = 3 />
+    <#elseif precision == "${precisionConstants.hour}">
+        <#assign precLevel = 4 />
     <#-- allow to specify hours and minutes using "time" -->
-    <#elseif specificity == "${precisions.minute}" || specificity == "time">
-        <#assign specLevel = 5 />
-    <#elseif specificity == "${precisions.second}">
-        <#assign specLevel = 6 />
+    <#elseif precision == "${precisionConstants.minute}" || precision == "time">
+        <#assign precLevel = 5 />
+    <#elseif precision == "${precisionConstants.second}">
+        <#assign precLevel = 6 />
     </#if>
-    <#if required == "${precisions.year}">
+    <#if required == "${precisionConstants.year}">
         <#assign reqLevel = 1 />
-    <#elseif required == "${precisions.month}">
+    <#elseif required == "${precisionConstants.month}">
         <#assign reqLevel = 2 />
     <#-- allow to require year, month and day using "date" -->
-    <#elseif required == "${precisions.day}" || required == "date">
+    <#elseif required == "${precisionConstants.day}" || required == "date">
         <#assign reqLevel = 3 />
-    <#elseif required == "${precisions.hour}">
+    <#elseif required == "${precisionConstants.hour}">
         <#assign reqLevel = 4 />
     <#-- allow to require hours and minutes using "time" -->
-    <#elseif required == "${precisions.minute}" || required == "time">
+    <#elseif required == "${precisionConstants.minute}" || required == "time">
         <#assign reqLevel = 5 />
-    <#elseif required == "${precisions.second}">
+    <#elseif required == "${precisionConstants.second}">
         <#assign reqLevel = 6 />
-    <#elseif required == "${precisions.none}">
+    <#elseif required == "${precisionConstants.none}">
         <#assign reqLevel = 0 />
     </#if>
 
     <fieldset id="dateTime">              
     
-        <#if specLevel gte 1>
+        <#if precLevel gte 1>
             <#-- Only text input field in the mix. We should have some validation to ensure it's a valid year (4 digits, integer, etc) -->
-            <label for="${fieldName}.year">Year <#if reqLevel gte 1> <span class="requiredHint">*</span></#if></label>
-            <input class="text-field" name="${fieldName}.year" id="${fieldName}.year" type="text" value="${year!}" size="4" <#if reqLevel gte 1>required </#if>/>
+            <label for="${fieldName}.year">Year<#if reqLevel gte 1> <span class="requiredHint">*</span></#if></label>
+            <input class="text-field" name="${fieldName}.year" id="${fieldName}.year" type="text" value="${year!}" size="4" maxlength="4" <#if reqLevel gte 1>required </#if>/>
         </#if>
 
-        <#if specLevel gte 2>
+        <#if precLevel gte 2>
             <label for="${fieldName}.month">Month<#if reqLevel gte 2> <span class="requiredHint">*</span></#if></label>
             <select name="${fieldName}.month" id="${fieldName}.month" <#if reqLevel gte 2>required </#if>>
                 <option value=""<#if !month??> selected="selected"</#if>>month</option>
@@ -63,7 +87,7 @@ parameters from within the original custom form -->
             </select>
         </#if>
 
-        <#if specLevel gte 3>
+        <#if precLevel gte 3>
             <label for="${fieldName}.day">Day<#if reqLevel gte 3> <span class="requiredHint">*</span></#if></label>
             <select name="${fieldName}.day" id="${fieldName}.day" <#if reqLevel gte 3>required </#if>>
                 <option value=""<#if !day??> selected="selected"</#if>>day</option>
@@ -74,7 +98,7 @@ parameters from within the original custom form -->
             </select>
         </#if>
 
-        <#if specLevel gte 4>
+        <#if precLevel gte 4>
             <#-- We'll need to make this more flexible to support 24 hour display down the road. For now assuming 12h with am/pm -->
             <label for="${fieldName}.hour">Hour<#if reqLevel gte 4> <span class="requiredHint">*</span></#if></label>
             <select name="${fieldName}.hour" id="${fieldName}.hour" <#if reqLevel gte 3>required </#if>>
@@ -98,7 +122,7 @@ parameters from within the original custom form -->
             </select>
         </#if>
 
-        <#if specLevel gte 5>
+        <#if precLevel gte 5>
             <label for="${fieldName}.minute">Minutes<#if reqLevel gte 5> <span class="requiredHint">*</span></#if></label>
             <select name="${fieldName}.minute" id="${fieldName}.minute" <#if reqLevel gte 5>required </#if>>
                 <option value=""<#if !minute??> selected="selected"</#if>>minutes</option>
@@ -109,7 +133,7 @@ parameters from within the original custom form -->
             </select>
         </#if>
 
-        <#if specLevel gte 6>
+        <#if precLevel gte 6>
             <label for="${fieldName}.second">Seconds<#if reqLevel gte 6> <span class="requiredHint">*</span></#if></label>
             <select name="${fieldName}.second" id="${fieldName}.second" <#if reqLevel gte 6>required </#if>>
                 <option value=""<#if !second??> selected="selected"</#if>>seconds</option>

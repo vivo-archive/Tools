@@ -14,9 +14,11 @@
 <%@ page import="edu.cornell.mannlib.vitro.webapp.dao.WebappDaoFactory"%>
 <%@ page import="edu.cornell.mannlib.vitro.webapp.controller.VitroRequest"%>
 <%@ page import="edu.cornell.mannlib.vitro.webapp.web.MiscWebUtils"%>
-<%@page import="edu.cornell.mannlib.vitro.webapp.edit.n3editing.StartYearBeforeEndYear"%>
+<%@ page import="edu.cornell.mannlib.vitro.webapp.edit.n3editing.StartYearBeforeEndYear"%>
 <%@ page import="edu.cornell.mannlib.vitro.webapp.controller.freemarker.UrlBuilder.JavaScript" %>
 <%@ page import="edu.cornell.mannlib.vitro.webapp.controller.freemarker.UrlBuilder.Css" %>
+<%@ page import="edu.cornell.mannlib.vitro.webapp.edit.elements.DateTimeWithPrecision"%>
+<%@ page import="edu.cornell.mannlib.vitro.webapp.edit.n3editing.Field"%>
 
 <%@ page import="org.apache.commons.logging.Log" %>
 <%@ page import="org.apache.commons.logging.LogFactory" %>
@@ -37,8 +39,9 @@
 %>
 
 
-<%@page import="edu.cornell.mannlib.vitro.webapp.edit.elements.DateTimeWithPrecision"%>
-<%@page import="edu.cornell.mannlib.vitro.webapp.edit.n3editing.Field"%><c:set var="vivoCore" value="http://vivoweb.org/ontology/core#" />
+
+
+<c:set var="vivoCore" value="http://vivoweb.org/ontology/core#" />
 <c:set var="type" value="<%= VitroVocabulary.RDF_TYPE %>" />
 <c:set var="rdfs" value="<%= VitroVocabulary.RDFS %>" />
 <c:set var="label" value="${rdfs}label" />
@@ -46,7 +49,6 @@
 <c:set var="orgClass" value="http://xmlns.com/foaf/0.1/Organization" />
 
 <%-- Define predicates used in n3 assertions and sparql queries --%>
-<c:set var="titlePred" value="${vivoCore}titleOrRole" />
 <c:set var="startYearPred" value="${vivoCore}startYear" />
 <c:set var="endYearPred" value="${vivoCore}endYear" />
 <c:set var="positionInOrgPred" value="${vivoCore}positionInOrganization" />
@@ -73,20 +75,11 @@
 </v:jsonset>
 
 <v:jsonset var="positionTitleAssertion" >      
-    ?position <${titlePred}> ?positionTitle ;
-              <${label}> ?positionTitle . 
+    ?position <${label}> ?positionTitle . 
 </v:jsonset>
 
 <v:jsonset var="positionTypeAssertion">
     ?position a ?positionType .
-</v:jsonset>
-
-<v:jsonset var="startYearAssertion" >
-    ?position <${startYearPred}> ?startYear .
-</v:jsonset>
-
-<v:jsonset var="endYearAssertion" >
-    ?position <${endYearPred}> ?endYear .
 </v:jsonset>
 
 <v:jsonset var="n3ForNewPosition">       
@@ -147,7 +140,7 @@
 
 <v:jsonset var="positionTitleQuery" >  
     SELECT ?existingPositionTitle WHERE {
-          ?position <${titlePred}> ?existingPositionTitle . }
+          ?position <${label}> ?existingPositionTitle . }
 </v:jsonset>
 
 <v:jsonset var="positionTypeQuery">
@@ -376,9 +369,10 @@
         
         //setup date time edit elements
         Field startField = editConfig.getField("startField");
-        startField.setEditElement(new DateTimeWithPrecision(startField, VitroVocabulary.Precision.YEAR));        
+        // arguments for DateTimeWithPrecision are (fieldName, minimumPrecision, [requiredLevel])
+        startField.setEditElement(new DateTimeWithPrecision(startField, VitroVocabulary.Precision.YEAR.uri(), VitroVocabulary.Precision.NONE.uri()));        
         Field endField = editConfig.getField("endField");
-        endField.setEditElement(new DateTimeWithPrecision(endField, VitroVocabulary.Precision.YEAR));
+        endField.setEditElement(new DateTimeWithPrecision(endField, VitroVocabulary.Precision.YEAR.uri(), VitroVocabulary.Precision.NONE.uri()));
     }
     
     editConfig.addValidator(new StartYearBeforeEndYear("startYear","endYear") ); 
