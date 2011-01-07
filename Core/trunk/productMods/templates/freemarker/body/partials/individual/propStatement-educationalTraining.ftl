@@ -25,11 +25,7 @@
             <a href="${profileUrl(statement.edTraining)}">${statement.edTrainingName}</a> (no linked organization)
         </#if>
     </#local>
-    
-    <#if statement.dateTime??>
-        <#local year = dt.xsdDateTimeToYear(statement.dateTime)>
-    </#if>
-    
-    <@s.join [ degree, linkedIndividual, statement.deptOrSchool!, statement.info!, year! ] />
+
+    <@s.join [ degree, linkedIndividual, statement.deptOrSchool!, statement.info! ] /> <@dt.yearInterval "${statement.dateTimeStart!}" "${statement.dateTimeEnd!}" false/>
 
 </#macro>

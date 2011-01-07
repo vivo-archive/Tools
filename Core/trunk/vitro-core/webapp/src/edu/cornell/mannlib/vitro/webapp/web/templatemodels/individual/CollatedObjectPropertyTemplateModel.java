@@ -27,11 +27,21 @@ public class CollatedObjectPropertyTemplateModel extends ObjectPropertyTemplateM
 
     private static final Log log = LogFactory.getLog(CollatedObjectPropertyTemplateModel.class);  
     private static final String DEFAULT_CONFIG_FILE = "listViewConfig-default-collated.xml";
+    private static final Pattern SELECT_QUERY_PATTERN = Pattern.compile("SELECT[^{]*\\?subclass\\b", Pattern.CASE_INSENSITIVE);
+    private static final Pattern ORDER_BY_QUERY_PATTERN = Pattern.compile("ORDER\\s+BY\\s+(DESC\\s*\\(\\s*)?\\?subclass", Pattern.CASE_INSENSITIVE);
     
     private SortedMap<String, List<ObjectPropertyStatementTemplateModel>> subclasses;
     
-    CollatedObjectPropertyTemplateModel(ObjectProperty op, Individual subject, VitroRequest vreq) throws Exception {
+    CollatedObjectPropertyTemplateModel(ObjectProperty op, Individual subject, VitroRequest vreq) 
+        throws InvalidConfigurationException {
+        
         super(op, subject, vreq); 
+        
+        String invalidConfigMessage = checkConfiguration();
+        if ( ! invalidConfigMessage.isEmpty() ) {
+            throw new InvalidConfigurationException("Invalid configuration for property " + 
+                    op.getURI() + ":" + invalidConfigMessage); 
+        }
 
         /* Get the data */
         WebappDaoFactory wdf = vreq.getWebappDaoFactory();
@@ -56,6 +66,24 @@ public class CollatedObjectPropertyTemplateModel extends ObjectPropertyTemplateM
             }};
         subclasses = new TreeMap<String, List<ObjectPropertyStatementTemplateModel>>(comparer);
         subclasses.putAll(unsortedSubclasses);        
+    }
+    
+    private String checkConfiguration() {
+
+        String queryString = getQueryString();
+        Matcher m;
+        
+        m = SELECT_QUERY_PATTERN.matcher(queryString); 
+        if ( ! m.find() ) { 
+            return("Query does not select a subclass variable.");
+        } 
+        
+        m = ORDER_BY_QUERY_PATTERN.matcher(queryString);
+        if ( ! m.find() ) {
+            return("Query does not sort first by subclass variable.");
+        }
+        
+        return "";
     }
     
     private Map<String, List<ObjectPropertyStatementTemplateModel>> collate(String subjectUri, 
