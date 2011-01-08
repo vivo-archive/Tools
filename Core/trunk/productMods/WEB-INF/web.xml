@@ -76,13 +76,11 @@
 
   <!-- Invokes process to perform updates to align with ontology changes if needed -->
   <!-- Needs to run before submodels are attached and Pellet is set up -->
-  
-  <!--
-  Commenting out during 1.2 development of kb mapping  
+  <!--  
   <listener>
      <listener-class>edu.cornell.mannlib.vitro.webapp.servlet.setup.UpdateKnowledgeBase</listener-class>
   </listener>
- -->
+  -->
  
   <listener>
     <listener-class>
@@ -341,7 +339,7 @@
     <servlet-name>IndexController</servlet-name>
     <url-pattern>/SearchIndex</url-pattern>
   </servlet-mapping>
-  
+
    <servlet>
     <servlet-name>MenuN3EditController</servlet-name>
     <servlet-class>edu.cornell.mannlib.vitro.webapp.controller.freemarker.MenuN3EditController</servlet-class>
@@ -1381,28 +1379,28 @@
   
   <servlet-mapping>
     <servlet-name>entity</servlet-name>
-    <url-pattern>/entity</url-pattern>
+    <url-pattern>/entityold</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>entity</servlet-name>
-    <url-pattern>/entity/*</url-pattern>
+    <url-pattern>/entityold/*</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>entity</servlet-name>
-    <url-pattern>/individual/*</url-pattern>
+    <url-pattern>/individualold/*</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>entity</servlet-name>
-    <url-pattern>/display/*</url-pattern>
+    <url-pattern>/displayold/*</url-pattern>
   </servlet-mapping>
     
   <servlet-mapping>
     <servlet-name>individual</servlet-name>
-    <url-pattern>/entityfm</url-pattern>
+    <url-pattern>/entity</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>individual</servlet-name>
-    <url-pattern>/entityfm/*</url-pattern>
+    <url-pattern>/entity/*</url-pattern>
   </servlet-mapping>
     <servlet-mapping>
     <servlet-name>individual</servlet-name>
@@ -1410,15 +1408,15 @@
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>individual</servlet-name>
-    <url-pattern>/individualfm/*</url-pattern>
+    <url-pattern>/individual/*</url-pattern>
   </servlet-mapping>
     <servlet-mapping>
     <servlet-name>individual</servlet-name>
-    <url-pattern>/displayfm</url-pattern>
+    <url-pattern>/display</url-pattern>
   </servlet-mapping> 
   <servlet-mapping>
     <servlet-name>individual</servlet-name>
-    <url-pattern>/displayfm/*</url-pattern>
+    <url-pattern>/display/*</url-pattern>
   </servlet-mapping>    
 
   <servlet-mapping>
