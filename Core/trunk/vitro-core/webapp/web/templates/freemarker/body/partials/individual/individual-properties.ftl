@@ -24,19 +24,18 @@
         <#list group.properties as property>
             <article class="property" role="article">
                 <#-- Property display name -->
-                <h3>${property.name}</h3>
-
+                <h3>${property.name} <@p.addLink property showEditingLinks /></h3>
                 <#-- List the statements for each property -->   
                 <ul class="property-list" role="list"> 
                     <#-- data property -->  
                     <#if property.type == "data"> 
-                        <@p.dataPropertyList property.statements />
+                        <@p.dataPropertyList property.statements showEditingLinks />
 
                     <#-- object property -->      
                     <#elseif property.collatedBySubclass> <#-- collated -->                            
-                        <@p.collatedObjectPropertyList property />
+                        <@p.collatedObjectPropertyList property showEditingLinks />
                     <#else> <#-- uncollated -->
-                        <@p.objectPropertyList property.statements property.template />
+                        <@p.objectPropertyList property.statements property.template showEditingLinks />
                     </#if>  
                 </ul>                 
             </article> <!-- end property -->             

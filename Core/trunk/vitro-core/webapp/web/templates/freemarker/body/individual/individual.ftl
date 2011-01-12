@@ -1,20 +1,12 @@
 <#-- $This file is distributed under the terms of the license in /doc/license.txt$ -->
 
-<#-- Template for individual profile page -->
+<#-- Generic template for individual profile page -->
 
-<#import "lib-list.ftl" as l>
-<#import "lib-properties.ftl" as p>
-<#assign core = "http://vivoweb.org/ontology/core#">
+<#include "individual-setup.ftl">
 
-<#assign editingClass>
-    <#if editStatus.showEditingLinks>editing<#else></#if>
-</#assign>
-
-<#if editStatus.showAdminPanel>
+<#if individual.showAdminPanel>
     <#include "individual-adminPanel.ftl">
 </#if>
-
-<#assign propertyGroups = individual.propertyList>
 
 <section id="individual-intro" class="vcard" role="region">
     <section id="share-contact" role="region"> 
@@ -47,8 +39,12 @@
         <#-- Overview -->
         <#assign overview = propertyGroups.getPropertyAndRemoveFromList("${core}overview")!> 
         <#if overview?has_content> <#-- true when the property is in the list, even if not populated (when editing) -->
+            <@p.showLabelAndAddLink overview showEditingLinks />
             <#list overview.statements as statement>
-                <p class="individual-overview">${statement.value}</p>
+                <p class="individual-overview">
+                    <@p.editingLinks statement showEditingLinks />
+                    ${statement.value}
+                </p>
             </#list>
         </#if>
         
@@ -57,7 +53,10 @@
                 <li role="listitem"><a class="picto-font picto-uri" href="#">j</a></li>
                 <#--<li role="listitem"><a class="picto-font picto-pdf" href="#">F</a></li>-->
                 <li role="listitem"><a class="picto-font picto-share" href="#">R</a></li>
-                <li role="listitem"><a class="icon-rdf" href="#">RDF</a></li>
+                <#assign rdfUrl = individual.rdfUrl>
+                <#if rdfUrl??>
+                    <li role="listitem"><a class="icon-rdf" href="${rdfUrl}">RDF</a></li>
+                </#if>
             </ul>
         </nav>
                 
@@ -87,8 +86,9 @@
     </section>
 </section>
 
+<#assign nameForOtherGroup = "other"> <#-- used by both individual-propertyGroupMenu.ftl and individual-properties.ftl -->
+
 <#-- Property group menu -->
-<#assign nameForOtherGroup = "other">
 <#include "individual-propertyGroupMenu.ftl">
 
 <#-- Ontology properties -->

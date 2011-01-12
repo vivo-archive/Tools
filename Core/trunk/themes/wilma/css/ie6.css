@@ -1,9 +1,11 @@
 /* $This file is distributed under the terms of the license in /doc/license.txt$ */
 /* Fix for homepage in IE6 browsers */
-html,
-body {
+body{
     background-position: center, 0;
     background-repeat: no-repeat;
+    background-image: none;
+    background-color: #f3f3f0;
+    background-image: url(../images/header-background.jpg); 
 }
 #wrapper-content{
     padding-left: 10px;
@@ -68,4 +70,12 @@ article.individual-foaf-person {
 }
 #profile-photo-display { 
     width: 620px;
+}
+/* Fix for site admin */
+/* the wonders of the IE float model...fix to maintain sanity in rendering sections of site admin */
+/* targets IE7 and below */
+#adminDashboard .pageBodyGroup {
+  *float: none !important;
+  *display: inline !important;
+  *vertical-align: top !important;
 }

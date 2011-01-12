@@ -114,14 +114,10 @@ public class IndividualController extends FreemarkerHttpServlet {
 	        }
 
 	        Map<String, Object> body = new HashMap<String, Object>();
-	        
-    		body.put("editStatus", getEditingData(vreq));
 
             body.put("title", individual.getName());
             
     		body.put("relatedSubject", getRelatedSubject(vreq));
-    		
-    		body.put("headContent", getRdfLinkTag(individual));
     		
     		IndividualTemplateModel itm = getIndividualTemplateModel(vreq, individual);
     		/* We need to expose non-getters in displaying the individual's property list, 
@@ -130,7 +126,9 @@ public class IndividualController extends FreemarkerHttpServlet {
     		 * into the data model: no real data can be modified. 
     		 */
 	        body.put("individual", getNonDefaultBeansWrapper(BeansWrapper.EXPOSE_SAFE).wrap(itm));
-	       
+
+	        body.put("headContent", getRdfLinkTag(itm));
+	        
 	        body.put("localName", new IndividualLocalNameMethod());
 	        
 	        String template = getIndividualTemplate(individual);
@@ -149,20 +147,6 @@ public class IndividualController extends FreemarkerHttpServlet {
 	    session.removeAttribute("editjson");
 	    EditConfiguration.clearAllConfigsInSession(session);
 	    EditSubmission.clearAllEditSubmissionsInSession(session);
-    }
-    
-    private Map<String, Object> getEditingData(VitroRequest vreq) {
-  
-        LoginStatusBean loginBean = LoginStatusBean.getBean(vreq);       
-    	Map<String, Object> editingData = new HashMap<String, Object>();
-
-    	// RY This will be improved later. What is important is not whether the user is a self-editor,
-    	// but whether he has editing privileges on this profile.
-		editingData.put("showEditingLinks", VitroRequestPrep.isSelfEditing(vreq) || 
-		        loginBean.isLoggedInAtLeast(LoginStatusBean.NON_EDITOR));	
-		editingData.put("showAdminPanel", loginBean.isLoggedInAtLeast(LoginStatusBean.EDITOR));
-
-		return editingData;		
     }
     
     private Map<String, Object> getRelatedSubject(VitroRequest vreq) {
@@ -194,11 +178,13 @@ public class IndividualController extends FreemarkerHttpServlet {
         return map;
     }
     
-    //<link rel="alternate" type="application/rdf+xml" href="http://vivo.cornell.edu/individual/n337/n337.rdf" /> 
-    private String getRdfLinkTag(Individual individual) {
-        String href = individual.getURI() + "/" + individual.getLocalName() + ".rdf";
-        String linkTag = "<link rel=\"alternate\" type=\"application/rdf+xml\" href=\"" +
-        		         href + "\" /> ";
+    private String getRdfLinkTag(IndividualTemplateModel itm) {
+        String linkTag = null;
+        String linkedDataUrl = itm.getLinkedDataUrl();
+        if (linkedDataUrl != null) {
+            linkTag = "<link rel=\"alternate\" type=\"application/rdf+xml\" href=\"" +
+                          linkedDataUrl + "\" /> ";
+        }
         return linkTag;
     }
     
@@ -213,14 +199,15 @@ public class IndividualController extends FreemarkerHttpServlet {
         //setup highlighter for search terms
         //checkForSearch(vreq, individual);
         
-        return new IndividualTemplateModel(individual, vreq);
+        return new IndividualTemplateModel(individual, vreq, LoginStatusBean.getBean(vreq));
 	}
 	
 	// Determine whether the individual has a custom display template based on its class membership.
 	// If not, return the default individual template.
 	private String getIndividualTemplate(Individual individual) {
 	    
-        String vclassName = "unknown";
+        @SuppressWarnings("unused")
+        String vclassName = "unknown"; 
         String customTemplate = null;
 
         if( individual.getVClass() != null ){
@@ -230,8 +217,8 @@ public class IndividualController extends FreemarkerHttpServlet {
                 customTemplate = clas.getCustomDisplayView();
                 if (customTemplate != null) {
                     if (customTemplate.length()>0) {
-                        vclassName = clas.getName(); // reset entity vclassname to name of class where a custom view
-                        log.debug("Found direct class ["+clas.getName()+"] with custom view "+customTemplate+"; resetting entity vclassName to this class");
+                        vclassName = clas.getName(); // reset entity vclassname to name of class where a custom view; this call has side-effects
+                        log.debug("Found direct class [" + clas.getName() + "] with custom view " + customTemplate + "; resetting entity vclassName to this class");
                         break;
                     } else {
                         customTemplate = null;
@@ -245,7 +232,7 @@ public class IndividualController extends FreemarkerHttpServlet {
                     if (customTemplate != null) {
                         if (customTemplate.length()>0) {
                             // note that NOT changing entity vclassName here yet
-                            log.debug("Found inferred class ["+clas.getName()+"] with custom view "+customTemplate);
+                            log.debug("Found inferred class [" + clas.getName() + "] with custom view " + customTemplate);
                             break;
                         } else {
                             customTemplate = null;

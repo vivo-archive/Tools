@@ -22,6 +22,7 @@
 
 <%@ page import="org.apache.commons.logging.Log" %>
 <%@ page import="org.apache.commons.logging.LogFactory" %>
+<%@page import="edu.cornell.mannlib.vitro.webapp.edit.n3editing.DateTimeIntervalValidation"%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core"%>
 <%@ taglib prefix="v" uri="http://vitro.mannlib.cornell.edu/vitro/tags" %>
@@ -38,9 +39,6 @@
     request.setAttribute("gYearDatatypeUriJson", MiscWebUtils.escape(XSD.gYear.toString()));
 %>
 
-
-
-
 <c:set var="vivoCore" value="http://vivoweb.org/ontology/core#" />
 <c:set var="type" value="<%= VitroVocabulary.RDF_TYPE %>" />
 <c:set var="rdfs" value="<%= VitroVocabulary.RDFS %>" />
@@ -49,8 +47,6 @@
 <c:set var="orgClass" value="http://xmlns.com/foaf/0.1/Organization" />
 
 <%-- Define predicates used in n3 assertions and sparql queries --%>
-<c:set var="startYearPred" value="${vivoCore}startYear" />
-<c:set var="endYearPred" value="${vivoCore}endYear" />
 <c:set var="positionInOrgPred" value="${vivoCore}positionInOrganization" />
 <c:set var="orgForPositionPred" value="${vivoCore}organizationForPosition" />
 
@@ -373,9 +369,9 @@
         startField.setEditElement(new DateTimeWithPrecision(startField, VitroVocabulary.Precision.YEAR.uri(), VitroVocabulary.Precision.NONE.uri()));        
         Field endField = editConfig.getField("endField");
         endField.setEditElement(new DateTimeWithPrecision(endField, VitroVocabulary.Precision.YEAR.uri(), VitroVocabulary.Precision.NONE.uri()));
-    }
-    
-    editConfig.addValidator(new StartYearBeforeEndYear("startYear","endYear") ); 
+        
+        editConfig.addValidator(new DateTimeIntervalValidation("startField","endField") );        
+    }         
             
     Model model = (Model) application.getAttribute("jenaOntModel");
     

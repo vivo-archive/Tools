@@ -4,56 +4,77 @@
     Macros for generating property lists
 ------------------------------------------------------------------------------>
 
-<#macro dataPropertyList statements>
+<#macro dataPropertyList statements showEditingLinks>
     <#list statements as statement>
-        <@propertyListItem statement>${statement.value}</@propertyListItem>
+        <@propertyListItem statement showEditingLinks>${statement.value}</@propertyListItem>
     </#list> 
 </#macro>
 
-<#macro collatedObjectPropertyList property>
+<#macro collatedObjectPropertyList property showEditingLinks>
     <#assign subclasses = property.subclasses>
     <#list subclasses?keys as subclass>
         <li class="subclass">
             <h3>${subclass?lower_case}</h3>
             <ul class="subclass-property-list">
-                <@objectPropertyList subclasses[subclass] property.template /> 
+                <@objectPropertyList subclasses[subclass] property.template showEditingLinks /> 
             </ul>
         </li>
     </#list>
 </#macro>
 
-<#macro simpleObjectPropertyList property>
-    <@objectPropertyList property.statements "propStatement-simple.ftl" />
+<#macro simpleObjectPropertyList property showEditingLinks>
+    <@objectPropertyList property.statements "propStatement-simple.ftl" showEditingLinks />
 </#macro>
 
-<#macro objectPropertyList statements template>
+<#macro objectPropertyList statements template showEditingLinks>
     <#list statements as statement>
-        <@propertyListItem statement><#include "${template}"></@propertyListItem>
+        <@propertyListItem statement showEditingLinks><#include "${template}"></@propertyListItem>
     </#list>
 </#macro>
 
-<#macro propertyListItem statement>
-    <li role="listitem">
-        <@editLink statement />
-        <@deleteLink statement />
-        <#nested>
-    </li>
+<#-- Some properties usually display without a label. But if there's an add link, 
+we need to also show the property label. -->
+<#macro showLabelAndAddLink property showEditingLinks>
+    <#local addLink><@addLink property showEditingLinks /></#local>
+    <#if addLink?has_content>
+        <h3>${property.name?capitalize} ${addLink}</h3> 
+    </#if>
 </#macro>
 
-<#macro editLink statement>
-    <#if editStatus.showEditingLinks>
-        <#local url = statement.editUrl>
+<#macro addLink property showEditingLinks>
+    <#if showEditingLinks>
+        <#local url = property.addUrl>
         <#if url?has_content>
-            <a href="${url}">edit</a>
+            <a href="${url}"><img class="add-individual" src="${urls.images}/individual/addIcon.gif" alt="add relationship" /></a>
         </#if>
     </#if>
 </#macro>
 
-<#macro deleteLink statement>
-    <#if editStatus.showEditingLinks>
-        <#local url = statement.deleteUrl>
-        <#if url?has_content>
-            <a href="${url}">delete</a>
-        </#if>
+<#macro propertyListItem statement showEditingLinks>
+    <li role="listitem">    
+        <#nested>
+        
+        <@editingLinks statement showEditingLinks />
+    </li>
+</#macro>
+
+<#macro editingLinks statement showEditingLinks>
+    <#if showEditingLinks>
+        <@editLink statement />
+        <@deleteLink statement />
+    </#if>
+</#macro>
+
+<#macro editLink statement>
+    <#local url = statement.editUrl>
+    <#if url?has_content>
+        <a href="${url}"><img class="edit-individual" src="${urls.images}/individual/editIcon.gif" alt="change this relationship" /></a>
+    </#if>
+</#macro>
+
+<#macro deleteLink statement> 
+    <#local url = statement.deleteUrl>
+    <#if url?has_content>
+        <a href="${url}"><img  class="delete-individual" src="${urls.images}/individual/deleteIcon.gif" alt="delete this relationship" /></a>
     </#if>
 </#macro>

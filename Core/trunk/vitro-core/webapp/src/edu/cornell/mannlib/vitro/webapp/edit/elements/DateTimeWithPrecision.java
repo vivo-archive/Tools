@@ -64,7 +64,9 @@ public class DateTimeWithPrecision extends BaseEditElement {
     VitroVocabulary.Precision DEFAULT_MIN_PRECISION = VitroVocabulary.Precision.DAY;
     VitroVocabulary.Precision DEFAULT_DISPLAY_LEVEL = VitroVocabulary.Precision.DAY;
     VitroVocabulary.Precision[] precisions = VitroVocabulary.Precision.values();
-        
+    
+    protected static final String BLANK_SENTINEL = ">SUBMITTED VALUE WAS BLANK<";
+    
     public DateTimeWithPrecision(Field field) {
         super(field);
         fieldName = field.getName();
@@ -133,7 +135,7 @@ public class DateTimeWithPrecision extends BaseEditElement {
             		"'" + precisionUri + "' but could not convert to Precision object");
         }
         
-        if( precisionUri == null || precisionUri.isEmpty()  ){
+        if( precisionUri == null || precisionUri.isEmpty() || existingPrec == null){
             map.put("existingPrecision", "");
             
             /* no precision so there should also be no datetime */
@@ -168,24 +170,35 @@ public class DateTimeWithPrecision extends BaseEditElement {
                         + " but the date time is " + value);                        
             
             /* only put the values in the map for ones which are significant based on the precision */
-            if( existingPrec.ordinal() >= VitroVocabulary.Precision.SECOND.ordinal() ){
+            if( existingPrec.ordinal() >= VitroVocabulary.Precision.SECOND.ordinal() )
                 map.put("second", Integer.toString(value.getSecondOfMinute() )) ;
-            }
-            if( existingPrec.ordinal() >= VitroVocabulary.Precision.MINUTE.ordinal()  ){
+            else
+                map.put("second", "");
+            
+            if( existingPrec.ordinal() >= VitroVocabulary.Precision.MINUTE.ordinal()  )
                 map.put("minute", Integer.toString(value.getMinuteOfHour()) );    
-            }
-            if( existingPrec.ordinal() >= VitroVocabulary.Precision.HOUR.ordinal() ){
-                map.put("hour", Integer.toString(value.getHourOfDay()) );            
-            }
-            if( existingPrec.ordinal() >= VitroVocabulary.Precision.DAY.ordinal()  ){
+            else
+                map.put("minute", "");
+            
+            if( existingPrec.ordinal() >= VitroVocabulary.Precision.HOUR.ordinal() )
+                map.put("hour", Integer.toString(value.getHourOfDay()) );
+            else
+                map.put("hour", "");
+            
+            if( existingPrec.ordinal() >= VitroVocabulary.Precision.DAY.ordinal()  )
                 map.put("day", Integer.toString(value.getDayOfMonth()) );                    
-            }
-            if( existingPrec.ordinal() >= VitroVocabulary.Precision.MONTH.ordinal() ){
+            else
+                map.put("day", "");
+            
+            if( existingPrec.ordinal() >= VitroVocabulary.Precision.MONTH.ordinal() )
                 map.put("month", Integer.toString(value.getMonthOfYear()));                            
-            }
-            if( existingPrec.ordinal() >= VitroVocabulary.Precision.YEAR.ordinal() ){
+            else
+                map.put("month", "");
+            
+            if( existingPrec.ordinal() >= VitroVocabulary.Precision.YEAR.ordinal() )
                 map.put("year", Integer.toString(value.getYear()));                  
-            }
+            else
+                map.put("year", "");
         }               
         
         return map;
@@ -236,7 +249,17 @@ public class DateTimeWithPrecision extends BaseEditElement {
         return literalMap;
     }
     
-    protected Literal getDateTime( Map<String, String[]> queryParameters ) {
+    protected Literal getDateTime(  Map<String, String[]> queryParameters ) {
+        String submittedPrec = BLANK_SENTINEL;
+        try {
+            submittedPrec = getSubmittedPrecision( queryParameters);
+        } catch (Exception e) {
+            log.error("could not get submitted precsion",e);
+        }
+        
+        if( BLANK_SENTINEL.equals( submittedPrec ) )
+            return null;
+        
         Integer year = parseToInt(fieldName+".year", queryParameters);
         
         //this is the case where date has not been filled out at all.        
@@ -294,7 +317,8 @@ public class DateTimeWithPrecision extends BaseEditElement {
             return Collections.emptyMap();        
         }
         Map<String,String> uriMap = new HashMap<String,String>();
-        uriMap.put(fieldName+".precision", precisionUri);        
+        if( precisionUri != null )
+            uriMap.put(fieldName+".precision", precisionUri);        
         return uriMap;
     }
     
@@ -324,7 +348,8 @@ public class DateTimeWithPrecision extends BaseEditElement {
         
         /* the field wasn't filled out at all */
         if( indexOfFirstNull == 0 )
-            return VitroVocabulary.Precision.NONE.uri();
+            //return VitroVocabulary.Precision.NONE.uri();
+            return BLANK_SENTINEL;
         
         /* if they all had values then we have seconds precision */
         if( indexOfFirstNull == -1 )

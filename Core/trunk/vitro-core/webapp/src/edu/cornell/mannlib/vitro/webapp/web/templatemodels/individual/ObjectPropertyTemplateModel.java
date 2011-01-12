@@ -22,9 +22,16 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
+import edu.cornell.mannlib.vitro.webapp.auth.policy.ifaces.Authorization;
+import edu.cornell.mannlib.vitro.webapp.auth.policy.ifaces.PolicyDecision;
+import edu.cornell.mannlib.vitro.webapp.auth.requestedAction.ifaces.RequestActionConstants;
+import edu.cornell.mannlib.vitro.webapp.auth.requestedAction.ifaces.RequestedAction;
+import edu.cornell.mannlib.vitro.webapp.auth.requestedAction.propstmt.AddObjectPropStmt;
 import edu.cornell.mannlib.vitro.webapp.beans.Individual;
 import edu.cornell.mannlib.vitro.webapp.beans.ObjectProperty;
 import edu.cornell.mannlib.vitro.webapp.controller.VitroRequest;
+import edu.cornell.mannlib.vitro.webapp.controller.freemarker.UrlBuilder;
+import edu.cornell.mannlib.vitro.webapp.controller.freemarker.UrlBuilder.ParamMap;
 import edu.cornell.mannlib.vitro.webapp.dao.ObjectPropertyDao;
 import edu.cornell.mannlib.vitro.webapp.dao.WebappDaoFactory;
 import freemarker.cache.TemplateLoader;
@@ -34,6 +41,7 @@ public abstract class ObjectPropertyTemplateModel extends PropertyTemplateModel 
     
     private static final Log log = LogFactory.getLog(ObjectPropertyTemplateModel.class);      
     private static final String TYPE = "object";
+    private static final String EDIT_PATH = "edit/editRequestDispatch.jsp";
     
     /* NB The default post-processor is not the same as the post-processor for the default view. The latter
      * actually defines its own post-processor, whereas the default post-processor is used for custom views
@@ -48,7 +56,8 @@ public abstract class ObjectPropertyTemplateModel extends PropertyTemplateModel 
          * ORDER BY ?subclass ?dateTimeEnd
          * ORDER BY DESC(?subclass) DESC(?dateTimeEnd)
          */
-        Pattern.compile("ORDER\\s+BY\\s+((DESC\\()?\\?subclass\\)?\\s+)?DESC\\s*\\(\\s*\\?" + END_DATE_TIME_VARIABLE + "\\)", Pattern.CASE_INSENSITIVE);
+        Pattern.compile("ORDER\\s+BY\\s+((DESC\\()?\\?subclass\\)?\\s+)?DESC\\s*\\(\\s*\\?" + 
+                END_DATE_TIME_VARIABLE + "\\)", Pattern.CASE_INSENSITIVE);
 
     private static String KEY_SUBJECT = "subject";
     private static final String KEY_PROPERTY = "property";
@@ -59,9 +68,12 @@ public abstract class ObjectPropertyTemplateModel extends PropertyTemplateModel 
     
     private PropertyListConfig config;
     private String objectKey;
+    
+    // Used for editing
+    private boolean addAccess = false;
 
-    ObjectPropertyTemplateModel(ObjectProperty op, Individual subject, VitroRequest vreq) {
-        super(op);
+    ObjectPropertyTemplateModel(ObjectProperty op, Individual subject, VitroRequest vreq, EditingPolicyHelper policyHelper) {
+        super(op, subject, policyHelper);
         setName(op.getDomainPublic());
         
         // Get the config for this object property
@@ -72,6 +84,15 @@ public abstract class ObjectPropertyTemplateModel extends PropertyTemplateModel 
         }
         
         objectKey = getQueryObjectVariableName();
+        
+        // Determine whether a new statement can be added
+        if (policyHelper != null) {
+            RequestedAction action = new AddObjectPropStmt(subjectUri, propertyUri, RequestActionConstants.SOME_URI);
+            PolicyDecision decision = policyHelper.getPolicyDecision(action);
+            if( decision != null && decision.getAuthorized() == Authorization.AUTHORIZED ) {
+                addAccess = true;
+            }
+        }
     }
     
     protected String getQueryString() {
@@ -105,16 +126,17 @@ public abstract class ObjectPropertyTemplateModel extends PropertyTemplateModel 
         return object;
     }
      
-    protected static ObjectPropertyTemplateModel getObjectPropertyTemplateModel(ObjectProperty op, Individual subject, VitroRequest vreq) {
+    protected static ObjectPropertyTemplateModel getObjectPropertyTemplateModel(ObjectProperty op, 
+            Individual subject, VitroRequest vreq, EditingPolicyHelper policyHelper) {
         if (op.getCollateBySubclass()) {
             try {
-                return new CollatedObjectPropertyTemplateModel(op, subject, vreq);
+                return new CollatedObjectPropertyTemplateModel(op, subject, vreq, policyHelper);
             } catch (InvalidConfigurationException e) {
                 log.error(e);
-                return new UncollatedObjectPropertyTemplateModel(op, subject, vreq);
+                return new UncollatedObjectPropertyTemplateModel(op, subject, vreq, policyHelper);
             }
         } else {
-            return new UncollatedObjectPropertyTemplateModel(op, subject, vreq);
+            return new UncollatedObjectPropertyTemplateModel(op, subject, vreq, policyHelper);
         }
     }
     
@@ -329,8 +351,14 @@ public abstract class ObjectPropertyTemplateModel extends PropertyTemplateModel 
 
     @Override
     public String getAddUrl() {
-        // TODO Auto-generated method stub
-        return null;
+        String addUrl = "";
+        if (addAccess) {
+            ParamMap params = new ParamMap(
+                    "subjectUri", subjectUri,
+                    "predicateUri", propertyUri);
+            addUrl = UrlBuilder.getUrl(EDIT_PATH, params);            
+        }
+        return addUrl;
     }
 
 }
