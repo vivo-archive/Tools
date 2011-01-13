@@ -464,7 +464,7 @@ function getTemporalVisURL(entity) {
 
 	} else{
 		
-		result = subOrganizationTemporalGraphURL+ "&vis_mode=" + entity.visMode + "&" +  
+		result = subOrganizationTemporalGraphURL + "&" +  
 				 "uri=" + entity.entityURI ;
 	}
 	
@@ -474,7 +474,7 @@ function getTemporalVisURL(entity) {
 function getVIVOProfileURL(given_uri) {
 	
 	finalURL = $.ajax({
-		url: contextPath + "/visualizationfm",
+		url: contextPath + "/visualization",
 		data: ({vis: "utilities", vis_mode: "PROFILE_URL", uri: given_uri}),
 		dataType: "text",
 		async: false,
@@ -857,16 +857,16 @@ function setEntityLevel(){
 function getEntityVisMode(jsonData){
 	
 	$.each(jsonData, function(index, val) {
-		if (val.visMode == "SCHOOL" || val.visMode == "UNIVERSITY" || val.visMode == "DEPARTMENT"){
-			entityLevel = "Organizations";
-		} else {
+		if (val.visMode ==  "PERSON"){
 			entityLevel = "People";
+		} else {
+			entityLevel = "Organizations";
 		}
 		return;
 	});
 	
 	/* To provide graceful degradation set entity level to a default error message.*/
-	entityElevel = "ENTITY LEVEL UNDEFINED ERROR";
+	entitylevel = "ENTITY LEVEL UNDEFINED ERROR";
 }
 
 function toCamelCase(string){

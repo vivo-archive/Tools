@@ -285,24 +285,26 @@ public class DataPropertyStatementDaoJena extends JenaBaseDao implements DataPro
         return l;
     }
 
-    @Override
     /*
-     * SPARQL-based method for getting the individual's values for a single data property.
+     * SPARQL-based methods for getting the individual's values for a single data property.
      */
-    public List<DataPropertyStatement> getDataPropertyStatementsForIndividualByProperty(Individual subject, DataProperty property) {
+    
+    @Override
+    public List<Literal> getDataPropertyValuesForIndividualByProperty(Individual subject, DataProperty property) {
+        return getDataPropertyValuesForIndividualByProperty(subject.getURI(), property.getURI());
+    }
+    
+    @Override
+    public List<Literal> getDataPropertyValuesForIndividualByProperty(String subjectUri, String propertyUri) {    
         log.debug("dataPropertyValueQueryString:\n" + dataPropertyValueQueryString);         
-        log.debug("dataPropertyValueQuery:\n" + dataPropertyValueQuery);  
+        log.debug("dataPropertyValueQuery:\n" + dataPropertyValueQuery); 
         
-        String subjectUri = subject.getURI();
-        String propertyUri = property.getURI();
-
         QuerySolutionMap bindings = new QuerySolutionMap();
         bindings.add("subject", ResourceFactory.createResource(subjectUri));
         bindings.add("property", ResourceFactory.createResource(propertyUri));
 
         // Run the SPARQL query to get the properties
-        List<DataPropertyStatement> statements = 
-                new ArrayList<DataPropertyStatement>();
+        List<Literal> values = new ArrayList<Literal>();                
         DatasetWrapper w = dwf.getDatasetWrapper();
         Dataset dataset = w.getDataset();
         dataset.getLock().enterCriticalSection(Lock.READ);
@@ -314,14 +316,12 @@ public class DataPropertyStatementDaoJena extends JenaBaseDao implements DataPro
             while (results.hasNext()) {
                 QuerySolution sol = results.next();
                 Literal value = sol.getLiteral("value");
-                DataPropertyStatement dps = new DataPropertyStatementImpl(
-                        subjectUri, propertyUri, value.getLexicalForm());
-                statements.add(dps);
+                values.add(value);
             }
         } finally {
             dataset.getLock().leaveCriticalSection();
             w.close();
         }
-        return statements;  
+        return values;         
     }
 }

@@ -4,12 +4,13 @@
 
 <#import "lib-list.ftl" as l>
 <#import "lib-properties.ftl" as p>
+
 <#assign core = "http://vivoweb.org/ontology/core#">
 
-<#assign showEditingLinks = individual.showEditingLinks>
+<#assign editing = individual.showEditingLinks>
 
 <#assign editingClass>
-    <#if showEditingLinks>editing</#if>
+    <#if editing>editing</#if>
 </#assign>
 
 <#assign propertyGroups = individual.propertyList>

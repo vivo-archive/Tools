@@ -34,7 +34,7 @@
 
 <#-- Some properties usually display without a label. But if there's an add link, 
 we need to also show the property label. -->
-<#macro showLabelAndAddLink property showEditingLinks>
+<#macro addLinkWithLabel property showEditingLinks>
     <#local addLink><@addLink property showEditingLinks /></#local>
     <#if addLink?has_content>
         <h3>${property.name?capitalize} ${addLink}</h3> 
@@ -45,15 +45,14 @@ we need to also show the property label. -->
     <#if showEditingLinks>
         <#local url = property.addUrl>
         <#if url?has_content>
-            <a href="${url}"><img class="add-individual" src="${urls.images}/individual/addIcon.gif" alt="add relationship" /></a>
+            <a href="${url}" title="add relationship"><img class="add-individual" src="${urls.images}/individual/addIcon.gif" alt="add" /></a>
         </#if>
     </#if>
 </#macro>
 
 <#macro propertyListItem statement showEditingLinks>
     <li role="listitem">    
-        <#nested>
-        
+        <#nested>        
         <@editingLinks statement showEditingLinks />
     </li>
 </#macro>
@@ -68,13 +67,13 @@ we need to also show the property label. -->
 <#macro editLink statement>
     <#local url = statement.editUrl>
     <#if url?has_content>
-        <a href="${url}"><img class="edit-individual" src="${urls.images}/individual/editIcon.gif" alt="change this relationship" /></a>
+        <a href="${url}" title="change this relationship"><img class="edit-individual" src="${urls.images}/individual/editIcon.gif" alt="edit" /></a>
     </#if>
 </#macro>
 
 <#macro deleteLink statement> 
     <#local url = statement.deleteUrl>
     <#if url?has_content>
-        <a href="${url}"><img  class="delete-individual" src="${urls.images}/individual/deleteIcon.gif" alt="delete this relationship" /></a>
+        <a href="${url}" title="delete this relationship"><img  class="delete-individual" src="${urls.images}/individual/deleteIcon.gif" alt="delete" /></a>
     </#if>
 </#macro>

@@ -1,6 +1,6 @@
 <#-- $This file is distributed under the terms of the license in /doc/license.txt$ -->
 
-<#assign standardVisualizationURLRoot ="/visualizationfm">
+<#assign standardVisualizationURLRoot ="/visualization">
 <#assign ajaxVisualizationURLRoot ="/visualizationAjax">
 <#assign dataVisualizationURLRoot ="/visualizationData">
 
@@ -92,7 +92,7 @@ $(document).ready(function(){
 	
 		<#-- Moniker-->
 			<em id="ego_moniker" class="moniker"></em>
-			
+		<br />	
 		<span class="pictos-arrow-14">4</span><a href="${egoVivoProfileURL}">Back to Profile</a>
 		
 	</div>

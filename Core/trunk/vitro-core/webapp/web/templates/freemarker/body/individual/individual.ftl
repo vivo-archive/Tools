@@ -26,7 +26,9 @@
             <#else>                
                 <h1 class="fn">
                     <#-- Label -->
-                    ${individual.name}
+                    <#assign label = individual.nameStatement>
+                    ${label.value}
+                    <@p.editingLinks label editing />
                         
                     <#-- Moniker -->
                     <#if individual.moniker?has_content>
@@ -39,20 +41,20 @@
         <#-- Overview -->
         <#assign overview = propertyGroups.getPropertyAndRemoveFromList("${core}overview")!> 
         <#if overview?has_content> <#-- true when the property is in the list, even if not populated (when editing) -->
-            <@p.showLabelAndAddLink overview showEditingLinks />
+            <@p.addLinkWithLabel overview editing />
             <#list overview.statements as statement>
-                <p class="individual-overview">
-                    <@p.editingLinks statement showEditingLinks />
+                <p class="individual-overview">                   
                     ${statement.value}
+                    <@p.editingLinks statement editing />
                 </p>
             </#list>
         </#if>
         
         <nav role="navigation">
             <ul id ="individual-tools" role="list">
-                <li role="listitem"><a class="picto-font picto-uri" href="#">j</a></li>
-                <#--<li role="listitem"><a class="picto-font picto-pdf" href="#">F</a></li>-->
-                <li role="listitem"><a class="picto-font picto-share" href="#">R</a></li>
+                <#--<li role="listitem"><a class="picto-font picto-uri" href="#">j</a></li>
+                <li role="listitem"><a class="picto-font picto-pdf" href="#">F</a></li>
+                <li role="listitem"><a class="picto-font picto-share" href="#">R</a></li>-->
                 <#assign rdfUrl = individual.rdfUrl>
                 <#if rdfUrl??>
                     <li role="listitem"><a class="icon-rdf" href="${rdfUrl}">RDF</a></li>
@@ -79,7 +81,7 @@
          Also remove the method IndividualTemplateModel.isOrganization(). -->
          <#if individual.organization >
             <section id="temporal-graph" role="region">
-                <h3><img src="${urls.images}/visualization/temporal_vis_icon.jpg" width="25px" height="25px" /><a href="${urls.base}/visualization?vis=entity_comparison&vis_mode=${individual.moniker}&render_mode=standalone&uri=${individual.uri}">Temporal Graph</a></h3>
+                <h3><img src="${urls.images}/visualization/temporal_vis_icon.jpg" width="25px" height="25px" /><a href="${urls.base}/visualization?vis=entity_comparison&uri=${individual.uri}">Temporal Graph</a></h3>
             </section>      
             <#--<div>VISMODE: ${individual.moniker}</div>-->
         </#if>

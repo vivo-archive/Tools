@@ -21,9 +21,9 @@
         
         <nav role="navigation">
             <ul id ="individual-tools-people" role="list">
-                <li role="listitem"><a class="picto-font picto-uri" href="#">j</a></li>
-                <#--<li role="listitem"><a class="picto-font picto-pdf" href="#">F</a></li>-->
-                <li role="listitem"><a class="picto-font picto-share" href="#">R</a></li>
+                <#--<li role="listitem"><a class="picto-font picto-uri" href="#">j</a></li>
+                <li role="listitem"><a class="picto-font picto-pdf" href="#">F</a></li>
+                <li role="listitem"><a class="picto-font picto-share" href="#">R</a></li>-->
                 <#assign rdfUrl = individual.rdfUrl>
                 <#if rdfUrl??>
                     <li role="listitem"><a class="icon-rdf" href="${rdfUrl}">RDF</a></li>
@@ -34,13 +34,13 @@
         <#-- Email -->    
         <#assign email = propertyGroups.getPropertyAndRemoveFromList("${core}email")!>      
         <#if email?has_content> <#-- true when the property is in the list, even if not populated (when editing) -->
-            <@p.showLabelAndAddLink email showEditingLinks />
+            <@p.addLinkWithLabel email editing />
             <#if email.statements?has_content> <#-- if there are any statements -->
                 <ul id="individual-email" role="list">
                     <#list email.statements as statement>
                         <li role="listitem">
-                            <@p.editingLinks statement showEditingLinks />
-                            <a class="email" href="#"><span class ="picto-font picto-email">M</span> ${statement.value}</a>
+                            <img class ="icon-email middle" src="${urls.images}/individual/emailIcon.gif" alt="email icon" /><a class="email" href="mailto:${statement.value}">${statement.value}</a>
+                            <@p.editingLinks statement editing />
                         </li>
                     </#list>
                 </ul>
@@ -50,13 +50,13 @@
         <#-- Phone --> 
         <#assign phone = propertyGroups.getPropertyAndRemoveFromList("${core}phoneNumber")!>
         <#if phone?has_content> <#-- true when the property is in the list, even if not populated (when editing) -->
-            <@p.showLabelAndAddLink phone showEditingLinks />
+            <@p.addLinkWithLabel phone editing />
             <#if phone.statements?has_content> <#-- if there are any statements -->
                 <ul id="individual-phone" role="list">
                     <#list phone.statements as statement>
-                        <li role="listitem">
-                            <@p.editingLinks statement showEditingLinks />
-                            <a class="tel" href="#"><img class ="icon-phone" src="${urls.images}/individual/phone-icon.gif" alt="phone icon" />${statement.value}</a>
+                        <li role="listitem">                           
+                           <img class ="icon-phone  middle" src="${urls.images}/individual/phoneIcon.gif" alt="phone icon" />${statement.value}
+                            <@p.editingLinks statement editing />
                         </li>
                     </#list>
                 </ul>
@@ -81,7 +81,9 @@
             <#else>                
                 <h1 class="fn foaf-person">
                     <#-- Label -->
-                    ${individual.name}
+                    <#assign label = individual.nameStatement>
+                    ${label.value}
+                    <@p.editingLinks label editing />
                         
                     <#-- Moniker -->
                     <#if individual.moniker?has_content>
@@ -93,10 +95,10 @@
             <#-- Positions -->
             <#assign positions = propertyGroups.getPropertyAndRemoveFromList("${core}personInPosition")!>
             <#if positions?has_content> <#-- true when the property is in the list, even if not populated (when editing) -->
-                <h2>Positions <@p.addLink positions showEditingLinks /></h2>
+                <h2>Positions <@p.addLink positions editing /></h2>
                 <#if positions.statements?has_content> <#-- if there are any statements -->
                     <ul id ="individual-positions" role="list">
-                        <@p.objectPropertyList positions.statements positions.template showEditingLinks />
+                        <@p.objectPropertyList positions.statements positions.template editing />
                     </ul>
                 </#if>
             </#if>
@@ -105,11 +107,11 @@
         <#-- Overview -->
         <#assign overview = propertyGroups.getPropertyAndRemoveFromList("${core}overview")!> 
         <#if overview?has_content> <#-- true when the property is in the list, even if not populated (when editing) -->
-            <@p.showLabelAndAddLink overview showEditingLinks />
+            <@p.addLinkWithLabel overview editing />
             <#list overview.statements as statement>
-                <p class="individual-overview">
-                    <@p.editingLinks statement showEditingLinks />
+                <p class="individual-overview">       
                     ${statement.value}
+                    <@p.editingLinks statement editing />
                 </p>
             </#list>
         </#if>
@@ -117,11 +119,11 @@
         <#-- Research Areas -->
         <#assign researchAreas = propertyGroups.getPropertyAndRemoveFromList("${core}hasResearchArea")!> 
         <#if researchAreas?has_content> <#-- true when the property is in the list, even if not populated (when editing) -->
-            <#--<h2>Research Areas <@p.addLink researchAreas showEditingLinks /></h2>  --> 
-            <@p.showLabelAndAddLink researchAreas showEditingLinks />
+            <#--<h2>Research Areas <@p.addLink researchAreas editing /></h2>  --> 
+            <@p.addLinkWithLabel researchAreas editing />
             <#if researchAreas.statements?has_content> <#-- if there are any statements -->                
                 <ul id="individual-areas" role="list">
-                    <@p.simpleObjectPropertyList researchAreas showEditingLinks/>
+                    <@p.simpleObjectPropertyList researchAreas editing/>
                 </ul>
             </#if>
         </#if>

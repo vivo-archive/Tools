@@ -7,18 +7,14 @@ import java.util.List;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.openrdf.model.URI;
-import org.openrdf.model.impl.URIImpl;
 
 import edu.cornell.mannlib.vedit.beans.LoginStatusBean;
 import edu.cornell.mannlib.vitro.webapp.beans.Individual;
 import edu.cornell.mannlib.vitro.webapp.beans.Link;
-import edu.cornell.mannlib.vitro.webapp.beans.PropertyGroup;
 import edu.cornell.mannlib.vitro.webapp.controller.VitroRequest;
 import edu.cornell.mannlib.vitro.webapp.controller.freemarker.UrlBuilder;
-import edu.cornell.mannlib.vitro.webapp.controller.freemarker.UrlBuilder.ParamMap;
 import edu.cornell.mannlib.vitro.webapp.controller.freemarker.UrlBuilder.Route;
-import edu.cornell.mannlib.vitro.webapp.dao.WebappDaoFactory;
+import edu.cornell.mannlib.vitro.webapp.dao.VitroVocabulary;
 import edu.cornell.mannlib.vitro.webapp.filters.VitroRequestPrep;
 import edu.cornell.mannlib.vitro.webapp.web.ViewFinder;
 import edu.cornell.mannlib.vitro.webapp.web.ViewFinder.ClassView;
@@ -35,6 +31,7 @@ public class IndividualTemplateModel extends BaseTemplateModel {
     protected UrlBuilder urlBuilder;
     protected GroupedPropertyList propertyList = null;
     protected LoginStatusBean loginStatusBean = null;
+    private EditingPolicyHelper policyHelper = null;
     
     public IndividualTemplateModel(Individual individual, VitroRequest vreq) {
         this.individual = individual;
@@ -49,7 +46,24 @@ public class IndividualTemplateModel extends BaseTemplateModel {
         this.loginStatusBean = loginStatusBean;
         // Needed for getting portal-sensitive urls. Remove if multi-portal support is removed.
         this.urlBuilder = new UrlBuilder(vreq.getPortal());
+        
+        // If editing, create a helper object to check requested actions against policies
+        if (isEditable(loginStatusBean)) {
+            policyHelper = new EditingPolicyHelper(vreq, getServletContext());
+        } 
     }
+
+    /** 
+     * Return true iff the user is editing. 
+     * These tests may change once self-editing issues are straightened out. What we really need to know
+     * is whether the user can edit this profile, not whether in general he/she is an editor.
+     */
+    private boolean isEditable(LoginStatusBean loginStatusBean) { 
+        boolean isSelfEditing = VitroRequestPrep.isSelfEditing(vreq);
+        boolean isCurator = loginStatusBean.isLoggedInAtLeast(LoginStatusBean.CURATOR);
+        return isSelfEditing || isCurator;
+    }
+    
     
     /* These methods perform some manipulation of the data returned by the Individual methods */
     
@@ -146,7 +160,7 @@ public class IndividualTemplateModel extends BaseTemplateModel {
 
     public GroupedPropertyList getPropertyList() {
         if (propertyList == null) {
-            propertyList = new GroupedPropertyList(individual, vreq, loginStatusBean);
+            propertyList = new GroupedPropertyList(individual, vreq, policyHelper);
         }
         return propertyList;
     }
@@ -161,6 +175,20 @@ public class IndividualTemplateModel extends BaseTemplateModel {
     public boolean getShowAdminPanel() {
         return loginStatusBean.isLoggedInAtLeast(LoginStatusBean.EDITOR);
     }
+ 
+    public DataPropertyStatementTemplateModel getNameStatement() {
+        String propertyUri = VitroVocabulary.LABEL; // rdfs:label
+        DataPropertyStatementTemplateModel dpstm = new DataPropertyStatementTemplateModel(getUri(), propertyUri, vreq, policyHelper);
+        
+        // If the individual has no rdfs:label, return the local name. It will not be editable (this replicates previous behavior;
+        // perhaps we would want to allow a label to be added. But such individuals do not usually have their profiles viewed or
+        // edited directly.
+        if (dpstm.getValue() == null) {
+            dpstm.setValue(getLocalName());
+        }
+        
+        return dpstm;
+    }
     
     /* These methods simply forward to the methods of the wrapped individual. It would be desirable to 
      * implement a scheme for proxying or delegation so that the methods don't need to be simply listed here. 
@@ -169,10 +197,10 @@ public class IndividualTemplateModel extends BaseTemplateModel {
      * declare new methods here that are not declared in the Individual interface. 
      */
     
-    public String getName() {
+    public String getName() {           
         return individual.getName();
     }
-    
+
     public String getMoniker() {
         return individual.getMoniker();
     }
@@ -180,14 +208,6 @@ public class IndividualTemplateModel extends BaseTemplateModel {
     public String getUri() {
         return individual.getURI();
     }
-    
-    public String getDescription() {
-        return individual.getDescription();
-    }
-    
-    public String getBlurb() {
-        return individual.getBlurb();
-    }   
     
     public List<String> getKeywords() {
         return individual.getKeywords();
@@ -202,6 +222,14 @@ public class IndividualTemplateModel extends BaseTemplateModel {
         return individual.getLocalName();
     }
     
-
+    @Deprecated
+    public String getDescription() {
+        return individual.getDescription();
+    }
+    
+    @Deprecated
+    public String getBlurb() {
+        return individual.getBlurb();
+    }   
     
 }

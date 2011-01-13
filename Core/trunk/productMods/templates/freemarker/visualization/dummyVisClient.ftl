@@ -88,13 +88,6 @@ $(document).ready(function() {
 
 <h2 id="ajax_activator">Hello World!</h2>
 
-<c:url var="staticHref" value="/visualization">
-	<c:param name="vis" value="person_pub_count"/>
-	<c:param name="render_mode" value="standalone"/>
-	<c:param name="vis_mode" value="wth"/>
-	<c:param name="uri" value="http://vivo.library.cornell.edu/ns/0.1#individual5156"/>
-</c:url>
-
 <a href="${testURL}">vis query for person -> "Crane, Brian"</a>
 
 

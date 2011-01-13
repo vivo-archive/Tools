@@ -88,8 +88,7 @@ public abstract class ObjectPropertyTemplateModel extends PropertyTemplateModel 
         // Determine whether a new statement can be added
         if (policyHelper != null) {
             RequestedAction action = new AddObjectPropStmt(subjectUri, propertyUri, RequestActionConstants.SOME_URI);
-            PolicyDecision decision = policyHelper.getPolicyDecision(action);
-            if( decision != null && decision.getAuthorized() == Authorization.AUTHORIZED ) {
+            if (policyHelper.isAuthorizedAction(action)) {
                 addAccess = true;
             }
         }
@@ -112,14 +111,14 @@ public abstract class ObjectPropertyTemplateModel extends PropertyTemplateModel 
         
         if (hasDefaultListView()) {
             object = DEFAULT_LIST_VIEW_QUERY_OBJECT_VARIABLE_NAME;
-            log.debug("Using default list view for property " + getUri() + 
+            log.debug("Using default list view for property " + propertyUri + 
                       ", so query object = '" + object + "'");
         } else {
             String queryString = getQueryString();
             Matcher m = SUBJECT_PROPERTY_OBJECT_PATTERN.matcher(queryString);
             if (m.find()) {
                 object = m.group(1);
-                log.debug("Query object for property " + getUri() + " = '" + object + "'");
+                log.debug("Query object for property " + propertyUri + " = '" + object + "'");
             }
         }
         

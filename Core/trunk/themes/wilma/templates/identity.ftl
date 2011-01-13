@@ -1,7 +1,7 @@
 <#-- $This file is distributed under the terms of the license in /doc/license.txt$ -->
 
 <header id="branding" role="banner">
-    <h1 class="vivo-logo"><a href="${urls.home}"><span class="displace">${siteName}</span></a></h1>
+    <h1 class="vivo-logo"><a title="VIVO | enabling national networking of scientists" href="${urls.home}"><span class="displace">${siteName}</span></a></h1>
     <#-- Since we are using a graphic text for the tagline, we won't render ${siteTagline}
     <#if siteTagline?has_content>
         <em>${siteTagline}</em>
@@ -10,7 +10,7 @@
     <nav role="navigation">
         <ul id="header-nav" role="list">
             <#if user.loggedIn>
-                <li role="listitem"><span class="loginIcon">U</span> ${user.loginName}</li>
+                <li role="listitem"><img class ="middle" src="${urls.images}/userIcon.png" alt="user icon" />${user.loginName}</li>
                 <li role="listitem"><a href="${urls.logout}">Log out</a></li>
                 <#if user.hasSiteAdminAccess>
                     <li role="listitem"><a href="${urls.siteAdmin}">Site Admin</a></li>
