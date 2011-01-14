@@ -6,7 +6,7 @@
 
 <div class="contents">   
     <div class="individualList">
-        
+    <p align="right"><a href="${redirecturl}">RDF ${title} List</a></p>
         <h2>${title}</h2>
         <#if subtitle??>
             <h4>${subtitle}</h4>
@@ -15,7 +15,7 @@
         <#if message??>
             <p>${message}</p>
         <#else>
-        
+       
             <#assign pagination>
                 <#if (pages?size > 1) >           
                     pages:&nbsp; 

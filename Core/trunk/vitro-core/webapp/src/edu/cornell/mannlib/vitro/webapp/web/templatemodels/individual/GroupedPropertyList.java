@@ -6,7 +6,9 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -23,6 +25,7 @@ import edu.cornell.mannlib.vitro.webapp.dao.DataPropertyDao;
 import edu.cornell.mannlib.vitro.webapp.dao.ObjectPropertyDao;
 import edu.cornell.mannlib.vitro.webapp.dao.PropertyGroupDao;
 import edu.cornell.mannlib.vitro.webapp.dao.PropertyInstanceDao;
+import edu.cornell.mannlib.vitro.webapp.dao.VitroVocabulary;
 import edu.cornell.mannlib.vitro.webapp.dao.WebappDaoFactory;
 import edu.cornell.mannlib.vitro.webapp.filters.VitroRequestPrep;
 import edu.cornell.mannlib.vitro.webapp.web.templatemodels.BaseTemplateModel;
@@ -42,6 +45,12 @@ public class GroupedPropertyList extends BaseTemplateModel {
     private static final Log log = LogFactory.getLog(GroupedPropertyList.class);
     private static final int MAX_GROUP_DISPLAY_RANK = 99;
     
+    private static final List<String> VITRO_PROPS_TO_ADD_TO_LIST = new ArrayList<String>() {{
+        add(VitroVocabulary.PRIMARY_LINK);
+        add(VitroVocabulary.ADDITIONAL_LINK);
+        //add(VitroVocabulary.IND_MAIN_IMAGE);
+    }}; 
+    
     private Individual subject;
     private VitroRequest vreq;
     private WebappDaoFactory wdf;
@@ -60,11 +69,7 @@ public class GroupedPropertyList extends BaseTemplateModel {
         // This may include properties that are not defined as "possible properties" for a subject of this class,
         // so we cannot just rely on getting that list.
         List<ObjectProperty> objectPropertyList = subject.getPopulatedObjectPropertyList();
-        // If we're going to create a new template model object property with a name,
-        // don't need to set editLabel, can just do this:
-        //propertyList.addAll(objectPropertyList); 
         for (ObjectProperty op : objectPropertyList) {
-            //op.setLabel(op.getDomainPublic());
             propertyList.add(op);
         }
                 
@@ -83,7 +88,6 @@ public class GroupedPropertyList extends BaseTemplateModel {
         // two working in parallel.
         List<DataProperty> dataPropertyList = subject.getPopulatedDataPropertyList();
         for (DataProperty dp : dataPropertyList) {
-            //dp.setLabel(dp.getPublicName());
             propertyList.add(dp);
         }
     
@@ -91,7 +95,7 @@ public class GroupedPropertyList extends BaseTemplateModel {
             mergeAllPossibleDataProperties(propertyList);           
         }
     
-        sort(propertyList); //*** Does this do data and obj props, or just obj props??
+        sort(propertyList); 
     
         // Put the list into groups        
         List<PropertyGroup> propertyGroupList = addPropertiesToGroups(propertyList);
@@ -142,29 +146,38 @@ public class GroupedPropertyList extends BaseTemplateModel {
         PropertyInstanceDao piDao = wdf.getPropertyInstanceDao();
         Collection<PropertyInstance> allPropInstColl = piDao.getAllPossiblePropInstForIndividual(subject.getURI());
         if (allPropInstColl != null) {
+            ObjectPropertyDao opDao = wdf.getObjectPropertyDao();
             for (PropertyInstance pi : allPropInstColl) {
                 if (pi != null) {
-                    // RY Do we need to check this before checking if it's on the property list??
                     if (! alreadyOnObjectPropertyList(objectPropertyList, pi)) {
-                        ObjectPropertyDao opDao = wdf.getObjectPropertyDao();
-                        ObjectProperty op = opDao.getObjectPropertyByURI(pi.getPropertyURI());
-                        if (op == null) {
-                            log.error("ObjectProperty op returned null from opDao.getObjectPropertyByURI()");
-                        } else if (op.getURI() == null) {
-                            log.error("ObjectProperty op returned with null propertyURI from opDao.getObjectPropertyByURI()");
-                        } else  if (! alreadyOnPropertyList(propertyList, op)) {
-                            //op.setLabel(op.getDomainPublic());
-                            propertyList.add(op);
-                        }
+                        addIfNotAlreadyOnList(propertyList, pi.getPropertyURI(), opDao);
                     }
                 } else {
                     log.error("a property instance in the Collection created by PropertyInstanceDao.getAllPossiblePropInstForIndividual() is unexpectedly null");
                 }
             }
+            // These properties are outside the ontologies (in vitro and vitro public) but need to be added to the list
+            // In future, vitro ns props will be phased out. Vitro public properties should be changed so they do no
+            // constitute a special case.
+            for (String propertyUri : VITRO_PROPS_TO_ADD_TO_LIST) {
+                addIfNotAlreadyOnList(propertyList, propertyUri, opDao);
+            }
         } else {
             log.error("a null Collection is returned from PropertyInstanceDao.getAllPossiblePropInstForIndividual()");
         }                    
     }    
+    
+    private void addIfNotAlreadyOnList(List<Property> propertyList, String propertyUri, ObjectPropertyDao opDao) {
+        
+        ObjectProperty op = opDao.getObjectPropertyByURI(propertyUri);
+        if (op == null) {
+            log.error("ObjectProperty op returned null from opDao.getObjectPropertyByURI()");
+        } else if (op.getURI() == null) {
+            log.error("ObjectProperty op returned with null propertyURI from opDao.getObjectPropertyByURI()");
+        } else  if (! alreadyOnPropertyList(propertyList, op)) {          
+            propertyList.add(op);
+        }        
+    }
     
     protected void mergeAllPossibleDataProperties(List<Property> propertyList) {
         DataPropertyDao dpDao = wdf.getDataPropertyDao();

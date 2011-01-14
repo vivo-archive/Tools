@@ -1,6 +1,6 @@
 <#-- $This file is distributed under the terms of the license in /doc/license.txt$ -->
 
-<#-- Template for profile page for individuals of type foaf:Person -->
+<#-- Individual profile page template for foaf:Person individuals -->
 
 <#include "individual-setup.ftl">
 
@@ -63,14 +63,8 @@
             </#if>
         </#if>      
                 
-        <#-- Links -->
-        <nav role="navigation">
-            <ul id ="individual-urls-people" role="list">
-                <#list individual.links as link>                               
-                    <li role="listitem"><a href="${link.url}">${link.anchor}</a></li>                                 
-                </#list>         
-            </ul>
-        </nav>
+        <#-- Links -->  
+        <@p.vitroLinks propertyGroups editing "individual-urls-people" />
     </section>
     
     <section id="individual-info" role="region">
@@ -105,16 +99,7 @@
         </header>
          
         <#-- Overview -->
-        <#assign overview = propertyGroups.getPropertyAndRemoveFromList("${core}overview")!> 
-        <#if overview?has_content> <#-- true when the property is in the list, even if not populated (when editing) -->
-            <@p.addLinkWithLabel overview editing />
-            <#list overview.statements as statement>
-                <p class="individual-overview">       
-                    ${statement.value}
-                    <@p.editingLinks statement editing />
-                </p>
-            </#list>
-        </#if>
+        <#include "individual-overview.ftl">
         
         <#-- Research Areas -->
         <#assign researchAreas = propertyGroups.getPropertyAndRemoveFromList("${core}hasResearchArea")!> 
@@ -150,7 +135,7 @@
             <li role="listitem"><a href="#"><img class="co-author" src="${urls.images}/individual/Welles.jpg" /></a></li>
         </ul>
         
-        <p class="view-all-coauthors"><a class="view-all-style" href="#">View All <span class="pictos-arrow-10">4</span></a></p>
+        <p class="view-all-coauthors"><a class="view-all-style" href="#">View All <img src="${urls.images}/arrowIcon.gif" alt="arrow icon" /></a></p>
     </section>
 </section>
 

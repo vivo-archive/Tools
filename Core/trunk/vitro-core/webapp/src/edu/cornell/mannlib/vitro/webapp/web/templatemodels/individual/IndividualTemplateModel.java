@@ -16,8 +16,6 @@ import edu.cornell.mannlib.vitro.webapp.controller.freemarker.UrlBuilder;
 import edu.cornell.mannlib.vitro.webapp.controller.freemarker.UrlBuilder.Route;
 import edu.cornell.mannlib.vitro.webapp.dao.VitroVocabulary;
 import edu.cornell.mannlib.vitro.webapp.filters.VitroRequestPrep;
-import edu.cornell.mannlib.vitro.webapp.web.ViewFinder;
-import edu.cornell.mannlib.vitro.webapp.web.ViewFinder.ClassView;
 import edu.cornell.mannlib.vitro.webapp.web.templatemodels.BaseTemplateModel;
 
 public class IndividualTemplateModel extends BaseTemplateModel {
@@ -32,13 +30,6 @@ public class IndividualTemplateModel extends BaseTemplateModel {
     protected GroupedPropertyList propertyList = null;
     protected LoginStatusBean loginStatusBean = null;
     private EditingPolicyHelper policyHelper = null;
-    
-    public IndividualTemplateModel(Individual individual, VitroRequest vreq) {
-        this.individual = individual;
-        this.vreq = vreq;
-        // Needed for getting portal-sensitive urls. Remove if multi-portal support is removed.
-        this.urlBuilder = new UrlBuilder(vreq.getPortal());
-    }
 
     public IndividualTemplateModel(Individual individual, VitroRequest vreq, LoginStatusBean loginStatusBean) {
         this.individual = individual;
@@ -75,6 +66,7 @@ public class IndividualTemplateModel extends BaseTemplateModel {
         return isPerson() ? getUrl(Route.VISUALIZATION_AJAX.path(), "uri", getUri()) : null;
     }
 
+    // ** Remove these when the new methods are written
     public String getImageUrl() {
         String imageUrl = individual.getImageUrl();
         return imageUrl == null ? null : getUrl(imageUrl);
@@ -114,19 +106,6 @@ public class IndividualTemplateModel extends BaseTemplateModel {
         return individual.isVClass("http://xmlns.com/foaf/0.1/Organization");        
     }
     
-    public String getSearchView() {        
-        return getView(ClassView.SEARCH);
-    }
-    
-    public String getDisplayView() {        
-        return getView(ClassView.DISPLAY);
-    }
-    
-    private String getView(ClassView view) {
-        ViewFinder vf = new ViewFinder(view);
-        return vf.findClassView(individual, vreq);
-    }
-    
     public Link getPrimaryLink() {
         Link primaryLink = null;
         String anchor = individual.getAnchor();
@@ -139,8 +118,12 @@ public class IndividualTemplateModel extends BaseTemplateModel {
         return primaryLink;
     }
     
+    public List<Link> getAdditionalLinks() {
+        return individual.getLinksList();
+    }
+    
     public List<Link> getLinks() {
-        List<Link> additionalLinks = individual.getLinksList();
+        List<Link> additionalLinks = getAdditionalLinks();
         List<Link> links = new ArrayList<Link>(additionalLinks.size()+1);
         Link primaryLink = getPrimaryLink();
         if (primaryLink != null) {
@@ -149,15 +132,7 @@ public class IndividualTemplateModel extends BaseTemplateModel {
         links.addAll(additionalLinks);
         return links;      
     }
-
-    public static List<IndividualTemplateModel> getIndividualTemplateModelList(List<Individual> individuals, VitroRequest vreq) {
-        List<IndividualTemplateModel> models = new ArrayList<IndividualTemplateModel>(individuals.size());
-        for (Individual individual : individuals) {
-          models.add(new IndividualTemplateModel(individual, vreq));
-        }  
-        return models;
-    }
-
+    
     public GroupedPropertyList getPropertyList() {
         if (propertyList == null) {
             propertyList = new GroupedPropertyList(individual, vreq, policyHelper);
