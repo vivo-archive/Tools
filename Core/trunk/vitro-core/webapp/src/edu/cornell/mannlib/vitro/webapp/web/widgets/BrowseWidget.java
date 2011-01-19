@@ -13,12 +13,17 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import edu.cornell.mannlib.vitro.webapp.beans.Individual;
 import edu.cornell.mannlib.vitro.webapp.beans.VClass;
 import edu.cornell.mannlib.vitro.webapp.beans.VClassGroup;
+import edu.cornell.mannlib.vitro.webapp.controller.JSONServlet;
 import edu.cornell.mannlib.vitro.webapp.controller.VitroRequest;
+import edu.cornell.mannlib.vitro.webapp.controller.freemarker.FreemarkerHttpServlet;
 import edu.cornell.mannlib.vitro.webapp.dao.jena.VClassGroupCache;
+import edu.cornell.mannlib.vitro.webapp.utils.JSONtoFmModel;
 import edu.cornell.mannlib.vitro.webapp.web.templatemodels.VClassGroupTemplateModel;
 import edu.cornell.mannlib.vitro.webapp.web.templatemodels.VClassTemplateModel;
 import edu.cornell.mannlib.vitro.webapp.web.templatemodels.individual.ListedIndividualTemplateModel;
@@ -39,6 +44,7 @@ public class BrowseWidget extends Widget {
     protected WidgetTemplateValues process(Environment env, Map params,
             HttpServletRequest request, ServletContext context) throws Exception 
     {
+        try{
         Mode mode = getMode( request, params );
         switch( mode ){          
             case VCLASS_ALPHA:
@@ -52,24 +58,60 @@ public class BrowseWidget extends Widget {
             default:
                 return doAllClassGroupsDisplay(env, params, request, context);
         }
+        }catch(Throwable th){
+            log.error(th,th);
+            //should we return an error here?
+            return null;
+        }
     }
     
     private WidgetTemplateValues doClassAlphaDisplay(Environment env,
-            Map params, HttpServletRequest request, ServletContext context) {
-        // TODO Auto-generated method stub
-        return null;
+            Map params, HttpServletRequest request, ServletContext context) throws Exception {
+        Map<String,Object> body = new HashMap<String,Object>();
+        body.putAll(getCommonValues(env,context));
+        body.putAll(getClassAlphaValues(env,params,request,context));
+        
+        String macroName = Mode.VCLASS_ALPHA.macroName;
+        return new WidgetTemplateValues(macroName, body);
     }
 
-    protected WidgetTemplateValues doAllClassGroupsDisplay(Environment env, Map params,
-            HttpServletRequest request, ServletContext context) {
-        Map<String,Object> body = getAllClassGroupData(request, params, context);
+    private Map<String,Object> getClassAlphaValues(Environment env, Map params, HttpServletRequest request, ServletContext context) throws Exception{
+        Map<String,Object> map= new HashMap<String,Object>();
+        
+        String classUri = getParam(Mode.VCLASS, request, params);
+        VitroRequest vreq = new VitroRequest(request);
+        VClass vclass = vreq.getWebappDaoFactory().getVClassDao().getVClassByURI(classUri);
+        map.put("class", new VClassTemplateModel(vclass));
+        
+        JSONObject vclassRes = JSONServlet.getLuceneIndividualsByVClass(vclass.getURI(), request, context);        
+        map.put("totalCount", JSONtoFmModel.convertJSONObjectToMap( (String) vclassRes.get("totalCount") ));
+        map.put("alpha", JSONtoFmModel.convertJSONObjectToMap( (String) vclassRes.get("alpha") ));
+        map.put("individuals", JSONtoFmModel.convertJSONArrayToList( (JSONArray) vclassRes.get("individuals") ));
+        map.put("pages", JSONtoFmModel.convertJSONArrayToList( (JSONArray) vclassRes.get("pages") ));
+        map.put("letters", JSONtoFmModel.convertJSONArrayToList( (JSONArray) vclassRes.get("letters") ));
+        
+        return map;
+    }
+    
+    private Map<String,Object> getCommonValues(Environment env, ServletContext context){
+        Map<String,Object> values = new HashMap<String,Object>();
+        values.putAll(FreemarkerHttpServlet.getDirectives());
         try {
-            body.put("urls",env.getDataModel().get("urls"));
-            body.put("currentPage", env.getDataModel().get("currentPage"));                        
+            values.put("urls",env.getDataModel().get("urls"));
+            values.put("currentPage", env.getDataModel().get("currentPage"));            
         } catch (TemplateModelException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
+        return values;
+    }
+    
+    protected WidgetTemplateValues doAllClassGroupsDisplay(Environment env, Map params,
+            HttpServletRequest request, ServletContext context) {        
+        Map<String,Object> body = new HashMap<String,Object>();
+        body.putAll(getCommonValues(env,context));        
+        body.putAll(getAllClassGroupData(request, params, context));
+                
         String macroName = Mode.ALL_CLASS_GROUPS.macroName;
         return new WidgetTemplateValues(macroName, body);
     }
@@ -97,17 +139,11 @@ public class BrowseWidget extends Widget {
     }
     
     protected WidgetTemplateValues doClassDisplay(Environment env, Map params,
-            HttpServletRequest request, ServletContext context) {        
-        
-        Map<String,Object> body = getClassData(request,params,context);
-        
-        try {
-            body.put("urls",env.getDataModel().get("urls"));
-            body.put("currentPage", env.getDataModel().get("currentPage"));            
-        } catch (TemplateModelException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
+            HttpServletRequest request, ServletContext context) {                
+        Map<String,Object> body = new HashMap<String,Object>();
+        body.putAll(getCommonValues(env,context));        
+        body.putAll(getClassData(request,params,context));
+            
         String macroName = Mode.VCLASS.macroName;
         return new WidgetTemplateValues(macroName, body);
     }
@@ -136,16 +172,10 @@ public class BrowseWidget extends Widget {
 
     protected WidgetTemplateValues doClassGroupDisplay(Environment env,
             Map params, HttpServletRequest request, ServletContext context) {
-
-        Map<String,Object> body = getClassGroupData(request,params, context);
-        
-        try {
-            body.put("urls",env.getDataModel().get("urls"));
-            body.put("currentPage", env.getDataModel().get("currentPage"));            
-        } catch (TemplateModelException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
+        Map<String,Object> body = new HashMap<String,Object>();
+        body.putAll(getCommonValues(env,context));        
+        body.putAll( getClassGroupData(request,params, context));
+   
         String macroName = Mode.CLASS_GROUP.macroName;
         return new WidgetTemplateValues(macroName, body);
     } 

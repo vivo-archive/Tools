@@ -18,7 +18,9 @@ import com.hp.hpl.jena.ontology.OntModel;
 import com.hp.hpl.jena.ontology.OntModelSpec;
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
+import com.hp.hpl.jena.rdf.model.Property;
 import com.hp.hpl.jena.rdf.model.RDFNode;
+import com.hp.hpl.jena.rdf.model.Resource;
 import com.hp.hpl.jena.rdf.model.Statement;
 import com.hp.hpl.jena.rdf.model.StmtIterator;
 import com.hp.hpl.jena.shared.Lock;
@@ -27,8 +29,8 @@ import edu.cornell.mannlib.vitro.webapp.dao.WebappDaoFactory;
 import edu.cornell.mannlib.vitro.webapp.dao.jena.JenaBaseDao;
 import edu.cornell.mannlib.vitro.webapp.dao.jena.OntModelSelector;
 import edu.cornell.mannlib.vitro.webapp.dao.jena.SimpleOntModelSelector;
-import edu.cornell.mannlib.vitro.webapp.ontology.update.OntologyUpdateSettings;
-import edu.cornell.mannlib.vitro.webapp.ontology.update.OntologyUpdater;
+import edu.cornell.mannlib.vitro.webapp.ontology.update.UpdateSettings;
+import edu.cornell.mannlib.vitro.webapp.ontology.update.KnowledgeBaseUpdater;
 import edu.cornell.mannlib.vitro.webapp.search.lucene.LuceneSetup;
 
 /**
@@ -71,7 +73,7 @@ public class UpdateKnowledgeBase implements ServletContextListener {
 					(OntModel) sce.getServletContext().getAttribute(
 							JenaBaseDao.ASSERTIONS_ONT_MODEL_ATTRIBUTE_NAME));
 			
-			OntologyUpdateSettings settings = new OntologyUpdateSettings();
+			UpdateSettings settings = new UpdateSettings();
 			settings.setAskQueryFile(ctx.getRealPath(ASK_QUERY_FILE));
 			settings.setDataDir(ctx.getRealPath(DATA_DIR));
 			settings.setSparqlConstructAdditionsDir(ctx.getRealPath(SPARQL_CONSTRUCT_ADDITIONS_DIR));
@@ -99,12 +101,13 @@ public class UpdateKnowledgeBase implements ServletContextListener {
 			
 			try {
 				
-			  OntologyUpdater ontologyUpdater = new OntologyUpdater(settings);
+			  KnowledgeBaseUpdater ontologyUpdater = new KnowledgeBaseUpdater(settings);
 			  
 			  try {
 				  if (ontologyUpdater.updateRequired()) {
 					  ctx.setAttribute(LuceneSetup.INDEX_REBUILD_REQUESTED_AT_STARTUP, Boolean.TRUE);
 					  doMiscAppMetadataReplacements(ctx.getRealPath(MISC_REPLACEMENTS_FILE), oms);
+					  reloadDisplayModel(ctx);
 				  }
 			  } catch (Throwable t){
 				  log.warn("Unable to perform miscellaneous application metadata replacements", t);
@@ -175,6 +178,26 @@ public class UpdateKnowledgeBase implements ServletContextListener {
 			log.error("Error performing miscellaneous application metadata " +
 					" replacements.", e);
 		}
+	}
+	
+	private void reloadDisplayModel(ServletContext ctx) {
+	    log.info("Reloading display model");
+	    Object o = ctx.getAttribute("displayOntModel");
+	    if (o instanceof OntModel) {
+	        OntModel displayModel = (OntModel) o;
+	        displayModel.removeAll((Resource) null, (Property) null, (RDFNode) null);
+	        if (displayModel.size() != 0) {
+	            log.error("Display model not cleared successfully");
+	        }
+            JenaPersistentDataSourceSetup.readOntologyFilesInPathSet(
+                    JenaPersistentDataSourceSetup.APPPATH, ctx, displayModel);
+            log.info("Display model reloaded");
+            if (displayModel.size() == 0) {
+                log.warn("Display model empty after reloading");
+            }
+	    } else {
+	        log.error("No display model found in context");
+	    }
 	}
 	
 	private OntModel loadModelFromDirectory(String directoryPath) {

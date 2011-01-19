@@ -27,17 +27,21 @@ import edu.cornell.mannlib.vitro.webapp.beans.ObjectPropertyStatement;
 import edu.cornell.mannlib.vitro.webapp.beans.ObjectPropertyStatementImpl;
 import edu.cornell.mannlib.vitro.webapp.dao.ObjectPropertyStatementDao;
 import edu.cornell.mannlib.vitro.webapp.dao.VitroVocabulary;
+import edu.cornell.mannlib.vitro.webapp.dao.jena.WebappDaoFactorySDB.SDBDatasetMode;
 
 public class ObjectPropertyStatementDaoSDB extends
 		ObjectPropertyStatementDaoJena implements ObjectPropertyStatementDao {
 
 	private DatasetWrapperFactory dwf;
+	private SDBDatasetMode datasetMode;
 	
 	public ObjectPropertyStatementDaoSDB(
 	            DatasetWrapperFactory dwf, 
+	            SDBDatasetMode datasetMode,
 	            WebappDaoFactoryJena wadf) {
 		super (dwf, wadf);
 		this.dwf = dwf;
+		this.datasetMode = datasetMode;
 	}
 	
 	@Override
@@ -46,17 +50,20 @@ public class ObjectPropertyStatementDaoSDB extends
             return entity;
         else {
         	Map<String, ObjectProperty> uriToObjectProperty = new HashMap<String,ObjectProperty>();
+        	String[] graphVars = { "?g", "?h", "?i", "?j" };
         	String query = "CONSTRUCT { \n" +
         			       "   <" + entity.getURI() + "> ?p ?o . \n" +
         			       "   ?o a ?oType . \n" +
         			       "   ?o <" + RDFS.label.getURI() + "> ?oLabel .  \n" +
         			       "   ?o <" + VitroVocabulary.MONIKER + "> ?oMoniker  \n" +
         			       "} WHERE { GRAPH ?g { \n" +
-        			       "   <" + entity.getURI() + "> ?p ?o . \n" +
-        			       "   ?o a ?oType \n" +
-        			       "   OPTIONAL { ?o <" + RDFS.label.getURI() + "> ?oLabel }  \n" +
-        			       "   OPTIONAL { ?o <" + VitroVocabulary.MONIKER + "> ?oMoniker }  \n" +
-                           "} }";
+        			       "   <" + entity.getURI() + "> ?p ?o \n" +
+        			       "   OPTIONAL { GRAPH ?h { ?o a ?oType } } \n" +
+        			       "   OPTIONAL { GRAPH ?i { ?o <" + RDFS.label.getURI() + "> ?oLabel } } \n" +
+        			       "   OPTIONAL { GRAPH ?j { ?o <" + VitroVocabulary.MONIKER + "> ?oMoniker } }  \n" +
+                           "} \n" +
+                           WebappDaoFactorySDB.getFilterBlock(graphVars, datasetMode) +
+        			       "}";
         	long startTime = System.currentTimeMillis();
         	Model m = null;
         	DatasetWrapper w = dwf.getDatasetWrapper();
@@ -85,7 +92,6 @@ public class ObjectPropertyStatementDaoSDB extends
 	            try {
 	                while (propIt.hasNext()) {
 	                    Statement st = (Statement) propIt.next();
-	                    
 	                    if (st.getObject().isResource() && !(NONUSER_NAMESPACES.contains(st.getPredicate().getNameSpace()))) {
 	                        try {
 	                            ObjectPropertyStatement objPropertyStmt = new ObjectPropertyStatementImpl();
@@ -120,6 +126,7 @@ public class ObjectPropertyStatementDaoSDB extends
 	                                Individual objInd = new IndividualSDB(
 	                                        objPropertyStmt.getObjectURI(), 
 	                                        this.dwf, 
+	                                        datasetMode,
 	                                        getWebappDaoFactory(),
 	                                        m);
 	                                objPropertyStmt.setObject(objInd);

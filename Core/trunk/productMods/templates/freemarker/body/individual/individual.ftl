@@ -10,12 +10,8 @@
 
 <section id="individual-intro" class="vcard" role="region">
     <section id="share-contact" role="region"> 
-        <#-- Thumbnail -->
-        <#if individual.thumbUrl??>
-            <a href="${individual.imageUrl}"><img class="individual-photo2" src="${individual.thumbUrl}" title="click to view larger image" alt="${individual.name}" width="115" /></a>
-        <#--<#elseif individual.person>
-            <img class="individual-photo2" src="${urls.images}/placeholders/person.thumbnail.jpg" title = "no image" alt="placeholder image" width="115" />-->                                                       
-        </#if>
+        <#-- Image -->
+        <@p.imageLinks individual propertyGroups editable />
     </section>
 
     <section id="individual-info" role="region">
@@ -28,7 +24,7 @@
                     <#-- Label -->
                     <#assign label = individual.nameStatement>
                     ${label.value}
-                    <@p.editingLinks label editing />
+                    <@p.editingLinks label label editable />
                         
                     <#-- Moniker -->
                     <#if individual.moniker?has_content>
@@ -54,24 +50,23 @@
         </nav>
                 
         <#-- Links -->
-        <@p.vitroLinks propertyGroups editing  />
+        <@p.vitroLinks propertyGroups editable  />
     </section>
 </section>
 
-<section id="publications-visualization" role="region">
-    <section id="sparklines-publications" role="region">
-         <#include "individual-sparklineVisualization.ftl">
-
-         <#-- RY Will we have an individual--foaf-organization.ftl template? If so, move this there and remove from here.
-         Also remove the method IndividualTemplateModel.isOrganization(). -->
-         <#if individual.organization >
+ <#-- RY Will we have an individual--foaf-organization.ftl template? If so, move this there and remove from here.
+ Also remove the method IndividualTemplateModel.isOrganization(). -->
+ <#if individual.organization >
+    <#-- Logically we only need section#temporal-graph, but css may depend on the outer sections. Leaving here for UI
+    team to check. -->
+    <section id="publications-visualization" role="region">
+        <section id="sparklines-publications" role="region">
             <section id="temporal-graph" role="region">
                 <h3><img src="${urls.images}/visualization/temporal_vis_icon.jpg" width="25px" height="25px" /><a href="${urls.base}/visualization?vis=entity_comparison&uri=${individual.uri}">Temporal Graph</a></h3>
-            </section>      
-            <#--<div>VISMODE: ${individual.moniker}</div>-->
-        </#if>
+            </section>          
+        </section>
     </section>
-</section>
+</#if>
 
 <#assign nameForOtherGroup = "other"> <#-- used by both individual-propertyGroupMenu.ftl and individual-properties.ftl -->
 
@@ -81,10 +76,6 @@
 <#-- Ontology properties -->
 <#include "individual-properties.ftl">
 
-<#-- Keywords -->
-<#if individual.keywords?has_content>
-    <p id="keywords">Keywords: ${individual.keywordString}</p>
-</#if>
 
 ${stylesheets.add("/css/individual/individual.css")}
                            

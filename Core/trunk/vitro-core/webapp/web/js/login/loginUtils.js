@@ -3,15 +3,15 @@
 $(document).ready(function(){
 
     // login form is hidden by default; use JavaScript to reveal
-    $("#loginFormAndLinks").show();
+    $("#login").removeClass('hidden');
   
     // focus on email or newpassword field
     $('.focus').focus();
     
-    // fade out error alerts
+    // fade in error alerts
     $('section#error-alert').css('display', 'none').fadeIn(1500);
     
-    // fade out fash-message when user log out
+    // fade in fash-message when user log out
     $('section#flash-message').css('display', 'none').fadeIn(1500);   
-    
+
 });

@@ -32,7 +32,9 @@ import edu.cornell.mannlib.vitro.webapp.beans.ObjectProperty;
 import edu.cornell.mannlib.vitro.webapp.controller.VitroRequest;
 import edu.cornell.mannlib.vitro.webapp.controller.freemarker.UrlBuilder;
 import edu.cornell.mannlib.vitro.webapp.controller.freemarker.UrlBuilder.ParamMap;
+import edu.cornell.mannlib.vitro.webapp.controller.freemarker.UrlBuilder.Route;
 import edu.cornell.mannlib.vitro.webapp.dao.ObjectPropertyDao;
+import edu.cornell.mannlib.vitro.webapp.dao.VitroVocabulary;
 import edu.cornell.mannlib.vitro.webapp.dao.WebappDaoFactory;
 import freemarker.cache.TemplateLoader;
 import freemarker.template.Configuration;
@@ -42,6 +44,7 @@ public abstract class ObjectPropertyTemplateModel extends PropertyTemplateModel 
     private static final Log log = LogFactory.getLog(ObjectPropertyTemplateModel.class);      
     private static final String TYPE = "object";
     private static final String EDIT_PATH = "edit/editRequestDispatch.jsp";
+    private static final String IMAGE_UPLOAD_PATH = "/uploadImages";
     
     /* NB The default post-processor is not the same as the post-processor for the default view. The latter
      * actually defines its own post-processor, whereas the default post-processor is used for custom views
@@ -93,14 +96,20 @@ public abstract class ObjectPropertyTemplateModel extends PropertyTemplateModel 
             }
         }
     }
-    
-    
+        
     protected String getQueryString() {
         return config.queryString;
     }
 
     protected boolean hasDefaultListView() {
         return config.isDefaultConfig;
+    }
+    
+    public static String getImageUploadUrl(String subjectUri, String action) {
+        ParamMap params = new ParamMap(
+                "entityUri", subjectUri,
+                "action", action);                              
+        return UrlBuilder.getUrl(IMAGE_UPLOAD_PATH, params);        
     }
 
     /** Return the name of the primary object variable of the query by inspecting the query string.
@@ -132,7 +141,7 @@ public abstract class ObjectPropertyTemplateModel extends PropertyTemplateModel 
             try {
                 return new CollatedObjectPropertyTemplateModel(op, subject, vreq, policyHelper);
             } catch (InvalidConfigurationException e) {
-                log.error(e);
+                log.warn(e.getMessage());
                 return new UncollatedObjectPropertyTemplateModel(op, subject, vreq, policyHelper);
             }
         } else {
@@ -142,6 +151,12 @@ public abstract class ObjectPropertyTemplateModel extends PropertyTemplateModel 
     
     /** Apply post-processing to query results to prepare for template */
     protected void postprocess(List<Map<String, String>> data, WebappDaoFactory wdf) {
+        
+        if (log.isDebugEnabled()) {
+            log.debug("Data before postprocessing");
+            logData(data);
+        }
+        
         String postprocessorName = config.postprocessor;
         if (postprocessorName == null) {
             //return;
@@ -156,6 +171,25 @@ public abstract class ObjectPropertyTemplateModel extends PropertyTemplateModel 
         } catch (Exception e) {
             log.error(e, e);
         }
+        
+        if (log.isDebugEnabled()) {
+            log.debug("Data after postprocessing");
+            logData(data);
+        }               
+    }
+    
+    private void logData(List<Map<String, String>> data) {
+        
+        if (log.isDebugEnabled()) {
+            int count = 1;
+            for (Map<String, String> map : data) {
+                log.debug("List item " + count);
+                count++;
+                for (String key : map.keySet()) {
+                   log.debug(key + ": " + map.get(key));
+               }
+            }
+        }        
     }
     
     /* Post-processing that must occur after collation, because it does reordering on collated subclass
@@ -229,7 +263,7 @@ public abstract class ObjectPropertyTemplateModel extends PropertyTemplateModel 
             // Get the custom config filename
             WebappDaoFactory wdf = vreq.getWebappDaoFactory();
             ObjectPropertyDao opDao = wdf.getObjectPropertyDao();
-            String configFileName = opDao.getCustomListConfigFileName(op);
+            String configFileName = opDao.getCustomListViewConfigFileName(op);
             if (configFileName == null) { // no custom config; use default config
                 configFileName = getDefaultConfigFileName();
             }
@@ -353,10 +387,14 @@ public abstract class ObjectPropertyTemplateModel extends PropertyTemplateModel 
     public String getAddUrl() {
         String addUrl = "";
         if (addAccess) {
+            if (propertyUri.equals(VitroVocabulary.IND_MAIN_IMAGE)) {
+                return getImageUploadUrl(subjectUri, "add");
+            } 
             ParamMap params = new ParamMap(
                     "subjectUri", subjectUri,
-                    "predicateUri", propertyUri);
-            addUrl = UrlBuilder.getUrl(EDIT_PATH, params);            
+                    "predicateUri", propertyUri);                              
+            addUrl = UrlBuilder.getUrl(EDIT_PATH, params);  
+
         }
         return addUrl;
     }

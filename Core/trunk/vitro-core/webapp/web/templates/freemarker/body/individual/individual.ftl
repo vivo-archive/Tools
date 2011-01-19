@@ -10,12 +10,8 @@
 
 <section id="individual-intro" class="vcard" role="region">
     <section id="share-contact" role="region"> 
-        <#-- Thumbnail -->
-        <#if individual.thumbUrl??>
-            <a href="${individual.imageUrl}"><img class="individual-photo2" src="${individual.thumbUrl}" title="click to view larger image" alt="${individual.name}" width="115" /></a>
-        <#--<#elseif individual.person>
-            <img class="individual-photo2" src="${urls.images}/placeholders/person.thumbnail.jpg" title = "no image" alt="placeholder image" width="115" />-->                                                       
-        </#if>
+        <#-- Image -->
+        <@p.imageLinks individual propertyGroups editable />
     </section>
 
     <section id="individual-info" role="region">
@@ -28,7 +24,7 @@
                     <#-- Label -->
                     <#assign label = individual.nameStatement>
                     ${label.value}
-                    <@p.editingLinks label editing />
+                    <@p.editingLinks label label editable />
                         
                     <#-- Moniker -->
                     <#if individual.moniker?has_content>
@@ -51,7 +47,7 @@
         </nav>
                 
         <#-- Links -->
-        <#include "individual-links.ftl">
+        <@p.vitroLinks propertyGroups editable  />
     </section>
 </section>
 
@@ -62,11 +58,6 @@
 
 <#-- Ontology properties -->
 <#include "individual-properties.ftl">
-
-<#-- Keywords -->
-<#if individual.keywords?has_content>
-    <p id="keywords">Keywords: ${individual.keywordString}</p>
-</#if>
 
 ${stylesheets.add("/css/individual/individual.css")}
                            

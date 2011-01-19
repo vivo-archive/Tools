@@ -218,7 +218,7 @@ ul#main-nav {
     font-size: 16px;
     color: #5f6464;
     line-height: 1.3em;
-    padding: 0 24px 30px 24px;
+    padding: 0 24px 0 24px;
 }
 #intro a {
     color: #2485ae
@@ -349,11 +349,18 @@ p.password-note{
     padding: 0.5em;  
     margin-bottom: 10px;
 }
+#welcome-message{
+    border: 1px dotted #E2C822;
+    background-color: #FFF9D7;
+    padding: 0.25em;
+    margin-bottom: 8px;
+    margin-top: -8px;
+}
 /* HOME SEARCH ------>  */
 #search-home {
     float: left;
     width: 533px;
-    margin-left: 24px;
+    margin: 30px 0 0 24px;
 }
 #search-home h3 {
     padding: 0;
@@ -397,7 +404,7 @@ input.search-home-vivo {
     padding-bottom: 30px;
 }
 #browse h4 {
-    width: 10%;
+    width: 13%;
     height: 30px;
     margin-bottom: 27px;
     padding-left: 15px;
@@ -455,20 +462,19 @@ ul#browse-classgroups .count-classes {
     width: 610px;
     border: 1px solid #dde6e5;
     background: #fff;
-    margin-top: -20px;
+    min-height: 230px;
 }
 ul#classgroup-list {
     float: left;
-    width: 268px;
+    width: 90%;
     padding: 0 10px 15px 22px;
     margin-top: 20px;
     margin-bottom: 10px;
-    border-right: 1px solid #dde5e4;
 }
 ul#classgroup-list li {
     display: block;
     float: left;
-    width: 268px;
+    width: 100%;
     border-bottom: 1px solid #dde4e3;
     font-size: 14px;
     height: 35px;
@@ -559,11 +565,6 @@ ul#classgroup-list .count-individuals {
 article.featured-people {
     width: 245px;
     height: 100px;
-}
-img.individual-photo {
-    width: 80px;
-    border: 1px solid #999;
-    float: left;
 }
 article.vcard p.fn {
     float: left;
@@ -672,7 +673,7 @@ ul#footer-nav {
     height: 20px;
     margin: 0;
     padding: 0;
-    padding-top: 50px;
+    padding-top: 55px;
     padding-right: 20px;
 }
 ul#footer-nav li {
@@ -776,6 +777,32 @@ p{
 a {
     text-decoration: underline
 }
+
+/* ------------------------------------------------->  */
+/* INDIVIDUAL LIST --------------------------------->  */
+/* ------------------------------------------------->  */
+.pagination li.selectedNavPage{
+    color: #91b039;
+}
+.rdfLink {
+    border-left: 1px solid #a6b1b0;
+}
+.rdfLink a {
+    color: #84a655;
+}
+.individualList ul.individualData li {
+    border-right: solid 1px #a0a0a0;
+}
+.individualList ul { 
+    margin-left: 0; 
+}
+.individualList li { 
+  color: #9c9c9c;
+ }
+.individualList li a { 
+    font-weight: normal; 
+}
+
 /* ------------------------------------------------->  */
 /* MENU PAGES -------------------------------------->  */
 /* ------------------------------------------------->  */
@@ -800,7 +827,6 @@ a {
     font-size: 1.25em;
     color: #2485ae;
     font-weight: normal;
-    background: url(../images/arrow-down.gif) 127px 27px no-repeat;
 }
 ul#foaf-person-childClasses li {
     border-bottom: 1px solid #dde4e3;
@@ -835,7 +861,6 @@ ul#foaf-person-childClasses .count-classes {
     font-size: 1.25em;
     color: #2485ae;
     font-weight: normal;
-    background: url(../images/arrow-down.gif) 127px 27px no-repeat;
 }
 ul#vgraph-childClasses {
     float: left;
@@ -872,7 +897,6 @@ ul#vgraph-childClasses .count-classes {
     font-size: 1.125em;
     color: #2485ae;
     font-weight: normal;
-    background: url(../images/arrow-down.gif) 82px 7px no-repeat;
     border-bottom-color: #fff;
 }
 ul#find-filters li {
@@ -901,7 +925,6 @@ ul#find-filters a.selected {
     font-size: 1.25em;
     color: #2485ae;
     font-weight: normal;
-    background: url(../images/arrow.gif) 148px 27px no-repeat;
 }
 #network-stats p {
     padding: 15px 15px 15px 175px;
@@ -1008,8 +1031,9 @@ ul#alpha-browse-childClass a.selected {
     color: #2ea0cf;
     background: url(../images/arrowSmall.gif) -3px 7px no-repeat;
     margin-right: 3px;
+    margin-left: 5px;
 }
-ul#alpha-browse-childClass .count-classes {    
+ul#alpha-browse-childClass .count-classes {
     font-size: .75em;
 }
 .alphaIndex {    
@@ -1025,31 +1049,17 @@ ul#alpha-browse-childClass .count-classes {
     font-size: 1.68em;
     color: #2485ae;
 }
-#individuals-in-childClass li.individual-foaf-person {
-    width: 440px;
+#individuals-in-childClass li {
     border-bottom: 1px solid #dde4e3;
-    padding-bottom: 0;
 }
-#individuals-in-childClass li.individual-foaf-person img {
+#individuals-in-childClass li img {
     border: 2px solid #dde4e3;
 }
-#individuals-in-childClass li.individual-foaf-person h1 {
+#individuals-in-childClass li h1 {
     color: #5e6363;
     font-size: 1em;
 }
-#individuals-in-childClass li.individual {
-    border-bottom: 1px solid #dde4e3;
-}
-#individuals-in-childClass li.individual h1 {
-    margin: 0;
-    paddin: 0;
-    color: #5e6363;
-    line-height: 1.2em;
-    padding-bottom: 20px;
-    padding-top: 20px;
-    font-size: 1em;
-    font-weight: normal;
-}
+
 /* ------------------------------------------------->  */
 /* IMAGE UPLOAD------------------------------------->  */
 /* ------------------------------------------------->  */
@@ -1083,21 +1093,6 @@ ul#alpha-browse-childClass .count-classes {
 /* INDIVIDUAL DISPLAY ------------------------------>  */
 /* ------------------------------------------------->  */
 
-/* INDIVIDUAL LIST ------>  */
-.individualList ul.individualData li {
-    padding-bottom: 0;
-}
-.pagination  {
-	display:inline-block;
-}
-.pagination li {
-	display:inline-block;
-	padding-right:2px;
-}
-.pagination li.selectedNavPage {
-	color:#91b039;
-	font-size:1em;
-}
 /* ADMIN PANEL ------>  */
 .admin h3{
   color: #fff;
@@ -1117,12 +1112,18 @@ ul#alpha-browse-childClass .count-classes {
     color: #5e6363;
     border-left: 1px solid #A6B1B0;
 }
+#individual-intro ul#individual-tools{
+    color: #8AA149;
+}
+#individual-intro ul.individual-urls li a{
+    color: #2485ae;
+}
 /* INDIVIDUAL INTRO FOR PERSON ------>  */
 #individual-intro-person{
     border-right: 1px solid #edf0ed;
 }
 /* INDIVIDUAL INTRO LEFT CONTENT ------>  */
-#share-contact img.individual-photo2{
+#share-contact img.individual-photo{
     border: 7px solid #ebebeb;
 }
 ul#individual-tools-people{
@@ -1187,6 +1188,10 @@ h1.fn .preferred-title {
 #individual-info h2{
     font-size: 1.125em;
     font-weight: normal;
+}
+#individual-info h3{
+    font-size: 1.125em;
+    line-height: 1.2em;
 }
 ul#individual-positions{
     font-size: 1em;

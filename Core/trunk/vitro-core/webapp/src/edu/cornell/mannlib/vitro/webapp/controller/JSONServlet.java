@@ -97,7 +97,7 @@ public class JSONServlet extends VitroHttpServlet {
                 log.debug("parameter vclassId URI parameter expected ");
                 throw new Exception("parameter vclassId URI parameter expected ");
             }
-            rObj = getLuceneIndividualsByVClass(vclass.getURI(),req,resp,getServletContext());
+            rObj = getLuceneIndividualsByVClass(vclass.getURI(),req, getServletContext());
         }catch(Exception ex){
             errorMessage = ex.toString();
             log.error(ex,ex);
@@ -126,7 +126,7 @@ public class JSONServlet extends VitroHttpServlet {
         
     }
     
-    protected static JSONObject getLuceneIndividualsByVClass(String vclassURI, HttpServletRequest req, HttpServletResponse resp, ServletContext context) throws Exception {
+    public static JSONObject getLuceneIndividualsByVClass(String vclassURI, HttpServletRequest req, ServletContext context) throws Exception {
         
         VitroRequest vreq = new VitroRequest(req);        
         VClass vclass=null;
@@ -139,8 +139,8 @@ public class JSONServlet extends VitroHttpServlet {
         DataProperty monikerDp = (new DataProperty());
         monikerDp.setURI( VitroVocabulary.MONIKER);
         //this property is vivo specific
-        DataProperty perferredTitleDp = (new DataProperty());
-        perferredTitleDp.setURI("http://vivoweb.org/ontology/core#preferredTitle");
+        DataProperty preferredTitleDp = (new DataProperty());
+        preferredTitleDp.setURI("http://vivoweb.org/ontology/core#preferredTitle");
         
         
         if( log.isDebugEnabled() ){
@@ -205,7 +205,7 @@ public class JSONServlet extends VitroHttpServlet {
                 jo.put("moniker", moniker);
                 jo.put("vclassName", getVClassName(ind,moniker,fullWdf));
                                     
-                jo.put("perferredTitle", getDataPropertyValue(ind, perferredTitleDp, fullWdf));
+                jo.put("preferredTitle", getDataPropertyValue(ind, preferredTitleDp, fullWdf));
                 jo.put("firstName", getDataPropertyValue(ind, fNameDp, fullWdf));                     
                 jo.put("lastName", getDataPropertyValue(ind, lNameDp, fullWdf));
                 

@@ -7,22 +7,21 @@
     See NIHVIVO-1357. This test does nothing, since user has not been put into the data model.
     <#if ! user.loggedIn> -->
         ${stylesheets.add("/css/login.css")} 
-        ${scripts.add("/js/jquery.js", "/js/login/loginUtils.js")}
-        <#-- ${headScripts.add("")} -->
+        <#-- ${scripts.add("")} -->
+        ${headScripts.add("/js/login/loginUtils.js")}
     <#-- </#if> -->
 </#macro>
 
 <#macro loginForm>
+    <noscript>
+        <section id="error-alert">
+            <img src="${urls.images}/iconAlertBig.png" alt="Alert Icon"/>
+            <p>In order to edit VIVO content, you'll need to enable JavaScript.</p>
+        </section>
+    </noscript>
 
-    <section id="login">
+    <section id="login" class="hidden">
         <h2>Log in</h2>
-
-        <noscript>
-            <section id="error-alert">
-                <img src="${urls.images}/iconAlertBig.png" alt="Alert Icon"/>
-                <p>In order to edit VIVO content, you'll need to enable JavaScript.</p>
-            </section>
-        </noscript>
     
         <#if infoMessage??>
             <h3>${infoMessage}</h3>
@@ -43,13 +42,13 @@
             </#if>
 
             <label for="email">Email</label>
-            <input class="text-field" name="loginName" id="loginName" type="text" value="${loginName!}" required />
+            <input class="text-field focus" name="loginName" id="loginName" type="text" value="${loginName!}" required />
 
             <label for="password">Password</label>
             <input class="text-field" name="loginPassword" id="password" type="password" required />
             
             <p class="submit"><input name="loginForm" type="submit" class="green button" value="Log in"/></p>
-            <#-- nac26: remember me won't be ready for r1.2
+            <#-- NC: remember me won't be ready for r1.2
             <input class="checkbox-remember-me" name="remember-me" type="checkbox" value="" />  
             <label class="label-remember-me" for="remember-me">Remember me</label> -->
             <#-- mb863: forgot password and request an account won't be part of VIVO r1.2
@@ -62,7 +61,7 @@
 
 <#macro forcePasswordChange>
     <section id="login">
-        <h2>Change Your Password</h2>
+        <h2>Change Password to Log in</h2>
            
             <#if errorMessage??>
                 <div id="error-alert" role="alert"><img src="${urls.images}/iconAlert.png" width="24" height="24" alert="Error alert icon"/>
@@ -72,7 +71,7 @@
            
             <form role="form" id="login-form" action="${formAction}" method="post" name="login-form" required />
                 <label for="new-password">New Password</label>
-                <input id="new-password" class="focus text-field" type="password" name="newPassword"  required />
+                <input id="new-password" class="text-field focus" type="password" name="newPassword"  required />
                 
                 <p class="password-note">Minimum of 6 characters in length.</p>
                 
