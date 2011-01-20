@@ -140,10 +140,10 @@ var organizationLabel = '${organizationLabel}';
                 updateCounter();                
             }
         });
-                            
-        //parse the json object and pass it to loadData
-        jsonObject.prepare(jQuery.parseJSON(jsonString));
         
+		//parse the json object and pass it to loadData
+        jsonObject.prepare(jQuery.parseJSON(jsonString));
+           
         function performEntityCheckboxUnselectedActions(entity, checkboxValue, checkbox) {
             
             removeUsedColor(entity);
@@ -197,14 +197,6 @@ var organizationLabel = '${organizationLabel}';
             getEntityVisMode(jsonData);
             prepareTableForDataTablePagination(jsonData);
             setEntityLevel();
-        
-                    /*
-                        calcMinandMaxYears(labelToEntityRecord, year);
-                        yearRange = (year.max - year.min);
-        
-                        setLineWidthAndTickSize(yearRange, FlotOptions);     
-                        setTickSizeOfYAxis(calcMaxOfComparisonParameter(labelToEntityRecord), FlotOptions);
-                    */
         
             $(".disabled-checkbox-event-receiver").live("click", function () {
         
@@ -310,8 +302,9 @@ var organizationLabel = '${organizationLabel}';
                 </div>
                 <h3>Who do you want to compare?</h3>
                 <div id="paginatedTable"></div>
-                <br />
+                <div id="paginated-table-footer">
                 <a id="csv" href="${TemporalGraphDownloadFile}" class="temporalGraphLinks">Save as CSV</a>
+                </div>
             </div>
 <#--        
             <div id = "stopwordsdiv">
@@ -333,8 +326,11 @@ var organizationLabel = '${organizationLabel}';
             <div id="bottom">
                 <h3><span id="comparisonParameter"></span></h3>
             <p class="displayCounter">You have selected <span id="counter">0</span> of a maximum 
-            <span id="total">10</span> <span id="entityleveltext"> schools</span> to compare. 
-            <a id="clear" class="temporalGraphLinks">Clear</a></p>
+            <span id="total">10</span> <span id="entityleveltext"> schools</span> to compare.
+            <span id="legend-row-header"> 
+            <a id="clear" class="temporalGraphLinks">Clear</a>
+            </span>
+            </p>
         
             </div>
         </div>      

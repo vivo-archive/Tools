@@ -164,13 +164,15 @@ public class EntityPublicationCountRequestHandler implements
 			VitroRequest vitroRequest, String entityURI) {
 		
         Portal portal = vitroRequest.getPortal();
+        String visualization = "ENTITY_PUB_COUNT";
         String standaloneTemplate = "entityComparisonErrorActivator.ftl";
         
         Map<String, Object> body = new HashMap<String, Object>();
         body.put("portalBean", portal);
         body.put("title", "Temporal Graph Visualization");
         body.put("organizationURI", entityURI);
-        
+        body.put("visualization", visualization);
+
         return new TemplateResponseValues(standaloneTemplate, body);
 
 	}
@@ -198,11 +200,12 @@ public class EntityPublicationCountRequestHandler implements
 					.entrySet()) {
 
 				List<Integer> currentPubYear = new ArrayList<Integer>();
-				if (pubEntry.getKey().equals(
-						VOConstants.DEFAULT_PUBLICATION_YEAR))
+				if (pubEntry.getKey().equals(VOConstants.DEFAULT_PUBLICATION_YEAR)) {
 					currentPubYear.add(-1);
-				else
+				} else {
 					currentPubYear.add(Integer.parseInt(pubEntry.getKey()));
+				}
+					
 				currentPubYear.add(pubEntry.getValue());
 				yearPubCount.add(currentPubYear);
 			}
