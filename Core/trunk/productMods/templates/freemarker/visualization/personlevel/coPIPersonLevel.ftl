@@ -79,6 +79,24 @@ $(document).ready(function(){
                 setProfileName('no_coinvestigations_person', $('#ego_label').text());
             }
     </#if>
+    
+        
+            $.ajax({
+                url: "${urls.base}/visualizationAjax",
+                data: ({vis: "utilities", vis_mode: "SHOW_AUTHORSHIP_LINK", uri: '${egoURIParam}'}),
+                dataType: "json",
+                success:function(data){
+                
+                    /*
+                    Collaboratorship links do not show up by default. They should show up only if there any data to
+                    show on that page. 
+                    */
+                    if (data.numOfPublications !== undefined && data.numOfPublications > 0) {
+                           $("#coauthorship_link_container").show();                    
+                    }
+                
+                }
+            });        
                     
 });
 </script>
@@ -96,10 +114,10 @@ $(document).ready(function(){
     </div>
     
     <div class = "toggle_visualization">
-        <div id="coauthorship_link_container">
+        <div id="coauthorship_link_container" class="collaboratorship-link-container">
             <div class="collaboratorship-icon"><a href="${coauthorshipURL}"><img src="${coAuthorIcon}" /></a></div>
             <div class="collaboratorship-link">
-	    		<h3><a href="${coauthorshipURL}">Co-Author Network</a></h3>
+                <h3><a href="${coauthorshipURL}">Co-Author Network</a></h3>
             </div>
         </div>
     </div>

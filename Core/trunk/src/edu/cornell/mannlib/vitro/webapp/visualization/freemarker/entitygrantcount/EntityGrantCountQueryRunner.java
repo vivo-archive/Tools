@@ -56,15 +56,22 @@ public class EntityGrantCountQueryRunner implements QueryRunner<Entity>  {
 		+ "		(str(?SecondaryPositionLabel) as ?SecondaryPositionLabelLit)"
 		+ "		(str(?Grant) as ?grantLit) "
 		+ "		(str(?GrantLabel) as ?grantLabelLit) "
-		+ " 	(str(?GrantStartDate) as ?grantStartDateLit) "
-		+ "		(str(?GrantEndDate) as ?grantEndDateLit)  ";
+		+ " 	(str(?startDateTimeValue) as ?grantStartDateLit) "
+		+ "		(str(?endDateTimeValue) as ?grantEndDateLit)  ";
 	
 	private static final String SPARQL_QUERY_COMMON_WHERE_CLAUSE =  " "
 		+ "		?SecondaryPosition rdfs:label ?SecondaryPositionLabel . "
 		+ "		?Role core:roleIn ?Grant . "
 		+ "		?Grant rdfs:label ?GrantLabel . "
-		+ "		OPTIONAL { ?Grant core:startDate ?GrantStartDate } . "
-		+ "		OPTIONAL { ?Grant core:endDate ?GrantEndDate } .";
+		+ 		"OPTIONAL {"	
+		+			"?Grant core:dateTimeInterval ?dateTimeIntervalValue . "		
+		+			"?dateTimeIntervalValue core:start ?startDate . "		
+		+			"?startDate core:dateTime ?startDateTimeValue . " 	
+		+			"OPTIONAL {"	
+		+				"?dateTimeIntervalValue core:end ?endDate . "	
+		+				"?endDate core:dateTime ?endDateTimeValue . " 			
+		+			"}"
+		+ 		"}"	;		
 	
 	
 	private static String ENTITY_LABEL = QueryFieldLabels.ORGANIZATION_LABEL;
