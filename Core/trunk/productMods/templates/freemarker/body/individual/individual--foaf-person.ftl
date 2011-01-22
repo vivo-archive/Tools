@@ -7,17 +7,13 @@
 <section id="individual-intro-person" class="vcard" role="region">
 
     <section id="share-contact" role="region"> 
-        
         <#-- Image -->
-        <@p.imageLinks individual propertyGroups editable "${urls.images}/placeholders/person.thumbnail.jpg" />
-
+        <@p.imageLinks individual propertyGroups namespaces editable "${urls.images}/placeholders/person.thumbnail.jpg" />
+    
         <nav role="navigation">
             <ul id ="individual-tools-people" role="list">
-                <#assign uriUrl = individual.uri>
-                <#if uriUrl??>
-                    <li role="listitem"><a title="Individual uri" href="${uriUrl}"><img class="middle" src="${urls.images}/individual/uriIcon.gif" alt="uri icon" /></a></li>
-                </#if>
-                
+                <li role="listitem"><a title="Individual URI" href="${individual.uri}"><img class="middle" src="${urls.images}/individual/uriIcon.gif" alt="uri icon" /></a></li>
+    
                 <#assign rdfUrl = individual.rdfUrl>
                 <#if rdfUrl??>
                     <li role="listitem"><a title="View this individual in RDF format" class="icon-rdf" href="${rdfUrl}">RDF</a></li>
@@ -34,7 +30,7 @@
                     <#list email.statements as statement>
                         <li role="listitem">
                             <img class ="icon-email middle" src="${urls.images}/individual/emailIcon.gif" alt="email icon" /><a class="email" href="mailto:${statement.value}">${statement.value}</a>
-                            <@p.editingLinks email statement editable />
+                            <@p.editingLinks "${email.localName}" statement editable />
                         </li>
                     </#list>
                 </ul>
@@ -50,7 +46,7 @@
                     <#list phone.statements as statement>
                         <li role="listitem">                           
                            <img class ="icon-phone  middle" src="${urls.images}/individual/phoneIcon.gif" alt="phone icon" />${statement.value}
-                            <@p.editingLinks phone statement editable />
+                            <@p.editingLinks "${phone.localName}" statement editable />
                         </li>
                     </#list>
                 </ul>
@@ -58,9 +54,9 @@
         </#if>      
                 
         <#-- Links -->  
-        <@p.vitroLinks propertyGroups editable "individual-urls-people" />
+        <@p.vitroLinks propertyGroups namespaces editable "individual-urls-people" />
     </section>
-    
+
     <section id="individual-info" role="region">
         <#if individual.showAdminPanel>
             <#include "individual-adminPanel.ftl">
@@ -73,9 +69,7 @@
             <#else>                
                 <h1 class="fn foaf-person">
                     <#-- Label -->
-                    <#assign label = individual.nameStatement>
-                    ${label.value}
-                    <#-- <@p.editingLinks label label editable /> -->
+                    <@p.label individual editable />
                         
                     <#-- Moniker -->
                     <#if individual.moniker?has_content>
@@ -87,12 +81,10 @@
             <#-- Positions -->
             <#assign positions = propertyGroups.getPropertyAndRemoveFromList("${core}personInPosition")!>
             <#if positions?has_content> <#-- true when the property is in the list, even if not populated (when editing) -->
-                <h2>Positions <@p.addLink positions editable /></h2>
-                <#if positions.statements?has_content> <#-- if there are any statements -->
-                    <ul id ="individual-positions" role="list">
-                        <@p.objectPropertyList positions positions.statements positions.template editable />
-                    </ul>
-                </#if>
+                <h2 id="${positions.localName}">${positions.name?capitalize} <@p.addLink positions editable /></h2>
+                <ul class="individual-positions" role="list">
+                    <@p.objectProperty positions editable />
+                </ul>
             </#if>
         </header>
          
@@ -102,14 +94,10 @@
         <#-- Research Areas -->
         <#assign researchAreas = propertyGroups.getPropertyAndRemoveFromList("${core}hasResearchArea")!> 
         <#if researchAreas?has_content> <#-- true when the property is in the list, even if not populated (when editing) -->
-            <h2>Research Areas <@p.addLink researchAreas editable /></h2>
-            
-            <#--<@p.addLinkWithLabel researchAreas editable />-->
-            <#if researchAreas.statements?has_content> <#-- if there are any statements -->                
-                <ul id="individual-areas" role="list">
-                    <@p.simpleObjectPropertyList researchAreas editable/>
-                </ul>
-            </#if>
+            <h2 id="${researchAreas.localName}">${researchAreas.name?capitalize} <@p.addLink researchAreas editable /></h2>                
+            <ul id="individual-areas" role="list">
+                <@p.objectProperty researchAreas editable "propStatement-simple.ftl" />
+            </ul>
         </#if>
                 
     </section>
@@ -128,12 +116,8 @@
         </header>
         
         <ul role="list">
-            <li role="listitem"><a href="#"><img class="co-author" src="${urls.images}/individual/Bacall.jpg" /></a></li>
-            <li role="listitem"><a href="#"><img class="co-author" src="${urls.images}/individual/Bogart.jpg" /></a></li>
-            <li role="listitem"><a href="#"><img class="co-author" src="${urls.images}/individual/Gable.jpg" /></a></li>
-            <li role="listitem"><a href="#"><img class="co-author" src="${urls.images}/individual/Grant.jpg" /></a></li>
-            <li role="listitem"><a href="#"><img class="co-author" src="${urls.images}/individual/Leigh.jpg" /></a></li>
-            <li role="listitem"><a href="#"><img class="co-author" src="${urls.images}/individual/Welles.jpg" /></a></li>
+            <li role="listitem"><a href="#"><img class="co-author" src="" /></a></li>
+            <li role="listitem"><a href="#"><img class="co-author" src="" /></a></li>
         </ul>
         
         <p class="view-all-coauthors"><a class="view-all-style" href="#">View All <img src="${urls.images}/arrowIcon.gif" alt="arrow icon" /></a></p>
