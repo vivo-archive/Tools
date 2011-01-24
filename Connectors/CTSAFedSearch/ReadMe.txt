@@ -33,16 +33,16 @@ In ??_fs.php:
     line 31 is the description of the population
 
 In aggregatedsearch.php: (Ver2 is set to use the Icons in preference to the IFRAMES)
-    lines 63-147 = Wrapper page before results
-    lines 245-305 = Wrapper page before results
+    lines 73-157 = Wrapper page before results
+    lines 260-320 = Wrapper page after results
     line 27 location of fsearchsites.xml
     
 aggsearch.php is geared towards being able to get its own wrapper.
 Remember that any root reference (href="/blah.blah/stuff") will only work if they are on the same web server.
 In aggsearch.php:
-    line 29 page to get the wrapper from
-    line 32 div to place the results into ('#contents' is id='contents' , '.contents' is class='contents')
-    line 35 location of fsearchsites.xml
+    line 31 page to get the wrapper from
+    line 34 div to place the results into ('#contents' is id='contents' , '.contents' is class='contents')
+    line 37 location of fsearchsites.xml
 
 
 The aggregatedsearch.php uses fsearchsites.xml to get the location of the "??_fs.php" or the "fs.xml" file.
@@ -59,5 +59,5 @@ Old process:aggregatedsearch.php --calls-->fsearchsites.xml --to find--> ??_fs.x
 
 New process :aggregatedsearch.php --calls-->fsearchsites.xml --to find--> ??_fs.php?return=desc --to call-->??_fs.php?return=xml&querytext=TERM --to get-->search data --displayed-->
 
-The other network sites will bet told where to find the ??_fs.php whichgives the description to call ??_fs.php to get the xml of the search results.
+The other network sites will bet told where to find the ??_fs.php which gives the description to call ??_fs.php to get the xml of the search results.
 

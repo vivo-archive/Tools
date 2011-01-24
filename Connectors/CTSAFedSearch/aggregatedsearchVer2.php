@@ -36,28 +36,36 @@ for($i = 0; $i < count($partsite); $i++){
 for($i = 0; $i < count($descriptsite); $i++){
 	$xmlDoc = simplexml_load_file($descriptsite[$i]);//opening a single site description
 	if($xmlDoc !=null){
-	$name = $xmlDoc->xpath('name');
-	$Partner[$i] = trim( (string) ($name[0]) );
-	$icon = $xmlDoc->xpath('icon');
-	$Logo[$i] = trim( (string) ($icon[0]) );
-	$site = $xmlDoc->xpath('aggregate-query');
-	$Page[$i] = trim( (string) ($site[0]) ) . $term;
-	//echo "page(" . $i . ") = \"" . $Page[$i] . "\" \n\n";
-	$pageDoc = simplexml_load_file($Page[$i]);//opening the search result page.
-	}
-	if($pageDoc != null){
-	$cnt = $pageDoc->xpath('count');
-	$Count[$i] = ( (integer) ($cnt[0]) );
-	$pop = $pageDoc->xpath('population-type');
-	$Poptype[$i] = trim( (string) ($pop[0]) );
-	$prvew = $pageDoc->xpath('preview-URL');
-	$Previewsite[$i] = trim( (string) ($prvew[0]) );
-	$result = $pageDoc->xpath('search-results-URL');
-	$Searchresult[$i] = trim( (string) ($result[0]) );
+		$name = $xmlDoc->xpath('name');
+		$Partner[$i] = trim( (string) ($name[0]) );
+		
+		$icon = $xmlDoc->xpath('icon');
+		$Logo[$i] = trim( (string) ($icon[0]) );
+		$site = $xmlDoc->xpath('aggregate-query');
+		$Page[$i] = trim( (string) ($site[0]) ) . $term;
+		//echo "page(" . $i . ") = \"" . $Page[$i] . "\" \n\n";
+		$pageDoc = simplexml_load_file($Page[$i]);
+		if($pageDoc != null){
+			$cnt = $pageDoc->xpath('count');
+			$Count[$i] = ( (integer) ($cnt[0]) );
+			$pop = $pageDoc->xpath('population-type');
+			$Poptype[$i] = trim( (string) ($pop[0]) );
+			$prvew = $pageDoc->xpath('preview-URL');
+			$Previewsite[$i] = trim( (string) ($prvew[0]) );
+			$result = $pageDoc->xpath('search-results-URL');
+			$Searchresult[$i] = trim( (string) ($result[0]) );
+		}else{
+			$Count[$i] = 0;
+			$Previewsite[$i] = "";
+			$Searchresult[$i] = "";
+		}
 	}else{
-	$Count[$i] = 0;
-	$Previewsite[$i] = "";
-	$Searchresult[$i] = "";
+		$Partner[$i] = "";
+		$Logo[$i] = "";
+		$Page[$i] = "";
+		$Count[$i] = 0;
+		$Previewsite[$i] = "";
+		$Searchresult[$i] = "";
 	}
 	//echo "\"" . $Partner[$i] . "\" \"" . $Page[$i] . "\" \"" . $Count[$i] . "\" \n \"" . $Previewsite[$i] . "\" \"" . $Searchresult[$i] . "\" \n";
 }
@@ -187,7 +195,7 @@ for($col = 2;$col > -1; $col--){// it goes through a column at a time.
 
 //for each site getting Partner, Page, Count,Poptype, Previewsite, Searchresult
 	for($inc = 0;$inc < count($Page);$inc++)
-	{
+	if($Partner[$inc] != ""){
    		echo "<li>\n";
 		echo "<div id='singleResult'>\n";
 		if($col != 2){
@@ -195,11 +203,10 @@ for($col = 2;$col > -1; $col--){// it goes through a column at a time.
 		}
 		switch($col){
 			case 0 :
-   				//if($Count[$inc] == 0)
-				//{
-   				//echo  $Partner[$inc] . "\n";
-				//}else
+   				if($Count[$inc] == 0)
 				{
+   				echo  $Partner[$inc] . "\n";
+				}else{
    				echo "<a  href='" . $Searchresult[$inc]. "'>" . $Partner[$inc] . "</a>\n";
 				}
 				echo "<br/> " .$Poptype[$inc] . "  \n";
@@ -208,8 +215,7 @@ for($col = 2;$col > -1; $col--){// it goes through a column at a time.
    				if($Count[$inc] == 0)
 				{
 				echo $Count[$inc] . " Pe" . (($Count[$inc] == 1)?"rson":"ople") . "\n";
-				}else
-				{
+				}else{
 				echo "<a  href='" . $Searchresult[$inc]. "'>" . 
 					$Count[$inc] . " Pe" . (($Count[$inc] == 1)?"rson":"ople") . "</a>  \n";
 				}
