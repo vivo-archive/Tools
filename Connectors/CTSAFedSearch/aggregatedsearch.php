@@ -9,13 +9,15 @@ Redistribution and use in source and binary forms, with or without modification,
     * Neither the name of the University of Florida nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
+  Contributors: James Pence
+*
 */
 
 
 ini_set('memory_limit', '64M');//Memory is intensly used on large searches.
 //include_once('./simple_html_dom.php');//The DOM library is used to 
 
-function exception_error_handler($errno, $errstr, $errfile, $errline ) {
+function exception_error_handler($errno, $errstr, $errfile, $errline ) {//placed to silence errors (ie unresponsive pages)
     //echo "\nhad an error at line " . $errline . " - " . $errstr . "\n";
 	//throw new Exception("boom");
 }
@@ -24,15 +26,16 @@ $filetype = $_GET["return"];//Getting the type for the search
 $term = $_GET["querytext"];//Getting the term for the search
 $term = urlencode(trim($term));
 //----------- location of fsearchsites
-$xmlDoc = simplexml_load_file("./fsearchsites.xml");
+$siteList ="./fsearchsites.xml";
+$xmlDoc = simplexml_load_file(siteList);
 $partsite = $xmlDoc->xpath('description-site-URL');
 for($i = 0; $i < count($partsite); $i++){
-	$descriptsite[$i] = trim( (string) ($partsite[$i]) );
+	$descriptsite[$i] = trim( (string) ($partsite[$i]) );//stringing and trimming white spaces
 	//echo "descriptsite(" . $i . ") = \"" . $descriptsite[$i] . "\" \n";
 }
 //for each site getting Partner, Page, Count,Poptype, Previewsite, Searchresult
 for($i = 0; $i < count($descriptsite); $i++){
-	$xmlDoc = simplexml_load_file($descriptsite[$i]);
+	$xmlDoc = simplexml_load_file($descriptsite[$i]);//opening a single site description
 	if($xmlDoc !=null){
 		$name = $xmlDoc->xpath('name');
 		$Partner[$i] = trim( (string) ($name[0]) );
@@ -70,7 +73,7 @@ for($i = 0; $i < count($descriptsite); $i++){
 }
 
 //header from vivo
-echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+$VivoHeader ='<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head>
   <!-- headContent.jsp -->
@@ -156,107 +159,8 @@ echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         <div id="content">
         <div id="contents">';
 
-echo '<style type="text/css">
-    div#topBanner { text-align: center; padding-bottom: 10px; } 
-
-    div#bodyLeft { width: 275px; } 
-
-    div#bodyCenter { margin-left: 300px; width: 100px; position: absolute; } 
-
-    div#bodyRight { position: absolute;  margin-left: 400px; width: 300px; }
-
-    div#singleResult{ height:150px; vertical-align:middle;}
-</style>';
-
-    
-echo ' <form name="input" action= "' . $_SERVER["PHP_SELF"] . '" method="get">\n';
-echo ' Search Term: <input type="text" name="querytext" value="' . $_GET["querytext"] . '" />\n';
-echo ' <input type="submit" value="Search" /><br/>\n';
-echo '</form>';
-
-	echo "<br />";
-	echo "Results for \"" . urldecode($term) . "\".";
-	echo "<br /> <br />\n";
-$get= (get_browser(null,true));
-$browser = strtolower($get['browser']);
-for($col = 2;$col > -1; $col--){
-	switch($col){
-		case 0 :
-			echo "<div id='bodyLeft'>\n";
-		break;
-		case 1 :
-			echo "<div id='bodyCenter'>\n";
-		break;
-		case 2 :
-			echo "<div id='bodyRight'>\n";
-		break;
-	}
-	echo "<ul class=\"searchhits\">\n";
-
-//for each site getting Partner, Page, Count,Poptype, Previewsite, Searchresult
-	for($inc = 0;$inc < count($Page);$inc++)
-	if($Partner[$inc] != ""){
-   		echo "<li>\n";
-		echo "<div id='singleResult'>\n";
-		if($col != 2){
-			echo "<br /><br />\n";//iframe compensation
-		}
-		switch($col){
-			case 0 :
-   				if($Count[$inc] == 0)
-				{
-   				echo  $Partner[$inc] . "\n";
-				}else
-				{
-   				echo "<a  href='" . $Searchresult[$inc]. "'>" . $Partner[$inc] . "</a>\n";
-				}
-				echo "<br/> " .$Poptype[$inc] . "  \n";
-			break;
-			case 1 :
-   				if($Count[$inc] == 0)
-				{
-				echo $Count[$inc] . " Pe" . (($Count[$inc] == 1)?"rson":"ople") . ".\n";
-				}else
-				{
-				echo "<a  href='" . $Searchresult[$inc]. "'>" . 
-					$Count[$inc] . " Pe" . (($Count[$inc] == 1)?"rson":"ople") . ".</a>  \n";
-				}
-			break;
-			case 2 :
-				if($Count[$inc] != 0 && $browser == 'safari')
-				{
-					if($Logo[$inc] != ""){
-						echo "<img src='" . $Logo[$inc] . "' />"; 
-					}
-				}else
-				{
-				 echo "<iframe src='" .
-					 trim($Previewsite[$inc]) . 
-					"' width='200' height='150'>\n iframes not supported\n</iframe>\n";
-				}
-
-			break;
-		}
-		echo "</div>\n";//single result
-   		echo "</li>\n";
-
-
-	}
-
-	echo "</ul>\n";
-	if(false){
-		echo "<br><a href =\"./fs.xml\" > Site description XML </a>";
-		echo "<br><a href =\"http://". $_SERVER['SERVER_NAME'] . $_SERVER['PHP_SELF'] . "?return=xml&amp;querytext=" . $term . "\" > These results in XML </a>";
-		echo "<br><a href =\"http://". $_SERVER['SERVER_NAME'] . $_SERVER['PHP_SELF'] . "?return=prev&amp;querytext=" . $term . "\" > Preview page of these results </a>";
-	}
-	echo "</div>\n";//left right or center
-
-		
-}
-
-
 //footer from vivo
-echo '
+$VivoFooter = '
 <br>
     </div> <!-- contents -->
     </div><!-- content -->        <div id="sidebar">
@@ -319,6 +223,106 @@ catch(err) {}
 </body>
 </html>
 ';
+
+echo $VivoHeader;
+echo '<style type="text/css">
+    div#topBanner { text-align: center; padding-bottom: 10px; } 
+
+    div#bodyLeft { width: 275px; } 
+
+    div#bodyCenter { margin-left: 300px; width: 100px; position: absolute; } 
+
+    div#bodyRight { position: absolute;  margin-left: 400px; width: 300px; }
+
+    div#singleResult{ height:150px; vertical-align:middle;}
+</style>';
+
+    
+echo ' <form name="input" action= "' . $_SERVER["PHP_SELF"] . '" method="get">\n';
+echo ' Search Term: <input type="text" name="querytext" value="' . $_GET["querytext"] . '" />\n';
+echo ' <input type="submit" value="Search" /><br/>\n';
+echo '</form>';
+
+	echo "<br />";
+	echo "Results for \"" . urldecode($term) . "\".";
+	echo "<br /> <br />\n";
+
+for($col = 2;$col > -1; $col--){// it goes through a column at a time.
+	switch($col){
+		case 0 :
+			echo "<div id='bodyLeft'>\n";
+		break;
+		case 1 :
+			echo "<div id='bodyCenter'>\n";
+		break;
+		case 2 :
+			echo "<div id='bodyRight'>\n";
+		break;
+	}
+	echo "<ul class=\"searchhits\">\n";
+
+//for each site getting Partner, Page, Count,Poptype, Previewsite, Searchresult
+	for($inc = 0;$inc < count($Page);$inc++)
+	if($Partner[$inc] != ""){
+   		echo "<li>\n";
+		echo "<div id='singleResult'>\n";
+		if($col != 2){
+			echo "<br /><br />\n";//iframe compensation
+		}
+		switch($col){
+			case 0 :
+   				if($Count[$inc] == 0)
+				{
+   				echo  $Partner[$inc] . "\n";
+				}else{
+   				echo "<a  href='" . $Searchresult[$inc]. "'>" . $Partner[$inc] . "</a>\n";
+				}
+				echo "<br/> " .$Poptype[$inc] . "  \n";
+			break;
+			case 1 :
+   				if($Count[$inc] == 0)
+				{
+				echo $Count[$inc] . " Pe" . (($Count[$inc] == 1)?"rson":"ople") . "\n";
+				}else{
+				echo "<a  href='" . $Searchresult[$inc]. "'>" . 
+					$Count[$inc] . " Pe" . (($Count[$inc] == 1)?"rson":"ople") . "</a>  \n";
+				}
+			break;
+			case 2 :
+				if($Count[$inc] != 0 && $browser == 'safari')
+				{
+					if($Logo[$inc] != ""){
+						echo "<img src='" . $Logo[$inc] . "' />"; 
+					}
+				}else
+				{
+				 echo "<iframe src='" .
+					 trim($Previewsite[$inc]) . 
+					"' width='200' height='150'>\n iframes not supported\n</iframe>\n";
+				}
+
+			break;
+		}
+		echo "</div>\n";//single result
+   		echo "</li>\n";
+
+
+	}
+
+	echo "</ul>\n";
+	if(false){
+		echo "<br><a href =\"./fs.xml\" > Site description XML </a>";
+		echo "<br><a href =\"http://". $_SERVER['SERVER_NAME'] . $_SERVER['PHP_SELF'] . "?return=xml&amp;querytext=" . $term . "\" > These results in XML </a>";
+		echo "<br><a href =\"http://". $_SERVER['SERVER_NAME'] . $_SERVER['PHP_SELF'] . "?return=prev&amp;querytext=" . $term . "\" > Preview page of these results </a>";
+	}
+	echo "</div>\n";//left right or center
+
+		
+}
+
+
+
+echo $VivoFooter;
 
 ?>
 

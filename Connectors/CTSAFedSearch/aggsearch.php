@@ -33,8 +33,9 @@ $wrapper = file_get_html('http://vivo.ufl.edu');
 //------------ div to place the results in.
 $content = $wrapper->find('#contents',0); // '#contents' is id='contents' , '.contents' is class='contents'
 
-//------------- location of fsearchsites
-$xmlDoc = simplexml_load_file("./fsearchsites.xml");
+//----------- location of fsearchsites
+$siteList ="./fsearchsites.xml";
+$xmlDoc = simplexml_load_file(siteList);
 $partsite = $xmlDoc->xpath('description-site-URL');
 for($i = 0; $i < count($partsite); $i++){
 	$descriptsite[$i] = trim( (string) ($partsite[$i]) );

@@ -26,8 +26,9 @@ set_error_handler("exception_error_handler");
 $term = $_GET["querytext"];//Getting the term for the search
 $term = urlencode(trim($term));
 //----------- location of fsearchsites
-$xmlDoc = simplexml_load_file("./fsearchsites.xml");//opening the sites xml
-$partsite = $xmlDoc->xpath('description-site-URL');//getting the list of sites
+$siteList ="./fsearchsites.xml";
+$xmlDoc = simplexml_load_file(siteList);
+$partsite = $xmlDoc->xpath('description-site-URL');
 for($i = 0; $i < count($partsite); $i++){
 	$descriptsite[$i] = trim( (string) ($partsite[$i]) );//stringing and trimming white spaces
 	//echo "descriptsite(" . $i . ") = \"" . $descriptsite[$i] . "\" \n";
@@ -67,11 +68,12 @@ for($i = 0; $i < count($descriptsite); $i++){
 		$Previewsite[$i] = "";
 		$Searchresult[$i] = "";
 	}
+
 	//echo "\"" . $Partner[$i] . "\" \"" . $Page[$i] . "\" \"" . $Count[$i] . "\" \n \"" . $Previewsite[$i] . "\" \"" . $Searchresult[$i] . "\" \n";
 }
 
 //header from vivo
-echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+$VivoHeader ='<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head>
   <!-- headContent.jsp -->
@@ -157,7 +159,72 @@ echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         <div id="content">
         <div id="contents">';
 
-//style sheet information for the 3 column with no tables
+//footer from vivo
+$VivoFooter = '
+<br>
+    </div> <!-- contents -->
+    </div><!-- content -->        <div id="sidebar">
+          <h2>Log into VIVO</h2>
+          <p>
+            <a href="http://vivo.ufl.edu/siteAdmin">
+              <img src="http://vivo.ufl.edu/themes/vivo-basic/images/login.jpg" width="186" height="43" alt="Login">
+            </a>
+          </p>
+
+          <h2>Latest from VIVO</h2>
+          <ul id="latestVIVOFeed">
+            <li>Please enable javascript for best viewing experience.</li>
+          </ul>
+          <p>
+            <a href="http://vivoweb.org/blog" class="more">More from the VIVO blog</a>
+          </p>
+
+        </div> <!-- sidebar -->
+</div> <!-- contentwrap -->
+    
+<div id="footer">
+  <div class="footerLinks">
+		<ul class="otherNav">
+        <li><a href="http://vivo.ufl.edu/about" title="more about this web site">About VIVO</a></li>
+        <li><a href="http://vivo.ufl.edu/contact" title="feedback form">Contact Us</a></li>
+
+		<li><a href="http://privacy.ufl.edu/privacystatement.html">Privacy Policy</a></li>
+		<li class="last"><a href="http://www.ufl.edu/">University of Florida</a></li>
+        </ul>
+		<div id="uflogo"><a href="http://www.ufl.edu/"><img src="http://vivo.ufl.edu/themes/vivo-basic/images/UF_white.png" width="196" height="35" alt="University of Florida"></a></div>
+    </div>
+    <div class="copyright">
+		    &copy;2010&nbsp;
+
+			VIVO Project</div>
+	    <div class="copyright">
+		    All Rights Reserved. <a href="http://vivo.ufl.edu/termsOfUse?home=1">Terms of Use</a>
+	    </div>
+	</div>
+</div>
+
+<script type="text/javascript">  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www."); document.write(unescape("%3Cscript src=\'" + gaJsHost + "google-analytics.com/ga.js\' type=\'text/javascript\'%3E%3C/script%3E")); 
+</script>  
+
+<script type="text/javascript">  
+try { 
+var pageTracker = _gat._getTracker("UA-12495269-1");
+pageTracker._setDomainName("vivo.ufl.edu");
+pageTracker._setAllowLinker(true);
+pageTracker._trackPageview(); 
+var rollupTracker = _gat._getTracker("UA-12531954-1");
+rollupTracker._setDomainName("none"); 
+rollupTracker._setAllowLinker(true);
+rollupTracker._trackPageview(location.host+location.pathname);  
+} 
+catch(err) {}  
+</script>
+</div> <!-- wrap -->
+</body>
+</html>
+';
+
+echo $VivoHeader;
 echo '<style type="text/css">
     div#topBanner { text-align: center; padding-bottom: 10px; } 
 
@@ -248,43 +315,16 @@ for($col = 2;$col > -1; $col--){// it goes through a column at a time.
 	echo "</div>\n";//left right or center	
 }
 
+	echo "</ul>\n";
+	if(false){
+		echo "<br><a href =\"./fs.xml\" > Site description XML </a>";
+		echo "<br><a href =\"http://". $_SERVER['SERVER_NAME'] . $_SERVER['PHP_SELF'] . "?return=xml&amp;querytext=" . $term . "\" > These results in XML </a>";
+		echo "<br><a href =\"http://". $_SERVER['SERVER_NAME'] . $_SERVER['PHP_SELF'] . "?return=prev&amp;querytext=" . $term . "\" > Preview page of these results </a>";
+	}
+	echo "</div>\n";//left right or center
 
-//footer from vivo
-echo '
-<br>
-    </div> <!-- contents -->
-    </div><!-- content -->        <div id="sidebar">
-          <h2>Log into VIVO</h2>
-          <p>
-            <a href="http://vivo.ufl.edu/siteAdmin">
-              <img src="http://vivo.ufl.edu/themes/vivo-basic/images/login.jpg" width="186" height="43" alt="Login">
-            </a>
-          </p>
-
-          <h2>Latest from VIVO</h2>
-          <ul id="latestVIVOFeed">
-            <li>Please enable javascript for best viewing experience.</li>
-          </ul>
-          <p>
-            <a href="http://vivoweb.org/blog" class="more">More from the VIVO blog</a>
-          </p>
-
-        </div> <!-- sidebar -->
-</div> <!-- contentwrap -->
-    
-<div id="footer">
-  <div class="footerLinks">
-		<ul class="otherNav">
-        <li><a href="http://vivo.ufl.edu/about" title="more about this web site">About VIVO</a></li>
-        <li><a href="http://vivo.ufl.edu/contact" title="feedback form">Contact Us</a></li>
-
-		<li><a href="http://privacy.ufl.edu/privacystatement.html">Privacy Policy</a></li>
-		<li class="last"><a href="http://www.ufl.edu/">University of Florida</a></li>
-        </ul>
-		<div id="uflogo"><a href="http://www.ufl.edu/"><img src="http://vivo.ufl.edu/themes/vivo-basic/images/UF_white.png" width="196" height="35" alt="University of Florida"></a></div>
-    </div>
-    <div class="copyright">
-		    &copy;2010&nbsp;
+		
+}
 
 			VIVO Project</div>
 	    <div class="copyright">
@@ -296,22 +336,7 @@ echo '
 <script type="text/javascript">  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www."); document.write(unescape("%3Cscript src=\'" + gaJsHost + "google-analytics.com/ga.js\' type=\'text/javascript\'%3E%3C/script%3E")); 
 </script>  
 
-<script type="text/javascript">  
-try { 
-var pageTracker = _gat._getTracker("UA-12495269-1");
-pageTracker._setDomainName("vivo.ufl.edu");
-pageTracker._setAllowLinker(true);
-pageTracker._trackPageview(); 
-var rollupTracker = _gat._getTracker("UA-12531954-1");
-rollupTracker._setDomainName("none"); 
-rollupTracker._setAllowLinker(true);
-rollupTracker._trackPageview(location.host+location.pathname);  
-} 
-catch(err) {}  
-</script>
-</div> <!-- wrap -->
-</body>
-</html>';
+echo $VivoFooter;
 
 ?>
 

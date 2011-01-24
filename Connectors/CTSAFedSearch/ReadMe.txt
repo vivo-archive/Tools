@@ -18,31 +18,30 @@ The "aggregatedsearch.php" pulls displays the XML from the associated search sit
 
 For this script to work all the parts are expected to be in the same directory.
 the parts:
-??_fs.php              // ?? is the abbreviation of the instituion 
-at least one of (aggregatedsearch.php,aggregatedsearchVer2.php,aggsearch.php)
-fsearchsites.xml       //altered to point to each remote sites' ??_fs.php
-simple_html_dom.php    //library used to do the html DOM parsing.
-
+   ??_fs.php              // ?? is the abbreviation of the instituion
+   at least one of (aggregatedsearch.php,aggregatedsearchVer2.php,aggsearch.php)
+   fsearchsites.xml       //altered to point to each remote sites' ??_fs.php
+   simple_html_dom.php    //library used to do the html DOM parsing.
 
 The "??_fs.php" replaces the "fs.xml" with "??_fs.php?return=desc"
 
-Lines that should be changed.
+Variables that should be changed.
 
 In ??_fs.php:
-    lines 26,27,28 are the school identifiers
-    line 31 is the description of the population
+   variables $school ,$name, and $icon are the school identifiers
+   variables $popdesc is the description of the population
 
-In aggregatedsearch.php: (Ver2 is set to use the Icons in preference to the IFRAMES)
-    lines 73-157 = Wrapper page before results
-    lines 260-320 = Wrapper page after results
-    line 27 location of fsearchsites.xml
+In aggregatedsearch.php: (Ver2 is set to use the Icons in preference to the IFRAMES.)
+   variable $VivoHeader = Wrapper page HTML before results
+   variable $VivoFooter = Wrapper page HTML after results
+   variable $siteList   = Location of fsearchsites.xml
     
 aggsearch.php is geared towards being able to get its own wrapper.
 Remember that any root reference (href="/blah.blah/stuff") will only work if they are on the same web server.
 In aggsearch.php:
-    line 31 page to get the wrapper from
-    line 34 div to place the results into ('#contents' is id='contents' , '.contents' is class='contents')
-    line 37 location of fsearchsites.xml
+   variable $wrapper  = the HTML from the the page with the wrapper
+   variable $content  = div to place the results into ('#contents' is id='contents' , '.contents' is class='contents')
+   variable $siteList = location of fsearchsites.xml
 
 
 The aggregatedsearch.php uses fsearchsites.xml to get the location of the "??_fs.php" or the "fs.xml" file.
@@ -55,9 +54,8 @@ The ??_fs.xml sites point to the fs.php with the search data.
 
 the flow of information can be shown as :
 
-Old process:aggregatedsearch.php --calls-->fsearchsites.xml --to find--> ??_fs.xml --to call--> fs.php?(proper values) --to get--> search data --displayed--> aggregated search page.
+xml process:aggregatedsearch.php --calls-->fsearchsites.xml --to find--> ??_fs.xml --to call--> fs.php?(proper values) --to get--> search data --displayed--> aggregated search page.
 
-New process :aggregatedsearch.php --calls-->fsearchsites.xml --to find--> ??_fs.php?return=desc --to call-->??_fs.php?return=xml&querytext=TERM --to get-->search data --displayed-->
+php process :aggregatedsearch.php --calls-->fsearchsites.xml --to find--> ??_fs.php?return=desc --to call-->??_fs.php?return=xml&querytext=TERM --to get-->search data --displayed--> aggregated search page.
 
 The other network sites will bet told where to find the ??_fs.php which gives the description to call ??_fs.php to get the xml of the search results.
-
