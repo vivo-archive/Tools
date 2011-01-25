@@ -12,6 +12,10 @@
     overflow: hidden;
 }
 
+.easy-deselect-label a.temporal-vis-url {
+    float: right;
+}
+
 a.temporalGraphLinks {
     /*float:right;*/
     background-color: #2485AE;
@@ -23,11 +27,17 @@ a.temporalGraphLinks {
     padding: 4px 3px 3px;
     text-align: center;
     text-decoration: none;
+    padding-bottom: 3px;
+}
+
+a.clear-selected-entities {
+    background-color: #878787;
 }
 
 #paginated-table-footer {
     margin-top: 10px;
-    text-align: right;
+    text-align: left;
+    height: 25px;
 }
 
 #legend-row-header a {
@@ -89,7 +99,7 @@ a.temporalGraphLinks {
     float: left;
     font-size: 12px;
     width: 160px;
-    text-align: right;
+    text-align: left;
 }
 
 .easy-deselect-label a, #text {
@@ -128,7 +138,7 @@ a.temporalGraphLinks {
 
 .entity-label-url {
     width: 125px; 
-    margin-right: 10px; 
+    margin-left: 10px; 
     display:inline-block;
     text-decoration: underline;
 }

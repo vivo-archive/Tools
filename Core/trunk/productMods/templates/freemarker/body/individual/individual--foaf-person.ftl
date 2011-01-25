@@ -58,6 +58,23 @@
     </section>
 
     <section id="individual-info" role="region">
+        <#include "individual-sparklineVisualization.ftl">    
+        <#-- Disable for now until controller sends data -->
+        <#--
+        <section id="co-authors" role="region">
+            <header>
+                <h3><span class="grey">10 </span>Co-Authors</h3>
+            </header>
+
+            <ul role="list">
+                <li role="listitem"><a href="#"><img class="co-author" src="" /></a></li>
+                <li role="listitem"><a href="#"><img class="co-author" src="" /></a></li>
+            </ul>
+
+            <p class="view-all-coauthors"><a class="view-all-style" href="#">View All <img src="${urls.images}/arrowIcon.gif" alt="arrow icon" /></a></p>
+        </section>
+        -->
+        
         <#if individual.showAdminPanel>
             <#include "individual-adminPanel.ftl">
         </#if>
@@ -82,7 +99,7 @@
             <#assign positions = propertyGroups.getPropertyAndRemoveFromList("${core}personInPosition")!>
             <#if positions?has_content> <#-- true when the property is in the list, even if not populated (when editing) -->
                 <h2 id="${positions.localName}">${positions.name?capitalize} <@p.addLink positions editable /></h2>
-                <ul class="individual-positions" role="list">
+                <ul id="individual-positions" role="list">
                     <@p.objectProperty positions editable />
                 </ul>
             </#if>
@@ -100,23 +117,6 @@
             </ul>
         </#if>
     </section>
-
-    <#include "individual-sparklineVisualization.ftl">    
-    <#-- Disable for now until controller sends data -->
-    <#--
-    <section id="co-authors" role="region">
-        <header>
-            <h3><span class="grey">10 </span>Co-Authors</h3>
-        </header>
-        
-        <ul role="list">
-            <li role="listitem"><a href="#"><img class="co-author" src="" /></a></li>
-            <li role="listitem"><a href="#"><img class="co-author" src="" /></a></li>
-        </ul>
-        
-        <p class="view-all-coauthors"><a class="view-all-style" href="#">View All <img src="${urls.images}/arrowIcon.gif" alt="arrow icon" /></a></p>
-    </section>
-    -->
     
 </section>
 <#assign nameForOtherGroup = "other"> <#-- used by both individual-propertyGroupMenu.ftl and individual-properties.ftl -->
@@ -136,6 +136,8 @@ ${headScripts.add("/js/jquery_plugins/getURLParam.js",
                   "/js/jquery_plugins/jquery.form.js",
                   "/js/tiny_mce/tiny_mce.js", 
                   "/js/controls.js",
-                  "/js/toggle.js")}
+                  "/js/toggle.js",
+                  "/js/jquery_plugins/jquery.truncator.js")}
                   
 ${scripts.add("/js/imageUpload/imageUploadUtils.js")}
+${scripts.add("/js/individual/individualUtils.js")}

@@ -32,9 +32,10 @@
 }
 /* <------ INDIVIDUAL INTRO FOR ANY CLASS*/
 #individual-intro{
-    margin-top: 35px;
-    margin-bottom: 45px;
+    margin-top: 0;
+    margin-bottom: 20px;
     position: relative;
+    overflow: hidden;
 }
 #individual-intro h1{
     padding-bottom: 8px;  
@@ -60,19 +61,18 @@
 }
 /* <------ INDIVIDUAL INTRO FOR PERSON*/
 #individual-intro-person{
-    float: left;
     margin-top: 0.5em;
     margin-bottom: 30px;
     position: relative;
     width: 100%;
 }
-#individual-intro-person #admin{
-    margin-top: 37px;
-    width: 70%;
-}
 #individual-intro-person #individual-info{
     float: left;
     width: 78%;
+    margin-bottom: 20px;
+}
+#individual-intro-person .individual-overview{
+    width: 100%;
 }
 /* <------ INDIVIDUAL INTRO - LEFT SIDE CONTENT */
 #share-contact{
@@ -92,6 +92,21 @@
 #share-contact img.individual-photo{
     width: 160px;
     height: 160px;
+    margin-left: 0;
+}
+img.individual-photo{
+    border: 7px solid #ebebeb;
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    margin-left: .5em;
+}
+#share-contact #mainImage{
+    position: absolute;
+    padding: 5px 5px 8px 5px;
+    background-color: #fff;
+    top: 123px;
+    right: 23px;
 }
 ul#individual-tools-people{
     margin-top: 5px;
@@ -165,7 +180,7 @@ ul.individual-urls-people li{
 #individual-intro #individual-info{
     padding: 0;
     float: left;
-    width: 79%;
+    width: 78%;
 }
 #individual-info h1.fn{
     /*padding-bottom: 12px;*/
@@ -178,8 +193,7 @@ h1.fn .preferred-title {
     padding-bottom: 10px;
 }
 ul#individual-positions{
-    padding-bottom: 24px;
-    list-style: none;
+    padding-bottom: 10px;
     list-style-type: circle;
     padding-left: 20px;
 }
@@ -210,12 +224,10 @@ ul#individual-areas li:first-child{
 }
 /* <------ SPARKLINES  */
 #sparklines-publications{
-    padding: 0 10px 45px 20px;
-    margin-top: 30px;
+    padding: 0 10px 25px 30px;
     padding-top: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
+    float: right;
+    background-color: #fff;
 }
 #sparklines-publications h3{
     padding-top: 10px;
@@ -363,13 +375,24 @@ article.property ul.subclass-property-list li{
 .delete-individual{
     vertical-align: middle;
 }
-.thumb-links{
+.edit-mainImage{
     position: absolute;
-    margin-left: 108px;
-   /* background: rgba(255, 255, 255, 0.8);*/
     background: #fff;
-    margin-top: 143px;
     padding: 0 6px 0 0;
+    top: 143px;
+    left: 119px;
+}
+a.edit-mainImage img.edit-individual{
+    border: 0;
+    padding-left: 0px;
+    margin-left: 8px;
+}
+.delete-mainImage{
+    position: absolute;
+    top: 143px;
+    left: 149px;
+    background: #fff;
+    padding: 0 6px 0 8px;
 }
 .middle{
     vertical-align: middle;
