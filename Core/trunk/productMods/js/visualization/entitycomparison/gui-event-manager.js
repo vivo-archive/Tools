@@ -51,7 +51,7 @@ $(document).ready(function() {
             	
             });
             
-            $("#body").empty().html("Loading " + selectedValue + " ...");
+            $("#body").empty().html("<div id='loading-comparisons'>Loading " + selectedValue + "&nbsp;&nbsp;<img src='" + loadingImageLink + "' /></div>");
             
             /*
              * This piece of code is not executed at all because the redirect happens before there is a chance 
