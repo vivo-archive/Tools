@@ -34,7 +34,7 @@ for($i = 0; $i < count($partsite); $i++){
 	//echo "descriptsite(" . $i . ") = \"" . $descriptsite[$i] . "\" \n";
 }
 //for each site getting Partner, Page, Count,Poptype, Previewsite, Searchresult
-for($i = 0; $i < count($descriptsite); $i++){
+for($i = 0; $i <= count($descriptsite); $i++){
 	$xmlDoc = simplexml_load_file($descriptsite[$i]);//opening a single site description
 	if($xmlDoc !=null){
 		$name = $xmlDoc->xpath('name');

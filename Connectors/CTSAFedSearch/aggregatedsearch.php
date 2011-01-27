@@ -15,7 +15,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 
 
 ini_set('memory_limit', '64M');//Memory is intensly used on large searches.
-//include_once('./simple_html_dom.php');//The DOM library is used to 
+include_once('./simple_html_dom.php');//The DOM library is used to 
 
 function exception_error_handler($errno, $errstr, $errfile, $errline ) {//placed to silence errors (ie unresponsive pages)
     //echo "\nhad an error at line " . $errline . " - " . $errstr . "\n";
@@ -29,8 +29,8 @@ $term = urlencode(trim($term));
 $siteList ="./fsearchsites.xml";
 $xmlDoc = simplexml_load_file($siteList);
 $partsite = $xmlDoc->xpath('description-site-URL');
-for($i = 0; $i < count($partsite); $i++){
-	$descriptsite[$i] = trim( (string) ($partsite[$i]) );//stringing and trimming white spaces
+for($i = 0; $i <= count($partsite); $i++){
+	$descriptsite[$i] = trim( (string) ($partsite[$i]) );
 	//echo "descriptsite(" . $i . ") = \"" . $descriptsite[$i] . "\" \n";
 }
 //for each site getting Partner, Page, Count,Poptype, Previewsite, Searchresult
