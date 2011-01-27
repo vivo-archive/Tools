@@ -323,18 +323,6 @@ for($col = 2;$col > -1; $col--){// it goes through a column at a time.
 	}
 	echo "</div>\n";//left right or center
 
-		
-}
-
-			VIVO Project</div>
-	    <div class="copyright">
-		    All Rights Reserved. <a href="http://vivo.ufl.edu/termsOfUse?home=1">Terms of Use</a>
-	    </div>
-	</div>
-</div>
-
-<script type="text/javascript">  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www."); document.write(unescape("%3Cscript src=\'" + gaJsHost + "google-analytics.com/ga.js\' type=\'text/javascript\'%3E%3C/script%3E")); 
-</script>  
 
 echo $VivoFooter;
 
