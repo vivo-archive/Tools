@@ -18,6 +18,8 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.joda.time.DateTime;
 
+import com.hp.hpl.jena.datatypes.RDFDatatype;
+import com.hp.hpl.jena.datatypes.xsd.XSDDateTime;
 import com.hp.hpl.jena.ontology.OntModel;
 import com.hp.hpl.jena.ontology.OntModelSpec;
 import com.hp.hpl.jena.ontology.OntResource;
@@ -71,6 +73,7 @@ public class IndividualSDB extends IndividualImpl implements Individual {
                 SDBDatasetMode.ASSERTIONS_AND_INFERENCES;
     private String individualURI = null; 
     private Model model = null;
+    private Boolean _hasThumb = null; 
     
     public IndividualSDB(String individualURI, 
                          DatasetWrapperFactory datasetWrapperFactory,
@@ -357,7 +360,9 @@ public class IndividualSDB extends IndividualImpl implements Individual {
                                 portalSet+=",";
                             }
                             portalSet+=Integer.toString(portalNumber);
-                        } catch (Exception e) {}
+                        } catch (Exception e) {
+                        	log.error(e,e);
+                        }
                     }
                 }
             }finally{
@@ -415,7 +420,9 @@ public class IndividualSDB extends IndividualImpl implements Individual {
                                 flagSet+=",";
                             }
                             flagSet+=flagValue;
-                        } catch (Exception e) {}
+                        } catch (Exception e) {
+                        	log.error(e,e);
+                        }
                     }
                 }
             }finally{
@@ -431,39 +438,71 @@ public class IndividualSDB extends IndividualImpl implements Individual {
     }
 
 
-    public Date getSunrise() { 
-        if (sunrise != null) {
-            return sunrise;
-        } else {
-            constructProperty(ind, VitroVocabulary.SUNRISE);
-        	ind.getOntModel().enterCriticalSection(Lock.READ);
-            try {
-                sunrise = webappDaoFactory.getJenaBaseDao()
-                        .getPropertyDateTimeValue(
-                                ind,webappDaoFactory.getJenaBaseDao().SUNRISE);
-                return sunrise;
-            } finally { 
-            	ind.getOntModel().leaveCriticalSection();
+    public Date getSunrise() {
+        if( this.sunrise == null ){            
+            String[] graphVars = { "?g" };
+            String queryStr = 
+                "SELECT ?value " +
+                "WHERE { GRAPH ?g { <" + individualURI + "> " + 
+                        "<" + webappDaoFactory.getJenaBaseDao().SUNRISE + "> " + 
+                        "?value} \n" + 
+                        //WebappDaoFactorySDB.getFilterBlock(graphVars, datasetMode) +
+                        "}";
+            DatasetWrapper w = getDatasetWrapper();
+            Dataset dataset = w.getDataset();
+            dataset.getLock().enterCriticalSection(Lock.READ);
+            try{            
+                ResultSet rs = QueryExecutionFactory.create(QueryFactory.create(queryStr), dataset)
+                    .execSelect();
+                if( rs.hasNext()){
+                    QuerySolution qs = rs.nextSolution();
+                    if( qs.get("value") != null ){
+                        Literal value = qs.get("value").asLiteral();
+                        RDFDatatype datatype = value.getDatatype();
+                        XSDDateTime xsdDt = (XSDDateTime)datatype.parse( value.getLexicalForm() );
+                        sunrise = xsdDt.asCalendar().getTime();
+                    }
+                }            
+            }catch(Exception ex){
+                log.error("could not get sunrise: " + ex.getMessage(),ex);
+            }finally{
+                dataset.getLock().leaveCriticalSection();
+                w.close();
             }
-        }
+        }        
+        return sunrise;        
     }
 
-    public Date getSunset() { 
-        if (sunset != null) {
-            return sunset;
-        } else {
-            constructProperty(ind, VitroVocabulary.SUNSET);
-        	ind.getOntModel().enterCriticalSection(Lock.READ);
-            try {
-                sunset = webappDaoFactory.getJenaBaseDao()
-                        .getPropertyDateTimeValue(
-                                ind,webappDaoFactory.getJenaBaseDao().SUNSET);
-                return sunset;
-            } finally {
-                
-            	ind.getOntModel().leaveCriticalSection();
+    public Date getSunset() {        
+        if( this.sunset == null ){            
+            String[] graphVars = { "?g" };
+            String queryStr = 
+                "SELECT ?value " +
+                "WHERE { GRAPH ?g { <" + individualURI + "> " + 
+                        "<"+webappDaoFactory.getJenaBaseDao().SUNSET+"> ?value} }";
+            DatasetWrapper w = getDatasetWrapper();
+            Dataset dataset = w.getDataset();
+            dataset.getLock().enterCriticalSection(Lock.READ);
+            try{          
+                ResultSet rs = QueryExecutionFactory.create(QueryFactory.create(queryStr), dataset)
+                    .execSelect();
+                if( rs.hasNext()){
+                    QuerySolution qs = rs.nextSolution();
+                    if( qs.get("value") != null ){
+                        Literal value = qs.get("value").asLiteral();
+                        RDFDatatype datatype = value.getDatatype();
+                        XSDDateTime xsdDt = (XSDDateTime)datatype.parse( value.getLexicalForm() );
+                        sunset = xsdDt.asCalendar().getTime();
+                    }
+                }
+            }catch(Exception ex){
+                log.error("could not get sunset: " + ex.getMessage(),ex);
+            }finally{
+                dataset.getLock().leaveCriticalSection();
+                w.close();
             }
-        }
+        }        
+        return sunset;          
     }
 
     public Date getTimekey() { 
@@ -548,7 +587,9 @@ public class IndividualSDB extends IndividualImpl implements Individual {
                                  preferredClass.getName();
                             }
                         }
-                	} catch (Exception e) {}
+                	} catch (Exception e) {
+                		log.error(e,e);
+                	}
                 }
                 return moniker;
             } finally {
@@ -629,15 +670,13 @@ public class IndividualSDB extends IndividualImpl implements Individual {
             Dataset dataset = w.getDataset();
         	dataset.getLock().enterCriticalSection(Lock.READ);
             try{
-                try {
-                    searchBoost = 
-                        ((Literal)QueryExecutionFactory.create(
-                                QueryFactory.create(getPropertyValue), dataset)
-                                        .execSelect()).getFloat();
-                } catch (Exception e) {
-                    searchBoost = null;
-                }                
+                searchBoost = ((Literal)QueryExecutionFactory.create(
+                		QueryFactory.create(getPropertyValue),
+                		dataset).execSelect()).getFloat();
                 return searchBoost;
+            } catch (Exception e){
+            	log.error(e,e); 
+                return null;            	
             }finally{
             	dataset.getLock().leaveCriticalSection();
             	w.close();
@@ -691,6 +730,35 @@ public class IndividualSDB extends IndividualImpl implements Individual {
 		return this.imageInfo.getThumbnail().getBytestreamAliasUrl();
 	}
 
+	@Override
+	public boolean hasThumb(){
+	    if( _hasThumb != null ){
+	        return _hasThumb;	    
+        }else{            
+            String[] graphVars = { "?g" };
+            String ask = 
+                "ASK { GRAPH ?g  " +
+                "  { <" + individualURI + "> <http://vitro.mannlib.cornell.edu/ns/vitro/public#mainImage> ?mainImage . \n" +
+                "    ?mainImage <http://vitro.mannlib.cornell.edu/ns/vitro/public#thumbnailImage> ?thumbImage . }\n"  +                      
+                        WebappDaoFactorySDB.getFilterBlock(graphVars, datasetMode) +
+                "}";
+            DatasetWrapper w = getDatasetWrapper();
+            Dataset dataset = w.getDataset();
+            dataset.getLock().enterCriticalSection(Lock.READ);
+            try{                
+                _hasThumb = QueryExecutionFactory.create(QueryFactory.create(ask), dataset).execAsk();                      
+            }catch(Exception ex){
+                _hasThumb = false;
+                log.error(ex,ex);
+            }finally{
+                dataset.getLock().leaveCriticalSection();
+                w.close();
+            }
+            return _hasThumb;
+        }
+	}
+	
+	
 	public String getAnchor() { 
         if (this.anchor != null) {
             return anchor;

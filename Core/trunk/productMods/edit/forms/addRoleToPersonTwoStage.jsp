@@ -115,7 +115,7 @@ public static Log log = LogFactory.getLog("edu.cornell.mannlib.vitro.webapp.jsp.
   3. Repair a bad role node.  There is a subject, prediate and object but there is no individual on the 
      other end of the object's core:roleIn stmt.  This should be similar to an add but the form should be expanded.
      
-  4. Really bad node. multiple roleIn statements.
+  4. Really bad node. multiple core:roleIn statements.
 */
 
  EditMode mode = FrontEndEditingUtils.getEditMode(request, "http://vivoweb.org/ontology/core#roleIn");
@@ -150,31 +150,6 @@ public static Log log = LogFactory.getLog("edu.cornell.mannlib.vitro.webapp.jsp.
 <%-- label and type required if we are doing an add or a repair, but not an edit --%> 
 <c:set var="labelRequired" ><%= (mode == EditMode.ADD || mode == EditMode.REPAIR) ?"\"nonempty\"," : "" %></c:set>
 <c:set var="typeRequired" ><%= (mode == EditMode.ADD || mode == EditMode.REPAIR) ?"\"nonempty\"" : "" %></c:set>
-
-<%-- 
-<c:choose>
-    <c:when test="${numDateFields == 1}">
-        <c:set var="startYearPredicate" value="${vivoCore}year" />
-    </c:when>
-    <c:otherwise>
-        <c:set var="startYearPredicate" value="${vivoCore}startYear" />    
-    </c:otherwise>
-</c:choose>
---%>
-<c:set var="startYearPredicate">
-    <c:choose>
-        <c:when test="${numDateFields == 1}">${vivoCore}year</c:when>
-        <c:otherwise>${vivoCore}startYear</c:otherwise>
-    </c:choose>
-</c:set>
-<v:jsonset var="startYearAssertion" >
-    ?role <${startYearPredicate}> ?startYear .
-</v:jsonset>
-
-<c:set var="endYearPredicate" value="${vivoCore}endYear" /> 
-<v:jsonset var="endYearAssertion" >
-    ?role <${endYearPredicate}> ?endYear .
-</v:jsonset>
 
 <v:jsonset var="roleLabelAssertion" >
     ?role <${label}> ?roleLabel .
@@ -231,14 +206,6 @@ public static Log log = LogFactory.getLog("edu.cornell.mannlib.vitro.webapp.jsp.
   SELECT ?existingTitle WHERE {
         ?role  core:roleIn ?existingActivity .
         ?existingActivity rdfs:label ?existingTitle . }
-</v:jsonset>
-
-<v:jsonset var="startYearQuery">
-  SELECT ?existingStartYear WHERE { ?role  <${startYearPredicate}> ?existingStartYear .}       
-</v:jsonset>
-
-<v:jsonset var="endYearQuery">
-  SELECT ?existingStartYear WHERE { ?role  <${endYearPredicate}> ?existingStartYear .}
 </v:jsonset>
 
 <v:jsonset var="activityQuery">
