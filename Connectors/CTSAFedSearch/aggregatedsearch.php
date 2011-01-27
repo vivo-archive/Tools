@@ -238,9 +238,9 @@ echo '<style type="text/css">
 </style>';
 
     
-echo ' <form name="input" action= "' . $_SERVER["PHP_SELF"] . '" method="get">\n';
-echo ' Search Term: <input type="text" name="querytext" value="' . $_GET["querytext"] . '" />\n';
-echo ' <input type="submit" value="Search" /><br/>\n';
+echo ' <form name="input" action= "' . $_SERVER["PHP_SELF"] . '" method="get">';
+echo ' Search Term: <input type="text" name="querytext" value="' . $_GET["querytext"] . '" />';
+echo ' <input type="submit" value="Search" /><br/>';
 echo '</form>';
 
 	echo "<br />";
