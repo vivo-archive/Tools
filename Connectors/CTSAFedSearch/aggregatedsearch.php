@@ -289,12 +289,7 @@ for($col = 2;$col > -1; $col--){// it goes through a column at a time.
 				}
 			break;
 			case 2 :
-				if($Count[$inc] != 0 && $browser == 'safari')
-				{
-					if($Logo[$inc] != ""){
-						echo "<img src='" . $Logo[$inc] . "' />"; 
-					}
-				}else
+				if($Count[$inc] != 0)
 				{
 				 echo "<iframe src='" .
 					 trim($Previewsite[$inc]) . 
