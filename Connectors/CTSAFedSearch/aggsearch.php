@@ -35,7 +35,7 @@ $content = $wrapper->find('#contents',0); // '#contents' is id='contents' , '.co
 
 //----------- location of fsearchsites
 $siteList ="./fsearchsites.xml";
-$xmlDoc = simplexml_load_file(siteList);
+$xmlDoc = simplexml_load_file($siteList);
 $partsite = $xmlDoc->xpath('description-site-URL');
 for($i = 0; $i < count($partsite); $i++){
 	$descriptsite[$i] = trim( (string) ($partsite[$i]) );
