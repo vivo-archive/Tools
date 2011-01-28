@@ -112,11 +112,8 @@
             <#-- Positions -->
             <#assign positions = propertyGroups.getPropertyAndRemoveFromList("${core}personInPosition")!>
             <#if positions?has_content> <#-- true when the property is in the list, even if not populated (when editing) -->
-                <h2 id="${positions.localName}">${positions.name?capitalize} <@p.addLink positions editable /></h2>
-                <ul id="individual-positions" role="list">
-                    <@p.objectProperty positions editable />
-                </ul>
-            </#if>
+                <@p.objectPropertyListing positions editable />
+            </#if> 
         </header>
          
         <#-- Overview -->
@@ -125,11 +122,8 @@
         <#-- Research Areas -->
         <#assign researchAreas = propertyGroups.getPropertyAndRemoveFromList("${core}hasResearchArea")!> 
         <#if researchAreas?has_content> <#-- true when the property is in the list, even if not populated (when editing) -->
-            <h2 id="${researchAreas.localName}">${researchAreas.name?capitalize} <@p.addLink researchAreas editable /></h2>                
-            <ul id="individual-areas" role="list">
-                <@p.objectProperty researchAreas editable "propStatement-simple.ftl" />
-            </ul>
-        </#if>
+            <@p.objectPropertyListing researchAreas editable />
+        </#if>   
     </section>
     
 </section>

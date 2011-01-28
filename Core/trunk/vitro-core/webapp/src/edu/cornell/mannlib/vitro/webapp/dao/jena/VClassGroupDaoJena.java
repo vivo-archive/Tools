@@ -190,9 +190,13 @@ public class VClassGroupDaoJena extends JenaBaseDao implements VClassGroupDao {
         group.setLocalName(groupInd.getLocalName());
         try {
         	DatatypeProperty drProp = (ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM)).createDatatypeProperty(VitroVocabulary.DISPLAY_RANK);
-            group.setDisplayRank(Integer.decode(((Literal)(groupInd.getProperty(drProp).getObject())).getString()).intValue());
+        	if( drProp == null ){
+        	    log.debug("No display rank in model for portal " + groupInd.getURI() );
+        	}else{
+        	    group.setDisplayRank(Integer.decode(((Literal)(groupInd.getProperty(drProp).getObject())).getString()).intValue());
+        	}
         } catch (Exception e) {
-            e.printStackTrace();
+            log.warn("Cannot get display rank for portal " + groupInd.getURI() + " " + e.getMessage() );            
         }
         return group;
     }
@@ -216,8 +220,15 @@ public class VClassGroupDaoJena extends JenaBaseDao implements VClassGroupDao {
     	groupInd.setVClassURI(CLASSGROUP.getURI());
     	
     	String groupURI = null;
+    	
+    	OntModel unionForURIGeneration = ModelFactory.createOntologyModel(
+    	        OntModelSpec.OWL_MEM, ModelFactory.createUnion(
+    	                getOntModelSelector().getApplicationMetadataModel(), 
+    	                getOntModelSelector().getFullModel()));
+    	
     	try {
-    		groupURI = (new WebappDaoFactoryJena(ontModel)).getIndividualDao().insertNewIndividual(groupInd);
+    		groupURI = (new WebappDaoFactoryJena(unionForURIGeneration)).
+                            getIndividualDao().insertNewIndividual(groupInd);
     	} catch (InsertException ie) {
     		throw new RuntimeException(InsertException.class.getName() + "Unable to insert class group "+groupURI, ie);
     	}

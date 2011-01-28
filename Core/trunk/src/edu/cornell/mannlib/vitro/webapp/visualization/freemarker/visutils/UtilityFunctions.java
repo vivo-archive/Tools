@@ -3,8 +3,10 @@
 package edu.cornell.mannlib.vitro.webapp.visualization.freemarker.visutils;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
@@ -16,6 +18,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
+import org.joda.time.DateTime;
+import org.joda.time.format.DateTimeFormatter;
+import org.joda.time.format.ISODateTimeFormat;
 
 import edu.cornell.mannlib.vitro.webapp.beans.Portal;
 import edu.cornell.mannlib.vitro.webapp.controller.Controllers;
@@ -23,6 +28,7 @@ import edu.cornell.mannlib.vitro.webapp.controller.VitroRequest;
 import edu.cornell.mannlib.vitro.webapp.controller.freemarker.responsevalues.ResponseValues;
 import edu.cornell.mannlib.vitro.webapp.controller.freemarker.responsevalues.TemplateResponseValues;
 import edu.cornell.mannlib.vitro.webapp.controller.visualization.freemarker.VisualizationFrameworkConstants;
+import edu.cornell.mannlib.vitro.webapp.visualization.constants.VOConstants;
 import edu.cornell.mannlib.vitro.webapp.visualization.constants.VisConstants;
 import edu.cornell.mannlib.vitro.webapp.visualization.freemarker.valueobjects.BiboDocument;
 import edu.cornell.mannlib.vitro.webapp.visualization.freemarker.valueobjects.CoAuthorshipData;
@@ -232,12 +238,7 @@ public class UtilityFunctions {
     		 * changes all throughout the codebase.
     		 * 	3. We are asking for a grant year & we should get a proper one or NOT at all.
     		 * */
-    		String grantYear;
-    		if (curr.getGrantStartYear() != null) { 
-    			grantYear = curr.getGrantStartYear();
-    		} else {
-    			grantYear = curr.getParsedGrantStartYear();
-    		}
+    		String grantYear = curr.getParsedGrantStartYear();
     		
 			if (yearToGrantCount.containsKey(grantYear)) {
     			yearToGrantCount.put(grantYear,
@@ -252,6 +253,28 @@ public class UtilityFunctions {
 
 		return yearToGrantCount;
 		
+	}
+	
+	public static DateTime getValidParsedDateTimeObject(String unparsedDateTime) {
+		
+		for (DateTimeFormatter currentFormatter : VOConstants.POSSIBLE_DATE_TIME_FORMATTERS) {
+			
+			try {
+				
+				DateTime dateTime = currentFormatter.parseDateTime(unparsedDateTime);
+				return dateTime;
+				
+			} catch (Exception e2) {
+				/*
+				 * The current date-time formatter did not pass the muster. 
+				 * */
+			}
+		}
+		
+		/*
+		 * This means that none of the date time formatters worked. 
+		 * */
+		return null;
 	}
 
 }
