@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Constructor;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -21,6 +22,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 import edu.cornell.mannlib.vitro.webapp.auth.requestedAction.ifaces.RequestActionConstants;
@@ -67,7 +69,7 @@ public abstract class ObjectPropertyTemplateModel extends PropertyTemplateModel 
         Pattern.compile("\\?" + KEY_SUBJECT + "\\s+\\?" + KEY_PROPERTY + "\\s+\\?(\\w+)");
     
     protected static enum ConfigError {
-        NO_QUERY("Missing query specification"),
+        NO_SELECT_QUERY("Missing select query specification"),
         NO_SUBCLASS_SELECT("Query does not select a subclass variable"),
         NO_SUBCLASS_ORDER_BY("Query does not sort first by subclass variable"),
         NO_TEMPLATE("Missing template specification"),
@@ -125,13 +127,17 @@ public abstract class ObjectPropertyTemplateModel extends PropertyTemplateModel 
     
     protected ConfigError checkQuery(String queryString) {
         if (StringUtils.isBlank(queryString)) {
-            return ConfigError.NO_QUERY;
+            return ConfigError.NO_SELECT_QUERY;
         }
         return null;
     }
-        
-    protected String getQueryString() {
-        return config.queryString;
+      
+    protected String getSelectQuery() {
+        return config.selectQuery;
+    }
+    
+    protected Set<String> getConstructQueries() {
+        return config.constructQueries;
     }
 
     protected boolean hasDefaultListView() {
@@ -157,7 +163,7 @@ public abstract class ObjectPropertyTemplateModel extends PropertyTemplateModel 
             log.debug("Using default list view for property " + propertyUri + 
                       ", so query object = '" + object + "'");
         } else {
-            String queryString = getQueryString();
+            String queryString = getSelectQuery();
             Matcher m = SUBJECT_PROPERTY_OBJECT_PATTERN.matcher(queryString);
             if (m.find()) {
                 object = m.group(1);
@@ -230,68 +236,6 @@ public abstract class ObjectPropertyTemplateModel extends PropertyTemplateModel 
         }        
     }
     
-    /**
-     * For performance reasons, we've had to rewrite SPARQL queries that would
-     * naturally use OPTIONAL blocks to use UNIONs instead.  These UNION queries
-     * return a superset of the solutions returned by the originals.  This 
-     * method filters out the unwanted solutions with extra null values.
-     * 
-     * This operation is polynomial time in the worst case, but should be linear
-     * with the actual queries used for list views.  The ORDER BY clauses
-     * should minimize the seek distance for solution elimination.
-     * 
-     * @param List<Map<String, String>> data
-     */
-    protected void removeLessSpecificSolutions(List<Map<String, String>> data) {
-       List<Map<String, String>> redundantSolns = 
-               new ArrayList<Map<String, String>>();
-       for (int i = 0; i < data.size(); i++) {
-           Map<String,String> soln = data.get(i);
-           boolean redundantSoln = false;
-           // seek forward
-           int j = i + 1;
-           while (!redundantSoln && (j < data.size())) {
-               redundantSoln = isEqualToOrLessSpecificThan(soln, data.get(j));
-               j++;
-           }
-           // loop back around
-           j = 0;
-           while (!redundantSoln && (j < i)) {
-               redundantSoln = isEqualToOrLessSpecificThan(soln, data.get(j));
-               j++;
-           }
-           if (redundantSoln) {
-               redundantSolns.add(soln);
-           }
-       }
-       data.removeAll(redundantSolns);
-    }
-    
-    /**
-     * Returns true if soln1 is equal to or less specific (i.e., has more null
-     * values) than soln2
-     * @param List<Map<String, String>> soln1
-     * @param List<Map<String, String>> soln2
-     */
-    private boolean isEqualToOrLessSpecificThan (Map<String, String> soln1, 
-                                Map<String, String> soln2) {
-        if (soln1.keySet().size() < soln2.keySet().size()) {
-            return true;
-        }
-        for (String key : soln1.keySet()) {
-            String value1 = soln1.get(key);
-            String value2 = soln2.get(key);
-            if (value2 == null && value1 != null) {
-                return false;
-            } 
-            if (value1 != null && value2 != null && !value1.equals(value2)) {
-                return false;
-            }
-        }
-        return true;
-    }
-    
-    
     /** The SPARQL query results may contain duplicate rows for a single object, if there are multiple solutions 
      * to the entire query. Remove duplicates here by arbitrarily selecting only the first row returned.
      * @param List<Map<String, String>> data
@@ -334,7 +278,7 @@ public abstract class ObjectPropertyTemplateModel extends PropertyTemplateModel 
      * effectively turns off this post-processing.)
      */
     protected void moveNullEndDateTimesToTop(List<ObjectPropertyStatementTemplateModel> statements) {
-        String queryString = getQueryString();
+        String queryString = getSelectQuery();
         Matcher m = ORDER_BY_END_DATE_TIME_PATTERN.matcher(queryString);
         if ( ! m.find() ) {
             return;
@@ -371,13 +315,15 @@ public abstract class ObjectPropertyTemplateModel extends PropertyTemplateModel 
         private static final String CONFIG_FILE_PATH = "/config/";
         private static final String DEFAULT_CONFIG_FILE_NAME = "listViewConfig-default.xml";
         
+        private static final String NODE_NAME_QUERY_CONSTRUCT = "query-construct";
         private static final String NODE_NAME_QUERY_BASE = "query-base";
         private static final String NODE_NAME_QUERY_COLLATED = "query-collated";
         private static final String NODE_NAME_TEMPLATE = "template";
         private static final String NODE_NAME_POSTPROCESSOR = "postprocessor";
         
         private boolean isDefaultConfig;
-        private String queryString;
+        private Set<String> constructQueries;
+        private String selectQuery;
         private String templateName;
         private String postprocessor;
 
@@ -434,13 +380,13 @@ public abstract class ObjectPropertyTemplateModel extends PropertyTemplateModel 
         
         private ConfigError checkConfiguration(VitroRequest vreq) {
 
-            ConfigError error = ObjectPropertyTemplateModel.this.checkQuery(queryString);
+            ConfigError error = ObjectPropertyTemplateModel.this.checkQuery(selectQuery);
             if (error != null) {
                 return error;
             }
 
-            if (StringUtils.isBlank(queryString)) {
-                return ConfigError.NO_QUERY;
+            if (StringUtils.isBlank(selectQuery)) {
+                return ConfigError.NO_SELECT_QUERY;
             }
 
             if ( StringUtils.isBlank(templateName)) {
@@ -468,35 +414,55 @@ public abstract class ObjectPropertyTemplateModel extends PropertyTemplateModel 
             try {
                 db = dbf.newDocumentBuilder();
                 Document doc = db.parse(configFilePath);
-                
+                String propertyUri = op.getURI();
                 // Required values
                 String queryNodeName = 
                     // Don't test op.getCollateBySubclass(), since if creating a CollatedObjectPropertyTemplateModel failed,
                     // we now want to create an UncollatedObjectPropertyTemplateModel
                     (ObjectPropertyTemplateModel.this instanceof CollatedObjectPropertyTemplateModel) ? NODE_NAME_QUERY_COLLATED : NODE_NAME_QUERY_BASE;
-                log.debug("Using query element " + queryNodeName + " for object property " + op.getURI());
-                queryString = getConfigValue(doc, queryNodeName);
-                templateName = getConfigValue(doc, NODE_NAME_TEMPLATE); 
+                log.debug("Using query element " + queryNodeName + " for object property " + propertyUri);
+                selectQuery = getConfigValue(doc, queryNodeName, propertyUri);
+                templateName = getConfigValue(doc, NODE_NAME_TEMPLATE, propertyUri); 
                 
                 // Optional values
-                postprocessor = getConfigValue(doc, NODE_NAME_POSTPROCESSOR);
+                postprocessor = getConfigValue(doc, NODE_NAME_POSTPROCESSOR, propertyUri);
+                constructQueries = getConfigValues(doc, NODE_NAME_QUERY_CONSTRUCT, propertyUri);
+       
             } catch (Exception e) {
                 log.error("Error processing config file " + configFilePath, e);
                 // What should we do here?
             }            
         }
  
-        private String getConfigValue(Document doc, String nodeName) {
+        private String getConfigValue(Document doc, String nodeName, String propertyUri) {
             NodeList nodes = doc.getElementsByTagName(nodeName);
             Element element = (Element) nodes.item(0); 
             String value = null;
             if (element != null) {
                 value = element.getChildNodes().item(0).getNodeValue();   
-                log.debug("Value of config parameter " + nodeName + " = " + value);
+                log.debug("Found config parameter " + nodeName + " for object property " + propertyUri +  " with value " + value);
             } else {
-                log.debug("No value for config parameter " + nodeName);
+                log.debug("No value found for config parameter " + nodeName + " for object property " + propertyUri);
             }
             return value;           
+        }
+        
+        private Set<String> getConfigValues(Document doc, String nodeName, String propertyUri) {
+            Set<String> values = null;
+            NodeList nodes = doc.getElementsByTagName(nodeName);
+            int nodeCount = nodes.getLength();
+            if (nodeCount > 0) {
+                values = new HashSet<String>(nodeCount);
+                for (int i = 0; i < nodeCount; i++) {
+                    Element element = (Element) nodes.item(i);
+                    String value = element.getChildNodes().item(0).getNodeValue();
+                    values.add(value);  
+                    log.debug("Found config parameter " + nodeName + " for object property " + propertyUri +  " with value " + value);
+                }
+            } else {
+                log.debug("No values found for config parameter " + nodeName + " for object property " + propertyUri);
+            }
+            return values;
         }
         
         private String getConfigFilePath(String filename) {

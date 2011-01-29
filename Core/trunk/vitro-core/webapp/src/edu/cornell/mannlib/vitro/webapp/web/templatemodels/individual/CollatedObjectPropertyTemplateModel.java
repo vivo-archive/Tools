@@ -56,7 +56,7 @@ public class CollatedObjectPropertyTemplateModel extends ObjectPropertyTemplateM
         String subjectUri = subject.getURI();
         String propertyUri = op.getURI();
         List<Map<String, String>> statementData = 
-            opDao.getObjectPropertyStatementsForIndividualByProperty(subjectUri, propertyUri, getQueryString());
+            opDao.getObjectPropertyStatementsForIndividualByProperty(subjectUri, propertyUri, getSelectQuery());
 
         /* Apply post-processing */
         postprocess(statementData, wdf);
@@ -77,7 +77,7 @@ public class CollatedObjectPropertyTemplateModel extends ObjectPropertyTemplateM
     protected ConfigError checkQuery(String queryString) {
         
         if (StringUtils.isBlank(queryString)) {
-            return ConfigError.NO_QUERY;
+            return ConfigError.NO_SELECT_QUERY;
         }
         
         Matcher m;

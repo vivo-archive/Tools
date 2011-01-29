@@ -25,9 +25,16 @@
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.Arrays" %>
+<%@ page import="java.util.Set" %>
+<%@ page import="java.util.HashSet" %>
+<%@ page import="java.util.Iterator" %>
 
 <%@ page import="com.hp.hpl.jena.rdf.model.Model" %>
 <%@ page import="com.hp.hpl.jena.vocabulary.XSD" %>
+
+<%@ page import="org.json.JSONObject" %>
+<%@ page import="org.json.JSONException" %>
+<%@ page import="org.json.JSONArray" %>
 
 <%@ page import="edu.cornell.mannlib.vitro.webapp.beans.Individual" %>
 <%@ page import="edu.cornell.mannlib.vitro.webapp.dao.VitroVocabulary" %>
@@ -218,40 +225,19 @@ public static Log log = LogFactory.getLog("edu.cornell.mannlib.vitro.webapp.jsp.
   SELECT ?existingRoleLabel WHERE { ?role  <${label}> ?existingRoleLabel . }
 </v:jsonset>
 
-<%     
-String objectClassUri = vreq.getParameter("roleActivityType_objectClassUri");
-if (StringUtils.isNotBlank(objectClassUri)) { %>
-<c:set var="objectClassUri" value="<%= objectClassUri %>" />
+<%-- 
 <v:jsonset var="activityTypeQuery">
-     PREFIX core: <${vivoCore}>
-     PREFIX rdfs: <${rdfs}>
-     SELECT ?existingActivityType WHERE { 
-         ?role core:roleIn ?existingActivity .
-         ?existingActivity a ?existingActivityType . 
-         ?existingActivityType rdfs:subClassOf <${objectClassUri}> .
-     }
+        PREFIX core: <${vivoCore}>
+        SELECT ?existingActivityType WHERE {
+            ?role core:roleIn ?existingActivity . 
+            ?existingActivity a ?existingActivityType . 
+        }    
 </v:jsonset>
-<%   
-/*
-} else {    
-    // Need to get the hardcoded literals and filter for them
-    String optionsType = vreq.getParameter("roleActivityType_optionsType");
-    if ("HARCODED_LITERALS".equals(optionsType)) {
-	    String typeLiteralOptions = vreq.getParameter("roleActivityType_literalOptions");
-	    if (StringUtils.isNotBlank(typeLiteralOptions)) {
-	        List<String> types = new ArrayList<String>();
-	    }
-*/	    
-} else { 
+--%>
+<% 
+request.setAttribute("typeQuery", getActivityTypeQuery(vreq));
 %>
-<v:jsonset var="activityTypeQuery">
-    PREFIX core: <${vivoCore}>
-    SELECT ?existingActivityType WHERE { 
-        ?role core:roleIn ?existingActivity .
-        ?existingActivity a ?existingActivityType . 
-    }
-</v:jsonset>  
-<% } %>
+<v:jsonset var="activityTypeQuery">${typeQuery}</v:jsonset>
 
  <v:jsonset var="existingIntervalNodeQuery" >  
     SELECT ?existingIntervalNode WHERE {
@@ -551,3 +537,63 @@ if (StringUtils.isNotBlank(objectClassUri)) { %>
 <% } %>
 
 <jsp:include page="${postForm}"/>
+
+<%!
+
+private static final String VIVO_CORE = "http://vivoweb.org/ontology/core#";
+private static final String  DEFAULT_ACTIVITY_TYPE_QUERY = 
+    "PREFIX core: <" + VIVO_CORE + ">\n" +
+    "SELECT ?existingActivityType WHERE { \n" +
+        "?role core:roleIn ?existingActivity . \n" +
+        "?existingActivity a ?existingActivityType . \n" +
+    "}"; 
+// The activity type query results must be limited to the values in the activity type select element. 
+// Sometimes the query returns a superclass such as owl:Thing instead. 
+private String getActivityTypeQuery(VitroRequest vreq) {
+
+    String activityTypeQuery = null;
+
+	// Select options are subclasses of a specified class
+	String objectClassUri = vreq.getParameter("roleActivityType_objectClassUri");
+	if (StringUtils.isNotBlank(objectClassUri)) { 
+	    log.debug("objectClassUri = " + objectClassUri);
+	    activityTypeQuery = 
+	    "PREFIX core: <" + VIVO_CORE + ">\n" +
+	    "PREFIX rdfs: <" + VitroVocabulary.RDFS + ">\n" +
+	    "SELECT ?existingActivityType WHERE {\n" +
+	        "?role core:roleIn ?existingActivity . \n" +
+	        "?existingActivity a ?existingActivityType . \n" +
+	        "?existingActivityType rdfs:subClassOf <" + objectClassUri + "> . \n" +
+	    "}";
+	} else {  
+	    String optionsType = vreq.getParameter("roleActivityType_optionsType");
+	    // Select options are hardcoded
+	    if ("HARDCODED_LITERALS".equals(optionsType)) {
+	        String typeLiteralOptions = vreq.getParameter("roleActivityType_literalOptions");
+	        if (StringUtils.isNotBlank(typeLiteralOptions)) {           
+	            try {
+	                JSONObject json = new JSONObject("{values: [" + typeLiteralOptions + "]}");
+	                Set<String> typeUris = new HashSet<String>();
+	                JSONArray values = json.getJSONArray("values");
+	                int valueCount = values.length();
+	                for (int i = 0; i < valueCount; i++) {
+	                    JSONArray option = values.getJSONArray(i);
+	                    String uri = option.getString(0);
+	                    if (StringUtils.isNotBlank(uri)) {
+	                        typeUris.add("(?existingTypeActivity = \"" + uri + "\")");
+	                    }	                    
+	                }
+	                String typeFilters = "FILTER (" + StringUtils.join(typeUris, "||") + ")";
+	                activityTypeQuery = DEFAULT_ACTIVITY_TYPE_QUERY.replace("}", "") + typeFilters + "}";
+	            } catch (JSONException e) {
+	                activityTypeQuery = DEFAULT_ACTIVITY_TYPE_QUERY;
+	            }
+	        }
+	    } else { 
+	        activityTypeQuery = DEFAULT_ACTIVITY_TYPE_QUERY;	    
+	    } 
+	}
+	log.debug("Activity type query: " + activityTypeQuery);
+    return activityTypeQuery;
+}
+%>

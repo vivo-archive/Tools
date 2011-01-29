@@ -5,15 +5,14 @@
 <section id="individual-intro" class="vcard" role="region">
     <#-- Image -->
     <#assign individualImage>
-        <@p.imageLinks individual=individual 
-                       propertyGroups=propertyGroups 
-                       namespaces=namespaces 
-                       editable=editable 
-                       showPlaceholder="with_add_link" 
-                       placeholder="${urls.images}/placeholders/non.person.thumbnail.jpg" />
+        <@p.image individual=individual 
+                  propertyGroups=propertyGroups 
+                  namespaces=namespaces 
+                  editable=editable 
+                  showPlaceholder="with_add_link" 
+                  placeholder="${urls.images}/placeholders/non.person.thumbnail.jpg" />
     </#assign>
     
-    <#-- <#if ( individualImage?matches('<img class="individual-photo"')?size > 0 )> -->
     <#if ( individualImage?contains('<img class="individual-photo"') )>
         <#assign infoClass = 'class="withThumb"'/>
     </#if>
