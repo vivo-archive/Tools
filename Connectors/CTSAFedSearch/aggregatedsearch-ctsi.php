@@ -171,13 +171,13 @@ echo $VivoHeader;
 echo '<style type="text/css">
     div#topBanner { text-align: center; padding-bottom: 10px; } 
 
-    div#bodyLeft { width: 275px; } 
+    div#bodyLeft { margin-left: 100px; width: 275px; vertical-align:text-top; } 
 
-    div#bodyCenter { margin-left: 300px; width: 100px; position: absolute; } 
+    div#bodyCenter { margin-left: 400px; vertical-align:middle; width: 100px; position: absolute; } 
 
-    div#bodyRight { position: absolute;  margin-left: 400px; width: 300px; }
+    div#bodyRight { position: absolute;  margin-left: 500px; width: 240px; vertical-align:text-top; }
 
-    div#singleResult{ height:150px; vertical-align:middle;}
+    div#singleResult{ height:200px; font-size:0.7em;}
 </style>';
 
     
@@ -213,10 +213,11 @@ for($col = 2;$col > -1; $col--){// it goes through a column at a time.
 		}
 		switch($col){
 			case 0 :
-   				if($Count[$inc] == 0)
+   				//if($Count[$inc] == 0)
+				//{
+   				//echo  $Partner[$inc] . "\n";
+				//}else
 				{
-   				echo  $Partner[$inc] . "\n";
-				}else{
    				echo "<a  href='" . $Searchresult[$inc]. "'>" . $Partner[$inc] . "</a>\n";
 				}
 				echo "<br/> " .$Poptype[$inc] . "  \n";
@@ -233,9 +234,9 @@ for($col = 2;$col > -1; $col--){// it goes through a column at a time.
 			case 2 :
 				if($Count[$inc] != 0)
 				{
-				 echo "<iframe src='" .
+				 echo "<div style=\"border:1px solid;\"><iframe src='" .
 					 trim($Previewsite[$inc]) . 
-					"' width='200' height='150'>\n iframes not supported\n</iframe>\n";
+					"' width='200' height='150'>\n iframes not supported\n</iframe></div>\n";
 				}
 
 			break;
