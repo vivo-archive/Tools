@@ -207,7 +207,6 @@ for($col = 2;$col > -1; $col--){// it goes through a column at a time.
 //for each site getting Partner, Page, Count,Poptype, Previewsite, Searchresult
 	for($inc = 0;$inc < count($Page);$inc++)
 	if($Partner[$inc] != ""){
-   		echo "<li>\n";
 		echo "<div id='singleResult'>\n";
 		if($col != 2){
 			echo "<br /><br />\n";//iframe compensation
@@ -242,7 +241,6 @@ for($col = 2;$col > -1; $col--){// it goes through a column at a time.
 			break;
 		}
 		echo "</div>\n";//single result
-   		echo "</li>\n";
 
 
 	}
