@@ -149,7 +149,8 @@ pageTracker._trackPageview();
 </html>';
 
 echo $VivoHeader;
-echo '\n<style type="text/css">
+echo '
+<style type="text/css">
     div.topBanner { text-align: center; padding-bottom: 10px; } 
 
     div.bodyLeft { width: 275px; vertical-align:text-top; text-align: left; } 
@@ -219,6 +220,19 @@ for($inc = 0;$inc < count($Page);$inc++){
 					}
 					break;
 				case 2 :
+
+					echo '<script type="text/javascript">
+					if(!navigator.userAgent.match("Safari")){
+					';//show IFRAMES?
+					{// if IFRAMES become a problem comment them out here.
+					 echo "document.write(\"<iframe src='" .
+						 trim($Previewsite[$inc]) . 
+						"' width='200' height='150'> iframes not supported</iframe>\");";
+					}
+					echo '}
+					else
+					{';
+					echo "document.write(\"";
 					if($Logo[$inc] != "")
 					{
 						list($width, $height, $type, $attr) = getimagesize($Logo[$inc]);
@@ -228,12 +242,9 @@ for($inc = 0;$inc < count($Page);$inc++){
 						}else{
 							echo "<a href='" .trim($Previewsite[$inc]) ."'><img src='" . $Logo[$inc] . "' height='150' /></a>";
 						}
-					}else if(false)//show IFRAMES?
-					{// if IFRAMES become a problem comment them out here.
-					 echo "<iframe src='" .
-						 trim($Previewsite[$inc]) . 
-						"' width='200' height='150'>\n iframes not supported\n</iframe>\n";
 					}
+					echo "\");";
+					echo '}</script>';
 
 					break;
 			}
