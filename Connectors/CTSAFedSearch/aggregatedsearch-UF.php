@@ -220,7 +220,7 @@ for($inc = 0;$inc < count($Page);$inc++){
 					}
 					break;
 				case 2 :
-					if($Count[$inc] == 0)
+					if($Count[$inc] != 0)
 					{
 						echo '<script type="text/javascript">
 						if(!navigator.userAgent.match("Safari")){
