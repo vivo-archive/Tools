@@ -224,11 +224,11 @@ for($inc = 0;$inc < count($Page);$inc++){
 					echo '<script type="text/javascript">
 					if(!navigator.userAgent.match("Safari")){
 					';//show IFRAMES?
-					{// if IFRAMES become a problem comment them out here.
+					// if IFRAMES become a problem comment them out here.
 					 echo "document.write(\"<iframe src='" .
 						 trim($Previewsite[$inc]) . 
 						"' width='200' height='150'> iframes not supported</iframe>\");";
-					}
+					
 					echo '}
 					else
 					{';
