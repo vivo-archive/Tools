@@ -1,24 +1,24 @@
 <?php
 /*Copyright (c) 2010, University of Florida
-All rights reserved.
+ All rights reserved.
 
-Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+ Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 
-    * Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
-    * Neither the name of the University of Florida nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+ * Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+ * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+ * Neither the name of the University of Florida nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
 
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
-  Contributors: James Pence
-*
-*/
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ Contributors: James Pence
+ *
+ */
 
 
 ini_set('memory_limit', '64M');//Memory is intensly used on large searches.
-include_once('./simple_html_dom.php');//The DOM library is used to 
+include_once('./simple_html_dom.php');//The DOM library is used to
 
 function exception_error_handler($errno, $errstr, $errfile, $errline ) {//placed to silence errors (ie unresponsive pages)
-    //echo "\nhad an error at line " . $errline . " - " . $errstr . "\n";
+	//echo "\nhad an error at line " . $errline . " - " . $errstr . "\n";
 	//throw new Exception("boom");
 }
 set_error_handler("exception_error_handler");
@@ -42,7 +42,7 @@ for($i = 0; $i < count($descriptsite); $i++){
 	if($xmlDoc !=null){
 		$name = $xmlDoc->xpath('name');
 		$Partner[$i] = trim( (string) ($name[0]) );
-		
+
 		$icon = $xmlDoc->xpath('icon');
 		$Logo[$i] = trim( (string) ($icon[0]) );
 		$site = $xmlDoc->xpath('aggregate-query');
@@ -152,95 +152,101 @@ echo $VivoHeader;
 echo '<style type="text/css">
     div#topBanner { text-align: center; padding-bottom: 10px; } 
 
-    div#bodyLeft { margin-left: 100px; width: 275px; vertical-align:text-top; text-align: left; } 
+    div#bodyLeft { width: 275px; vertical-align:text-top; text-align: left; } 
 
-    div#bodyCenter { margin-left: 400px; vertical-align:middle; width: 100px; position: absolute; } 
+    div#bodyCenter { vertical-align:middle; width: 100px; position: absolute; } 
 
-    div#bodyRight { position: absolute;  margin-left: 500px; width: 240px; vertical-align:text-top; }
+    div#bodyRight { width: 240px; vertical-align:text-top; }
 
     div#singleResult{ height:180px; font-size:1em;}
+    
 </style>';
 
-    
+
 echo ' <form name="input" action= "' . $_SERVER["PHP_SELF"] . '" method="get">';
 echo ' Search Term: <input type="text" name="querytext" value="' . $_GET["querytext"] . '" />';
 echo ' <input type="submit" value="Search" /><br/>';
 echo '</form>';
 
-	echo "<br />";
-	echo "Results for \"" . urldecode($term) . "\".";
-	echo "<br /> <br />\n";
+echo "<br />";
+echo "Results for \"" . urldecode($term) . "\".";
+echo "<br /> <br />\n";
 
-for($col = 2;$col > -1; $col--){// it goes through a column at a time.
-	switch($col){
-		case 0 :
-			echo "<div id='bodyLeft'>\n";
-		break;
-		case 1 :
-			echo "<div id='bodyCenter'>\n";
-		break;
-		case 2 :
-			echo "<div id='bodyRight'>\n";
-		break;
-	}
-	echo "<ul class=\"searchhits\">\n";
-
+echo "<div style='width:750px;margin-left:auto; margin-right:auto;'>\n";
+echo "<table border = '0'>";
 //for each site getting Partner, Page, Count,Poptype, Previewsite, Searchresult
-	for($inc = 0;$inc < count($Page);$inc++)
-	if($Partner[$inc] != ""){
-		echo "<div id='singleResult'>\n";
-		if($col != 2){
-			echo "<br />\n";//iframe compensation
-		}
+for($inc = 0;$inc < count($Page);$inc++){
+	echo "<tr>\n";
+
+	for($col = 0;$col < 3; $col++){// it goes through a column at a time.
+		echo "<td>";
 		switch($col){
 			case 0 :
-   				//if($Count[$inc] == 0)
-				//{
-   				//echo  $Partner[$inc] . "\n";
-				//}else
-				{
-   				echo "<a  href='" . $Searchresult[$inc]. "'>" . $Partner[$inc] . "</a>\n";
-				}
-				echo "<br/> " .$Poptype[$inc] . "  \n";
-			break;
+				echo "<div id='bodyLeft'>\n";
+				break;
 			case 1 :
-   				if($Count[$inc] == 0)
-				{
-				echo $Count[$inc] . " Pe" . (($Count[$inc] == 1)?"rson":"ople") . "\n";
-				}else{
-				echo "<a  href='" . $Searchresult[$inc]. "'>" . 
-					$Count[$inc] . " Pe" . (($Count[$inc] == 1)?"rson":"ople") . "</a>  \n";
-				}
-			break;
+				echo "<div id='bodyCenter'>\n";
+				break;
 			case 2 :
-				if($Count[$inc] != 0)
-				{
-				 echo "<iframe src='" .
-					 trim($Previewsite[$inc]) . 
-					"' width='200' height='150'>\n iframes not supported\n</iframe>\n";
-				}
-
-			break;
+				echo "<div id='bodyRight'>\n";
+				break;
 		}
-		echo "</div> <!-- singleResult -->\n";//single result
+		echo "<ul class=\"searchhits\">\n";
 
+		if($Partner[$inc] != ""){
+			echo "<div id='singleResult'>\n";
+			if($col != 2){
+				echo "<br />\n";//iframe compensation
+			}
+			switch($col){
+				case 0 :
+					//if($Count[$inc] == 0)
+					//{
+					//echo  $Partner[$inc] . "\n";
+						//}else
+						{
+							echo "<a  href='" . $Searchresult[$inc]. "'>" . $Partner[$inc] . "</a>\n";
+						}
+						echo "<br/> " .$Poptype[$inc] . "  \n";
+						break;
+				case 1 :
+					if($Count[$inc] == 0)
+					{
+						echo $Count[$inc] . " Pe" . (($Count[$inc] == 1)?"rson":"ople") . "\n";
+					}else{
+						echo "<a  href='" . $Searchresult[$inc]. "'>" .
+						$Count[$inc] . " Pe" . (($Count[$inc] == 1)?"rson":"ople") . "</a>  \n";
+					}
+					break;
+				case 2 :
+					if($Count[$inc] != 0)
+					{
+						echo "<iframe src='" .
+					 trim($Previewsite[$inc]) .
+					"' width='200' height='150'>\n iframes not supported\n</iframe>\n";
+					}
+
+					break;
+			}
+			echo "</div> <!-- singleResult -->\n";//single result
+
+
+		}
+
+		echo "</ul>\n";
+		if(false){
+			echo "<br><a href =\"./fs.xml\" > Site description XML </a>";
+			echo "<br><a href =\"http://". $_SERVER['SERVER_NAME'] . $_SERVER['PHP_SELF'] . "?return=xml&amp;querytext=" . $term . "\" > These results in XML </a>";
+			echo "<br><a href =\"http://". $_SERVER['SERVER_NAME'] . $_SERVER['PHP_SELF'] . "?return=prev&amp;querytext=" . $term . "\" > Preview page of these results </a>";
+		}
+		echo "</div>\n";//left right or center
+		echo "</td>\n";
 
 	}
-
-	echo "</ul>\n";
-	if(false){
-		echo "<br><a href =\"./fs.xml\" > Site description XML </a>";
-		echo "<br><a href =\"http://". $_SERVER['SERVER_NAME'] . $_SERVER['PHP_SELF'] . "?return=xml&amp;querytext=" . $term . "\" > These results in XML </a>";
-		echo "<br><a href =\"http://". $_SERVER['SERVER_NAME'] . $_SERVER['PHP_SELF'] . "?return=prev&amp;querytext=" . $term . "\" > Preview page of these results </a>";
-	}
-	echo "</div>\n";//left right or center
-
-		
 }
+	echo "</table>\n";
 
 
+	echo $VivoFooter;
 
-echo $VivoFooter;
-
-?>
-
+	?>
