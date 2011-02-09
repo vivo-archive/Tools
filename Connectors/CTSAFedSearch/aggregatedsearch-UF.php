@@ -154,7 +154,7 @@ echo '<style type="text/css">
 
     div#bodyLeft { width: 275px; vertical-align:text-top; text-align: left; } 
 
-    div#bodyCenter { vertical-align:middle; width: 100px; position: absolute; } 
+    div#bodyCenter { vertical-align:middle; width: 100px; } 
 
     div#bodyRight { width: 240px; vertical-align:text-top; }
 
