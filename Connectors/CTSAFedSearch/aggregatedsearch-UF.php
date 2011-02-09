@@ -92,7 +92,7 @@ $VivoHeader ='<?xml version="1.0" encoding="utf-8"?>
 </head>
 <body>
 <div id="header"> 
-  <h2 class="replace" id="logo"><span style="padding-left:2em">Federated Search</span></h1>
+  <h2 class="replace" id="logo"><span style="padding-left:2em">Federated Search</span></h2>
 
   <h2 class="replace" id="unit"><a href="http://www.ufl.edu/">University of Florida<span></span></a></h2>
 </div><!-- #header -->
@@ -149,16 +149,16 @@ pageTracker._trackPageview();
 </html>';
 
 echo $VivoHeader;
-echo '<style type="text/css">
-    div#topBanner { text-align: center; padding-bottom: 10px; } 
+echo '\n<style type="text/css">
+    div.topBanner { text-align: center; padding-bottom: 10px; } 
 
-    div#bodyLeft { width: 275px; vertical-align:text-top; text-align: left; } 
+    div.bodyLeft { width: 275px; vertical-align:text-top; text-align: left; } 
 
-    div#bodyCenter { vertical-align:middle; width: 100px; } 
+    div.bodyCenter { vertical-align:middle; width: 100px; } 
 
-    div#bodyRight { width: 240px; vertical-align:text-top; }
+    div.bodyRight { width: 240px; vertical-align:text-top; }
 
-    div#singleResult{ height:180px; font-size:1em;}
+    div.singleResult{ height:180px; font-size:1em;}
     
 </style>';
 
@@ -182,19 +182,19 @@ for($inc = 0;$inc < count($Page);$inc++){
 		echo "<td>";
 		switch($col){
 			case 0 :
-				echo "<div id='bodyLeft'>\n";
+				echo "<div class='bodyLeft'>\n";
 				break;
 			case 1 :
-				echo "<div id='bodyCenter'>\n";
+				echo "<div class='bodyCenter'>\n";
 				break;
 			case 2 :
-				echo "<div id='bodyRight'>\n";
+				echo "<div class='bodyRight'>\n";
 				break;
 		}
 		echo "<ul class=\"searchhits\">\n";
 
 		if($Partner[$inc] != ""){
-			echo "<div id='singleResult'>\n";
+			echo "<div class='singleResult'>\n";
 			if($col != 2){
 				echo "<br />\n";//iframe compensation
 			}
