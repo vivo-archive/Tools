@@ -219,11 +219,20 @@ for($inc = 0;$inc < count($Page);$inc++){
 					}
 					break;
 				case 2 :
-					if($Count[$inc] != 0)
+					if($Logo[$inc] != "")
 					{
-						echo "<iframe src='" .
-					 trim($Previewsite[$inc]) .
-					"' width='200' height='150'>\n iframes not supported\n</iframe>\n";
+						list($width, $height, $type, $attr) = getimagesize($Logo[$inc]);
+						if( ($width * 0.75) > $height)
+						{
+							echo "<a href='" .trim($Previewsite[$inc]) ."'><img src='" . $Logo[$inc] . "' width='200' /></a>";
+						}else{
+							echo "<a href='" .trim($Previewsite[$inc]) ."'><img src='" . $Logo[$inc] . "' height='150' /></a>";
+						}
+					}else if(false)//show IFRAMES?
+					{// if IFRAMES become a problem comment them out here.
+					 echo "<iframe src='" .
+						 trim($Previewsite[$inc]) . 
+						"' width='200' height='150'>\n iframes not supported\n</iframe>\n";
 					}
 
 					break;
