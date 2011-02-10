@@ -92,7 +92,7 @@ $VivoHeader ='<?xml version="1.0" encoding="utf-8"?>
 </head>
 <body>
 <div id="header"> 
-  <h2 class="replace" id="logo"><span style="padding-left:2em">Federated Search</span></h2>
+  <div style="padding-left:5px;padding-top:5px;font-family:Georgia;color:white;font-size:2.5em">Federated Search</div>
 
   <h2 class="replace" id="unit"><a href="http://www.ufl.edu/">University of Florida<span></span></a></h2>
 </div><!-- #header -->
@@ -206,7 +206,7 @@ for($inc = 0;$inc < count($Page);$inc++){
 					//echo  $Partner[$inc] . "\n";
 						//}else
 						{
-							echo "<a  href='" . $Searchresult[$inc]. "'>" . $Partner[$inc] . "</a>\n";
+							echo "<a style='font-size:1.5em'  href='" . $Searchresult[$inc]. "'>" . $Partner[$inc] . "</a>\n";
 						}
 						echo "<br/> " .$Poptype[$inc] . "  \n";
 						break;
@@ -215,12 +215,25 @@ for($inc = 0;$inc < count($Page);$inc++){
 					{
 						echo $Count[$inc] . " Pe" . (($Count[$inc] == 1)?"rson":"ople") . "\n";
 					}else{
-						echo "<a  href='" . $Searchresult[$inc]. "'>" .
+						echo "<a style='font-size:1.5em' href='" . $Searchresult[$inc]. "'>" .
 						$Count[$inc] . " Pe" . (($Count[$inc] == 1)?"rson":"ople") . "</a>  \n";
 					}
 					break;
 				case 2 :
-					if($Count[$inc] != 0)
+
+					echo '<script type="text/javascript">
+					if(!navigator.userAgent.match("Safari")){
+					';//show IFRAMES?
+					// if IFRAMES become a problem comment them out here.
+					 echo "document.write(\"<iframe src='" .
+						 trim($Previewsite[$inc]) . 
+						"' width='200' height='150'> iframes not supported</iframe>\");";
+					
+					echo '}
+					else
+					{';
+					echo "document.write(\"";
+					if($Logo[$inc] != "")
 					{
 						echo '<script type="text/javascript">
 						if(!navigator.userAgent.match("Safari")){
