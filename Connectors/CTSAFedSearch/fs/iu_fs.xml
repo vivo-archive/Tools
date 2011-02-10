@@ -2,6 +2,6 @@
 	<name>Indiana University</name>
 	<icon>http://www.vivoweb.org/files/logos/partner_institutions/iu_logo.jpg</icon>
 	<aggregate-query>
-		http://vivotest.ctrip.ufl.edu/ctsa/fs.php?school=2&amp;return=xml&amp;querytext=
+		http://vivoexperts.ctsi.ufl.edu/iu_fs.php?return=xml&amp;querytext=
 	</aggregate-query>
 </site-description>

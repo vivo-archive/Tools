@@ -2,6 +2,6 @@
 	<name>University of Florida</name>
 	<icon>http://vivoweb.org/files/logos/partner_institutions/ufl_logo.gif</icon>
 	<aggregate-query>
-		http://vivotest.ctrip.ufl.edu/ctsa/fs.php?school=0&amp;return=xml&amp;querytext=
+		http://vivoexperts.ctsi.ufl.edu/uf_fs.php?return=xml&amp;querytext=
 	</aggregate-query>
 </site-description>

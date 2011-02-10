@@ -2,6 +2,6 @@
 	<name>Cornell University</name>
 	<icon>http://www.vivoweb.org/files/logos/partner_institutions/cu_logo.gif</icon>
 	<aggregate-query>
-		http://vivotest.ctrip.ufl.edu/ctsa/fs.php?school=1&amp;return=xml&amp;querytext=
+		http://vivoexperts.ctsi.ufl.edu/cu_fs.php?return=xml&amp;querytext=
 	</aggregate-query>
 </site-description>
