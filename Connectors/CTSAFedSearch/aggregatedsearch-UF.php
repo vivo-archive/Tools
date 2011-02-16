@@ -220,20 +220,7 @@ for($inc = 0;$inc < count($Page);$inc++){
 					}
 					break;
 				case 2 :
-
-					echo '<script type="text/javascript">
-					if(!navigator.userAgent.match("Safari")){
-					';//show IFRAMES?
-					// if IFRAMES become a problem comment them out here.
-					 echo "document.write(\"<iframe src='" .
-						 trim($Previewsite[$inc]) . 
-						"' width='200' height='150'> iframes not supported</iframe>\");";
-					
-					echo '}
-					else
-					{';
-					echo "document.write(\"";
-					if($Logo[$inc] != "")
+					if($Count[$inc] != 0)
 					{
 						echo '<script type="text/javascript">
 						if(!navigator.userAgent.match("Safari")){
@@ -243,9 +230,11 @@ for($inc = 0;$inc < count($Page);$inc++){
 							 trim($Previewsite[$inc]) . 
 							"' width='200' height='150'> iframes not supported</iframe>\");";
 						
-						echo '}
+						echo '
+					}
 						else
-						{';
+						{
+						';
 						echo "document.write(\"";
 						if($Logo[$inc] != "")
 						{
@@ -257,8 +246,10 @@ for($inc = 0;$inc < count($Page);$inc++){
 								echo "<a href='" .trim($Previewsite[$inc]) ."'><img src='" . $Logo[$inc] . "' height='150' /></a>";
 							}
 						}
-						echo "\");";
-						echo '}</script>';
+						echo "\");
+						";
+						echo '}</script>
+						';
 					}
 
 					break;

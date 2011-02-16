@@ -1,24 +1,24 @@
 <?php
 /*Copyright (c) 2010, University of Florida
-All rights reserved.
+ All rights reserved.
 
-Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+ Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 
-    * Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
-    * Neither the name of the University of Florida nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+ * Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+ * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+ * Neither the name of the University of Florida nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
 
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
-  Contributors: James Pence
-*
-*/
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ Contributors: James Pence
+ *
+ */
 
 
 ini_set('memory_limit', '64M');//Memory is intensly used on large searches.
-include_once('./simple_html_dom.php');//The DOM library is used to 
+include_once('./simple_html_dom.php');//The DOM library is used to
 
 function exception_error_handler($errno, $errstr, $errfile, $errline ) {
-    //echo "had an error at line " . $errline . " - " . $errstr . "\n";
+	//echo "had an error at line " . $errline . " - " . $errstr . "\n";
 	//throw new Exception("boom");
 }
 set_error_handler("exception_error_handler");
@@ -30,7 +30,7 @@ $school = array('vivo.ufl.edu');// web of vivo school
 $name = array('University of Florida');//name of vivo school
 $icon = array('http://www.vivoweb.org/files/logos/partner_institutions/ufl_logo.gif');//logo of school
 //description of the population searched
-$popdesc = "Participants in the VIVO National Network include institutions with local installations of VIVO or those with research discovery and profiling applications that can provide semantic web-compliant data.";
+$popdesc = "UF VIVO contains all 6,900 faculty and 7,600 full-time staff of the University of Florida, as well as award information for all grants.  UF students, affiliates and employees of Shands HealthCare can request to be added.";
 
 $num = 0;// $_GET["school"];
 $term = urlencode($term);
@@ -41,56 +41,56 @@ $term = urlencode($term);
 if($filetype == "desc")
 
 {//type = xml
-	header ("Content-type: text/xml");
-	echo"<?xml version='1.0'?>\n";
-	{
-	   echo "<site-description>\n";
-	   echo "\t<name>" . $name[$num] . "</name>\n";
-	   echo "\t<icon>" . $icon[$num] . "</icon>\n";
-	   echo "\t<aggregate-query>" . 
+header ("Content-type: text/xml");
+echo"<?xml version='1.0'?>\n";
+{
+	echo "<site-description>\n";
+	echo "\t<name>" . $name[$num] . "</name>\n";
+	echo "\t<icon>" . $icon[$num] . "</icon>\n";
+	echo "\t<aggregate-query>" .
 		"http://". $_SERVER['SERVER_NAME'] . $_SERVER['PHP_SELF'] . "?return=xml&amp;querytext=" . 
 		"</aggregate-query>\n";
-	   echo "</site-description>\n";
-	}
+	echo "</site-description>\n";
+}
 }else if($filetype == "xml"){
-   $page = "http://" . $school[$num] . "/search?classgroup=http%3A%2F%2Fvivoweb.org%2Fontology%23vitroClassGrouppeople&querytext=" . $term;//Creating URLs
-   try{	
-   $html = file_get_html($page . "&startIndex=10000&hitsPerPage=1");//start index makes for less memory use
-   
-	$more = $html->find('.moreHits',0);
-	while($more != null)
-	{
-		unset($html);
-   		$html = file_get_html("http://" . $school[$num] . $more->href);
+	$page = "http://" . $school[$num] . "/search?classgroup=http%3A%2F%2Fvivoweb.org%2Fontology%23vitroClassGrouppeople&querytext=" . $term;//Creating URLs
+	try{
+		$html = file_get_html($page . "&startIndex=10000&hitsPerPage=1");//start index makes for less memory use
+			
 		$more = $html->find('.moreHits',0);
+		while($more != null)
+		{
+			unset($html);
+			$html = file_get_html("http://" . $school[$num] . $more->href);
+			$more = $html->find('.moreHits',0);
+		}
+
+		$es = $html->find('.searchpages',0);
+		$number = 0;
+		if($es != null){
+			$number = count($es->children());//The count is the number of the searchpages listed
+		}
+
 	}
-	
-	$es = $html->find('.searchpages',0);
-	$number = 0;
-	if($es != null){
-		$number = count($es->children());//The count is the number of the searchpages listed
+	catch(Exception $e){
+		$number = 0;
 	}
-	
-   }
-   catch(Exception $e){
-      $number = 0;
-   }
-   $inc++;
-   unset($html);
+	$inc++;
+	unset($html);
 
 	header ("Content-type: text/xml");
 	echo"<?xml version='1.0'?>\n";
-	   echo "<aggregation-result>\n";
-	   echo "<count>" . $number . "</count>\n"; 
-	   
-//-----Description of the popultion
-	   echo  "<population-type>". $popdesc ."</population-type>" ;
-	    
-	   echo "<preview-URL>" . "http://" . $school[$num] . "/search?classgroup=http%3A%2F%2Fvivoweb.org%2Fontology%23vitroClassGrouppeople&amp;querytext=" . $term . "</preview-URL>\n";
-	   echo "<search-results-URL>" ."http://" . $school[$num] . "/search?classgroup=http%3A%2F%2Fvivoweb.org%2Fontology%23vitroClassGrouppeople&amp;querytext=" . $term . "\n\t</search-results-URL>\n";
-	   echo "</aggregation-result>\n";
-	
-}else 
+	echo "<aggregation-result>\n";
+	echo "<count>" . $number . "</count>\n";
+
+	//-----Description of the popultion
+	echo  "<population-type>". $popdesc ."</population-type>" ;
+
+	echo "<preview-URL>" . "http://" . $school[$num] . "/search?classgroup=http%3A%2F%2Fvivoweb.org%2Fontology%23vitroClassGrouppeople&amp;querytext=" . $term . "</preview-URL>\n";
+	echo "<search-results-URL>" ."http://" . $school[$num] . "/search?classgroup=http%3A%2F%2Fvivoweb.org%2Fontology%23vitroClassGrouppeople&amp;querytext=" . $term . "\n\t</search-results-URL>\n";
+	echo "</aggregation-result>\n";
+
+}else
 
 ?>
 
