@@ -49,6 +49,30 @@ $VivoHeader ='<?xml version="1.0" encoding="utf-8"?>
     
 </style>
 
+<script type="text/javascript">
+function showresult(str,term)
+{
+var xmlhttp;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+    document.write(xmlhttp.responseText);
+    }
+  }
+xmlhttp.open("GET","resultsearch?descsite="+str+"&term="+term,true);
+xmlhttp.send();
+}
+</script>
+
 </head>
 <body>
 <div id="header"> 
@@ -78,7 +102,7 @@ for($i = 0; $i <= count($partsite); $i++){
 	//echo "descriptsite(" . $i . ") = \"" . $descriptsite[$i] . "\" \n";
 }
 //for each site getting Partner, Page, Count,Poptype, Previewsite, Searchresult
-for($i = 0; $i <= count($descriptsite); $i++){
+/*for($i = 0; $i <= count($descriptsite); $i++){
 	flush();
 	$xmlDoc = simplexml_load_file($descriptsite[$i]);//opening a single site description
 	if($xmlDoc !=null){
@@ -133,7 +157,7 @@ for($i = 0; $i <= count($descriptsite); $i++){
 
 	//echo "\"" . $Partner[$i] . "\" \"" . $Page[$i] . "\" \"" . $Count[$i] . "\" \n \"" . $Previewsite[$i] . "\" \"" . $Searchresult[$i] . "\" \n";
 }
-
+*/
 
 
 //footer from vivo
@@ -201,105 +225,15 @@ echo "<br /> <br />\n";
 echo "<div style='width:750px;margin-left:auto; margin-right:auto;'>\n";
 echo "<table border = '0'>";
 //for each site getting Partner, Page, Count,Poptype, Previewsite, Searchresult
-for($inc = 0;$inc < count($Page);$inc++){
-	echo "<tr>\n";
-
-	for($col = 0;$col < 3; $col++){// it goes through a column at a time.
-		echo "<td>";
-		switch($col){
-			case 0 :
-				echo "<div class='bodyLeft'>\n";
-				break;
-			case 1 :
-				echo "<div class='bodyCenter'>\n";
-				break;
-			case 2 :
-				echo "<div class='bodyRight'>\n";
-				break;
-		}
-		echo "<div class=\"searchhits\">\n";
-
-		if($Partner[$inc] != ""){
-			echo "<div class='singleResult'>\n";
-			if($col != 2){
-				echo "<br />\n";//iframe compensation
-			}
-			switch($col){
-				case 0 :
-					//if($Count[$inc] == 0)
-					//{
-					//echo  $Partner[$inc] . "\n";
-						//}else
-						{
-							echo "<a style='font-size:1.5em'  href='" . $Searchresult[$inc]. "'>" . $Partner[$inc] . "</a>\n";
-						}
-						echo "<br/> " .$Poptype[$inc] . "  \n";
-						break;
-				case 1 :
-					if($Count[$inc] == 0)
-					{
-						echo $Count[$inc] . " Pe" . (($Count[$inc] == 1)?"rson":"ople") . "\n";
-					}else{
-						echo "<a style='font-size:1.5em' href='" . $Searchresult[$inc]. "'>" .
-						$Count[$inc] . " Pe" . (($Count[$inc] == 1)?"rson":"ople") . "</a>  \n";
-					}
-					break;
-				case 2 :
-					if($Count[$inc] != 0)
-					{
-						echo '<script type="text/javascript" defer="defer">
-						if(!navigator.userAgent.match("Safari")){
-						';//show IFRAMES?
-						// if IFRAMES become a problem comment them out here.
-						 echo "document.write(\"<iframe src='" .
-							 trim($Previewsite[$inc]) . 
-							"' width='200' height='150'> iframes not supported</iframe>\");";
-						
-						echo '
-					}
-						else
-						{
-						';
-						echo "document.write(\"";
-						if($Logo[$inc] != "")
-						{
-							list($width, $height, $type, $attr) = getimagesize($Logo[$inc]);
-							if( ($width * 0.75) > $height)
-							{
-								echo "<a href='" .trim($Previewsite[$inc]) ."'><img src='" . $Logo[$inc] . "' width='200' /></a>";
-							}else{
-								echo "<a href='" .trim($Previewsite[$inc]) ."'><img src='" . $Logo[$inc] . "' height='150' /></a>";
-							}
-						}
-						echo "\");
-						";
-						echo '}</script>
-						';
-					}
-
-					break;
-			}
-			echo "</div> <!-- singleResult -->\n";//single result
-
-
-		}
-
-		echo "</div> <!-- searchhits -->
-		";
-		echo "</div>\n";//left right or center
-		echo "</td>\n";
-
-	}
-	echo "</tr>
-	";
+for($inc = 0;$inc < count($descriptsite);$inc++){
+	echo "<script type = \"text/javascript\">
+	showresult(". $descriptsite[$inc] .");
+	</script>";
 }
+
 	echo "</table>
 	";
-		if(false){
-			echo "<br><a href =\"./fs.xml\" > Site description XML </a>";
-			echo "<br><a href =\"http://". $_SERVER['SERVER_NAME'] . $_SERVER['PHP_SELF'] . "?return=xml&amp;querytext=" . $term . "\" > These results in XML </a>";
-			echo "<br><a href =\"http://". $_SERVER['SERVER_NAME'] . $_SERVER['PHP_SELF'] . "?return=prev&amp;querytext=" . $term . "\" > Preview page of these results </a>";
-		}
+
 
 
 	echo $VivoFooter;
