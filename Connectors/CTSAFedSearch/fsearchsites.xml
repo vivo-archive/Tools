@@ -1,15 +1,32 @@
 <partnersites>
-<description-site-URL>http://localhost/ctsafedsearch/uf_fs.php?return=desc</description-site-URL>
-<description-site-URL>http://localhost/ctsafedsearch/cu_fs.php?return=desc</description-site-URL>
-<description-site-URL>http://localhost/ctsafedsearch/iu_fs.php?return=desc</description-site-URL>
-<description-site-URL>http://localhost/ctsafedsearch/wustl_fs.php?return=desc</description-site-URL>
-<description-site-URL>http://localhost/ctsafedsearch/psm_fs.php?return=desc</description-site-URL>
-<description-site-URL>http://localhost/ctsafedsearch/weill_fs.php?return=desc</description-site-URL>
-<description-site-URL>http://localhost/ctsafedsearch/scripps_fs.php?return=desc</description-site-URL>
-<description-site-URL>http://staging.connects.catalyst.harvard.edu/profileslabs/fs.xml</description-site-URL>
-<description-site-URL>http://research.icts.uiowa.edu/polyglot/FS.xml</description-site-URL>
-<description-site-URL>http://irt-dev.stanford.edu/profiles-federated-pilot/FS.xml</description-site-URL>
-<description-site-URL>http://staging.connects.catalyst.harvard.edu/profileslabs/FS_UMN.xml</description-site-URL>
-<description-site-URL>http://staging.connects.catalyst.harvard.edu/profileslabs/FS_UCSF.xml</description-site-URL>
+	<description-site-URL>http://localhost/ctsafedsearch/uf_fs.php?return=desc	</description-site-URL>
+	<description-site-URL>http://localhost/ctsafedsearch/cu_fs.php?return=desc	</description-site-URL>
+	<description-site-URL>http://localhost/ctsafedsearch/iu_fs.php?return=desc	</description-site-URL>
+	<description-site-URL>http://localhost/ctsafedsearch/wustl_fs.php?return=desc	</description-site-URL>
+	<description-site-URL>http://localhost/ctsafedsearch/psm_fs.php?return=desc	</description-site-URL>
+	<description-site-URL>http://localhost/ctsafedsearch/weill_fs.php?return=desc	</description-site-URL>
+	<description-site-URL>http://localhost/ctsafedsearch/scripps_fs.php?return=desc	</description-site-URL>
+	<description-site-URL>http://connects.catalyst.harvard.edu/profiles/DIRECT.xml	</description-site-URL>
+	<description-site-URL>http://profiles.healthsciencessc.org/DIRECT.XML	</description-site-URL>
+	<description-site-URL>http://www.indianactsi.org/FS.xml	</description-site-URL>
+	<description-site-URL>http://med.stanford.edu/profiles/FS.xml	</description-site-URL>
+	<description-site-URL>http://profiles.ucsf.edu/DIRECT.xml	</description-site-URL>
+	<description-site-URL>http://www.icts.uiowa.edu/Loki/federation/FS.xml	</description-site-URL>
+	<description-site-URL>http://www.researchprofiles.collexis.com/umichigan/FS.xml	</description-site-URL>
+	<description-site-URL>http://profiles.ahc.umn.edu/direct.xml	</description-site-URL>
+	<description-site-URL>http://www.experts.scival.com/einstein/FS.xml	</description-site-URL>
+	<description-site-URL>http://www.experts.scival.com/jhu/FS.xml	</description-site-URL>
+	<description-site-URL>http://www.experts.scival.com/maryland/FS.xml	</description-site-URL>
+	<description-site-URL>http://www.experts.scival.com/mcg/FS.xml	</description-site-URL>
+	<description-site-URL>http://www.experts.scival.com/miami/FS.xml	</description-site-URL>
+	<description-site-URL>http://www.experts.scival.com/mmc/FS.xml	</description-site-URL>
+	<description-site-URL>http://www.experts.scival.com/mskcc/FS.xml	</description-site-URL>
+	<description-site-URL>http://www.experts.scival.com/ohsuV3/FS.xml	</description-site-URL>
+	<description-site-URL>http://www.experts.scival.com/uab/FS.xml	</description-site-URL>
+	<description-site-URL>http://www.experts.scival.com/ucdavis/FS.xml	</description-site-URL>
+	<description-site-URL>http://www.experts.scival.com/uic/FS.xml	</description-site-URL>
+	<description-site-URL>http://www.experts.scival.com/umichigan/FS.xml	</description-site-URL>
+	<description-site-URL>http://www.experts.scival.com/uthscsa/FS.xml	</description-site-URL>
+	<description-site-URL>http://www.experts.scival.com/wayne/FS.xml	</description-site-URL>
 </partnersites>
 

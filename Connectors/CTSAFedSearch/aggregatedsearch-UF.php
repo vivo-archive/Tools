@@ -12,7 +12,32 @@
  Contributors: James Pence
  *
  */
+//header from vivo
+$VivoHeader ='<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Federated Search</title>
+<link rel="icon" type="image/x-icon" href="https://phonebook.ufl.edu/favicon.ico" />
+<link rel="shortcut icon" type="image/x-icon" href="https://phonebook.ufl.edu/favicon.ico" />
+<link rel="stylesheet" type="text/css" media="screen" href="https://phonebook.ufl.edu/static/basic.css" />
+<link rel="stylesheet" type="text/css" media="print" href="https://phonebook.ufl.edu/static/print.css" />
+<style type="text/css" media="screen">
+  @import "https://phonebook.ufl.edu/static/common.css";
+  @import "https://phonebook.ufl.edu/static/pri.css";
+</style>
+</head>
+<body>
+<div id="header"> 
+  <div style="padding-left:5px;padding-top:5px;font-family:Georgia;color:white;font-size:2.5em">Federated Search</div>
 
+  <h2 class="replace" id="unit"><a href="http://www.ufl.edu/">University of Florida<span></span></a></h2>
+</div><!-- #header -->
+<div id="mainContainer"> 
+
+  <div id="content">  ';
+echo $VivoHeader;
+flush();
 
 ini_set('memory_limit', '64M');//Memory is intensly used on large searches.
 include_once('./simple_html_dom.php');//The DOM library is used to
@@ -59,6 +84,9 @@ for($i = 0; $i < count($descriptsite); $i++){
 			$result = $pageDoc->xpath('search-results-URL');
 			$Searchresult[$i] = trim( (string) ($result[0]) );
 		}else{
+			$Partner[$i] = "";
+			$Logo[$i] = "";
+			$Page[$i] = "";
 			$Count[$i] = 0;
 			$Previewsite[$i] = "";
 			$Searchresult[$i] = "";
@@ -75,30 +103,7 @@ for($i = 0; $i < count($descriptsite); $i++){
 	//echo "\"" . $Partner[$i] . "\" \"" . $Page[$i] . "\" \"" . $Count[$i] . "\" \n \"" . $Previewsite[$i] . "\" \"" . $Searchresult[$i] . "\" \n";
 }
 
-//header from vivo
-$VivoHeader ='<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<title>Federated Search</title>
-<link rel="icon" type="image/x-icon" href="https://phonebook.ufl.edu/favicon.ico" />
-<link rel="shortcut icon" type="image/x-icon" href="https://phonebook.ufl.edu/favicon.ico" />
-<link rel="stylesheet" type="text/css" media="screen" href="https://phonebook.ufl.edu/static/basic.css" />
-<link rel="stylesheet" type="text/css" media="print" href="https://phonebook.ufl.edu/static/print.css" />
-<style type="text/css" media="screen">
-  @import "https://phonebook.ufl.edu/static/common.css";
-  @import "https://phonebook.ufl.edu/static/pri.css";
-</style>
-</head>
-<body>
-<div id="header"> 
-  <div style="padding-left:5px;padding-top:5px;font-family:Georgia;color:white;font-size:2.5em">Federated Search</div>
 
-  <h2 class="replace" id="unit"><a href="http://www.ufl.edu/">University of Florida<span></span></a></h2>
-</div><!-- #header -->
-<div id="mainContainer"> 
-
-  <div id="content">  ';
 
 //footer from vivo
 $VivoFooter = '</div><!-- #content -->
@@ -148,7 +153,7 @@ pageTracker._trackPageview();
 </body>
 </html>';
 
-echo $VivoHeader;
+
 echo '
 <style type="text/css">
     div.topBanner { text-align: center; padding-bottom: 10px; } 
