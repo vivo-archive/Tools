@@ -46,7 +46,6 @@ $VivoHeader ='<?xml version="1.0" encoding="utf-8"?>
     div.bodyRight { width: 240px; vertical-align:text-top; }
 
     div.singleResult{ height:180px; font-size:1em;}
-    
 </style>
 
 </head>
@@ -71,10 +70,12 @@ xmlhttp.onreadystatechange=function()
     document.getElementById("result"+index).innerHTML=xmlhttp.responseText;
     }
   }
-if(!navigator.userAgent.match("Safari")){
-   xmlhttp.open("GET","resultsearch.php?descsite="+descsite+"&term="+term+"&iframes=false",true);
+if(navigator.userAgent.match("Safari") || navigator.userAgent.match("iPad") ){
+   
+xmlhttp.open("GET","resultsearch.php?descsite="+descsite+"&term="+term+"&iframes=no",true);
 }else{
-   xmlhttp.open("GET","resultsearch.php?descsite="+descsite+"&term="+term+"&iframes=true",true);
+   
+xmlhttp.open("GET","resultsearch.php?descsite="+descsite+"&term="+term+"&iframes=yes",true);
 }
 //xmlhttp.open("GET","http://localhost/CTSAFedSearch/testpage.html",true);
 xmlhttp.send();
@@ -104,7 +105,7 @@ $term = urlencode(trim($term));
 $siteList ="./fsearchsites.xml";
 $xmlDoc = simplexml_load_file($siteList);
 $partsite = $xmlDoc->xpath('description-site-URL');
-for($i = 0; $i <= count($partsite); $i++){
+for($i = 0; $i < count($partsite); $i++){
 	$descriptsite[$i] = trim( (string) ($partsite[$i]) );
 	//echo "descriptsite(" . $i . ") = \"" . $descriptsite[$i] . "\" \n";
 }

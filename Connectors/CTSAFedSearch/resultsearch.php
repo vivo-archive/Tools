@@ -113,15 +113,16 @@ $iframes = $_GET["iframes"];
 					}
 					break;
 				case 2 :
+
+				//echo "<div>iframes is\"" . $iframes . "\"</div>";
 					if($Count != 0)
 					{
-						if($iframes){
-						 echo "<iframe src='" . trim($Previewsite) . 
-							"' width='200' height='150'> iframes not supported</iframe>";
+						if($iframes == "yes"){
+						echo "<iframe style='width:200px; height: 150px' src='" . trim($Previewsite) . "' width='200' height='150'> iframes not supported </iframe>";
 						}else{
 						if($Logo != "")
 							{
-								list($width, $height, $type, $attr) = getimagesize($Logo[$inc]);
+								list($width, $height, $type, $attr) = getimagesize($Logo);
 								if( ($width * 0.75) > $height)
 								{
 									echo "<a href='" .trim($Previewsite) ."'><img src='" . $Logo . "' width='200' /></a>";
