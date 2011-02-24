@@ -11,9 +11,14 @@
  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  Contributors: James Pence
  */
-$descriptsite = $_GET["descsite"];
-$term = $_GET["term"];
 
+echo '<?xml version="1.0" encoding="utf-8"?>
+';
+$descriptsite = urldecode(str_replace("_-percent-_","%",$_GET["descsite"]) );
+$term = $_GET["term"];
+$iframes = $_GET["iframes"];
+
+	//echo "descsite = \"" . $descriptsite . "\" \n\n";
 	$xmlDoc = simplexml_load_file($descriptsite);//opening a single site description
 	if($xmlDoc !=null){
 		$name = $xmlDoc->xpath('name');
@@ -23,8 +28,8 @@ $term = $_GET["term"];
 		$Logo = trim( (string) ($icon[0]) );
 		$site = $xmlDoc->xpath('aggregate-query');
 		$Page = trim( (string) ($site[0]) ) . $term;
-		//echo "page(" . $i . ") = \"" . $Page[$i] . "\" \n\n";
-		$pageDoc = simplexml_load_file($Page[$i]);
+		//echo "page = \"" . $Page . "\" \n\n";
+		$pageDoc = simplexml_load_file($Page);
 		if($pageDoc != null){
 			$cnt = $pageDoc->xpath('count');
 			$Count = ( (integer) ($cnt[0]) );
@@ -51,7 +56,7 @@ $term = $_GET["term"];
 		}
 	}else{
 		echo "
-		<!-- " ;
+		<!--" ;
 		echo $descriptsite;
 		echo " description site ";
 		echo $i;
@@ -66,7 +71,7 @@ $term = $_GET["term"];
 	}
 
 	if($Partner != ""){
-		echo "<tr>\n";
+		//echo "<tr>\n";
 		for($col = 0;$col < 3; $col++){// it goes through a column at a time.
 		echo "<td>";
 		switch($col){
@@ -99,9 +104,9 @@ $term = $_GET["term"];
 					echo "<br/> " .$Poptype . "  \n";
 					break;
 				case 1 :
-					if($Count[$inc] == 0)
+					if($Count == 0)
 					{
-						echo $Count[$inc] . " Pe" . (($Count == 1)?"rson":"ople") . "\n";
+						echo $Count . " Pe" . (($Count == 1)?"rson":"ople") . "\n";
 					}else{
 						echo "<a style='font-size:1.5em' href='" . $Searchresult. "'>" .
 						$Count . " Pe" . (($Count == 1)?"rson":"ople") . "</a>  \n";
@@ -110,34 +115,21 @@ $term = $_GET["term"];
 				case 2 :
 					if($Count != 0)
 					{
-						echo '<script type="text/javascript" defer="defer">
-						if(!navigator.userAgent.match("Safari")){
-						';//show IFRAMES?
-						// if IFRAMES become a problem comment them out here.
-						 echo "document.write(\"<iframe src='" .
-							 trim($Previewsite[$inc]) . 
-							"' width='200' height='150'> iframes not supported</iframe>\");";
-						
-						echo '
-					}
-						else
-						{
-						';
-						echo "document.write(\"";
+						if($iframes){
+						 echo "<iframe src='" . trim($Previewsite) . 
+							"' width='200' height='150'> iframes not supported</iframe>";
+						}else{
 						if($Logo != "")
-						{
-							list($width, $height, $type, $attr) = getimagesize($Logo[$inc]);
-							if( ($width * 0.75) > $height)
 							{
-								echo "<a href='" .trim($Previewsite) ."'><img src='" . $Logo . "' width='200' /></a>";
-							}else{
-								echo "<a href='" .trim($Previewsite) ."'><img src='" . $Logo . "' height='150' /></a>";
+								list($width, $height, $type, $attr) = getimagesize($Logo[$inc]);
+								if( ($width * 0.75) > $height)
+								{
+									echo "<a href='" .trim($Previewsite) ."'><img src='" . $Logo . "' width='200' /></a>";
+								}else{
+									echo "<a href='" .trim($Previewsite) ."'><img src='" . $Logo . "' height='150' /></a>";
+								}
 							}
 						}
-						echo "\");
-						";
-						echo '}</script>
-						';
 					}
 
 					break;
@@ -152,7 +144,6 @@ $term = $_GET["term"];
 		echo "</div>\n";//left right or center
 		echo "</td>\n";
 	}
-	echo "</tr>
-	";
+	//echo "</tr>";
 	}
 ?>

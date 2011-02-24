@@ -220,7 +220,7 @@ for($inc = 0;$inc < count($Page);$inc++){
 		echo "<div class=\"searchhits\">\n";
 
 		if($Partner[$inc] != ""){
-			echo "<div class='singleResult'>\n";
+			echo "<div class='singleResult' id='result" . $inc . "'>\n";
 			if($col != 2){
 				echo "<br />\n";//iframe compensation
 			}

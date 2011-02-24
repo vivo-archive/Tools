@@ -49,8 +49,10 @@ $VivoHeader ='<?xml version="1.0" encoding="utf-8"?>
     
 </style>
 
+</head>
+
 <script type="text/javascript">
-function showresult(str,term)
+function showresult(index,descsite,term)
 {
 var xmlhttp;
 if (window.XMLHttpRequest)
@@ -65,15 +67,20 @@ xmlhttp.onreadystatechange=function()
   {
   if (xmlhttp.readyState==4 && xmlhttp.status==200)
     {
-    document.write(xmlhttp.responseText);
+    //document.getElementById("result"+index).innerHTML="show result for index="+index+" descsite="+descsite+" term="+term;
+    document.getElementById("result"+index).innerHTML=xmlhttp.responseText;
     }
   }
-xmlhttp.open("GET","resultsearch?descsite="+str+"&term="+term,true);
+if(!navigator.userAgent.match("Safari")){
+   xmlhttp.open("GET","resultsearch.php?descsite="+descsite+"&term="+term+"&iframes=false",true);
+}else{
+   xmlhttp.open("GET","resultsearch.php?descsite="+descsite+"&term="+term+"&iframes=true",true);
+}
+//xmlhttp.open("GET","http://localhost/CTSAFedSearch/testpage.html",true);
 xmlhttp.send();
 }
 </script>
 
-</head>
 <body>
 <div id="header"> 
   <div style="padding-left:5px;padding-top:5px;font-family:Georgia;color:white;font-size:2.5em">Federated Search</div>
@@ -101,63 +108,6 @@ for($i = 0; $i <= count($partsite); $i++){
 	$descriptsite[$i] = trim( (string) ($partsite[$i]) );
 	//echo "descriptsite(" . $i . ") = \"" . $descriptsite[$i] . "\" \n";
 }
-//for each site getting Partner, Page, Count,Poptype, Previewsite, Searchresult
-/*for($i = 0; $i <= count($descriptsite); $i++){
-	flush();
-	$xmlDoc = simplexml_load_file($descriptsite[$i]);//opening a single site description
-	if($xmlDoc !=null){
-		$name = $xmlDoc->xpath('name');
-		$Partner[$i] = trim( (string) ($name[0]) );
-
-		$icon = $xmlDoc->xpath('icon');
-		$Logo[$i] = trim( (string) ($icon[0]) );
-		$site = $xmlDoc->xpath('aggregate-query');
-		$Page[$i] = trim( (string) ($site[0]) ) . $term;
-		//echo "page(" . $i . ") = \"" . $Page[$i] . "\" \n\n";
-		$pageDoc = simplexml_load_file($Page[$i]);
-		if($pageDoc != null){
-			$cnt = $pageDoc->xpath('count');
-			$Count[$i] = ( (integer) ($cnt[0]) );
-			$pop = $pageDoc->xpath('population-type');
-			$Poptype[$i] = trim( (string) ($pop[0]) );
-			$prvew = $pageDoc->xpath('preview-URL');
-			$Previewsite[$i] = trim( (string) ($prvew[0]) );
-			$result = $pageDoc->xpath('search-results-URL');
-			$Searchresult[$i] = trim( (string) ($result[0]) );
-		}else{
-			echo "
-			<!-- " ;
-			echo $Page[$i];
-			echo " result page ";
-			echo $i;
-			echo " returned null -->
-			";
-			$Partner[$i] = "";
-			$Logo[$i] = "";
-			$Page[$i] = "";
-			$Count[$i] = 0;
-			$Previewsite[$i] = "";
-			$Searchresult[$i] = "";
-		}
-	}else{
-		echo "
-		<!-- " ;
-		echo $descriptsite[$i];
-		echo " description site ";
-		echo $i;
-		echo " returned null -->
-		";
-		$Partner[$i] = "";
-		$Logo[$i] = "";
-		$Page[$i] = "";
-		$Count[$i] = 0;
-		$Previewsite[$i] = "";
-		$Searchresult[$i] = "";
-	}
-
-	//echo "\"" . $Partner[$i] . "\" \"" . $Page[$i] . "\" \"" . $Count[$i] . "\" \n \"" . $Previewsite[$i] . "\" \"" . $Searchresult[$i] . "\" \n";
-}
-*/
 
 
 //footer from vivo
@@ -209,10 +159,6 @@ pageTracker._trackPageview();
 </body>
 </html>';
 
-
-
-
-
 echo ' <form name="input" action= "' . $_SERVER["PHP_SELF"] . '" method="get">';
 echo ' Search Term: <input type="text" name="querytext" value="' . $_GET["querytext"] . '" />';
 echo ' <input type="submit" value="Search" /><br/>';
@@ -226,9 +172,13 @@ echo "<div style='width:750px;margin-left:auto; margin-right:auto;'>\n";
 echo "<table border = '0'>";
 //for each site getting Partner, Page, Count,Poptype, Previewsite, Searchresult
 for($inc = 0;$inc < count($descriptsite);$inc++){
-	echo "<script type = \"text/javascript\">
-	showresult(". $descriptsite[$inc] .");
-	</script>";
+	echo "<script type = \"text/javascript\">\n";
+	echo "showresult(\"" . $inc . "\",\"" . str_replace("%","_-percent-_",urlencode($descriptsite[$inc]) ) . "\",\"" . $term . "\")\n";
+	echo "</script>\n";
+
+	//echo "showresult(\"" . $inc . "\",\"" . $descriptsite[$inc] . "\",\"" . $term . "\")\n";
+	echo "<tr id = 'result" . $inc . "'>\n";
+	echo "</tr> <!-- result" . $inc . " -->\n";
 }
 
 	echo "</table>
