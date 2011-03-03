@@ -1,1 +1,0 @@
-http://vivoweb.org/ontology/core#organizationGrantingDegree	http://vivoweb.org/ontology/core#trainingAtOrganization	Yes	Map	Directly-changed
