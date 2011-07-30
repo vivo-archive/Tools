@@ -58,7 +58,10 @@ case class IndexDoc (siteUrl: String, uri: String, doc: SolrInputDocument) exten
  * Indicates that a document has been added to the solr index
  */
 case class IndexedDoc( siteUrl:String, uri:String) extends IndexBuilderMessage
-
+/**
+ * Request that changes to an index be commited
+ */
+case class Commit () extends IndexBuilderMessage
 
 /* *********** HTTP Messages **************** */
 
@@ -82,3 +85,8 @@ case class HttpLinkedDataGet ( uri:String, handler: (String,Model)=>Unit ) exten
 //case class HttpGet( url:String  ) extends IndexBuilderMessage
 
 case class HttpLinkedDataGetSync( uri: String ) extends IndexBuilderMessage 
+
+/**
+ * Indicate that a URI could not be retreived from a siteUrl.
+ */
+case class CouldNotGetData( siteUrl:String, uri:String, message:String ) extends IndexBuilderMessage

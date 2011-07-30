@@ -34,6 +34,13 @@ extends Actor {
    */
   var urisCompleted = List[String]()
 
+  /**
+   * Map of uris that had problems.
+   */
+  var urisWithErrors = Set[String]()
+
+  var errors = List[IndexBuilderMessage]()
+
   var startTime = 0L
 
   override def preStart () = {
@@ -74,10 +81,18 @@ extends Actor {
       addToCompletedUris( uri )
 
       if( allUrisIndexed ){
+        solrIndexWorker !! Commit //wait for commit to finish
         endMessage()
         Actor.registry.shutdownAll()
       }else{
         incrementalMessage()
+      }
+    }
+
+    case CouldNotGetData(siteUrl,uri,msg) => {
+      synchronized{
+        urisWithErrors +=  uri
+        errors =   CouldNotGetData(siteUrl,uri,msg) :: errors
       }
     }
 
@@ -93,7 +108,7 @@ extends Actor {
 
   def allUrisIndexed():Boolean = {
     synchronized{
-      urisToIndex.length == urisCompleted.length
+      urisToIndex.length == (urisCompleted.length + urisWithErrors.size) 
     }
   }
 

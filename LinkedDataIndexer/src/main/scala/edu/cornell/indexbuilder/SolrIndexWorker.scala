@@ -28,12 +28,18 @@ class SolrIndexWorker( solrServer: SolrServer ) extends Actor {
 
       if( indexedCount % COMMIT_SIZE == 0 ){
         val commitResp = solrServer.commit()
-        EventHandler.debug(this, "commit for " + uri + " resp " + commitResp)
+        EventHandler.debug(this, "commit resp " + commitResp)
       }
 
       self reply IndexedDoc( siteUrl, uri )
     }
     
+    case Commit() => {
+      val commitResp = solrServer.commit()
+      EventHandler.debug(this, "commit resp " + commitResp)
+      self reply "done"
+    }
+
     case _ => 
       EventHandler.debug(this, "SolrIndexWorker received mystery message");
   }
