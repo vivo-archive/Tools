@@ -148,6 +148,7 @@ extends Actor {
     EventHandler.info(this,
         "uris indexed: %d elapsed time: %d msec time per uri: %d msec"
         .format( urisCompleted.length, etime, timePerUri) )
+    EventHandler.info(this,"Done")
   }
 
   def startAllMyWorkers() = {
