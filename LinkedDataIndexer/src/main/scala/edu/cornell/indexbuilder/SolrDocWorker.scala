@@ -12,6 +12,7 @@ import edu.cornell.mannlib.vitro.webapp.search.solr.SourceInstitution
 import edu.cornell.mannlib.vitro.webapp.search.solr.{DocumentModifier, MultiSiteIndToDoc, AddContextNodesForMultiSite}
 import java.io.ByteArrayOutputStream
 import org.apache.solr.common.SolrInputDocument
+import SolrDocWorker._
 
 /**
  * This class should take a RdfToDoc message and send GotDoc back
@@ -25,14 +26,26 @@ class SolrDocWorker( selector : SelectorGenerator ) extends Actor  {
   def receive = {    
     
     case RdfToDoc( siteUrl, uri, model ) => {
-      //EventHandler.debug(this, "RDF for " + uri + " " + SolrDocWorker.modelToString( model ) )
-      if( ! model.isEmpty() ){
-        val doc = SolrDocWorker.individualToDocument( siteUrl, uri, model, selector)
-        EventHandler.debug(this, "Doc for " + uri + " " + doc)
-        self reply GotDoc( siteUrl, uri, doc )
-      }else{
-        EventHandler.warning(this,"Could not get data for %s from %s".format(uri,siteUrl))        
+      //EventHandler.debug(this, "RDF for %s %s".format(uri, SolrDocWorker.modelToString( model ) ))
+      if( model.isEmpty() ){
         self reply CouldNotGetData( siteUrl, uri , "SolrDocWorker got an empty model")
+      }else{
+
+        //make a wdf that has both the tbox and the RDF data
+        val ontModels = selector.generateSelector(model) 
+        val wdf = new WebappDaoFactoryJena( ontModels )
+
+        val maybeInd:Option[Individual] = getIndividual(uri,wdf)
+        maybeInd match{
+          case Some( ind ) => {
+            val doc = makeIndToDoc( ontModels, siteUrl).translate(ind)
+            EventHandler.debug(this, "Doc for " + uri + " " + doc)
+            self reply GotDoc( siteUrl, uri, doc )
+          }
+          case None => {            
+            self reply CouldNotGetData( siteUrl, uri , "SolrDocWorker could not get Individual from Model")
+          }        
+        }
       }
     }
 
@@ -42,18 +55,16 @@ class SolrDocWorker( selector : SelectorGenerator ) extends Actor  {
 }
 
 object SolrDocWorker {
-  def individualToDocument( siteUrl:String, uri:String, model:Model, selector:SelectorGenerator ):SolrInputDocument={
-    //make a wdf that has both the tbox and the RDF data
-    val ontModelSelector = selector.generateSelector(model) 
-    val wdf = new WebappDaoFactoryJena( ontModelSelector )
 
-    // create the object that builds the doc from the RDF
+  def getIndividual( uri:String, wdf:WebappDaoFactoryJena ):Option[Individual]={
     val ind = wdf.getIndividualDao().getIndividualByURI(uri)
-    if( ind != null )
-      makeIndToDoc( ontModelSelector, siteUrl ).translate( ind)    
+    if( ind == null )
+       None
+    else
+      Some(ind)
   }
   
-  def makeIndToDoc( oms : OntModelSelector , siteUrl:String ) = {
+  def makeIndToDoc( oms : OntModelSelector , siteUrl:String ):MultiSiteIndToDoc = {
     val docModifiers = new java.util.ArrayList[DocumentModifier](2)
 
     //docModifiers.add( new ContextNodeFields(oms.getFullModel())) 
