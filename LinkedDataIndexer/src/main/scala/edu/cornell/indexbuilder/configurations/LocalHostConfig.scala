@@ -12,12 +12,12 @@ object LocalHost {
   def main(args : Array[String]) : Unit = {
 
     //url of VIVO site to index
-    val siteUrl = "http://localhost:8080/vivo"
+    val siteUrl = "http://vivo.cornell.edu"
 
     //parameters for solr index
     val solrHost = "localhost"
     val solrPort = "8080"
-    val solrContext = "vivosolr"
+    val solrContext = "multiSiteIndex"
     //If we needed a custom configuration of the SolrServer we could do that
     val solrServer = SolrIndexWorker.makeSolrServer( "http://" + solrHost + ":" + solrPort+ "/" + solrContext )
 
@@ -33,7 +33,8 @@ object LocalHost {
       )
 
 
-    val uriDiscoveryWorker = Actor.actorOf(new VivoUriDiscoveryWorker(classUris))
+      val uriDiscoveryWorker = Actor.actorOf(
+        new VivoUriDiscoveryWorker(classUris, VivoUriDiscoveryWorker.rel12actionName))
 
     //Setup and start a master server to coordinate the work
     val master = Actor.actorOf( 

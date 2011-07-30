@@ -1,4 +1,5 @@
 package main.scala
+import edu.cornell.indexbuilder.VivoUriDiscoveryWorker
  
 import org.scalatest.Spec
 import org.scalatest.matchers.MustMatchers
@@ -14,12 +15,12 @@ class UriDiscoveryWorkerSpec extends Spec with MustMatchers{
       val expected = Array(
         "/dataservice?getSolrIndividualsByVClass=1&vclassId=http%3A%2F%2Fwww.w3.org%2F2002%2F07%2Fowl%23Thing&page=1", 
         "/dataservice?getSolrIndividualsByVClass=1&vclassId=http%3A%2F%2Fwww.w3.org%2F2002%2F07%2Fowl%23Thing&page=2")      
-      val result = ParseDataServiceJson.parseInitialIndividualsByVClassForURLs( testCase2 )
+      val result = ParseDataServiceJson.parseInitialIndividualsByVClassForURLs( testCase2, VivoUriDiscoveryWorker.rel13actionName )
       result must be === expected 
     } 
 
     it("java static method ParseDataServiceJson should be able to parse an initial dataservice result with many pages") {     
-      val result = ParseDataServiceJson.parseInitialIndividualsByVClassForURLs( testCase1 )
+      val result = ParseDataServiceJson.parseInitialIndividualsByVClassForURLs( testCase1, VivoUriDiscoveryWorker.rel13actionName )
       result.length must be === (62513 / 30) + 1
     } 
 

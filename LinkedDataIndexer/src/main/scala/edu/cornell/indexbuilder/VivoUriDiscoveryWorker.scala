@@ -1,4 +1,5 @@
 package edu.cornell.indexbuilder
+import akka.actor.ActorRef
 
 import akka.actor.{Actor, PoisonPill}
 import Actor._
@@ -41,7 +42,7 @@ import scala.collection.mutable.Map
  * make them and put each in a file
  * 
  */
-class VivoUriDiscoveryWorker (classUris:List[String])extends UriDiscoveryWorker {
+class VivoUriDiscoveryWorker (classUris:List[String], action:String)extends UriDiscoveryWorker {
 
   /**
    * A map of classUri to a list of IndexUris messages
@@ -52,8 +53,6 @@ class VivoUriDiscoveryWorker (classUris:List[String])extends UriDiscoveryWorker 
    * A map of classUris to the total expected number of pages
    * that should be generated for the class. */
   val classToPageTotal = Map.empty[String, Int]
-
-
 
   def receive = {
 
@@ -67,7 +66,7 @@ class VivoUriDiscoveryWorker (classUris:List[String])extends UriDiscoveryWorker 
     case DiscoverUrisForClass( siteBaseUrl, classUri ) => {
       EventHandler.info(this,"DiscoverUrisForClass " + classUri)
       val url = reqForClassUri( siteBaseUrl, classUri )
-      val reqHandler =  getInitialRequestHandler(siteBaseUrl,classUri) 
+      val reqHandler =  getInitialRequestHandler(siteBaseUrl,classUri ) 
       // send a message to http worker to do the request and then have
       // it handled by the reqHandler.
       HttpWorker.httpWorkRouter ! HttpGetAndProcess( url, reqHandler)
@@ -96,9 +95,9 @@ class VivoUriDiscoveryWorker (classUris:List[String])extends UriDiscoveryWorker 
 
          //parse result to get urls for all the pages        
          val pageUrls = 
-           parseInitialIndividualsByVClassForURLs( EntityUtils.toString(entity) )
-             .map( url => siteBaseUrl + url )
-         
+           parseInitialIndividualsByVClassForURLs( EntityUtils.toString(entity), action )
+         .map( url => siteBaseUrl + url )
+
          //record the total pages for this class in the discovery object
          uriDiscoveryWorker.addClassPageTotal(classUri, pageUrls.length)
          EventHandler.debug(this,"pages to index:" +  pageUrls.length )
@@ -110,8 +109,8 @@ class VivoUriDiscoveryWorker (classUris:List[String])extends UriDiscoveryWorker 
          //send out work to prcess each index page
          val http = HttpWorker.httpWorkRouter 
          for( i <- 1 to pageUrls.length )
-            http ! HttpGetAndProcess(pageUrls(i-1), responseHandler(i) )
-         
+           http ! HttpGetAndProcess(pageUrls(i-1), responseHandler(i) )
+
          return 
       }
     }
@@ -160,7 +159,7 @@ class VivoUriDiscoveryWorker (classUris:List[String])extends UriDiscoveryWorker 
   def reqForClassUri( siteBaseUrl:String, classUri:String):String={
     return siteBaseUrl + 
       "/dataservice" +
-      "?getSolrIndividualsByVClass=1&"+
+      "?" + action + "&"+
       "vclassId=" + java.net.URLEncoder.encode( classUri, "UTF-8" )
   }
 
@@ -191,3 +190,7 @@ class VivoUriDiscoveryWorker (classUris:List[String])extends UriDiscoveryWorker 
   }
 }
 
+object VivoUriDiscoveryWorker{
+  val rel12actionName = "getLuceneIndividualsByVClass=1";
+  val rel13actionName = "getSolrIndividualsByVClass=1";
+}

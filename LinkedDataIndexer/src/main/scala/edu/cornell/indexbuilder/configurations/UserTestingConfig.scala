@@ -28,7 +28,7 @@ object UserTestingConfig1 {
 
     //setup URI discovery 
     val classUris = List( """http://vivoweb.org/ontology/core#FacultyMember"""  )
-    val uriDiscoveryWorker = Actor.actorOf(new VivoUriDiscoveryWorker(classUris))
+    val uriDiscoveryWorker = Actor.actorOf(new VivoUriDiscoveryWorker(classUris,VivoUriDiscoveryWorker.rel13actionName))
 
     //Setup and start a master server to coordinate the work
     val master = Actor.actorOf( 

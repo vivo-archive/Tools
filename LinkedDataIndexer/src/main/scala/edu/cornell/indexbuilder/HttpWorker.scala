@@ -20,14 +20,12 @@ import akka.dispatch.Dispatchers
 import akka.routing.Routing
 import akka.routing._
 
-/* simple class to use commons-HttpClient 
- *
+/* A class to use commons-HttpClient.
+ * Redirects are handled by HttpClient.
+ * 
  * TODO: cases that need to be handled
  * connection refused
- * content negotiation
- * redirects
  * timeouts
- * 
  */
 
 /* companion object for HttpWorker */
@@ -46,9 +44,6 @@ object HttpWorker {
 
   val workerList = Vector.fill(ACTOR_COUNT)(Actor.actorOf[HttpWorker].start())
   val httpWorkRouter = Routing.loadBalancerActor(new CyclicIterator(workerList))
-
- 
-
 }
 
 class HttpWorker() extends Actor {
@@ -72,9 +67,8 @@ class HttpWorker() extends Actor {
     case HttpLinkedDataGet(uri, callback) => {
       EventHandler.debug(this, "Linked Data GET " + uri)
       
-      //TODO: content negotiation
       val get = new HttpGet(uri)
-      get.setHeader("Accept", "text/n3")
+      get.setHeader("Accept", RDF_ACCEPT_HEADER)
       
       //need a ResponseHandler that runs the call back for HttpClient
       val handler = new ResponseHandler[Unit]() {
@@ -86,12 +80,11 @@ class HttpWorker() extends Actor {
     }
   
 
-    case HttpLinkedDataGetSync(uri ) => {
+    case HttpLinkedDataGetSync( uri ) => {
       EventHandler.debug(this, "Linked Data GET Sync " + uri)
       
-      //TODO: content negotiation
       val get = new HttpGet(uri)
-      get.setHeader("Accept", "text/n3")
+      get.setHeader("Accept", RDF_ACCEPT_HEADER)
 
       val replyTo = self.channel
       val handler = new ResponseHandler[Unit]() {
@@ -99,36 +92,68 @@ class HttpWorker() extends Actor {
            replyTo ! responseToModel(uri, response)
         }
       }
-
       HttpWorker.httpClient.execute(get, handler)
-    }
-  
-//    case _ => EventHandler.info(this, "received unknown message")
+    }  
   }
 
  def responseToModel(uri: String, response: HttpResponse): Model = {
-    EventHandler.debug(this, "got response " + response + " for " + uri)
-    val entity = response.getEntity();
-    val m = ModelFactory.createDefaultModel();
-    if (entity != null) {
-      val instream = entity.getContent()
-      try {
-        //TODO: do content negotiation
-        m.read(instream, "", "N3")
-      } catch {
-        case e => {
-          EventHandler.error(e,this, "could not parse RDF for " + uri + " status: " + response.getStatusLine() + " " + entity.getContentType() )
-          EventHandler.debug(this, scala.io.Source.fromInputStream(instream).getLines().mkString("\n") )
-        }          
-      } finally {
-        instream.close();
-      }
-    } else {
-      EventHandler.error(this, "could not get HttpEntity for " + uri + " status: " + response.getStatusLine())
-    }
-    return m
+   EventHandler.debug(this, "got response %s for %s".format(response, uri))
+   val m = ModelFactory.createDefaultModel();
+   if( response != null && 
+       response.getStatusLine() != null &&
+       response.getStatusLine().getStatusCode() != HttpStatus.SC_OK){
+          EventHandler.warning(this,"could not get HTTP for " + uri + 
+                             " status: " + response.getStatusLine())
+       } else {
+         val entity = response.getEntity();
+         if (entity == null) {
+           EventHandler.error(this,"could not get HttpEntity for " + uri + 
+                              " status: " + response.getStatusLine())
+         }else{
+           //Now we really try to get the content
+           val instream = entity.getContent()
+           try {
+             m.read(instream, "", getRDFType( entity ))
+             instream.close();
+           } catch {
+             case e => {
+               EventHandler.error(e,this, "could not parse RDF for " + uri +
+                                  " status: " + response.getStatusLine() + " "
+                                  + entity.getContentType() )
+             }
+           }
+         }
+       }
+   return m
   }
 
+  def getRDFType( entity:HttpEntity):String = {
+    if( entity != null && 
+        entity.getContentType() != null && 
+        entity.getContentType().getValue() != null )
+      {
+         val contentType = entity.getContentType().getValue()
+         if( contentType.contains("text/n3") || contentType.contains("text/rdf+n3")) 
+           return "N3"
+         else if( contentType.contains("text/rdf+n3") ) 
+           return "RDF/XML"
+         else if( contentType.contains("text/turtle")) 
+           return "TURTLE"
+       }
 
+    return "UNKNOWN"       
+  }
+
+  val RDF_ACCEPT_HEADER = 
+    "text/n3, text/rdf+n3, application/rdf+xml;q=0.9, text/turtle;q=0.8"
+
+  val HEADER_TO_JENASTR =
+    Map( "text/n3" -> "N3",
+         "text/rdf+n3" -> "N3",
+         "application/rdf+xml" -> "RDF/XML",
+         "text/turtle" -> "TURTLE")
+
+//Getting string from InputStream
+//EventHandler.debug(this, scala.io.Source.fromInputStream(instream).getLines().mkString("\n") )
 }
 

@@ -22,7 +22,7 @@ public class ParseDataServiceJson{
    * into a list of URLs to subsiquently request against the
    * vivo dataservice.
    */   
-    public static String[] parseInitialIndividualsByVClassForURLs(String text) throws JSONException{
+    public static String[] parseInitialIndividualsByVClassForURLs(String text,String action) throws JSONException{
         JSONObject json = new JSONObject(text);
         int count = json.getInt( "totalCount" );
         JSONArray individuals = json.getJSONArray( "individuals" );
@@ -42,7 +42,7 @@ public class ParseDataServiceJson{
 
             String urls[] = new String[ pageCount ];
             for( int i=1 ; i <= pageCount ; i++)
-                urls[i-1]= "/dataservice?getSolrIndividualsByVClass=1&vclassId="+vclass+"&page=" + i ;
+                urls[i-1]= "/dataservice?"+ action + "&vclassId="+vclass+"&page=" + i ;
             return urls;
         }else{
             return new String[0];

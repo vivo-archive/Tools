@@ -33,7 +33,8 @@ object BuildIndex {
       )
 
 
-    val uriDiscoveryWorker = Actor.actorOf(new VivoUriDiscoveryWorker(classUris))
+    val uriDiscoveryWorker = Actor.actorOf(
+        new VivoUriDiscoveryWorker(classUris, VivoUriDiscoveryWorker.rel12actionName))
 
     //Setup and start a master server to coordinate the work
     val master = Actor.actorOf( 

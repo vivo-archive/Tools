@@ -28,7 +28,7 @@ object RollinsTestConfig1 {
 
     //setup URI discovery 
     val classUris = List( """http://vivoweb.org/ontology/core#Postdoc"""  )
-    val uriDiscoveryWorker = Actor.actorOf(new VivoUriDiscoveryWorker(classUris))
+    val uriDiscoveryWorker = Actor.actorOf(new VivoUriDiscoveryWorker(classUris,VivoUriDiscoveryWorker.rel12actionName))
 
     //Setup and start a master server to coordinate the work
     val master = Actor.actorOf( 
@@ -51,7 +51,7 @@ object RollinsTestConfig2 {
       """http://xmlns.com/foaf/0.1/Organization""",
       """http://vivo.library.cornell.edu/ns/0.1#OrganizedEndeavor"""
     )
-    val uriDiscoveryWorker = Actor.actorOf(new VivoUriDiscoveryWorker(classUris))
+    val uriDiscoveryWorker = Actor.actorOf(new VivoUriDiscoveryWorker(classUris,VivoUriDiscoveryWorker.rel12actionName))
 
     //Setup and start a master server to coordinate the work
     val master = Actor.actorOf( 

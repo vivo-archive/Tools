@@ -54,7 +54,7 @@ class RdfLinkedDataWorker (  ) extends Actor {
           MasterWorker.getMaster() ! GotRdf(uri,expandedModel)
         }
         case None =>
-          EventHandler.debug(this,"Could not get RDF for URI " + uri )    
+          EventHandler.debug(this,"Timeout: could not get RDF for URI " + uri )    
       }
     }
 
@@ -95,7 +95,7 @@ class RdfLinkedDataWorker (  ) extends Actor {
     asScalaBuffer( expand.getSingleHopUris(uri,model) )    
   }
 
-  //take to models and add them together
+  //take two models and add them together
   def f (acc: Model, i: Model) :Model = {
     acc.enterCriticalSection(Lock.WRITE)
     try{
