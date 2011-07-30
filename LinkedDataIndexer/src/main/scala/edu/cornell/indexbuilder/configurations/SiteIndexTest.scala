@@ -7,6 +7,7 @@ package edu.cornell.indexbuilder
 object SiteIndexTest {
   val classUris = List( 
     """http://vivoweb.org/ontology/core#Postdoc""",
+    """http://vivoweb.org/ontology/core#FacultyMember""",
     """http://vivoweb.org/ontology/core#Librarian"""
   )
   
