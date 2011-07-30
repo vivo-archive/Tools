@@ -61,3 +61,4 @@ object RollinsTestConfig2 {
     master ! GetUrlsToIndexForSite( RollinsConfig.siteUrl )     
   }
 }
+
