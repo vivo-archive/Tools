@@ -50,11 +50,11 @@ class SolrIndexWorker( solrServer: SolrServer ) extends Actor {
       EventHandler.debug(this, "Ping SolrServer: " + resp )
     } catch {
       case solrEx:SolrException => {
-        EventHandler.debug(this, "Could not ping SolrServer, code: " + solrEx.code() + " " + solrEx.getMessage() )
+        EventHandler.error(this, "Could not ping SolrServer, code: " + solrEx.code() + " " + solrEx.getMessage() )
         System.exit(1)
       }
       case e => {
-        EventHandler.debug(this, "Could not ping SolrServer: " + e )
+        EventHandler.error(this, "Could not ping SolrServer: " + e )
         System.exit(1)
       }
     }

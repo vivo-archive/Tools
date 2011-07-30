@@ -10,7 +10,7 @@ object SiteIndexTest {
     """http://vivoweb.org/ontology/core#Librarian"""
   )
   
-  val solrUrl = "http://rolins.mannlib.cornell.edu:8080/devIndexUnstable"    
+  val solrUrl = "http://rollins.mannlib.cornell.edu:8080/devIndexUnstable"    
 }
 
 
