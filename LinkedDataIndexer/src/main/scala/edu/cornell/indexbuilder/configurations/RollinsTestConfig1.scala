@@ -1,4 +1,4 @@
-package edu.cornell.indexbuilder
+package edu.cornell.indexbuilder.configurations
 
 import edu.cornell.indexbuilder._
 import akka.actor.{Actor, PoisonPill}
@@ -28,7 +28,7 @@ object RollinsTestConfig1 {
 
     //setup URI discovery 
     val classUris = List( """http://vivoweb.org/ontology/core#Postdoc"""  )
-    val uriDiscoveryWorker = Actor.actorOf(new VivoUriDiscoveryWorker(classUris,VivoUriDiscoveryWorker.rel12actionName))
+    val uriDiscoveryWorker = Actor.actorOf(new VivoUriDiscoveryWorker(classUris,VivoUriDiscoveryWorker.rel12actionName,"RollinsTestConfig1"))
 
     //Setup and start a master server to coordinate the work
     val master = Actor.actorOf( 
@@ -51,7 +51,7 @@ object RollinsTestConfig2 {
       """http://xmlns.com/foaf/0.1/Organization""",
       """http://vivo.library.cornell.edu/ns/0.1#OrganizedEndeavor"""
     )
-    val uriDiscoveryWorker = Actor.actorOf(new VivoUriDiscoveryWorker(classUris,VivoUriDiscoveryWorker.rel12actionName))
+    val uriDiscoveryWorker = Actor.actorOf(new VivoUriDiscoveryWorker(classUris,VivoUriDiscoveryWorker.rel12actionName, "RollinsTestConfig2"))
 
     //Setup and start a master server to coordinate the work
     val master = Actor.actorOf( 

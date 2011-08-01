@@ -9,7 +9,7 @@ import akka.event.EventHandler
 import org.apache.solr.client.solrj.SolrServer
 
 /*
- * This represents a basic configuration to run a site index.
+ * This represents a basic process to run a site index.
  * Individuals discovered on the site specified by siteUrl
  * will be indexed to the service indicated by solrUrl.
  *
@@ -19,7 +19,7 @@ import org.apache.solr.client.solrj.SolrServer
  * siteVersion - Should be either "1.2" or "1.3" to indicate
  * which version of the vivo software is running.
  */
-class IndexProcessConfiguration(
+class IndexProcess(
   siteUrl:String,
   solrUrl:String,
   classUris:List[String],
@@ -27,6 +27,9 @@ class IndexProcessConfiguration(
 ){
 
   def run (){
+    //TODO: come up with a better place for working dirs
+    val workDirectory = "./workDir" + System.currentTimeMillis()
+
     val actionName =
       if("1.2".equals( siteVersion ))
         VivoUriDiscoveryWorker.rel12actionName
@@ -38,7 +41,7 @@ class IndexProcessConfiguration(
 
     //setup URI discovery
     val uriDiscoveryWorker = 
-      Actor.actorOf(new VivoUriDiscoveryWorker(classUris, actionName))
+      Actor.actorOf(new VivoUriDiscoveryWorker(classUris, actionName, workDirectory))
 
     val selectorGen = new SelectorGeneratorForVivo(siteUrl);
 
@@ -48,7 +51,9 @@ class IndexProcessConfiguration(
         siteUrl, 
         uriDiscoveryWorker, 
         solrServer, 
-        selectorGen))
+        selectorGen
+      ))
+
     master.start()
     master ! GetUrlsToIndexForSite( siteUrl )
   }

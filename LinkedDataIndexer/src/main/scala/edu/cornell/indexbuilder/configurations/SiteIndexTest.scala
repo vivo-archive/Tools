@@ -1,4 +1,5 @@
-package edu.cornell.indexbuilder
+package edu.cornell.indexbuilder.configurations
+import edu.cornell.indexbuilder.IndexProcess
 
 /*
  * This is a test of configurations to index
@@ -20,7 +21,7 @@ object TestIndexCornell {
   val siteVivoVersion="1.2"
 
   def main(args : Array[String]) : Unit = {
-    val process = new IndexProcessConfiguration(
+    val process = new IndexProcess(
       siteUrl,
       SiteIndexTest.solrUrl,
       SiteIndexTest.classUris,
@@ -35,7 +36,7 @@ object TestIndexIndiana {
   val siteVivoVersion="1.2"
 
   def main(args : Array[String]) : Unit = {
-    val process = new IndexProcessConfiguration(
+    val process = new IndexProcess(
       siteUrl,
       SiteIndexTest.solrUrl,
       SiteIndexTest.classUris,
@@ -50,7 +51,7 @@ object TestIndexPonce {
   val siteVivoVersion="1.2"
 
   def main(args : Array[String]) : Unit = {
-    val process = new IndexProcessConfiguration(
+    val process = new IndexProcess(
       siteUrl,
       SiteIndexTest.solrUrl,
       SiteIndexTest.classUris,
@@ -65,7 +66,7 @@ object TestIndexScripps {
   val siteVivoVersion="1.2"
 
   def main(args : Array[String]) : Unit = {
-    val process = new IndexProcessConfiguration(
+    val process = new IndexProcess(
       siteUrl,
       SiteIndexTest.solrUrl,
       SiteIndexTest.classUris,
@@ -80,7 +81,7 @@ object TestIndexUFL {
   val siteVivoVersion="1.2"
 
   def main(args : Array[String]) : Unit = {
-    val process = new IndexProcessConfiguration(
+    val process = new IndexProcess(
       siteUrl,
       SiteIndexTest.solrUrl,
       SiteIndexTest.classUris,
@@ -95,7 +96,7 @@ object TestIndexWustl {
   val siteVivoVersion="1.2"
 
   def main(args : Array[String]) : Unit = {
-    val process = new IndexProcessConfiguration(
+    val process = new IndexProcess(
       siteUrl,
       SiteIndexTest.solrUrl,
       SiteIndexTest.classUris,
@@ -110,7 +111,7 @@ object TestIndexWeillMed {
   val siteVivoVersion="1.2"
 
   def main(args : Array[String]) : Unit = {
-    val process = new IndexProcessConfiguration(
+    val process = new IndexProcess(
       siteUrl,
       SiteIndexTest.solrUrl,
       SiteIndexTest.classUris,

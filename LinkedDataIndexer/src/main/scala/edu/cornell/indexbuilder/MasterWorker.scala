@@ -22,7 +22,7 @@ extends Actor {
   //Workers for use by the master:
   val rdfWorker = Actor.actorOf( new RdfLinkedDataWorker() )
   val solrDocWorker = Actor.actorOf( new SolrDocWorker( selectorGen ) )
-  val solrIndexWorker = Actor.actorOf( new SolrIndexWorker(solrServer) )
+  val solrIndexWorker = Actor.actorOf( new SolrIndexWorker( solrServer ) )
 
   /**
    * List of uris to index messages.
@@ -54,7 +54,7 @@ extends Actor {
       uriDiscoveryWorker ! GetUrlsToIndexForSite( siteUrl )
     }
 
-    case IndexUris(baseSiteUrl, uris, classUri, page, totalPages) => {
+    case IndexUris(baseSiteUrl, uris ) => {
       EventHandler.debug(this, "Received URIs to index: " + uris.length)
       addToUrisToIndex( uris )
     }

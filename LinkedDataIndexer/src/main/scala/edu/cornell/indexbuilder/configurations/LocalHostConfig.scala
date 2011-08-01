@@ -1,4 +1,5 @@
-package edu.cornell.indexbuilder
+package edu.cornell.indexbuilder.configurations
+import edu.cornell.indexbuilder.IndexProcess
 
 /*
  * A configuration that indexes some classes from
@@ -15,7 +16,7 @@ object LocalHost {
       """http://vivoweb.org/ontology/core#FacultyMember"""
     )
 
-    val process = new IndexProcessConfiguration(
+    val process = new IndexProcess( 
       "http://localhost:8080/vivo",
       "http://localhost:8080/multiSiteIndex",
       classUris,

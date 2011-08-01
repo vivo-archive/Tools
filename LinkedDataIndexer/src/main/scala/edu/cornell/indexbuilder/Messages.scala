@@ -21,9 +21,15 @@ case class GetUrlsToIndexForSite ( siteBaseUrl : String) extends IndexBuilderMes
 
 /*
  * Ask for a site to have its individuals of vclass indexed.
- * Asynchronous. Worker will send out SiteIndex messages.
+ * Asynchronous. Worker will send out DiscoverUrisForClassPage to self.
  */
 case class DiscoverUrisForClass( siteBaseUrl:String, classUri:String) extends IndexBuilderMessage
+
+/*
+ * Ask for a page from the vclass search to be retreived and have its URIs indexed.
+ * Asynchronous.  Worker will send out IndexUris messages to Master.
+ */
+case class DiscoverUrisForClassPage( siteBaseUrl:String, classUri:String, pageUrl:String) extends IndexBuilderMessage
 
 /**
  * Indicate that the URI discovery phase is complete for the site.
@@ -34,14 +40,7 @@ case class DiscoveryComplete( siteBaseUrl:String ) extends IndexBuilderMessage
  * Requests that URIs be indexed for a site.
  * siteBaseUrl should not end with a /
  */
-case class IndexUris ( 
-  siteBaseUrl : String, 
-  uris: List[String], 
-  classUri:String, 
-  page:Int, 
-  totalPages:Int) 
-  extends IndexBuilderMessage
-
+case class IndexUris ( siteBaseUrl : String, uris: List[String]) extends IndexBuilderMessage
 
 /**
  * Indicates that the RDF should be retreived for the URI

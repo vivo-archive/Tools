@@ -42,7 +42,8 @@ import scala.collection.mutable.Map
  * make them and put each in a file
  * 
  */
-class VivoUriDiscoveryWorker (classUris:List[String], action:String)extends UriDiscoveryWorker {
+class VivoUriDiscoveryWorker (classUris:List[String], action:String, workDirectory:String )
+extends UriDiscoveryWorker {
 
   /**
    * A map of classUri to a list of IndexUris messages
@@ -54,22 +55,57 @@ class VivoUriDiscoveryWorker (classUris:List[String], action:String)extends UriD
    * that should be generated for the class. */
   val classToPageTotal = Map.empty[String, Int]
 
+  /* URIs of classes that have not yet had pages retrieved for them */
+  val classQueue = List.empty[String]
+
+  /* URLs of pages that have not yet been retrieved */
+  val pageQueue = List.empty[String]
+
+  /* URIs of individuals to index */
+  val indexQueue = List.empty[String]
+
+  @Override
+  def prestart() = {
+    //set up class queue 
+    
+    //set up page queue
+    
+    //setup URI queue
+  }
+
   def receive = {
 
     case GetUrlsToIndexForSite( siteBaseUrl ) => {
       EventHandler.info(this,"GetUrlsToIndexForSite " + siteBaseUrl)      
-      //send messages to self to index for each classUri
-      for( classUri <- classUris )
-        self ! DiscoverUrisForClass(siteBaseUrl,classUri)
+      
+      if( hasSavedState() ){
+        restartFromState( self )
+      }else{
+        //starting with no saved state
+        setupInitialState(  )
+        
+        //send messages to self to index for each classUri
+        for( classUri <- classUris )
+          self ! DiscoverUrisForClass(siteBaseUrl,classUri)
+      }
     }
 
     case DiscoverUrisForClass( siteBaseUrl, classUri ) => {
       EventHandler.info(this,"DiscoverUrisForClass " + classUri)
       val url = reqForClassUri( siteBaseUrl, classUri )
-      val reqHandler =  getInitialRequestHandler(siteBaseUrl,classUri ) 
-      // send a message to http worker to do the request and then have
-      // it handled by the reqHandler.
-      HttpWorker.httpWorkRouter ! HttpGetAndProcess( url, reqHandler)
+      val initReqHandler =  getInitialRequestHandler(siteBaseUrl, classUri, self ) 
+
+      // Send a message to HttpWorker to do the request and then it will call initReqHandler
+      HttpWorker.httpWorkRouter ! HttpGetAndProcess( url, initReqHandler)
+    }
+
+    case DiscoverUrisForClassPage(siteBaseUrl,classUri,pageUrl) => {
+      //respHandler will be run by HttpWorker 
+      val respHandler = 
+           getIndexPageHandler(siteBaseUrl, classUri, pageUrl, this )
+
+      //send out work to prcess index page for URIs
+      HttpWorker.httpWorkRouter ! HttpGetAndProcess(pageUrl, respHandler)
     }
 
     case _ => 
@@ -82,7 +118,7 @@ class VivoUriDiscoveryWorker (classUris:List[String], action:String)extends UriD
    * a vivo site.  This will send out additional messages to the
    * http worker to make requests for the pages. 
    */
-  def getInitialRequestHandler( siteBaseUrl:String, classUri:String ) : ResponseHandler[Unit] = {
+  def getInitialRequestHandler( siteBaseUrl:String, classUri:String , actor:ActorRef ) : ResponseHandler[Unit] = {
     val uriDiscoveryWorker:VivoUriDiscoveryWorker = this
 
     return new ResponseHandler[Unit]() {
@@ -94,24 +130,18 @@ class VivoUriDiscoveryWorker (classUris:List[String], action:String)extends UriD
          }
 
          //parse result to get urls for all the pages        
-         val pageUrls = 
+         val pageMsgs = 
            parseInitialIndividualsByVClassForURLs( EntityUtils.toString(entity), action )
-         .map( url => siteBaseUrl + url )
+           .map( url => DiscoverUrisForClassPage(siteBaseUrl,classUri,siteBaseUrl+url))
+         
+         EventHandler.debug(this,"Adding %d pages to index for class %s".format(pageMsgs.length,classUri) )
 
-         //record the total pages for this class in the discovery object
-         uriDiscoveryWorker.addClassPageTotal(classUri, pageUrls.length)
-         EventHandler.debug(this,"pages to index:" +  pageUrls.length )
+         //save the page message to the file system state
+         pageMsgs.foreach( uriDiscoveryWorker.savePageToState )
+         uriDiscoveryWorker.pagesDiscoveredForClass(classUri)
 
-         //create a partially applied function that still needs a page
-         val responseHandler = 
-           getIndexPageHandler(siteBaseUrl,classUri,pageUrls.length,uriDiscoveryWorker)_
-
-         //send out work to prcess each index page
-         val http = HttpWorker.httpWorkRouter 
-         for( i <- 1 to pageUrls.length )
-           http ! HttpGetAndProcess(pageUrls(i-1), responseHandler(i) )
-
-         return 
+         //send out messages to get the pages converted to URIs to index
+         pageMsgs.foreach( actor ! _ )
       }
     }
   } 
@@ -124,36 +154,37 @@ class VivoUriDiscoveryWorker (classUris:List[String], action:String)extends UriD
   def getIndexPageHandler(
     siteBaseUrl:String, 
     classUri:String, 
-    pageCount:Int, 
-    uriDiscoveryWorker:VivoUriDiscoveryWorker )
-    (page:Int)  //for partial function application
-    :ResponseHandler[Unit] = {
+    pageUrl:String,
+    uriDiscoveryWorker:VivoUriDiscoveryWorker ) : ResponseHandler[Unit] = {
 
     return new ResponseHandler[Unit]() {
        def handleResponse( response : HttpResponse ) : Unit = {    
+         //TODO: add better error handling 
 
          //parse the JSON to get URIs for individuals for this page of results
          val entity = response.getEntity()
          if( entity == null ){
            EventHandler.error(this,"got null for response.getEntity()")
-           return
-         }
-        
-         val uris=parseIndividualsByVClassForURIs( EntityUtils.toString(entity) )
+           
+         }else{           
+           val uris=parseIndividualsByVClassForURIs( EntityUtils.toString(entity) )
 
-         //send out work all the URIs
-         val master = MasterWorker.getMaster()
+           //send out work for all the URIs           
+           val msg = IndexUris(siteBaseUrl, uris.toList  )
+           
+           saveUrisToState( pageUrl, msg )
 
-         val msg = IndexUris(siteBaseUrl, uris.toList, classUri, page, pageCount)
-         //record this set of URIs for the class with the discovery object
-         uriDiscoveryWorker.addToUrisMap(classUri,msg)
-         master ! msg
-         if( uriDiscoveryWorker.discoveryComplete() ){
-           master ! DiscoveryComplete( siteBaseUrl )
-         }         
+           val master = MasterWorker.getMaster()
+           master ! msg
+
+           //if discovery is done, send out message to Master
+           if( uriDiscoveryWorker.isDiscoveryComplete() ){
+             master ! DiscoveryComplete( siteBaseUrl )
+           }     
+         }    
       }
     }
-  } 
+  }
 
   /** Make an initial HTTP request URL for a classUri */
   def reqForClassUri( siteBaseUrl:String, classUri:String):String={
@@ -163,31 +194,48 @@ class VivoUriDiscoveryWorker (classUris:List[String], action:String)extends UriD
       "vclassId=" + java.net.URLEncoder.encode( classUri, "UTF-8" )
   }
 
-  def addClassPageTotal(classUri:String,pageTotal:Int){
-    synchronized{
-      classToPageTotal(classUri)=pageTotal
-      classToUrisMap(classUri)=List[IndexUris]()
-    }    
+  def setupInitialState():Unit={
   }
 
-  def addToUrisMap(classUri:String,indexUrisMsg:IndexUris){
-    synchronized{
-      classToUrisMap(classUri) = indexUrisMsg :: classToUrisMap(classUri)      
-    }
+  def hasSavedState():Boolean={
+    false
   }
- 
 
-  def discoveryComplete():Boolean = {
+  def restartFromState( actor:ActorRef):Unit={
+    //go through the state object and send out any messages that are needed
+  }
+
+  def isDiscoveryComplete():Boolean = {
     synchronized{
-      classToUrisMap.keys.forall( discoveryCompleteForClass )
+      classToUrisMap.keys.forall( isDiscoveryCompleteForClass )
     }
   } 
 
-  def discoveryCompleteForClass(classUri:String):Boolean = {
+  def isDiscoveryCompleteForClass(classUri:String):Boolean = {
     synchronized{
       classToUrisMap(classUri).length == classToPageTotal(classUri)
     }
   }
+
+  def pagesDiscoveredForClass( classUri:String ){
+    EventHandler.error(this,"pagesDiscoveredForClass not implemented!!!")
+  }
+  
+  def savePageToState( pageMsg:DiscoverUrisForClassPage ) :Unit = {
+    EventHandler.error(this,"savePageToState not implemented!!!")
+  }
+
+  def saveUrisToState( pageUrl:String, uriMsg:IndexUris):Unit ={
+    //remove pageUrl from todo list
+    urisDiscoveredForPage( pageUrl )
+    //add uriMsg to todo list
+    EventHandler.error(this,"saveUrisToState not implemented!!!")
+  }
+
+  def urisDiscoveredForPage( pageUri:String){
+    EventHandler.error(this,"urisDiscoveredForPage not implemented!!!")
+  }
+
 }
 
 object VivoUriDiscoveryWorker{
