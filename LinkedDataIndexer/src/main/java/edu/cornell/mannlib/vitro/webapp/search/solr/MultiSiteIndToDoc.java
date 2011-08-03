@@ -22,6 +22,9 @@ public class MultiSiteIndToDoc extends IndividualToSolrDocument {
         tmp.add( new AddObjectPropertyText());
         tmp.add( new AddClassesForMultiSite(pfs));
         tmp.add( new AddThumbnail() );
+        tmp.add(new AddSourceInstitution(null, null));	//siteURL and siteName have to be passed.
+        tmp.add(new AddParameters());
+        tmp.add(new AddNameBoost());
         this.documentModifiers = tmp;
     }    
     
@@ -81,11 +84,14 @@ public class MultiSiteIndToDoc extends IndividualToSolrDocument {
     }
        
     public static class multiSiteTerm {
-        public static String type_label="type_label";        
+        public static final String BETA = "beta";
+		public static String type_label="type_label";        
         public static String name="name";
         public static String alltext="alltext";
         public static String alltextStemmed="alltextStemmed";
-        public static String nameStemmed = "nameStemmed";                
+        public static String nameStemmed = "nameStemmed";
+        public static String siteURL = "siteURL";
+        public static String siteName = "siteName";
     }
         
     
