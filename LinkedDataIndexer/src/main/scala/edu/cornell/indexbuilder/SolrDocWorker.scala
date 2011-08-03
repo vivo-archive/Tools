@@ -9,7 +9,7 @@ import edu.cornell.mannlib.vitro.webapp.dao.jena.{OntModelSelector, WebappDaoFac
 import edu.cornell.mannlib.vitro.webapp.search.beans.IndividualProhibitedFromSearchImpl
 import edu.cornell.mannlib.vitro.webapp.search.beans.ProhibitedFromSearch
 import edu.cornell.mannlib.vitro.webapp.search.solr.SourceInstitution
-import edu.cornell.mannlib.vitro.webapp.search.solr.{DocumentModifier, MultiSiteIndToDoc, AddContextNodesForMultiSite}
+import edu.cornell.mannlib.vitro.webapp.search.solr.{DocumentModifier, MultiSiteIndToDoc, AddContextNodesForMultiSite,AddConstant}
 import java.io.ByteArrayOutputStream
 import org.apache.solr.common.SolrInputDocument
 import SolrDocWorker._
@@ -66,8 +66,8 @@ object SolrDocWorker {
   
   def makeIndToDoc( oms : OntModelSelector , siteUrl:String ):MultiSiteIndToDoc = {
     val docModifiers = new java.util.ArrayList[DocumentModifier](2)
-
-    //docModifiers.add( new ContextNodeFields(oms.getFullModel())) 
+    
+    docModifiers.add( new AddConstant( "siteName", "valueX"))
     docModifiers.add( new AddContextNodesForMultiSite( oms.getFullModel() ))
     docModifiers.add( new SourceInstitution( siteUrl ) )
 

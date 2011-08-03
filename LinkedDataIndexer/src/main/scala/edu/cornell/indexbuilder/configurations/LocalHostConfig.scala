@@ -3,7 +3,8 @@ import edu.cornell.indexbuilder.IndexProcess
 
 /*
  * A configuration that indexes some classes from
- * a Vivo running on localhost to a solr on localhost.
+ * a 1.3 VIVO running on localhost:8080
+ * to a solr at http://localhost:8080/multiSiteIndex .
  */
 object LocalHost {
 

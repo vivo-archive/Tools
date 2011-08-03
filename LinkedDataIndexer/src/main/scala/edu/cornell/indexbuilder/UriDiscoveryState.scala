@@ -33,8 +33,16 @@ class UriDiscoveryState(workingDirectory:String) {
     EventHandler.error(this,"saveUrisToState not implemented!!!")
   }
 
-  def urisDiscoveredForPage( pageUri:String){
+  def urisDiscoveredForPage( pageUri:String):Unit = {
     EventHandler.error(this,"urisDiscoveredForPage not implemented!!!")
+  }
+
+  def uriCompleted( uri:String ) :Unit = {
+
+  }
+
+  def getClassesNotYetDone(): List[String] = {
+    List[String]()
   }
 
 }
