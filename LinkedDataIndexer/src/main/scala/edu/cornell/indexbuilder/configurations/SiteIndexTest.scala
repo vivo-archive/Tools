@@ -64,7 +64,7 @@ object TestIndexIndiana {
 }
 
 object TestIndexPonce {
-  val siteUrl = "http://vivo.psm.edu/"
+  val siteUrl = "http://vivo.psm.edu"
   val siteName = uriToName( siteUrl )
   val siteVivoVersion=VitroVersion.r1dot2
 
@@ -81,7 +81,7 @@ object TestIndexPonce {
 }
 
 object TestIndexScripps {
-  val siteUrl = "http://vivo.scripps.edu/"
+  val siteUrl = "http://vivo.scripps.edu"
   val siteName = uriToName( siteUrl )
   val siteVivoVersion=VitroVersion.r1dot2
 
@@ -98,7 +98,7 @@ object TestIndexScripps {
 }
 
 object TestIndexUFL {
-  val siteUrl = "http://vivo.ufl.edu/"
+  val siteUrl = "http://vivo.ufl.edu"
   val siteName = uriToName( siteUrl )
   val siteVivoVersion=VitroVersion.r1dot2
 
@@ -115,7 +115,7 @@ object TestIndexUFL {
 }
 
 object TestIndexWustl {
-  val siteUrl = "http://vivo.wustl.edu/"
+  val siteUrl = "http://vivo.wustl.edu"
   val siteName = uriToName( siteUrl )
   val siteVivoVersion=VitroVersion.r1dot2
 
@@ -132,7 +132,7 @@ object TestIndexWustl {
 }
 
 object TestIndexWeillMed {
-  val siteUrl = "http://vivo.med.cornell.edu/"
+  val siteUrl = "http://vivo.med.cornell.edu"
   val siteName = uriToName( siteUrl )
   val siteVivoVersion=VitroVersion.r1dot2
 

@@ -13,7 +13,7 @@ import org.apache.solr.client.solrj.SolrServer
  * Individuals discovered on the site specified by siteUrl
  * will be indexed to the service indicated by solrUrl.
  *
- * siteUrl - URL of site to indes ex "http://vivo.exampe.edu"
+ * siteUrl - URL of site to indes ex "http://vivo.exampe.edu" No / at end
  * solrUrl - URL of solr sevice ex "http://solr.example.edu:8080/solr"
  * classUris - List of URIs of classes to index from siteUrl
  * siteVersion - Should be either "1.2" or "1.3" to indicate
