@@ -16,16 +16,16 @@ object SiteIndexTest {
   )
 
   val uriToName = Map(
-    "vivo.cornell.edu" -> "Cornell University",
-    "vivo.med.cornell.edu" -> "Weill Cornell Medical College",
-    "vivo.ufl.edu" -> "University of Florida",
-    "vivo.iu.edu" -> "Indiana University",
-    "vivo.wustl.edu" -> "Washington University School of Medicine",
-    "vivo.psm.edu" -> "Ponce School of Medicine",
-    "vivo.scripps.edu" -> "The Scripps Research Institu"
+    "http://vivo.cornell.edu" -> "Cornell University",
+    "http://vivo.med.cornell.edu" -> "Weill Cornell Medical College",
+    "http://vivo.ufl.edu" -> "University of Florida",
+    "http://vivo.iu.edu" -> "Indiana University",
+    "http://vivo.wustl.edu" -> "Washington University School of Medicine",
+    "http://vivo.psm.edu" -> "Ponce School of Medicine",
+    "http://vivo.scripps.edu" -> "The Scripps Research Institute"
   )
 
-  val solrUrl = "http://rollins.mannlib.cornell.edu:8080/devIndexUnstable"    
+  val solrUrl = "http://rollins.mannlib.cornell.edu:8080/devIndexUnstable/core2"    
 }
 
 
