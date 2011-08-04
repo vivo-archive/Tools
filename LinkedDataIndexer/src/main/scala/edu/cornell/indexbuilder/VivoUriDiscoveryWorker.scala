@@ -156,20 +156,25 @@ extends UriDiscoveryWorker {
            EventHandler.error(this,"got null for response.getEntity()")
            
          }else{           
-           val uris=parseIndividualsByVClassForURIs( EntityUtils.toString(entity) )
-
-           //send out work for all the URIs           
-           val msg = IndexUris( siteBaseUrl, uris.toList  )
-           
-           urisDiscoveredForPage( pageUrl )
-           saveUrisToState( classUri, pageUrl, msg )
-
-           val master = MasterWorker.getMaster()
-           master ! msg
+           try{
+             val uris=parseIndividualsByVClassForURIs( EntityUtils.toString(entity) )
+             //send out work for all the URIs           
+             val msg = IndexUris( siteBaseUrl, uris.toList  )
+             
+             urisDiscoveredForPage( pageUrl )
+             saveUrisToState( classUri, pageUrl, msg )
+             
+             MasterWorker.getMaster() ! msg
+           }catch{
+             case e: Exception => {
+               EventHandler.error(e,this,"Could not get page for %s".format(pageUrl))
+               errorDuringDiscoveryForPage( pageUrl )
+             }
+           }
 
            //if discovery is done, send out message to Master
            if( isDiscoveryComplete() )
-             master ! DiscoveryComplete( siteBaseUrl )
+             MasterWorker.getMaster() ! DiscoveryComplete( siteBaseUrl )
            else
              whatsLeft()           
          }    
@@ -208,8 +213,23 @@ extends UriDiscoveryWorker {
     }  
   } 
 
+  /**
+   * Call this method when the URIs for a page
+   * have been retreived and added to the queue.
+   */
   def urisDiscoveredForPage( pageUrl:String){
     //record that the page is completed
+    synchronized{
+      isUriDiscoveryCompleteForPageUrl += pageUrl -> true 
+    }                           
+  }
+
+  /**
+   * Call this method when there has been an error
+   * while getting the URIs for a page
+   */
+  def errorDuringDiscoveryForPage( pageUrl:String ){
+    //TODO: should record that there was an error of some sort.
     synchronized{
       isUriDiscoveryCompleteForPageUrl += pageUrl -> true 
     }                           
