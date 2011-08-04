@@ -32,7 +32,7 @@ class SolrDocWorker( selector : SelectorGenerator , siteName : String) extends A
   def receive = {    
     
     case RdfToDoc( siteUrl, uri, model ) => {
-      EventHandler.debug(this, "RDF for %s %s".format(uri, SolrDocWorker.modelToString( model ) ))
+      //EventHandler.debug(this, "RDF for %s %s".format(uri, SolrDocWorker.modelToString( model ) ))
       if( model.isEmpty() ){
         self reply CouldNotGetData( siteUrl, uri , "SolrDocWorker got an empty model")
       }else{

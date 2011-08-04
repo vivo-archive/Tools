@@ -247,8 +247,8 @@ extends UriDiscoveryWorker {
     //   isPageDiscoveryCompleteForClassUri.foldLeft(""){ case (a,(k,v)) => if( v ) "" else ", "+k}))
     // EventHandler.debug(this,"pages left to get URIs for: %s ".format(
     //   isUriDiscoveryCompleteForPageUrl.foldLeft(""){ case (a,(k,v)) => if( v ) "" else ", "+k}))
-    EventHandler.debug(this,"classes left to get pages for: %s ".format( isPageDiscoveryCompleteForClassUri ) )
-    EventHandler.debug(this,"pages left to get URIs for: %s ".format( isUriDiscoveryCompleteForPageUrl ))
+    //EventHandler.debug(this,"classes left to get pages for: %s ".format( isPageDiscoveryCompleteForClassUri ) )
+    //EventHandler.debug(this,"pages left to get URIs for: %s ".format( isUriDiscoveryCompleteForPageUrl ))
   }
 }
 
