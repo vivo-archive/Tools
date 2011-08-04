@@ -21,7 +21,8 @@ import edu.cornell.mannlib.vitro.webapp.dao.jena.SimpleOntModelSelector
 
 /**
  * Creates an OntModelSelector that is used for a WebappDaoFactory.
- * This setups the ontologies that are needed for VIVO.
+ * This setups the ontologies and RDF instance data that are needed
+ * for VIVO such as the VIVO core tbox, the geopolitical instances etc.
  */
 class SelectorGeneratorForVivo( siteBaseUrl : String ) extends SelectorGenerator {
 
@@ -96,7 +97,6 @@ object SelectorGeneratorForVivo{
     ontModel.read(in, "")
     ontModel
   }
-
 
   //utility method to format a model as N3
   def modelToString(model: Model):String = {

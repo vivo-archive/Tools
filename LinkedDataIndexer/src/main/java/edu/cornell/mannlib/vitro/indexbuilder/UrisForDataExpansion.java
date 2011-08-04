@@ -141,6 +141,7 @@ public class UrisForDataExpansion  {
         String core = "http://vivoweb.org/ontology/core#";
         String acti ="http://vivoweb.org/ontology/activity-insight#";
         String bibo = "http://purl.org/ontology/bibo/";
+        String vitro = "http://vitro.mannlib.cornell.edu/ns/vitro/public#";
         
         String[] twoHopPredicates = {
             core+"hasRole",
@@ -164,7 +165,9 @@ public class UrisForDataExpansion  {
             core+"informationResourceInAuthorship",
             
             bibo+"editor",
-            core+"editorOf"
+            core+"editorOf",
+
+            vitro+"mainImage"
         };
         return new HashSet<String>( Arrays.asList(twoHopPredicates) );
     }

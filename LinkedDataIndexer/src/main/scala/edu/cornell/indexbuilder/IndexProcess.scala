@@ -1,11 +1,11 @@
 package edu.cornell.indexbuilder
 
-import edu.cornell.indexbuilder._
 import akka.actor.{Actor, PoisonPill}
 import Actor._
 import akka.routing.{Routing, CyclicIterator}
 import Routing._
 import akka.event.EventHandler
+import edu.cornell.indexbuilder.VitroVersion._
 import org.apache.solr.client.solrj.SolrServer
 
 /*
@@ -21,9 +21,10 @@ import org.apache.solr.client.solrj.SolrServer
  */
 class IndexProcess(
   siteUrl:String,
+  siteName:String,
   solrUrl:String,
   classUris:List[String],
-  siteVersion:String
+  siteVersion:VitroVersion
 ){
 
   def run (){
@@ -31,7 +32,7 @@ class IndexProcess(
     val workDirectory = "./workDir" + System.currentTimeMillis()
 
     val actionName =
-      if("1.2".equals( siteVersion ))
+      if(r1dot2 == siteVersion )
         VivoUriDiscoveryWorker.rel12actionName
       else
         VivoUriDiscoveryWorker.rel13actionName 
@@ -49,6 +50,7 @@ class IndexProcess(
     val master = Actor.actorOf( 
       new MasterWorker( 
         siteUrl, 
+        siteName,
         uriDiscoveryWorker, 
         solrServer, 
         selectorGen
@@ -57,6 +59,7 @@ class IndexProcess(
     master.start()
     master ! GetUrlsToIndexForSite( siteUrl )
   }
+
 
 }
 

@@ -44,34 +44,19 @@ import scala.collection.mutable.Map
  */
 class VivoUriDiscoveryWorker (classUris:List[String], action:String, workDirectory:String )
 extends UriDiscoveryWorker {
+  
+  /**
+   * A map of classUri to if page discovery is complete
+   * for that class.  As the page list is retreived for a
+   * class it will be set to true in this map. */
+  val isPageDiscoveryCompleteForClassUri = Map.empty[String, Boolean]
 
   /**
-   * A map of classUri to a list of IndexUris messages
-   * for that class */
-  val classToUrisMap = Map.empty[String, List[IndexUris]]
-
-  /**
-   * A map of classUris to the total expected number of pages
-   * that should be generated for the class. */
-  val classToPageTotal = Map.empty[String, Int]
-
-  /* URIs of classes that have not yet had pages retrieved for them */
-  val classQueue = List.empty[String]
-
-  /* URLs of pages that have not yet been retrieved */
-  val pageQueue = List.empty[String]
-
-  /* URIs of individuals to index */
-  val indexQueue = List.empty[String]
-
-  @Override
-  def prestart() = {
-    //set up class queue 
-    
-    //set up page queue
-    
-    //setup URI queue
-  }
+   * A map of pageUrls and if they are complete. When a
+   * pageUrl has had its URIs added to the list of URIs to
+   * index, it will be set to true in this map.
+   */
+  val isUriDiscoveryCompleteForPageUrl = Map.empty[String, Boolean]
 
   def receive = {
 
@@ -84,6 +69,8 @@ extends UriDiscoveryWorker {
         //starting with no saved state
         setupInitialState(  )
         
+        whatsLeft()
+
         //send messages to self to index for each classUri
         for( classUri <- classUris )
           self ! DiscoverUrisForClass(siteBaseUrl,classUri)
@@ -137,8 +124,10 @@ extends UriDiscoveryWorker {
          EventHandler.debug(this,"Adding %d pages to index for class %s".format(pageMsgs.length,classUri) )
 
          //save the page message to the file system state
-         pageMsgs.foreach( uriDiscoveryWorker.savePageToState )
-         uriDiscoveryWorker.pagesDiscoveredForClass(classUri)
+         pageMsgs.foreach( savePageToState )
+         allPagesDiscoveredForClass(classUri)
+         
+         whatsLeft()
 
          //send out messages to get the pages converted to URIs to index
          pageMsgs.foreach( actor ! _ )
@@ -170,17 +159,19 @@ extends UriDiscoveryWorker {
            val uris=parseIndividualsByVClassForURIs( EntityUtils.toString(entity) )
 
            //send out work for all the URIs           
-           val msg = IndexUris(siteBaseUrl, uris.toList  )
+           val msg = IndexUris( siteBaseUrl, uris.toList  )
            
-           saveUrisToState( pageUrl, msg )
+           urisDiscoveredForPage( pageUrl )
+           saveUrisToState( classUri, pageUrl, msg )
 
            val master = MasterWorker.getMaster()
            master ! msg
 
            //if discovery is done, send out message to Master
-           if( uriDiscoveryWorker.isDiscoveryComplete() ){
+           if( isDiscoveryComplete() )
              master ! DiscoveryComplete( siteBaseUrl )
-           }     
+           else
+             whatsLeft()           
          }    
       }
     }
@@ -188,54 +179,77 @@ extends UriDiscoveryWorker {
 
   /** Make an initial HTTP request URL for a classUri */
   def reqForClassUri( siteBaseUrl:String, classUri:String):String={
-    return siteBaseUrl + 
-      "/dataservice" +
+    return siteBaseUrl + "/dataservice" +
       "?" + action + "&"+
       "vclassId=" + java.net.URLEncoder.encode( classUri, "UTF-8" )
   }
 
   def setupInitialState():Unit={
+    //Add all classes as not yet having their page discovery completed
+    for( classUri <- classUris ){
+      isPageDiscoveryCompleteForClassUri += classUri -> false
+    }
   }
 
-  def hasSavedState():Boolean={
-    false
+  def allPagesDiscoveredForClass(classUri:String) : Unit = {
+    isPageDiscoveryCompleteForClassUri += classUri -> true
   }
 
-  def restartFromState( actor:ActorRef):Unit={
-    //go through the state object and send out any messages that are needed
+  def savePageToState( pageMsg:DiscoverUrisForClassPage ) :Unit = {    
+    //record that there is a new pageURL that need to be indexed
+    // and that it is not yet indexed
+    synchronized{
+      if( isUriDiscoveryCompleteForPageUrl.contains( pageMsg.pageUrl))
+         EventHandler.warning(this, 
+           "Not adding pageUrl to isUriDiscoveryCompleteForPageUrl"+
+           " becasue it is already in the map")
+      else
+        isUriDiscoveryCompleteForPageUrl += pageMsg.pageUrl -> false
+    }  
+  } 
+
+  def urisDiscoveredForPage( pageUrl:String){
+    //record that the page is completed
+    synchronized{
+      isUriDiscoveryCompleteForPageUrl += pageUrl -> true 
+    }                           
   }
 
   def isDiscoveryComplete():Boolean = {
     synchronized{
-      classToUrisMap.keys.forall( isDiscoveryCompleteForClass )
+      isDiscoveryCompleteForClasses && isDiscoveryCompleteForPages 
     }
   } 
-
-  def isDiscoveryCompleteForClass(classUri:String):Boolean = {
-    synchronized{
-      classToUrisMap(classUri).length == classToPageTotal(classUri)
-    }
+ 
+  def isDiscoveryCompleteForClasses():Boolean ={
+      isPageDiscoveryCompleteForClassUri.values.forall( _ == true ) 
   }
 
-  def pagesDiscoveredForClass( classUri:String ){
-    EventHandler.error(this,"pagesDiscoveredForClass not implemented!!!")
-  }
-  
-  def savePageToState( pageMsg:DiscoverUrisForClassPage ) :Unit = {
-    EventHandler.error(this,"savePageToState not implemented!!!")
+  def isDiscoveryCompleteForPages():Boolean={
+      isUriDiscoveryCompleteForPageUrl.values.forall( _ == true )
   }
 
-  def saveUrisToState( pageUrl:String, uriMsg:IndexUris):Unit ={
-    //remove pageUrl from todo list
-    urisDiscoveredForPage( pageUrl )
-    //add uriMsg to todo list
-    EventHandler.error(this,"saveUrisToState not implemented!!!")
+  def saveUrisToState( classUri:String, pageUrl:String, uriMsg:IndexUris):Unit ={
+    //TODO: save state
   }
 
-  def urisDiscoveredForPage( pageUri:String){
-    EventHandler.error(this,"urisDiscoveredForPage not implemented!!!")
+  def hasSavedState():Boolean={
+    //TODO: saving state is not implemented
+    false
   }
 
+  def restartFromState( actor:ActorRef):Unit={
+    //TODO: go through the state object and send out any messages that are needed
+  }
+
+  def whatsLeft():Unit={    
+    // EventHandler.debug(this,"classes left to get pages for: %s ".format(
+    //   isPageDiscoveryCompleteForClassUri.foldLeft(""){ case (a,(k,v)) => if( v ) "" else ", "+k}))
+    // EventHandler.debug(this,"pages left to get URIs for: %s ".format(
+    //   isUriDiscoveryCompleteForPageUrl.foldLeft(""){ case (a,(k,v)) => if( v ) "" else ", "+k}))
+    EventHandler.debug(this,"classes left to get pages for: %s ".format( isPageDiscoveryCompleteForClassUri ) )
+    EventHandler.debug(this,"pages left to get URIs for: %s ".format( isUriDiscoveryCompleteForPageUrl ))
+  }
 }
 
 object VivoUriDiscoveryWorker{

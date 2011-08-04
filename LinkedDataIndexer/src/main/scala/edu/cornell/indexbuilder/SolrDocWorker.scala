@@ -9,7 +9,8 @@ import edu.cornell.mannlib.vitro.webapp.dao.jena.{OntModelSelector, WebappDaoFac
 import edu.cornell.mannlib.vitro.webapp.search.beans.IndividualProhibitedFromSearchImpl
 import edu.cornell.mannlib.vitro.webapp.search.beans.ProhibitedFromSearch
 import edu.cornell.mannlib.vitro.webapp.search.solr.SourceInstitution
-import edu.cornell.mannlib.vitro.webapp.search.solr.{DocumentModifier, MultiSiteIndToDoc, AddContextNodesForMultiSite,AddConstant}
+import edu.cornell.mannlib.vitro.webapp.search.solr.SourceInstitution
+import edu.cornell.mannlib.vitro.webapp.search.solr.{DocumentModifier, MultiSiteIndToDoc, AddContextNodesForMultiSite,AddSourceInstitution,AddTitle}
 import java.io.ByteArrayOutputStream
 import org.apache.solr.common.SolrInputDocument
 import SolrDocWorker._
@@ -17,16 +18,21 @@ import SolrDocWorker._
 /**
  * This class should take a RdfToDoc message and send GotDoc back
  * with the SolrInputDocument for the model.
+ *
+  * selctor is a SelectorGenerator that can handle adding any additional
+  * statements that are needed for the model.  Ex. tbox or degrees.
+  *
+  * siteName is the human readable name of this site.
  */
 
 /* TODO: we may need local extensions. ex. There may be a local class in a classgroup. */
 
-class SolrDocWorker( selector : SelectorGenerator ) extends Actor  {
+class SolrDocWorker( selector : SelectorGenerator , siteName : String) extends Actor  {
   
   def receive = {    
     
     case RdfToDoc( siteUrl, uri, model ) => {
-      //EventHandler.debug(this, "RDF for %s %s".format(uri, SolrDocWorker.modelToString( model ) ))
+      EventHandler.debug(this, "RDF for %s %s".format(uri, SolrDocWorker.modelToString( model ) ))
       if( model.isEmpty() ){
         self reply CouldNotGetData( siteUrl, uri , "SolrDocWorker got an empty model")
       }else{
@@ -38,7 +44,7 @@ class SolrDocWorker( selector : SelectorGenerator ) extends Actor  {
         val maybeInd:Option[Individual] = getIndividual(uri,wdf)
         maybeInd match{
           case Some( ind ) => {
-            val doc = makeIndToDoc( ontModels, siteUrl).translate(ind)
+            val doc = makeIndToDoc( ontModels, siteUrl, siteName).translate(ind)
             EventHandler.debug(this, "Doc for " + uri + " " + doc)
             self reply GotDoc( siteUrl, uri, doc )
           }
@@ -64,31 +70,18 @@ object SolrDocWorker {
       Some(ind)
   }
   
-  def makeIndToDoc( oms : OntModelSelector , siteUrl:String ):MultiSiteIndToDoc = {
+  def makeIndToDoc( oms : OntModelSelector , siteUrl:String, siteName:String ):MultiSiteIndToDoc = {
     val docModifiers = new java.util.ArrayList[DocumentModifier](2)
     
-    docModifiers.add( new AddConstant( "siteName", "valueX"))
     docModifiers.add( new AddContextNodesForMultiSite( oms.getFullModel() ))
-    docModifiers.add( new SourceInstitution( siteUrl ) )
-
+//    docModifiers.add( new SourceInstitution( siteUrl, siteName ) )
+    docModifiers.add( new AddSourceInstitution( siteUrl, siteName) ) 
+    docModifiers.add( new AddTitle( oms.getFullModel() ))
     new MultiSiteIndToDoc( 
       new ProhibitedFromSearch("",oms.getTBoxModel() ),
       new IndividualProhibitedFromSearchImpl( oms.getFullModel() ),
       docModifiers
     )
-  }
-
-  //set up the ontology for vivo core
-  val tbox:OntModel = loadOntology()
-  
-  /**
-   * Load the vivo core ontology, it is needed for the tbox.
-   */
-  def loadOntology() = {
-    //TODO: make a way to config this
-    val ontModel = ModelFactory.createOntologyModel( OntModelSpec.OWL_MEM )
-    ontModel.read("http://vivoweb.org/ontology/core")
-    ontModel
   }
 
   def modelToString(model: Model):String = {

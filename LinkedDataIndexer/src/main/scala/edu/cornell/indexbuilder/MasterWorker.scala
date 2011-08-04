@@ -14,6 +14,7 @@ import org.apache.solr.client.solrj.SolrServer
 
 class MasterWorker(
   siteUrl: String, 
+  siteName: String,
   uriDiscoveryWorker: ActorRef,  
   solrServer: SolrServer, 
   selectorGen: SelectorGenerator ) 
@@ -21,7 +22,7 @@ extends Actor {
 
   //Workers for use by the master:
   val rdfWorker = Actor.actorOf( new RdfLinkedDataWorker() )
-  val solrDocWorker = Actor.actorOf( new SolrDocWorker( selectorGen ) )
+  val solrDocWorker = Actor.actorOf( new SolrDocWorker( selectorGen, siteName ) )
   val solrIndexWorker = Actor.actorOf( new SolrIndexWorker( solrServer ) )
 
   /**
@@ -60,8 +61,8 @@ extends Actor {
     }
 
     case DiscoveryComplete(baseSiteUrl) => {
-      EventHandler.info(this, "Discovery complete for site " 
-                         + baseSiteUrl + " starting linked data reqeusts.")
+      val delta = (System.currentTimeMillis - startTime )/ 1000
+      EventHandler.info(this, "Discovery complete for site %s after %d sec; starting linked data reqeusts.".format(baseSiteUrl, delta))
       getUncompletedUris().foreach( uri => rdfWorker ! GetRdf( uri ) )
     }
 

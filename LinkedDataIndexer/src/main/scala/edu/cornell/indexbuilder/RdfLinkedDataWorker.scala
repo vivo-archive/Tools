@@ -19,7 +19,15 @@ import akka.dispatch.Futures
 /**
  * Actor that gets RDF for URIs.
  * TODO: what to do about expanding the RDF to handle context nodes?
+ * 
  * TODO: what to do about external URIs such as WCMC in vivo.cornell.edu?
+ * 
+ * TODO: what about thumbnail image URLs?
+ * ex.
+ *   @prefix vitro: "http://vitro.mannlib.cornell.edu/ns/vitro/public#" .
+ *   person vitro:mainImage img .
+     img vitro:thumbnailImage thumbImg .
+     thumbImg vitro:downloadLocation locationUrl .
  */
 class RdfLinkedDataWorker (  ) extends Actor {  
 
@@ -71,7 +79,10 @@ class RdfLinkedDataWorker (  ) extends Actor {
     EventHandler.debug(this,"twoHop expansion list for URI %s: %s".format(uri,twoHop))
 
     val modelExp = singleHopExpansion(oneHop ++ twoHop, model)    
-    secondHopExpansion( uri, twoHop, modelExp)
+    //EventHandler.debug(this,"model for %s after one hop expansion: %s".format( uri, SolrDocWorker.modelToString(modelExp)))
+    val modelExp2 = secondHopExpansion( uri, twoHop, modelExp)
+    //EventHandler.debug(this,"model for %s after two hop expansion: %s".format( uri, SolrDocWorker.modelToString(modelExp)))
+    modelExp2
   }
 
   def singleHopExpansion( oneHop:Seq[String], model:Model):Model = {
@@ -80,7 +91,7 @@ class RdfLinkedDataWorker (  ) extends Actor {
       (uri:String) => HttpWorker.httpWorkRouter !!! HttpLinkedDataGetSync(uri) )
     
     //combine models into one
-    val expandedModel = Futures.fold(model)(listOfFutures)(f)
+    val expandedModel = Futures.fold(model)(listOfFutures)(addModels)
     expandedModel.get  
   }
 
@@ -96,7 +107,7 @@ class RdfLinkedDataWorker (  ) extends Actor {
   }
 
   //take two models and add them together
-  def f (acc: Model, i: Model) :Model = {
+  def addModels (acc: Model, i: Model) :Model = {
     acc.enterCriticalSection(Lock.WRITE)
     try{
       acc.add(i)

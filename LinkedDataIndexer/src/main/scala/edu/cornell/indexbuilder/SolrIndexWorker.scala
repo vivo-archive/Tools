@@ -34,7 +34,7 @@ class SolrIndexWorker( solrServer: SolrServer ) extends Actor {
       self reply IndexedDoc( siteUrl, uri )
     }
     
-    case Commit() => {
+    case Commit => {
       val commitResp = solrServer.commit()
       EventHandler.debug(this, "commit resp " + commitResp)
       self reply "done"

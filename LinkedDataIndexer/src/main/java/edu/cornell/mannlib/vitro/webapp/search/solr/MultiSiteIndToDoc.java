@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.solr.common.SolrInputDocument;
-import org.joda.time.DateTime;
 
 import edu.cornell.mannlib.vitro.webapp.beans.Individual;
 import edu.cornell.mannlib.vitro.webapp.search.IndexingException;
@@ -21,10 +20,9 @@ public class MultiSiteIndToDoc extends IndividualToSolrDocument {
         tmp.add( new AddLabel() );
         tmp.add( new AddObjectPropertyText());
         tmp.add( new AddClassesForMultiSite(pfs));
-        tmp.add( new AddThumbnail() );
-        tmp.add(new AddSourceInstitution(null, null));	//siteURL and siteName have to be passed.
-        tmp.add(new AddParameters());
-        tmp.add(new AddNameBoost());
+        tmp.add( new AddThumbnail() );        
+        //tmp.add(new AddParameters());
+        //tmp.add(new AddNameBoost());
         this.documentModifiers = tmp;
     }    
     
@@ -92,6 +90,7 @@ public class MultiSiteIndToDoc extends IndividualToSolrDocument {
         public static String nameStemmed = "nameStemmed";
         public static String siteURL = "siteURL";
         public static String siteName = "siteName";
+        public static String moniker = "moniker";
     }
         
     

@@ -1,5 +1,6 @@
 package edu.cornell.indexbuilder.configurations
 import edu.cornell.indexbuilder.IndexProcess
+import edu.cornell.indexbuilder.VitroVersion
 
 /*
  * A configuration that indexes some classes from
@@ -19,9 +20,10 @@ object LocalHost {
 
     val process = new IndexProcess( 
       "http://localhost:8080/vivo",
+      "localhost test site",
       "http://localhost:8080/multiSiteIndex",
       classUris,
-      "1.3"
+      VitroVersion.r1dot2
     )
 
     process.run()
