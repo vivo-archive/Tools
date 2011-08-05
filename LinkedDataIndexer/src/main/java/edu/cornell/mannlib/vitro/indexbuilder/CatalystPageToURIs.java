@@ -14,7 +14,7 @@ public class CatalystPageToURIs{
    * into a list of URIs to subsequently request via HTTP as 
    * linked data.
    */   
-    public static Collection<String> parseForURIs( String text ) {
+    public Collection<String> parseForURIs( String text ) {
         //TODO: implement me
         return Collections.emptyList();
     }
