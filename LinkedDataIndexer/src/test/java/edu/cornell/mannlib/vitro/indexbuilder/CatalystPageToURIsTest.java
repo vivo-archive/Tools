@@ -30,7 +30,7 @@ public class CatalystPageToURIsTest {
         Collection<String> uris = cptu.parseForURIs( html );
         
         Assert.assertNotNull(uris);
-        Assert.assertTrue( uris.size() > 15 );
+        Assert.assertTrue( uris.size() >= 15 );
         
         //TODO: look in the HTML and add the URIs for all the people in there
 
