@@ -27,7 +27,9 @@ public class CatalystPageToURIs{
     	Document doc = Jsoup.parse(text);
     	Set<String> listOfIDS = new HashSet<String>();
     	
-    	Elements rows = doc.select("body div div div table tr td div div table tr td div div table tr");
+    	//Elements rows = doc.select("body div div div table tr td div div table tr td div div table tr");
+    	Elements rows = doc.select("div.listTable tr");
+    	
     	for(Element e : rows){
     		if(e.hasClass("oddRow") || e.hasClass("evenRow")){
     			String id = e.attr("onclick");
