@@ -11,13 +11,15 @@ with AkkaProject{
     val ioCore = "com.github.scala-incubator.io" %% "core" % "0.1.1"
     val ioFile = "com.github.scala-incubator.io" %% "file" % "0.1.1"
  
-    val scalatest = "org.scalatest" %% "scalatest" % "1.4.1"
-    
-  
+    val scalatest = "org.scalatest" %% "scalatest" % "1.4.1"      
 
     //This is how to import java jars for solrj and its dependencies
     val solrJ = "org.apache.solr" % "solr-solrj" % "3.1.0"
 
     //adding this to deal with static linking of slf4j?
-    val slf4j = "org.slf4j" % "slf4j-simple" % "1.5.6"
+    //val slf4j = "org.slf4j" % "slf4j-simple" % "1.5.6"
+
+    lazy val logback = "ch.qos.logback" % "logback-classic" % "0.9.28" % "runtime"
+
+    val slf4s = "com.weiglewilczek.slf4s" %% "slf4s" % "1.0.6"
 }
