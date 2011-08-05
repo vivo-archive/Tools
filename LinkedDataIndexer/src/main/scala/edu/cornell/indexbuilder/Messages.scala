@@ -31,6 +31,12 @@ case class DiscoverUrisForClass( siteBaseUrl:String, classUri:String) extends In
  */
 case class DiscoverUrisForClassPage( siteBaseUrl:String, classUri:String, pageUrl:String) extends IndexBuilderMessage
 
+/*
+ * Ask for a page to be retrieved and have its URIs indexed.
+ * Asynchronous.
+ */
+case class DiscoverUrisForPage( siteBaseUrl:String, pageUrl:String) extends IndexBuilderMessage
+
 /**
  * Indicate that the URI discovery phase is complete for the site.
  */
