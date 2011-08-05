@@ -30,10 +30,25 @@ public class CatalystPageToURIsTest {
         Collection<String> uris = cptu.parseForURIs( html );
         
         Assert.assertNotNull(uris);
-        Assert.assertTrue( uris.size() > 0 );
+        Assert.assertTrue( uris.size() > 15 );
         
         //TODO: look in the HTML and add the URIs for all the people in there
+
+        Assert.assertTrue( uris.contains("http://connects.catalyst.harvard.edu/profiles/profile/person/92381"));
+        Assert.assertTrue( uris.contains("http://connects.catalyst.harvard.edu/profiles/profile/person/67379"));
+        Assert.assertTrue( uris.contains("http://connects.catalyst.harvard.edu/profiles/profile/person/16486"));
         Assert.assertTrue( uris.contains("http://connects.catalyst.harvard.edu/profiles/profile/person/99588"));
+        Assert.assertTrue( uris.contains("http://connects.catalyst.harvard.edu/profiles/profile/person/101523"));
+        Assert.assertTrue( uris.contains("http://connects.catalyst.harvard.edu/profiles/profile/person/92485"));
+        Assert.assertTrue( uris.contains("http://connects.catalyst.harvard.edu/profiles/profile/person/100717"));
+        Assert.assertTrue( uris.contains("http://connects.catalyst.harvard.edu/profiles/profile/person/18413"));
+        Assert.assertTrue( uris.contains("http://connects.catalyst.harvard.edu/profiles/profile/person/97200"));
+        Assert.assertTrue( uris.contains("http://connects.catalyst.harvard.edu/profiles/profile/person/21502"));
+        Assert.assertTrue( uris.contains("http://connects.catalyst.harvard.edu/profiles/profile/person/71285"));
+        Assert.assertTrue( uris.contains("http://connects.catalyst.harvard.edu/profiles/profile/person/14385"));
+        Assert.assertTrue( uris.contains("http://connects.catalyst.harvard.edu/profiles/profile/person/100188"));
+        Assert.assertTrue( uris.contains("http://connects.catalyst.harvard.edu/profiles/profile/person/60007"));
+        Assert.assertTrue( uris.contains("http://connects.catalyst.harvard.edu/profiles/profile/person/60957"));
     }
     
     public static String convertStreamToString(InputStream is) throws Exception {
