@@ -1,11 +1,14 @@
-package edu.cornell.indexbuilder
+package edu.cornell.indexbuilder.indexing
 
 import com.hp.hpl.jena.rdf.model.Model
 import com.hp.hpl.jena.rdf.model.ModelFactory
 import com.hp.hpl.jena.shared.Lock
+import edu.cornell.mannlib.vitro.indexbuilder.UrisForDataExpansion
 import org.apache.http.HttpResponse
 
-import edu.cornell.mannlib.vitro.indexbuilder.UrisForDataExpansion
+import edu.cornell.indexbuilder._
+import edu.cornell.indexbuilder.http.HttpWorker._
+import edu.cornell.indexbuilder.http._
 
 import scala.collection.mutable.HashSet
 import scala.collection.JavaConversions._

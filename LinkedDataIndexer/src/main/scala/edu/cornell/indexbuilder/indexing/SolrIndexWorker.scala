@@ -1,4 +1,4 @@
-package edu.cornell.indexbuilder
+package edu.cornell.indexbuilder.indexing
 
 import akka.actor.Actor
 import akka.event.EventHandler

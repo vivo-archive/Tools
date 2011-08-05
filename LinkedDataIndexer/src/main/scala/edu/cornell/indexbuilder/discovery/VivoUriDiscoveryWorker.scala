@@ -1,4 +1,5 @@
-package edu.cornell.indexbuilder
+package edu.cornell.indexbuilder.discovery
+
 import akka.actor.ActorRef
 
 import akka.actor.{Actor, PoisonPill}
@@ -11,6 +12,16 @@ import org.apache.http.HttpResponse
 import org.apache.http.util.EntityUtils
 import edu.cornell.mannlib.vitro.indexbuilder.ParseDataServiceJson._
 import scala.collection.mutable.Map
+
+import edu.cornell.indexbuilder.http.HttpWorker
+import edu.cornell.indexbuilder.http.HttpWorker._
+import edu.cornell.indexbuilder.http.HttpMessages
+import edu.cornell.indexbuilder.MasterWorker
+import edu.cornell.indexbuilder.indexing._
+import edu.cornell.indexbuilder.discovery._
+import edu.cornell.indexbuilder._
+import edu.cornell.indexbuilder.http._
+
 
 /**
  * How to get the list of classes?
@@ -42,8 +53,11 @@ import scala.collection.mutable.Map
  * make them and put each in a file
  * 
  */
-class VivoUriDiscoveryWorker (classUris:List[String], action:String, workDirectory:String )
-extends UriDiscoveryWorker {
+class VivoUriDiscoveryWorker (
+  classUris:List[String], 
+  action:String, 
+  workDirectory:String )
+extends Actor {
   
   /**
    * A map of classUri to if page discovery is complete
@@ -60,7 +74,7 @@ extends UriDiscoveryWorker {
 
   def receive = {
 
-    case GetUrlsToIndexForSite( siteBaseUrl ) => {
+    case DiscoverUrisForSite( siteBaseUrl ) => {
       EventHandler.info(this,"GetUrlsToIndexForSite " + siteBaseUrl)      
       
       if( hasSavedState() ){
@@ -83,7 +97,8 @@ extends UriDiscoveryWorker {
       val initReqHandler =  getInitialRequestHandler(siteBaseUrl, classUri, self ) 
 
       // Send a message to HttpWorker to do the request and then it will call initReqHandler
-      HttpWorker.httpWorkRouter ! HttpGetAndProcess( url, initReqHandler)
+
+      HttpWorker.httpWorkRouter ! HttpGetAndProcess( url, initReqHandler )
     }
 
     case DiscoverUrisForClassPage(siteBaseUrl,classUri,pageUrl) => {
@@ -159,7 +174,7 @@ extends UriDiscoveryWorker {
            try{
              val uris=parseIndividualsByVClassForURIs( EntityUtils.toString(entity) )
              //send out work for all the URIs           
-             val msg = IndexUris( siteBaseUrl, uris.toList  )
+             val msg =  IndexUris( siteBaseUrl, uris.toList  )
              
              urisDiscoveredForPage( pageUrl )
              saveUrisToState( classUri, pageUrl, msg )

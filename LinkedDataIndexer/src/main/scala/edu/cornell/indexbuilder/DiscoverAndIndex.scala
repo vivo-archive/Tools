@@ -1,12 +1,11 @@
 package edu.cornell.indexbuilder
 
-import akka.actor.{Actor, PoisonPill}
-import Actor._
-import akka.routing.{Routing, CyclicIterator}
-import Routing._
-import akka.event.EventHandler
+import akka.actor.Actor._
+import akka.actor.Actor
+import akka.routing.Routing._
 import edu.cornell.indexbuilder.VitroVersion._
-import org.apache.solr.client.solrj.SolrServer
+import edu.cornell.indexbuilder.indexing._
+import edu.cornell.indexbuilder.discovery._
 
 /*
  * This represents a basic process to run a site index.
@@ -19,7 +18,7 @@ import org.apache.solr.client.solrj.SolrServer
  * siteVersion - Should be either "1.2" or "1.3" to indicate
  * which version of the vivo software is running.
  */
-class IndexProcess(
+class DiscoverAndIndex(
   siteUrl:String,
   siteName:String,
   solrUrl:String,
@@ -57,7 +56,7 @@ class IndexProcess(
       ))
 
     master.start()
-    master ! GetUrlsToIndexForSite( siteUrl )
+    master ! DiscoverUrisForSite( siteUrl )
   }
 
 

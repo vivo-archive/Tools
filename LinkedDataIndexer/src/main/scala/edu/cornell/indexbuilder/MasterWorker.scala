@@ -7,6 +7,9 @@ import akka.actor.Actor._
 import akka.event.EventHandler
 import scalax.io.Resource
 import org.apache.solr.client.solrj.SolrServer
+import edu.cornell.indexbuilder.indexing._
+import edu.cornell.indexbuilder.discovery._
+import edu.cornell.indexbuilder.http._
 
 /**
  * Handle the main coordination of messages to build the index.
@@ -40,7 +43,7 @@ extends Actor {
    */
   var urisWithErrors = Set[String]()
 
-  var errors = List[IndexBuilderMessage]()
+  var errors = List[HttpMessages]()
 
   var startTime = 0L
 
@@ -50,9 +53,9 @@ extends Actor {
 
   def receive = {
 
-    case GetUrlsToIndexForSite( siteUrl ) =>{
+    case DiscoverUrisForSite( siteUrl ) =>{
       startAllMyWorkers()
-      uriDiscoveryWorker ! GetUrlsToIndexForSite( siteUrl )
+      uriDiscoveryWorker ! DiscoverUrisForSite( siteUrl )
     }
 
     case IndexUris(baseSiteUrl, uris ) => {

@@ -1,4 +1,4 @@
-package edu.cornell.indexbuilder
+package edu.cornell.indexbuilder.indexing
 
 import com.hp.hpl.jena.rdf.model.Model
 import edu.cornell.mannlib.vitro.webapp.beans.Individual

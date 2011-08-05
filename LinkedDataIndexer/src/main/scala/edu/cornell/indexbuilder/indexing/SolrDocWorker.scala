@@ -1,9 +1,10 @@
-package edu.cornell.indexbuilder
+package edu.cornell.indexbuilder.indexing
 
 import akka.actor.Actor
 import akka.event.EventHandler
 import com.hp.hpl.jena.ontology.{OntModel, OntModelSpec}
 import com.hp.hpl.jena.rdf.model.{Model, ModelFactory}
+import edu.cornell.indexbuilder.http.CouldNotGetData
 import edu.cornell.mannlib.vitro.webapp.beans.Individual
 import edu.cornell.mannlib.vitro.webapp.dao.jena.{OntModelSelector, WebappDaoFactoryJena}
 import edu.cornell.mannlib.vitro.webapp.search.beans.IndividualProhibitedFromSearchImpl
@@ -71,7 +72,7 @@ object SolrDocWorker {
   }
   
   def makeIndToDoc( oms : OntModelSelector , siteUrl:String, siteName:String ):MultiSiteIndToDoc = {
-    val docModifiers = new java.util.ArrayList[DocumentModifier](2)
+    val docModifiers = new java.util.ArrayList[DocumentModifier]()
     
     docModifiers.add( new AddContextNodesForMultiSite( oms.getFullModel() ))
 //    docModifiers.add( new SourceInstitution( siteUrl, siteName ) )

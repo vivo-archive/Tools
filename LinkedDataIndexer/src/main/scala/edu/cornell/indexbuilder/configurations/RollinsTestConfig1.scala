@@ -1,5 +1,5 @@
 package edu.cornell.indexbuilder.configurations
-import edu.cornell.indexbuilder.IndexProcess
+import edu.cornell.indexbuilder.DiscoverAndIndex
 
 import edu.cornell.indexbuilder._
 import akka.actor.{Actor, PoisonPill}
@@ -7,6 +7,7 @@ import Actor._
 import akka.routing.{Routing, CyclicIterator}
 import Routing._
 import akka.event.EventHandler
+import edu.cornell.indexbuilder.indexing.SolrIndexWorker
 import org.apache.solr.client.solrj.SolrServer
 import edu.cornell.indexbuilder.configurations.RollinsConfig._
 
@@ -24,7 +25,7 @@ object RollinsTestConfigPostDoc {
     val classUris = List( """http://vivoweb.org/ontology/core#Postdoc"""  )
 
     val process = 
-      new IndexProcess(
+      new DiscoverAndIndex(
         siteUrl,siteName,
         solrUrl,
         classUris, 
@@ -40,7 +41,7 @@ object RollinsTestConfigLibrarian {
     val classUris = List( """http://vivoweb.org/ontology/core#Librarian"""  )
 
     val process = 
-      new IndexProcess(
+      new DiscoverAndIndex(
         siteUrl,siteName,
         solrUrl,
         classUris, 
@@ -62,7 +63,7 @@ object RollinsTestConfig2 {
     )
 
     val process = 
-      new IndexProcess(
+      new DiscoverAndIndex(
         siteUrl,siteName,
         solrUrl,
         classUris, 

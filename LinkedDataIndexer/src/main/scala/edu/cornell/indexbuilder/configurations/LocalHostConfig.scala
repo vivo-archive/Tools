@@ -1,5 +1,5 @@
 package edu.cornell.indexbuilder.configurations
-import edu.cornell.indexbuilder.IndexProcess
+import edu.cornell.indexbuilder.DiscoverAndIndex
 import edu.cornell.indexbuilder.VitroVersion
 
 /*
@@ -18,7 +18,7 @@ object LocalHost {
       """http://vivoweb.org/ontology/core#FacultyMember"""
     )
 
-    val process = new IndexProcess( 
+    val process = new DiscoverAndIndex( 
       "http://localhost:8080/vivo",
       "localhost test site",
       "http://localhost:8080/multiSiteIndex",

@@ -1,24 +1,19 @@
-package edu.cornell.indexbuilder
+package edu.cornell.indexbuilder.http
 
-import scala.io.Source
-import org.apache.http._
-import org.apache.http.client.methods._
-import org.apache.http.client._
-import org.apache.http.impl.client._
-import org.apache.http.util.EntityUtils
-import org.apache.http.HttpResponse
-import org.apache.http.conn.scheme.SchemeRegistry
-import org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager
-import org.apache.http.client.ResponseHandler
-import com.hp.hpl.jena.rdf.model.Model
-import com.hp.hpl.jena.rdf.model.ModelFactory
 
-import akka.actor.Actor
-import akka.actor.UntypedActor
+import akka.actor.{Actor, UntypedActor}
 import akka.event.EventHandler
-import akka.dispatch.Dispatchers
-import akka.routing.Routing
 import akka.routing._
+
+import com.hp.hpl.jena.rdf.model.{Model, ModelFactory}
+
+import org.apache.http._
+import org.apache.http.client._
+import org.apache.http.client.methods._
+import org.apache.http.client.ResponseHandler
+import org.apache.http.impl.client._
+import org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager
+import org.apache.http.HttpResponse
 
 /* A class to use commons-HttpClient.
  * Redirects are handled by HttpClient.

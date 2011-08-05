@@ -1,6 +1,6 @@
 package edu.cornell.indexbuilder.configurations
 
-import edu.cornell.indexbuilder.IndexProcess
+import edu.cornell.indexbuilder.DiscoverAndIndex
 import edu.cornell.indexbuilder.VitroVersion
 import edu.cornell.indexbuilder.configurations.SiteIndexTest._
 
@@ -35,7 +35,7 @@ object TestIndexCornell {
   val siteVivoVersion=VitroVersion.r1dot2
 
   def main(args : Array[String]) : Unit = {
-    val process = new IndexProcess(
+    val process = new DiscoverAndIndex(
       siteUrl,
       siteName,
       solrUrl,
@@ -52,7 +52,7 @@ object TestIndexIndiana {
   val siteVivoVersion=VitroVersion.r1dot2
 
   def main(args : Array[String]) : Unit = {
-    val process = new IndexProcess(
+    val process = new DiscoverAndIndex(
       siteUrl,
       siteName,
       solrUrl,
@@ -69,7 +69,7 @@ object TestIndexPonce {
   val siteVivoVersion=VitroVersion.r1dot2
 
   def main(args : Array[String]) : Unit = {
-    val process = new IndexProcess(
+    val process = new DiscoverAndIndex(
       siteUrl,
       siteName,
       solrUrl,
@@ -86,7 +86,7 @@ object TestIndexScripps {
   val siteVivoVersion=VitroVersion.r1dot2
 
   def main(args : Array[String]) : Unit = {
-    val process = new IndexProcess(
+    val process = new DiscoverAndIndex(
       siteUrl,
       siteName,
       solrUrl,
@@ -103,7 +103,7 @@ object TestIndexUFL {
   val siteVivoVersion=VitroVersion.r1dot2
 
   def main(args : Array[String]) : Unit = {
-    val process = new IndexProcess(
+    val process = new DiscoverAndIndex(
       siteUrl,
       siteName,
       solrUrl,
@@ -120,7 +120,7 @@ object TestIndexWustl {
   val siteVivoVersion=VitroVersion.r1dot2
 
   def main(args : Array[String]) : Unit = {
-    val process = new IndexProcess(
+    val process = new DiscoverAndIndex(
       siteUrl,
       siteName,
       solrUrl,
@@ -137,7 +137,7 @@ object TestIndexWeillMed {
   val siteVivoVersion=VitroVersion.r1dot2
 
   def main(args : Array[String]) : Unit = {
-    val process = new IndexProcess(
+    val process = new DiscoverAndIndex(
       siteUrl,
       siteName,
       solrUrl,
