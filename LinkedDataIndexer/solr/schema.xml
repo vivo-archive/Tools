@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Schema created for VIVOsearch.org -->
+
+<schema name="vivosearch" version="1.0"> 
+    
+    <types> 
+        <!-- 
+        All HTML needs to be stripped from text by the indexer prior to 
+        sending to Solr, otherwise HTMLStripStandardTokenizerFactory
+        must be used instead of StandardTokenizerFactory.
+        -->
+      
+        <!-- Unanalyzed text -->
+        <fieldType name="string" class="solr.StrField" sortMissingLast="true" omitNorms="true" /> 
+        
+        <!-- Dates formatted as 2011-01-07T17:00:30Z -->
+        <fieldType name="date" class="solr.TrieDateField" omitNorms="true" precisionStep="0" positionIncrementGap="0" />
+ 
+        <!-- Simple analyzer to make text searchable. -->
+        <fieldType name="text" class="solr.TextField" positionIncrementGap="100" omitNorms="true"> 
+            <analyzer> 
+                <!-- <tokenizer class="solr.HTMLStripStandardTokenizerFactory" />  -->
+                <tokenizer class="solr.StandardTokenizerFactory" /> 
+                <filter class="solr.LowerCaseFilterFactory" /> 
+                <filter class="solr.StopFilterFactory" ignoreCase="true" words="stopwords.txt" enablePositionIncrements="true" /> 
+                <filter class="solr.ASCIIFoldingFilterFactory" /> 
+                <filter class="solr.RemoveDuplicatesTokenFilterFactory" /> 
+            </analyzer> 
+        </fieldType> 
+
+        <!-- Same analyzer as "text", but adds stemming filter. -->
+        <fieldType name="text_stemmed" class="solr.TextField" positionIncrementGap="100" omitNorms="true"> 
+            <analyzer> 
+                <!-- <tokenizer class="solr.HTMLStripStandardTokenizerFactory" />  -->
+                <tokenizer class="solr.StandardTokenizerFactory" /> 
+                <filter class="solr.LowerCaseFilterFactory" /> 
+                <filter class="solr.StopFilterFactory" ignoreCase="true" words="stopwords.txt" enablePositionIncrements="true" /> 
+                <filter class="solr.ASCIIFoldingFilterFactory" /> 
+                <filter class="solr.PorterStemFilterFactory" language="English" /> 
+                <filter class="solr.RemoveDuplicatesTokenFilterFactory" /> 
+            </analyzer> 
+        </fieldType>
+        
+        <!-- Processes text to be used for a spelling index. Shingles text in order 
+             to provide multi-token spelling suggestions. Note that singling text can 
+             significantly add to the size of the index. -->
+        <fieldType name="text_spelling" class="solr.TextField" positionIncrementGap="100" multiValued="true" omitNorms="true"> 
+            <analyzer type="query"> 
+                <!-- <tokenizer class="solr.HTMLStripStandardTokenizerFactory" />  -->
+                <tokenizer class="solr.StandardTokenizerFactory" /> 
+                <filter class="solr.LowerCaseFilterFactory" /> 
+                <filter class="solr.ShingleFilterFactory" outputUnigrams="false" outputUnigramIfNoNgram="true" maxShingleSize="100" /> 
+                <filter class="solr.StopFilterFactory" ignoreCase="true" words="stopwords.txt" enablePositionIncrements="true" /> 
+                <filter class="solr.RemoveDuplicatesTokenFilterFactory" /> 
+            </analyzer> 
+            <analyzer type="index"> 
+                <!-- <tokenizer class="solr.HTMLStripStandardTokenizerFactory" />  -->
+                <tokenizer class="solr.StandardTokenizerFactory" /> 
+                <filter class="solr.LowerCaseFilterFactory" /> 
+                <filter class="solr.ShingleFilterFactory" outputUnigrams="true" outputUnigramIfNoNgram="true" maxShingleSize="3" /> 
+                <filter class="solr.StopFilterFactory" ignoreCase="true" words="stopwords.txt" enablePositionIncrements="true" /> 
+                <filter class="solr.RemoveDuplicatesTokenFilterFactory" /> 
+            </analyzer> 
+        </fieldType> 
+        
+        <!-- Transforms text into lowercased alpha-only strings used for sorting. -->
+        <fieldType name="sortable" class="solr.TextField" sortMissingLast="true" omitNorms="true">
+            <analyzer>
+                <tokenizer class="solr.KeywordTokenizerFactory" />
+                <filter class="solr.LowerCaseFilterFactory" />
+                <filter class="solr.TrimFilterFactory" />
+                <filter class="solr.PatternReplaceFilterFactory" pattern="([^a-z])" replacement="" replace="all" />
+            </analyzer>
+        </fieldType>
+        
+        <!-- Ignored fields are not stored and not indexed -->
+        <fieldtype name="ignored" stored="false" indexed="false" class="solr.StrField" />
+        
+    </types> 
+ 
+    <fields> 
+      
+        <!-- URI for the individual.
+             Example: http://vivo.cornell.edu/individual/individual6059 -->
+        <field name="URI" type="string" indexed="true" stored="true" required="true" multiValued="false" /> 
+      
+        <!-- Name of the institution owning the Solr document.
+             Example: The Scripps Research Institute -->
+        <field name="site_name" type="string" indexed="true" stored="true" required="true" multiValued="false" /> 
+        
+        <!-- VIVO site URL of the institution owning the Solr document.
+             Example: http://vivo.scripps.edu -->
+        <field name="site_URL" type="string" indexed="true" stored="true" required="true" multiValued="false" /> 
+        
+        <!-- Name of the individual. This should be chosen using the same priority order
+             that VIVO uses for individual pages. For example, if there is a preferred name,
+             use that, otherwise use the rdfs:label.
+             Example: John Abowd -->
+        <field name="name" type="text" indexed="true" stored="true" multiValued="false" /> 
+        
+        <!-- Copied from "name" and run through a stemming analyzer. -->
+        <field name="name_stemmed" type="text_stemmed" indexed="true" stored="false" multiValued="false" /> 
+        <copyField source="name" dest="name_stemmed" /> 
+        
+        <!-- Copied from "name" and lowercased to be used for sorting. 
+             This field MUST only contain a single value. -->
+        <field name="name_sortable" type="sortable" indexed="true" stored="false" multiValued="false" />
+        <copyField source="name" dest="name_sortable" /> 
+        
+        <!-- Title of the individual (formerly moniker). The value should be chosen using the 
+             same priority order VIVO uses for individual pages. For example, if there is 
+             a preferred title, use that, otherwise use the label for most specific type.
+             Example: Research Associate -->
+        <field name="title" type="string" indexed="true" stored="true" multiValued="false" /> 
+        
+        <!-- Large string of text gathered from all of the individual's properties. This field gets 
+             run through an analyzer that does stemming. Note: This does not need to be multiValued, 
+             but VIVO's indexing code generates it that way.
+             Example: Regulation of Mammary Stem Cells by Wnt Signaling Assistant Professor of Cell 
+                      and Developmental Biology Cell Interactions in Vascular Injury and Atherogenesis
+                      Postdoctoral Associate in Cell and Developmental Biology Lab Research Research 
+                      Associate in Cell and Developmental Biology Postdoctoral Associate in Cell and
+                      Developmental Biology MicroRNA Function in Maintaining ... -->
+        <field name="alltext" type="text_stemmed" indexed="true" stored="true" multiValued="true" />
+        
+        <!-- Copied from "alltext" and bypasses the stemming analyzer. -->
+        <field name="alltext_unstemmed" type="text" indexed="true" stored="false" multiValued="true" /> 
+        <copyField source="alltext" dest="alltext_unstemmed" /> 
+        
+        <!-- Large string of text used to produce the spelling index. The is only set as
+             multiValued because you cannot copy multi-valued fields into single-valued. -->
+        <field name="spelling" type="text_spelling" indexed="true" stored="false" multiValued="true" /> 
+        <copyField source="name" dest="spelling" /> 
+        <copyField source="title" dest="spelling" /> 
+        <copyField source="alltext" dest="spelling" />
+        
+        <!-- Absolute URL for the individual's thumbnail image.
+             Example: http://vivo.cornell.edu/file/n21907/abawi_george_thumb.gif -->
+        <field name="thumbnail_URL" type="string" indexed="false" stored="true" multiValued="false" />
+        
+        <!-- List of URIs for all classes the individual falls under.
+             Example: http://xmlns.com/foaf/0.1/Person
+                      http://vivoweb.org/ontology/core#FacultyMember
+                      http://vivo.library.cornell.edu/ns/0.1#CornellAcademicEmployee -->
+        <field name="class" type="string" indexed="true" stored="true" multiValued="true" /> 
+        
+        <!-- List of rdfs:labels for all classes the individual falls under. 
+             Example: Person
+                      Faculty Member
+                      Cornell Academic Employee -->
+        <field name="class_label" type="string" indexed="true" stored="true" multiValued="true" /> 
+        
+        <!-- List of URIs for core ontology classes the individual falls under. 
+             Example: http://xmlns.com/foaf/0.1/Person
+                      http://vivoweb.org/ontology/core#Librarian
+                      http://vivoweb.org/ontology/core#NonFacultyAcademic -->
+        <field name="core_class" type="string" indexed="true" stored="true" multiValued="true" /> 
+        
+        <!-- List of rdfs:labels for core ontology classes the individual falls under. 
+             Example: Person
+                      Librarian
+                      Non Faculty Academic -->
+        <field name="core_class_label" type="string" indexed="true" stored="true" multiValued="true" />
+        
+        <!-- List of URIs for most specific core ontology classes the individual falls under. 
+             Example: http://vivoweb.org/ontology/core#FacultyMember -->
+        <field name="most_specific_class" type="string" indexed="true" stored="true" multiValued="true" /> 
+        
+        <!-- List of rdfs:labels for most specific core ontology classes the individual falls under. 
+             Example: Faculty Member -->
+        <field name="most_specific_class_label" type="string" indexed="true" stored="true" multiValued="true" />
+        
+        <!-- List of URIs for all classgroups the individual falls under.
+             Example: http://vivoweb.org/ontology#vitroClassGroupactivities
+                      http://vivoweb.org/ontology#vitroClassGroupevents -->
+        <field name="classgroup" type="string" indexed="true" stored="true" multiValued="true" />
+        
+        <!-- List of rdfs:labels for all classgroups the individual falls under. 
+             Example: Activities
+                      Events -->
+        <field name="classgroup_label" type="string" indexed="true" stored="true" multiValued="true" />
+        
+        <!-- Time and date when the Solr document was indexed.
+             Example: 2011-01-07T17:00:30Z -->
+        <field name="timestamp" type="date" indexed="true" stored="true" default="NOW" multiValued="false" />
+
+        <!-- The following tells Solr to ignore any fields that don't 
+             match an existing field name or dynamic field, 
+             rather than throwing an exception. -->
+        <dynamicField name="*" type="ignored" multiValued="true" />
+    </fields> 
+ 
+    <!-- Note: Because more than one institution may have data about 
+         the same URI, and we use URIs for the Solr document id, 
+         documents may get overwritten. -->
+    <uniqueKey>URI</uniqueKey> 
+    
+    <defaultSearchField>alltext</defaultSearchField> 
+    
+    <solrQueryParser defaultOperator="OR" /> 
+ 
+</schema>

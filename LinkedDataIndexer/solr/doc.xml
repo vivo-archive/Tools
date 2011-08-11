@@ -1,0 +1,47 @@
+<add>
+  <doc>
+    <field name="URI">http://vivo.cornell.edu/individual/individual50</field>
+  
+    <field name="site_name">Cornell University</field>
+  
+    <field name="site_URL">http://vivo.cornell.edu</field>
+  
+    <field name="name">Hanson, Maureen R</field>
+  
+    <field name="title">Professor</field>
+  
+    <field name="alltext">
+      OVERVIEW: Maureen R. Hanson is Liberty Hyde Bailey Professor in the Department of Molecular Biology &amp; Genetics. She received a B.S. degree at Duke University and a Ph.D. in Cell and Developmental Biology from Harvard University. After completing an NIH postdoctoral fellowship at Harvard, she joined the faculty of the biology department at University of Virginia. In 1985 she moved to Cornell as Associate Professor and was promoted to Professor in 1991. She is presently a member of the graduate Fields of Genetics and Development, Plant Biology, and Biochemistry, Molecular, and Cell Biology, and a joint member of the Department of Plant Biology. She has previously served as Associate Director of the Cornell Biotechnology Program and Director of the Cornell Plant Science Center. | PREFERRED TITLE: Liberty Hyde Bailey Professor of Plant Molecular Biology | RESEARCH OVERVIEW: Dr. Hansons research focus is on the genome-containing organelles of plants. Reflecting their prokaryotic origins, gene expression in these organelles differs from that of nuclear genes. In particular, organelle genes are often organized in operons that undergo considerable post-transcriptional processing, including RNA editing. The nuclear genome exerts significant control of organelle gene expression through the action of nuclear-encoded proteins targeted to the organelle. Our research goals include identification of the components of the organelle RNA editing apparatus and an RNA/protein complex that suppresses the expression of an abnormal mitochondrial protein. We are also interested in identifying proteins that control the morphology and movement of organelles and their interactions with subcellular compartments. Furthermore, we are interesting in expressing useful proteins in chloroplasts. We are presently designing plants with chloroplast-localized cellulose-digesting enzymes for use in bioenergy production. | KEYWORDS: reproductive development, hybrid seed production, molecular genetics, organelle biogenesis, chloroplast dynamics, intracellular localization, gene regulation, cytoplasmic male sterility, plant cell biology, cellulase, RNA-binding protein, organelle genetics, bioenergy, chloroplast biogenesis, intracellular signaling
+    </field>
+  
+    <field name="thumbnail_URL">http://vivo.cornell.edu/file/n8306/HansonHeadShot-Custom-2.JPG</field>
+  
+    <field name="class">http://vivo.library.cornell.edu/ns/0.1#CornellAcademicEmployee</field>
+    <field name="class">http://xmlns.com/foaf/0.1/Agent</field>
+    <field name="class">http://xmlns.com/foaf/0.1/Person</field>
+    <field name="class">http://vivoweb.org/ontology/core#FacultyMember</field>
+  
+    <field name="class_label">Cornell Academic Employee</field>
+    <field name="class_label">Agent</field>
+    <field name="class_label">Person</field>
+    <field name="class_label">Faculty Member</field>
+  
+    <field name="core_class">http://xmlns.com/foaf/0.1/Agent</field>
+    <field name="core_class">http://xmlns.com/foaf/0.1/Person</field>
+    <field name="core_class">http://vivoweb.org/ontology/core#FacultyMember</field>
+  
+    <field name="core_class_label">Agent</field>
+    <field name="core_class_label">Person</field>
+    <field name="core_class_label">Faculty Member</field>
+  
+    <field name="most_specific_class">http://vivoweb.org/ontology/core#FacultyMember</field>
+  
+    <field name="most_specific_class_label">Faculty Member</field>
+  
+    <field name="classgroup">http://vivoweb.org/ontology#vitroClassGrouppeople</field>
+  
+    <field name="classgroup_label">People</field>
+  
+    <field name="timestamp">2011-08-04T17:00:49.94Z</field>
+  </doc>
+</add>
