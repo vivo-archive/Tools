@@ -93,16 +93,13 @@ class Http( connections:Int ) extends Object with Logging {
         entity.getContentType() != null && 
         entity.getContentType().getValue() != null )
       {
-         val contentType = entity.getContentType().getValue()
-         if( contentType.contains("text/n3") || contentType.contains("text/rdf+n3")) 
-           return "N3"
-         else if( contentType.contains("text/rdf+n3") ) 
-           return "RDF/XML"
-         else if( contentType.contains("text/turtle")) 
-           return "TURTLE"
-       }
-
-    return "UNKNOWN"       
+        HEADER_TO_JENASTR.get( entity.getContentType().getValue() ) match{
+          case Some(jenaFormat) => jenaFormat
+          case None => "UNKNOWN"
+        }
+      }else{
+        "UNKNOWN"
+      }
   }
 
   val RDF_ACCEPT_HEADER = 
@@ -113,6 +110,7 @@ class Http( connections:Int ) extends Object with Logging {
          "text/rdf+n3" -> "N3",
          "application/rdf+xml" -> "RDF/XML",
          "text/turtle" -> "TURTLE")
+
 
 //Getting string from InputStream
 //EventHandler.debug(this, scala.io.Source.fromInputStream(instream).getLines().mkString("\n") )
