@@ -2,10 +2,11 @@ package edu.cornell.indexbuilder.http
 
 
 import akka.actor.{Actor, UntypedActor}
-import akka.event.EventHandler
 import akka.routing._
 
 import com.hp.hpl.jena.rdf.model.{Model, ModelFactory}
+import com.weiglewilczek.slf4s.Logging
+import java.io.ByteArrayOutputStream
 
 import org.apache.http._
 import org.apache.http.client._
@@ -41,26 +42,26 @@ object HttpWorker {
   val httpWorkRouter = Routing.loadBalancerActor(new CyclicIterator(workerList))
 }
 
-class HttpWorker() extends Actor {
+class HttpWorker() extends Actor with Logging{
 
   def receive = {
-    case "test" => EventHandler.info(this, "received test")
+    case "test" => logger.info( "received test")
     
     // // Synchronus GET doesn't get fair scheduling from HttpClient
     // // when there is HttpResponseHandler work in its queue.    
     // case HttpGet(url) => {
-    //   EventHandler.debug(this, "doing get " + url)
+    //   logger.debug( "doing get " + url)
     //   val response = HttpWorker.httpClient.execute(new HttpGet(url))
     //   self reply response
     // }
     
     case HttpGetAndProcess(url, handler) => {
-      EventHandler.debug(this, "doing HttpGetAndProcess " + url)
+      logger.debug( "doing HttpGetAndProcess " + url)
       HttpWorker.httpClient.execute(new HttpGet(url), handler)
     }
   
     case HttpLinkedDataGet(uri, callback) => {
-      EventHandler.debug(this, "Linked Data GET " + uri)
+      logger.debug( "Linked Data GET " + uri)
       
       val get = new HttpGet(uri)
       get.setHeader("Accept", RDF_ACCEPT_HEADER)
@@ -76,7 +77,7 @@ class HttpWorker() extends Actor {
   
 
     case HttpLinkedDataGetSync( uri ) => {
-      EventHandler.debug(this, "Linked Data GET Sync " + uri)
+      logger.debug( "Linked Data GET Sync " + uri)
       
       val get = new HttpGet(uri)
       get.setHeader("Accept", RDF_ACCEPT_HEADER)
@@ -92,29 +93,33 @@ class HttpWorker() extends Actor {
   }
 
  def responseToModel(uri: String, response: HttpResponse): Model = {
-   EventHandler.debug(this, "got response %s for %s".format(response, uri))
+   logger.debug( "got response %s for %s".format(response, uri))
    val m = ModelFactory.createDefaultModel();
+
    if( response != null && 
        response.getStatusLine() != null &&
        response.getStatusLine().getStatusCode() != HttpStatus.SC_OK){
-          EventHandler.warning(this,"could not get HTTP for " + uri + 
+          logger.warn("could not get HTTP for " + uri + 
                              " status: " + response.getStatusLine())
        } else {
          val entity = response.getEntity();
          if (entity == null) {
-           EventHandler.error(this,"could not get HttpEntity for " + uri + 
+           logger.error("could not get HttpEntity for " + uri + 
                               " status: " + response.getStatusLine())
          }else{
            //Now we really try to get the content
-           val instream = entity.getContent()
+           logger.debug("attempting to convert HTTP entity to RDF")
+           val instream = entity.getContent()           
            try {
              m.read(instream, "", getRDFType( entity ))
+             logger.debug("rdf for %s \n%s".format(uri, modelToString(m)))
              instream.close();
            } catch {
              case e => {
-               EventHandler.error(e,this, "could not parse RDF for " + uri +
+               logger.error( "could not parse RDF for " + uri +
                                   " status: " + response.getStatusLine() + " "
-                                  + entity.getContentType() )
+                                  + entity.getContentType(),
+                            e)
              }
            }
          }
@@ -149,6 +154,12 @@ class HttpWorker() extends Actor {
          "text/turtle" -> "TURTLE")
 
 //Getting string from InputStream
-//EventHandler.debug(this, scala.io.Source.fromInputStream(instream).getLines().mkString("\n") )
+//logger.debug( scala.io.Source.fromInputStream(instream).getLines().mkString("\n") )
+
+  def modelToString(model: Model):String = {
+    val out = new ByteArrayOutputStream()
+    model.write(out, "N3-PP")
+    out.toString("UTF-8")
+  }
 }
 

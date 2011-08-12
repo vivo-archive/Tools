@@ -6,7 +6,7 @@ import org.apache.solr.common.SolrInputDocument;
 import edu.cornell.mannlib.vitro.webapp.beans.Individual;
 import edu.cornell.mannlib.vitro.webapp.search.solr.MultiSiteIndToDoc.multiSiteTerm;
 
-public class AddLabel implements DocumentModifier {    
+public class AddName implements DocumentModifier {    
 
     @Override
     public void modifyDocument(Individual ind, SolrInputDocument doc, StringBuffer arg2) throws SkipIndividualException {
@@ -18,8 +18,7 @@ public class AddLabel implements DocumentModifier {
             value = ind.getLocalName();
         }            
         
-        doc.addField(multiSiteTerm.name,value);
-        doc.addField(multiSiteTerm.nameStemmed, value); 
+        MultiSiteIndToDoc.addToField(doc, multiSiteTerm.name, value); 
         
     }
 

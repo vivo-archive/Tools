@@ -58,7 +58,7 @@ class Http( connections:Int ) extends Object with Logging {
 
 
  def responseToModel(uri: String, response: HttpResponse): Model = {
-   logger.debug( "got response %s for %s".format(response, uri))
+   logger.trace( "got response %s for %s".format(response, uri))
    val m = ModelFactory.createDefaultModel();
    if( response != null && 
        response.getStatusLine() != null &&

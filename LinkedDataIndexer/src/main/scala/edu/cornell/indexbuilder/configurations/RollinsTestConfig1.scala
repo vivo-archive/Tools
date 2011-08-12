@@ -15,7 +15,7 @@ object RollinsConfig{
   val siteUrl = "http://vivo.cornell.edu"    
   val siteName = "Cornell University"
 
-  val solrUrl = "http://rollins.mannlib.cornell.edu:8080/devIndexUnstable/core2"
+  val solrUrl = "http://rollins.mannlib.cornell.edu:8080/devIndexUnstable/core3"
   val solrServer = SolrIndexWorker.makeSolrServer( solrUrl )
 }
 

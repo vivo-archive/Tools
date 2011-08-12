@@ -12,7 +12,6 @@ import com.hp.hpl.jena.rdf.model.Statement;
 import com.hp.hpl.jena.rdf.model.StmtIterator;
 
 import edu.cornell.mannlib.vitro.webapp.beans.Individual;
-import edu.cornell.mannlib.vitro.webapp.dao.VitroVocabulary;
 
 /**
  * Gets the title for a person, right now it uses moniker since 
@@ -21,11 +20,10 @@ import edu.cornell.mannlib.vitro.webapp.dao.VitroVocabulary;
  */
 public class AddTitle implements DocumentModifier {    
     Model model;
-    Property moniker = ResourceFactory.createProperty( VitroVocabulary.MONIKER );
+    Property titleProp = ResourceFactory.createProperty( "http://vivoweb.org/ontology/core#preferredTitle");
     
     public AddTitle(Model model){
-        this.model = model;
-       
+        this.model = model;       
     }
     
     @Override
@@ -33,14 +31,14 @@ public class AddTitle implements DocumentModifier {
         if( ind == null || model == null || doc == null)
             return;
                 
-        StmtIterator stmts = model.listStatements(ResourceFactory.createResource( ind.getURI() ), moniker, (RDFNode)null);
+        StmtIterator stmts = model.listStatements(ResourceFactory.createResource( ind.getURI() ), titleProp, (RDFNode)null);
         try{
             while(stmts.hasNext()){
                 Statement stmt = stmts.next();
                 if( stmt != null && stmt.getObject().isLiteral() ){
                     Literal lit = stmt.getObject().asLiteral();                    
                     if( lit != null){
-                        doc.addField(MultiSiteIndToDoc.multiSiteTerm.moniker, lit.getValue());
+                        MultiSiteIndToDoc.addToField(doc, MultiSiteIndToDoc.multiSiteTerm.title, lit.getLexicalForm());
                         break;
                     }
                 }

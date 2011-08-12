@@ -1,11 +1,12 @@
 package edu.cornell.indexbuilder.indexing
 
 import akka.actor.Actor
-import akka.event.EventHandler
+import java.io.IOException
 import org.apache.solr.client.solrj.SolrServer
 import org.apache.solr.client.solrj.SolrServerException
 import org.apache.solr.common.SolrDocument
 import org.apache.solr.common.SolrInputDocument
+import com.weiglewilczek.slf4s.Logging
 import org.apache.solr.common.SolrException
 import org.apache.solr.client.solrj.SolrServer
 import org.apache.solr.client.solrj.impl.CommonsHttpSolrServer
@@ -13,48 +14,58 @@ import org.apache.solr.client.solrj.impl.CommonsHttpSolrServer
 /**
  * Worker to add a document to a solr index.
  */
-class SolrIndexWorker( solrServer: SolrServer ) extends Actor {
+class SolrIndexWorker( solrServer: SolrServer ) extends Actor with Logging{
   var indexedCount = 0
   val COMMIT_SIZE = 1000
 
   checkServer(solrServer)
   
   def receive = {    
+
+    // Add document to solr index.
     case IndexDoc( siteUrl, uri, doc ) => {
-      //add document to solr index.
-      val addResp = solrServer.add( doc )
-      indexedCount = indexedCount + 1
-      EventHandler.debug(this, "added doc for " + uri + " resp " + addResp )
+      logger.debug("received message to IndexDoc for " + uri)
+      try{
+        val addResp = solrServer.add( doc )
+        indexedCount = indexedCount + 1
+        logger.debug( "added doc for " + uri + " resp " + addResp )
+        self reply IndexedDoc( siteUrl, uri )
+      }catch{
+        case ex => {
+          logger.error("Could not index document for "+uri+" " + ex)
+          self reply CouldNotIndexDoc(siteUrl,uri)
+        }
+      }
 
       if( indexedCount % COMMIT_SIZE == 0 ){
         val commitResp = solrServer.commit()
-        EventHandler.debug(this, "commit resp " + commitResp)
+        logger.debug( "commit resp " + commitResp)
       }
 
-      self reply IndexedDoc( siteUrl, uri )
+
     }
     
     case Commit => {
       val commitResp = solrServer.commit()
-      EventHandler.debug(this, "commit resp " + commitResp)
+      logger.debug( "commit resp " + commitResp)
       self reply "done"
     }
 
-    case _ => 
-      EventHandler.debug(this, "SolrIndexWorker received mystery message");
+    case msg => 
+      logger.debug( "SolrIndexWorker received mystery message " + msg);
   }
 
   def checkServer(solrServer:SolrServer) = {
     try{
       val resp = solrServer.ping()
-      EventHandler.debug(this, "Ping SolrServer: " + resp )
+      logger.debug( "Ping SolrServer: " + resp )
     } catch {
       case solrEx:SolrException => {
-        EventHandler.error(this, "Could not ping SolrServer, code: " + solrEx.code() + " " + solrEx.getMessage() )
+        logger.error( "Could not ping SolrServer, code: " + solrEx.code() + " " + solrEx.getMessage() )
         System.exit(1)
       }
       case e => {
-        EventHandler.error(this, "Could not ping SolrServer: " + e )
+        logger.error( "Could not ping SolrServer: " + e )
         System.exit(1)
       }
     }

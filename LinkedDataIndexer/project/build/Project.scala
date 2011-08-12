@@ -16,10 +16,9 @@ with AkkaProject{
     //This is how to import java jars for solrj and its dependencies
     val solrJ = "org.apache.solr" % "solr-solrj" % "3.1.0"
 
-    //adding this to deal with static linking of slf4j?
-    //val slf4j = "org.slf4j" % "slf4j-simple" % "1.5.6"
+    // slf4j implementation 
+    val logback_core = "ch.qos.logback" % "logback-core" % "0.9.29"
+    val logback_classic = "ch.qos.logback" % "logback-classic" % "0.9.29" 
 
-    lazy val logback = "ch.qos.logback" % "logback-classic" % "0.9.28" % "runtime"
-
-    val slf4s = "com.weiglewilczek.slf4s" %% "slf4s" % "1.0.6"
+    val slf4s = "com.weiglewilczek.slf4s" %% "slf4s" % "1.0.6"  
 }

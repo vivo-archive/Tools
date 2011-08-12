@@ -6,7 +6,7 @@ import akka.actor.{Actor, PoisonPill}
 import Actor._
 import akka.routing.{Routing, CyclicIterator}
 import Routing._
-import akka.event.EventHandler
+import com.weiglewilczek.slf4s.Logging
 import org.apache.http.client.ResponseHandler
 import org.apache.http.HttpResponse
 import org.apache.http.util.EntityUtils
@@ -57,7 +57,7 @@ class VivoUriDiscoveryWorker (
   classUris:List[String], 
   action:String, 
   workDirectory:String )
-extends Actor {
+extends Actor with Logging {
   
   /**
    * A map of classUri to if page discovery is complete
@@ -75,7 +75,7 @@ extends Actor {
   def receive = {
 
     case DiscoverUrisForSite( siteBaseUrl ) => {
-      EventHandler.info(this,"GetUrlsToIndexForSite " + siteBaseUrl)      
+      logger.info("GetUrlsToIndexForSite " + siteBaseUrl)      
       
       if( hasSavedState() ){
         restartFromState( self )
@@ -92,7 +92,7 @@ extends Actor {
     }
 
     case DiscoverUrisForClass( siteBaseUrl, classUri ) => {
-      EventHandler.info(this,"DiscoverUrisForClass " + classUri)
+      logger.info("DiscoverUrisForClass " + classUri)
       val url = reqForClassUri( siteBaseUrl, classUri )
       val initReqHandler =  getInitialRequestHandler(siteBaseUrl, classUri, self ) 
 
@@ -110,8 +110,8 @@ extends Actor {
       HttpWorker.httpWorkRouter ! HttpGetAndProcess(pageUrl, respHandler)
     }
 
-    case _ => 
-         EventHandler.error(this,"got a mystery message")
+    case e => 
+         logger.error("got a mystery message: " + e)
   }
 
 
@@ -127,7 +127,7 @@ extends Actor {
        def handleResponse(  response : HttpResponse ) : Unit = {
          val entity = response.getEntity()
          if( entity == null ){
-           EventHandler.error(this,"got null for response.getEntity()")
+           logger.error("got null for response.getEntity()")
            return
          }
 
@@ -136,7 +136,7 @@ extends Actor {
            parseInitialIndividualsByVClassForURLs( EntityUtils.toString(entity), action )
            .map( url => DiscoverUrisForClassPage(siteBaseUrl,classUri,siteBaseUrl+url))
          
-         EventHandler.debug(this,"Adding %d pages to index for class %s".format(pageMsgs.length,classUri) )
+         logger.debug("Adding %d pages to index for class %s".format(pageMsgs.length,classUri) )
 
          //save the page message to the file system state
          pageMsgs.foreach( savePageToState )
@@ -168,7 +168,7 @@ extends Actor {
          //parse the JSON to get URIs for individuals for this page of results
          val entity = response.getEntity()
          if( entity == null ){
-           EventHandler.error(this,"got null for response.getEntity()")
+           logger.error("got null for response.getEntity()")
            
          }else{           
            try{
@@ -182,7 +182,7 @@ extends Actor {
              MasterWorker.getMaster() ! msg
            }catch{
              case e: Exception => {
-               EventHandler.error(e,this,"Could not get page for %s".format(pageUrl))
+               logger.error("Could not get page for %s".format(pageUrl),e)
                errorDuringDiscoveryForPage( pageUrl )
              }
            }
@@ -220,7 +220,7 @@ extends Actor {
     // and that it is not yet indexed
     synchronized{
       if( isUriDiscoveryCompleteForPageUrl.contains( pageMsg.pageUrl))
-         EventHandler.warning(this, 
+         logger.warn( 
            "Not adding pageUrl to isUriDiscoveryCompleteForPageUrl"+
            " becasue it is already in the map")
       else
@@ -278,12 +278,12 @@ extends Actor {
   }
 
   def whatsLeft():Unit={    
-    // EventHandler.debug(this,"classes left to get pages for: %s ".format(
+    // logger.debug("classes left to get pages for: %s ".format(
     //   isPageDiscoveryCompleteForClassUri.foldLeft(""){ case (a,(k,v)) => if( v ) "" else ", "+k}))
-    // EventHandler.debug(this,"pages left to get URIs for: %s ".format(
+    // logger.debug("pages left to get URIs for: %s ".format(
     //   isUriDiscoveryCompleteForPageUrl.foldLeft(""){ case (a,(k,v)) => if( v ) "" else ", "+k}))
-    //EventHandler.debug(this,"classes left to get pages for: %s ".format( isPageDiscoveryCompleteForClassUri ) )
-    //EventHandler.debug(this,"pages left to get URIs for: %s ".format( isUriDiscoveryCompleteForPageUrl ))
+    //logger.debug("classes left to get pages for: %s ".format( isPageDiscoveryCompleteForClassUri ) )
+    //logger.debug("pages left to get URIs for: %s ".format( isUriDiscoveryCompleteForPageUrl ))
   }
 }
 

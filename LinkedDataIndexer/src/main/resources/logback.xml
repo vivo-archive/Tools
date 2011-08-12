@@ -8,7 +8,8 @@
     </encoder>
   </appender>
 
-  <logger name="edu.cornell.indexbuilder.configurations.LogTest" level="INFO"/>
+  <logger name="edu.cornell.indexbuilder.indexing" level="TRACE"/>
+  <logger name="com.hp.hpl.jena" level="INFO"/>
 
   <root level="debug">
     <appender-ref ref="STDOUT" />

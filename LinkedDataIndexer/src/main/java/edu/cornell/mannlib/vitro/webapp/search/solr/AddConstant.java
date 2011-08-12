@@ -9,7 +9,7 @@ import edu.cornell.mannlib.vitro.webapp.beans.Individual;
 import edu.cornell.mannlib.vitro.webapp.search.solr.MultiSiteIndToDoc.multiSiteTerm;
 
 /**
- * Adds value to fieldName for each document.
+ * THIS CLASS CAN BE REMOVED!!!
  */
 public class AddConstant implements DocumentModifier {
 

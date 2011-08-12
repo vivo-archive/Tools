@@ -19,8 +19,10 @@ public class AddAllText implements DocumentModifier {
     public static final Log log = LogFactory.getLog( AddAllText.class);
             
     @Override
-    public void modifyDocument(Individual ind, SolrInputDocument doc,
-            StringBuffer arg2) throws SkipIndividualException {
+    public void modifyDocument(
+            Individual ind, SolrInputDocument doc,
+            StringBuffer arg2) 
+    throws SkipIndividualException {
 
         String t=null;
         StringBuffer allTextValue = new StringBuffer();
@@ -52,8 +54,7 @@ public class AddAllText implements DocumentModifier {
                 
         String alltext = allTextValue.toString();
         
-        doc.addField(multiSiteTerm.alltext, alltext);
-        doc.addField(multiSiteTerm.alltextStemmed, alltext);        
+        doc.addField( multiSiteTerm.alltext, alltext);        
     }
     
     @Override

@@ -15,18 +15,14 @@ public class AddContextNodesForMultiSite extends ContextNodeFields implements Do
     
     @Override
     public void modifyDocument(Individual individual, SolrInputDocument doc, StringBuffer addUri) {                              
+        
         StringBuffer objectProperties = singleThreadExecute( individual, multiValuedQueriesForAgent);
         
-        SolrInputField field = doc.getField( MultiSiteIndToDoc.multiSiteTerm.alltext );
-        if( field == null ){
-            doc.addField(MultiSiteIndToDoc.multiSiteTerm.alltext , 
-                    objectProperties + " " + 
-                    runQuery(individual, multiValuedQueryForInformationResource));          
-        }else{
-            field.addValue(objectProperties + " " + 
-                    runQuery(individual, multiValuedQueryForInformationResource), 
-                    field.getBoost());
-        }                                  
+        MultiSiteIndToDoc.addToField(
+                doc,
+                MultiSiteIndToDoc.multiSiteTerm.alltext,                
+                objectProperties + " " + 
+                runQuery(individual, multiValuedQueryForInformationResource));                                            
     }
 
 }

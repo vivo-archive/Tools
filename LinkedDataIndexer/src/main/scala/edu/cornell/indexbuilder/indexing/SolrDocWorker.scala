@@ -1,9 +1,12 @@
 package edu.cornell.indexbuilder.indexing
 
 import akka.actor.Actor
-import akka.event.EventHandler
+import com.hp.hpl.jena.ontology.OntDocumentManager
 import com.hp.hpl.jena.ontology.{OntModel, OntModelSpec}
 import com.hp.hpl.jena.rdf.model.{Model, ModelFactory}
+import com.hp.hpl.jena.util.FileManager
+import com.hp.hpl.jena.util.LocationMapper
+import com.weiglewilczek.slf4s.Logging
 import edu.cornell.indexbuilder.http.CouldNotGetData
 import edu.cornell.mannlib.vitro.webapp.beans.Individual
 import edu.cornell.mannlib.vitro.webapp.dao.jena.{OntModelSelector, WebappDaoFactoryJena}
@@ -28,12 +31,20 @@ import SolrDocWorker._
 
 /* TODO: we may need local extensions. ex. There may be a local class in a classgroup. */
 
-class SolrDocWorker( selector : SelectorGenerator , siteName : String) extends Actor  {
+class SolrDocWorker( selector : SelectorGenerator , siteName : String) 
+extends Actor with Logging  {
+
+  //make jena not process imports
+  OntDocumentManager.getInstance().setProcessImports(false)
   
+  //make jena not do LocationMapping
+  OntDocumentManager.getInstance().setFileManager(new FileManager(new LocationMapper()))
+
   def receive = {    
     
     case RdfToDoc( siteUrl, uri, model ) => {
-      //EventHandler.debug(this, "RDF for %s %s".format(uri, SolrDocWorker.modelToString( model ) ))
+      logger.trace( "RDF for %s %s".format(uri, SolrDocWorker.modelToString( model ) ))
+
       if( model.isEmpty() ){
         self reply CouldNotGetData( siteUrl, uri , "SolrDocWorker got an empty model")
       }else{
@@ -46,7 +57,7 @@ class SolrDocWorker( selector : SelectorGenerator , siteName : String) extends A
         maybeInd match{
           case Some( ind ) => {
             val doc = makeIndToDoc( ontModels, siteUrl, siteName).translate(ind)
-            EventHandler.debug(this, "Doc for " + uri + " " + doc)
+            logger.trace( "Doc for " + uri + " " + doc)
             self reply GotDoc( siteUrl, uri, doc )
           }
           case None => {            
@@ -56,7 +67,7 @@ class SolrDocWorker( selector : SelectorGenerator , siteName : String) extends A
       }
     }
 
-    case _ => println("got odd message") 
+    case msg => logger.warn("received odd message: " + msg)
   }
   
 }
@@ -81,6 +92,8 @@ object SolrDocWorker {
     new MultiSiteIndToDoc( 
       new ProhibitedFromSearch("",oms.getTBoxModel() ),
       new IndividualProhibitedFromSearchImpl( oms.getFullModel() ),
+      null,
+      null,
       docModifiers
     )
   }

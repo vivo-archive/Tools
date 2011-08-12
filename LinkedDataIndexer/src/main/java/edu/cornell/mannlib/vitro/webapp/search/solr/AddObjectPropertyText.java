@@ -41,8 +41,7 @@ public class AddObjectPropertyText implements DocumentModifier {
                         
         }        
         String value = objectNames.toString();
-        doc.addField(multiSiteTerm.alltext, value);
-        doc.addField(multiSiteTerm.alltextStemmed, value);
+        doc.addField( multiSiteTerm.alltext, value);        
     }
 
     @Override

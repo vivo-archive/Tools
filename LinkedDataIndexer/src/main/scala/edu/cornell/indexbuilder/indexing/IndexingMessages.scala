@@ -28,8 +28,14 @@ case class GotDoc (sitUrl: String, uri: String, doc: SolrInputDocument) extends 
 /** Request to have a Solr document indexed on a Solr server */
 case class IndexDoc (siteUrl: String, uri: String, doc: SolrInputDocument) extends IndexBuilderMessage
 
+/**  Request that changes to an index be commited to a solr index */
+case class Commit () extends IndexBuilderMessage
+
 /** Reply that indicates that a document has been added to the solr index  */
 case class IndexedDoc( siteUrl:String, uri:String) extends IndexBuilderMessage
 
-/**  Request that changes to an index be commited to a solr index */
-case class Commit () extends IndexBuilderMessage
+/** Reply that indicates that a document could not be indexed */
+case class CouldNotIndexDoc( siteUrl:String, uri:String) extends IndexBuilderMessage
+
+
+

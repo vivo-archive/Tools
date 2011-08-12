@@ -1,7 +1,9 @@
 /* $This file is distributed under the terms of the license in /doc/license.txt$ */
 package edu.cornell.mannlib.vitro.webapp.search.solr;
 
+import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -11,16 +13,30 @@ import com.hp.hpl.jena.vocabulary.OWL;
 
 import edu.cornell.mannlib.vitro.webapp.beans.Individual;
 import edu.cornell.mannlib.vitro.webapp.beans.VClass;
-import edu.cornell.mannlib.vitro.webapp.search.VitroSearchTermNames;
 import edu.cornell.mannlib.vitro.webapp.search.beans.ProhibitedFromSearch;
 import edu.cornell.mannlib.vitro.webapp.search.solr.MultiSiteIndToDoc.multiSiteTerm;
 
 public class AddClassesForMultiSite implements DocumentModifier {
 
     private ProhibitedFromSearch classesProhibitedFromSearch;
+    private Map<String, String> classgroupURIToLabel;
+    private Set<String> coreClassURIs;
 
-    public AddClassesForMultiSite( ProhibitedFromSearch cps ){
+    public AddClassesForMultiSite( 
+            ProhibitedFromSearch cps, 
+            Map<String,String>classgroupURIToLabel,
+            Set<String> coreClassURIs ){
         this.classesProhibitedFromSearch = cps;
+        
+        if( classgroupURIToLabel != null)
+            this.classgroupURIToLabel = classgroupURIToLabel;
+        else
+            this.classgroupURIToLabel = Collections.emptyMap();
+        
+        if( coreClassURIs != null )
+            this.coreClassURIs = coreClassURIs;
+        else
+            this.coreClassURIs = Collections.emptySet();
     }
     
     @Override
@@ -42,23 +58,33 @@ public class AddClassesForMultiSite implements DocumentModifier {
                 // do not index individuals of type Role, AdvisingRelationShip, Authorship, etc.(see search.n3 for more information)
                  throw new SkipIndividualException("not indexing " + ind.getURI() + " because of prohibited type " + clz.getURI() );
             } else {
+                boolean isCore = coreClassURIs.contains(clz.getURI());
                 
                 //Add class URI
-                doc.addField(VitroSearchTermNames.RDFTYPE, clz.getURI());
+                doc.addField(multiSiteTerm.class_URI, clz.getURI());
                 
                 //Add class public name
-                if(clz.getName() != null && !"".equals(clz.getName()) ){
-                    doc.addField(multiSiteTerm.type_label , clz.getName() );
+                if(clz.getName() != null && !"".equals(clz.getName()) ){                    
+                    doc.addField(multiSiteTerm.class_label , clz.getName() );                   
+                }
+                
+                if( isCore ){
+                    doc.addField(multiSiteTerm.core_class_label,clz.getName());
+                    doc.addField(multiSiteTerm.core_class,clz.getURI());                    
                 }
                 
                 //Add ClassGroup URI 
-                if(clz.getGroupURI() != null)
+                if(clz.getGroupURI() != null){
                     classGroupUris.add( clz.getGroupURI() );                    
                 }               
             }        
+        }
         
-        for(String cgUri: classGroupUris)
-            doc.addField(VitroSearchTermNames.CLASSGROUP_URI, cgUri);
+        for(String cgUri: classGroupUris){            
+            doc.addField(multiSiteTerm.classgroup, cgUri);
+            if( classgroupURIToLabel.containsKey(cgUri))
+                doc.addField(multiSiteTerm.classgroup_label,classgroupURIToLabel.get(cgUri) );
+        }
     }
 
     @Override
