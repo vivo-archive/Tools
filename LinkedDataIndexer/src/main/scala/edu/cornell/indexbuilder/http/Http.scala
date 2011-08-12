@@ -93,11 +93,15 @@ class Http( connections:Int ) extends Object with Logging {
         entity.getContentType() != null && 
         entity.getContentType().getValue() != null )
       {
-        HEADER_TO_JENASTR.get( entity.getContentType().getValue() ) match{
+        HEADER_TO_JENASTR.get( entity.getContentType().getValue() ) match {
           case Some(jenaFormat) => jenaFormat
-          case None => "UNKNOWN"
+          case None => {
+            logger.error("Could not identifiy content type \""+entity.getContentType().getValue()+"\"")
+            "UNKNOWN"
+          }
         }
       }else{
+        logger.error("Could not identifiy content type \""+entity.getContentType().getValue()+"\"")
         "UNKNOWN"
       }
   }
