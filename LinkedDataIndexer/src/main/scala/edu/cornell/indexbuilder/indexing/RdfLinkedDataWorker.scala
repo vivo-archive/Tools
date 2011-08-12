@@ -28,14 +28,13 @@ import Actor._
  * 
  * TODO: what to do about external URIs such as WCMC in vivo.cornell.edu?
  * 
- * TODO: what about thumbnail image URLs?
  * ex.
  *   @prefix vitro: "http://vitro.mannlib.cornell.edu/ns/vitro/public#" .
  *   person vitro:mainImage img .
      img vitro:thumbnailImage thumbImg .
      thumbImg vitro:downloadLocation locationUrl .
  */
-class RdfLinkedDataWorker ( http:Http ) extends Actor with Logging {  
+class RdfLinkedDataWorker ( http:Http, skipUri: String=>Boolean ) extends Actor with Logging {  
 
   val expand = 
     new UrisForDataExpansion( 
@@ -45,19 +44,6 @@ class RdfLinkedDataWorker ( http:Http ) extends Actor with Logging {
     )
   
   def receive = {
-    // case GetRdf( uri ) =>{
-    //   logger.debug("rdf get for URI " + uri )    
-      
-    //   val master = MasterWorker.getMaster() 
-    //   //make a clouse to keep uri and master
-    //   val f = ( uri: String, model: Model ) => {    
-    //     logger.debug("Got HTTP response for URI " + uri )    
-    //     asyncExpandData( uri, model )
-    //     master ! GotRdf(uri,model)         
-    //   }
-
-    //   HttpWorker.httpWorkRouter ! HttpLinkedDataGet( uri , f )
-    // }
 
     case GetRdf( uri ) => {
       logger.debug("rdf get for URI " + uri )    

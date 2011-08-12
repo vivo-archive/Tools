@@ -53,7 +53,7 @@ object SelectorGeneratorForVivo{
   //setup shared abox data
   sharedFullModel.add( loadSharedAbox() )
 
-  
+
   /**
    * Load the vivo core ontology, it is needed for the tbox.
    */

@@ -24,13 +24,14 @@ class MasterWorker(
   uriDiscoveryWorker: ActorRef,  
   solrServer: SolrServer, 
   selectorGen: SelectorGenerator,
+  skipUrl: String => Boolean,
   http: Http ) 
 extends Actor with Logging {
 
   setupJenaStatic
 
   //Workers for use by the master:
-  val rdfWorker = Actor.actorOf( new RdfLinkedDataWorker(http) )
+  val rdfWorker = Actor.actorOf( new RdfLinkedDataWorker(http, skipUrl) )
   val solrDocWorker = Actor.actorOf( new SolrDocWorker( selectorGen, siteName ) )
   val solrIndexWorker = Actor.actorOf( new SolrIndexWorker( solrServer ) )
 

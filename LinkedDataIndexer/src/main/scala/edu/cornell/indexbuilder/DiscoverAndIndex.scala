@@ -3,11 +3,16 @@ package edu.cornell.indexbuilder
 import akka.actor.Actor._
 import akka.actor.Actor
 import akka.routing.Routing._
+import com.hp.hpl.jena.ontology.Individual
+import com.hp.hpl.jena.ontology.OntModel
 import com.weiglewilczek.slf4s.Logging
 import edu.cornell.indexbuilder.VitroVersion._
 import edu.cornell.indexbuilder.http.Http
 import edu.cornell.indexbuilder.indexing._
 import edu.cornell.indexbuilder.discovery._
+import scala.collection.mutable.HashSet
+import scala.collection.mutable.Set
+import scala.collection.JavaConversions
 
 /*
  * This represents a basic process to run a site index.
@@ -66,6 +71,7 @@ class DiscoverAndIndex(
         uriDiscoveryWorker, 
         solrServer, 
         selectorGen,
+        makeSkipUriFun( SelectorGeneratorForVivo.sharedFullModel ),
         http
       ))
 
@@ -74,6 +80,29 @@ class DiscoverAndIndex(
     logger.debug("master created, started, and discovery for site requested")
   }
 
+  //Returns a function that checks if a uri should be skipped.
+  def makeSkipUriFun( model:OntModel ): String=>Boolean = {
+    val uriSet = urisToSkip(model)
+    
+    //return function
+    (uri:String)=>{
+      ( uri == null ) ||
+      ( !uri.startsWith( siteUrl ) ) ||
+      ( uriSet.contains( uri ))
+    }
+  }  
 
+  //Make a set of all the uris in the SelectorGeneratorForVivo.sahredFullModel
+  //these are geo-political and other areas that don't need linked data requests
+  def urisToSkip( model:OntModel ): Set[String]={
+    val set = new HashSet[String]() 
+    val iter = model.listIndividuals()
+    while( iter.hasNext() ){
+      set.add( iter.next().getURI())
+    }
+    set
+  }
+
+  
 }
 
