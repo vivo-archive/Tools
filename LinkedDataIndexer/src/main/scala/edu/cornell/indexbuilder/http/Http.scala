@@ -35,9 +35,13 @@ class Http( connections:Int ) extends Object with Logging {
   def getAndProcess[R](url:String , process: Function1[HttpResponse,R]):R = {
     logger.trace("getAndProcess %s".format(url))
     val response = httpClient.execute( new HttpGet(url) )    
-    val rv = process.apply( response )    
-    close( response )
-    rv
+    try{
+      process.apply( response )
+    }catch {
+      case e => throw new Exception("could not get and process request for " + url + " " + e.getMessage() )      
+    }finally{
+      close( response )
+    }
   } 
   
   def getLinkedDataAndProcess[R]( uri:String, process: Function2[HttpResponse,Model,R] ):R = {
@@ -45,8 +49,13 @@ class Http( connections:Int ) extends Object with Logging {
     val get = new HttpGet(uri)
     get.setHeader("Accept", RDF_ACCEPT_HEADER)
     var resp = httpClient.execute( get )
-    var m = responseToModel(uri,resp)
-    process( resp, m )    
+    try{
+      process( resp, responseToModel(uri,resp))    
+    }catch {
+      case e => throw new Exception("could not get and process LD request for " + uri + " " + e.getMessage() )      
+    }finally{
+      close( resp )
+    }
   }
 
   def getLinkedData( uri:String ):Option[Model] = {
@@ -54,9 +63,16 @@ class Http( connections:Int ) extends Object with Logging {
     val get = new HttpGet(uri)
     get.setHeader("Accept", RDF_ACCEPT_HEADER)
     var resp = httpClient.execute( get )
-    var m = responseToModel(uri,resp)
-    //todo should return None if 404 or such
-    Some(m)
+    try{
+      Some(responseToModel(uri,resp))
+    }catch {
+      case e =>{
+        logger.debug("could not get LD request for " + uri + " " + e.getMessage() )
+        None
+      }
+    }finally{
+      close( resp )
+    }
   }
 
 

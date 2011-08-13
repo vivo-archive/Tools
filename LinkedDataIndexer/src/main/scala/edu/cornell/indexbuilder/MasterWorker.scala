@@ -105,7 +105,7 @@ extends Actor with Logging {
     }
 
     case CouldNotGetData(siteUrl,uri,msg) => {
-      logger.error("could not get data for "+uri+" because msg")
+      logger.error("could not get data for "+uri+" because " +msg)
       synchronized{
         urisWithErrors +=  uri
         errors +=   CouldNotGetData(siteUrl,uri,msg) 
