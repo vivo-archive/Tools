@@ -19,6 +19,7 @@ import edu.cornell.mannlib.vitro.webapp.search.solr.{DocumentModifier, MultiSite
 import java.io.ByteArrayOutputStream
 import org.apache.solr.common.SolrInputDocument
 import SolrDocWorker._
+import scala.collection.JavaConversions._
 
 /**
  * This class should take a RdfToDoc message and send GotDoc back
@@ -75,6 +76,26 @@ extends Actor with Logging  {
 
 object SolrDocWorker {
 
+  val classesToSkipForDisplay = Set(
+    "http://xmlns.com/foaf/0.1/Agent",
+    "http://xmlns.com/foaf/0.1/Person",
+    "http://xmlns.com/foaf/0.1/Organization",
+    "http://vivoweb.org/ontology/core#InformationResource",
+    "http://purl.org/ontology/bibo/Document",
+    "http://vivoweb.org/ontology/core#Agreement",
+    "http://purl.org/NET/c4dm/event.owl#Event"
+  )
+
+  val classgroupToLabel = Map(
+    "http://vivoweb.org/ontology#vitroClassGrouppublications" -> "research",
+    "http://vivoweb.org/ontology#vitroClassGroupactivities" -> "activities",
+    "http://vivoweb.org/ontology#vitroClassGrouporganizations" -> "organizations",
+    "http://vivoweb.org/ontology#vitroClassGroupcourses" -> "courses",
+    "http://vivoweb.org/ontology#vitroClassGroupequipment" -> "equipment",
+    "http://vivoweb.org/ontology#vitroClassGroupevents" -> "events",
+    "http://vivoweb.org/ontology#vitroClassGrouplocations" -> "locations",
+    "http://vivoweb.org/ontology#vitroClassGrouppeople" -> "people"  )    
+
   def getIndividual( uri:String, wdf:WebappDaoFactoryJena ):Option[Individual]={
     val ind = wdf.getIndividualDao().getIndividualByURI(uri)
     if( ind == null )
@@ -87,7 +108,6 @@ object SolrDocWorker {
     val docModifiers = new java.util.ArrayList[DocumentModifier]()
     
     docModifiers.add( new AddContextNodesForMultiSite( oms.getFullModel() ))
-//    docModifiers.add( new SourceInstitution( siteUrl, siteName ) )
     docModifiers.add( new AddSourceInstitution( siteUrl, siteName) ) 
     docModifiers.add( new AddTitle( oms.getFullModel() ))
     docModifiers.add( new ThumbnailForMultiSite( oms.getFullModel()))
@@ -95,12 +115,13 @@ object SolrDocWorker {
     new MultiSiteIndToDoc( 
       new ProhibitedFromSearch("",oms.getTBoxModel() ),
       new IndividualProhibitedFromSearchImpl( oms.getFullModel() ),
-      null,
-      null,
-      docModifiers
+      null,//core class uris
+      classgroupToLabel,//classgroup uris to labels
+      docModifiers,
+      SolrDocWorker.classesToSkipForDisplay
     )
   }
-
+  
   def modelToString(model: Model):String = {
     val out = new ByteArrayOutputStream()
     model.write(out, "N3-PP")

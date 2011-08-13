@@ -17,37 +17,24 @@ public class MultiSiteIndToDoc extends IndividualToSolrDocument {
     
     private static final CleanAllText cleaner = new CleanAllText();
     
-    public MultiSiteIndToDoc( ProhibitedFromSearch pfs, IndividualProhibitedFromSearch ipfs, Set<String>coreClassURIs, Map<String,String>classGroupURIToLabel, List<DocumentModifier> dms ) {
+    public MultiSiteIndToDoc( 
+            ProhibitedFromSearch pfs, 
+            IndividualProhibitedFromSearch ipfs, 
+            Set<String>coreClassURIs, 
+            Map<String,String>classGroupURIToLabel, 
+            List<DocumentModifier> dms,
+            Set<String>classesToSkipForDisplay ) {
         super(pfs,ipfs,dms);                
         
         List<DocumentModifier> tmp = new ArrayList<DocumentModifier>(dms);
         tmp.add( new AddAllText() );
         tmp.add( new AddName() );
         tmp.add( new AddObjectPropertyText());
-        tmp.add( new AddClassesForMultiSite(pfs,classGroupURIToLabel, coreClassURIs ));
+        tmp.add( new AddClassesForMultiSite(pfs,classGroupURIToLabel, coreClassURIs,classesToSkipForDisplay ));
         //tmp.add(new AddParameters());
         //tmp.add(new AddNameBoost());
         this.documentModifiers = tmp;
-    }    
-    
-    /*
-     * Currently the schemal.xml for the multi site index has these fields:
-
-<field name="siteName" type="string" indexed="true" stored="true" required="true"/>
-<field name="siteURL" type="string" indexed="true" stored="true" required="true"/>
-<field name="alltext" type="vivo" indexed="true" stored="true"/>
-<field name="alltextStemmed" type="vivo-stemmed" indexed="true" stored="false" omitTermFreqAndPositions="true"/>
-<field name="name" type="vivo" indexed="true" stored="true"/>
-<field name="nameStemmed" type="vivo-stemmed" indexed="true" stored="false" omitTermFreqAndPositions="true"/>
-<field name="moniker" type="string" indexed="true" stored="true"/>
-<field name="URI" type="string" indexed="true" stored="true" required="true"/>
-<field name="type" type="string" indexed="true" stored="true" multiValued="true"/>
-<field name="type_label" type="string" indexed="true" stored="true" multiValued="true"/>
-<field name="classgroup" type="string" indexed="true" stored="true" multiValued="true"/>
-
-     * copy fields have been omitted from this list.
-     */
-    
+    }              
 
     public SolrInputDocument translate(Individual ind) throws IndexingException{
         try{                                            

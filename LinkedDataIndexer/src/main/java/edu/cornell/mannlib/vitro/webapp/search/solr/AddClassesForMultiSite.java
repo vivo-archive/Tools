@@ -21,11 +21,14 @@ public class AddClassesForMultiSite implements DocumentModifier {
     private ProhibitedFromSearch classesProhibitedFromSearch;
     private Map<String, String> classgroupURIToLabel;
     private Set<String> coreClassURIs;
+    private Set<String> classesToSkipForDisplay;
 
     public AddClassesForMultiSite( 
             ProhibitedFromSearch cps, 
             Map<String,String>classgroupURIToLabel,
-            Set<String> coreClassURIs ){
+            Set<String> coreClassURIs ,
+            Set<String> classesToSkipForDisplay ){
+        
         this.classesProhibitedFromSearch = cps;
         
         if( classgroupURIToLabel != null)
@@ -37,6 +40,11 @@ public class AddClassesForMultiSite implements DocumentModifier {
             this.coreClassURIs = coreClassURIs;
         else
             this.coreClassURIs = Collections.emptySet();
+        
+        if( classesToSkipForDisplay != null)
+            this.classesToSkipForDisplay = classesToSkipForDisplay;
+        else
+            this.classesToSkipForDisplay = Collections.emptySet();
     }
     
     @Override
@@ -49,14 +57,24 @@ public class AddClassesForMultiSite implements DocumentModifier {
             
             if(clz.getURI() == null){
                 continue;
+            
             }else if(OWL.Thing.getURI().equals(clz.getURI())){
                 //index individuals of type owl:Thing, just don't add owl:Thing as the type field in the index
                 continue;
+            
             } else if(clz.getURI().startsWith(OWL.NS)){
                 throw new SkipIndividualException("not indexing " + ind.getURI() + " because of type " + clz.getURI() );    
+            
             } else if(classesProhibitedFromSearch.isClassProhibitedFromSearch(clz.getURI())){
                 // do not index individuals of type Role, AdvisingRelationShip, Authorship, etc.(see search.n3 for more information)
                  throw new SkipIndividualException("not indexing " + ind.getURI() + " because of prohibited type " + clz.getURI() );
+
+            }else if( classesToSkipForDisplay.contains( clz.getURI() )){
+                //skipped classes still contribute their classgroup
+                if( clz.getGroupURI() != null ){
+                    classGroupUris.add( clz.getGroupURI());                    
+                }
+                     
             } else {
                 boolean isCore = coreClassURIs.contains(clz.getURI());
                 

@@ -3,6 +3,8 @@ package edu.cornell.indexbuilder
 import akka.actor._
 import akka.actor.{Actor, ActorRef}
 import akka.actor.Actor._
+import akka.routing.CyclicIterator
+import akka.routing.Routing._
 import com.hp.hpl.jena.ontology.OntDocumentManager
 import com.hp.hpl.jena.util.FileManager
 import com.hp.hpl.jena.util.LocationMapper
@@ -31,9 +33,9 @@ extends Actor with Logging {
   setupJenaStatic
 
   //Workers for use by the master:
-  val rdfWorker = Actor.actorOf( new RdfLinkedDataWorker(http, skipUrl) )
-  val solrDocWorker = Actor.actorOf( new SolrDocWorker( selectorGen, siteName ) )
-  val solrIndexWorker = Actor.actorOf( new SolrIndexWorker( solrServer ) )
+  val rdfWorker = makeRdfLinkedDataWorker( http, skipUrl )
+  val solrDocWorker = makeSolrDocWorker( selectorGen, siteName ) 
+  val solrIndexWorker = makeSolrIndexWorker( solrServer )
 
   /**
    * List of uris to index messages.
@@ -206,6 +208,39 @@ extends Actor with Logging {
     solrDocWorker.start()
     solrIndexWorker.start()
   }  
+
+  def makeRdfLinkedDataWorker( http:Http, skipUrl:String => Boolean ):ActorRef={
+    val numberOfWorkers = 10
+    var workers = List[ActorRef]()
+    for( i <- 0 until numberOfWorkers ) {
+      val rdfWorker = Actor.actorOf( new RdfLinkedDataWorker(http, skipUrl) )
+      rdfWorker.start()
+      workers = rdfWorker :: workers 
+    }
+    loadBalancerActor( new CyclicIterator[ActorRef](workers) )
+  }
+
+  def makeSolrIndexWorker( solrServer:SolrServer ):ActorRef={
+    val numberOfWorkers = 5
+    var workers = List[ActorRef]()
+    for( i <- 0 until numberOfWorkers ) {
+      val solrIndexWorker = Actor.actorOf( new SolrIndexWorker( solrServer ) )
+      solrIndexWorker.start()
+      workers = solrIndexWorker :: workers 
+    }
+    loadBalancerActor( new CyclicIterator[ActorRef](workers) )
+  }
+
+  def makeSolrDocWorker( selectorGen:SelectorGenerator, siteName:String):ActorRef={
+    val numberOfWorkers = 3
+    var workers = List[ActorRef]()
+    for( i <- 0 until numberOfWorkers ) {
+      val worker = Actor.actorOf( new SolrDocWorker( selectorGen, siteName ) )  
+      worker.start()
+      workers = worker :: workers 
+    }
+    loadBalancerActor( new CyclicIterator[ActorRef](workers) )
+  }
 }
 
 object MasterWorker {
