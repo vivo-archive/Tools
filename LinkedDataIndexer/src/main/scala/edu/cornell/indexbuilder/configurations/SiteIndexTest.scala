@@ -25,7 +25,7 @@ object SiteIndexTest {
     "http://vivo.scripps.edu" -> "The Scripps Research Institute"
   )
 
-  val solrUrl = "http://rollins.mannlib.cornell.edu:8080/devIndexUnstable/core2"    
+  val solrUrl = "http://rollins.mannlib.cornell.edu:8080/devIndexUnstable/core3"    
 }
 
 
@@ -49,7 +49,7 @@ object TestIndexCornell {
 object TestIndexIndiana {
   val siteUrl = "http://vivo.iu.edu"
   val siteName = uriToName( siteUrl )
-  val siteVivoVersion=VitroVersion.r1dot2
+  val siteVivoVersion=VitroVersion.r1dot3
 
   def main(args : Array[String]) : Unit = {
     val process = new DiscoverAndIndex(
