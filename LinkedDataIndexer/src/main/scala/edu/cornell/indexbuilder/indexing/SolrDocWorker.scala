@@ -14,6 +14,7 @@ import edu.cornell.mannlib.vitro.webapp.search.beans.IndividualProhibitedFromSea
 import edu.cornell.mannlib.vitro.webapp.search.beans.ProhibitedFromSearch
 import edu.cornell.mannlib.vitro.webapp.search.solr.SourceInstitution
 import edu.cornell.mannlib.vitro.webapp.search.solr.SourceInstitution
+import edu.cornell.mannlib.vitro.webapp.search.solr.ThumbnailForMultiSite
 import edu.cornell.mannlib.vitro.webapp.search.solr.{DocumentModifier, MultiSiteIndToDoc, AddContextNodesForMultiSite,AddSourceInstitution,AddTitle}
 import java.io.ByteArrayOutputStream
 import org.apache.solr.common.SolrInputDocument
@@ -89,6 +90,8 @@ object SolrDocWorker {
 //    docModifiers.add( new SourceInstitution( siteUrl, siteName ) )
     docModifiers.add( new AddSourceInstitution( siteUrl, siteName) ) 
     docModifiers.add( new AddTitle( oms.getFullModel() ))
+    docModifiers.add( new ThumbnailForMultiSite( oms.getFullModel()))
+
     new MultiSiteIndToDoc( 
       new ProhibitedFromSearch("",oms.getTBoxModel() ),
       new IndividualProhibitedFromSearchImpl( oms.getFullModel() ),

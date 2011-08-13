@@ -33,6 +33,7 @@ class Http( connections:Int ) extends Object with Logging {
   val httpClient: HttpClient = new DefaultHttpClient(cm)
   
   def getAndProcess[R](url:String , process: Function1[HttpResponse,R]):R = {
+    logger.trace("getAndProcess %s".format(url))
     val response = httpClient.execute( new HttpGet(url) )    
     val rv = process.apply( response )    
     close( response )
@@ -40,6 +41,7 @@ class Http( connections:Int ) extends Object with Logging {
   } 
   
   def getLinkedDataAndProcess[R]( uri:String, process: Function2[HttpResponse,Model,R] ):R = {
+    logger.trace("getLinkedDataAndProcess %s".format(uri))
     val get = new HttpGet(uri)
     get.setHeader("Accept", RDF_ACCEPT_HEADER)
     var resp = httpClient.execute( get )
@@ -48,6 +50,7 @@ class Http( connections:Int ) extends Object with Logging {
   }
 
   def getLinkedData( uri:String ):Option[Model] = {
+    logger.trace("getLinkedData %s".format(uri))
     val get = new HttpGet(uri)
     get.setHeader("Accept", RDF_ACCEPT_HEADER)
     var resp = httpClient.execute( get )
@@ -93,13 +96,20 @@ class Http( connections:Int ) extends Object with Logging {
         entity.getContentType() != null && 
         entity.getContentType().getValue() != null )
       {
-        HEADER_TO_JENASTR.get( entity.getContentType().getValue() ) match {
+        //strip charset=UTF-8 part, it gets ignored right now
+        var contentType = entity.getContentType().getValue()
+        if( contentType.contains(';') ){
+          contentType = contentType.substring(0,contentType.indexOf(';'))
+        }
+
+        HEADER_TO_JENASTR.get( contentType ) match {
           case Some(jenaFormat) => jenaFormat
           case None => {
             logger.error("Could not identifiy content type \""+entity.getContentType().getValue()+"\"")
             "UNKNOWN"
           }
         }
+
       }else{
         logger.error("Could not identifiy content type \""+entity.getContentType().getValue()+"\"")
         "UNKNOWN"

@@ -1,4 +1,4 @@
-<configuration>
+<configuration scan="true" >
 
   <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
     <!-- encoders are assigned the type
@@ -8,10 +8,15 @@
     </encoder>
   </appender>
 
-  <logger name="edu.cornell.indexbuilder.indexing" level="TRACE"/>
-  <logger name="com.hp.hpl.jena" level="INFO"/>
+  <logger name="edu.cornell.indexbuilder" level="TRACE"/>
+<!--  <logger name="edu.cornell.indexbuilder.indexing" level="TRACE"/>
+  <logger name="edu.cornell.indexbuilder.discovery" level="INFO"/>
+  <logger name="edu.cornell.indexbuilder.http" level="INFO"/> -->
 
-  <root level="debug">
+  <logger name="com.hp.hpl.jena" level="INFO"/>
+  <logger name="edu.cornell.mannlib.vitro.webapp.filestorage.model.FileInfo" level="OFF"/>
+
+  <root level="info">
     <appender-ref ref="STDOUT" />
   </root>
 </configuration>

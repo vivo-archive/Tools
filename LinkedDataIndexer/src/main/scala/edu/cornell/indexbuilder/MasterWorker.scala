@@ -73,12 +73,15 @@ extends Actor with Logging {
 
     case DiscoveryComplete(baseSiteUrl) => {
       val delta = (System.currentTimeMillis - startTime )/ 1000
-      logger.info( "Discovery complete for site %s after %d sec; starting linked data reqeusts.".format(baseSiteUrl, delta))
-      getUncompletedUris().foreach( uri => rdfWorker ! GetRdf( uri ) )
+      val urisToIndex = getUncompletedUris()
+      logger.info( "Discovery complete after "+delta+" sec; "+
+                    urisToIndex.size+" uris to index. Starting linked" +
+                   " data reqeusts." )
+      urisToIndex.foreach( uri => rdfWorker ! GetRdf( baseSiteUrl, uri ) )
     }
 
     // make solr documents for the RDF model    
-     case GotRdf( uri, model ) =>{
+     case GotRdf( siteUrl, uri, model ) =>{
        logger.debug("got rdf for uri " + uri)
        solrDocWorker ! RdfToDoc( siteUrl, uri, model ) 
      }
@@ -100,7 +103,7 @@ extends Actor with Logging {
     }
 
     case CouldNotGetData(siteUrl,uri,msg) => {
-      logger.error("could not get data for %s because %s".format( uri,msg))
+      logger.error("could not get data for "+uri+" because msg")
       synchronized{
         urisWithErrors +=  uri
         errors +=   CouldNotGetData(siteUrl,uri,msg) 
@@ -122,23 +125,30 @@ extends Actor with Logging {
 
   def checkIfCompleted() = {
    if( allUrisIndexed ){
-        solrIndexWorker !! Commit //wait for commit to finish
-        endMessage()
-        Actor.registry.shutdownAll()
-      }else{
-        incrementalMessage()
-      }
+     logger.info("All URIs have been indexed. Commiting")
+     solrIndexWorker ! Commit
+     endMessage()
+     Actor.registry.shutdownAll()
+   }else{
+     incrementalMessage()
+   }
   }
 
   def getUncompletedUris():Seq[String] = {
     synchronized{
-      urisToIndex.diff( urisCompleted )
+      urisToIndex.diff( urisCompleted ++ urisWithErrors )
     }
   }
 
   def allUrisIndexed():Boolean = {
     synchronized{
-      urisToIndex.length == (urisCompleted.length + urisWithErrors.size) 
+      urisToIndex.length <=  numberOfProcessedUris
+    }
+  }
+
+  def numberOfProcessedUris():Int = {
+    synchronized{
+      (urisCompleted.length + urisWithErrors.size) 
     }
   }
 
@@ -156,18 +166,20 @@ extends Actor with Logging {
 
   def incrementalMessage(){
     synchronized{
-      if( urisCompleted.length % 100 == 0 ){
+      val indexedCount = numberOfProcessedUris
+      if( indexedCount % 10 == 0 ){
+        
         val etime = System.currentTimeMillis - startTime
 
-        val timePerUri = if( urisCompleted.length != 0 ) 
-          etime / urisCompleted.length
-                         else 0 
+        val timePerUri = 
+          if( indexedCount != 0 ) 
+            etime / indexedCount
+          else 0 
 
         val ctime = getUncompletedUris().length * timePerUri
 
-        logger.info(
-           "uris indexed: %d elapsed time: %d msec time per uri: %d msec time to completion: %d msec"
-           .format( urisCompleted.length, etime, timePerUri, ctime) )
+        logger.info("uris indexed: "+indexedCount+" elapsed time: "+etime+" msec "+
+                    "time per uri: "+timePerUri+"msec time to completion: "+ctime+" msec")
       }
     }
   }
@@ -176,9 +188,16 @@ extends Actor with Logging {
     val etime = System.currentTimeMillis - startTime
     val timePerUri = etime / urisCompleted.length
     logger.info(
-        "uris indexed: %d elapsed time: %d msec time per uri: %d msec"
-        .format( urisCompleted.length, etime, timePerUri) )
+        "uris indexed: "+urisCompleted.length+
+        " elapsed time: "+ etime + " msec "+
+        "time per uri: " + timePerUri + " msec")
+    printErrors
     logger.info("Done")
+  }
+
+  def printErrors()={
+    logger.info("Errors: ")
+    errors.foreach( (e)=>logger.info(e.toString()) )
   }
 
   def startAllMyWorkers() = {
@@ -186,8 +205,7 @@ extends Actor with Logging {
     rdfWorker.start()
     solrDocWorker.start()
     solrIndexWorker.start()
-  }
-
+  }  
 }
 
 object MasterWorker {

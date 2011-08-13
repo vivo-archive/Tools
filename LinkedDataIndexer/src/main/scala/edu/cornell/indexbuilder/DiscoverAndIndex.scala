@@ -83,7 +83,7 @@ class DiscoverAndIndex(
   //Returns a function that checks if a uri should be skipped.
   def makeSkipUriFun( model:OntModel ): String=>Boolean = {
     val uriSet = urisToSkip(model)
-    
+
     //return function
     (uri:String)=>{
       ( uri == null ) ||

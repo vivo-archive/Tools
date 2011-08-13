@@ -4,6 +4,7 @@ import com.hp.hpl.jena.rdf.model.Model
 import com.hp.hpl.jena.rdf.model.ModelFactory
 import com.hp.hpl.jena.shared.Lock
 import com.weiglewilczek.slf4s.Logging
+import edu.cornell.indexbuilder.http.CouldNotGetData
 import edu.cornell.mannlib.vitro.indexbuilder.UrisForDataExpansion
 import java.io.ByteArrayOutputStream
 import org.apache.http.HttpResponse
@@ -45,19 +46,27 @@ class RdfLinkedDataWorker ( http:Http, skipUri: String=>Boolean ) extends Actor 
   
   def receive = {
 
-    case GetRdf( uri ) => {
-      logger.debug("rdf get for URI " + uri )    
+    case GetRdf( siteUrl, uri ) => {
+      if(  innerSkipUri( uri ) ){
+        logger.debug("Not getting RDF for " + uri )
+        self reply CouldNotGetData( siteUrl, uri , "Url is to be skipped")
+      }
+
+      logger.debug("Attempting to get RDF for URI " + uri )    
       val res = http.getLinkedData(uri) 
+
       res match {      
         case Some(model:Model) => {
           logger.debug("got rdf for URI " + uri )
           logger.trace("RDF for " +uri+ ": " + modelToString(model))
 
           val expandedModel = expandData( uri, model )
-          MasterWorker.getMaster() ! GotRdf(uri,expandedModel)
+          MasterWorker.getMaster() ! GotRdf(siteUrl, uri, expandedModel)
         }
-        case None =>
-          logger.debug("Timeout: could not get RDF for URI " + uri )    
+        case None =>{
+          logger.debug("Could not get RDF for URI " + uri )    
+          self reply CouldNotGetData( siteUrl, uri, "Could not get RDF for URI %s timeout or other HTTP problem".format(uri)  )
+        }
       }
     }
 
@@ -71,11 +80,14 @@ class RdfLinkedDataWorker ( http:Http, skipUri: String=>Boolean ) extends Actor 
   def expandData( uri: String, model: Model): Model = {
     //get list of additional URIs to get linked data for
     val map = expand.getUris( uri, model );    
-    val oneHop = asScalaBuffer(map.get("oneHop"))
-    val twoHop = asScalaBuffer(map.get("twoHop"))
+    var oneHop = asScalaBuffer(map.get("oneHop"))
+    var twoHop = asScalaBuffer(map.get("twoHop"))
     
     logger.trace("oneHop expansion list for URI %s: %s".format(uri,oneHop))
     logger.trace("twoHop expansion list for URI %s: %s".format(uri,twoHop))
+
+    oneHop = oneHop.filterNot( innerSkipUri )
+    twoHop = twoHop.filterNot( innerSkipUri )
 
     val modelExp = singleHopExpansion(oneHop ++ twoHop, model)    
     logger.trace("model for %s after one hop expansion: %s".format( uri, SolrDocWorker.modelToString(modelExp)))
@@ -106,7 +118,7 @@ class RdfLinkedDataWorker ( http:Http, skipUri: String=>Boolean ) extends Actor 
 
   def secondHopExpansion( uri:String, twoHop:Seq[String],model:Model):Model = {
     //each of the two hop URIs need to be expanded one more hop
-    val urisFor2ndHop = twoHop.flatMap( getSingleHopUris(model) ).distinct
+    val urisFor2ndHop = twoHop.flatMap( getSingleHopUris(model) ).distinct.filterNot( innerSkipUri )
     logger.trace("twoHop 2nd expansion list for URI %s: %s".format(uri,urisFor2ndHop))
     singleHopExpansion( urisFor2ndHop, model)
   }
@@ -137,5 +149,15 @@ class RdfLinkedDataWorker ( http:Http, skipUri: String=>Boolean ) extends Actor 
     model.write(out, "N3-PP")
     out.toString("UTF-8")
   } 
+
+  def innerSkipUri( uri:String):Boolean={
+    skipUri(uri) || notHTTP(uri)
+  }
+
+  def notHTTP( uri:String):Boolean ={
+    //skip the uri if it isn't http protocol
+    ( uri == null ) ||
+    ( !uri.startsWith("http:") )
+  }
 }
 

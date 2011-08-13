@@ -25,7 +25,6 @@ public class MultiSiteIndToDoc extends IndividualToSolrDocument {
         tmp.add( new AddName() );
         tmp.add( new AddObjectPropertyText());
         tmp.add( new AddClassesForMultiSite(pfs,classGroupURIToLabel, coreClassURIs ));
-        tmp.add( new AddThumbnail() );        
         //tmp.add(new AddParameters());
         //tmp.add(new AddNameBoost());
         this.documentModifiers = tmp;

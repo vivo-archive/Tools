@@ -15,15 +15,19 @@ trait IndexBuilderMessage
 case class IndexUris ( siteBaseUrl : String, uris: List[String]) extends IndexBuilderMessage
 
 /** Request for RDF to be retreived for the URI */
-case class GetRdf (uri:String) extends IndexBuilderMessage
+case class GetRdf (siteUrl:String, uri:String) extends IndexBuilderMessage
 
 /** Reply with RDF for a URI */
-case class GotRdf (uri:String, model:Model) extends IndexBuilderMessage 
+case class GotRdf (siteUrl:String, uri:String, model:Model) extends IndexBuilderMessage 
 
 /** Request to convert the RDF to a Solr document */
-case class RdfToDoc(suteUrl: String, uri:String, model:Model) extends IndexBuilderMessage
+case class RdfToDoc(siteUrl: String, uri:String, model:Model) extends IndexBuilderMessage
+
 /** Reply with Solr document for URI */
 case class GotDoc (sitUrl: String, uri: String, doc: SolrInputDocument) extends IndexBuilderMessage
+
+/** Reply that RDF could not be retrieved */
+case class CouldNotGetRdf( uri:String ) extends IndexBuilderMessage
 
 /** Request to have a Solr document indexed on a Solr server */
 case class IndexDoc (siteUrl: String, uri: String, doc: SolrInputDocument) extends IndexBuilderMessage
