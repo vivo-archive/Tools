@@ -15,6 +15,8 @@ import edu.cornell.indexbuilder.indexing.CouldNotIndexDoc
 import edu.cornell.indexbuilder.indexing._
 import org.apache.solr.client.solrj.SolrServer
 import MasterWorker._
+import org.joda.time.Duration
+import org.joda.time.format.PeriodFormatterBuilder
 
 /**
  * Handle the main coordination of messages to build the index.
@@ -173,15 +175,17 @@ extends Actor with Logging {
         
         val etime = System.currentTimeMillis - startTime
 
+        val etimeStr = ctimeFormater.print(new Duration( etime ).toPeriod())
+
         val timePerUri = 
           if( indexedCount != 0 ) 
             etime / indexedCount
           else 0 
 
-        val ctime = getUncompletedUris().length * timePerUri
-
-        logger.info("uris indexed: "+indexedCount+" elapsed time: "+etime+" msec "+
-                    "time per uri: "+timePerUri+"msec time to completion: "+ctime+" msec")
+        val ctime = ctimeFormater.print(new Duration(getUncompletedUris().length * timePerUri).toPeriod())
+        
+        logger.info("uris indexed: "+indexedCount+" elapsed time: "+etimeStr+" "+
+                    "time per uri: "+timePerUri+" msec, time to completion: "+ ctime )
       }
     }
   }
@@ -260,4 +264,13 @@ object MasterWorker {
   //make jena not do LocationMapping
   OntDocumentManager.getInstance().setFileManager(new FileManager(new LocationMapper()))
  }
+
+ val ctimeFormater = new PeriodFormatterBuilder()
+  .printZeroAlways()
+  .appendHours()
+  .appendSuffix(" hour"," hours")
+  .appendSeparator(" and ")
+  .appendMinutes()
+  .appendSuffix(" minute"," minutes")
+  .toFormatter()
 }

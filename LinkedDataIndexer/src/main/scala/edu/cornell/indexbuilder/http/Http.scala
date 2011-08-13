@@ -78,32 +78,33 @@ class Http( connections:Int ) extends Object with Logging {
 
  def responseToModel(uri: String, response: HttpResponse): Model = {
    logger.trace( "got response %s for %s".format(response, uri))
-   val m = ModelFactory.createDefaultModel();
+
    if( response != null && 
-       response.getStatusLine() != null &&
-       response.getStatusLine().getStatusCode() != HttpStatus.SC_OK){
-          logger.warn("could not get HTTP for " + uri + 
-                      " status: " + response.getStatusLine())
-       } else {
-         val entity = response.getEntity();
-         if (entity == null) {
-           logger.error("could not get HttpEntity for " + uri + 
-                        " status: " + response.getStatusLine() )
-         }else{
-           //Now we really try to get the content
-           val instream = entity.getContent()
-           try {
-             m.read(instream, "", getRDFType( entity ))
-             instream.close();
-           } catch {
-             case e => {
-               logger.error( "could not parse RDF for " + uri +
-                            " status: " + response.getStatusLine() + " "
-                            + entity.getContentType(), e )
-             }
-           }
-         }
-       }
+      response.getStatusLine() != null &&
+      response.getStatusLine().getStatusCode() != HttpStatus.SC_OK) {
+        
+        throw new Exception("could not get HTTP for " + uri + 
+                            " status: " + response.getStatusLine() )
+      } 
+   
+   val m = ModelFactory.createDefaultModel()
+   val entity = response.getEntity();
+   if (entity == null) {
+     throw new Exception("could not get HttpEntity for " + uri + 
+                         " status: " + response.getStatusLine() )
+   }else{
+     //Now we really try to get the content
+     val instream = entity.getContent()
+     try {
+       m.read(instream, "", getRDFType( entity ))
+       instream.close();
+     } catch {
+       case e => 
+         throw new Exception("Could not parse RDF for " + uri +
+                             " status: " + response.getStatusLine() + " "
+                             + entity.getContentType() + " "+ e.getMessage() )
+     }
+   }
    return m
   }
 
@@ -121,14 +122,12 @@ class Http( connections:Int ) extends Object with Logging {
         HEADER_TO_JENASTR.get( contentType ) match {
           case Some(jenaFormat) => jenaFormat
           case None => {
-            logger.error("Could not identifiy content type \""+entity.getContentType().getValue()+"\"")
-            "UNKNOWN"
+            throw new Exception("Could not identifiy content type \""+entity.getContentType().getValue()+"\"")
           }
         }
 
       }else{
-        logger.error("Could not identifiy content type \""+entity.getContentType().getValue()+"\"")
-        "UNKNOWN"
+        throw new Exception("Could not identifiy content type \""+entity.getContentType().getValue()+"\"")
       }
   }
 

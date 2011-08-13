@@ -151,7 +151,7 @@ class RdfLinkedDataWorker ( http:Http, skipUri: String=>Boolean ) extends Actor 
   } 
 
   def innerSkipUri( uri:String):Boolean={
-    skipUri(uri) || notHTTP(uri)  || hashNamespace(uri)
+    skipUri(uri) || notHTTP(uri)  || hashNamespace(uri) || hasDoubleSlash(uri)
   }
 
   def notHTTP( uri:String):Boolean ={
@@ -164,5 +164,9 @@ class RdfLinkedDataWorker ( http:Http, skipUri: String=>Boolean ) extends Actor 
     (uri != null )&&(uri.contains("#"))
   }
 
+  /* return true if there is a double slash that insn't part of http:// */
+  def hasDoubleSlash(uri:String):Boolean={
+    (uri.substring(7).contains("//") ) 
+  }
 }
 
