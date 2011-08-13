@@ -151,7 +151,7 @@ class RdfLinkedDataWorker ( http:Http, skipUri: String=>Boolean ) extends Actor 
   } 
 
   def innerSkipUri( uri:String):Boolean={
-    skipUri(uri) || notHTTP(uri)
+    skipUri(uri) || notHTTP(uri) || hashNamespace(uri)
   }
 
   def notHTTP( uri:String):Boolean ={
@@ -159,5 +159,10 @@ class RdfLinkedDataWorker ( http:Http, skipUri: String=>Boolean ) extends Actor 
     ( uri == null ) ||
     ( !uri.startsWith("http:") )
   }
+
+  def hashNamespace(uri:String):Boolean={
+    (uri != null )&&(uri.contains("#"))
+  }
+
 }
 
