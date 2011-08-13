@@ -56,7 +56,7 @@ object TestIndexIndiana {
       siteUrl,
       siteName,
       solrUrl,
-      ClassLists.largeSiteClassList,
+      ClassLists.peopleOnlyClassList,
       siteVivoVersion
     )
     process.run()
@@ -149,6 +149,15 @@ object TestIndexWeillMed {
 }
 
 private object ClassLists {
+
+  val peopleOnlyClassList = List(
+    //people 
+    "http://vivoweb.org/ontology/core#FacultyMember", 
+    "http://vivoweb.org/ontology/core#GraduateStudent", 
+    "http://vivoweb.org/ontology/core#Librarian", 
+    "http://vivoweb.org/ontology/core#NonAcademic", 
+    "http://vivoweb.org/ontology/core#NonFacultyAcademic"
+  )
 
   val largeSiteClassList = List(
     //people 
