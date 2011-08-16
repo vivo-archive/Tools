@@ -2,7 +2,7 @@ import sbt._
 
 class LinkedDataIndexBuilderProject(info: ProjectInfo) 
 extends DefaultProject(info) 
-with AkkaProject{
+with AkkaProject {
 
     //for some sbt dependency help, 
     //see http://scalateral.blogspot.com/2010/11/day-3-sbt-dependencies-and-scala.html  
