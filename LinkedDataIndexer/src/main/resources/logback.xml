@@ -11,7 +11,7 @@
   <logger name="edu.cornell.indexbuilder" level="INFO"/>
   <logger name="edu.cornell.indexbuilder.indexing" level="INFO"/>
   <logger name="edu.cornell.indexbuilder.discovery" level="INFO"/>
-  <logger name="edu.cornell.indexbuilder.http" level="INFO"/> -->
+  <logger name="edu.cornell.indexbuilder.http" level="INFO"/>  
 
   <logger name="com.hp.hpl.jena" level="INFO"/>
   <logger name="edu.cornell.mannlib.vitro.webapp.filestorage.model.FileInfo" level="OFF"/>

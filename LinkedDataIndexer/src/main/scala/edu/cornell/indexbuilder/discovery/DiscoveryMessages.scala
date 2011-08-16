@@ -38,7 +38,7 @@ case class DiscoverUrisForPage( siteBaseUrl:String, pageUrl:String) extends Disc
 /**
  * A reply that indicates that
  * the list of uris has been discovered for a site */
-case class URIsDiscovered( siteBaseUrl:String, uris: List[String] ) extends DiscoveryReplyMessage
+case class URIsDiscovered( siteBaseUrl:String, uris: Iterable[String] ) extends DiscoveryReplyMessage
 
 /**
  * A reply that indicates that the URI discovery phase is complete for the site.

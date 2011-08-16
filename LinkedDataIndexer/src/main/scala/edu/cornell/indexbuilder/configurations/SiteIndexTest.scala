@@ -1,6 +1,8 @@
 package edu.cornell.indexbuilder.configurations
+import edu.cornell.indexbuilder.CatalystDiscoverAndIndex
+import edu.cornell.indexbuilder.CatalystDiscoverAndIndex
 
-import edu.cornell.indexbuilder.DiscoverAndIndex
+import edu.cornell.indexbuilder.VivoDiscoverAndIndex
 import edu.cornell.indexbuilder.VitroVersion
 import edu.cornell.indexbuilder.configurations.SiteIndexTest._
 
@@ -22,7 +24,8 @@ object SiteIndexTest {
     "http://vivo.iu.edu" -> "Indiana University",
     "http://vivo.wustl.edu" -> "Washington University School of Medicine",
     "http://vivo.psm.edu" -> "Ponce School of Medicine",
-    "http://vivo.scripps.edu" -> "The Scripps Research Institute"
+    "http://vivo.scripps.edu" -> "The Scripps Research Institute",
+    "http://connects.catalyst.harvard.edu" -> "Harvard University Catalyst Profiles"
   )
 
   val solrUrl = "http://rollins.mannlib.cornell.edu:8080/devIndexUnstable/core3"    
@@ -35,7 +38,7 @@ object TestIndexCornell {
   val siteVivoVersion=VitroVersion.r1dot2
 
   def main(args : Array[String]) : Unit = {
-    val process = new DiscoverAndIndex(
+    val process = new VivoDiscoverAndIndex(
       siteUrl,
       siteName,
       solrUrl,
@@ -52,7 +55,7 @@ object TestIndexIndiana {
   val siteVivoVersion=VitroVersion.r1dot3
 
   def main(args : Array[String]) : Unit = {
-    val process = new DiscoverAndIndex(
+    val process = new VivoDiscoverAndIndex(
       siteUrl,
       siteName,
       solrUrl,
@@ -69,7 +72,7 @@ object TestIndexPonce {
   val siteVivoVersion=VitroVersion.r1dot2
 
   def main(args : Array[String]) : Unit = {
-    val process = new DiscoverAndIndex(
+    val process = new VivoDiscoverAndIndex(
       siteUrl,
       siteName,
       solrUrl,
@@ -86,7 +89,7 @@ object TestIndexScripps {
   val siteVivoVersion=VitroVersion.r1dot2
 
   def main(args : Array[String]) : Unit = {
-    val process = new DiscoverAndIndex(
+    val process = new VivoDiscoverAndIndex(
       siteUrl,
       siteName,
       solrUrl,
@@ -103,7 +106,7 @@ object TestIndexUFL {
   val siteVivoVersion=VitroVersion.r1dot2
 
   def main(args : Array[String]) : Unit = {
-    val process = new DiscoverAndIndex(
+    val process = new VivoDiscoverAndIndex(
       siteUrl,
       siteName,
       solrUrl,
@@ -120,7 +123,7 @@ object TestIndexWustl {
   val siteVivoVersion=VitroVersion.r1dot2
 
   def main(args : Array[String]) : Unit = {
-    val process = new DiscoverAndIndex(
+    val process = new VivoDiscoverAndIndex(
       siteUrl,
       siteName,
       solrUrl,
@@ -137,7 +140,7 @@ object TestIndexWeillMed {
   val siteVivoVersion=VitroVersion.r1dot2
 
   def main(args : Array[String]) : Unit = {
-    val process = new DiscoverAndIndex(
+    val process = new VivoDiscoverAndIndex(
       siteUrl,
       siteName,
       solrUrl,
@@ -148,10 +151,35 @@ object TestIndexWeillMed {
   }
 }
 
+object TestHarvard {
+  val siteUrl = "http://connects.catalyst.harvard.edu"
+  val siteName = uriToName( siteUrl )
+//"http://connects.catalyst.harvard.edu/profiles/profile/author/0000284E-79E7-4B35-8E14-2D09EFFEDBA3/viewas/rdf"  
+
+  def main(args: Array[String]):Unit={
+    val process = new CatalystDiscoverAndIndex(
+      siteUrl,
+      siteName,
+      solrUrl,
+      ClassLists.catalystClasses,
+      "HarvardURIs.rdf"
+    )
+    process.run()
+  }
+}
+
 private object ClassLists {
 
   val peopleOnlyClassList = List(
     //people 
+    "http://vivoweb.org/ontology/core#FacultyMember", 
+    "http://vivoweb.org/ontology/core#GraduateStudent", 
+    "http://vivoweb.org/ontology/core#Librarian", 
+    "http://vivoweb.org/ontology/core#NonAcademic", 
+    "http://vivoweb.org/ontology/core#NonFacultyAcademic"
+  )
+
+  val catalystClasses = List(  
     "http://vivoweb.org/ontology/core#FacultyMember", 
     "http://vivoweb.org/ontology/core#GraduateStudent", 
     "http://vivoweb.org/ontology/core#Librarian", 

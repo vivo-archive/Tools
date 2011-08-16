@@ -5,6 +5,17 @@ import akka.actor.{Actor, ActorRef}
 import akka.actor.Actor._
 import akka.routing.CyclicIterator
 import akka.routing.Routing._
+import akka.config.Supervision
+
+
+
+  import akka.actor.{Actor, ActorRef}
+//  import akka.stm._
+  import akka.config.Supervision.{OneForOneStrategy,Permanent}
+  import Actor._
+  import akka.event.EventHandler
+
+
 import com.hp.hpl.jena.ontology.OntDocumentManager
 import com.hp.hpl.jena.util.FileManager
 import com.hp.hpl.jena.util.LocationMapper
@@ -17,6 +28,10 @@ import org.apache.solr.client.solrj.SolrServer
 import MasterWorker._
 import org.joda.time.Duration
 import org.joda.time.format.PeriodFormatterBuilder
+import scala.tools.nsc.interpreter.ILoop
+import scala.tools.nsc.interpreter.NamedParam
+import sun.misc.Signal
+import sun.misc.SignalHandler
 
 /**
  * Handle the main coordination of messages to build the index.
@@ -31,13 +46,18 @@ class MasterWorker(
   skipUrl: String => Boolean,
   http: Http ) 
 extends Actor with Logging {
-
+  
   setupJenaStatic
+
+  val handler = new EvalOnAlarmHandler( this )
 
   //Workers for use by the master:
   val rdfWorker = makeRdfLinkedDataWorker( http, skipUrl )
   val solrDocWorker = makeSolrDocWorker( selectorGen, siteName ) 
   val solrIndexWorker = makeSolrIndexWorker( solrServer )
+
+  setupActorSupervisor( 
+    uriDiscoveryWorker :: rdfWorker :: solrDocWorker :: solrIndexWorker :: Nil)
 
   /**
    * List of uris to index messages.
@@ -171,7 +191,8 @@ extends Actor with Logging {
   def incrementalMessage(){
     synchronized{
       val indexedCount = numberOfProcessedUris
-      if( indexedCount % 10 == 0 ){
+      val errors = urisWithErrors.size
+      if( (indexedCount+errors) % 10 == 0 ){        
         
         val etime = System.currentTimeMillis - startTime
 
@@ -179,12 +200,12 @@ extends Actor with Logging {
 
         val timePerUri = 
           if( indexedCount != 0 ) 
-            etime / indexedCount
+            etime / (indexedCount+errors)
           else 0 
 
         val ctime = ctimeFormater.print(new Duration(getUncompletedUris().length * timePerUri).toPeriod())
         
-        logger.info("uris indexed: "+indexedCount+" elapsed time: "+etimeStr+" "+
+        logger.info("uris indexed: "+indexedCount+" errors: " + errors + " elapsed time: "+etimeStr+" "+
                     "time per uri: "+timePerUri+" msec, time to completion: "+ ctime )
       }
     }
@@ -245,6 +266,11 @@ extends Actor with Logging {
     }
     loadBalancerActor( new CyclicIterator[ActorRef](workers) )
   }
+
+ def setupActorSupervisor( actors:List[ActorRef]) = {
+    val sv = Actor.actorOf(new Supervisor())
+    actors.map( ac => sv.link(ac) )
+ }
 }
 
 object MasterWorker {
@@ -273,4 +299,32 @@ object MasterWorker {
   .appendMinutes()
   .appendSuffix(" minute"," minutes")
   .toFormatter()
+}
+
+/*
+ * Signal handler to fall into a eval loop
+ * when the alarm signal is sent to process.
+ */
+class EvalOnAlarmHandler( master:MasterWorker ) extends SignalHandler {
+  val signalName = "USR2"
+
+  //save the old handler for chaining 
+  val oldHandler = Signal.handle(new Signal(signalName),this)
+
+  def handle(sig:Signal):Unit={
+    try{
+      System.out.println("HANDLED by OUR CODE!")
+      ILoop.break( List( NamedParam("master",master) ) )
+      //if( oldHandler != null ){
+      //  oldHandler.handle(sig);
+     // }
+    } catch {
+      case e => System.out.println("Signal handler failed, reason"+e)
+    }
+  }
+
+
+
+
+// uriDiscoveryWorker :: rdfWorker :: solrDocWorker :: solrIndexWorker )
 }

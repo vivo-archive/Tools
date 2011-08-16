@@ -1,6 +1,7 @@
 package edu.cornell.indexbuilder.configurations
 import edu.cornell.indexbuilder.DiscoverAndIndex
 import edu.cornell.indexbuilder.VitroVersion
+import edu.cornell.indexbuilder.VivoDiscoverAndIndex
 
 /*
  * A configuration that indexes some classes from
@@ -18,7 +19,7 @@ object LocalHost {
       """http://vivoweb.org/ontology/core#FacultyMember"""
     )
 
-    val process = new DiscoverAndIndex( 
+    val process = new VivoDiscoverAndIndex( 
       "http://localhost:8080/vivo",
       "localhost test site",
       "http://localhost:8080/multiSiteIndex",

@@ -1,5 +1,6 @@
 package edu.cornell.indexbuilder.configurations
 import edu.cornell.indexbuilder.DiscoverAndIndex
+import edu.cornell.indexbuilder.VivoDiscoverAndIndex
 
 import edu.cornell.indexbuilder._
 import akka.actor.{Actor, PoisonPill}
@@ -25,7 +26,7 @@ object RollinsTestConfigPostDoc {
     val classUris = List( """http://vivoweb.org/ontology/core#Postdoc"""  )
 
     val process = 
-      new DiscoverAndIndex(
+      new VivoDiscoverAndIndex(
         siteUrl,siteName,
         solrUrl,
         classUris, 
@@ -41,7 +42,7 @@ object RollinsTestConfigLibrarian {
     val classUris = List( """http://vivoweb.org/ontology/core#Librarian"""  )
 
     val process = 
-      new DiscoverAndIndex(
+      new VivoDiscoverAndIndex(
         siteUrl,siteName,
         solrUrl,
         classUris, 
@@ -63,7 +64,7 @@ object RollinsTestConfig2 {
     )
 
     val process = 
-      new DiscoverAndIndex(
+      new VivoDiscoverAndIndex(
         siteUrl,siteName,
         solrUrl,
         classUris, 

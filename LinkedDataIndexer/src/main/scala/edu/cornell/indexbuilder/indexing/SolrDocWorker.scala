@@ -71,8 +71,20 @@ extends Actor with Logging  {
 
     case msg => logger.warn("received odd message: " + msg)
   }
-  
+
+  //callback method for restart handling 
+  override def preRestart(reason: Throwable){
+    logger.trace("Restaring after shutdown because of " + reason)
+  }
+
+  //callback method for restart handling 
+  override def postRestart(reason: Throwable){
+    logger.trace("Restaring after shutdown because of " + reason)
+  }  
 }
+
+
+/* *************** Companion Object for SolrDocWorker *************** */
 
 object SolrDocWorker {
 
@@ -127,4 +139,5 @@ object SolrDocWorker {
     model.write(out, "N3-PP")
     out.toString("UTF-8")
   }
+
 }

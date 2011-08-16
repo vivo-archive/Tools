@@ -70,9 +70,21 @@ class SolrIndexWorker( solrServer: SolrServer ) extends Actor with Logging{
       }
     }
   }
+
+  //callback method for restart handling 
+  override def preRestart(reason: Throwable){
+    logger.trace("Restaring after shutdown because of " + reason)
+  }
+
+  //callback method for restart handling 
+  override def postRestart(reason: Throwable){
+    logger.trace("Restaring after shutdown because of " + reason)
+  }
 }
 
-/** Companion object for SolrIndexWorker */
+
+/* *************** Companion object for SolrIndexWorker ***************** */
+
 object SolrIndexWorker {
 
   /**

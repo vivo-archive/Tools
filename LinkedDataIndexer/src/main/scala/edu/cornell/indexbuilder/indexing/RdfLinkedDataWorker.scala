@@ -13,8 +13,6 @@ import edu.cornell.indexbuilder._
 import scala.actors.Future
 import scala.actors.Futures
 import scala.actors.Futures._
-//import edu.cornell.indexbuilder.http.HttpWorker._
-//import edu.cornell.indexbuilder.http._
 import edu.cornell.indexbuilder.http.Http
 
 import scala.collection.mutable.HashSet
@@ -167,6 +165,16 @@ class RdfLinkedDataWorker ( http:Http, skipUri: String=>Boolean ) extends Actor 
   /* return true if there is a double slash that insn't part of http:// */
   def hasDoubleSlash(uri:String):Boolean={
     (uri.substring(7).contains("//") ) 
+  }
+
+  //callback method for restart handling 
+  override def preRestart(reason: Throwable){
+    logger.trace("Restaring after shutdown because of " + reason)
+  }
+
+  //callback method for restart handling 
+  override def postRestart(reason: Throwable){
+    logger.trace("Restaring after shutdown because of " + reason)
   }
 }
 
