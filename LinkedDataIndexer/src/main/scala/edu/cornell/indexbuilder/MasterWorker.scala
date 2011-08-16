@@ -3,17 +3,18 @@ package edu.cornell.indexbuilder
 import akka.actor._
 import akka.actor.{Actor, ActorRef}
 import akka.actor.Actor._
+import akka.dispatch.Dispatchers
 import akka.routing.CyclicIterator
 import akka.routing.Routing._
-import akka.config.Supervision
+import akka.config.Supervision._
 
 
 
-  import akka.actor.{Actor, ActorRef}
-//  import akka.stm._
-  import akka.config.Supervision.{OneForOneStrategy,Permanent}
-  import Actor._
-  import akka.event.EventHandler
+import akka.actor.{Actor, ActorRef}
+
+import akka.config.Supervision.{OneForOneStrategy,Permanent}
+import Actor._
+import akka.event.EventHandler
 
 
 import com.hp.hpl.jena.ontology.OntDocumentManager
@@ -48,16 +49,21 @@ class MasterWorker(
 extends Actor with Logging {
   
   setupJenaStatic
-
+  
   val handler = new EvalOnAlarmHandler( this )
+
+  self.lifeCycle = Permanent
+  self.faultHandler = OneForOneStrategy(List(classOf[Exception]),5,1000)
 
   //Workers for use by the master:
   val rdfWorker = makeRdfLinkedDataWorker( http, skipUrl )
-  val solrDocWorker = makeSolrDocWorker( selectorGen, siteName ) 
-  val solrIndexWorker = makeSolrIndexWorker( solrServer )
+  self.link(rdfWorker)
 
-  setupActorSupervisor( 
-    uriDiscoveryWorker :: rdfWorker :: solrDocWorker :: solrIndexWorker :: Nil)
+  val solrDocWorker = makeSolrDocWorker( selectorGen, siteName ) 
+  self.link(solrDocWorker)
+
+  val solrIndexWorker = makeSolrIndexWorker( solrServer )
+  self.link(solrIndexWorker)
 
   /**
    * List of uris to index messages.
@@ -143,7 +149,9 @@ extends Actor with Logging {
       checkIfCompleted
     }
 
-    case _ => println("SiteIndexWoker got some mystery message")
+    case MaximumNumberOfRestartsWithinTimeRangeReached(_,_,_,_) =>
+      logger.error("max errors received")
+
   }
 
 
@@ -234,22 +242,26 @@ extends Actor with Logging {
     solrIndexWorker.start()
   }  
 
-  def makeRdfLinkedDataWorker( http:Http, skipUrl:String => Boolean ):ActorRef={
-    val numberOfWorkers = 10
+  def makeRdfLinkedDataWorker( http:Http, skipUrl:String => Boolean  ):ActorRef={
+    val numberOfWorkers = 300
     var workers = List[ActorRef]()
     for( i <- 0 until numberOfWorkers ) {
       val rdfWorker = Actor.actorOf( new RdfLinkedDataWorker(http, skipUrl) )
+      self.link( rdfWorker )
       rdfWorker.start()
       workers = rdfWorker :: workers 
     }
     loadBalancerActor( new CyclicIterator[ActorRef](workers) )
   }
 
-  def makeSolrIndexWorker( solrServer:SolrServer ):ActorRef={
-    val numberOfWorkers = 5
+  def makeSolrIndexWorker( solrServer:SolrServer  ):ActorRef={
+    val numberOfWorkers = 200
     var workers = List[ActorRef]()
     for( i <- 0 until numberOfWorkers ) {
       val solrIndexWorker = Actor.actorOf( new SolrIndexWorker( solrServer ) )
+      //solrIndexWorker.dispatcher = MasterWorker.dispatcher
+      solrIndexWorker.lifeCycle = Permanent
+      self.link( solrIndexWorker )
       solrIndexWorker.start()
       workers = solrIndexWorker :: workers 
     }
@@ -257,23 +269,27 @@ extends Actor with Logging {
   }
 
   def makeSolrDocWorker( selectorGen:SelectorGenerator, siteName:String):ActorRef={
-    val numberOfWorkers = 3
+    val numberOfWorkers = 200
     var workers = List[ActorRef]()
     for( i <- 0 until numberOfWorkers ) {
       val worker = Actor.actorOf( new SolrDocWorker( selectorGen, siteName ) )  
-      worker.start()
+      //worker.dispatcher = MasterWorker.dispatcher
+      worker.lifeCycle = Permanent
+      self.startLink( worker )
       workers = worker :: workers 
     }
     loadBalancerActor( new CyclicIterator[ActorRef](workers) )
   }
 
- def setupActorSupervisor( actors:List[ActorRef]) = {
-    val sv = Actor.actorOf(new Supervisor())
-    actors.map( ac => sv.link(ac) )
- }
+
 }
 
 object MasterWorker {
+
+  val dispatcher = Dispatchers.newExecutorBasedEventDrivenWorkStealingDispatcher("pool")
+                   .setCorePoolSize(100)
+                   .setMaxPoolSize(100)
+                   .build
 
   def getMaster() : ActorRef = {
     val masters = Actor.registry.actorsFor[ MasterWorker ]

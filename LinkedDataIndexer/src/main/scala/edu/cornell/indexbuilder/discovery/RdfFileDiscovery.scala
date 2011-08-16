@@ -24,7 +24,7 @@ import scala.collection.JavaConversions._
  * This is a URI discvoery worker to load all the
  * subject in rdf:type statements in an RDF/XML file.
  */
-class RdfFileDiscovery ( in:InputStream )
+class RdfFileDiscovery ( in:InputStream , workDir:String )
 extends Actor with Logging {
   
   def receive = {

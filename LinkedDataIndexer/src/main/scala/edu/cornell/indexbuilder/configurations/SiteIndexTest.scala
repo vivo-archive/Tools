@@ -42,7 +42,7 @@ object TestIndexCornell {
       siteUrl,
       siteName,
       solrUrl,
-      ClassLists.cornellClasses,
+      ClassLists.peopleOnlyClassList ,
       siteVivoVersion
     )
     process.run()
@@ -154,7 +154,6 @@ object TestIndexWeillMed {
 object TestHarvard {
   val siteUrl = "http://connects.catalyst.harvard.edu"
   val siteName = uriToName( siteUrl )
-//"http://connects.catalyst.harvard.edu/profiles/profile/author/0000284E-79E7-4B35-8E14-2D09EFFEDBA3/viewas/rdf"  
 
   def main(args: Array[String]):Unit={
     val process = new CatalystDiscoverAndIndex(

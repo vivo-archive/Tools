@@ -43,7 +43,7 @@ with Logging {
  
   override def configDiscoveryWorker():ActorRef ={
     val in = getClass().getResourceAsStream( rdfFile )
-    Actor.actorOf(new RdfFileDiscovery( in ))
+    Actor.actorOf(new RdfFileDiscovery( in ,"noDir"))
   }
 
   //Returns a function that checks if a uri should be skipped.

@@ -57,6 +57,7 @@ class VivoUriDiscoveryWorker (
   classUris:List[String], 
   action:String, 
   workDirectory:String )
+
 extends Actor with Logging {
   
   /**
