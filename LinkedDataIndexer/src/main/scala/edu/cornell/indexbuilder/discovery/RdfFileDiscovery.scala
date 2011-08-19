@@ -10,6 +10,7 @@ import com.hp.hpl.jena.vocabulary.RDF
 import com.weiglewilczek.slf4s.Logging
 import edu.cornell.indexbuilder.http.{HttpGetAndProcess, HttpWorker}
 import edu.cornell.indexbuilder.MasterWorker
+import edu.cornell.indexbuilder.indexing.IndexUris
 import edu.cornell.mannlib.vitro.indexbuilder.ParseDataServiceJson._
 import edu.cornell.mannlib.vitro.indexbuilder.CatalystPageToURIs
 import edu.cornell.mannlib.vitro.webapp.dao.VitroVocabulary
@@ -31,26 +32,27 @@ extends Actor with Logging {
 
     case DiscoverUrisForSite( siteBaseUrl ) => {
       logger.info("GetUrlsToIndexForSite " + siteBaseUrl)
-      self.channel ! URIsDiscovered( siteBaseUrl, readUris( in ))
+      MasterWorker.getMaster() ! IndexUris( siteBaseUrl, RdfFileDiscovery.readUris( in ))
+      logger.info("Done with file reading")
+      MasterWorker.getMaster() ! DiscoveryComplete(siteBaseUrl)
     }
   
-    case e => 
-         logger.error("got a mystery message " + e)
   }
 
+}
+
+object RdfFileDiscovery {
   def readUris( in:InputStream ):Iterable[String] = {
     val model = ModelFactory.createDefaultModel()
     try{
       model.read(in,null)
-      new ModelIterator( model )      
+      new ModelIterator( model )
     } catch {
       case e => {
-        logger.error("Could not read model: " + e)
-        Nil //return empty list on error
+        List("Could not read model: " + e)
       }
     }
   }
-
 }
 
 class ModelIterator( model:Model) extends Iterable[String]{

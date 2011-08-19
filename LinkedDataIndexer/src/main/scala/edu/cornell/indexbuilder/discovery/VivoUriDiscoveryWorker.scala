@@ -175,7 +175,7 @@ extends Actor with Logging {
            try{
              val uris=parseIndividualsByVClassForURIs( EntityUtils.toString(entity) )
              //send out work for all the URIs           
-             val msg =  IndexUris( siteBaseUrl, uris.toList  )
+             val msg =  IndexUris( siteBaseUrl, uris  )
              
              urisDiscoveredForPage( pageUrl )
              saveUrisToState( classUri, pageUrl, msg )

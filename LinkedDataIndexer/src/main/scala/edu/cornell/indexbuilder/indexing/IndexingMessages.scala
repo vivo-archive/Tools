@@ -12,7 +12,7 @@ import org.apache.http.HttpResponse
 trait IndexBuilderMessage 
 
 /**  Requests that URIs be indexed for a site.  siteBaseUrl should not end with a /  */
-case class IndexUris ( siteBaseUrl : String, uris: List[String]) extends IndexBuilderMessage
+case class IndexUris ( siteBaseUrl : String, uris: Iterable[String]) extends IndexBuilderMessage
 
 /** Request for RDF to be retreived for the URI */
 case class GetRdf (siteUrl:String, uri:String) extends IndexBuilderMessage

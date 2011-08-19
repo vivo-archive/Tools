@@ -97,8 +97,9 @@ extends Actor with Logging {
     }
 
     case IndexUris(baseSiteUrl, uris ) => {
-      logger.debug( "Received URIs to index: " + uris.length)
-      addToUrisToIndex( uris )
+      val uriList = uris.toList
+      logger.debug( "Received URIs to index: " + uriList.length)
+      addToUrisToIndex( uriList )
     }
 
     case DiscoveryComplete(baseSiteUrl) => {
@@ -184,9 +185,9 @@ extends Actor with Logging {
     }
   }
 
-  def addToUrisToIndex(uris:List[String]) = {
+  def addToUrisToIndex(uris:Iterable[String]) = {
     synchronized{
-      urisToIndex = urisToIndex ::: uris 
+      urisToIndex = uris.toList
     }
   }
 

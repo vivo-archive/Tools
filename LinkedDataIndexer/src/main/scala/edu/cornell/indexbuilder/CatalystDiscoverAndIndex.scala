@@ -6,8 +6,10 @@ import akka.actor.ActorRef
 import akka.routing.Routing._
 import com.hp.hpl.jena.ontology.Individual
 import com.hp.hpl.jena.ontology.OntModel
+import com.hp.hpl.jena.util.FileManager
 import com.weiglewilczek.slf4s.Logging
 import edu.cornell.indexbuilder.VitroVersion._
+import edu.cornell.indexbuilder.http.Http
 import edu.cornell.indexbuilder.http.Http
 import edu.cornell.indexbuilder.indexing._
 import edu.cornell.indexbuilder.discovery._
@@ -42,7 +44,12 @@ with Logging {
 
  
   override def configDiscoveryWorker():ActorRef ={
-    val in = getClass().getResourceAsStream( rdfFile )
+    var in = FileManager.get().open( rdfFile );
+    if (in == null) {
+      throw new IllegalArgumentException(
+        "File: " + rdfFile + " not found");
+    }
+        
     Actor.actorOf(new RdfFileDiscovery( in ,"noDir"))
   }
 
@@ -55,6 +62,19 @@ with Logging {
     }
   }  
 
-  
+
+  override def configHttp():Http={
+    //setup an Http that will try to convert text/html to rdf/xml
+    //because harvard returns text/html for rdf/xml calls
+    new Http(10){
+  override val HEADER_TO_JENASTR =
+    Map( "text/n3" -> "N3",
+         "text/rdf+n3" -> "N3",
+         "application/rdf+xml" -> "RDF/XML",
+         "text/turtle" -> "TURTLE",
+        "text/html" -> "RDF/XML" )
+    }
+
+  }
 }
 

@@ -33,7 +33,8 @@ import Actor._
      img vitro:thumbnailImage thumbImg .
      thumbImg vitro:downloadLocation locationUrl .
  */
-class RdfLinkedDataWorker ( http:Http, skipUri: String=>Boolean ) extends Actor with Logging {  
+class RdfLinkedDataWorker ( http:Http, skipUri: String=>Boolean ) 
+extends Actor with Logging {  
 
   val expand = 
     new UrisForDataExpansion( 
@@ -63,7 +64,8 @@ class RdfLinkedDataWorker ( http:Http, skipUri: String=>Boolean ) extends Actor 
         }
         case None =>{
           logger.debug("Could not get RDF for URI " + uri )    
-          self reply CouldNotGetData( siteUrl, uri, "Could not get RDF for URI %s timeout or other HTTP problem".format(uri)  )
+          self reply CouldNotGetData( siteUrl, uri, 
+           "Could not get RDF for URI %s timeout or other HTTP problem".format(uri)  )
         }
       }
     }
@@ -88,41 +90,43 @@ class RdfLinkedDataWorker ( http:Http, skipUri: String=>Boolean ) extends Actor 
     twoHop = twoHop.filterNot( innerSkipUri )
 
     val modelExp = singleHopExpansion(oneHop ++ twoHop, model)    
-    logger.trace("model for %s after one hop expansion: %s".format( uri, SolrDocWorker.modelToString(modelExp)))
+    logger.trace("model for %s after one hop expansion: %s"
+                 .format( uri, SolrDocWorker.modelToString(modelExp)))
     val modelExp2 = secondHopExpansion( uri, twoHop, modelExp)
-    logger.trace("model for %s after two hop expansion: %s".format( uri, SolrDocWorker.modelToString(modelExp)))
+    logger.trace("model for %s after two hop expansion: %s"
+                 .format( uri, SolrDocWorker.modelToString(modelExp)))
     modelExp2
   }
 
-  def singleHopExpansion( oneHop:Seq[String], model:Model):Model = {
-    //make a list of results for those URIs
+  def singleHopExpansion( urisToExpand:Seq[String], model:Model):Model = {
+    //make a list of results for those URI to their RDF
     val expModels: Seq[(String,Option[Model])] = 
-      oneHop.map( (uri) =>  (uri,http.getLinkedData( uri )) ) 
-
+      urisToExpand.map( (uri) => (uri, http.getLinkedData(uri) ) ) 
 
     // add up all the models that are not None
     // it may be more efficient to do this as a union
-    val z = model
     val f = (acc:Model,opt:(String,Option[Model]) ) => opt match { 
-      case (_,Some(m)) => z.add(m) 
+      case (_,Some(m)) => acc.add(m) 
       case (uri,None) => {
-        logger.debug("no rdf found for "+uri+" during expansion")
-        z
+        logger.debug("No RDF found for "+uri+" during expansion")
+        acc
       }
     }
 
-    expModels.foldLeft(z)(f)
+    expModels.foldLeft(model)(f)
   }
 
   def secondHopExpansion( uri:String, twoHop:Seq[String],model:Model):Model = {
     //each of the two hop URIs need to be expanded one more hop
-    val urisFor2ndHop = twoHop.flatMap( getSingleHopUris(model) ).distinct.filterNot( innerSkipUri )
+    val urisFor2ndHop = twoHop.flatMap( getUrisFor2ndExpand(model) )
+      .distinct.filterNot( innerSkipUri )
     logger.trace("twoHop 2nd expansion list for URI %s: %s".format(uri,urisFor2ndHop))
+
     singleHopExpansion( urisFor2ndHop, model)
   }
 
-  def getSingleHopUris(model:Model)(uri:String):Seq[String] = {
-    asScalaBuffer( expand.getSingleHopUris(uri,model) )    
+  def getUrisFor2ndExpand(model:Model)(uri2ndHop:String):Seq[String] = {
+    asScalaBuffer( expand.getSingleHopUris( uri2ndHop, model) )    
   }
 
   //take two models and add them together
@@ -136,7 +140,7 @@ class RdfLinkedDataWorker ( http:Http, skipUri: String=>Boolean ) extends Actor 
     acc
   }
 
-  def doneExpanding( urisToExpand:HashSet[String], urisExpanded:HashSet[String] ): Boolean = {
+  def doneExpanding( urisToExpand:HashSet[String], urisExpanded:HashSet[String] ):Boolean = {
     urisExpanded.synchronized{
       return urisExpanded.size == urisToExpand.size
     }      
