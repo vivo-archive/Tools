@@ -173,7 +173,10 @@ extends Actor with Logging {
            
          }else{           
            try{
-             val uris=parseIndividualsByVClassForURIs( EntityUtils.toString(entity) )
+             val str = EntityUtils.toString(entity) 
+             val uris=parseIndividualsByVClassForURIs( str )
+             logger.trace("for input \n" + str + "\n generated uris \n " + uris)
+
              //send out work for all the URIs           
              val msg =  IndexUris( siteBaseUrl, uris  )
              
