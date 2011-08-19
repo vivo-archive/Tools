@@ -1,9 +1,8 @@
 package main.scala
-import edu.cornell.indexbuilder.VivoUriDiscoveryWorker
+import edu.cornell.indexbuilder.discovery.VivoUriDiscoveryWorker
  
 import org.scalatest.Spec
 import org.scalatest.matchers.MustMatchers
-import edu.cornell.indexbuilder.UriDiscoveryWorker
 import scala.util.parsing.json.JSON._
 import edu.cornell.mannlib.vitro.indexbuilder.ParseDataServiceJson
 
