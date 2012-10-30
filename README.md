@@ -17,21 +17,25 @@ from spreadsheets, XML, or JSON into VIVO-compatible RDF (Eliza Chan).
 [Further documentation](https://sourceforge.net/apps/mediawiki/vivo/index.php?title=Extending_Google_Refine_for_VIVO) 
 describes how to add the Google Refine extensions and activate this additional functionality in VIVO.
 
-* SPARQL Query Builder provides an interactive user interface to generate SPARQL queries against the VIVO ontology (Yuyin Sun).
+* [SPARQL Query Builder](https://github.com/vivo-project/Tools/tree/master/SPARQLQueryBuilder/) provides 
+an interactive user interface to generate SPARQL queries against the VIVO ontology (Yuyin Sun).
 
-* Linked Data Index Builder is an alpha tool used to create the [VIVO multi-site search](http://vivosearch.org/) (Brian Caruso)
+* [Linked Data Index Builder](https://github.com/vivo-project/Tools/tree/master/LinkedDataIndexer/) is an 
+alpha tool used to create the [VIVO multi-site search](http://vivosearch.org/) (Brian Caruso)
 
-* Refworks Java Translator (Stephen Williams)
+* [Refworks Java Translator](https://github.com/vivo-project/Tools/tree/master/RefworksJavaTranslator/) (Stephen Williams)
 
 ## Connectors from VIVO to other applications:
 
-* CTSAFedSearch is a federated search tool that accesses VIVO and other CTSA researcher 
+* [CTSAFedSearch](https://github.com/vivo-project/Tools/tree/master/Connectors/CTSAFedSearch/) is a federated search tool that accesses VIVO and other CTSA researcher 
 profile applications across the country (James Pence)
 
-* PHPVIVO is an example code of using VIVO's linked data to pull a staff directory from VIVO 
+* [PHPVIVO](https://github.com/vivo-project/Tools/tree/master/Connectors/PHPVIVO/) is an example 
+code of using VIVO's linked data to pull a staff directory from VIVO 
 for a department website (James Pence)
 
-* VIVOtoWordPress, an alpha connector from VIVO to WordPress (Dale Scheppler)
+* [VIVOtoWordPress](https://github.com/vivo-project/Tools/tree/master/Connectors/VIVOtoWordPress/), 
+an alpha connector from VIVO to WordPress (Dale Scheppler)
 
 * [OrgCrawler](https://sourceforge.net/projects/vivo/files/Utilities/), 
 a tool written in [R](http://www.r-project.org/) to query a VIVO instance and generate 
