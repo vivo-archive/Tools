@@ -48,7 +48,7 @@ to any SPARQL endpoint and transformation of query results into XML and JSON
 for consumption on websites not yet capable of issuing or processing the results of 
 SPARQL queries directly (John Fereira).
 
-* [VIVO search Drupal module](https://github.com/milesworthington/vivosolr) is built on top 
+* [VIVO search Drupal module](https://github.com/milesw/vivosolr) is built on top 
 of the [Drupal model](http://drupal.org/project/Solr) for the 
 [Apache Solr Framework](http://lucene.apache.org/solr/) and provides integration with a 
 [VIVO search index](http://vivosearch.org/) built using the Linked Data Index Builder 
